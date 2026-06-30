@@ -73,7 +73,7 @@ function renderHeader() {
           <a href="${homeUrlFor(locale)}" class="nav-logo">
             <img src="/images/logo-transparent.png" alt="Dr Otgen Clinic" />
           </a>
-          <button class="hamburger" id="hamburger" aria-label="${escapeHtml(t('Menü'))}">
+          <button class="hamburger" id="hamburger" aria-label="${escapeHtml(t('Menü'))}" aria-expanded="false">
             <span></span><span></span><span></span>
           </button>
           <ul class="nav-menu" id="nav-menu">
@@ -183,7 +183,7 @@ function renderPage(currentPage, relatedPages) {
 
   app.innerHTML = `
     ${renderHeader()}
-    <main class="sv-page">
+    <div class="sv-page">
       <div class="sv-breadcrumb-band">
         <div class="container">
           <a href="${homeUrlFor(locale)}">${escapeHtml(t('Ana Sayfa'))}</a>
@@ -269,7 +269,7 @@ function renderPage(currentPage, relatedPages) {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   `;
 }
 
@@ -280,13 +280,19 @@ function initServiceHeaderInteractions() {
 
   if (!header || !hamburger || !navMenu) return;
 
+  const setMobileNavOpen = (isOpen) => {
+    hamburger.classList.toggle('active', isOpen);
+    navMenu.classList.toggle('active', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+  };
+
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 100);
   });
 
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
+  hamburger.addEventListener('click', (event) => {
+    event.stopPropagation();
+    setMobileNavOpen(!navMenu.classList.contains('active'));
   });
 
   navMenu.querySelectorAll('a').forEach((link) => {
@@ -294,9 +300,23 @@ function initServiceHeaderInteractions() {
       if (window.innerWidth <= 1360 && link.parentElement?.classList.contains('has-dropdown')) {
         return;
       }
-      hamburger.classList.remove('active');
-      navMenu.classList.remove('active');
+      setMobileNavOpen(false);
     });
+  });
+
+  document.addEventListener('click', (event) => {
+    if (window.innerWidth > 1360) return;
+    if (!navMenu.classList.contains('active')) return;
+    if (event.target.closest('#main-header')) return;
+    setMobileNavOpen(false);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape') return;
+    if (window.innerWidth > 1360) return;
+    if (!navMenu.classList.contains('active')) return;
+    setMobileNavOpen(false);
+    hamburger.focus();
   });
 
   const setupMobileDropdowns = () => {
