@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/:locale(tr|en|ar|es|fr|it|ru|de)/service.html",
+      "destination": "/service.html"
+    },
+    {
+      "source": "/:locale(tr|en|ar|es|fr|it|ru|de)",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/:locale(tr|en|ar|es|fr|it|ru|de)/",
+      "destination": "/index.html"
+    }
+  ]
+}

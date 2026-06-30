@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/images/logo-transparent.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Dr Otgen Clinic Aesthetic; estetik cerrahi, saç ekimi, diş estetiği, medikal estetik ve fonksiyonel sağlık alanlarında kişiye özel tedavi planlaması sunar." />
+    <title>Dr Otgen Clinic Aesthetic | Estetik ve Sağlık Merkezi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script>
+      (() => {
+        const locale = location.pathname.match(/^\/(tr|en|ar|es|fr|it|ru|de)(?:\/|$)/)?.[1] || 'tr';
+        document.documentElement.lang = locale;
+        document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
+      })();
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Naskh+Arabic:wght@500;600;700&family=Noto+Sans+Arabic:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="intro-section">
+      <div class="intro-spacer"></div>
+      <div id="intro-overlay">
+        <div class="intro-particles" id="intro-particles"></div>
+        <div class="intro-logo-wrapper">
+          <img src="/images/logo-transparent.png" alt="Dr Otgen Clinic Aesthetic" class="intro-logo" />
+          <div class="intro-glow"></div>
+          <div class="intro-ring ring-1"></div>
+          <div class="intro-ring ring-2"></div>
+          <div class="intro-ring ring-3"></div>
+        </div>
+        <div class="intro-tagline">Küresel sağlık yolculuğunun geleceğini inşa ediyoruz</div>
+        <div class="intro-scroll-indicator">
+          <div class="scroll-line"></div>
+          <span>Keşfetmek için kaydırın</span>
+        </div>
+        <div class="intro-progress">
+          <div class="intro-progress-bar" id="intro-progress-bar"></div>
+        </div>
+      </div>
+    </div>
+
+    <header id="main-header">
+      <nav class="main-nav">
+        <div class="container nav-container">
+          <a href="/index.html" class="nav-logo">
+            <img src="/images/logo-transparent.png" alt="Dr Otgen Clinic" />
+          </a>
+          <button class="hamburger" id="hamburger" aria-label="Menü">
+            <span></span><span></span><span></span>
+          </button>
+          <ul class="nav-menu" id="nav-menu">
+            <li class="has-dropdown">
+              <a href="#">Kurumsal <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
+              <div class="mega-dropdown">
+                <div class="mega-col">
+                  <h4>Kurumsal</h4>
+                  <a href="#">Vizyon ve Misyon</a>
+                  <a href="#">Değerlerimiz</a>
+                  <a href="#">Kalite Politikası</a>
+                  <a href="#">Yönetim</a>
+                  <a href="#">Doktorlarımız</a>
+                  <a href="#">Sağlık Turizmi</a>
+                  <a href="#">Temsilciler</a>
+                </div>
+              </div>
+            </li>
+            <li class="has-dropdown">
+              <a href="#">Saç Ekimi <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
+              <div class="mega-dropdown">
+                <div class="mega-col">
+                  <h4>Saç Ekimi</h4>
+                  <a href="#">Safir FUE Saç Ekimi</a>
+                  <a href="#">DHI Saç Ekimi</a>
+                  <a href="#">Kök Hücre Destekli Saç Ekimi</a>
+                  <a href="#">Tıraşsız Saç Ekimi</a>
+                  <a href="#">Kaş Ekimi</a>
+                  <a href="#">Sakal ve Bıyık Ekimi</a>
+                </div>
+                <div class="mega-col">
+                  <h4>Saç Tedavileri</h4>
+                  <a href="#">ACell PRP Saç Tedavisi</a>
+                  <a href="#">Lazer Saç Tedavisi</a>
+                  <a href="#">Eksozom Saç Terapisi</a>
+                </div>
+              </div>
+            </li>
+            <li class="has-dropdown">
+              <a href="#">Diş Estetiği <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
+              <div class="mega-dropdown">
+                <div class="mega-col">
+                  <h4>Diş Estetiği</h4>
+                  <a href="#">Diş İmplantı</a>
+                  <a href="#">Diş Beyazlatma</a>
+                  <a href="#">Hollywood Gülüşü</a>
+                  <a href="#">Ortodonti</a>
+                  <a href="#">Pembe Estetik</a>
+                  <a href="#">Zirkonyum Kaplama</a>
+                </div>
+              </div>
+            </li>
+            <li class="has-dropdown">
+              <a href="#">Estetik Cerrahi <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
+              <div class="mega-dropdown">
+                <div class="mega-col">
+                  <h4>Yüz ve Meme Estetiği</h4>
+                  <a href="#">Meme Büyütme</a>
+                  <a href="#">Meme Küçültme</a>
+                  <a href="#">Rinoplasti</a>
+                  <a href="#">Yüz Germe</a>
+                  <a href="#">Blefaroplasti</a>
+                </div>
+                <div class="mega-col">
+                  <h4>Vücut Estetiği</h4>
+                  <a href="#">Jinekomasti Ameliyatı</a>
+                  <a href="#">Karın Germe</a>
+                  <a href="#">Liposuction</a>
+                  <a href="#">Kalça Kaldırma</a>
+                </div>
+              </div>
+            </li>
+            <li class="has-dropdown">
+              <a href="#">Medikal Estetik <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
+              <div class="mega-dropdown">
+                <div class="mega-col">
+                  <h4>Dolgu ve Botoks</h4>
+                  <a href="#">Dudak Dolgusu</a>
+                  <a href="#">Botoks</a>
+                  <a href="#">Çene Hattı Dolgusu</a>
+                  <a href="#">Göz Altı Işık Dolgusu</a>
+                </div>
+                <div class="mega-col">
+                  <h4>Cilt Uygulamaları</h4>
+                  <a href="#">Lazer Epilasyon</a>
+                  <a href="#">PRP Cilt Tedavisi</a>
+                  <a href="#">Tıbbi Cilt Bakımı</a>
+                  <a href="#">Somon DNA Tedavisi</a>
+                </div>
+              </div>
+            </li>
+            <li class="has-dropdown">
+              <a href="#">Fonksiyonel Sağlık <svg width="10" height="6" viewBox="0 0 10 6"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
+              <div class="mega-dropdown">
+                <div class="mega-col">
+                  <h4>Fonksiyonel Sağlık</h4>
+                  <a href="#">Sağlıklı Beslenme</a>
+                  <a href="#">LPG İşlemi</a>
+                  <a href="#">Ozon Terapisi</a>
+                  <a href="#">İntravenöz (IV) Tedaviler</a>
+                  <a href="#">Glutatyon Terapisi</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div id="language-switcher-slot" class="nav-language-slot"></div>
+          <a href="#randevu" class="nav-cta">Randevu Al</a>
+        </div>
+      </nav>
+    </header>
+
+    <section id="hero">
+      <div class="hero-slider">
+        <div class="hero-slide hero-slide-video active">
+          <video class="hero-bg-video" autoplay muted playsinline preload="metadata" data-loop-end="30">
+            <source src="/video.mp4" type="video/mp4" />
+          </video>
+          <div class="hero-overlay"></div>
+          <div class="container hero-content">
+            <span class="hero-badge">Premium Estetik Merkezi</span>
+            <h1 data-i18n-html>Güzelliğinize <span class="gold-text">Değer</span> Katıyoruz</h1>
+            <p>Uzman ekibimiz ve modern tedavi yaklaşımımızla estetik, saç sağlığı, medikal estetik ve fonksiyonel sağlık alanlarında kişiye özel çözümler sunuyoruz.</p>
+            <div class="hero-buttons">
+              <a href="#randevu" class="btn btn-gold">Ücretsiz Danışma</a>
+              <a href="#hizmetler" class="btn btn-outline">Hizmetlerimiz</a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-slide" style="background-image: url('/images/hero-beauty.png')">
+          <div class="hero-overlay"></div>
+          <div class="container hero-content">
+            <span class="hero-badge">Medikal Estetik</span>
+            <h1 data-i18n-html>Doğal <span class="gold-text">Güzelliğinizi</span> Keşfedin</h1>
+            <p>Dolgu, botoks, cilt bakımı ve yenileyici uygulamalarla doğal görünümlü sonuçlara odaklanıyoruz.</p>
+            <div class="hero-buttons">
+              <a href="#randevu" class="btn btn-gold">Randevu Al</a>
+              <a href="#hizmetler" class="btn btn-outline">Detaylar</a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-slide" style="background-image: url('/images/hero-clinic.png')">
+          <div class="hero-overlay"></div>
+          <div class="container hero-content">
+            <span class="hero-badge">Sağlık Turizmi</span>
+            <h1 data-i18n-html>Planlı ve Güvenli <span class="gold-text">Tedavi Süreci</span></h1>
+            <p>Uluslararası hasta koordinasyonu, takip ve iletişim adımlarını şeffaf bir süreçle yönetiyoruz.</p>
+            <div class="hero-buttons">
+              <a href="#randevu" class="btn btn-gold">Başlayın</a>
+              <a href="#hizmetler" class="btn btn-outline">Tedaviler</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-indicators">
+        <button class="indicator active" data-slide="0" aria-label="Birinci slayt"></button>
+        <button class="indicator" data-slide="1" aria-label="İkinci slayt"></button>
+        <button class="indicator" data-slide="2" aria-label="Üçüncü slayt"></button>
+      </div>
+      <div class="hero-scroll-hint">
+        <div class="mouse"><div class="wheel"></div></div>
+        <span>Aşağı Kaydır</span>
+      </div>
+    </section>
+
+    <section class="partners-marquee-section" aria-label="İş birliği yapılan firmalar">
+      <div class="partners-marquee-inner">
+        <div class="partners-marquee-wrap">
+          <div class="partners-marquee-track">
+            <span>Bookimed</span><span>Acıbadem Health Point</span><span>WhatClinic</span><span>PlacidWay</span><span>Denipol Hastanesi</span><span>Medical Departures</span><span>Qunomedical</span><span>Medicana Health Group International</span>
+          </div>
+          <div class="partners-marquee-track" aria-hidden="true">
+            <span>Bookimed</span><span>Acıbadem Health Point</span><span>WhatClinic</span><span>PlacidWay</span><span>Denipol Hastanesi</span><span>Medical Departures</span><span>Qunomedical</span><span>Medicana Health Group International</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="hizmetler" class="section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="section-tag">Branşlarımız</span>
+          <h2 data-i18n-html>Uzmanlık <span class="gold-text">Alanlarımız</span></h2>
+          <p>Estetik ve sağlık yolculuğunuz için kapsamlı, planlı ve kişiye özel hizmetler sunuyoruz.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card animate-on-scroll" data-delay="0">
+            <div class="service-icon"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="20" r="12" stroke="currentColor" stroke-width="2"/><path d="M16 52c0-8.837 7.163-16 16-16s16 7.163 16 16" stroke="currentColor" stroke-width="2"/></svg></div>
+            <h3>Saç Ekimi ve Tedavileri</h3>
+            <p>Saç ekimi, saç tedavileri ve kaş-sakal uygulamalarında doğal görünüm ve sağlıklı yoğunluk hedeflenir.</p>
+            <a href="#" class="service-link" data-service-slug="sapphire-fue-hair-transplant">Detaylar <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          </div>
+          <div class="service-card animate-on-scroll" data-delay="100">
+            <div class="service-icon"><svg viewBox="0 0 64 64" fill="none"><path d="M20 12c-6 3-9 9-8 16 1 8 5 12 7 21 1 4 3 5 5 1l4-12c1-3 7-3 8 0l4 12c2 4 4 3 5-1 2-9 6-13 7-21 1-7-2-13-8-16-5-2-8 2-12 2s-7-4-12-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+            <h3>Diş Estetiği</h3>
+            <p>İmplant, diş beyazlatma, gülüş tasarımı, ortodonti, pembe estetik ve zirkonyum uygulamaları kişiye özel planlanır.</p>
+            <a href="#" class="service-link" data-service-slug="dental-implant">Detaylar <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          </div>
+          <div class="service-card animate-on-scroll" data-delay="200">
+            <div class="service-icon"><svg viewBox="0 0 64 64" fill="none"><path d="M32 12l6 12 14 2-10 10 2 14-12-6-12 6 2-14L12 26l14-2z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+            <h3>Estetik Cerrahi</h3>
+            <p>Yüz, meme ve vücut estetiğinde fonksiyon, estetik denge ve hasta güvenliği birlikte değerlendirilir.</p>
+            <a href="#" class="service-link" data-service-slug="rhinoplasty">Detaylar <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          </div>
+          <div class="service-card animate-on-scroll" data-delay="300">
+            <div class="service-icon"><svg viewBox="0 0 64 64" fill="none"><circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="2"/><path d="M32 20v12l8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <h3>Medikal Estetik</h3>
+            <p>Dolgu, botoks, cilt yenileme ve lazer uygulamalarında doğal görünümlü sonuçlar hedeflenir.</p>
+            <a href="#" class="service-link" data-service-slug="botox">Detaylar <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          </div>
+          <div class="service-card animate-on-scroll" data-delay="400">
+            <div class="service-icon"><svg viewBox="0 0 64 64" fill="none"><path d="M32 16c-8 0-16 6-16 16s8 20 16 20 16-12 16-20-8-16-16-16z" stroke="currentColor" stroke-width="2"/><path d="M28 30c0-2 1.8-4 4-4s4 2 4 4-1.8 4-4 4-4-2-4-4z" stroke="currentColor" stroke-width="2"/></svg></div>
+            <h3>Fonksiyonel Sağlık</h3>
+            <p>Ozon, IV terapiler, glutatyon, LPG ve sağlıklı beslenme yaklaşımları kişisel ihtiyaçlara göre planlanır.</p>
+            <a href="#" class="service-link" data-service-slug="glutathione">Detaylar <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          </div>
+          <div class="service-card animate-on-scroll" data-delay="500">
+            <div class="service-icon"><svg viewBox="0 0 64 64" fill="none"><path d="M18 46h28M22 38h20M26 30h12M32 12v36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <h3>Kurumsal Bilgiler</h3>
+            <p>Kalite politikamız, değerlerimiz, yönetim yaklaşımımız ve sağlık turizmi süreçlerimiz şeffaf biçimde sunulur.</p>
+            <a href="#" class="service-link" data-service-slug="health-tourism">Detaylar <svg width="16" height="16" viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stats" class="section stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item animate-on-scroll"><div class="stat-number" data-count="15000">0</div><div class="stat-label">Mutlu Hasta</div></div>
+          <div class="stat-item animate-on-scroll" data-delay="100"><div class="stat-number" data-count="20">0</div><div class="stat-label">Yıllık Deneyim</div></div>
+          <div class="stat-item animate-on-scroll" data-delay="200"><div class="stat-number" data-count="50">0</div><div class="stat-label">Uzman Hekim</div></div>
+          <div class="stat-item animate-on-scroll" data-delay="300"><div class="stat-number" data-count="98" data-format="percent">0</div><div class="stat-label">Hasta Memnuniyeti %</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ekip" class="section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="section-tag">Medikal Ekibimiz</span>
+          <h2 data-i18n-html>Uzman <span class="gold-text">Doktorlarımız</span></h2>
+          <p>Alanında deneyimli hekimlerimizle güvenilir, şeffaf ve planlı bir tedavi süreci sunuyoruz.</p>
+        </div>
+        <div class="team-grid">
+          <div class="team-card animate-on-scroll" data-delay="0">
+            <div class="team-img"><img src="/images/site/home/doctor-ali-kaya.webp" alt="Dr. Ali Kaya" width="1122" height="1402" loading="lazy" decoding="async" /></div>
+            <h4>Dr. Ali Kaya</h4>
+            <span class="team-role">Uzman Hekim</span>
+          </div>
+          <div class="team-card animate-on-scroll" data-delay="150">
+            <div class="team-img"><img src="/images/site/home/doctor-ayse-yilmaz.webp" alt="Dr. Ayşe Yılmaz" width="1122" height="1402" loading="lazy" decoding="async" /></div>
+            <h4>Dr. Ayşe Yılmaz</h4>
+            <span class="team-role">Uzman Hekim</span>
+          </div>
+          <div class="team-card animate-on-scroll" data-delay="300">
+            <div class="team-img"><img src="/images/site/home/doctor-yusuf-otgen.webp" alt="Dr. Yusuf Otgen" width="1122" height="1402" loading="lazy" decoding="async" /></div>
+            <h4>Dr. Yusuf Otgen</h4>
+            <span class="team-role">Uzman Hekim</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="populer" class="section popular-section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="section-tag">En Çok Tercih Edilenler</span>
+          <h2 data-i18n-html>Popüler <span class="gold-text">Tedaviler</span></h2>
+        </div>
+        <div class="popular-grid">
+          <a href="#" class="popular-item animate-on-scroll" data-service-slug="dhi-hair-transplant"><span class="popular-category">Saç Ekimi</span><span class="popular-name">DHI Saç Ekimi</span><span class="popular-arrow"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M5 10h10M11 6l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></span></a>
+          <a href="#" class="popular-item animate-on-scroll" data-delay="50" data-service-slug="sapphire-fue-hair-transplant"><span class="popular-category">Saç Ekimi</span><span class="popular-name">Safir FUE Saç Ekimi</span><span class="popular-arrow"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M5 10h10M11 6l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></span></a>
+          <a href="#" class="popular-item animate-on-scroll" data-delay="100" data-service-slug="rhinoplasty"><span class="popular-category">Estetik Cerrahi</span><span class="popular-name">Rinoplasti</span><span class="popular-arrow"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M5 10h10M11 6l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></span></a>
+          <a href="#" class="popular-item animate-on-scroll" data-delay="150" data-service-slug="botox"><span class="popular-category">Medikal Estetik</span><span class="popular-name">Botoks</span><span class="popular-arrow"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M5 10h10M11 6l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></span></a>
+          <a href="#" class="popular-item animate-on-scroll" data-delay="200" data-service-slug="lip-filler"><span class="popular-category">Medikal Estetik</span><span class="popular-name">Dudak Dolgusu</span><span class="popular-arrow"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M5 10h10M11 6l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></span></a>
+          <a href="#" class="popular-item animate-on-scroll" data-delay="250" data-service-slug="laser-hair-removal"><span class="popular-category">Medikal Estetik</span><span class="popular-name">Lazer Epilasyon</span><span class="popular-arrow"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M5 10h10M11 6l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></span></a>
+          <a href="#" class="popular-item animate-on-scroll" data-delay="300" data-service-slug="iv-therapies"><span class="popular-category">Fonksiyonel Sağlık</span><span class="popular-name">İntravenöz (IV) Tedaviler</span><span class="popular-arrow"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M5 10h10M11 6l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></span></a>
+          <a href="#" class="popular-item animate-on-scroll" data-delay="350" data-service-slug="glutathione"><span class="popular-category">Fonksiyonel Sağlık</span><span class="popular-name">Glutatyon Terapisi</span><span class="popular-arrow"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M5 10h10M11 6l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></span></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="neden-biz" class="section">
+      <div class="container">
+        <div class="why-us-grid">
+          <div class="why-us-content animate-on-scroll">
+            <span class="section-tag">Neden Biz?</span>
+            <h2 data-i18n-html>Her Detayda <span class="gold-text">Özen</span></h2>
+            <div class="why-us-items">
+              <div class="why-item"><div class="why-icon">*</div><div><h4>Uzman Kadro</h4><p>Alanında deneyimli hekimler ve koordinasyon ekibiyle planlı süreç yönetimi.</p></div></div>
+              <div class="why-item"><div class="why-icon">*</div><div><h4>Modern Yaklaşım</h4><p>Güncel tedavi protokolleri, güvenlik standartları ve kişiye özel değerlendirme.</p></div></div>
+              <div class="why-item"><div class="why-icon">*</div><div><h4>Uluslararası Destek</h4><p>Sağlık turizmi sürecinde iletişim, planlama ve takip desteği.</p></div></div>
+              <div class="why-item"><div class="why-icon">*</div><div><h4>Doğal Sonuç Hedefi</h4><p>Beklentileri gerçekçi biçimde ele alan, dengeli ve doğal görünüm odaklı planlama.</p></div></div>
+            </div>
+          </div>
+          <div class="why-us-image animate-on-scroll" data-delay="200">
+            <img src="/images/site/home/clinic-interior.webp" alt="Dr Otgen Clinic iç mekânı" width="1086" height="1448" loading="lazy" decoding="async" />
+            <div class="glass-badge"><span class="badge-number">20+</span><span class="badge-text">Yıllık Deneyim</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="randevu" class="section appointment-section">
+      <div class="container">
+        <div class="appointment-grid">
+          <div class="appointment-info animate-on-scroll">
+            <span class="section-tag">Randevu</span>
+            <h2 data-i18n-html>Ücretsiz <span class="gold-text">Danışma</span></h2>
+            <p>Uzman ekibimizle online veya yüz yüze görüşme planlayın. Size en uygun tedavi yol haritasını birlikte oluşturalım.</p>
+            <div class="appointment-contact">
+              <div class="contact-item"><div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><h4>Telefon</h4><a href="tel:+491575253940" dir="ltr">+49 1575 253 940</a><br><a href="tel:+447831129241" dir="ltr">+44 7831 129 241</a><br><a href="tel:+33758433011" dir="ltr">+33 758 433 011</a></div></div>
+              <div class="contact-item"><div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div><div><h4>WhatsApp</h4><a href="https://wa.me/905411595636" target="_blank">Mesaj Gönder</a></div></div>
+              <div class="contact-item"><div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h4>Kliniklerimiz</h4><span dir="ltr" data-i18n-skip style="display:block; margin-bottom:4px;">Wiesdorfer, Leverkusen 51373</span><span dir="ltr" data-i18n-skip style="display:block; margin-bottom:4px;">Anadolu Plaza No:23 Karşıyaka İzmir</span><span dir="ltr" data-i18n-skip style="display:block;">Denizli</span></div></div>
+            </div>
+          </div>
+          <form class="appointment-form animate-on-scroll" data-delay="200" id="appointment-form" action="https://formsubmit.co/drotgenclinic@gmail.com" method="POST">
+            <div class="form-row"><div class="form-group"><label for="form-name">Ad Soyad</label><input type="text" id="form-name" name="name" placeholder="Ad Soyad" required /></div><div class="form-group"><label for="form-phone">Telefon</label><input type="tel" id="form-phone" name="phone" placeholder="+90 5XX XXX XX XX" dir="ltr" required /></div></div>
+            <div class="form-row"><div class="form-group"><label for="form-email">E-posta</label><input type="email" id="form-email" name="email" placeholder="ornek@email.com" dir="ltr" /></div><div class="form-group"><label for="form-service">Hizmet Seçin</label><select id="form-service" name="service"><option value="">Lütfen Seçin</option><option>Saç Ekimi</option><option>Diş Estetiği</option><option>Estetik Cerrahi</option><option>Medikal Estetik</option><option>Fonksiyonel Sağlık</option></select></div></div>
+            <div class="form-group"><label for="form-message">Mesajınız</label><textarea id="form-message" name="message" rows="4" placeholder="Mesajınızı yazın..."></textarea></div>
+            <button type="submit" class="btn btn-gold btn-full">Randevu Talebi Gönder</button>
+          </form>
+        </div>
+      </div>
+    </section>
+ 
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="/images/logo-transparent.png" alt="Dr Otgen Clinic" class="footer-logo" />
+            <video class="footer-brand-video" autoplay muted loop playsinline preload="metadata"><source src="/kj.mp4" type="video/mp4" /></video>
+            <p><strong>#AestheticConsultancy</strong><br>Estetik, saç sağlığı, diş estetiği, medikal estetik ve fonksiyonel sağlık alanlarında premium hizmet yaklaşımıyla yanınızdayız.</p>
+          </div>
+          <div class="footer-links"><h4>Hizmetlerimiz</h4><a href="#hizmetler">Saç Ekimi</a><a href="/service.html?slug=dental-implant">Diş Estetiği</a><a href="#hizmetler">Estetik Cerrahi</a><a href="#hizmetler">Medikal Estetik</a><a href="#hizmetler">Fonksiyonel Sağlık</a></div>
+          <div class="footer-links"><h4>Kurumsal</h4><a href="#">Vizyon ve Misyon</a><a href="#">Doktorlarımız</a><a href="#">Sağlık Turizmi</a><a href="#randevu">İletişim</a></div>
+          <div class="footer-links"><h4>İletişim</h4><a href="https://wa.me/905411595636" target="_blank">WhatsApp</a></div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Dr Otgen Clinic Aesthetic. Tüm hakları saklıdır.</p>
+        </div>
+      </div>
+    </footer>
+ 
+    <a href="https://wa.me/905411595636" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

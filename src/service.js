@@ -1,0 +1,347 @@
+import './style.css';
+import './service.css';
+import { initCustomCursor } from './cursor.js';
+import {
+  applySeoLinks,
+  buildCategoryGroups,
+  defaultRelatedPages,
+  getCurrentLocale,
+  homeUrlFor,
+  loadContentCatalog,
+  loadUiDictionary,
+  serviceUrlForLocale,
+  translate,
+} from './i18n.js';
+import {
+  initLanguageSwitchers,
+  renderLanguageSwitcher,
+} from './language-switcher.js';
+
+const app = document.getElementById('service-app');
+const params = new URLSearchParams(window.location.search);
+const locale = getCurrentLocale('service');
+const [catalog, uiDictionary] = await Promise.all([
+  loadContentCatalog(locale),
+  loadUiDictionary(locale),
+]);
+const pagesBySlug = Object.fromEntries(catalog.pages.map((page) => [page.slug, page]));
+const categoryGroups = buildCategoryGroups(catalog);
+const t = (source) => translate(uiDictionary, source);
+
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+}
+
+function renderChevron() {
+  return '<svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>';
+}
+
+function renderNavGroups() {
+  return categoryGroups
+    .map((group) => {
+      const links = group.items
+        .map((item) => `
+          <a href="${serviceUrlForLocale(item.slug, locale)}">${escapeHtml(item.navLabel)}</a>
+        `)
+        .join('');
+
+      return `
+        <li class="has-dropdown">
+          <a href="#">${escapeHtml(group.label)} ${renderChevron()}</a>
+          <div class="mega-dropdown">
+            <div class="mega-col">
+              <h4>${escapeHtml(group.label)}</h4>
+              ${links}
+            </div>
+          </div>
+        </li>
+      `;
+    })
+    .join('');
+}
+
+function renderHeader() {
+  return `
+    <header id="main-header">
+      <nav class="main-nav">
+        <div class="container nav-container">
+          <a href="${homeUrlFor(locale)}" class="nav-logo">
+            <img src="/images/logo-transparent.png" alt="Dr Otgen Clinic" />
+          </a>
+          <button class="hamburger" id="hamburger" aria-label="${escapeHtml(t('Menü'))}">
+            <span></span><span></span><span></span>
+          </button>
+          <ul class="nav-menu" id="nav-menu">
+            ${renderNavGroups()}
+          </ul>
+          <div class="nav-language-slot">
+            ${renderLanguageSwitcher(locale, 'service', uiDictionary)}
+          </div>
+          <a href="${homeUrlFor(locale, '#randevu')}" class="nav-cta">${escapeHtml(t('Randevu Al'))}</a>
+        </div>
+      </nav>
+    </header>
+  `;
+}
+
+function renderDetailSections(sections = []) {
+  if (!Array.isArray(sections) || !sections.length) return '';
+
+  return `
+    <section class="sv-section sv-detail-section-wrap">
+      <div class="container sv-detail-stack">
+        ${sections
+          .map((section) => {
+            const blocks = Array.isArray(section.blocks) ? section.blocks : [];
+            if (!blocks.length) return '';
+            const body = blocks
+              .map((block) => {
+                if (block.type === 'paragraph') {
+                  return `<p>${escapeHtml(block.text)}</p>`;
+                }
+                if (block.type === 'subheading') {
+                  return `<h4 class="sv-detail-subheading">${escapeHtml(block.text)}</h4>`;
+                }
+                if (block.type === 'list' && Array.isArray(block.items)) {
+                  return `<ul class="sv-detail-list">${block.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>`;
+                }
+                return '';
+              })
+              .join('');
+
+            return `
+              <article class="sv-detail-block">
+                <h3>${escapeHtml(section.title)}</h3>
+                ${body}
+              </article>
+            `;
+          })
+          .join('')}
+      </div>
+    </section>
+  `;
+}
+
+function renderRelated(relatedPages) {
+  if (!relatedPages.length) return '';
+
+  return relatedPages
+    .map(
+      (item) => `
+        <a class="sv-related-card" href="${serviceUrlForLocale(item.slug, locale)}">
+          <h4>${escapeHtml(item.title)}</h4>
+          <p>${escapeHtml(item.summary)}</p>
+        </a>
+      `,
+    )
+    .join('');
+}
+
+function renderProcess(processItems) {
+  return processItems
+    .map(
+      (step, index) => `
+        <article class="sv-process-card">
+          <span dir="ltr">${String(index + 1).padStart(2, '0')}</span>
+          <h4>${escapeHtml(step.title)}</h4>
+          <p>${escapeHtml(step.description)}</p>
+        </article>
+      `,
+    )
+    .join('');
+}
+
+function renderFaq(faqItems) {
+  return faqItems
+    .map(
+      (faq) => `
+        <details class="sv-faq-item">
+          <summary>${escapeHtml(faq.question)}</summary>
+          <p>${escapeHtml(faq.answer)}</p>
+        </details>
+      `,
+    )
+    .join('');
+}
+
+function renderPage(currentPage, relatedPages) {
+  document.title = `${currentPage.title} | Dr Otgen Clinic`;
+
+  const metaDescription = document.querySelector('meta[name="description"]');
+  if (metaDescription) {
+    metaDescription.setAttribute('content', `${currentPage.title}: ${currentPage.summary}`);
+  }
+  applySeoLinks(locale, 'service', currentPage.slug);
+
+  const quickFacts = Array.isArray(currentPage.quickFacts) ? currentPage.quickFacts : [];
+  const heroGradientDirection = document.documentElement.dir === 'rtl' ? '270deg' : '90deg';
+
+  app.innerHTML = `
+    ${renderHeader()}
+    <main class="sv-page">
+      <div class="sv-breadcrumb-band">
+        <div class="container">
+          <a href="${homeUrlFor(locale)}">${escapeHtml(t('Ana Sayfa'))}</a>
+          <span>/</span>
+          <strong>${escapeHtml(currentPage.categoryLabel)}</strong>
+          <span>/</span>
+          <strong>${escapeHtml(currentPage.title)}</strong>
+        </div>
+      </div>
+
+      <section class="sv-hero" style="background-image: linear-gradient(${heroGradientDirection}, rgba(5, 17, 34, 0.86), rgba(5, 17, 34, 0.58)), url('${currentPage.images.hero}')">
+        <div class="container sv-hero-inner">
+          <article class="sv-hero-card">
+            <span>${escapeHtml(currentPage.heroTag)}</span>
+            <h1>${escapeHtml(currentPage.title)}</h1>
+            ${currentPage.heroSubtitle ? `<strong class="sv-hero-subtitle">${escapeHtml(currentPage.heroSubtitle)}</strong>` : ''}
+            <p>${escapeHtml(currentPage.summary)}</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="sv-section">
+        <div class="container sv-split">
+          <div class="sv-image-col">
+            <img
+              src="${currentPage.images.content}"
+              alt="${escapeHtml(currentPage.title)}"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="sv-text-col">
+            <h2>${escapeHtml(t('Genel Bakış'))}</h2>
+            ${currentPage.overview.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('')}
+            ${currentPage.highlights?.length ? `<ul>${currentPage.highlights.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>` : ''}
+          </div>
+        </div>
+      </section>
+
+      ${renderDetailSections(currentPage.sections)}
+
+      <section class="sv-section sv-section-soft">
+        <div class="container">
+          <h3>${escapeHtml(t('Tedavi Süreci'))}</h3>
+          <div class="sv-process-grid">
+            ${renderProcess(currentPage.process || [])}
+          </div>
+        </div>
+      </section>
+
+      <section class="sv-section">
+        <div class="container sv-info-grid">
+          <article class="sv-info-card">
+            <h4>${escapeHtml(t('Kimler İçin Uygundur?'))}</h4>
+            ${currentPage.suitableIntro ? `<p>${escapeHtml(currentPage.suitableIntro)}</p>` : ''}
+            <ul>
+              ${(currentPage.suitableFor || []).map((item) => `<li>${escapeHtml(item)}</li>`).join('')}
+            </ul>
+          </article>
+          <article class="sv-info-card">
+            <h4>${escapeHtml(t('Kısa Bilgiler'))}</h4>
+            ${quickFacts.map((fact) => `<p><strong>${escapeHtml(fact.label)}:</strong> ${escapeHtml(fact.value)}</p>`).join('')}
+          </article>
+        </div>
+      </section>
+
+      ${currentPage.faqs?.length ? `
+        <section class="sv-section sv-section-soft">
+          <div class="container">
+            <h3>${escapeHtml(t('Sık Sorulan Sorular'))}</h3>
+            <div class="sv-faq-list">
+              ${renderFaq(currentPage.faqs)}
+            </div>
+          </div>
+        </section>
+      ` : ''}
+
+      <section class="sv-section">
+        <div class="container">
+          <h3>${escapeHtml(t('İlgili Sayfalar'))}</h3>
+          <div class="sv-related-grid">
+            ${renderRelated(relatedPages)}
+          </div>
+        </div>
+      </section>
+    </main>
+  `;
+}
+
+function initServiceHeaderInteractions() {
+  const header = document.getElementById('main-header');
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+
+  if (!header || !hamburger || !navMenu) return;
+
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 100);
+  });
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+
+  navMenu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 1360 && link.parentElement?.classList.contains('has-dropdown')) {
+        return;
+      }
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+
+  const setupMobileDropdowns = () => {
+    if (window.innerWidth > 1360) return;
+
+    document.querySelectorAll('.has-dropdown > a').forEach((trigger) => {
+      if (trigger.dataset.mobileBound === 'true') return;
+      trigger.dataset.mobileBound = 'true';
+      trigger.addEventListener('click', (event) => {
+        if (window.innerWidth > 1360) return;
+        event.preventDefault();
+        trigger.parentElement.classList.toggle('open');
+      });
+    });
+  };
+
+  setupMobileDropdowns();
+  window.addEventListener('resize', setupMobileDropdowns);
+}
+
+function initRelatedCardNavigation() {
+  document.querySelectorAll('.sv-related-card').forEach((card) => {
+    card.addEventListener('click', (event) => {
+      const href = card.getAttribute('href');
+      if (!href) return;
+      if (event.target instanceof HTMLElement && event.target.closest('a') && event.target !== card) return;
+      window.location.assign(href);
+    });
+  });
+}
+
+function bootstrapServicePage() {
+  const requestedSlug = params.get('slug');
+  const currentPage = requestedSlug ? pagesBySlug[requestedSlug] : null;
+
+  if (!currentPage) {
+    window.location.replace(homeUrlFor(locale, '#hizmetler'));
+    return;
+  }
+
+  renderPage(currentPage, defaultRelatedPages(catalog, currentPage));
+  initCustomCursor();
+  initServiceHeaderInteractions();
+  initLanguageSwitchers();
+  initRelatedCardNavigation();
+}
+
+bootstrapServicePage();
