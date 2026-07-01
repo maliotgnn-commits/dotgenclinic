@@ -362,14 +362,36 @@ function initAppointmentForm() {
   const form = document.getElementById('appointment-form');
   if (!form) return;
 
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const btnLabel = submitBtn?.querySelector('.btn-label');
+  const statusEl = document.getElementById('form-status');
+  const originalLabel = btnLabel?.textContent?.trim() || submitBtn?.getAttribute('aria-label') || '';
+
+  const setFormStatus = (message) => {
+    if (statusEl) statusEl.textContent = message;
+  };
+
+  const setButtonVisual = (text, stateClass) => {
+    if (btnLabel) btnLabel.textContent = text;
+    submitBtn.classList.remove('is-loading', 'is-success', 'is-error');
+    if (stateClass) submitBtn.classList.add(stateClass);
+  };
+
+  const resetFormFeedback = () => {
+    setFormStatus('');
+    setButtonVisual(originalLabel, null);
+    submitBtn.disabled = false;
+    submitBtn.style.opacity = '1';
+    submitBtn.style.background = '';
+  };
+
   form.addEventListener('submit', (event) => {
     event.preventDefault();
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
 
-    submitBtn.textContent = translate(uiDictionary, 'Gönderiliyor...');
     submitBtn.disabled = true;
     submitBtn.style.opacity = '0.7';
+    setButtonVisual(translate(uiDictionary, 'Gönderiliyor...'), 'is-loading');
+    setFormStatus(translate(uiDictionary, 'Gönderiliyor...'));
 
     const name = document.getElementById('form-name')?.value || '';
     const phone = document.getElementById('form-phone')?.value || '';
@@ -396,28 +418,36 @@ function initAppointmentForm() {
       return response.json();
     })
     .then(() => {
-      submitBtn.textContent = translate(uiDictionary, 'Gönderildi');
+      setButtonVisual(translate(uiDictionary, 'Gönderildi'), 'is-success');
+      setFormStatus(translate(uiDictionary, 'Gönderildi'));
       submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
 
       window.setTimeout(() => {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        submitBtn.style.opacity = '1';
-        submitBtn.style.background = '';
+        resetFormFeedback();
         form.reset();
       }, 3000);
     })
     .catch((error) => {
       console.error(error);
-      submitBtn.textContent = translate(uiDictionary, 'Hata Oluştu');
+      setButtonVisual(translate(uiDictionary, 'Hata Oluştu'), 'is-error');
+      setFormStatus(translate(uiDictionary, 'Hata Oluştu'));
       submitBtn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
 
       window.setTimeout(() => {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-        submitBtn.style.opacity = '1';
-        submitBtn.style.background = '';
+        resetFormFeedback();
       }, 3000);
+    });
+  });
+}
+
+function initSkipLink() {
+  const skipLink = document.querySelector('.skip-link');
+  const target = document.getElementById('main-content');
+  if (!skipLink || !target) return;
+
+  skipLink.addEventListener('click', () => {
+    window.requestAnimationFrame(() => {
+      target.focus({ preventScroll: true });
     });
   });
 }
@@ -480,6 +510,7 @@ initHero();
 initScrollAnimations();
 initCounters();
 initAppointmentForm();
+initSkipLink();
 initSmoothScroll();
 initVisibilityPause();
 window.addEventListener('scroll', handleWindowScroll, { passive: true });
