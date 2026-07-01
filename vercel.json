@@ -49,10 +49,3871 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "vision-mission"
+        }
+      ],
+      "destination": "/_seo/tr/service/vision-mission.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "our-values"
+        }
+      ],
+      "destination": "/_seo/tr/service/our-values.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "quality-policy"
+        }
+      ],
+      "destination": "/_seo/tr/service/quality-policy.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "management"
+        }
+      ],
+      "destination": "/_seo/tr/service/management.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "our-doctors"
+        }
+      ],
+      "destination": "/_seo/tr/service/our-doctors.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "health-tourism"
+        }
+      ],
+      "destination": "/_seo/tr/service/health-tourism.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "representatives"
+        }
+      ],
+      "destination": "/_seo/tr/service/representatives.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "sapphire-fue-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/tr/service/sapphire-fue-hair-transplant.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "dhi-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/tr/service/dhi-hair-transplant.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "stem-cell-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/tr/service/stem-cell-hair-transplant.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "unshaven-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/tr/service/unshaven-hair-transplant.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "eyebrow-transplant"
+        }
+      ],
+      "destination": "/_seo/tr/service/eyebrow-transplant.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "beard-mustache-transplant"
+        }
+      ],
+      "destination": "/_seo/tr/service/beard-mustache-transplant.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "acell-prp"
+        }
+      ],
+      "destination": "/_seo/tr/service/acell-prp.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "hair-laser"
+        }
+      ],
+      "destination": "/_seo/tr/service/hair-laser.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "exosome-hair-treatment"
+        }
+      ],
+      "destination": "/_seo/tr/service/exosome-hair-treatment.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "dental-implant"
+        }
+      ],
+      "destination": "/_seo/tr/service/dental-implant.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "teeth-whitening"
+        }
+      ],
+      "destination": "/_seo/tr/service/teeth-whitening.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "hollywood-smile"
+        }
+      ],
+      "destination": "/_seo/tr/service/hollywood-smile.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "orthodontics"
+        }
+      ],
+      "destination": "/_seo/tr/service/orthodontics.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "gingival-aesthetics"
+        }
+      ],
+      "destination": "/_seo/tr/service/gingival-aesthetics.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "zirconium-crown"
+        }
+      ],
+      "destination": "/_seo/tr/service/zirconium-crown.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "breast-augmentation"
+        }
+      ],
+      "destination": "/_seo/tr/service/breast-augmentation.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "breast-reduction"
+        }
+      ],
+      "destination": "/_seo/tr/service/breast-reduction.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "gynecomastia"
+        }
+      ],
+      "destination": "/_seo/tr/service/gynecomastia.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "rhinoplasty"
+        }
+      ],
+      "destination": "/_seo/tr/service/rhinoplasty.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "face-lift"
+        }
+      ],
+      "destination": "/_seo/tr/service/face-lift.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "blepharoplasty"
+        }
+      ],
+      "destination": "/_seo/tr/service/blepharoplasty.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "tummy-tuck"
+        }
+      ],
+      "destination": "/_seo/tr/service/tummy-tuck.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "liposuction"
+        }
+      ],
+      "destination": "/_seo/tr/service/liposuction.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "buttock-lift"
+        }
+      ],
+      "destination": "/_seo/tr/service/buttock-lift.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "lip-filler"
+        }
+      ],
+      "destination": "/_seo/tr/service/lip-filler.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "botox"
         }
       ],
       "destination": "/_seo/tr/service/botox.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "jawline-filler"
+        }
+      ],
+      "destination": "/_seo/tr/service/jawline-filler.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "under-eye-light-filler"
+        }
+      ],
+      "destination": "/_seo/tr/service/under-eye-light-filler.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "laser-hair-removal"
+        }
+      ],
+      "destination": "/_seo/tr/service/laser-hair-removal.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "prp-skin-treatment"
+        }
+      ],
+      "destination": "/_seo/tr/service/prp-skin-treatment.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "medical-skin-care"
+        }
+      ],
+      "destination": "/_seo/tr/service/medical-skin-care.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "salmon-dna"
+        }
+      ],
+      "destination": "/_seo/tr/service/salmon-dna.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "healthy-nutrition"
+        }
+      ],
+      "destination": "/_seo/tr/service/healthy-nutrition.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "lpg-treatment"
+        }
+      ],
+      "destination": "/_seo/tr/service/lpg-treatment.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "ozone-therapy"
+        }
+      ],
+      "destination": "/_seo/tr/service/ozone-therapy.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "iv-therapies"
+        }
+      ],
+      "destination": "/_seo/tr/service/iv-therapies.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "glutathione"
+        }
+      ],
+      "destination": "/_seo/tr/service/glutathione.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "vision-mission"
+        }
+      ],
+      "destination": "/_seo/en/service/vision-mission.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "our-values"
+        }
+      ],
+      "destination": "/_seo/en/service/our-values.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "quality-policy"
+        }
+      ],
+      "destination": "/_seo/en/service/quality-policy.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "management"
+        }
+      ],
+      "destination": "/_seo/en/service/management.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "our-doctors"
+        }
+      ],
+      "destination": "/_seo/en/service/our-doctors.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "health-tourism"
+        }
+      ],
+      "destination": "/_seo/en/service/health-tourism.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "representatives"
+        }
+      ],
+      "destination": "/_seo/en/service/representatives.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "sapphire-fue-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/en/service/sapphire-fue-hair-transplant.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "dhi-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/en/service/dhi-hair-transplant.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "stem-cell-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/en/service/stem-cell-hair-transplant.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "unshaven-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/en/service/unshaven-hair-transplant.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "eyebrow-transplant"
+        }
+      ],
+      "destination": "/_seo/en/service/eyebrow-transplant.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "beard-mustache-transplant"
+        }
+      ],
+      "destination": "/_seo/en/service/beard-mustache-transplant.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "acell-prp"
+        }
+      ],
+      "destination": "/_seo/en/service/acell-prp.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "hair-laser"
+        }
+      ],
+      "destination": "/_seo/en/service/hair-laser.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "exosome-hair-treatment"
+        }
+      ],
+      "destination": "/_seo/en/service/exosome-hair-treatment.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "dental-implant"
+        }
+      ],
+      "destination": "/_seo/en/service/dental-implant.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "teeth-whitening"
+        }
+      ],
+      "destination": "/_seo/en/service/teeth-whitening.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "hollywood-smile"
+        }
+      ],
+      "destination": "/_seo/en/service/hollywood-smile.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "orthodontics"
+        }
+      ],
+      "destination": "/_seo/en/service/orthodontics.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "gingival-aesthetics"
+        }
+      ],
+      "destination": "/_seo/en/service/gingival-aesthetics.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "zirconium-crown"
+        }
+      ],
+      "destination": "/_seo/en/service/zirconium-crown.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "breast-augmentation"
+        }
+      ],
+      "destination": "/_seo/en/service/breast-augmentation.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "breast-reduction"
+        }
+      ],
+      "destination": "/_seo/en/service/breast-reduction.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "gynecomastia"
+        }
+      ],
+      "destination": "/_seo/en/service/gynecomastia.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "rhinoplasty"
+        }
+      ],
+      "destination": "/_seo/en/service/rhinoplasty.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "face-lift"
+        }
+      ],
+      "destination": "/_seo/en/service/face-lift.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "blepharoplasty"
+        }
+      ],
+      "destination": "/_seo/en/service/blepharoplasty.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "tummy-tuck"
+        }
+      ],
+      "destination": "/_seo/en/service/tummy-tuck.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "liposuction"
+        }
+      ],
+      "destination": "/_seo/en/service/liposuction.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "buttock-lift"
+        }
+      ],
+      "destination": "/_seo/en/service/buttock-lift.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "lip-filler"
+        }
+      ],
+      "destination": "/_seo/en/service/lip-filler.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "botox"
+        }
+      ],
+      "destination": "/_seo/en/service/botox.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "jawline-filler"
+        }
+      ],
+      "destination": "/_seo/en/service/jawline-filler.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "under-eye-light-filler"
+        }
+      ],
+      "destination": "/_seo/en/service/under-eye-light-filler.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "laser-hair-removal"
+        }
+      ],
+      "destination": "/_seo/en/service/laser-hair-removal.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "prp-skin-treatment"
+        }
+      ],
+      "destination": "/_seo/en/service/prp-skin-treatment.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "medical-skin-care"
+        }
+      ],
+      "destination": "/_seo/en/service/medical-skin-care.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "salmon-dna"
+        }
+      ],
+      "destination": "/_seo/en/service/salmon-dna.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "healthy-nutrition"
+        }
+      ],
+      "destination": "/_seo/en/service/healthy-nutrition.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "lpg-treatment"
+        }
+      ],
+      "destination": "/_seo/en/service/lpg-treatment.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "ozone-therapy"
+        }
+      ],
+      "destination": "/_seo/en/service/ozone-therapy.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "iv-therapies"
+        }
+      ],
+      "destination": "/_seo/en/service/iv-therapies.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "glutathione"
+        }
+      ],
+      "destination": "/_seo/en/service/glutathione.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "vision-mission"
+        }
+      ],
+      "destination": "/_seo/ar/service/vision-mission.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "our-values"
+        }
+      ],
+      "destination": "/_seo/ar/service/our-values.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "quality-policy"
+        }
+      ],
+      "destination": "/_seo/ar/service/quality-policy.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "management"
+        }
+      ],
+      "destination": "/_seo/ar/service/management.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "our-doctors"
+        }
+      ],
+      "destination": "/_seo/ar/service/our-doctors.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "health-tourism"
+        }
+      ],
+      "destination": "/_seo/ar/service/health-tourism.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "representatives"
+        }
+      ],
+      "destination": "/_seo/ar/service/representatives.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "sapphire-fue-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/ar/service/sapphire-fue-hair-transplant.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "dhi-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/ar/service/dhi-hair-transplant.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "stem-cell-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/ar/service/stem-cell-hair-transplant.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "unshaven-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/ar/service/unshaven-hair-transplant.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "eyebrow-transplant"
+        }
+      ],
+      "destination": "/_seo/ar/service/eyebrow-transplant.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "beard-mustache-transplant"
+        }
+      ],
+      "destination": "/_seo/ar/service/beard-mustache-transplant.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "acell-prp"
+        }
+      ],
+      "destination": "/_seo/ar/service/acell-prp.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "hair-laser"
+        }
+      ],
+      "destination": "/_seo/ar/service/hair-laser.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "exosome-hair-treatment"
+        }
+      ],
+      "destination": "/_seo/ar/service/exosome-hair-treatment.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "dental-implant"
+        }
+      ],
+      "destination": "/_seo/ar/service/dental-implant.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "teeth-whitening"
+        }
+      ],
+      "destination": "/_seo/ar/service/teeth-whitening.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "hollywood-smile"
+        }
+      ],
+      "destination": "/_seo/ar/service/hollywood-smile.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "orthodontics"
+        }
+      ],
+      "destination": "/_seo/ar/service/orthodontics.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "gingival-aesthetics"
+        }
+      ],
+      "destination": "/_seo/ar/service/gingival-aesthetics.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "zirconium-crown"
+        }
+      ],
+      "destination": "/_seo/ar/service/zirconium-crown.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "breast-augmentation"
+        }
+      ],
+      "destination": "/_seo/ar/service/breast-augmentation.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "breast-reduction"
+        }
+      ],
+      "destination": "/_seo/ar/service/breast-reduction.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "gynecomastia"
+        }
+      ],
+      "destination": "/_seo/ar/service/gynecomastia.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "rhinoplasty"
+        }
+      ],
+      "destination": "/_seo/ar/service/rhinoplasty.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "face-lift"
+        }
+      ],
+      "destination": "/_seo/ar/service/face-lift.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "blepharoplasty"
+        }
+      ],
+      "destination": "/_seo/ar/service/blepharoplasty.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "tummy-tuck"
+        }
+      ],
+      "destination": "/_seo/ar/service/tummy-tuck.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "liposuction"
+        }
+      ],
+      "destination": "/_seo/ar/service/liposuction.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "buttock-lift"
+        }
+      ],
+      "destination": "/_seo/ar/service/buttock-lift.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "lip-filler"
+        }
+      ],
+      "destination": "/_seo/ar/service/lip-filler.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "botox"
+        }
+      ],
+      "destination": "/_seo/ar/service/botox.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "jawline-filler"
+        }
+      ],
+      "destination": "/_seo/ar/service/jawline-filler.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "under-eye-light-filler"
+        }
+      ],
+      "destination": "/_seo/ar/service/under-eye-light-filler.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "laser-hair-removal"
+        }
+      ],
+      "destination": "/_seo/ar/service/laser-hair-removal.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "prp-skin-treatment"
+        }
+      ],
+      "destination": "/_seo/ar/service/prp-skin-treatment.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "medical-skin-care"
+        }
+      ],
+      "destination": "/_seo/ar/service/medical-skin-care.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "salmon-dna"
+        }
+      ],
+      "destination": "/_seo/ar/service/salmon-dna.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "healthy-nutrition"
+        }
+      ],
+      "destination": "/_seo/ar/service/healthy-nutrition.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "lpg-treatment"
+        }
+      ],
+      "destination": "/_seo/ar/service/lpg-treatment.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "ozone-therapy"
+        }
+      ],
+      "destination": "/_seo/ar/service/ozone-therapy.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "iv-therapies"
+        }
+      ],
+      "destination": "/_seo/ar/service/iv-therapies.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "glutathione"
+        }
+      ],
+      "destination": "/_seo/ar/service/glutathione.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "vision-mission"
+        }
+      ],
+      "destination": "/_seo/es/service/vision-mission.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "our-values"
+        }
+      ],
+      "destination": "/_seo/es/service/our-values.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "quality-policy"
+        }
+      ],
+      "destination": "/_seo/es/service/quality-policy.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "management"
+        }
+      ],
+      "destination": "/_seo/es/service/management.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "our-doctors"
+        }
+      ],
+      "destination": "/_seo/es/service/our-doctors.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "health-tourism"
+        }
+      ],
+      "destination": "/_seo/es/service/health-tourism.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "representatives"
+        }
+      ],
+      "destination": "/_seo/es/service/representatives.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "sapphire-fue-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/es/service/sapphire-fue-hair-transplant.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "dhi-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/es/service/dhi-hair-transplant.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "stem-cell-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/es/service/stem-cell-hair-transplant.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "unshaven-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/es/service/unshaven-hair-transplant.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "eyebrow-transplant"
+        }
+      ],
+      "destination": "/_seo/es/service/eyebrow-transplant.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "beard-mustache-transplant"
+        }
+      ],
+      "destination": "/_seo/es/service/beard-mustache-transplant.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "acell-prp"
+        }
+      ],
+      "destination": "/_seo/es/service/acell-prp.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "hair-laser"
+        }
+      ],
+      "destination": "/_seo/es/service/hair-laser.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "exosome-hair-treatment"
+        }
+      ],
+      "destination": "/_seo/es/service/exosome-hair-treatment.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "dental-implant"
+        }
+      ],
+      "destination": "/_seo/es/service/dental-implant.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "teeth-whitening"
+        }
+      ],
+      "destination": "/_seo/es/service/teeth-whitening.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "hollywood-smile"
+        }
+      ],
+      "destination": "/_seo/es/service/hollywood-smile.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "orthodontics"
+        }
+      ],
+      "destination": "/_seo/es/service/orthodontics.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "gingival-aesthetics"
+        }
+      ],
+      "destination": "/_seo/es/service/gingival-aesthetics.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "zirconium-crown"
+        }
+      ],
+      "destination": "/_seo/es/service/zirconium-crown.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "breast-augmentation"
+        }
+      ],
+      "destination": "/_seo/es/service/breast-augmentation.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "breast-reduction"
+        }
+      ],
+      "destination": "/_seo/es/service/breast-reduction.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "gynecomastia"
+        }
+      ],
+      "destination": "/_seo/es/service/gynecomastia.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "rhinoplasty"
+        }
+      ],
+      "destination": "/_seo/es/service/rhinoplasty.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "face-lift"
+        }
+      ],
+      "destination": "/_seo/es/service/face-lift.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "blepharoplasty"
+        }
+      ],
+      "destination": "/_seo/es/service/blepharoplasty.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "tummy-tuck"
+        }
+      ],
+      "destination": "/_seo/es/service/tummy-tuck.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "liposuction"
+        }
+      ],
+      "destination": "/_seo/es/service/liposuction.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "buttock-lift"
+        }
+      ],
+      "destination": "/_seo/es/service/buttock-lift.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "lip-filler"
+        }
+      ],
+      "destination": "/_seo/es/service/lip-filler.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "botox"
+        }
+      ],
+      "destination": "/_seo/es/service/botox.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "jawline-filler"
+        }
+      ],
+      "destination": "/_seo/es/service/jawline-filler.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "under-eye-light-filler"
+        }
+      ],
+      "destination": "/_seo/es/service/under-eye-light-filler.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "laser-hair-removal"
+        }
+      ],
+      "destination": "/_seo/es/service/laser-hair-removal.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "prp-skin-treatment"
+        }
+      ],
+      "destination": "/_seo/es/service/prp-skin-treatment.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "medical-skin-care"
+        }
+      ],
+      "destination": "/_seo/es/service/medical-skin-care.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "salmon-dna"
+        }
+      ],
+      "destination": "/_seo/es/service/salmon-dna.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "healthy-nutrition"
+        }
+      ],
+      "destination": "/_seo/es/service/healthy-nutrition.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "lpg-treatment"
+        }
+      ],
+      "destination": "/_seo/es/service/lpg-treatment.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "ozone-therapy"
+        }
+      ],
+      "destination": "/_seo/es/service/ozone-therapy.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "iv-therapies"
+        }
+      ],
+      "destination": "/_seo/es/service/iv-therapies.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "glutathione"
+        }
+      ],
+      "destination": "/_seo/es/service/glutathione.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "vision-mission"
+        }
+      ],
+      "destination": "/_seo/fr/service/vision-mission.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "our-values"
+        }
+      ],
+      "destination": "/_seo/fr/service/our-values.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "quality-policy"
+        }
+      ],
+      "destination": "/_seo/fr/service/quality-policy.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "management"
+        }
+      ],
+      "destination": "/_seo/fr/service/management.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "our-doctors"
+        }
+      ],
+      "destination": "/_seo/fr/service/our-doctors.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "health-tourism"
+        }
+      ],
+      "destination": "/_seo/fr/service/health-tourism.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "representatives"
+        }
+      ],
+      "destination": "/_seo/fr/service/representatives.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "sapphire-fue-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/fr/service/sapphire-fue-hair-transplant.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "dhi-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/fr/service/dhi-hair-transplant.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "stem-cell-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/fr/service/stem-cell-hair-transplant.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "unshaven-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/fr/service/unshaven-hair-transplant.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "eyebrow-transplant"
+        }
+      ],
+      "destination": "/_seo/fr/service/eyebrow-transplant.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "beard-mustache-transplant"
+        }
+      ],
+      "destination": "/_seo/fr/service/beard-mustache-transplant.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "acell-prp"
+        }
+      ],
+      "destination": "/_seo/fr/service/acell-prp.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "hair-laser"
+        }
+      ],
+      "destination": "/_seo/fr/service/hair-laser.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "exosome-hair-treatment"
+        }
+      ],
+      "destination": "/_seo/fr/service/exosome-hair-treatment.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "dental-implant"
+        }
+      ],
+      "destination": "/_seo/fr/service/dental-implant.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "teeth-whitening"
+        }
+      ],
+      "destination": "/_seo/fr/service/teeth-whitening.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "hollywood-smile"
+        }
+      ],
+      "destination": "/_seo/fr/service/hollywood-smile.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "orthodontics"
+        }
+      ],
+      "destination": "/_seo/fr/service/orthodontics.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "gingival-aesthetics"
+        }
+      ],
+      "destination": "/_seo/fr/service/gingival-aesthetics.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "zirconium-crown"
+        }
+      ],
+      "destination": "/_seo/fr/service/zirconium-crown.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "breast-augmentation"
+        }
+      ],
+      "destination": "/_seo/fr/service/breast-augmentation.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "breast-reduction"
+        }
+      ],
+      "destination": "/_seo/fr/service/breast-reduction.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "gynecomastia"
+        }
+      ],
+      "destination": "/_seo/fr/service/gynecomastia.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "rhinoplasty"
+        }
+      ],
+      "destination": "/_seo/fr/service/rhinoplasty.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "face-lift"
+        }
+      ],
+      "destination": "/_seo/fr/service/face-lift.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "blepharoplasty"
+        }
+      ],
+      "destination": "/_seo/fr/service/blepharoplasty.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "tummy-tuck"
+        }
+      ],
+      "destination": "/_seo/fr/service/tummy-tuck.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "liposuction"
+        }
+      ],
+      "destination": "/_seo/fr/service/liposuction.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "buttock-lift"
+        }
+      ],
+      "destination": "/_seo/fr/service/buttock-lift.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "lip-filler"
+        }
+      ],
+      "destination": "/_seo/fr/service/lip-filler.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "botox"
+        }
+      ],
+      "destination": "/_seo/fr/service/botox.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "jawline-filler"
+        }
+      ],
+      "destination": "/_seo/fr/service/jawline-filler.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "under-eye-light-filler"
+        }
+      ],
+      "destination": "/_seo/fr/service/under-eye-light-filler.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "laser-hair-removal"
+        }
+      ],
+      "destination": "/_seo/fr/service/laser-hair-removal.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "prp-skin-treatment"
+        }
+      ],
+      "destination": "/_seo/fr/service/prp-skin-treatment.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "medical-skin-care"
+        }
+      ],
+      "destination": "/_seo/fr/service/medical-skin-care.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "salmon-dna"
+        }
+      ],
+      "destination": "/_seo/fr/service/salmon-dna.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "healthy-nutrition"
+        }
+      ],
+      "destination": "/_seo/fr/service/healthy-nutrition.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "lpg-treatment"
+        }
+      ],
+      "destination": "/_seo/fr/service/lpg-treatment.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "ozone-therapy"
+        }
+      ],
+      "destination": "/_seo/fr/service/ozone-therapy.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "iv-therapies"
+        }
+      ],
+      "destination": "/_seo/fr/service/iv-therapies.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "glutathione"
+        }
+      ],
+      "destination": "/_seo/fr/service/glutathione.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "vision-mission"
+        }
+      ],
+      "destination": "/_seo/it/service/vision-mission.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "our-values"
+        }
+      ],
+      "destination": "/_seo/it/service/our-values.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "quality-policy"
+        }
+      ],
+      "destination": "/_seo/it/service/quality-policy.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "management"
+        }
+      ],
+      "destination": "/_seo/it/service/management.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "our-doctors"
+        }
+      ],
+      "destination": "/_seo/it/service/our-doctors.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "health-tourism"
+        }
+      ],
+      "destination": "/_seo/it/service/health-tourism.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "representatives"
+        }
+      ],
+      "destination": "/_seo/it/service/representatives.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "sapphire-fue-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/it/service/sapphire-fue-hair-transplant.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "dhi-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/it/service/dhi-hair-transplant.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "stem-cell-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/it/service/stem-cell-hair-transplant.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "unshaven-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/it/service/unshaven-hair-transplant.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "eyebrow-transplant"
+        }
+      ],
+      "destination": "/_seo/it/service/eyebrow-transplant.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "beard-mustache-transplant"
+        }
+      ],
+      "destination": "/_seo/it/service/beard-mustache-transplant.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "acell-prp"
+        }
+      ],
+      "destination": "/_seo/it/service/acell-prp.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "hair-laser"
+        }
+      ],
+      "destination": "/_seo/it/service/hair-laser.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "exosome-hair-treatment"
+        }
+      ],
+      "destination": "/_seo/it/service/exosome-hair-treatment.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "dental-implant"
+        }
+      ],
+      "destination": "/_seo/it/service/dental-implant.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "teeth-whitening"
+        }
+      ],
+      "destination": "/_seo/it/service/teeth-whitening.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "hollywood-smile"
+        }
+      ],
+      "destination": "/_seo/it/service/hollywood-smile.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "orthodontics"
+        }
+      ],
+      "destination": "/_seo/it/service/orthodontics.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "gingival-aesthetics"
+        }
+      ],
+      "destination": "/_seo/it/service/gingival-aesthetics.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "zirconium-crown"
+        }
+      ],
+      "destination": "/_seo/it/service/zirconium-crown.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "breast-augmentation"
+        }
+      ],
+      "destination": "/_seo/it/service/breast-augmentation.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "breast-reduction"
+        }
+      ],
+      "destination": "/_seo/it/service/breast-reduction.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "gynecomastia"
+        }
+      ],
+      "destination": "/_seo/it/service/gynecomastia.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "rhinoplasty"
+        }
+      ],
+      "destination": "/_seo/it/service/rhinoplasty.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "face-lift"
+        }
+      ],
+      "destination": "/_seo/it/service/face-lift.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "blepharoplasty"
+        }
+      ],
+      "destination": "/_seo/it/service/blepharoplasty.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "tummy-tuck"
+        }
+      ],
+      "destination": "/_seo/it/service/tummy-tuck.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "liposuction"
+        }
+      ],
+      "destination": "/_seo/it/service/liposuction.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "buttock-lift"
+        }
+      ],
+      "destination": "/_seo/it/service/buttock-lift.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "lip-filler"
+        }
+      ],
+      "destination": "/_seo/it/service/lip-filler.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "botox"
+        }
+      ],
+      "destination": "/_seo/it/service/botox.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "jawline-filler"
+        }
+      ],
+      "destination": "/_seo/it/service/jawline-filler.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "under-eye-light-filler"
+        }
+      ],
+      "destination": "/_seo/it/service/under-eye-light-filler.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "laser-hair-removal"
+        }
+      ],
+      "destination": "/_seo/it/service/laser-hair-removal.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "prp-skin-treatment"
+        }
+      ],
+      "destination": "/_seo/it/service/prp-skin-treatment.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "medical-skin-care"
+        }
+      ],
+      "destination": "/_seo/it/service/medical-skin-care.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "salmon-dna"
+        }
+      ],
+      "destination": "/_seo/it/service/salmon-dna.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "healthy-nutrition"
+        }
+      ],
+      "destination": "/_seo/it/service/healthy-nutrition.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "lpg-treatment"
+        }
+      ],
+      "destination": "/_seo/it/service/lpg-treatment.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "ozone-therapy"
+        }
+      ],
+      "destination": "/_seo/it/service/ozone-therapy.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "iv-therapies"
+        }
+      ],
+      "destination": "/_seo/it/service/iv-therapies.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "glutathione"
+        }
+      ],
+      "destination": "/_seo/it/service/glutathione.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "vision-mission"
+        }
+      ],
+      "destination": "/_seo/ru/service/vision-mission.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "our-values"
+        }
+      ],
+      "destination": "/_seo/ru/service/our-values.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "quality-policy"
+        }
+      ],
+      "destination": "/_seo/ru/service/quality-policy.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "management"
+        }
+      ],
+      "destination": "/_seo/ru/service/management.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "our-doctors"
+        }
+      ],
+      "destination": "/_seo/ru/service/our-doctors.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "health-tourism"
+        }
+      ],
+      "destination": "/_seo/ru/service/health-tourism.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "representatives"
+        }
+      ],
+      "destination": "/_seo/ru/service/representatives.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "sapphire-fue-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/ru/service/sapphire-fue-hair-transplant.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "dhi-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/ru/service/dhi-hair-transplant.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "stem-cell-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/ru/service/stem-cell-hair-transplant.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "unshaven-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/ru/service/unshaven-hair-transplant.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "eyebrow-transplant"
+        }
+      ],
+      "destination": "/_seo/ru/service/eyebrow-transplant.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "beard-mustache-transplant"
+        }
+      ],
+      "destination": "/_seo/ru/service/beard-mustache-transplant.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "acell-prp"
+        }
+      ],
+      "destination": "/_seo/ru/service/acell-prp.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "hair-laser"
+        }
+      ],
+      "destination": "/_seo/ru/service/hair-laser.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "exosome-hair-treatment"
+        }
+      ],
+      "destination": "/_seo/ru/service/exosome-hair-treatment.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "dental-implant"
+        }
+      ],
+      "destination": "/_seo/ru/service/dental-implant.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "teeth-whitening"
+        }
+      ],
+      "destination": "/_seo/ru/service/teeth-whitening.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "hollywood-smile"
+        }
+      ],
+      "destination": "/_seo/ru/service/hollywood-smile.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "orthodontics"
+        }
+      ],
+      "destination": "/_seo/ru/service/orthodontics.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "gingival-aesthetics"
+        }
+      ],
+      "destination": "/_seo/ru/service/gingival-aesthetics.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "zirconium-crown"
+        }
+      ],
+      "destination": "/_seo/ru/service/zirconium-crown.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "breast-augmentation"
+        }
+      ],
+      "destination": "/_seo/ru/service/breast-augmentation.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "breast-reduction"
+        }
+      ],
+      "destination": "/_seo/ru/service/breast-reduction.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "gynecomastia"
+        }
+      ],
+      "destination": "/_seo/ru/service/gynecomastia.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "rhinoplasty"
+        }
+      ],
+      "destination": "/_seo/ru/service/rhinoplasty.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "face-lift"
+        }
+      ],
+      "destination": "/_seo/ru/service/face-lift.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "blepharoplasty"
+        }
+      ],
+      "destination": "/_seo/ru/service/blepharoplasty.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "tummy-tuck"
+        }
+      ],
+      "destination": "/_seo/ru/service/tummy-tuck.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "liposuction"
+        }
+      ],
+      "destination": "/_seo/ru/service/liposuction.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "buttock-lift"
+        }
+      ],
+      "destination": "/_seo/ru/service/buttock-lift.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "lip-filler"
+        }
+      ],
+      "destination": "/_seo/ru/service/lip-filler.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "botox"
+        }
+      ],
+      "destination": "/_seo/ru/service/botox.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "jawline-filler"
+        }
+      ],
+      "destination": "/_seo/ru/service/jawline-filler.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "under-eye-light-filler"
+        }
+      ],
+      "destination": "/_seo/ru/service/under-eye-light-filler.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "laser-hair-removal"
+        }
+      ],
+      "destination": "/_seo/ru/service/laser-hair-removal.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "prp-skin-treatment"
+        }
+      ],
+      "destination": "/_seo/ru/service/prp-skin-treatment.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "medical-skin-care"
+        }
+      ],
+      "destination": "/_seo/ru/service/medical-skin-care.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "salmon-dna"
+        }
+      ],
+      "destination": "/_seo/ru/service/salmon-dna.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "healthy-nutrition"
+        }
+      ],
+      "destination": "/_seo/ru/service/healthy-nutrition.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "lpg-treatment"
+        }
+      ],
+      "destination": "/_seo/ru/service/lpg-treatment.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "ozone-therapy"
+        }
+      ],
+      "destination": "/_seo/ru/service/ozone-therapy.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "iv-therapies"
+        }
+      ],
+      "destination": "/_seo/ru/service/iv-therapies.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "glutathione"
+        }
+      ],
+      "destination": "/_seo/ru/service/glutathione.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "vision-mission"
+        }
+      ],
+      "destination": "/_seo/de/service/vision-mission.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "our-values"
+        }
+      ],
+      "destination": "/_seo/de/service/our-values.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "quality-policy"
+        }
+      ],
+      "destination": "/_seo/de/service/quality-policy.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "management"
+        }
+      ],
+      "destination": "/_seo/de/service/management.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "our-doctors"
+        }
+      ],
+      "destination": "/_seo/de/service/our-doctors.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "health-tourism"
+        }
+      ],
+      "destination": "/_seo/de/service/health-tourism.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "representatives"
+        }
+      ],
+      "destination": "/_seo/de/service/representatives.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "sapphire-fue-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/de/service/sapphire-fue-hair-transplant.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "dhi-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/de/service/dhi-hair-transplant.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "stem-cell-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/de/service/stem-cell-hair-transplant.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "unshaven-hair-transplant"
+        }
+      ],
+      "destination": "/_seo/de/service/unshaven-hair-transplant.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "eyebrow-transplant"
+        }
+      ],
+      "destination": "/_seo/de/service/eyebrow-transplant.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "beard-mustache-transplant"
+        }
+      ],
+      "destination": "/_seo/de/service/beard-mustache-transplant.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "acell-prp"
+        }
+      ],
+      "destination": "/_seo/de/service/acell-prp.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "hair-laser"
+        }
+      ],
+      "destination": "/_seo/de/service/hair-laser.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "exosome-hair-treatment"
+        }
+      ],
+      "destination": "/_seo/de/service/exosome-hair-treatment.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "dental-implant"
+        }
+      ],
+      "destination": "/_seo/de/service/dental-implant.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "teeth-whitening"
+        }
+      ],
+      "destination": "/_seo/de/service/teeth-whitening.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "hollywood-smile"
+        }
+      ],
+      "destination": "/_seo/de/service/hollywood-smile.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "orthodontics"
+        }
+      ],
+      "destination": "/_seo/de/service/orthodontics.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "gingival-aesthetics"
+        }
+      ],
+      "destination": "/_seo/de/service/gingival-aesthetics.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "zirconium-crown"
+        }
+      ],
+      "destination": "/_seo/de/service/zirconium-crown.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "breast-augmentation"
+        }
+      ],
+      "destination": "/_seo/de/service/breast-augmentation.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "breast-reduction"
+        }
+      ],
+      "destination": "/_seo/de/service/breast-reduction.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "gynecomastia"
+        }
+      ],
+      "destination": "/_seo/de/service/gynecomastia.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "rhinoplasty"
+        }
+      ],
+      "destination": "/_seo/de/service/rhinoplasty.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "face-lift"
+        }
+      ],
+      "destination": "/_seo/de/service/face-lift.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "blepharoplasty"
+        }
+      ],
+      "destination": "/_seo/de/service/blepharoplasty.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "tummy-tuck"
+        }
+      ],
+      "destination": "/_seo/de/service/tummy-tuck.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "liposuction"
+        }
+      ],
+      "destination": "/_seo/de/service/liposuction.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "buttock-lift"
+        }
+      ],
+      "destination": "/_seo/de/service/buttock-lift.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "lip-filler"
+        }
+      ],
+      "destination": "/_seo/de/service/lip-filler.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "botox"
+        }
+      ],
+      "destination": "/_seo/de/service/botox.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "jawline-filler"
+        }
+      ],
+      "destination": "/_seo/de/service/jawline-filler.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "under-eye-light-filler"
+        }
+      ],
+      "destination": "/_seo/de/service/under-eye-light-filler.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "laser-hair-removal"
+        }
+      ],
+      "destination": "/_seo/de/service/laser-hair-removal.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "prp-skin-treatment"
+        }
+      ],
+      "destination": "/_seo/de/service/prp-skin-treatment.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "medical-skin-care"
+        }
+      ],
+      "destination": "/_seo/de/service/medical-skin-care.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "salmon-dna"
+        }
+      ],
+      "destination": "/_seo/de/service/salmon-dna.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "healthy-nutrition"
+        }
+      ],
+      "destination": "/_seo/de/service/healthy-nutrition.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "lpg-treatment"
+        }
+      ],
+      "destination": "/_seo/de/service/lpg-treatment.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "ozone-therapy"
+        }
+      ],
+      "destination": "/_seo/de/service/ozone-therapy.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "iv-therapies"
+        }
+      ],
+      "destination": "/_seo/de/service/iv-therapies.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "glutathione"
+        }
+      ],
+      "destination": "/_seo/de/service/glutathione.html"
     },
     {
       "source": "/:locale(tr|en|ar|es|fr|it|ru|de)/service.html",
