@@ -27,16 +27,7 @@ export function initHeaderLogoMotion() {
       offscreen.height = height;
     }
 
-    let rafId = null;
-    let animating = false;
-
     function renderFrame() {
-      if (document.hidden) {
-        animating = false;
-        rafId = null;
-        return;
-      }
-
       if (video.readyState >= 2 && video.videoWidth > 0 && video.videoHeight > 0) {
         const sourceWidth = video.videoWidth;
         const sourceHeight = video.videoHeight;
@@ -76,22 +67,13 @@ export function initHeaderLogoMotion() {
         ctx.putImageData(frame, 0, 0);
       }
 
-      rafId = requestAnimationFrame(renderFrame);
-    }
-
-    function startRenderLoop() {
-      if (animating || document.hidden) return;
-      animating = true;
-      rafId = requestAnimationFrame(renderFrame);
+      requestAnimationFrame(renderFrame);
     }
 
     resizeCanvases();
-    window.addEventListener('resize', resizeCanvases, { passive: true });
-    document.addEventListener('visibilitychange', () => {
-      if (!document.hidden) startRenderLoop();
-    });
+    window.addEventListener('resize', resizeCanvases);
 
     video.play().catch(() => {});
-    startRenderLoop();
+    renderFrame();
   });
 }

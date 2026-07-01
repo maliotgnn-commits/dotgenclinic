@@ -2088,28 +2088,9 @@ body.custom-cursor-enabled, body.custom-cursor-enabled a, body.custom-cursor-ena
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto
-  }
-
-  .intro-particles,
-  .intro-glow,
-  .intro-ring,
-  .intro-scroll-indicator,
-  .hero-scroll-hint {
-    display: none
-  }
-
-  .particle,
-  .intro-logo-wrapper,
-  .intro-tagline,
-  .partners-marquee-wrap,
-  .hero-scroll-hint .wheel,
-  .whatsapp-float {
-    animation: none !important
-  }
-
-  .partners-marquee-wrap {
-    transform: none
+  .animate-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none
   }
 }

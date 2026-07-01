@@ -50,9 +50,13 @@ export function initCustomCursor() {
     mousePos.x = event.clientX;
     mousePos.y = event.clientY;
     if (!visible) setVisible(true);
+    startAnimation();
   }, { passive: true });
 
-  window.addEventListener('mouseenter', () => setVisible(true));
+  window.addEventListener('mouseenter', () => {
+    setVisible(true);
+    startAnimation();
+  });
   window.addEventListener('mouseleave', () => setVisible(false));
 
   window.addEventListener('mousedown', () => {
