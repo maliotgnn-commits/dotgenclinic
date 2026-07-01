@@ -44,6 +44,17 @@
   ],
   "rewrites": [
     {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "botox"
+        }
+      ],
+      "destination": "/_seo/tr/service/botox.html"
+    },
+    {
       "source": "/:locale(tr|en|ar|es|fr|it|ru|de)/service.html",
       "destination": "/service.html"
     },
