@@ -50,9 +50,13 @@ export function initCustomCursor() {
     mousePos.x = event.clientX;
     mousePos.y = event.clientY;
     if (!visible) setVisible(true);
-  });
+    startAnimation();
+  }, { passive: true });
 
-  window.addEventListener('mouseenter', () => setVisible(true));
+  window.addEventListener('mouseenter', () => {
+    setVisible(true);
+    startAnimation();
+  });
   window.addEventListener('mouseleave', () => setVisible(false));
 
   window.addEventListener('mousedown', () => {
@@ -81,7 +85,16 @@ export function initCustomCursor() {
     });
     });
 
+  let rafId = null;
+  let animating = false;
+
   function animate() {
+    if (document.hidden) {
+      animating = false;
+      rafId = null;
+      return;
+    }
+
     cursorPos.x += (mousePos.x - cursorPos.x) * 0.28;
     cursorPos.y += (mousePos.y - cursorPos.y) * 0.28;
     scale += (targetScale - scale) * 0.22;
@@ -103,8 +116,18 @@ export function initCustomCursor() {
       dot.style.opacity = String((1 - index / (trailCount + 1)) * 0.95);
     });
 
-    requestAnimationFrame(animate);
+    rafId = requestAnimationFrame(animate);
   }
 
-  animate();
+  function startAnimation() {
+    if (animating || document.hidden) return;
+    animating = true;
+    rafId = requestAnimationFrame(animate);
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden && visible) startAnimation();
+  });
+
+  startAnimation();
 }
