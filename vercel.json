@@ -15,11 +15,11 @@
       "has": [
         {
           "type": "query",
-          "key": "slug"
+          "key": "slug",
+          "value": "(?<slug>.+)"
         }
       ],
-      "destination": "/tr/service.html",
-      "preserveQueryParams": true,
+      "destination": "/tr/service.html?slug=:slug",
       "permanent": true
     }
   ],
