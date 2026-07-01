@@ -187,6 +187,16 @@ export function applyStaticTranslations(dictionary, root = document) {
   if (description) {
     description.setAttribute('content', translate(dictionary, description.getAttribute('content')));
   }
+
+  const title = root.querySelector('title');
+  if (title) {
+    const sourceTitle = title.textContent.trim();
+    const translatedTitle = translate(dictionary, sourceTitle);
+    if (translatedTitle !== sourceTitle) {
+      title.textContent = translatedTitle;
+      document.title = translatedTitle;
+    }
+  }
 }
 
 function upsertSeoLink(rel, hreflang, href) {
