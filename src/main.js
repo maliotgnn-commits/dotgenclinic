@@ -1,4 +1,5 @@
 import './style.css';
+import footerVideoUrl from '../kj.mp4';
 import { applySubcategoryLinks } from './subpages-data.js';
 import { initCustomCursor } from './cursor.js';
 import {
@@ -18,7 +19,8 @@ import { mountLanguageSwitcher } from './language-switcher.js';
 const locale = getCurrentLocale('home');
 const uiDictionary = await loadUiDictionary(locale);
 const privacyContent = await loadPrivacyContent(locale);
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+let prefersReducedMotion = prefersReducedMotionQuery.matches;
 
 const introOverlay = document.getElementById('intro-overlay');
 const introSection = document.getElementById('intro-section');
@@ -36,6 +38,9 @@ let introComplete = false;
 let introProgress = 0;
 let currentSlide = 0;
 let slideInterval;
+let footerVideoInitialized = false;
+let footerObserver = null;
+const pausedByVisibility = new Set();
 
 applySubcategoryLinks(document, (slug) => serviceUrlForLocale(slug, locale));
 localizeInternalLinks(locale);
@@ -230,13 +235,120 @@ function setupHeroVideoLoop() {
   });
 }
 
+function safePlayVideo(video) {
+  video.play().catch(() => {});
+}
+
+function isVideoActivelyPlaying(video) {
+  return !video.paused && !video.ended && video.readyState > 2;
+}
+
 function syncHeroVideoPlayback() {
   document.querySelectorAll('.hero-bg-video').forEach((video) => {
     const slide = video.closest('.hero-slide');
+    if (prefersReducedMotion) {
+      video.pause();
+      return;
+    }
     if (slide?.classList.contains('active')) {
-      video.play().catch(() => {});
+      safePlayVideo(video);
     } else {
       video.pause();
+    }
+  });
+}
+
+function initFooterVideoLazyLoad() {
+  const video = document.querySelector('.footer-brand-video');
+  if (!video || prefersReducedMotion || footerVideoInitialized) return;
+
+  const loadFooterVideo = () => {
+    if (footerVideoInitialized || prefersReducedMotion) return;
+    footerVideoInitialized = true;
+    footerObserver?.disconnect();
+    footerObserver = null;
+
+    const source = document.createElement('source');
+    source.src = footerVideoUrl;
+    source.type = 'video/mp4';
+    video.appendChild(source);
+    video.load();
+
+    const tryPlay = () => {
+      if (prefersReducedMotion || document.hidden) return;
+      safePlayVideo(video);
+    };
+
+    if (video.readyState >= 2) {
+      tryPlay();
+    } else {
+      video.addEventListener('loadeddata', tryPlay, { once: true });
+    }
+  };
+
+  footerObserver?.disconnect();
+
+  if (!('IntersectionObserver' in window)) {
+    loadFooterVideo();
+    return;
+  }
+
+  footerObserver = new IntersectionObserver((entries) => {
+    if (entries.some((entry) => entry.isIntersecting)) {
+      loadFooterVideo();
+    }
+  }, { root: null, rootMargin: '400px 0px', threshold: 0 });
+
+  footerObserver.observe(video);
+}
+
+function tryResumeVideoAfterVisibility(video) {
+  if (!pausedByVisibility.has(video)) return;
+
+  if (prefersReducedMotion) {
+    pausedByVisibility.delete(video);
+    return;
+  }
+
+  if (video.classList.contains('hero-bg-video')) {
+    const slide = video.closest('.hero-slide');
+    if (!slide?.classList.contains('active')) {
+      pausedByVisibility.delete(video);
+      return;
+    }
+  }
+
+  if (video.classList.contains('footer-brand-video') && (!footerVideoInitialized || !video.querySelector('source'))) {
+    pausedByVisibility.delete(video);
+    return;
+  }
+
+  const attemptPlay = () => {
+    safePlayVideo(video);
+    pausedByVisibility.delete(video);
+  };
+
+  if (video.readyState >= 2) {
+    attemptPlay();
+  } else {
+    video.addEventListener('canplay', attemptPlay, { once: true });
+  }
+}
+
+function initReducedMotionWatch() {
+  prefersReducedMotionQuery.addEventListener('change', (event) => {
+    prefersReducedMotion = event.matches;
+    if (prefersReducedMotion) {
+      footerObserver?.disconnect();
+      footerObserver = null;
+      document.querySelectorAll('.hero-bg-video, .footer-brand-video').forEach((video) => {
+        video.pause();
+      });
+      return;
+    }
+    syncHeroVideoPlayback();
+    if (!footerVideoInitialized) {
+      initFooterVideoLazyLoad();
     }
   });
 }
@@ -507,8 +619,17 @@ function initVisibilityPause() {
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
       window.clearInterval(slideInterval);
+      document.querySelectorAll('.hero-bg-video, .footer-brand-video').forEach((video) => {
+        if (isVideoActivelyPlaying(video)) {
+          video.pause();
+          pausedByVisibility.add(video);
+        }
+      });
       return;
     }
+
+    [...pausedByVisibility].forEach((video) => tryResumeVideoAfterVisibility(video));
+
     if (introComplete) startSlider();
   });
 }
@@ -522,4 +643,6 @@ initAppointmentForm();
 initSkipLink();
 initSmoothScroll();
 initVisibilityPause();
+initReducedMotionWatch();
+initFooterVideoLazyLoad();
 window.addEventListener('scroll', handleWindowScroll, { passive: true });
