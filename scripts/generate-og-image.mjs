@@ -40,7 +40,12 @@ $bitmap.Save($output, [System.Drawing.Imaging.ImageFormat]::Png)
 $logo.Dispose(); $bitmap.Dispose(); $graphics.Dispose(); $background.Dispose(); $brush.Dispose(); $font.Dispose()
 `;
 
-export async function generateOgImage() {
+async function generateOgImageLocal() {
+  if (process.platform !== 'win32') {
+    console.error('[generate-og-image] Manual generation is Windows/PowerShell only. Commit public/images/og/dr-otgen-clinic-social-card.png instead.');
+    process.exit(1);
+  }
+
   if (!existsSync(LOGO_FILE)) {
     console.error(`[generate-og-image] Missing logo asset: ${LOGO_FILE}`);
     process.exit(1);
@@ -71,4 +76,12 @@ export async function generateOgImage() {
   }
 
   console.log(`[generate-og-image] Wrote ${OUTPUT_FILE} (${png.length} bytes)`);
+}
+
+const isDirectRun = process.argv[1]?.endsWith('generate-og-image.mjs');
+if (isDirectRun) {
+  generateOgImageLocal().catch((error) => {
+    console.error('[generate-og-image] Failed:', error);
+    process.exit(1);
+  });
 }

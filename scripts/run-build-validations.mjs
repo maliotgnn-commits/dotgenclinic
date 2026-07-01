@@ -11,6 +11,7 @@ const steps = [
   ['node', ['scripts/verify-privacy-content.mjs']],
   ['node', ['scripts/verify-privacy-static-seo.mjs']],
   ['node', ['scripts/verify-schema.mjs']],
+  ['node', ['scripts/verify-og-social-image.mjs']],
   ['node', ['scripts/verify-og-metadata.mjs']],
   ['node', ['scripts/verify-vercel-rewrites.mjs']],
   ['node', ['scripts/verify-home-static-seo.mjs']],

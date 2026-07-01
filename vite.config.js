@@ -3,7 +3,7 @@ import { resolve } from 'node:path';
 import { prerenderHomeSeo } from './scripts/prerender-home-seo.mjs';
 import { prerenderServiceSeo } from './scripts/prerender-service-seo.mjs';
 import { prerenderPrivacySeo } from './scripts/prerender-privacy-seo.mjs';
-import { generateOgImage } from './scripts/generate-og-image.mjs';
+import { verifyOgSocialImage } from './scripts/verify-og-social-image.mjs';
 import { runBuildValidations } from './scripts/run-build-validations.mjs';
 
 const localePattern = /^\/(?:tr|en|ar|es|fr|it|ru|de)(?:\/(service\.html|privacy\.html)?)?$/;
@@ -48,7 +48,7 @@ function buildSeoPipeline() {
     apply: 'build',
     async closeBundle() {
       const outDir = resolve(import.meta.dirname, 'dist');
-      await generateOgImage();
+      verifyOgSocialImage();
       prerenderHomeSeo(outDir);
       prerenderServiceSeo(outDir);
       prerenderPrivacySeo(outDir);

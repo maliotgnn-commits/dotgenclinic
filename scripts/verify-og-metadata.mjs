@@ -33,6 +33,7 @@ const sampleSlug = 'botox';
 });
 
 assert(existsSync(PUBLIC_OG), `Missing public OG image: ${PUBLIC_OG}`);
+assert(CLINIC.ogImageUrl.endsWith(OG_IMAGE_PATH), `OG image URL must point to ${OG_IMAGE_PATH}`);
 
 if (existsSync(PUBLIC_OG)) {
   const png = readFileSync(PUBLIC_OG);
