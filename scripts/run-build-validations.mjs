@@ -8,6 +8,7 @@ const ROOT = resolve(__dirname, '..');
 
 const steps = [
   ['node', ['scripts/verify-service-static-seo.mjs']],
+  ['node', ['scripts/verify-privacy-content.mjs']],
   ['node', ['scripts/verify-privacy-static-seo.mjs']],
   ['node', ['scripts/verify-schema.mjs']],
   ['node', ['scripts/verify-og-metadata.mjs']],

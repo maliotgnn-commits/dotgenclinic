@@ -1,12 +1,26 @@
-import { readFileSync, existsSync, readdirSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { LOCALES, CLINIC } from './seo-shared.mjs';
+import { LOCALES, CLINIC, escapeHtml } from './seo-shared.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const DIST = resolve(ROOT, 'dist');
 const failures = [];
+const NON_EN_LOCALES = ['de', 'es', 'fr', 'it', 'ru', 'ar'];
+const ENGLISH_BODY_MARKERS = [
+  'As Dr Otgen Clinic A.Ş. (the "Clinic" or "Data Controller")',
+  'Within the scope of the healthcare services provided by our Clinic',
+  'Identity of the Data Controller',
+  'Website Appointment Form',
+  'Clinic Locations',
+  'Shared phone',
+  'Back to Home',
+];
+
+function loadPrivacy(locale) {
+  return JSON.parse(readFileSync(resolve(ROOT, `src/i18n/privacy/${locale}.json`), 'utf8'));
+}
 
 function assert(condition, message) {
   if (!condition) failures.push(message);
@@ -15,7 +29,7 @@ function assert(condition, message) {
 for (const locale of LOCALES) {
   const filePath = resolve(DIST, locale, 'privacy.html');
   const label = locale;
-  const content = JSON.parse(readFileSync(resolve(ROOT, `src/i18n/privacy/${locale}.json`), 'utf8'));
+  const content = loadPrivacy(locale);
 
   assert(existsSync(filePath), `[${label}] Missing dist/${locale}/privacy.html`);
 
@@ -36,10 +50,19 @@ for (const locale of LOCALES) {
   assert(html.includes(content.webFormSection.title), `[${label}] web form section missing`);
   assert(html.includes(content.locationsSection.title), `[${label}] locations section missing`);
   assert(html.includes(CLINIC.locations[0].address), `[${label}] Izmir address missing`);
+  assert(html.includes(escapeHtml(content.intro[0])), `[${label}] locale intro paragraph missing in rendered HTML`);
+  assert(html.includes(escapeHtml(content.sections[0].heading)), `[${label}] first section heading missing in rendered HTML`);
+  assert((html.match(/<h2>/g) || []).length >= 9, `[${label}] expected privacy section headings in HTML`);
 
   if (locale === 'ar') {
     assert(html.includes('lang="ar"'), `[${label}] lang=ar missing`);
     assert(html.includes('dir="rtl"'), `[${label}] dir=rtl missing`);
+  }
+
+  if (NON_EN_LOCALES.includes(locale)) {
+    for (const marker of ENGLISH_BODY_MARKERS) {
+      assert(!html.includes(marker), `[${label}] English body leak in rendered HTML: "${marker}"`);
+    }
   }
 }
 

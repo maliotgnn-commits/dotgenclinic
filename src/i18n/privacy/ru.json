@@ -5,132 +5,123 @@
   },
   "documentTitle": "DR OTGEN CLINIC A.Ş. УВЕДОМЛЕНИЕ О КОНФИДЕНЦИАЛЬНОСТИ ОБ ОБРАБОТКЕ ПЕРСОНАЛЬНЫХ ДАННЫХ",
   "intro": [
-    "As Dr Otgen Clinic A.Ş. (the \"Clinic\" or \"Data Controller\"), we attach great importance to processing and protecting the personal data of our patients, clients, employees and all persons contacting us in compliance with the Constitution of the Republic of Turkey, international treaties on human rights to which our country is a party, and the Personal Data Protection Law No. 6698 (\"KVKK\") and other applicable legislation.",
-    "This privacy notice has been prepared under Article 10 of the KVKK to inform you about how your personal data are collected, the purposes of processing, the persons/institutions to whom they may be transferred, and your rights."
+    "Компания Dr Otgen Clinic A.Ş. («Клиника» или «Оператор данных») придает большое значение обработке и защите персональных данных наших пациентов, клиентов, сотрудников и всех лиц, обращающихся к нам, в соответствии с Конституцией Республики Турция, международными договорами о правах человека, участником которых является наша страна, и Законом о защите персональных данных № 6698 («KVKK»), а также иным применимым законодательством.",
+    "Настоящее уведомление подготовлено в соответствии со статьей 10 KVKK, чтобы проинформировать вас о способах сбора ваших персональных данных, целях обработки, лицах/организациях, которым они могут передаваться, и ваших правах."
   ],
   "sections": [
     {
-      "heading": "1. Identity of the Data Controller",
+      "heading": "1. Сведения об операторе данных",
       "paragraphs": [
-        "Pursuant to Law No. 6698 on the Protection of Personal Data, your personal data may be processed by Dr Otgen Clinic A.Ş. as data controller within the scope described below."
+        "В соответствии с Законом № 6698 о защите персональных данных ваши персональные данные могут обрабатываться Dr Otgen Clinic A.Ş. в качестве оператора данных в описанном ниже объеме."
       ]
     },
     {
-      "heading": "2. Your Personal Data Processed",
+      "heading": "2. Обрабатываемые персональные данные",
       "paragraphs": [
-        "Within the scope of the healthcare services provided by our Clinic, the following personal data may be processed:",
-        "Identity Data: Your name, surname, Turkish ID number, passport number or temporary Turkish ID number, place and date of birth, marital status, gender and similar identity information.",
-        "Contact Data: Your address, telephone number, e-mail address and similar contact details.",
-        "Health Data (Special Categories of Personal Data): Your laboratory results, test results, examination data, appointment information, prescription information, medical history and, without limitation, all health data obtained during or as a result of medical diagnosis, treatment and care services.",
-        "Financial Data: Your bank account number, IBAN, credit card information (only via POS device at the time of payment) and billing information.",
-        "Visual and Audio Data: Security camera recordings when you visit our Clinic, and photo or video recordings taken to complete medical records."
+        "В рамках медицинских услуг, предоставляемых нашей Клиникой, могут обрабатываться следующие персональные данные:",
+        "Идентификационные данные: имя, фамилия, турецкий идентификационный номер, номер паспорта или временный турецкий идентификационный номер, место и дата рождения, семейное положение, пол и другие идентификационные сведения.",
+        "Контактные данные: адрес, номер телефона, адрес электронной почты и другие контактные сведения.",
+        "Данные о здоровье (особые категории персональных данных): результаты лабораторных исследований, результаты тестов, данные осмотра, информация о записях на прием, информация о рецептах, история болезни и, без ограничения, все медицинские данные, полученные в ходе или в результате диагностики, лечения и медицинского ухода.",
+        "Финансовые данные: номер банковского счета, IBAN, данные кредитной карты (только через POS-терминал в момент оплаты) и платежная информация.",
+        "Визуальные и аудиоданные: записи камер видеонаблюдения при посещении нашей Клиники, а также фото- или видеозаписи, сделанные для ведения медицинской документации."
       ]
     },
     {
-      "heading": "3. Purposes of Processing Personal Data",
+      "heading": "3. Цели обработки персональных данных",
       "paragraphs": [
-        "Your personal data and special categories of personal data are processed for the following purposes, including:"
+        "Ваши персональные данные и особые категории персональных данных обрабатываются, в том числе, для следующих целей:"
       ],
       "list": [
-        "Conducting medical diagnosis, treatment and care services,",
-        "Protecting public health and providing preventive medicine services,",
-        "Planning and managing your appointments,",
-        "Billing for the services we provide,",
-        "Sharing requested information with the Ministry of Health and other public institutions under applicable legislation,",
-        "Improving our healthcare services, measuring patient satisfaction and managing complaints,",
-        "Ensuring in-clinic security (via camera systems),",
-        "Fulfilling legal and regulatory requirements."
+        "Оказание услуг медицинской диагностики, лечения и ухода,",
+        "Защита общественного здоровья и оказание профилактической медицинской помощи,",
+        "Планирование и управление вашими записями на прием,",
+        "Выставление счетов за предоставляемые нами услуги,",
+        "Предоставление запрашиваемой информации Министерству здравоохранения и другим государственным органам в соответствии с применимым законодательством,",
+        "Улучшение наших медицинских услуг, измерение удовлетворенности пациентов и управление жалобами,",
+        "Обеспечение безопасности внутри клиники (через системы видеонаблюдения),",
+        "Соблюдение правовых и нормативных требований."
       ]
     },
     {
-      "heading": "4. Transfer of Personal Data",
+      "heading": "4. Передача персональных данных",
       "paragraphs": [
-        "Your personal data may be transferred under the conditions set out in Articles 8 and 9 of the KVKK and for the purposes listed above;"
+        "Ваши персональные данные могут передаваться на условиях, установленных статьями 8 и 9 KVKK, и для целей, указанных выше;"
       ],
       "list": [
-        "To the Ministry of Health of the Republic of Turkey, provincial health directorates and affiliated units,",
-        "To the Social Security Institution (SGK),",
-        "To private insurance companies (health, pension, life insurance and similar),",
-        "To the General Directorate of Security and other law enforcement authorities,",
-        "To the General Directorate of Civil Registration,",
-        "To the Turkish Pharmacists' Association,",
-        "To authorized judicial authorities,",
-        "To laboratories, medical centres, ambulance services, medical device providers and healthcare institutions with which we cooperate for medical diagnosis and treatment,",
-        "To our lawyers in possible legal disputes and to our financial/tax advisers for financial and tax processes"
+        "Министерству здравоохранения Республики Турция, провинциальным управлениям здравоохранения и подведомственным подразделениям,",
+        "Учреждению социального обеспечения (SGK),",
+        "Частным страховым компаниям (медицинское, пенсионное, жизненное страхование и аналогичные),",
+        "Главному управлению безопасности и другим правоохранительным органам,",
+        "Главному управлению гражданского состояния,",
+        "Союзу фармацевтов Турции,",
+        "Уполномоченным судебным органам,",
+        "Лабораториям, медицинским центрам, службам скорой помощи, поставщикам медицинского оборудования и медицинским учреждениям, с которыми мы сотрудничаем для диагностики и лечения,",
+        "Нашим адвокатам в возможных правовых спорах и нашим финансовым/налоговым консультантам для финансовых и налоговых процессов"
       ],
       "paragraphsAfterList": [
-        "within this scope."
+        "в указанном объеме."
       ]
     },
     {
-      "heading": "5. Method and Legal Basis of Data Collection",
+      "heading": "5. Способ и правовое основание сбора данных",
       "paragraphs": [
-        "Your personal data are obtained verbally, in writing, visually or electronically so that the healthcare services provided by our Clinic can be carried out in accordance with standards and laws.",
-        "Your data are collected and processed based on the legal grounds set out in Articles 5 and 6 of the KVKK, including:"
+        "Ваши персональные данные получаются устно, письменно, визуально или в электронном виде, чтобы медицинские услуги, предоставляемые нашей Клиникой, могли осуществляться в соответствии со стандартами и законом.",
+        "Ваши данные собираются и обрабатываются на основании правовых оснований, указанных в статьях 5 и 6 KVKK, включая:"
       ],
       "list": [
-        "Explicitly provided for by laws (Basic Law on Healthcare Services No. 3359, Decree Law No. 663, Patient Rights Regulation, etc.),",
-        "Necessary to protect the life or physical integrity of a person who is unable to disclose consent due to physical impossibility or whose consent is not legally valid,",
-        "Directly related to the establishment or performance of a contract,",
-        "Necessary for the data controller to fulfil its legal obligation,",
-        "Protection of public health, preventive medicine, medical diagnosis, treatment and care services, and planning and management of healthcare services and financing (for special categories of data)"
+        "Прямое предусмотрение законами (Основной закон о медицинских услугах № 3359, указ № 663, положение о правах пациентов и т. д.),",
+        "Необходимость защиты жизни или физической целостности лица, которое не может выразить согласие по физической невозможности или чье согласие не имеет юридической силы,",
+        "Непосредственная связь с заключением или исполнением договора,",
+        "Необходимость для оператора данных выполнить юридическое обязательство,",
+        "Защита общественного здоровья, профилактическая медицина, медицинская диагностика, лечение и уход, а также планирование и управление медицинскими услугами и их финансированием (для особых категорий данных)"
       ],
       "paragraphsAfterList": [
-        "as legal grounds."
+        "в качестве правовых оснований."
       ]
     },
     {
-      "heading": "6. Your Rights under KVKK (Article 11)",
+      "heading": "6. Ваши права по KVKK (Статья 11)",
       "paragraphs": [
-        "Under Article 11 of the KVKK, you may exercise the following rights regarding your personal data by applying to our Clinic as Data Controller:"
+        "В соответствии со статьей 11 KVKK вы можете реализовать следующие права в отношении ваших персональных данных, обратившись в нашу Клинику как к оператору данных:"
       ],
       "list": [
-        "To learn whether your personal data are processed,",
-        "To request information if your personal data have been processed,",
-        "To learn the purpose of processing and whether they are used in accordance with that purpose,",
-        "To know the third parties to whom your personal data are transferred domestically or abroad,",
-        "To request correction if your personal data are incomplete or inaccurate,",
-        "To request deletion or destruction of your personal data under the conditions set out in Article 7 of the KVKK,",
-        "To request notification of correction, deletion or destruction to third parties to whom your data were transferred,",
-        "To object to a result arising against you through analysis exclusively by automated systems,",
-        "To request compensation for damage if you suffer harm due to unlawful processing of your personal data."
+        "Узнать, обрабатываются ли ваши персональные данные,",
+        "Запросить информацию, если ваши персональные данные были обработаны,",
+        "Узнать цель обработки и соответствует ли использование данной цели,",
+        "Знать третьих лиц, которым ваши персональные данные передаются внутри страны или за рубежом,",
+        "Запросить исправление, если ваши персональные данные неполны или неверны,",
+        "Запросить удаление или уничтожение ваших персональных данных на условиях статьи 7 KVKK,",
+        "Запросить уведомление третьих лиц об исправлении, удалении или уничтожении,",
+        "Возразить против результата, возникшего исключительно в результате автоматизированного анализа,",
+        "Требовать возмещения ущерба при незаконной обработке ваших персональных данных."
       ]
     },
     {
-      "heading": "7. Contact",
+      "heading": "7. Контакт",
       "paragraphs": [
-        "To exercise the rights listed above, you may submit your written application containing the information necessary to identify you and your explanations regarding the right you wish to exercise under Article 11 of the KVKK;",
-        "Address: Anadolu Plaza No:23, Karşıyaka, İzmir, 35560, Türkiye",
-        "E-mail: kvkk@drotgenclinic.com",
-        "in person, via notary or by other methods specified in applicable legislation. Your applications will be concluded free of charge as soon as possible and within 30 (thirty) days at the latest depending on the nature of your request."
+        "Для реализации указанных выше прав вы можете подать письменное заявление с информацией, необходимой для вашей идентификации, и пояснениями относительно права, которое вы хотите реализовать в соответствии со статьей 11 KVKK;",
+        "Адрес: Anadolu Plaza No:23, Karşıyaka, İzmir, 35560, Türkiye",
+        "Электронная почта: kvkk@drotgenclinic.com",
+        "лично, через нотариуса или иными способами, предусмотренными применимым законодательством. Ваши заявления будут рассмотрены бесплатно в кратчайшие сроки и не позднее чем в течение 30 (тридцати) дней в зависимости от характера запроса."
       ]
     }
   ],
   "webFormSection": {
     "title": "Форма записи на сайте",
     "items": [
-      "Data collected: full name, phone, e-mail, message, selected service",
-      "Form submission: transmitted via the FormSubmit service to the appointment mailbox drotgenclinic@gmail.com used by Dr Otgen Clinic.",
-      "Purpose: evaluating the appointment request and contacting the user",
-      "Retention: until the request is concluded",
-      "Transfer: with respect to form inputs, no transfer is made to any recipient other than FormSubmit."
+      "Собираемые данные: имя и фамилия, телефон, электронная почта, сообщение, выбранная услуга",
+      "Отправка формы: передается через сервис FormSubmit в почтовый ящик записи drotgenclinic@gmail.com, используемый Dr Otgen Clinic.",
+      "Цель: оценка запроса на запись и связь с пользователем",
+      "Хранение: до завершения обработки запроса",
+      "Передача: в отношении данных формы передача не осуществляется получателям, кроме FormSubmit."
     ]
   },
   "locationsSection": {
     "title": "Адреса клиник",
     "branches": [
-      {
-        "name": "Izmir",
-        "address": "Anadolu Plaza No:23, Karşıyaka, İzmir, 35560, Türkiye"
-      },
-      {
-        "name": "Denizli",
-        "address": "Sırakapılar Mah. 495. Sok. No:22, Merkezefendi, Denizli, 20010, Türkiye"
-      },
-      {
-        "name": "Leverkusen",
-        "address": "Wiesdorfer Str. 3, Wiesdorf, Leverkusen, 51373, Germany"
-      }
+      { "name": "Измир", "address": "Anadolu Plaza No:23, Karşıyaka, İzmir, 35560, Türkiye" },
+      { "name": "Денизли", "address": "Sırakapılar Mah. 495. Sok. No:22, Merkezefendi, Denizli, 20010, Türkiye" },
+      { "name": "Леверкузен", "address": "Wiesdorfer Str. 3, Wiesdorf, Leverkusen, 51373, Германия" }
     ],
     "sharedPhoneLabel": "Общий телефон",
     "sharedPhone": "0541 159 56 36",
