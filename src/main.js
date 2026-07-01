@@ -286,7 +286,10 @@ function initHero() {
     });
   });
 
-  if (hasHeroVideoMode && heroIndicatorsWrap) heroIndicatorsWrap.style.display = 'none';
+  if (hasHeroVideoMode && heroIndicatorsWrap) {
+    heroIndicatorsWrap.style.display = 'none';
+    heroIndicatorsWrap.setAttribute('aria-hidden', 'true');
+  }
   setupHeroVideoLoop();
   syncHeroVideoPlayback();
   syncHeroHeadingAccessibility();
