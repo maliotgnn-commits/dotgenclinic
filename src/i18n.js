@@ -199,6 +199,21 @@ export function applyStaticTranslations(dictionary, root = document) {
   }
 }
 
+const SITE_ORIGIN = 'https://www.drotgenclinic.com';
+const SITE_NAME = 'Dr Otgen Clinic Aesthetic';
+const DEFAULT_OG_IMAGE = '/images/logo-transparent.png';
+
+const OG_LOCALE_MAP = {
+  tr: 'tr_TR',
+  en: 'en_GB',
+  ar: 'ar_AR',
+  es: 'es_ES',
+  fr: 'fr_FR',
+  it: 'it_IT',
+  ru: 'ru_RU',
+  de: 'de_DE',
+};
+
 function upsertSeoLink(rel, hreflang, href) {
   const selector = hreflang
     ? `link[data-i18n-seo][rel="${rel}"][hreflang="${hreflang}"]`
@@ -214,7 +229,102 @@ function upsertSeoLink(rel, hreflang, href) {
   link.href = new URL(href, window.location.origin).href;
 }
 
-export function applySeoLinks(locale, pageType = 'home', slug = null) {
+function upsertSeoMeta(attribute, key, content) {
+  const selector = `meta[data-i18n-seo][${attribute}="${key}"]`;
+  let meta = document.head.querySelector(selector);
+  if (!meta) {
+    meta = document.createElement('meta');
+    meta.dataset.i18nSeo = 'true';
+    meta.setAttribute(attribute, key);
+    document.head.appendChild(meta);
+  }
+  meta.content = content;
+}
+
+function upsertJsonLd(id, data) {
+  let script = document.head.querySelector(`script[data-i18n-seo-jsonld="${id}"]`);
+  if (!script) {
+    script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.dataset.i18nSeoJsonld = id;
+    document.head.appendChild(script);
+  }
+  script.textContent = JSON.stringify(data);
+}
+
+function removeJsonLd(id) {
+  document.head.querySelector(`script[data-i18n-seo-jsonld="${id}"]`)?.remove();
+}
+
+export function applySocialMeta(locale, pageType = 'home', pageData = null) {
+  const canonical = pageType === 'service'
+    ? serviceUrlForLocale(pageData?.slug, locale)
+    : homeUrlFor(locale);
+  const canonicalUrl = new URL(canonical, SITE_ORIGIN).href;
+  const title = document.title;
+  const description = document.querySelector('meta[name="description"]')?.getAttribute('content') || '';
+  const ogImage = new URL(DEFAULT_OG_IMAGE, SITE_ORIGIN).href;
+
+  upsertSeoMeta('property', 'og:title', title);
+  upsertSeoMeta('property', 'og:description', description);
+  upsertSeoMeta('property', 'og:url', canonicalUrl);
+  upsertSeoMeta('property', 'og:type', 'website');
+  upsertSeoMeta('property', 'og:site_name', SITE_NAME);
+  upsertSeoMeta('property', 'og:image', ogImage);
+  upsertSeoMeta('property', 'og:locale', OG_LOCALE_MAP[locale] || OG_LOCALE_MAP.tr);
+
+  upsertSeoMeta('name', 'twitter:card', 'summary');
+  upsertSeoMeta('name', 'twitter:title', title);
+  upsertSeoMeta('name', 'twitter:description', description);
+  upsertSeoMeta('name', 'twitter:image', ogImage);
+
+  if (pageType === 'service' && pageData?.title) {
+    upsertJsonLd('webpage', {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name: pageData.title,
+      description: pageData.summary,
+      url: canonicalUrl,
+      inLanguage: locale,
+      isPartOf: {
+        '@type': 'WebSite',
+        name: SITE_NAME,
+        url: `${SITE_ORIGIN}/`,
+      },
+    });
+    removeJsonLd('website');
+
+    if (Array.isArray(pageData.faqs) && pageData.faqs.length) {
+      upsertJsonLd('faq', {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: pageData.faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+          },
+        })),
+      });
+    } else {
+      removeJsonLd('faq');
+    }
+    return;
+  }
+
+  upsertJsonLd('website', {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: SITE_NAME,
+    url: `${SITE_ORIGIN}/`,
+    logo: ogImage,
+  });
+  removeJsonLd('webpage');
+  removeJsonLd('faq');
+}
+
+export function applySeoLinks(locale, pageType = 'home', slug = null, pageData = null) {
   const canonical = pageType === 'service'
     ? serviceUrlForLocale(slug, locale)
     : homeUrlFor(locale);
@@ -231,6 +341,7 @@ export function applySeoLinks(locale, pageType = 'home', slug = null) {
     ? serviceUrlForLocale(slug, DEFAULT_LOCALE)
     : homeUrlFor(DEFAULT_LOCALE);
   upsertSeoLink('alternate', 'x-default', defaultHref);
+  applySocialMeta(locale, pageType, pageData);
 }
 
 export function buildCategoryGroups(catalog) {

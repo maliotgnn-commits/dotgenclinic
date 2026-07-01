@@ -68,7 +68,7 @@ function renderNavGroups() {
 function renderHeader() {
   return `
     <header id="main-header">
-      <nav class="main-nav">
+      <nav class="main-nav" aria-label="${escapeHtml(t('Menü'))}">
         <div class="container nav-container">
           <a href="${homeUrlFor(locale)}" class="nav-logo">
             <img src="/images/logo-transparent.png" alt="Dr Otgen Clinic" />
@@ -176,7 +176,7 @@ function renderPage(currentPage, relatedPages) {
   if (metaDescription) {
     metaDescription.setAttribute('content', `${currentPage.title}: ${currentPage.summary}`);
   }
-  applySeoLinks(locale, 'service', currentPage.slug);
+  applySeoLinks(locale, 'service', currentPage.slug, currentPage);
 
   const quickFacts = Array.isArray(currentPage.quickFacts) ? currentPage.quickFacts : [];
   const heroGradientDirection = document.documentElement.dir === 'rtl' ? '270deg' : '90deg';
@@ -184,15 +184,15 @@ function renderPage(currentPage, relatedPages) {
   app.innerHTML = `
     ${renderHeader()}
     <div class="sv-page">
-      <div class="sv-breadcrumb-band">
+      <nav class="sv-breadcrumb-band" aria-label="${escapeHtml(t('Gezinti yolu'))}">
         <div class="container">
           <a href="${homeUrlFor(locale)}">${escapeHtml(t('Ana Sayfa'))}</a>
-          <span>/</span>
+          <span aria-hidden="true">/</span>
           <strong>${escapeHtml(currentPage.categoryLabel)}</strong>
-          <span>/</span>
-          <strong>${escapeHtml(currentPage.title)}</strong>
+          <span aria-hidden="true">/</span>
+          <strong aria-current="page">${escapeHtml(currentPage.title)}</strong>
         </div>
-      </div>
+      </nav>
 
       <section class="sv-hero" style="background-image: linear-gradient(${heroGradientDirection}, rgba(5, 17, 34, 0.86), rgba(5, 17, 34, 0.58)), url('${currentPage.images.hero}')">
         <div class="container sv-hero-inner">
