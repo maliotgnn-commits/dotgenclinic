@@ -1,23 +1,21 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  SITE_ORIGIN,
+  LOCALES,
+  DEFAULT_LOCALE,
+  buildCanonicalAndHreflang,
+  buildOgTwitterTags,
+  buildHomeSchema,
+  injectSeoBundle,
+} from './seo-shared.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
-const SITE_ORIGIN = 'https://www.drotgenclinic.com';
-const LOCALES = ['tr', 'en', 'ar', 'es', 'fr', 'it', 'ru', 'de'];
-const DEFAULT_LOCALE = 'tr';
 const SOURCE_TITLE = 'Dr Otgen Clinic Aesthetic | Estetik ve Sağlık Merkezi';
 const SOURCE_DESCRIPTION =
   'Dr Otgen Clinic Aesthetic; estetik cerrahi, saç ekimi, diş estetiği, medikal estetik ve fonksiyonel sağlık alanlarında kişiye özel tedavi planlaması sunar.';
-
-function escapeHtml(value) {
-  return value
-    .replace(/&/g, '&amp;')
-    .replace(/"/g, '&quot;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
-}
 
 function loadUiDictionary(locale) {
   if (locale === DEFAULT_LOCALE) return { text: {}, html: {} };
@@ -38,33 +36,16 @@ function buildSeoHead(locale) {
   const title = translate(dictionary, SOURCE_TITLE);
   const description = translate(dictionary, SOURCE_DESCRIPTION);
   const canonical = homeUrlFor(locale);
-
-  const hreflangLinks = LOCALES.map(
-    (code) =>
-      `    <link data-i18n-seo="true" rel="alternate" hreflang="${code}" href="${homeUrlFor(code)}" />`,
-  ).join('\n');
-  const xDefault = `    <link data-i18n-seo="true" rel="alternate" hreflang="x-default" href="${homeUrlFor(DEFAULT_LOCALE)}" />`;
-  const canonicalLink = `    <link data-i18n-seo="true" rel="canonical" href="${canonical}" />`;
-
-  return { title, description, seoBlock: `${canonicalLink}\n${hreflangLinks}\n${xDefault}` };
+  const seoBlock = buildCanonicalAndHreflang(canonical, homeUrlFor);
+  const ogTwitter = buildOgTwitterTags({ title, description, url: canonical });
+  const jsonLd = buildHomeSchema(locale, title);
+  return { title, description, seoBlock, ogTwitter, jsonLd };
 }
 
 function injectSeo(html, locale) {
-  const { title, description, seoBlock } = buildSeoHead(locale);
-  let result = html;
-
-  result = result.replace(/<html lang="[^"]*">/, `<html lang="${locale}">`);
-  result = result.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(title)}</title>`);
-  result = result.replace(
-    /<meta name="description" content="[^"]*" \/>/,
-    `<meta name="description" content="${escapeHtml(description)}" />`,
-  );
-  result = result.replace(
-    /(<meta name="description" content="[^"]*" \/>)/,
-    `$1\n${seoBlock}`,
-  );
-
-  return result;
+  const { title, description, seoBlock, ogTwitter, jsonLd } = buildSeoHead(locale);
+  let result = html.replace(/<html lang="[^"]*">/, `<html lang="${locale}">`);
+  return injectSeoBundle(result, { title, description, seoBlock, ogTwitter, jsonLd });
 }
 
 export function prerenderHomeSeo(outDir) {

@@ -2,20 +2,19 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SUBPAGES } from '../src/subpages-data.js';
+import {
+  SITE_ORIGIN,
+  LOCALES,
+  DEFAULT_LOCALE,
+  escapeHtml,
+  buildCanonicalAndHreflang,
+  buildOgTwitterTags,
+  buildServiceSchema,
+  injectSeoBundle,
+} from './seo-shared.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
-const SITE_ORIGIN = 'https://www.drotgenclinic.com';
-const LOCALES = ['tr', 'en', 'ar', 'es', 'fr', 'it', 'ru', 'de'];
-const DEFAULT_LOCALE = 'tr';
-
-function escapeHtml(value) {
-  return value
-    .replace(/&/g, '&amp;')
-    .replace(/"/g, '&quot;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;');
-}
 
 function loadPagesForLocale(locale) {
   if (locale === DEFAULT_LOCALE) return SUBPAGES;
@@ -63,21 +62,6 @@ function serviceUrlForLocale(slug, locale) {
   return `${SITE_ORIGIN}/${locale}/service.html${query ? `?${query}` : ''}`;
 }
 
-function buildSeoHead(page, locale, slug) {
-  const title = `${page.title} | Dr Otgen Clinic`;
-  const description = `${page.title}: ${page.summary}`;
-  const canonical = serviceUrlForLocale(slug, locale);
-
-  const hreflangLinks = LOCALES.map(
-    (code) =>
-      `    <link data-i18n-seo="true" rel="alternate" hreflang="${code}" href="${serviceUrlForLocale(slug, code)}" />`,
-  ).join('\n');
-  const xDefault = `    <link data-i18n-seo="true" rel="alternate" hreflang="x-default" href="${serviceUrlForLocale(slug, DEFAULT_LOCALE)}" />`;
-  const canonicalLink = `    <link data-i18n-seo="true" rel="canonical" href="${canonical}" />`;
-
-  return { title, description, seoBlock: `${canonicalLink}\n${hreflangLinks}\n${xDefault}` };
-}
-
 function buildServiceAppFallback(page) {
   return `
     <h1>${escapeHtml(page.title)}</h1>
@@ -86,25 +70,20 @@ function buildServiceAppFallback(page) {
 }
 
 function injectSeo(html, page, locale, slug) {
-  const { title, description, seoBlock } = buildSeoHead(page, locale, slug);
+  const title = `${page.title} | Dr Otgen Clinic`;
+  const description = `${page.title}: ${page.summary}`;
+  const canonical = serviceUrlForLocale(slug, locale);
   const dir = locale === 'ar' ? 'rtl' : 'ltr';
-  let result = html;
+  const seoBlock = buildCanonicalAndHreflang(canonical, (code) => serviceUrlForLocale(slug, code));
+  const ogTwitter = buildOgTwitterTags({ title, description, url: canonical });
+  const jsonLd = buildServiceSchema(page, locale, slug);
 
-  result = result.replace(/<html lang="[^"]*">/, `<html lang="${locale}" dir="${dir}">`);
-  result = result.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(title)}</title>`);
-  result = result.replace(
-    /<meta name="description" content="[^"]*" \/>/,
-    `<meta name="description" content="${escapeHtml(description)}" />`,
-  );
-  result = result.replace(
-    /(<meta name="description" content="[^"]*" \/>)/,
-    `$1\n${seoBlock}`,
-  );
+  let result = html.replace(/<html lang="[^"]*">/, `<html lang="${locale}" dir="${dir}">`);
+  result = injectSeoBundle(result, { title, description, seoBlock, ogTwitter, jsonLd });
   result = result.replace(
     /<main id="service-app"><\/main>/,
     `<main id="service-app">${buildServiceAppFallback(page)}</main>`,
   );
-
   return result;
 }
 

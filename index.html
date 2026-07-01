@@ -370,6 +370,10 @@
             <div class="form-row"><div class="form-group"><label for="form-name">Ad Soyad</label><input type="text" id="form-name" name="name" placeholder="Ad Soyad" autocomplete="name" required /></div><div class="form-group"><label for="form-phone">Telefon</label><input type="tel" id="form-phone" name="phone" placeholder="+90 5XX XXX XX XX" dir="ltr" autocomplete="tel" required /></div></div>
             <div class="form-row"><div class="form-group"><label for="form-email">E-posta</label><input type="email" id="form-email" name="email" placeholder="ornek@email.com" dir="ltr" autocomplete="email" /></div><div class="form-group"><label for="form-service">Hizmet Seçin</label><select id="form-service" name="service"><option value="">Lütfen Seçin</option><option>Saç Ekimi</option><option>Diş Estetiği</option><option>Estetik Cerrahi</option><option>Medikal Estetik</option><option>Fonksiyonel Sağlık</option></select></div></div>
             <div class="form-group"><label for="form-message">Mesajınız</label><textarea id="form-message" name="message" rows="4" placeholder="Mesajınızı yazın..."></textarea></div>
+            <div class="form-group form-consent">
+              <input type="checkbox" id="form-privacy-consent" name="privacy-consent" required aria-required="true" />
+              <label for="form-privacy-consent" data-i18n-html>Kişisel Verilerin İşlenmesine İlişkin <a href="/tr/privacy.html" data-privacy-link>Aydınlatma Metni</a>'ni okudum. Randevu talebimin değerlendirilmesi amacıyla kişisel verilerimin işlenmesini kabul ediyorum.</label>
+            </div>
             <div id="form-status" class="form-status" role="status" aria-live="polite" aria-atomic="true"></div>
             <button type="submit" class="btn btn-gold btn-full" aria-label="Randevu Talebi Gönder"><span class="btn-label" aria-hidden="true">Randevu Talebi Gönder</span></button>
           </form>
@@ -392,6 +396,7 @@
         </div>
         <div class="footer-bottom">
           <p>&copy; 2026 Dr Otgen Clinic Aesthetic. Tüm hakları saklıdır.</p>
+          <p><a href="/tr/privacy.html" data-privacy-footer-link>Gizlilik ve KVKK</a></p>
         </div>
       </div>
     </footer>

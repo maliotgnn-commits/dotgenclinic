@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "title": "Datenschutzhinweis zur Verarbeitung personenbezogener Daten | Dr Otgen Clinic",
+    "description": "Datenschutzhinweis der Dr Otgen Clinic A.Ş. zur Erhebung, Verarbeitung, Übermittlung und Ihren Rechten nach dem türkischen KVKK."
+  },
+  "documentTitle": "DR OTGEN CLINIC A.Ş. DATENSCHUTZHINWEIS ZUR VERARBEITUNG PERSONENBEZOGENER DATEN",
+  "intro": [
+    "As Dr Otgen Clinic A.Ş. (the \"Clinic\" or \"Data Controller\"), we attach great importance to processing and protecting the personal data of our patients, clients, employees and all persons contacting us in compliance with the Constitution of the Republic of Turkey, international treaties on human rights to which our country is a party, and the Personal Data Protection Law No. 6698 (\"KVKK\") and other applicable legislation.",
+    "This privacy notice has been prepared under Article 10 of the KVKK to inform you about how your personal data are collected, the purposes of processing, the persons/institutions to whom they may be transferred, and your rights."
+  ],
+  "sections": [
+    {
+      "heading": "1. Identity of the Data Controller",
+      "paragraphs": [
+        "Pursuant to Law No. 6698 on the Protection of Personal Data, your personal data may be processed by Dr Otgen Clinic A.Ş. as data controller within the scope described below."
+      ]
+    },
+    {
+      "heading": "2. Your Personal Data Processed",
+      "paragraphs": [
+        "Within the scope of the healthcare services provided by our Clinic, the following personal data may be processed:",
+        "Identity Data: Your name, surname, Turkish ID number, passport number or temporary Turkish ID number, place and date of birth, marital status, gender and similar identity information.",
+        "Contact Data: Your address, telephone number, e-mail address and similar contact details.",
+        "Health Data (Special Categories of Personal Data): Your laboratory results, test results, examination data, appointment information, prescription information, medical history and, without limitation, all health data obtained during or as a result of medical diagnosis, treatment and care services.",
+        "Financial Data: Your bank account number, IBAN, credit card information (only via POS device at the time of payment) and billing information.",
+        "Visual and Audio Data: Security camera recordings when you visit our Clinic, and photo or video recordings taken to complete medical records."
+      ]
+    },
+    {
+      "heading": "3. Purposes of Processing Personal Data",
+      "paragraphs": [
+        "Your personal data and special categories of personal data are processed for the following purposes, including:"
+      ],
+      "list": [
+        "Conducting medical diagnosis, treatment and care services,",
+        "Protecting public health and providing preventive medicine services,",
+        "Planning and managing your appointments,",
+        "Billing for the services we provide,",
+        "Sharing requested information with the Ministry of Health and other public institutions under applicable legislation,",
+        "Improving our healthcare services, measuring patient satisfaction and managing complaints,",
+        "Ensuring in-clinic security (via camera systems),",
+        "Fulfilling legal and regulatory requirements."
+      ]
+    },
+    {
+      "heading": "4. Transfer of Personal Data",
+      "paragraphs": [
+        "Your personal data may be transferred under the conditions set out in Articles 8 and 9 of the KVKK and for the purposes listed above;"
+      ],
+      "list": [
+        "To the Ministry of Health of the Republic of Turkey, provincial health directorates and affiliated units,",
+        "To the Social Security Institution (SGK),",
+        "To private insurance companies (health, pension, life insurance and similar),",
+        "To the General Directorate of Security and other law enforcement authorities,",
+        "To the General Directorate of Civil Registration,",
+        "To the Turkish Pharmacists' Association,",
+        "To authorized judicial authorities,",
+        "To laboratories, medical centres, ambulance services, medical device providers and healthcare institutions with which we cooperate for medical diagnosis and treatment,",
+        "To our lawyers in possible legal disputes and to our financial/tax advisers for financial and tax processes"
+      ],
+      "paragraphsAfterList": [
+        "within this scope."
+      ]
+    },
+    {
+      "heading": "5. Method and Legal Basis of Data Collection",
+      "paragraphs": [
+        "Your personal data are obtained verbally, in writing, visually or electronically so that the healthcare services provided by our Clinic can be carried out in accordance with standards and laws.",
+        "Your data are collected and processed based on the legal grounds set out in Articles 5 and 6 of the KVKK, including:"
+      ],
+      "list": [
+        "Explicitly provided for by laws (Basic Law on Healthcare Services No. 3359, Decree Law No. 663, Patient Rights Regulation, etc.),",
+        "Necessary to protect the life or physical integrity of a person who is unable to disclose consent due to physical impossibility or whose consent is not legally valid,",
+        "Directly related to the establishment or performance of a contract,",
+        "Necessary for the data controller to fulfil its legal obligation,",
+        "Protection of public health, preventive medicine, medical diagnosis, treatment and care services, and planning and management of healthcare services and financing (for special categories of data)"
+      ],
+      "paragraphsAfterList": [
+        "as legal grounds."
+      ]
+    },
+    {
+      "heading": "6. Your Rights under KVKK (Article 11)",
+      "paragraphs": [
+        "Under Article 11 of the KVKK, you may exercise the following rights regarding your personal data by applying to our Clinic as Data Controller:"
+      ],
+      "list": [
+        "To learn whether your personal data are processed,",
+        "To request information if your personal data have been processed,",
+        "To learn the purpose of processing and whether they are used in accordance with that purpose,",
+        "To know the third parties to whom your personal data are transferred domestically or abroad,",
+        "To request correction if your personal data are incomplete or inaccurate,",
+        "To request deletion or destruction of your personal data under the conditions set out in Article 7 of the KVKK,",
+        "To request notification of correction, deletion or destruction to third parties to whom your data were transferred,",
+        "To object to a result arising against you through analysis exclusively by automated systems,",
+        "To request compensation for damage if you suffer harm due to unlawful processing of your personal data."
+      ]
+    },
+    {
+      "heading": "7. Contact",
+      "paragraphs": [
+        "To exercise the rights listed above, you may submit your written application containing the information necessary to identify you and your explanations regarding the right you wish to exercise under Article 11 of the KVKK;",
+        "Address: Anadolu Plaza No:23, Karşıyaka, İzmir, 35560, Türkiye",
+        "E-mail: kvkk@drotgenclinic.com",
+        "in person, via notary or by other methods specified in applicable legislation. Your applications will be concluded free of charge as soon as possible and within 30 (thirty) days at the latest depending on the nature of your request."
+      ]
+    }
+  ],
+  "webFormSection": {
+    "title": "Website-Terminformular",
+    "items": [
+      "Data collected: full name, phone, e-mail, message, selected service",
+      "Form submission: transmitted via the FormSubmit service to the appointment mailbox drotgenclinic@gmail.com used by Dr Otgen Clinic.",
+      "Purpose: evaluating the appointment request and contacting the user",
+      "Retention: until the request is concluded",
+      "Transfer: with respect to form inputs, no transfer is made to any recipient other than FormSubmit."
+    ]
+  },
+  "locationsSection": {
+    "title": "Klinikstandorte",
+    "branches": [
+      {
+        "name": "Izmir",
+        "address": "Anadolu Plaza No:23, Karşıyaka, İzmir, 35560, Türkiye"
+      },
+      {
+        "name": "Denizli",
+        "address": "Sırakapılar Mah. 495. Sok. No:22, Merkezefendi, Denizli, 20010, Türkiye"
+      },
+      {
+        "name": "Leverkusen",
+        "address": "Wiesdorfer Str. 3, Wiesdorf, Leverkusen, 51373, Germany"
+      }
+    ],
+    "sharedPhoneLabel": "Gemeinsame Telefonnummer",
+    "sharedPhone": "0541 159 56 36",
+    "sharedWhatsappLabel": "Gemeinsame WhatsApp",
+    "sharedWhatsapp": "https://wa.me/905411595636",
+    "sharedEmailLabel": "Gemeinsame E-Mail",
+    "sharedEmail": "info@drotgenclinic.com",
+    "hoursLabel": "Öffnungszeiten",
+    "hoursWeekdays": "Montag–Samstag: 08:00–17:00",
+    "hoursSunday": "Sonntag: Geschlossen"
+  },
+  "signature": "Dr Otgen Clinic A.Ş.",
+  "backLinkLabel": "Zur Startseite",
+  "footerLinkLabel": "Datenschutz & KVKK",
+  "consentLabelHtml": "Ich habe die <a href=\"/de/privacy.html\" data-privacy-link>Datenschutzhinweise zur Verarbeitung personenbezogener Daten</a> gelesen. Ich stimme der Verarbeitung meiner personenbezogenen Daten zum Zweck der Bearbeitung meiner Terminanfrage zu."
+}

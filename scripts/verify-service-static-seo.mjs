@@ -77,7 +77,9 @@ for (const locale of LOCALES) {
 
     const hreflangCount = (html.match(/<link data-i18n-seo="true" rel="alternate" hreflang="/g) || []).length;
     const hasXDefault = html.includes('hreflang="x-default"');
-    const seoLinkCount = (html.match(/data-i18n-seo="true"/g) || []).length;
+    const seoLinkCount = (html.match(/<link data-i18n-seo="true"/g) || []).length;
+    const seoMetaCount = (html.match(/<meta data-i18n-seo="true"/g) || []).length;
+    const seoJsonLdCount = (html.match(/<script data-i18n-seo="true" type="application\/ld\+json">/g) || []).length;
 
     if (title !== expectedTitle) failures.push(`[${label}] title mismatch`);
     if (description !== expectedDescription) failures.push(`[${label}] description mismatch`);
@@ -89,6 +91,8 @@ for (const locale of LOCALES) {
     if (hreflangCount !== 9) failures.push(`[${label}] expected 9 hreflang links, found ${hreflangCount}`);
     if (!hasXDefault) failures.push(`[${label}] missing x-default hreflang`);
     if (seoLinkCount !== 10) failures.push(`[${label}] expected 10 data-i18n-seo links, found ${seoLinkCount}`);
+    if (seoMetaCount !== 9) failures.push(`[${label}] expected 9 data-i18n-seo OG/Twitter metas, found ${seoMetaCount}`);
+    if (seoJsonLdCount !== 1) failures.push(`[${label}] expected 1 data-i18n-seo JSON-LD block, found ${seoJsonLdCount}`);
     if (title === GENERIC_SERVICE_TITLE) failures.push(`[${label}] still using generic title`);
     if (description === GENERIC_SERVICE_DESCRIPTION) failures.push(`[${label}] still using generic description`);
 
