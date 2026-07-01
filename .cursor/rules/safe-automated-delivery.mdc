@@ -1,0 +1,62 @@
+---
+description: Güvenli ve otomatik teslimat akışı — branch, build, PR ve korunan alanlar
+alwaysApply: true
+---
+
+# Güvenli ve Otomatik Teslimat Akışı
+
+Bu projede her görevde aşağıdaki kurallara uy.
+
+## 1. Güvenlik
+
+- `.env` dosyasını asla okuma, gösterme veya değiştirme.
+- `git reset --hard`, `git clean -fd`, force push, history rewrite ve doğrudan branch silme yapma.
+- `main` branch üzerinde doğrudan kod değiştirme veya push yapma.
+- Her değişiklik için ayrı bir `fix/` veya `feat/` branch oluştur.
+
+## 2. Otomatik Çalışma Akışı
+
+Kullanıcı bir düzeltme veya özellik istediğinde sırayla:
+
+1. Mevcut `main` branch'ini güncelle (`git fetch` / `git pull origin main`).
+2. Göreve uygun isimli yeni branch oluştur (`fix/...` veya `feat/...`).
+3. Yalnızca görev kapsamındaki minimal değişiklikleri uygula.
+4. Her değişiklikten sonra `npm run build` çalıştır.
+5. Build başarısız olursa yalnızca kendi değişikliğinden kaynaklanan sorunu düzelt.
+6. `git diff --check` ve `git status` kontrollerini yap.
+7. Başarılıysa commit oluştur ve branch'i `origin`'e push et.
+8. GitHub CLI kullanılabilir ve oturum açıksa PR oluşturmayı dene (`gh pr create`).
+9. PR oluşturulduktan sonra Vercel Preview ve gerekli kontroller geçmeden merge yapma.
+10. Auto-merge yalnızca GitHub repository ayarlarında etkinse ve gerekli kontroller başarılıysa önerilebilir; etkin değilse kullanıcıya PR bağlantısını bildir.
+
+## 3. Yüksek Riskli Alanlar
+
+Aşağıdaki alanlarda kullanıcı açıkça izin vermeden değişiklik yapma. Önce bulguyu, etkisini ve planı raporla:
+
+- `package.json` ve `package-lock.json`
+- `vite.config.js`
+- `vercel.json`
+- deployment ayarları
+- routing, redirect, i18n mimarisi
+- SSR, SSG, prerender
+- `public/` altındaki video, görsel ve asset dosyaları
+- yeni bağımlılık ekleme
+- tasarım, CSS, animasyon ve responsive davranış değişiklikleri
+
+## 4. Korunacak Yapılar
+
+- Locale URL formatını koru: `/tr/`, `/en/`, `/ar/`, `/es/`, `/fr/`, `/it/`, `/ru/`, `/de/`
+- Mevcut tasarım, kullanıcı akışı, mobil/masaüstü görünümünü koru.
+- Mevcut slug ve i18n link sistemine uy.
+- Gereksiz refactor, dosya silme veya geniş kapsamlı yeniden yazım yapma.
+
+## 5. Her İş Sonunda Rapor
+
+Görev tamamlandığında şu bilgileri özetle:
+
+- Değiştirilen dosyalar
+- Yapılan işlemler
+- Build sonucu
+- Git branch ve commit bilgisi
+- Push/PR durumu
+- Kalan riskler
