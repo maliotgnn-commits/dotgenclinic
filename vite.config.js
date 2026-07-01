@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'node:path';
 import { prerenderHomeSeo } from './scripts/prerender-home-seo.mjs';
+import { prerenderServiceSeoPoc } from './scripts/prerender-service-seo-poc.mjs';
 
 const localePattern = /^\/(?:tr|en|ar|es|fr|it|ru|de)(?:\/(service\.html)?)?$/;
 
@@ -40,8 +41,18 @@ function homeSeoPrerender() {
   };
 }
 
+function serviceSeoPocPrerender() {
+  return {
+    name: 'service-seo-poc-prerender',
+    apply: 'build',
+    closeBundle() {
+      prerenderServiceSeoPoc(resolve(import.meta.dirname, 'dist'));
+    },
+  };
+}
+
 export default defineConfig({
-  plugins: [localeRoutes(), homeSeoPrerender()],
+  plugins: [localeRoutes(), homeSeoPrerender(), serviceSeoPocPrerender()],
   build: {
     rollupOptions: {
       input: {
