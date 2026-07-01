@@ -15,6 +15,7 @@ import { mountLanguageSwitcher } from './language-switcher.js';
 
 const locale = getCurrentLocale('home');
 const uiDictionary = await loadUiDictionary(locale);
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const introOverlay = document.getElementById('intro-overlay');
 const introSection = document.getElementById('intro-section');
@@ -46,6 +47,8 @@ mountLanguageSwitcher(
 initCustomCursor();
 
 function createParticles() {
+  if (prefersReducedMotion) return;
+
   const container = document.getElementById('intro-particles');
   if (!container) return;
 
@@ -131,6 +134,11 @@ function handleVirtualScroll(event) {
 function initIntro() {
   if (!introOverlay || !introSection || !header) return;
 
+  if (prefersReducedMotion) {
+    completeIntro();
+    return;
+  }
+
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   window.scrollTo(0, 0);
   document.body.style.overflow = 'hidden';
@@ -159,9 +167,6 @@ function initIntro() {
     if (introProgress >= 1) completeIntro();
   }, { passive: false });
 
-  window.addEventListener('scroll', () => {
-    if (!introComplete && window.scrollY > 50) completeIntro();
-  });
 }
 
 function initHeader() {
@@ -210,10 +215,6 @@ function initHeader() {
     });
   });
 
-  window.addEventListener('scroll', () => {
-    if (!introComplete) return;
-    header.classList.toggle('scrolled', window.scrollY > 100);
-  });
 }
 
 function setupHeroVideoLoop() {
@@ -296,6 +297,12 @@ function initHero() {
 }
 
 function initScrollAnimations() {
+  const elements = document.querySelectorAll('.animate-on-scroll');
+  if (prefersReducedMotion) {
+    elements.forEach((element) => element.classList.add('visible'));
+    return;
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
@@ -305,10 +312,17 @@ function initScrollAnimations() {
     });
   }, { root: null, rootMargin: '0px 0px -80px 0px', threshold: 0.1 });
 
-  document.querySelectorAll('.animate-on-scroll').forEach((element) => observer.observe(element));
+  elements.forEach((element) => observer.observe(element));
 }
 
 function animateCounter(element, target) {
+  if (prefersReducedMotion) {
+    element.textContent = element.dataset.format === 'percent'
+      ? percentFormatter.format(target / 100)
+      : `${formatter.format(target)}+`;
+    return;
+  }
+
   const duration = 2000;
   const startTime = performance.now();
 
@@ -419,24 +433,44 @@ function initSmoothScroll() {
 
       event.preventDefault();
       const headerHeight = header?.offsetHeight || 0;
-      window.scrollTo({ top: targetEl.offsetTop - headerHeight, behavior: 'smooth' });
+      window.scrollTo({
+        top: targetEl.offsetTop - headerHeight,
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      });
     });
   });
 }
 
-function initHeroParallax() {
-  window.addEventListener('scroll', () => {
-    if (!introComplete) return;
+function handleWindowScroll() {
+  if (!introComplete) {
+    if (window.scrollY > 50) completeIntro();
+    return;
+  }
 
-    const heroSection = document.getElementById('hero');
-    const scrollY = window.scrollY;
-    if (!heroSection || scrollY >= window.innerHeight) return;
+  if (header) {
+    header.classList.toggle('scrolled', window.scrollY > 100);
+  }
 
-    const activeSlide = heroSection.querySelector('.hero-slide.active');
-    if (activeSlide) activeSlide.style.transform = `scale(${1 + scrollY * 0.0003})`;
+  if (prefersReducedMotion) return;
 
-    const scrollHint = heroSection.querySelector('.hero-scroll-hint');
-    if (scrollHint) scrollHint.style.opacity = Math.max(0, 0.6 - scrollY * 0.003);
+  const heroSection = document.getElementById('hero');
+  const scrollY = window.scrollY;
+  if (!heroSection || scrollY >= window.innerHeight) return;
+
+  const activeSlide = heroSection.querySelector('.hero-slide.active');
+  if (activeSlide) activeSlide.style.transform = `scale(${1 + scrollY * 0.0003})`;
+
+  const scrollHint = heroSection.querySelector('.hero-scroll-hint');
+  if (scrollHint) scrollHint.style.opacity = Math.max(0, 0.6 - scrollY * 0.003);
+}
+
+function initVisibilityPause() {
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      window.clearInterval(slideInterval);
+      return;
+    }
+    if (introComplete) startSlider();
   });
 }
 
@@ -447,4 +481,5 @@ initScrollAnimations();
 initCounters();
 initAppointmentForm();
 initSmoothScroll();
-initHeroParallax();
+initVisibilityPause();
+window.addEventListener('scroll', handleWindowScroll, { passive: true });

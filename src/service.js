@@ -288,7 +288,7 @@ function initServiceHeaderInteractions() {
 
   window.addEventListener('scroll', () => {
     header.classList.toggle('scrolled', window.scrollY > 100);
-  });
+  }, { passive: true });
 
   hamburger.addEventListener('click', (event) => {
     event.stopPropagation();
@@ -334,7 +334,7 @@ function initServiceHeaderInteractions() {
   };
 
   setupMobileDropdowns();
-  window.addEventListener('resize', setupMobileDropdowns);
+  window.addEventListener('resize', setupMobileDropdowns, { passive: true });
 }
 
 function initRelatedCardNavigation() {
