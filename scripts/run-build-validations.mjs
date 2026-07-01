@@ -1,0 +1,40 @@
+import { spawnSync } from 'node:child_process';
+import { readFileSync } from 'node:fs';
+import { resolve, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const ROOT = resolve(__dirname, '..');
+
+const steps = [
+  ['node', ['scripts/verify-service-static-seo.mjs']],
+  ['node', ['scripts/verify-privacy-content.mjs']],
+  ['node', ['scripts/verify-privacy-static-seo.mjs']],
+  ['node', ['scripts/verify-schema.mjs']],
+  ['node', ['scripts/verify-og-social-image.mjs']],
+  ['node', ['scripts/verify-og-metadata.mjs']],
+  ['node', ['scripts/verify-vercel-rewrites.mjs']],
+  ['node', ['scripts/verify-home-static-seo.mjs']],
+  ['node', ['scripts/verify-form-privacy.mjs']],
+];
+
+export function runBuildValidations() {
+  JSON.parse(readFileSync(resolve(ROOT, 'vercel.json'), 'utf8'));
+
+  for (const [command, args] of steps) {
+    const result = spawnSync(command, args, { cwd: ROOT, stdio: 'inherit', shell: process.platform === 'win32' });
+    if (result.status !== 0) {
+      process.exit(result.status || 1);
+    }
+  }
+
+  const diff = spawnSync('git', ['diff', '--check'], { cwd: ROOT, encoding: 'utf8', shell: process.platform === 'win32' });
+  if (diff.status !== 0) {
+    console.error('[run-build-validations] git diff --check failed');
+    if (diff.stdout) console.error(diff.stdout);
+    if (diff.stderr) console.error(diff.stderr);
+    process.exit(diff.status || 1);
+  }
+
+  console.log('[run-build-validations] All post-build validations passed');
+}

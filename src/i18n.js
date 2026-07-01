@@ -217,19 +217,25 @@ function upsertSeoLink(rel, hreflang, href) {
 export function applySeoLinks(locale, pageType = 'home', slug = null) {
   const canonical = pageType === 'service'
     ? serviceUrlForLocale(slug, locale)
-    : homeUrlFor(locale);
+    : pageType === 'privacy'
+      ? `/${locale}/privacy.html`
+      : homeUrlFor(locale);
   upsertSeoLink('canonical', null, canonical);
 
   LOCALES.forEach(({ code }) => {
     const href = pageType === 'service'
       ? serviceUrlForLocale(slug, code)
-      : homeUrlFor(code);
+      : pageType === 'privacy'
+        ? `/${code}/privacy.html`
+        : homeUrlFor(code);
     upsertSeoLink('alternate', code, href);
   });
 
   const defaultHref = pageType === 'service'
     ? serviceUrlForLocale(slug, DEFAULT_LOCALE)
-    : homeUrlFor(DEFAULT_LOCALE);
+    : pageType === 'privacy'
+      ? `/${DEFAULT_LOCALE}/privacy.html`
+      : homeUrlFor(DEFAULT_LOCALE);
   upsertSeoLink('alternate', 'x-default', defaultHref);
 }
 
@@ -260,6 +266,37 @@ export function defaultRelatedPages(catalog, page, limit = 4) {
   ].slice(0, limit);
 }
 
+const PRIVACY_LOADERS = {
+  tr: () => import('./i18n/privacy/tr.json').then((module) => module.default),
+  en: () => import('./i18n/privacy/en.json').then((module) => module.default),
+  ar: () => import('./i18n/privacy/ar.json').then((module) => module.default),
+  es: () => import('./i18n/privacy/es.json').then((module) => module.default),
+  fr: () => import('./i18n/privacy/fr.json').then((module) => module.default),
+  it: () => import('./i18n/privacy/it.json').then((module) => module.default),
+  ru: () => import('./i18n/privacy/ru.json').then((module) => module.default),
+  de: () => import('./i18n/privacy/de.json').then((module) => module.default),
+};
+
+export async function loadPrivacyContent(locale) {
+  return PRIVACY_LOADERS[locale]?.() || PRIVACY_LOADERS.tr();
+}
+
+export function applyPrivacyUi(locale, privacyContent, root = document) {
+  const consentLabel = root.querySelector('label[for="form-privacy-consent"]');
+  if (consentLabel && privacyContent?.consentLabelHtml) {
+    consentLabel.innerHTML = privacyContent.consentLabelHtml;
+  }
+
+  root.querySelectorAll('[data-privacy-footer-link]').forEach((anchor) => {
+    anchor.href = `/${locale}/privacy.html`;
+    if (privacyContent?.footerLinkLabel) {
+      anchor.textContent = privacyContent.footerLinkLabel;
+    }
+  });
+
+  localizeInternalLinks(locale, root);
+}
+
 export function localizeInternalLinks(locale, root = document) {
   root.querySelectorAll('a[data-service-slug]').forEach((anchor) => {
     anchor.href = serviceUrlForLocale(anchor.dataset.serviceSlug, locale);
@@ -278,8 +315,17 @@ export function localizeInternalLinks(locale, root = document) {
       return;
     }
 
+    if (parsed.pathname === '/privacy.html' || parsed.pathname.endsWith('/privacy.html')) {
+      anchor.href = `/${locale}/privacy.html${parsed.hash}`;
+      return;
+    }
+
     if (parsed.pathname === '/index.html' || parsed.pathname === '/') {
       anchor.href = homeUrlFor(locale, parsed.hash);
     }
+  });
+
+  root.querySelectorAll('[data-privacy-link], [data-privacy-footer-link]').forEach((anchor) => {
+    anchor.href = `/${locale}/privacy.html`;
   });
 }

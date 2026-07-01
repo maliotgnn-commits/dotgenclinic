@@ -2,10 +2,12 @@ import './style.css';
 import { applySubcategoryLinks } from './subpages-data.js';
 import { initCustomCursor } from './cursor.js';
 import {
+  applyPrivacyUi,
   applySeoLinks,
   applyStaticTranslations,
   getCurrentLocale,
   getIntlLocale,
+  loadPrivacyContent,
   loadUiDictionary,
   localizeInternalLinks,
   serviceUrlForLocale,
@@ -15,6 +17,7 @@ import { mountLanguageSwitcher } from './language-switcher.js';
 
 const locale = getCurrentLocale('home');
 const uiDictionary = await loadUiDictionary(locale);
+const privacyContent = await loadPrivacyContent(locale);
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 const introOverlay = document.getElementById('intro-overlay');
@@ -37,6 +40,7 @@ let slideInterval;
 applySubcategoryLinks(document, (slug) => serviceUrlForLocale(slug, locale));
 localizeInternalLinks(locale);
 applyStaticTranslations(uiDictionary);
+applyPrivacyUi(locale, privacyContent);
 applySeoLinks(locale);
 mountLanguageSwitcher(
   document.getElementById('language-switcher-slot'),
@@ -387,6 +391,11 @@ function initAppointmentForm() {
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
 
     submitBtn.disabled = true;
     submitBtn.style.opacity = '0.7';
