@@ -14,37 +14,34 @@ function assert(condition, message) {
 const config = JSON.parse(readFileSync(VERCEL_PATH, 'utf8'));
 const headers = config.headers || [];
 
-const seoHeaderRule = headers.find((entry) => entry.source === '/_seo/:path*');
-assert(seoHeaderRule, 'Missing /_seo/:path* header rule in vercel.json');
+const seoHeaderRule = headers.find((entry) => entry.source === '/_seo/:path*' || entry.source.includes('/_seo/'));
+assert(!seoHeaderRule, 'Internal /_seo/ header rule must not exist (Vercel applies it to rewritten public service URLs)');
 
-const robotsHeader = seoHeaderRule.headers?.find((header) => header.key === 'X-Robots-Tag');
-assert(robotsHeader, 'Missing X-Robots-Tag header for /_seo/:path*');
-assert(
-  robotsHeader.value === 'noindex, nofollow',
-  `Expected X-Robots-Tag "noindex, nofollow", found "${robotsHeader.value}"`,
-);
+for (const rule of headers) {
+  const robotsHeader = rule.headers?.find((header) => header.key === 'X-Robots-Tag');
+  if (!robotsHeader) continue;
 
-const globalHeaderRule = headers.find((entry) => entry.source === '/(.*)');
-assert(globalHeaderRule, 'Missing global /(.*) header rule in vercel.json');
-assert(
-  !globalHeaderRule.headers?.some((header) => header.key === 'X-Robots-Tag'),
-  'Global /(.*) headers must not set X-Robots-Tag (would leak noindex to public URLs)',
-);
-
-const publicServiceRules = headers.filter((entry) =>
-  entry.source.includes('service.html') || entry.source.includes('/:locale'),
-);
-for (const rule of publicServiceRules) {
   assert(
-    !rule.headers?.some((header) => header.key === 'X-Robots-Tag'),
-    `Public route header rule must not set X-Robots-Tag: ${rule.source}`,
+    false,
+    `X-Robots-Tag must not be configured in vercel.json (source: ${rule.source}, value: ${robotsHeader.value})`,
   );
 }
 
-const seoIndex = headers.findIndex((entry) => entry.source === '/_seo/:path*');
-const globalIndex = headers.findIndex((entry) => entry.source === '/(.*)');
-assert(seoIndex !== -1 && globalIndex !== -1, 'Required header rules missing');
-assert(seoIndex < globalIndex, '/_seo/:path* header rule should appear before global /(.*) rule');
+const globalHeaderRule = headers.find((entry) => entry.source === '/(.*)');
+assert(globalHeaderRule, 'Missing global /(.*) header rule in vercel.json');
+
+const requiredGlobalHeaders = {
+  'X-Content-Type-Options': 'nosniff',
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=()',
+  'X-Frame-Options': 'DENY',
+};
+
+for (const [key, value] of Object.entries(requiredGlobalHeaders)) {
+  const header = globalHeaderRule.headers?.find((entry) => entry.key === key);
+  assert(header, `Missing global header: ${key}`);
+  assert(header.value === value, `Global header ${key} mismatch: expected "${value}", found "${header?.value}"`);
+}
 
 if (failures.length) {
   console.error('[verify-vercel-headers] Verification failed:');
@@ -52,4 +49,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('[verify-vercel-headers] Verified internal /_seo/ noindex header config');
+console.log('[verify-vercel-headers] Verified no X-Robots-Tag rules and preserved security headers');
