@@ -176,7 +176,7 @@ function renderPage(currentPage, relatedPages) {
   if (metaDescription) {
     metaDescription.setAttribute('content', `${currentPage.title}: ${currentPage.summary}`);
   }
-  applySeoLinks(locale, 'service', currentPage.slug, currentPage);
+  applySeoLinks(locale, 'service', currentPage.slug);
 
   const quickFacts = Array.isArray(currentPage.quickFacts) ? currentPage.quickFacts : [];
   const heroGradientDirection = document.documentElement.dir === 'rtl' ? '270deg' : '90deg';
