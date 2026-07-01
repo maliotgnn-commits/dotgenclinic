@@ -1,16 +1,58 @@
 {
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/tr/",
+      "permanent": true
+    },
+    {
+      "source": "/index.html",
+      "destination": "/tr/",
+      "permanent": true
+    },
+    {
+      "source": "/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug"
+        }
+      ],
+      "destination": "/tr/service.html",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=()"
+        }
+      ]
+    }
+  ],
   "rewrites": [
     {
       "source": "/:locale(tr|en|ar|es|fr|it|ru|de)/service.html",
       "destination": "/service.html"
     },
     {
-      "source": "/:locale(tr|en|ar|es|fr|it|ru|de)",
-      "destination": "/index.html"
+      "source": "/:locale(tr|en|ar|es|fr|it|ru|de)/",
+      "destination": "/:locale/index.html"
     },
     {
-      "source": "/:locale(tr|en|ar|es|fr|it|ru|de)/",
-      "destination": "/index.html"
+      "source": "/:locale(tr|en|ar|es|fr|it|ru|de)",
+      "destination": "/:locale/index.html"
     }
   ]
 }
