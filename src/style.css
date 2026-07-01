@@ -50,6 +50,43 @@ body {
   overflow-x: hidden
 }
 
+.skip-link {
+  position: fixed;
+  top: 0;
+  left: 16px;
+  z-index: 10001;
+  padding: 12px 20px;
+  background: var(--gold);
+  color: var(--bg-primary);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  transform: translateY(-120%);
+  transition: transform .2s ease
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 2px solid var(--text-primary);
+  outline-offset: 2px
+}
+
+html[dir=rtl] .skip-link {
+  left: auto;
+  right: 16px
+}
+
+.form-status:not(:empty) {
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px
+}
+
 body.intro-active {
   overflow: hidden
 }

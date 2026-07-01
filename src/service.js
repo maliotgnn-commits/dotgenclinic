@@ -65,6 +65,10 @@ function renderNavGroups() {
     .join('');
 }
 
+function renderSkipLink() {
+  return `<a href="#main-content" class="skip-link">${escapeHtml(t('Ana içeriğe atla'))}</a>`;
+}
+
 function renderHeader() {
   return `
     <header id="main-header">
@@ -182,8 +186,9 @@ function renderPage(currentPage, relatedPages) {
   const heroGradientDirection = document.documentElement.dir === 'rtl' ? '270deg' : '90deg';
 
   app.innerHTML = `
+    ${renderSkipLink()}
     ${renderHeader()}
-    <div class="sv-page">
+    <div class="sv-page" id="main-content" tabindex="-1">
       <nav class="sv-breadcrumb-band" aria-label="${escapeHtml(t('Gezinti yolu'))}">
         <div class="container">
           <a href="${homeUrlFor(locale)}">${escapeHtml(t('Ana Sayfa'))}</a>
@@ -273,6 +278,18 @@ function renderPage(currentPage, relatedPages) {
   `;
 }
 
+function initSkipLink() {
+  const skipLink = document.querySelector('.skip-link');
+  const target = document.getElementById('main-content');
+  if (!skipLink || !target) return;
+
+  skipLink.addEventListener('click', () => {
+    window.requestAnimationFrame(() => {
+      target.focus({ preventScroll: true });
+    });
+  });
+}
+
 function initServiceHeaderInteractions() {
   const header = document.getElementById('main-header');
   const hamburger = document.getElementById('hamburger');
@@ -358,6 +375,7 @@ function bootstrapServicePage() {
   }
 
   renderPage(currentPage, defaultRelatedPages(catalog, currentPage));
+  initSkipLink();
   initCustomCursor();
   initServiceHeaderInteractions();
   initLanguageSwitchers();
