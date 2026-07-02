@@ -19,25 +19,54 @@ $graphics.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
 $graphics.TextRenderingHint = [System.Drawing.Text.TextRenderingHint]::AntiAliasGridFit
 $background = New-Object System.Drawing.Drawing2D.LinearGradientBrush ([System.Drawing.Rectangle]::FromLTRB(0,0,$width,$height)), ([System.Drawing.Color]::FromArgb(255,15,20,25)), ([System.Drawing.Color]::FromArgb(255,26,35,50)), 45
 $graphics.FillRectangle($background, 0, 0, $width, $height)
+$gold = [System.Drawing.Color]::FromArgb(255,201,168,76)
+$goldLight = [System.Drawing.Color]::FromArgb(255,223,192,110)
+$goldPen = New-Object System.Drawing.Pen $gold, 1
+$goldPenLight = New-Object System.Drawing.Pen $goldLight, 1
+$graphics.DrawLine($goldPen, 120, 80, 1080, 80)
+$graphics.DrawLine($goldPenLight, 120, 82, 1080, 82)
+$graphics.DrawLine($goldPen, 120, 548, 1080, 548)
+$graphics.DrawLine($goldPenLight, 120, 550, 1080, 550)
+$cornerSize = 18
+$graphics.DrawLine($goldPen, 80, 60, 80 + $cornerSize, 60)
+$graphics.DrawLine($goldPen, 80, 60, 80, 60 + $cornerSize)
+$graphics.DrawLine($goldPen, 1120 - $cornerSize, 60, 1120, 60)
+$graphics.DrawLine($goldPen, 1120, 60, 1120, 60 + $cornerSize)
+$graphics.DrawLine($goldPen, 80, 570 - $cornerSize, 80, 570)
+$graphics.DrawLine($goldPen, 80, 570, 80 + $cornerSize, 570)
+$graphics.DrawLine($goldPen, 1120 - $cornerSize, 570, 1120, 570)
+$graphics.DrawLine($goldPen, 1120, 570 - $cornerSize, 1120, 570)
 $logoPath = '${LOGO_FILE.replace(/\\/g, '\\\\')}'
 $logo = [System.Drawing.Image]::FromFile($logoPath)
-$logoHeight = 180
-$logoWidth = [int]($logo.Width * ($logoHeight / $logo.Height))
+$logoMaxHeight = 260
+$logoMaxWidth = 520
+$scale = [Math]::Min($logoMaxHeight / $logo.Height, $logoMaxWidth / $logo.Width)
+$logoHeight = [int]($logo.Height * $scale)
+$logoWidth = [int]($logo.Width * $scale)
 $logoX = [int](($width - $logoWidth) / 2)
-$logoY = 130
+$logoY = 120
 $graphics.DrawImage($logo, $logoX, $logoY, $logoWidth, $logoHeight)
-$font = New-Object System.Drawing.Font ('Georgia', 48, [System.Drawing.FontStyle]::Regular)
-$brush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255,245,240,230))
-$text = 'Dr Otgen Clinic'
-$textSize = $graphics.MeasureString($text, $font)
-$textX = [int](($width - $textSize.Width) / 2)
-$textY = 360
-$graphics.DrawString($text, $font, $brush, $textX, $textY)
+$titleFont = New-Object System.Drawing.Font ('Georgia', 36, [System.Drawing.FontStyle]::Regular)
+$titleBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255,245,240,230))
+$title = 'Premium Aesthetic Clinic'
+$titleSize = $graphics.MeasureString($title, $titleFont)
+$titleX = [int](($width - $titleSize.Width) / 2)
+$titleY = 420
+$graphics.DrawString($title, $titleFont, $titleBrush, $titleX, $titleY)
+$domainFont = New-Object System.Drawing.Font ('Segoe UI', 22, [System.Drawing.FontStyle]::Regular)
+$domainBrush = New-Object System.Drawing.SolidBrush $goldLight
+$domain = 'www.drotgenclinic.com'
+$domainSize = $graphics.MeasureString($domain, $domainFont)
+$domainX = [int](($width - $domainSize.Width) / 2)
+$domainY = 480
+$graphics.DrawString($domain, $domainFont, $domainBrush, $domainX, $domainY)
 $output = '${OUTPUT_FILE.replace(/\\/g, '\\\\')}'
 $dir = Split-Path $output -Parent
 if (!(Test-Path $dir)) { New-Item -ItemType Directory -Force -Path $dir | Out-Null }
 $bitmap.Save($output, [System.Drawing.Imaging.ImageFormat]::Png)
-$logo.Dispose(); $bitmap.Dispose(); $graphics.Dispose(); $background.Dispose(); $brush.Dispose(); $font.Dispose()
+$logo.Dispose(); $bitmap.Dispose(); $graphics.Dispose(); $background.Dispose()
+$titleBrush.Dispose(); $titleFont.Dispose(); $domainBrush.Dispose(); $domainFont.Dispose()
+$goldPen.Dispose(); $goldPenLight.Dispose()
 `;
 
 async function generateOgImageLocal() {
