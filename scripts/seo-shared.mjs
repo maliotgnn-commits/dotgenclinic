@@ -91,6 +91,44 @@ export function buildJsonLdScript(graph) {
   return `    <script data-i18n-seo="true" type="application/ld+json">${JSON.stringify(payload)}</script>`;
 }
 
+export function buildIzmirMedicalClinicEntity() {
+  const izmir = CLINIC.locations.find((location) => location.id === 'izmir');
+  return {
+    '@type': 'MedicalClinic',
+    '@id': locationId('izmir'),
+    name: `${CLINIC.publicName} – ${izmir.name}`,
+    legalName: CLINIC.legalName,
+    url: `${SITE_ORIGIN}/`,
+    parentOrganization: { '@id': organizationId() },
+    logo: CLINIC.logoUrl,
+    image: CLINIC.ogImageUrl,
+    telephone: CLINIC.phone,
+    email: CLINIC.email,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Anadolu Plaza No:23',
+      addressLocality: 'Karşıyaka',
+      addressRegion: 'İzmir',
+      postalCode: '35560',
+      addressCountry: 'TR',
+    },
+    sameAs: [CLINIC.instagram],
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: [
+        'https://schema.org/Monday',
+        'https://schema.org/Tuesday',
+        'https://schema.org/Wednesday',
+        'https://schema.org/Thursday',
+        'https://schema.org/Friday',
+        'https://schema.org/Saturday',
+      ],
+      opens: '08:00',
+      closes: '17:00',
+    },
+  };
+}
+
 export function buildHomeSchema(locale, title) {
   const pageUrl = `${SITE_ORIGIN}/${locale}/`;
   return buildJsonLdScript([
@@ -121,6 +159,7 @@ export function buildHomeSchema(locale, title) {
       isPartOf: { '@id': websiteId() },
       about: { '@id': organizationId() },
     },
+    buildIzmirMedicalClinicEntity(),
   ]);
 }
 
@@ -175,20 +214,25 @@ export function buildServiceSchema(page, locale, slug) {
 
 export function buildPrivacySchema(locale, title, description) {
   const pageUrl = `${SITE_ORIGIN}/${locale}/privacy.html`;
-  const locationEntities = CLINIC.locations.map((location) => ({
-    '@type': 'MedicalClinic',
-    '@id': locationId(location.id),
-    name: `${CLINIC.publicName} – ${location.name}`,
-    parentOrganization: { '@id': organizationId() },
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: location.address,
-      addressCountry: location.id === 'leverkusen' ? 'DE' : 'TR',
-    },
-    telephone: CLINIC.phone,
-    email: CLINIC.email,
-    url: pageUrl,
-  }));
+  const locationEntities = CLINIC.locations.map((location) => {
+    if (location.id === 'izmir') {
+      return buildIzmirMedicalClinicEntity();
+    }
+    return {
+      '@type': 'MedicalClinic',
+      '@id': locationId(location.id),
+      name: `${CLINIC.publicName} – ${location.name}`,
+      parentOrganization: { '@id': organizationId() },
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: location.address,
+        addressCountry: location.id === 'leverkusen' ? 'DE' : 'TR',
+      },
+      telephone: CLINIC.phone,
+      email: CLINIC.email,
+      url: pageUrl,
+    };
+  });
 
   return buildJsonLdScript([
     {

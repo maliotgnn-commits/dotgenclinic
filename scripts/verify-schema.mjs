@@ -1,8 +1,15 @@
-import { readFileSync, existsSync, readdirSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SUBPAGES } from '../src/subpages-data.js';
-import { CLINIC, OG_IMAGE_PATH, LOCALES, DEFAULT_LOCALE } from './seo-shared.mjs';
+import {
+  CLINIC,
+  LOCALES,
+  SITE_ORIGIN,
+  buildIzmirMedicalClinicEntity,
+  locationId,
+  organizationId,
+} from './seo-shared.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -10,6 +17,20 @@ const DIST = resolve(ROOT, 'dist');
 const failures = [];
 const FORBIDDEN_TYPES = ['Doctor', 'Physician', 'Review', 'AggregateRating', 'Offer', 'Price', 'Certificate', 'Award'];
 const FORBIDDEN_PROPS = ['price', 'review', 'rating', 'aggregateRating'];
+const MEDICAL_CLINIC_FORBIDDEN_PROPS = [
+  'aggregateRating',
+  'review',
+  'priceRange',
+  'hasMap',
+  'geo',
+  'contactPoint',
+  'availableService',
+  'medicalSpecialty',
+  'employee',
+];
+const MEDICAL_CLINIC_FORBIDDEN_TYPES = ['Service'];
+const EXPECTED_IZMIR = buildIzmirMedicalClinicEntity();
+const MEDICAL_CLINIC_ID = locationId('izmir');
 
 function assert(condition, message) {
   if (!condition) failures.push(message);
@@ -23,6 +44,10 @@ function parseJsonLdBlocks(html) {
     blocks.push(JSON.parse(match[1]));
   }
   return blocks;
+}
+
+function flattenGraph(blocks) {
+  return blocks.flatMap((block) => block['@graph'] || [block]);
 }
 
 function walk(node, visit) {
@@ -46,29 +71,100 @@ function verifyFile(relativePath, checks) {
   checks({ html, blocks });
 }
 
-verifyFile('tr/index.html', ({ blocks }) => {
-  const graph = blocks.flatMap((block) => block['@graph'] || [block]);
-  const types = graph.map((node) => node['@type']).flat();
-  assert(types.includes('Organization'), '[home/tr] Organization missing');
-  assert(types.includes('WebSite'), '[home/tr] WebSite missing');
-  assert(types.includes('WebPage'), '[home/tr] WebPage missing');
-  assert(!types.includes('MedicalClinic'), '[home/tr] MedicalClinic must not appear on homepage');
-  const serialized = JSON.stringify(graph);
-  assert(!serialized.includes(CLINIC.locations[1].address), '[home/tr] hidden branch address in homepage schema');
-});
+function verifyIzmirMedicalClinic(entity, label) {
+  assert(entity?.['@type'] === 'MedicalClinic', `[${label}] MedicalClinic type missing`);
+  assert(entity?.['@id'] === MEDICAL_CLINIC_ID, `[${label}] @id mismatch`);
+  assert(JSON.stringify(entity) === JSON.stringify(EXPECTED_IZMIR), `[${label}] canonical Izmir entity mismatch`);
+  assert(!JSON.stringify(entity).includes('#medicalclinic'), `[${label}] forbidden #medicalclinic id`);
+  MEDICAL_CLINIC_FORBIDDEN_PROPS.forEach((prop) => {
+    assert(!(prop in entity), `[${label}] forbidden property ${prop} on MedicalClinic`);
+  });
+  walk(entity, (current) => {
+    if (current['@type'] && MEDICAL_CLINIC_FORBIDDEN_TYPES.includes(current['@type'])) {
+      failures.push(`[${label}] forbidden nested type ${current['@type']} on MedicalClinic`);
+    }
+    if (current['@type'] === 'ContactPoint') {
+      failures.push(`[${label}] forbidden ContactPoint on MedicalClinic`);
+    }
+  });
+  const hours = entity.openingHoursSpecification;
+  assert(hours?.opens === '08:00' && hours?.closes === '17:00', `[${label}] opening hours mismatch`);
+  assert(Array.isArray(hours?.dayOfWeek) && hours.dayOfWeek.length === 6, `[${label}] expected Mon-Sat only`);
+  assert(!hours?.dayOfWeek?.includes('https://schema.org/Sunday'), `[${label}] Sunday must not appear in openingHoursSpecification`);
+  assert(Array.isArray(entity.sameAs) && entity.sameAs.length === 1 && entity.sameAs[0] === CLINIC.instagram, `[${label}] sameAs must be Instagram only`);
+  assert(!JSON.stringify(entity).includes('wa.me'), `[${label}] WhatsApp must not appear on MedicalClinic`);
+}
 
-verifyFile('tr/privacy.html', ({ blocks }) => {
-  const graph = blocks.flatMap((block) => block['@graph'] || [block]);
-  const org = graph.find((node) => node['@type'] === 'Organization');
-  assert(org?.legalName === CLINIC.legalName, '[privacy/tr] legalName mismatch');
-  assert(org?.name === CLINIC.publicName, '[privacy/tr] public name mismatch');
-  assert(graph.filter((node) => node['@type'] === 'MedicalClinic').length === 3, '[privacy/tr] expected 3 clinic locations');
-});
+function buildBaselineBranchEntity(location, pageUrl) {
+  return {
+    '@type': 'MedicalClinic',
+    '@id': locationId(location.id),
+    name: `${CLINIC.publicName} – ${location.name}`,
+    parentOrganization: { '@id': organizationId() },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: location.address,
+      addressCountry: location.id === 'leverkusen' ? 'DE' : 'TR',
+    },
+    telephone: CLINIC.phone,
+    email: CLINIC.email,
+    url: pageUrl,
+  };
+}
+
+for (const locale of LOCALES) {
+  verifyFile(`${locale}/index.html`, ({ html, blocks }) => {
+    const label = `home/${locale}`;
+    const graph = flattenGraph(blocks);
+    const types = graph.map((node) => node['@type']).flat();
+    assert(types.includes('Organization'), `[${label}] Organization missing`);
+    assert(types.includes('WebSite'), `[${label}] WebSite missing`);
+    assert(types.includes('WebPage'), `[${label}] WebPage missing`);
+    const clinics = graph.filter((node) => node['@type'] === 'MedicalClinic');
+    assert(clinics.length === 1, `[${label}] expected exactly 1 MedicalClinic, found ${clinics.length}`);
+    verifyIzmirMedicalClinic(clinics[0], label);
+    const serialized = JSON.stringify(graph);
+    assert(!serialized.includes(CLINIC.locations[1].address), `[${label}] hidden branch address in homepage schema`);
+    assert(!serialized.includes(CLINIC.locations[2].address), `[${label}] hidden branch address in homepage schema`);
+    if (locale === 'ar') {
+      assert(html.includes('lang="ar"'), `[${label}] lang=ar missing`);
+      assert(html.includes('dir="rtl"'), `[${label}] dir=rtl missing`);
+    }
+  });
+
+  verifyFile(`${locale}/privacy.html`, ({ blocks }) => {
+    const label = `privacy/${locale}`;
+    const graph = flattenGraph(blocks);
+    const org = graph.find((node) => node['@type'] === 'Organization');
+    assert(org?.legalName === CLINIC.legalName, `[${label}] legalName mismatch`);
+    assert(org?.name === CLINIC.publicName, `[${label}] public name mismatch`);
+    const clinics = graph.filter((node) => node['@type'] === 'MedicalClinic');
+    assert(clinics.length === 3, `[${label}] expected 3 clinic locations`);
+    const ids = clinics.map((node) => node['@id']).sort();
+    assert(
+      JSON.stringify(ids) === JSON.stringify([locationId('denizli'), locationId('izmir'), locationId('leverkusen')].sort()),
+      `[${label}] unexpected clinic @id set`,
+    );
+    const izmir = clinics.find((node) => node['@id'] === MEDICAL_CLINIC_ID);
+    verifyIzmirMedicalClinic(izmir, label);
+    const pageUrl = `${SITE_ORIGIN}/${locale}/privacy.html`;
+    const denizli = clinics.find((node) => node['@id'] === locationId('denizli'));
+    const leverkusen = clinics.find((node) => node['@id'] === locationId('leverkusen'));
+    assert(
+      JSON.stringify(denizli) === JSON.stringify(buildBaselineBranchEntity(CLINIC.locations[1], pageUrl)),
+      `[${label}] Denizli baseline mismatch`,
+    );
+    assert(
+      JSON.stringify(leverkusen) === JSON.stringify(buildBaselineBranchEntity(CLINIC.locations[2], pageUrl)),
+      `[${label}] Leverkusen baseline mismatch`,
+    );
+  });
+}
 
 const sampleSlug = 'botox';
 const sampleService = SUBPAGES.find((page) => page.slug === sampleSlug) || SUBPAGES[0];
 verifyFile(`_seo/tr/service/${sampleService.slug}.html`, ({ blocks, html }) => {
-  const graph = blocks.flatMap((block) => block['@graph'] || [block]);
+  const graph = flattenGraph(blocks);
   const service = graph.find((node) => node['@type'] === 'Service');
   assert(service?.description === sampleService.summary, '[service/tr/botox-or-first] service description mismatch');
   graph.forEach((node) => walk(node, (current) => {
@@ -82,12 +178,13 @@ verifyFile(`_seo/tr/service/${sampleService.slug}.html`, ({ blocks, html }) => {
   assert(!html.includes(CLINIC.locations[0].address), '[service sample] branch address must not appear in service schema html');
 });
 
-for (const blockSet of [readFileSync(resolve(DIST, 'tr/index.html'), 'utf8')]) {
-  parseJsonLdBlocks(blockSet).forEach((block) => {
+for (const locale of LOCALES) {
+  const html = readFileSync(resolve(DIST, locale, 'index.html'), 'utf8');
+  parseJsonLdBlocks(html).forEach((block) => {
     try {
       JSON.stringify(block);
     } catch {
-      failures.push('[json] invalid JSON-LD serialization');
+      failures.push(`[json/home/${locale}] invalid JSON-LD serialization`);
     }
   });
 }
