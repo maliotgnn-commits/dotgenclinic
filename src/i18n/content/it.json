@@ -74,7 +74,7 @@
       "overview": [
         "La nostra visione e missione; Rivela i nostri standard, il funzionamento e le priorità di qualità in un quadro semplice e trasparente.",
         "Prima che inizi il processo di pianificazione del trattamento, ogni passaggio viene chiaramente condiviso in modo che i nostri pazienti abbiano informazioni chiare sull’intero processo.",
-        "Temel amacımız; hasta yolculuğunun her aşamasında iletişim, kalite ve sürekliliği aynı yüksek seviyede sürdürmektir. Dr. Otgen Clinic; T.C. Sağlık Bakanlığı ve TÜV Thüringen (ISO 9001) belgelendirmeleriyle sağlık ve estetiği bir arada sunar."
+        "Il nostro obiettivo principale è; Mantenere la comunicazione, la qualità e la continuità allo stesso livello elevato in ogni fase del percorso del paziente. Clinica Dr. Otgen; T.R. Offre certificazioni sanitarie ed estetiche insieme al Ministero della Salute e TÜV Thüringen (ISO 9001)."
       ],
       "sections": [],
       "highlights": [
@@ -92,20 +92,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Vizyon",
-          "value": "Sağlık ve estetikte güvenilir global referans olmak"
+          "label": "visione",
+          "value": "Essere un riferimento globale affidabile nel campo della salute e dell'estetica"
         },
         {
-          "label": "Misyon",
-          "value": "Hasta güvenliği ve kalite odaklı kişisel bakım sunmak"
+          "label": "missione",
+          "value": "Providing personal care focused on patient safety and quality"
         },
         {
-          "label": "Odak",
-          "value": "Şeffaf iletişim ve sürdürülebilir gelişim"
+          "label": "Concentrarsi",
+          "value": "Comunicazione trasparente e sviluppo sostenibile"
         },
         {
-          "label": "Standart",
-          "value": "ISO 9001 ve Sağlık Bakanlığı belgelendirmeleri"
+          "label": "Norma",
+          "value": "Certificazioni ISO 9001 e Ministero della Salute"
         }
       ],
       "process": [
@@ -151,35 +151,35 @@
         "content": "/images/site/pages/our-values.webp"
       },
       "overview": [
-        "Değerlerimiz; standartlarımızı, iş akışlarımızı ve kalite önceliklerimizi yalın ve şeffaf bir yapıda açıklar.",
-        "Tedavi planlaması başlamadan önce beklentilerin netleşmesi için her adım şeffaf biçimde paylaşılır; hasta yolculuğunun her aşamasında iletişim, kalite ve süreklilik önceliğimizdir.",
-        "Dr. Otgen Clinic; T.C. Sağlık Bakanlığı ve TÜV Thüringen (ISO 9001) belgelendirmeleriyle sağlık ve estetiği güvenilir standartlarda bir araya getirir."
+        "I nostri valori; Spiega i nostri standard, flussi di lavoro e priorità di qualità in una struttura semplice e trasparente.",
+        "Ogni passaggio è condiviso in modo trasparente per chiarire le aspettative prima che inizi la pianificazione del trattamento; Comunicazione, qualità e continuità sono le nostre priorità in ogni fase del percorso del paziente.",
+        "Clinica Dr. Otgen; T.R. It brings together health and aesthetics at reliable standards with certifications from the Ministry of Health and TÜV Thüringen (ISO 9001)."
       ],
       "sections": [
         {
-          "title": "Temel Değerlerimiz",
+          "title": "I nostri valori fondamentali",
           "blocks": [
             {
               "type": "list",
               "items": [
-                "Hasta Odaklılık: Tüm süreçlerimizin merkezinde danışanlarımız yer alır. Güvenlik, konfor ve memnuniyet hizmet anlayışımızın temelini oluşturur.",
-                "Etik ve Şeffaf Yaklaşım: Tıbbi etik ilkelerden ödün vermeden, açık iletişim ve güvene dayalı bir hizmet sunulur.",
-                "Uluslararası Kalite: T.C. Sağlık Bakanlığı ve TÜV Thüringen (ISO 9001) standartlarına uygun global düzeyde akredite kalite anlayışı.",
-                "Bilim ve Teknolojiye Yatırım: En güncel teknolojiler takip edilir; tıbbi altyapı sürekli geliştirilir.",
-                "Uzmanlık ve Deneyim: Alanında uzman, tam zamanlı profesyonellerden oluşan güçlü kadro ile güvenilir sonuçlar hedeflenir.",
-                "Sürdürülebilir Hizmet Anlayışı: Uzun vadeli güven ilişkisine dayalı, istikrarlı ve kalite odaklı hizmet sunulur.",
-                "Estetik ve Sağlığın Dengesi: Her uygulama yalnızca estetik kazanım değil, genel sağlık ve yaşam konforunu destekleyen bir bütün olarak ele alınır.",
-                "Küresel Vizyon: Farklı ülkelerden gelen hastalara, kültürel farklılıklara saygılı global düzeyde hizmet verilir."
+                "Attenzione al paziente: i nostri clienti sono al centro di tutti i nostri processi. Sicurezza, comfort e soddisfazione costituiscono la base del nostro approccio al servizio.",
+                "Approccio etico e trasparente: viene fornito un servizio basato sulla comunicazione aperta e sulla fiducia senza compromettere i principi etici medici.",
+                "Qualità internazionale: T.R. Globally accredited quality approach in accordance with the standards of the Ministry of Health and TÜV Thüringen (ISO 9001).",
+                "Investment in Science and Technology: The most up-to-date technologies are followed; The medical infrastructure is constantly improved.",
+                "Expertise and Experience: Reliable results are aimed with a strong staff of full-time professionals who are experts in their fields.",
+                "Sustainable Service Concept: Stable and quality-oriented service is provided based on long-term trust relationship.",
+                "Equilibrio tra estetica e salute: ogni applicazione è considerata nel suo insieme che supporta non solo il guadagno estetico ma anche la salute generale e il comfort della vita.",
+                "Global Vision: Patients from different countries are provided with global service that respects cultural differences."
               ]
             }
           ]
         }
       ],
       "highlights": [
-        "Hasta odaklılık ve güvenli bakım anlayışı",
-        "Etik ve şeffaf iletişim",
-        "Uluslararası kalite standartları",
-        "Bilim, teknoloji ve sürdürülebilir hizmet"
+        "Approccio terapeutico orientato al paziente e sicuro",
+        "Comunicazione etica e trasparente",
+        "Standard internazionali di qualità",
+        "Scienza, tecnologia e servizio sostenibile"
       ],
       "suitableIntro": "",
       "suitableFor": [
@@ -190,20 +190,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Hasta Odaklılık",
-          "value": "Güvenlik, konfor ve memnuniyet merkezde"
+          "label": "Attenzione al paziente",
+          "value": "Safety, comfort and satisfaction are at the center"
         },
         {
-          "label": "Etik Yaklaşım",
-          "value": "Şeffaf ve güvene dayalı iletişim"
+          "label": "Approccio etico",
+          "value": "Comunicazione trasparente e basata sulla fiducia"
         },
         {
-          "label": "Kalite",
-          "value": "Uluslararası akreditasyon standartları"
+          "label": "Qualità",
+          "value": "Standard internazionali di accreditamento"
         },
         {
-          "label": "İnovasyon",
-          "value": "Bilim ve teknolojiye sürekli yatırım"
+          "label": "innovazione",
+          "value": "Investimenti continui in scienza e tecnologia"
         }
       ],
       "process": [
@@ -249,13 +249,13 @@
         "content": "/images/site/pages/quality-policy.webp"
       },
       "overview": [
-        "Kalite politikamız; standartlarımızı, iş akışlarımızı ve kalite önceliklerimizi basit ve şeffaf bir yapıda açıklar.",
-        "Tedavi planlaması başlamadan önce beklentilerin netleşmesi için her adım şeffaf biçimde sunulur; hasta güvenliği, etik ilkeler ve süreklilik merkezdedir.",
-        "Dr. Otgen Clinic; sağlık ve estetik hizmetlerinde uluslararası standartlara uygun, sürdürülebilir bir kalite anlayışıyla çalışır."
+        "La nostra politica della qualità; Spiega i nostri standard, flussi di lavoro e priorità di qualità in una struttura semplice e trasparente.",
+        "Each step is presented transparently to clarify expectations before treatment planning begins; Patient safety, ethical principles and continuity are at the center.",
+        "Clinica Dr. Otgen; It works with a sustainable quality approach in accordance with international standards in health and aesthetic services."
       ],
       "sections": [
         {
-          "title": "Kalite Odaklı Yaklaşımımız",
+          "title": "Il nostro approccio orientato alla qualità",
           "blocks": [
             {
               "type": "list",
@@ -273,7 +273,7 @@
             },
             {
               "type": "subheading",
-              "text": "Kalite Belgelerimiz"
+              "text": "I nostri certificati di qualità"
             },
             {
               "type": "list",
@@ -289,9 +289,9 @@
       ],
       "highlights": [
         "Servizio sanitario secondo standard di qualità internazionali",
-        "Eğitimle güçlenen uzman kadro",
-        "Teknolojik yatırım ve dijital süreçler",
-        "Hasta güvenliği ve sürdürülebilir kalite"
+        "Personale esperto rafforzato dalla formazione",
+        "Investimenti tecnologici e processi digitali",
+        "Sicurezza del paziente e qualità sostenibile"
       ],
       "suitableIntro": "",
       "suitableFor": [
@@ -302,20 +302,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Sertifikasyon",
-          "value": "ISO 9001:2015 ve TÜV Thüringen"
+          "label": "Certificazione",
+          "value": "ISO 9001:2015 e TÜV Turingia"
         },
         {
-          "label": "Güvenlik",
-          "value": "Hasta güvenliği ve hijyen önceliği"
+          "label": "Sicurezza",
+          "value": "Priorità alla sicurezza e all’igiene del paziente"
         },
         {
-          "label": "Kadro",
-          "value": "Eğitimli tam zamanlı uzman ekip"
+          "label": "squadra",
+          "value": "Team di esperti formato a tempo pieno"
         },
         {
-          "label": "İzleme",
-          "value": "Sürekli kalite denetimi ve iyileştirme"
+          "label": "Monitoraggio",
+          "value": "Controllo e miglioramento continuo della qualità"
         }
       ],
       "process": [
@@ -385,16 +385,16 @@
           "value": "Standard di processo trasparenti e misurabili"
         },
         {
-          "label": "Koordinasyon",
-          "value": "Departmanlar arası planlı iş birliği"
+          "label": "coordinazione",
+          "value": "Collaborazione pianificata tra i dipartimenti"
         },
         {
           "label": "Contatto",
-          "value": "Her aşamada net hasta bilgilendirmesi"
+          "value": "Informazioni chiare sul paziente in ogni fase"
         },
         {
           "label": "tracciamento",
-          "value": "Yapılandırılmış operasyonel süreç yönetimi"
+          "value": "Gestione strutturata dei processi operativi"
         }
       ],
       "process": [
@@ -440,9 +440,9 @@
         "content": "/images/site/pages/our-doctors.webp"
       },
       "overview": [
-        "Hekimlerimiz; standartlarımızı, iş akışlarımızı ve kalite önceliklerimizi sade ve şeffaf bir yapıda sunmaktadır.",
-        "Tedavi planlaması başlamadan önce beklentilerin netleşmesi için her adım şeffaf biçimde paylaşılır; hasta yolculuğunda iletişim ve güvenlik önceliklidir.",
-        "Alanında uzman, deneyimli hekim kadromuz; estetik, sağlık ve fonksiyonel hedefleri birlikte değerlendirerek kişiye özel planlama yapar."
+        "I nostri medici; Presenta i nostri standard, flussi di lavoro e priorità di qualità in una struttura semplice e trasparente.",
+        "Ogni passaggio è condiviso in modo trasparente per chiarire le aspettative prima che inizi la pianificazione del trattamento; La comunicazione e la sicurezza sono priorità durante tutto il percorso del paziente.",
+        "Il nostro personale medico esperto ed esperto; Effettua una pianificazione personalizzata valutando insieme obiettivi estetici, di salute e funzionali."
       ],
       "sections": [],
       "highlights": [
@@ -460,20 +460,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Uzmanlık",
-          "value": "Alanında deneyimli tam zamanlı hekim kadrosu"
+          "label": "Competenza",
+          "value": "Personale medico a tempo pieno con esperienza nel proprio campo"
         },
         {
           "label": "Valutazione",
           "value": "Pianificazione del trattamento personalizzato"
         },
         {
-          "label": "Standart",
-          "value": "Modern klinik uygulama protokolleri"
+          "label": "Norma",
+          "value": "Protocolli di pratica clinica moderna"
         },
         {
           "label": "tracciamento",
-          "value": "Konsültasyon sonrası yapılandırılmış kontroller"
+          "value": "Controlli strutturati previa consultazione"
         }
       ],
       "process": [
@@ -520,40 +520,40 @@
       },
       "overview": [
         "Il nostro approccio al turismo sanitario; Spiega i nostri standard, il funzionamento e le priorità di qualità in modo semplice e trasparente.",
-        "Tedavi süreci başlamadan önce beklentilerin netleşmesi için tüm adımlar açık şekilde paylaşılır; uluslararası hasta koordinasyonu önceliğimizdir.",
-        "Türkiye; modern altyapısı, uzman kadrosu ve maliyet avantajlarıyla sağlık turizminde güçlü bir merkez konumundadır."
+        "Prima che inizi il processo di trattamento, tutti i passaggi vengono chiaramente condivisi per chiarire le aspettative; Il coordinamento internazionale dei pazienti è la nostra priorità.",
+        "Turchia; È un forte centro nel turismo sanitario con le sue infrastrutture moderne, personale esperto e vantaggi in termini di costi."
       ],
       "sections": [
         {
-          "title": "Türkiye'de Sağlık Turizmi",
+          "title": "Turismo sanitario in Turchia",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Dünyada ve Türkiye'de sağlık turizmi son yıllarda hızla büyüyen önemli bir alternatif turizm alanıdır. Türkiye'de sağlık sistemi son yıllarda büyük gelişmeler göstermiş; kamu ve özel sağlık hizmetleri birlikte güçlenmiştir."
+              "text": "Il turismo sanitario nel mondo e in Turchia è un importante settore del turismo alternativo che è cresciuto rapidamente negli ultimi anni. Il sistema sanitario in Türkiye ha mostrato grandi miglioramenti negli ultimi anni; I servizi sanitari pubblici e privati ​​sono stati rafforzati insieme."
             },
             {
               "type": "list",
               "items": [
-                "Modern hastaneler, uzman doktorlar ve güçlü teknolojik altyapı",
-                "Coğrafi konum, kaplıca ve doğal güzelliklerle birleşen sağlık hizmeti",
-                "Estetik ve plastik cerrahide dünya standartlarına yakın uygulamalar",
-                "Kalite standartlarına rağmen birçok ülkeye göre daha ekonomik hizmet",
-                "Yabancı dillere hakim danışmanlarla koordineli hasta desteği",
-                "100'e yakın ülkeden hastaya hizmet veren uluslararası deneyim"
+                "Ospedali moderni, medici specialisti e forti infrastrutture tecnologiche",
+                "Servizio sanitario abbinato alla posizione geografica, alle sorgenti termali e alle bellezze naturali",
+                "Studi vicini agli standard mondiali in chirurgia estetica e plastica",
+                "Servizio più economico rispetto a molti paesi nonostante gli standard di qualità",
+                "Supporto coordinato al paziente con consulenti fluenti in lingue straniere",
+                "Esperienza internazionale al servizio di pazienti provenienti da quasi 100 paesi"
               ]
             },
             {
               "type": "paragraph",
-              "text": "Dr. Otgen Clinic; tedavi öncesi planlamadan iyileşme sürecine kadar yapılandırılmış, şeffaf ve güvenli bir sağlık turizmi deneyimi sunar."
+              "text": "Clinica Dr. Otgen; Offre un'esperienza di turismo sanitario strutturata, trasparente e sicura, dalla pianificazione pre-trattamento al processo di recupero."
             }
           ]
         }
       ],
       "highlights": [
-        "Uluslararası hasta koordinasyonu",
-        "Avrupa standartlarında sağlık altyapısı",
-        "Ekonomik ve kaliteli tedavi seçenekleri",
-        "Tedavi sonrası yapılandırılmış takip"
+        "Coordinamento internazionale dei pazienti",
+        "Infrastrutture sanitarie agli standard europei",
+        "Opzioni di trattamento economiche e di qualità",
+        "Follow-up strutturato dopo il trattamento"
       ],
       "suitableIntro": "",
       "suitableFor": [
@@ -564,20 +564,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Kapsam",
-          "value": "100'e yakın ülkeden hasta deneyimi"
+          "label": "Ambito",
+          "value": "Esperienza di pazienti provenienti da quasi 100 paesi"
         },
         {
-          "label": "Koordinasyon",
-          "value": "Çok dilli danışman desteği"
+          "label": "coordinazione",
+          "value": "Supporto di consulenza multilingue"
         },
         {
-          "label": "Altyapı",
-          "value": "Avrupa standartlarında modern tesisler"
+          "label": "infrastrutture",
+          "value": "Strutture moderne secondo gli standard europei"
         },
         {
-          "label": "Avantaj",
-          "value": "Kaliteli ve ekonomik tedavi seçenekleri"
+          "label": "Vantaggio",
+          "value": "Opzioni di trattamento economiche e di qualità"
         }
       ],
       "process": [
@@ -643,20 +643,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Destek",
-          "value": "Uluslararası hasta koordinasyonu"
+          "label": "Supporto",
+          "value": "Coordinamento internazionale dei pazienti"
         },
         {
           "label": "Contatto",
-          "value": "Hasta dilinde süreç bilgilendirmesi"
+          "value": "Elaborare le informazioni nel linguaggio del paziente"
         },
         {
-          "label": "Erişim",
-          "value": "Hızlı yönlendirme ve takip hattı"
+          "label": "Accesso",
+          "value": "Linea di avanzamento e tracciamento rapido"
         },
         {
-          "label": "Standart",
-          "value": "Şeffaf ve yapılandırılmış süreç yönetimi"
+          "label": "Norma",
+          "value": "Gestione trasparente e strutturata dei processi"
         }
       ],
       "process": [
@@ -924,7 +924,7 @@
       "overview": [
         "Il processo di trapianto di capelli DHI è appositamente pianificato in base alla struttura dei capelli della persona, al livello di perdita dei capelli e alle aspettative. Grazie alla consulenza dettagliata prima del trattamento, vengono analizzate le vostre esigenze e viene creata una road map adatta a voi.",
         "Scopo; è ottenere risultati esteticamente riusciti, intensi e permanenti preservando l'attaccatura naturale dei capelli. Il processo post-trattamento viene monitorato con controlli regolari per garantire che la guarigione proceda in modo sicuro e sano.",
-        "Choi implanter kalemi ile doğrudan implantasyon sayesinde ekim açısı, yönü ve yoğunluğu daha hassas biçimde kontrol edilir."
+        "Grazie all'impianto diretto con la penna implanter Choi, l'angolo, la direzione e la densità del trapianto sono controllati in modo più preciso."
       ],
       "sections": [
         {
