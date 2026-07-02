@@ -74,8 +74,7 @@
       "overview": [
         "Our vision and mission; It reveals our standards, operation and quality priorities in a simple and transparent framework.",
         "Before the treatment planning process begins, each step is clearly shared so that our patients have clear information about the entire process.",
-        "Our main aim is; To maintain communication, quality and continuity at the same high level at every stage of the patient journey.",
-        "Dr. Otgen Clinic; T.R. It is an organization that offers health and aesthetics together with its service structure certified by the Ministry of Health and TÜV Thüringen (ISO 9001) and also awarded by the European Property Awards."
+        "Temel amacımız; hasta yolculuğunun her aşamasında iletişim, kalite ve sürekliliği aynı yüksek seviyede sürdürmektir. Dr. Otgen Clinic; T.C. Sağlık Bakanlığı ve TÜV Thüringen (ISO 9001) belgelendirmeleriyle sağlık ve estetiği bir arada sunar."
       ],
       "sections": [],
       "highlights": [
@@ -93,20 +92,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Duration",
-          "value": "Regular updates and continuous improvement"
+          "label": "Vizyon",
+          "value": "Sağlık ve estetikte güvenilir global referans olmak"
         },
         {
-          "label": "Treatment Model",
-          "value": "Information and planning"
+          "label": "Misyon",
+          "value": "Hasta güvenliği ve kalite odaklı kişisel bakım sunmak"
         },
         {
-          "label": "recovery",
-          "value": "Quick and direct access"
+          "label": "Odak",
+          "value": "Şeffaf iletişim ve sürdürülebilir gelişim"
         },
         {
-          "label": "Method",
-          "value": "Standardized enterprise process management"
+          "label": "Standart",
+          "value": "ISO 9001 ve Sağlık Bakanlığı belgelendirmeleri"
         }
       ],
       "process": [
@@ -152,22 +151,36 @@
         "content": "/images/site/pages/our-values.webp"
       },
       "overview": [
-        "Our values; It explains our standards, workflows and quality priorities in a simple and transparent structure. We present each step transparently so that our visitors can clarify their expectations before treatment planning begins. Our aim is; To keep communication, quality and continuity at the same high standard at every stage of the patient journey.",
-        "Patient Focus: Our clients are at the center of all our processes. Their safety, comfort and satisfaction, Dr. It forms the basis of Otgen Clinic's service approach.",
-        "Ethical and Transparent Approach: We offer a service approach based on open communication and trust, without compromising medical ethical principles.",
-        "International Quality: We provide our services to T.R. Provides in accordance with the standards of the Ministry of Health and TÜV Thuringia (ISO 9001); Dr. At Otgen Clinic, we adopt a globally accredited quality approach.",
-        "Investment in Science and Technology: We follow the most up-to-date technologies and aim to be the pioneer of innovation in aesthetics and health by constantly improving our medical infrastructure.",
-        "Expertise and Experience: We offer a high success rate and reliable results with our strong staff of full-time professionals, each of whom is an expert in their field.",
-        "Sustainable Service Approach: We do not see client satisfaction as limited to the transaction day; Dr. As Otgen Clinic, we offer a stable and quality-oriented service based on long-term trust relationships.",
-        "Harmonious Balance of Aesthetics and Health: We consider each application as a whole that supports not only aesthetic gain but also general health and life comfort.",
-        "Global Vision: With our structure that provides services to thousands of patients from different countries, we bear the responsibility of being an exemplary health center at the global level that respects cultural differences.",
-        "Transparent and measurable process standards",
-        "Clear communication at every decision point",
-        "International patient support and coordination",
-        "Continuous quality monitoring and improvement"
+        "Değerlerimiz; standartlarımızı, iş akışlarımızı ve kalite önceliklerimizi yalın ve şeffaf bir yapıda açıklar.",
+        "Tedavi planlaması başlamadan önce beklentilerin netleşmesi için her adım şeffaf biçimde paylaşılır; hasta yolculuğunun her aşamasında iletişim, kalite ve süreklilik önceliğimizdir.",
+        "Dr. Otgen Clinic; T.C. Sağlık Bakanlığı ve TÜV Thüringen (ISO 9001) belgelendirmeleriyle sağlık ve estetiği güvenilir standartlarda bir araya getirir."
       ],
-      "sections": [],
-      "highlights": [],
+      "sections": [
+        {
+          "title": "Temel Değerlerimiz",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "Hasta Odaklılık: Tüm süreçlerimizin merkezinde danışanlarımız yer alır. Güvenlik, konfor ve memnuniyet hizmet anlayışımızın temelini oluşturur.",
+                "Etik ve Şeffaf Yaklaşım: Tıbbi etik ilkelerden ödün vermeden, açık iletişim ve güvene dayalı bir hizmet sunulur.",
+                "Uluslararası Kalite: T.C. Sağlık Bakanlığı ve TÜV Thüringen (ISO 9001) standartlarına uygun global düzeyde akredite kalite anlayışı.",
+                "Bilim ve Teknolojiye Yatırım: En güncel teknolojiler takip edilir; tıbbi altyapı sürekli geliştirilir.",
+                "Uzmanlık ve Deneyim: Alanında uzman, tam zamanlı profesyonellerden oluşan güçlü kadro ile güvenilir sonuçlar hedeflenir.",
+                "Sürdürülebilir Hizmet Anlayışı: Uzun vadeli güven ilişkisine dayalı, istikrarlı ve kalite odaklı hizmet sunulur.",
+                "Estetik ve Sağlığın Dengesi: Her uygulama yalnızca estetik kazanım değil, genel sağlık ve yaşam konforunu destekleyen bir bütün olarak ele alınır.",
+                "Küresel Vizyon: Farklı ülkelerden gelen hastalara, kültürel farklılıklara saygılı global düzeyde hizmet verilir."
+              ]
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Hasta odaklılık ve güvenli bakım anlayışı",
+        "Etik ve şeffaf iletişim",
+        "Uluslararası kalite standartları",
+        "Bilim, teknoloji ve sürdürülebilir hizmet"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "For our visitors looking for clear clinical information before treatment",
@@ -177,20 +190,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Duration",
-          "value": "Continuous Updates"
+          "label": "Hasta Odaklılık",
+          "value": "Güvenlik, konfor ve memnuniyet merkezde"
         },
         {
-          "label": "Treatment Model",
-          "value": "Information and Planning"
+          "label": "Etik Yaklaşım",
+          "value": "Şeffaf ve güvene dayalı iletişim"
         },
         {
-          "label": "recovery",
-          "value": "Quick Access"
+          "label": "Kalite",
+          "value": "Uluslararası akreditasyon standartları"
         },
         {
-          "label": "Method",
-          "value": "Standardized enterprise process management"
+          "label": "İnovasyon",
+          "value": "Bilim ve teknolojiye sürekli yatırım"
         }
       ],
       "process": [
@@ -236,26 +249,50 @@
         "content": "/images/site/pages/quality-policy.webp"
       },
       "overview": [
-        "Our quality policy; It explains our standards, workflows and quality priorities in a simple and transparent structure. We present each step transparently to clarify expectations before treatment planning begins. Our aim is; To keep communication, quality and continuity at the same high standard throughout the entire patient journey.Dr. As Otgen Clinic; We work with a quality approach that will secure not only today but also the future in health and aesthetic services. In every field we serve; focuses on the health, safety and satisfaction of our patients; We fully comply with ethical principles, laws and regulations in all our processes. Based on confidentiality, impartiality and people-oriented approach, our clinic aims to go further every day with its high hygiene standards and strong technological infrastructure.",
-        "Basic Elements of Our Quality-Focused Approach:",
-        "Healthcare service at international quality standards",
-        "Full-time expert staff strengthened by training",
-        "Technological investments and digitalization-oriented processes",
-        "Occupational health, environmental awareness and patient safety priority",
-        "Sustainable contribution to the local and global healthcare sector",
-        "Dr. Our achievements as Otgen Clinic; We register with documents issued by national and international authorities. These certificates are the most concrete indicator of our commitment to quality and that we work at international standards.",
-        "Our Quality Certificates:",
-        "ISO 9001:2015 – International Quality Management System Certificate",
-        "TÜV Thüringen & TÜV SÜD – Infrastructure and medical security systems that have passed quality inspections",
-        "T.R. Ministry of Health – Authorized Health Institution Certificate",
-        "Health Tourism Authorization Certificate",
-        "Transparent and measurable process standards",
-        "Clear communication at every decision point",
-        "International patient support and coordination",
-        "Continuous quality monitoring and improvement"
+        "Kalite politikamız; standartlarımızı, iş akışlarımızı ve kalite önceliklerimizi basit ve şeffaf bir yapıda açıklar.",
+        "Tedavi planlaması başlamadan önce beklentilerin netleşmesi için her adım şeffaf biçimde sunulur; hasta güvenliği, etik ilkeler ve süreklilik merkezdedir.",
+        "Dr. Otgen Clinic; sağlık ve estetik hizmetlerinde uluslararası standartlara uygun, sürdürülebilir bir kalite anlayışıyla çalışır."
       ],
-      "sections": [],
-      "highlights": [],
+      "sections": [
+        {
+          "title": "Kalite Odaklı Yaklaşımımız",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "Healthcare service at international quality standards",
+                "Full-time expert staff strengthened by training",
+                "Technological investments and digitalization-oriented processes",
+                "Occupational health, environmental awareness and patient safety priority",
+                "Sustainable contribution to the local and global healthcare sector"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Dr. Our achievements as Otgen Clinic; We register with documents issued by national and international authorities. These certificates are the most concrete indicator of our commitment to quality and that we work at international standards."
+            },
+            {
+              "type": "subheading",
+              "text": "Kalite Belgelerimiz"
+            },
+            {
+              "type": "list",
+              "items": [
+                "ISO 9001:2015 – International Quality Management System Certificate",
+                "TÜV Thüringen & TÜV SÜD – Infrastructure and medical security systems that have passed quality inspections",
+                "T.R. Ministry of Health – Authorized Health Institution Certificate",
+                "Health Tourism Authorization Certificate"
+              ]
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Healthcare service at international quality standards",
+        "Eğitimle güçlenen uzman kadro",
+        "Teknolojik yatırım ve dijital süreçler",
+        "Hasta güvenliği ve sürdürülebilir kalite"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "For our visitors looking for clear clinical information before treatment",
@@ -265,20 +302,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Duration",
-          "value": "Ongoing Updates"
+          "label": "Sertifikasyon",
+          "value": "ISO 9001:2015 ve TÜV Thüringen"
         },
         {
-          "label": "Treatment Model",
-          "value": "Information and Planning"
+          "label": "Güvenlik",
+          "value": "Hasta güvenliği ve hijyen önceliği"
         },
         {
-          "label": "recovery",
-          "value": "Uninterrupted and Fast Access"
+          "label": "Kadro",
+          "value": "Eğitimli tam zamanlı uzman ekip"
         },
         {
-          "label": "Method",
-          "value": "Standardized enterprise process management"
+          "label": "İzleme",
+          "value": "Sürekli kalite denetimi ve iyileştirme"
         }
       ],
       "process": [
@@ -344,20 +381,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Duration",
-          "value": "Regular information and updates"
+          "label": "Management",
+          "value": "Transparent and measurable process standards"
         },
         {
-          "label": "Treatment Model",
-          "value": "Information and planning"
+          "label": "Koordinasyon",
+          "value": "Departmanlar arası planlı iş birliği"
         },
         {
-          "label": "recovery",
-          "value": "Quick and direct access"
+          "label": "Contact",
+          "value": "Her aşamada net hasta bilgilendirmesi"
         },
         {
-          "label": "Method",
-          "value": "Standardized enterprise process management"
+          "label": "tracking",
+          "value": "Yapılandırılmış operasyonel süreç yönetimi"
         }
       ],
       "process": [
@@ -403,14 +440,17 @@
         "content": "/images/site/pages/our-doctors.webp"
       },
       "overview": [
-        "Our physicians; We present our standards, workflows and quality priorities in a simple and transparent structure. We present each step transparently so that our visitors can clarify their expectations before treatment planning begins. Our goal is; To maintain communication, quality and continuity at the same high standard throughout the patient journey.",
+        "Hekimlerimiz; standartlarımızı, iş akışlarımızı ve kalite önceliklerimizi sade ve şeffaf bir yapıda sunmaktadır.",
+        "Tedavi planlaması başlamadan önce beklentilerin netleşmesi için her adım şeffaf biçimde paylaşılır; hasta yolculuğunda iletişim ve güvenlik önceliklidir.",
+        "Alanında uzman, deneyimli hekim kadromuz; estetik, sağlık ve fonksiyonel hedefleri birlikte değerlendirerek kişiye özel planlama yapar."
+      ],
+      "sections": [],
+      "highlights": [
         "Transparent and measurable process standards",
         "Clear communication at every decision point",
         "International patient support and coordination",
         "Continuous quality monitoring and improvement"
       ],
-      "sections": [],
-      "highlights": [],
       "suitableIntro": "",
       "suitableFor": [
         "For those seeking clear clinical information and process guidance before treatment",
@@ -420,20 +460,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Duration",
-          "value": "Regular Process Information"
+          "label": "Uzmanlık",
+          "value": "Alanında deneyimli tam zamanlı hekim kadrosu"
         },
         {
-          "label": "Treatment Model",
-          "value": "Information and Planning"
+          "label": "Evaluation",
+          "value": "Personalized treatment planning"
         },
         {
-          "label": "recovery",
-          "value": "Instant Access"
+          "label": "Standart",
+          "value": "Modern klinik uygulama protokolleri"
         },
         {
-          "label": "Method",
-          "value": "Standardized enterprise process management"
+          "label": "tracking",
+          "value": "Konsültasyon sonrası yapılandırılmış kontroller"
         }
       ],
       "process": [
@@ -480,28 +520,40 @@
       },
       "overview": [
         "Our health tourism approach; It explains our standards, operation and quality priorities in a simple and transparent manner.",
-        "All steps are shared clearly to clarify expectations before the treatment process begins.",
-        "Our aim; is to keep communication, quality and continuity at the same high level throughout the patient's journey.",
-        "Health tourism in the world and in Turkey is an important alternative tourism field that has grown rapidly in recent years.",
-        "The healthcare system in Turkey has shown great developments in recent years. With the reforms, both quality and efficiency have increased. In addition to public health services, private health services have also developed rapidly.",
-        "Türkiye; It offers services at European standards with its modern hospitals, specialist doctors, trained healthcare personnel and strong technological infrastructure.",
-        "Thanks to its geographical location, quality of health institutions, trained manpower, hot springs and natural beauties, Türkiye is an important center in terms of health tourism.",
-        "Its historical and cultural richness and its development in the field of health make Turkey one of the world's leading health tourism countries. It also attracts attention with its health facilities that use high technology and offer cost advantages.",
-        "Türkiye closely follows the developments in the world in the field of aesthetics and plastic surgery and plays a leading role in many new applications.",
-        "Despite the same quality standards, Turkey offers more affordable healthcare services than many countries.",
-        "The communication skills of doctors and the warm approach of the Turkish society make patient communication easier.",
-        "Foreign patients are accompanied by consultants who provide services in their own language.",
-        "The strong continuation of post-treatment processes also makes Turkey one of the preferred countries.",
-        "Significant progress has been made in the field of health tourism in recent years. The state also supports investments in this field. These developments positively affect Turkey's international image.",
-        "According to our own data, we serve patients from nearly 100 countries. This shows the growth of the sector.",
-        "Türkiye; It will come to an even stronger position in health tourism with its location, quality service approach and economic advantages."
+        "Tedavi süreci başlamadan önce beklentilerin netleşmesi için tüm adımlar açık şekilde paylaşılır; uluslararası hasta koordinasyonu önceliğimizdir.",
+        "Türkiye; modern altyapısı, uzman kadrosu ve maliyet avantajlarıyla sağlık turizminde güçlü bir merkez konumundadır."
       ],
-      "sections": [],
+      "sections": [
+        {
+          "title": "Türkiye'de Sağlık Turizmi",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Dünyada ve Türkiye'de sağlık turizmi son yıllarda hızla büyüyen önemli bir alternatif turizm alanıdır. Türkiye'de sağlık sistemi son yıllarda büyük gelişmeler göstermiş; kamu ve özel sağlık hizmetleri birlikte güçlenmiştir."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Modern hastaneler, uzman doktorlar ve güçlü teknolojik altyapı",
+                "Coğrafi konum, kaplıca ve doğal güzelliklerle birleşen sağlık hizmeti",
+                "Estetik ve plastik cerrahide dünya standartlarına yakın uygulamalar",
+                "Kalite standartlarına rağmen birçok ülkeye göre daha ekonomik hizmet",
+                "Yabancı dillere hakim danışmanlarla koordineli hasta desteği",
+                "100'e yakın ülkeden hastaya hizmet veren uluslararası deneyim"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Dr. Otgen Clinic; tedavi öncesi planlamadan iyileşme sürecine kadar yapılandırılmış, şeffaf ve güvenli bir sağlık turizmi deneyimi sunar."
+            }
+          ]
+        }
+      ],
       "highlights": [
-        "Transparent and measurable processes",
-        "Clear communication at every stage",
-        "International patient support and coordination",
-        "Continuous quality monitoring and improvement"
+        "Uluslararası hasta koordinasyonu",
+        "Avrupa standartlarında sağlık altyapısı",
+        "Ekonomik ve kaliteli tedavi seçenekleri",
+        "Tedavi sonrası yapılandırılmış takip"
       ],
       "suitableIntro": "",
       "suitableFor": [
@@ -512,20 +564,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Duration",
-          "value": "Varies depending on current information"
+          "label": "Kapsam",
+          "value": "100'e yakın ülkeden hasta deneyimi"
         },
         {
-          "label": "Treatment Model",
-          "value": "Information and planning"
+          "label": "Koordinasyon",
+          "value": "Çok dilli danışman desteği"
         },
         {
-          "label": "recovery",
-          "value": "Quick access and tracking"
+          "label": "Altyapı",
+          "value": "Avrupa standartlarında modern tesisler"
         },
         {
-          "label": "Method",
-          "value": "Standardized process management"
+          "label": "Avantaj",
+          "value": "Kaliteli ve ekonomik tedavi seçenekleri"
         }
       ],
       "process": [
@@ -591,20 +643,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Duration",
-          "value": "Uninterrupted information"
+          "label": "Destek",
+          "value": "Uluslararası hasta koordinasyonu"
         },
         {
-          "label": "Treatment Model",
-          "value": "Information and planning"
+          "label": "Contact",
+          "value": "Hasta dilinde süreç bilgilendirmesi"
         },
         {
-          "label": "recovery",
-          "value": "Quick access and tracking"
+          "label": "Erişim",
+          "value": "Hızlı yönlendirme ve takip hattı"
         },
         {
-          "label": "Method",
-          "value": "Standardized enterprise process management"
+          "label": "Standart",
+          "value": "Şeffaf ve yapılandırılmış süreç yönetimi"
         }
       ],
       "process": [
@@ -660,7 +712,7 @@
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Safir FUE (Follicular Unit Extraction) is one of the modern hair transplantation methods in which hair follicles are taken one by one and transplanted to bald or sparse areas."
+              "text": "Safir FUE (Follicular Unit Extraction) is one of the modern hair transplantation methods in which hair follicles are taken one by one and transplanted to balding or sparse areas."
             },
             {
               "type": "paragraph",
@@ -783,7 +835,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Personalized hairline design",
+        "Modern Sapphire FUE technology",
+        "Precision channeling approach",
+        "Structured follow-up and recovery management"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "People who are considering hair transplantation",
@@ -866,7 +923,8 @@
       },
       "overview": [
         "DHI hair transplantation process is specially planned according to the person's hair structure, hair loss level and expectations. Thanks to the detailed consultation before the treatment, your needs are analyzed and a road map suitable for you is created.",
-        "Purpose; is to achieve aesthetically successful, intense and permanent results by preserving the natural hairline. The post-treatment process is monitored with regular checks to ensure that the healing progresses safely and healthily."
+        "Purpose; is to achieve aesthetically successful, intense and permanent results by preserving the natural hairline. The post-treatment process is monitored with regular checks to ensure that the healing progresses safely and healthily.",
+        "Choi implanter kalemi ile doğrudan implantasyon sayesinde ekim açısı, yönü ve yoğunluğu daha hassas biçimde kontrol edilir."
       ],
       "sections": [
         {
@@ -973,7 +1031,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Direct implantation with the Choi implanter pen",
+        "Precise control of planting angle, direction and density",
+        "Personalized hairline and graft planning",
+        "Structured follow-up and recovery management"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "People considering DHI hair transplantation",
@@ -1175,7 +1238,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Personalized treatment planning",
+        "Can be combined with modern hair transplantation techniques",
+        "Benefiting from the regenerative medicine approach",
+        "Structured follow-up and recovery management"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "People planning to have hair transplantation",
@@ -1326,7 +1394,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Minimal visible scars and natural results with DHI technique",
+        "Possibility of uninterrupted return to business and social life",
+        "Suitable method for candidates who do not want to shave their hair",
+        "Personalized protocol design and structured follow-up process"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Patients interested in unshaved hair transplantation after consultation",
@@ -1545,7 +1618,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Personalized eyebrow design",
+        "Planning targeting a natural appearance",
+        "Minimally invasive surgical techniques",
+        "Process management under the control of a specialist physician"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "People who want to increase eyebrow density",
@@ -1703,7 +1781,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Personalized protocol design for beard and mustache transplantation",
+        "Modern treatment standards under expert supervision",
+        "Balanced planning for function, aesthetics and safety",
+        "Structured follow-up and recovery management"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Patients interested in beard and mustache transplantation after consultation",
@@ -1863,7 +1946,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Personally planned hair treatment",
+        "Non-surgical, minimally invasive application",
+        "Aesthetics, functionality and security focused approach",
+        "Regular follow-up and recovery management"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Women and men experiencing hair loss",
@@ -2045,7 +2133,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Application that does not require surgery",
+        "Painless and comfortable treatment process",
+        "Use of modern laser technologies",
+        "Regular follow-up and expert control"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "People who want to get information about laser hair treatment",
@@ -2199,7 +2292,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Personalized treatment planning",
+        "Application that does not require surgery",
+        "Modern regenerative medicine approach",
+        "Planned follow-up and control visits"
+      ],
       "suitableIntro": "Exosome Hair Therapy;",
       "suitableFor": [
         "People experiencing hair loss",
@@ -2313,7 +2411,7 @@
           "blocks": [
             {
               "type": "paragraph",
-              "text": "In our clinic, the implant process is carried out in a planned and systematic way. This approach both facilitates the management of the process and ensures that the patient knows each stage clearly."
+              "text": "In our clinic, the implant process is carried out in a planned and systematic manner. This approach both facilitates the management of the process and ensures that the patient knows each stage clearly."
             },
             {
               "type": "list",
@@ -2349,7 +2447,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Long-term success is ensured by monitoring the process with regular checks",
+        "Modern treatment standards are applied under expert supervision",
+        "The balance of function, aesthetics and safety is maintained",
+        "Structured follow-up and recovery plan is implemented"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Patients planned for implant treatment after consultation",
@@ -3166,7 +3269,7 @@
             },
             {
               "type": "paragraph",
-              "text": "Final choice; It is determined by tissue structure, surgical planning and specialist experience."
+              "text": "Final choice; It is determined by tissue structure, surgical planning and expert experience."
             }
           ]
         }
@@ -4372,7 +4475,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Personalized protocol design for lip filler",
+        "Modern treatment standards under expert supervision",
+        "Balanced planning in terms of functionality, aesthetics and safety",
+        "Structured follow-up and recovery management"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Patients interested in lip fillers after consultation",
@@ -4431,7 +4539,7 @@
       "category": "medical",
       "slug": "botox",
       "navLabel": "botox",
-      "title": "Botox",
+      "title": "botox",
       "categoryLabel": "Medical Aesthetics",
       "heroTag": "Minimally Invasive Treatments",
       "heroSubtitle": "",
@@ -4560,7 +4668,7 @@
           "answer": "Varies depending on the selected application area. Your doctor shares a detailed timeline."
         },
         {
-          "question": "When will the final plan be clear?",
+          "question": "When will the final plan become clear?",
           "answer": "After clinical evaluation, the scope of treatment is clarified and a definitive plan is created."
         }
       ]
@@ -4630,7 +4738,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Personalized treatment planning for jaw line filling",
+        "Modern and safe application protocols under the supervision of a specialist physician",
+        "An approach that considers aesthetic appearance, facial balance and patient safety together",
+        "Structured follow-up process and recovery management"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "People who want to make their jaw line more prominent",
@@ -4784,7 +4897,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Personalized planning",
+        "Application under expert control",
+        "Natural appearance and security-oriented approach",
+        "Follow-up and recovery process management"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "People who want to have under-eye light filler",
@@ -5087,7 +5205,7 @@
       "faqs": [
         {
           "question": "Who are suitable candidates for PRP skin treatment?",
-          "answer": "Eligibility; It is clarified after expert consultation, medical history evaluation, skin analysis and determination of treatment goals."
+          "answer": "Eligibility; It is clarified after expert consultation, medical history evaluation, skin analysis and determination of treatment targets."
         },
         {
           "question": "How long does the recovery process usually take?",
@@ -5191,7 +5309,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Personalized medical skin care protocol design",
+        "Modern care and treatment standards accompanied by expert evaluation",
+        "Balanced planning in terms of skin health, aesthetic appearance and safety",
+        "Structured follow-up and recovery process management"
+      ],
       "suitableIntro": "Medical skin care may be suitable for people who:",
       "suitableFor": [
         "People interested in professional skin care and practices to improve skin quality",

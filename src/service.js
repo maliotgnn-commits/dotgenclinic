@@ -173,6 +173,25 @@ function renderFaq(faqItems) {
     .join('');
 }
 
+function renderOverviewQuickFacts(facts) {
+  if (!facts.length) return '';
+
+  return `
+    <div class="sv-overview-facts" aria-label="${escapeHtml(t('Kısa Bilgiler'))}">
+      ${facts
+        .map(
+          (fact) => `
+        <article class="sv-overview-fact">
+          <strong>${escapeHtml(fact.label)}</strong>
+          <span>${escapeHtml(fact.value)}</span>
+        </article>
+      `,
+        )
+        .join('')}
+    </div>
+  `;
+}
+
 function renderPage(currentPage, relatedPages) {
   document.title = `${currentPage.title} | Dr Otgen Clinic`;
 
@@ -222,8 +241,9 @@ function renderPage(currentPage, relatedPages) {
           </div>
           <div class="sv-text-col">
             <h2>${escapeHtml(t('Genel Bakış'))}</h2>
-            ${currentPage.overview.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('')}
+            ${currentPage.overview.slice(0, 3).map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join('')}
             ${currentPage.highlights?.length ? `<ul>${currentPage.highlights.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>` : ''}
+            ${renderOverviewQuickFacts(quickFacts)}
           </div>
         </div>
       </section>
