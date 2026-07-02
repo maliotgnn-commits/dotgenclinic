@@ -74,8 +74,7 @@
       "overview": [
         "Unsere Vision und Mission; Es zeigt unsere Standards, Arbeitsabläufe und Qualitätsprioritäten in einem einfachen und transparenten Rahmen.",
         "Bevor der Behandlungsplanungsprozess beginnt, wird jeder Schritt klar erläutert, damit unsere Patienten klare Informationen über den gesamten Prozess haben.",
-        "Unser Hauptziel ist; Kommunikation, Qualität und Kontinuität in jeder Phase der Patientenreise auf dem gleichen hohen Niveau zu halten.",
-        "Dr. Otgen Klinik; T.R. Es handelt sich um eine Organisation, die mit ihrer vom Gesundheitsministerium und dem TÜV Thüringen (ISO 9001) zertifizierten und auch von den European Property Awards ausgezeichneten Dienstleistungsstruktur Gesundheit und Ästhetik bietet."
+        "Unser Hauptziel ist es, Kommunikation, Qualität und Kontinuität in jeder Phase der Patientenreise auf dem gleichen hohen Niveau zu halten. Die Dr. Otgen Klinik vereint Gesundheit und Ästhetik mit Zertifizierungen des Türkischen Gesundheitsministeriums und des TÜV Thüringen (ISO 9001)."
       ],
       "sections": [],
       "highlights": [
@@ -93,20 +92,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Dauer",
-          "value": "Regelmäßige Updates und kontinuierliche Verbesserung"
+          "label": "Vision",
+          "value": "Eine zuverlässige globale Referenz für Gesundheit und Ästhetik zu sein"
         },
         {
-          "label": "Behandlungsmodell",
-          "value": "Informationen und Planung"
+          "label": "Mission",
+          "value": "Persönliche Betreuung mit Fokus auf Patientensicherheit und Qualität"
         },
         {
-          "label": "Erholung",
-          "value": "Schneller und direkter Zugriff"
+          "label": "Konzentrieren Sie sich",
+          "value": "Transparente Kommunikation und nachhaltige Entwicklung"
         },
         {
-          "label": "Methode",
-          "value": "Standardisiertes Unternehmensprozessmanagement"
+          "label": "Standard",
+          "value": "ISO 9001- und Gesundheitsministerium-Zertifizierungen"
         }
       ],
       "process": [
@@ -152,22 +151,36 @@
         "content": "/images/site/pages/our-values.webp"
       },
       "overview": [
-        "Unsere Werte; Es erläutert unsere Standards, Arbeitsabläufe und Qualitätsprioritäten in einer einfachen und transparenten Struktur. Wir stellen jeden Schritt transparent dar, damit unsere Besucher ihre Erwartungen klären können, bevor mit der Behandlungsplanung begonnen wird. Unser Ziel ist; Kommunikation, Qualität und Kontinuität in jeder Phase der Patientenreise auf dem gleichen hohen Niveau zu halten.",
-        "Patientenorientierung: Unsere Kunden stehen im Mittelpunkt aller unserer Prozesse. Ihre Sicherheit, ihr Komfort und ihre Zufriedenheit, Dr. Es bildet die Grundlage des Serviceansatzes der Otgen Clinic.",
-        "Ethischer und transparenter Ansatz: Wir bieten einen Serviceansatz, der auf offener Kommunikation und Vertrauen basiert, ohne Kompromisse bei medizinethischen Grundsätzen einzugehen.",
-        "Internationale Qualität: Wir erbringen unsere Dienstleistungen für T.R. Erfüllt die Standards des Gesundheitsministeriums und des TÜV Thüringen (ISO 9001); Dr. In der Otgen Clinic verfolgen wir einen weltweit anerkannten Qualitätsansatz.",
-        "Investitionen in Wissenschaft und Technologie: Wir verfolgen die aktuellsten Technologien und wollen durch die ständige Verbesserung unserer medizinischen Infrastruktur Vorreiter für Innovationen in den Bereichen Ästhetik und Gesundheit sein.",
-        "Fachwissen und Erfahrung: Wir bieten eine hohe Erfolgsquote und zuverlässige Ergebnisse mit unserem starken Team aus Vollzeit-Fachkräften, von denen jeder ein Experte auf seinem Gebiet ist.",
-        "Nachhaltiger Serviceansatz: Für uns ist die Kundenzufriedenheit nicht auf den Tag der Transaktion beschränkt; Dr. Als Otgen Clinic bieten wir einen stabilen und qualitätsorientierten Service, der auf langfristigen Vertrauensbeziehungen basiert.",
-        "Harmonische Balance zwischen Ästhetik und Gesundheit: Wir betrachten jede Anwendung als Ganzes, die nicht nur den ästhetischen Gewinn, sondern auch die allgemeine Gesundheit und den Lebenskomfort unterstützt.",
-        "Globale Vision: Mit unserer Struktur, die Dienstleistungen für Tausende von Patienten aus verschiedenen Ländern erbringt, tragen wir die Verantwortung, ein vorbildliches Gesundheitszentrum auf globaler Ebene zu sein, das kulturelle Unterschiede respektiert.",
-        "Transparente und messbare Prozessstandards",
-        "Klare Kommunikation an jedem Entscheidungspunkt",
-        "Internationale Patientenbetreuung und Koordination",
-        "Kontinuierliche Qualitätsüberwachung und -verbesserung"
+        "Unsere Werte; Es erläutert unsere Standards, Arbeitsabläufe und Qualitätsprioritäten in einer einfachen und transparenten Struktur.",
+        "Jeder Schritt wird transparent mitgeteilt, um die Erwartungen zu klären, bevor mit der Behandlungsplanung begonnen wird. Kommunikation, Qualität und Kontinuität sind unsere Prioritäten in jeder Phase der Patientenreise.",
+        "Die Dr. Otgen Klinik vereint Gesundheit und Ästhetik auf verlässlichem Niveau mit Zertifizierungen des Türkischen Gesundheitsministeriums und des TÜV Thüringen (ISO 9001)."
       ],
-      "sections": [],
-      "highlights": [],
+      "sections": [
+        {
+          "title": "Unsere Grundwerte",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "Patientenorientierung: Unsere Kunden stehen im Mittelpunkt aller unserer Prozesse. Sicherheit, Komfort und Zufriedenheit bilden die Basis unseres Serviceansatzes.",
+                "Ethischer und transparenter Ansatz: Es wird ein Service bereitgestellt, der auf offener Kommunikation und Vertrauen basiert, ohne die medizinethischen Grundsätze zu beeinträchtigen.",
+                "Internationale Qualität: Weltweit anerkannter Qualitätsansatz nach den Standards des Türkischen Gesundheitsministeriums und des TÜV Thüringen (ISO 9001).",
+                "Investitionen in Wissenschaft und Technologie: Es werden die aktuellsten Technologien befolgt; Die medizinische Infrastruktur wird ständig verbessert.",
+                "Fachwissen und Erfahrung: Zuverlässige Ergebnisse werden mit einem starken Team von Vollzeit-Fachkräften angestrebt, die Experten auf ihrem Gebiet sind.",
+                "Nachhaltiges Servicekonzept: Basierend auf einer langfristigen Vertrauensbeziehung wird ein stabiler und qualitätsorientierter Service bereitgestellt.",
+                "Gleichgewicht zwischen Ästhetik und Gesundheit: Jede Anwendung wird als Ganzes betrachtet, das nicht nur den ästhetischen Gewinn, sondern auch die allgemeine Gesundheit und den Lebenskomfort unterstützt.",
+                "Globale Vision: Patienten aus verschiedenen Ländern wird ein globaler Service geboten, der kulturelle Unterschiede respektiert."
+              ]
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Patientenorientierter und sicherer Pflegeansatz",
+        "Ethische und transparente Kommunikation",
+        "Internationale Qualitätsstandards",
+        "Wissenschaft, Technologie und nachhaltiger Service"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Für unsere Besucher, die vor der Behandlung klare klinische Informationen suchen",
@@ -177,20 +190,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Dauer",
-          "value": "Kontinuierliche Updates"
+          "label": "Patientenfokus",
+          "value": "Sicherheit, Komfort und Zufriedenheit stehen im Mittelpunkt"
         },
         {
-          "label": "Behandlungsmodell",
-          "value": "Information und Planung"
+          "label": "Ethischer Ansatz",
+          "value": "Transparente und vertrauensbasierte Kommunikation"
         },
         {
-          "label": "Erholung",
-          "value": "Schnellzugriff"
+          "label": "Qualität",
+          "value": "Internationale Akkreditierungsstandards"
         },
         {
-          "label": "Methode",
-          "value": "Standardisiertes Unternehmensprozessmanagement"
+          "label": "Innovation",
+          "value": "Kontinuierliche Investitionen in Wissenschaft und Technologie"
         }
       ],
       "process": [
@@ -236,26 +249,50 @@
         "content": "/images/site/pages/quality-policy.webp"
       },
       "overview": [
-        "Unsere Qualitätspolitik; Es erläutert unsere Standards, Arbeitsabläufe und Qualitätsprioritäten in einer einfachen und transparenten Struktur. Wir stellen jeden Schritt transparent dar, um die Erwartungen vor Beginn der Behandlungsplanung zu klären. Unser Ziel ist; Kommunikation, Qualität und Kontinuität während der gesamten Patientenreise auf dem gleichen hohen Niveau zu halten.Dr. Als Otgen-Klinik; Wir arbeiten mit einem Qualitätsansatz, der nicht nur die Gegenwart, sondern auch die Zukunft der Gesundheits- und Ästhetikdienstleistungen sichert. In jedem Bereich, in dem wir tätig sind; konzentriert sich auf die Gesundheit, Sicherheit und Zufriedenheit unserer Patienten; Bei all unseren Prozessen halten wir uns voll und ganz an ethische Grundsätze, Gesetze und Vorschriften. Basierend auf Vertraulichkeit, Unparteilichkeit und menschenorientiertem Ansatz ist unsere Klinik bestrebt, mit ihren hohen Hygienestandards und ihrer starken technologischen Infrastruktur jeden Tag einen Schritt weiter zu gehen.",
-        "Grundelemente unseres qualitätsorientierten Ansatzes:",
-        "Gesundheitsdienstleistung nach internationalen Qualitätsstandards",
-        "Festangestelltes Fachpersonal, verstärkt durch Schulungen",
-        "Technologische Investitionen und digitalisierungsorientierte Prozesse",
-        "Arbeitsgesundheit, Umweltbewusstsein und Patientensicherheit haben Priorität",
-        "Nachhaltiger Beitrag zum lokalen und globalen Gesundheitssektor",
-        "Dr. Unsere Erfolge als Otgen Clinic; Wir registrieren mit Dokumenten nationaler und internationaler Behörden. Diese Zertifikate sind der konkreteste Beweis dafür, dass wir uns für Qualität einsetzen und nach internationalen Standards arbeiten.",
-        "Unsere Qualitätszertifikate:",
-        "ISO 9001:2015 – Internationales Qualitätsmanagementsystem-Zertifikat",
-        "TÜV Thüringen & TÜV SÜD – Infrastruktur und medizinische Sicherheitssysteme mit bestandener Qualitätsprüfung",
-        "T.R. Gesundheitsministerium – Zertifikat einer autorisierten Gesundheitseinrichtung",
-        "Zertifikat zur Genehmigung des Gesundheitstourismus",
-        "Transparente und messbare Prozessstandards",
-        "Klare Kommunikation an jedem Entscheidungspunkt",
-        "Internationale Patientenbetreuung und Koordination",
-        "Kontinuierliche Qualitätsüberwachung und -verbesserung"
+        "Unsere Qualitätspolitik; Es erläutert unsere Standards, Arbeitsabläufe und Qualitätsprioritäten in einer einfachen und transparenten Struktur.",
+        "Jeder Schritt wird transparent dargestellt, um die Erwartungen zu klären, bevor mit der Behandlungsplanung begonnen wird. Patientensicherheit, ethische Grundsätze und Kontinuität stehen im Mittelpunkt.",
+        "Dr. Otgen Klinik; Es arbeitet mit einem nachhaltigen Qualitätsansatz gemäß internationalen Standards für Gesundheits- und ästhetische Dienstleistungen."
       ],
-      "sections": [],
-      "highlights": [],
+      "sections": [
+        {
+          "title": "Unser qualitätsorientierter Ansatz",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "Gesundheitsdienstleistung nach internationalen Qualitätsstandards",
+                "Festangestelltes Fachpersonal, verstärkt durch Schulungen",
+                "Technologische Investitionen und digitalisierungsorientierte Prozesse",
+                "Arbeitsgesundheit, Umweltbewusstsein und Patientensicherheit haben Priorität",
+                "Nachhaltiger Beitrag zum lokalen und globalen Gesundheitssektor"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Dr. Unsere Erfolge als Otgen Clinic; Wir registrieren mit Dokumenten nationaler und internationaler Behörden. Diese Zertifikate sind der konkreteste Beweis dafür, dass wir uns für Qualität einsetzen und nach internationalen Standards arbeiten."
+            },
+            {
+              "type": "subheading",
+              "text": "Unsere Qualitätszertifikate"
+            },
+            {
+              "type": "list",
+              "items": [
+                "ISO 9001:2015 – Internationales Qualitätsmanagementsystem-Zertifikat",
+                "TÜV Thüringen & TÜV SÜD – Infrastruktur und medizinische Sicherheitssysteme mit bestandener Qualitätsprüfung",
+                "Türkisches Gesundheitsministerium – Zertifikat einer autorisierten Gesundheitseinrichtung",
+                "Zertifikat zur Genehmigung des Gesundheitstourismus"
+              ]
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Gesundheitsdienstleistung nach internationalen Qualitätsstandards",
+        "Durch Schulungen gestärktes Fachpersonal",
+        "Technologische Investitionen und digitale Prozesse",
+        "Patientensicherheit und nachhaltige Qualität"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Für unsere Besucher, die vor der Behandlung klare klinische Informationen suchen",
@@ -265,20 +302,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Dauer",
-          "value": "Laufende Updates"
+          "label": "Zertifizierung",
+          "value": "ISO 9001:2015 und TÜV Thüringen"
         },
         {
-          "label": "Behandlungsmodell",
-          "value": "Information und Planung"
+          "label": "Sicherheit",
+          "value": "Patientensicherheit und Hygiene haben Priorität"
         },
         {
-          "label": "Erholung",
-          "value": "Ununterbrochener und schneller Zugriff"
+          "label": "Kader",
+          "value": "Geschultes Vollzeit-Expertenteam"
         },
         {
-          "label": "Methode",
-          "value": "Standardisiertes Unternehmensprozessmanagement"
+          "label": "Überwachung",
+          "value": "Kontinuierliche Qualitätskontrolle und Verbesserung"
         }
       ],
       "process": [
@@ -302,7 +339,7 @@
         },
         {
           "question": "Wie lange dauert der Wiederherstellungsprozess normalerweise?",
-          "answer": "Der Genesungsprozess hängt vom Umfang der gewählten Behandlung ab. Ihr Arzt wird Ihnen während Ihres Beratungsgesprächs einen realistischen Zeitplan und einen speziell auf Sie zugeschnittenen Pflegeplan mitteilen."
+          "answer": "Der Genesungsprozess hängt vom Ausmaß der gewählten Behandlung ab. Ihr Arzt wird Ihnen während Ihres Beratungsgesprächs einen realistischen Zeitplan und einen speziell auf Sie zugeschnittenen Pflegeplan mitteilen."
         },
         {
           "question": "Wann steht der endgültige Behandlungsplan fest?",
@@ -344,20 +381,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Dauer",
-          "value": "Regelmäßige Informationen und Updates"
+          "label": "Management",
+          "value": "Transparente und messbare Prozessstandards"
         },
         {
-          "label": "Behandlungsmodell",
-          "value": "Informationen und Planung"
+          "label": "Koordination",
+          "value": "Geplante Zusammenarbeit zwischen den Abteilungen"
         },
         {
-          "label": "Erholung",
-          "value": "Schneller und direkter Zugriff"
+          "label": "Kontakt",
+          "value": "Klare Patienteninformationen in jeder Phase"
         },
         {
-          "label": "Methode",
-          "value": "Standardisiertes Unternehmensprozessmanagement"
+          "label": "Verfolgung",
+          "value": "Strukturiertes betriebliches Prozessmanagement"
         }
       ],
       "process": [
@@ -403,14 +440,17 @@
         "content": "/images/site/pages/our-doctors.webp"
       },
       "overview": [
-        "Unsere Ärzte; Wir stellen unsere Standards, Abläufe und Qualitätsprioritäten in einer einfachen und transparenten Struktur dar. Wir stellen jeden Schritt transparent dar, damit unsere Besucher ihre Erwartungen klären können, bevor mit der Behandlungsplanung begonnen wird. Unser Ziel ist; Kommunikation, Qualität und Kontinuität während der gesamten Patientenreise auf dem gleichen hohen Standard zu halten.",
+        "Unsere Ärzte; Es stellt unsere Standards, Arbeitsabläufe und Qualitätsprioritäten in einer einfachen und transparenten Struktur dar.",
+        "Jeder Schritt wird transparent mitgeteilt, um die Erwartungen zu klären, bevor mit der Behandlungsplanung begonnen wird. Kommunikation und Sicherheit haben während der gesamten Patientenreise Priorität.",
+        "Unser fachkundiges und erfahrenes Ärzteteam; Es ermöglicht eine personalisierte Planung durch die gemeinsame Bewertung ästhetischer, gesundheitlicher und funktioneller Ziele."
+      ],
+      "sections": [],
+      "highlights": [
         "Transparente und messbare Prozessstandards",
         "Klare Kommunikation an jedem Entscheidungspunkt",
         "Internationale Patientenbetreuung und Koordination",
         "Kontinuierliche Qualitätsüberwachung und -verbesserung"
       ],
-      "sections": [],
-      "highlights": [],
       "suitableIntro": "",
       "suitableFor": [
         "Für diejenigen, die vor der Behandlung klare klinische Informationen und Prozessanleitungen suchen",
@@ -420,20 +460,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Dauer",
-          "value": "Regelmäßige Prozessinformationen"
+          "label": "Fachwissen",
+          "value": "Vollzeitbeschäftigtes, auf ihrem Fachgebiet erfahrenes Ärztepersonal"
         },
         {
-          "label": "Behandlungsmodell",
-          "value": "Information und Planung"
+          "label": "Bewertung",
+          "value": "Personalisierte Behandlungsplanung"
         },
         {
-          "label": "Erholung",
-          "value": "Sofortiger Zugriff"
+          "label": "Standard",
+          "value": "Moderne Protokolle für die klinische Praxis"
         },
         {
-          "label": "Methode",
-          "value": "Standardisiertes Unternehmensprozessmanagement"
+          "label": "Verfolgung",
+          "value": "Strukturierte Prüfungen nach Rücksprache"
         }
       ],
       "process": [
@@ -457,7 +497,7 @@
         },
         {
           "question": "Wie lange dauert der Wiederherstellungsprozess normalerweise?",
-          "answer": "Der Genesungsprozess hängt vom Umfang der gewählten Behandlung ab. Ihr Arzt wird Ihnen während Ihres Beratungsgesprächs einen realistischen Zeitplan und einen Pflegeplan speziell für Sie mitteilen."
+          "answer": "Der Genesungsprozess hängt vom Ausmaß der gewählten Behandlung ab. Ihr Arzt wird Ihnen während Ihres Beratungsgesprächs einen realistischen Zeitplan und einen Pflegeplan speziell für Sie mitteilen."
         },
         {
           "question": "Wann steht der endgültige Behandlungsplan fest?",
@@ -480,28 +520,40 @@
       },
       "overview": [
         "Unser Gesundheitstourismus-Ansatz; Es erklärt unsere Standards, Arbeitsweise und Qualitätsprioritäten auf einfache und transparente Weise.",
-        "Alle Schritte werden klar dargelegt, um die Erwartungen vor Beginn des Behandlungsprozesses zu klären.",
-        "Unser Ziel; ist es, Kommunikation, Qualität und Kontinuität während der gesamten Behandlungsdauer des Patienten auf dem gleichen hohen Niveau zu halten.",
-        "Der Gesundheitstourismus in der Welt und in der Türkei ist ein wichtiger alternativer Tourismusbereich, der in den letzten Jahren schnell gewachsen ist.",
-        "Das Gesundheitssystem in der Türkei hat in den letzten Jahren große Entwicklungen gezeigt. Mit den Reformen sind sowohl Qualität als auch Effizienz gestiegen. Neben den öffentlichen Gesundheitsdiensten haben sich auch private Gesundheitsdienste rasch entwickelt.",
-        "Türkei; Mit seinen modernen Krankenhäusern, Fachärzten, geschultem Gesundheitspersonal und einer starken technologischen Infrastruktur bietet es Dienstleistungen auf europäischem Niveau.",
-        "Aufgrund ihrer geografischen Lage, der Qualität der Gesundheitseinrichtungen, der ausgebildeten Arbeitskräfte, der heißen Quellen und der Naturschönheiten ist die Türkei ein wichtiges Zentrum für den Gesundheitstourismus.",
-        "Ihr historischer und kultureller Reichtum und ihre Entwicklung im Gesundheitsbereich machen die Türkei zu einem der weltweit führenden Länder für Gesundheitstourismus. Darüber hinaus macht es mit seinen Gesundheitseinrichtungen auf sich aufmerksam, die auf Hochtechnologie setzen und Kostenvorteile bieten.",
-        "Die Türkei verfolgt aufmerksam die weltweiten Entwicklungen im Bereich der ästhetischen und plastischen Chirurgie und spielt bei vielen neuen Anwendungen eine führende Rolle.",
-        "Trotz gleicher Qualitätsstandards bietet die Türkei erschwinglichere Gesundheitsdienstleistungen als viele andere Länder.",
-        "Die Kommunikationsfähigkeiten der Ärzte und die herzliche Herangehensweise der türkischen Gesellschaft erleichtern die Patientenkommunikation.",
-        "Ausländische Patienten werden von Beratern begleitet, die ihre Leistungen in ihrer eigenen Sprache erbringen.",
-        "Auch die starke Fortführung der Nachbehandlungsprozesse macht die Türkei zu einem der bevorzugten Länder.",
-        "Im Bereich Gesundheitstourismus wurden in den letzten Jahren erhebliche Fortschritte erzielt. Der Staat unterstützt auch Investitionen in diesem Bereich. Diese Entwicklungen wirken sich positiv auf das internationale Image der Türkei aus.",
-        "Nach eigenen Angaben betreuen wir Patienten aus fast 100 Ländern. Dies zeigt das Wachstum des Sektors.",
-        "Türkei; Aufgrund seiner Lage, seines Qualitätsserviceansatzes und seiner wirtschaftlichen Vorteile wird es eine noch stärkere Position im Gesundheitstourismus einnehmen."
+        "Bevor der Behandlungsprozess beginnt, werden alle Schritte klar besprochen, um die Erwartungen zu klären; Die internationale Patientenkoordination hat für uns Priorität.",
+        "Türkei; Mit moderner Infrastruktur, kompetentem Personal und Kostenvorteilen ist es ein starkes Zentrum im Gesundheitstourismus."
       ],
-      "sections": [],
+      "sections": [
+        {
+          "title": "Gesundheitstourismus in der Türkei",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Der Gesundheitstourismus in der Welt und in der Türkei ist ein wichtiger alternativer Tourismusbereich, der in den letzten Jahren schnell gewachsen ist. Das Gesundheitssystem in Türkiye hat in den letzten Jahren große Fortschritte gemacht; Öffentliche und private Gesundheitsdienste wurden gemeinsam gestärkt."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Moderne Krankenhäuser, Fachärzte und eine starke technologische Infrastruktur",
+                "Gesundheitsdienst kombiniert mit geografischer Lage, heißen Quellen und Naturschönheiten",
+                "Praxen, die den weltweiten Standards in der ästhetischen und plastischen Chirurgie nahekommen",
+                "Günstigerer Service im Vergleich zu vielen Ländern trotz Qualitätsstandards",
+                "Koordinierte Patientenbetreuung durch Berater, die fließend Fremdsprachen sprechen",
+                "Internationale Erfahrung in der Betreuung von Patienten aus fast 100 Ländern"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Dr. Otgen Klinik; Es bietet ein strukturiertes, transparentes und sicheres Gesundheitstourismus-Erlebnis, von der Planung vor der Behandlung bis zum Genesungsprozess."
+            }
+          ]
+        }
+      ],
       "highlights": [
-        "Transparente und messbare Prozesse",
-        "Klare Kommunikation in jeder Phase",
-        "Internationale Patientenbetreuung und Koordination",
-        "Kontinuierliche Qualitätsüberwachung und -verbesserung"
+        "Internationale Patientenkoordination",
+        "Gesundheitsinfrastruktur auf europäischem Niveau",
+        "Wirtschaftliche und qualitativ hochwertige Behandlungsmöglichkeiten",
+        "Strukturierte Nachsorge nach der Behandlung"
       ],
       "suitableIntro": "",
       "suitableFor": [
@@ -512,20 +564,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Dauer",
-          "value": "Variiert je nach aktuellen Informationen"
+          "label": "Umfang",
+          "value": "Patientenerfahrung aus fast 100 Ländern"
         },
         {
-          "label": "Behandlungsmodell",
-          "value": "Informationen und Planung"
+          "label": "Koordination",
+          "value": "Mehrsprachige Beraterunterstützung"
         },
         {
-          "label": "Erholung",
-          "value": "Schneller Zugriff und Nachverfolgung"
+          "label": "Infrastruktur",
+          "value": "Moderne Einrichtungen nach europäischen Standards"
         },
         {
-          "label": "Methode",
-          "value": "Standardisiertes Prozessmanagement"
+          "label": "Vorteil",
+          "value": "Hochwertige und wirtschaftliche Behandlungsmöglichkeiten"
         }
       ],
       "process": [
@@ -591,20 +643,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Dauer",
-          "value": "Ununterbrochene Informationen"
+          "label": "Unterstützung",
+          "value": "Internationale Patientenkoordination"
         },
         {
-          "label": "Behandlungsmodell",
-          "value": "Informationen und Planung"
+          "label": "Kontakt",
+          "value": "Informationen in Patientensprache verarbeiten"
         },
         {
-          "label": "Erholung",
-          "value": "Schneller Zugriff und Nachverfolgung"
+          "label": "Zugang",
+          "value": "Schnelle Weiterleitung und Sendungsverfolgung"
         },
         {
-          "label": "Methode",
-          "value": "Standardisiertes Unternehmensprozessmanagement"
+          "label": "Standard",
+          "value": "Transparentes und strukturiertes Prozessmanagement"
         }
       ],
       "process": [
@@ -783,7 +835,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Personalisiertes Haarliniendesign",
+        "Moderne Sapphire FUE-Technologie",
+        "Präziser Channeling-Ansatz",
+        "Strukturiertes Nachsorge- und Wiederherstellungsmanagement"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Menschen, die über eine Haartransplantation nachdenken",
@@ -866,7 +923,8 @@
       },
       "overview": [
         "Der DHI-Haartransplantationsprozess wird speziell entsprechend der Haarstruktur, dem Grad des Haarausfalls und den Erwartungen der Person geplant. Dank der ausführlichen Beratung vor der Behandlung werden Ihre Bedürfnisse analysiert und ein für Sie passender Fahrplan erstellt.",
-        "Zweck; Ziel ist es, durch den Erhalt des natürlichen Haaransatzes ästhetisch gelungene, intensive und dauerhafte Ergebnisse zu erzielen. Der Nachbehandlungsprozess wird durch regelmäßige Kontrollen überwacht, um sicherzustellen, dass die Heilung sicher und gesund verläuft."
+        "Zweck; Ziel ist es, durch den Erhalt des natürlichen Haaransatzes ästhetisch gelungene, intensive und dauerhafte Ergebnisse zu erzielen. Der Nachbehandlungsprozess wird durch regelmäßige Kontrollen überwacht, um sicherzustellen, dass die Heilung sicher und gesund verläuft.",
+        "Dank der direkten Implantation mit dem Choi-Implanterstift werden Transplantationswinkel, -richtung und -dichte präziser gesteuert."
       ],
       "sections": [
         {
@@ -924,7 +982,7 @@
               "type": "list",
               "items": [
                 "Personen, die unter leichtem, mittelschwerem oder schwerem Haarausfall leiden",
-                "Menschen mit ausreichend und gesunden Haarfollikeln im Spendergebiet",
+                "Menschen mit ausreichend und gesunden Haarfollikeln im Spenderbereich",
                 "Kandidaten mit geeigneten allgemeinen Gesundheitszuständen",
                 "Menschen mit realistischen Erwartungen",
                 "Patienten, die eine Haarverdichtung wünschen und gleichzeitig ihr vorhandenes Haar erhalten möchten"
@@ -973,7 +1031,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Direktimplantation mit dem Choi-Implanterstift",
+        "Präzise Steuerung von Pflanzwinkel, -richtung und -dichte",
+        "Personalisierte Haaransatz- und Transplantationsplanung",
+        "Strukturiertes Nachsorge- und Wiederherstellungsmanagement"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Menschen, die über eine DHI-Haartransplantation nachdenken",
@@ -1175,7 +1238,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Personalisierte Behandlungsplanung",
+        "Kombinierbar mit modernen Haartransplantationstechniken",
+        "Profitieren Sie vom Ansatz der regenerativen Medizin",
+        "Strukturiertes Nachsorge- und Wiederherstellungsmanagement"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Menschen, die eine Haartransplantation planen",
@@ -1326,7 +1394,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Minimale sichtbare Narben und natürliche Ergebnisse mit der DHI-Technik",
+        "Möglichkeit der ununterbrochenen Rückkehr ins Geschäfts- und Sozialleben",
+        "Geeignete Methode für Kandidaten, die sich nicht die Haare rasieren möchten",
+        "Personalisierte Protokollgestaltung und strukturierter Folgeprozess"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Patienten, die nach Rücksprache an einer Haartransplantation ohne Rasur interessiert sind",
@@ -1545,7 +1618,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Personalisiertes Augenbrauendesign",
+        "Planung mit dem Ziel eines natürlichen Aussehens",
+        "Minimalinvasive Operationstechniken",
+        "Prozessmanagement unter der Kontrolle eines Facharztes"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Menschen, die die Augenbrauendichte erhöhen möchten",
@@ -1685,7 +1763,7 @@
             },
             {
               "type": "paragraph",
-              "text": "Die Bart- und Schnurrbarttransplantation ist ein Eingriff in einer einzigen Sitzung, der unter örtlicher Betäubung durchgeführt wird. Der Eingriff dauert ca. 4-5 Stunden und ist schmerzlos."
+              "text": "Die Bart- und Schnurrbarttransplantation ist ein Eingriff in einer einzigen Sitzung, der unter örtlicher Betäubung durchgeführt wird. Der Eingriff dauert ca. 4-5 Stunden und ist schmerzfrei."
             },
             {
               "type": "paragraph",
@@ -1703,7 +1781,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Personalisiertes Protokolldesign für die Bart- und Schnurrbarttransplantation",
+        "Moderne Behandlungsstandards unter fachkundiger Aufsicht",
+        "Ausgewogene Planung für Funktion, Ästhetik und Sicherheit",
+        "Strukturiertes Nachsorge- und Wiederherstellungsmanagement"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Patienten, die nach Rücksprache an einer Bart- und Schnurrbarttransplantation interessiert sind",
@@ -1863,7 +1946,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Persönlich geplante Haarbehandlung",
+        "Nicht-chirurgische, minimalinvasive Anwendung",
+        "Auf Ästhetik, Funktionalität und Sicherheit ausgerichteter Ansatz",
+        "Regelmäßige Nachsorge und Wiederherstellungsmanagement"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Frauen und Männer leiden unter Haarausfall",
@@ -2045,7 +2133,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Anwendung, die keinen chirurgischen Eingriff erfordert",
+        "Schmerzloser und komfortabler Behandlungsablauf",
+        "Einsatz moderner Lasertechnologien",
+        "Regelmäßige Nachverfolgung und fachkundige Kontrolle"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Personen, die sich über Laser-Haarbehandlungen informieren möchten",
@@ -2199,7 +2292,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Personalisierte Behandlungsplanung",
+        "Anwendung, die keinen chirurgischen Eingriff erfordert",
+        "Moderner Ansatz der regenerativen Medizin",
+        "Geplante Nachuntersuchungen und Kontrollbesuche"
+      ],
       "suitableIntro": "Exosomen-Haartherapie;",
       "suitableFor": [
         "Menschen, die unter Haarausfall leiden",
@@ -2349,7 +2447,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Der langfristige Erfolg wird durch die Überwachung des Prozesses durch regelmäßige Kontrollen sichergestellt",
+        "Unter fachkundiger Aufsicht werden moderne Behandlungsstandards angewendet",
+        "Das Gleichgewicht zwischen Funktion, Ästhetik und Sicherheit bleibt erhalten",
+        "Ein strukturierter Nachsorge- und Wiederherstellungsplan wird umgesetzt"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Patienten, bei denen nach Rücksprache eine Implantatbehandlung geplant ist",
@@ -3166,7 +3269,7 @@
             },
             {
               "type": "paragraph",
-              "text": "Endgültige Wahl; Sie wird durch die Gewebestruktur, die chirurgische Planung und die Erfahrung des Spezialisten bestimmt."
+              "text": "Endgültige Wahl; Sie wird durch die Gewebestruktur, die chirurgische Planung und die Erfahrung des Experten bestimmt."
             }
           ]
         }
@@ -3952,7 +4055,7 @@
             },
             {
               "type": "paragraph",
-              "text": "Am Ende der Operation wird der Schnitt mit ästhetischen Nähten verschlossen. Um eine Flüssigkeitsansammlung unter dem Gewebe zu verhindern, kann eine Drainage gelegt werden."
+              "text": "Am Ende der Operation wird der Schnitt mit ästhetischen Nähten verschlossen. Um eine Flüssigkeitsansammlung unter dem Gewebe zu verhindern, kann eine Drainage angebracht werden."
             },
             {
               "type": "paragraph",
@@ -4372,7 +4475,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Personalisiertes Protokolldesign für Lippenfüller",
+        "Moderne Behandlungsstandards unter fachkundiger Aufsicht",
+        "Ausgewogene Planung hinsichtlich Funktionalität, Ästhetik und Sicherheit",
+        "Strukturiertes Nachsorge- und Wiederherstellungsmanagement"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Patienten, die sich für Lippenfüller interessieren, nach Rücksprache",
@@ -4560,7 +4668,7 @@
           "answer": "Variiert je nach gewähltem Anwendungsbereich. Ihr Arzt teilt Ihnen einen detaillierten Zeitplan mit."
         },
         {
-          "question": "Wann wird der endgültige Plan klar sein?",
+          "question": "Wann wird der endgültige Plan klar?",
           "answer": "Nach der klinischen Bewertung wird der Umfang der Behandlung geklärt und ein definitiver Plan erstellt."
         }
       ]
@@ -4630,7 +4738,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Personalisierte Behandlungsplanung für die Füllung der Kieferlinie",
+        "Moderne und sichere Anwendungsprotokolle unter Aufsicht eines Facharztes",
+        "Ein Ansatz, der ästhetisches Erscheinungsbild, Gesichtsausgewogenheit und Patientensicherheit gemeinsam berücksichtigt",
+        "Strukturierter Folgeprozess und Wiederherstellungsmanagement"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Menschen, die ihre Kinnpartie hervorheben möchten",
@@ -4784,7 +4897,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Personalisierte Planung",
+        "Anwendung unter fachmännischer Kontrolle",
+        "Natürliches Erscheinungsbild und sicherheitsorientierter Ansatz",
+        "Nachverfolgungs- und Wiederherstellungsprozessmanagement"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Menschen, die eine Aufhellung unter den Augen wünschen",
@@ -4957,7 +5075,7 @@
       "process": [
         {
           "title": "Beratung und Bewertung",
-          "description": "Ihre Behandlungsziele, Haut- und Haarstruktur, Krankengeschichte und Anwendungsmöglichkeiten werden detailliert beurteilt. Es wird ermittelt, welches Lasersystem und Sitzungsplan am besten zu Ihnen passt."
+          "description": "Ihre Behandlungsziele, Haut- und Haarstruktur, Krankengeschichte und Anwendungsmöglichkeiten werden detailliert bewertet. Es wird ermittelt, welches Lasersystem und Sitzungsplan am besten zu Ihnen passt."
         },
         {
           "title": "Behandlungssitzung",
@@ -5087,7 +5205,7 @@
       "faqs": [
         {
           "question": "Wer sind geeignete Kandidaten für eine PRP-Hautbehandlung?",
-          "answer": "Teilnahmeberechtigung; Die Abklärung erfolgt nach fachkundiger Beratung, Anamneseauswertung, Hautanalyse und Festlegung der Behandlungsziele."
+          "answer": "Teilnahmeberechtigung; Die Abklärung erfolgt nach fachkundiger Beratung, Anamneseauswertung, Hautanalyse und Festlegung von Behandlungszielen."
         },
         {
           "question": "Wie lange dauert der Wiederherstellungsprozess normalerweise?",
@@ -5148,7 +5266,7 @@
             },
             {
               "type": "paragraph",
-              "text": "Medizinische Hautpflege unterstützt die Hautqualität durch individuell auf die Hautbedürfnisse zugeschnittene Anwendungen. Es kann dazu beitragen, die Hautbarriere zu stärken, geschädigtes Gewebe zu reparieren und die Haut ausgeglichener erscheinen zu lassen."
+              "text": "Medizinische Hautpflege unterstützt die Hautqualität durch individuell auf die Hautbedürfnisse zugeschnittene Anwendungen. Es kann dazu beitragen, die Hautbarriere zu stärken, geschädigtes Gewebe zu reparieren und die Haut ausgeglichener aussehen zu lassen."
             },
             {
               "type": "paragraph",
@@ -5191,7 +5309,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Personalisiertes Protokolldesign für die medizinische Hautpflege",
+        "Moderne Pflege- und Behandlungsstandards begleitet von einer fachkundigen Beurteilung",
+        "Ausgewogene Planung in Bezug auf Hautgesundheit, ästhetisches Erscheinungsbild und Sicherheit",
+        "Strukturiertes Nachverfolgungs- und Wiederherstellungsprozessmanagement"
+      ],
       "suitableIntro": "Medizinische Hautpflege kann für Menschen geeignet sein, die:",
       "suitableFor": [
         "Menschen, die sich für professionelle Hautpflege und Praktiken zur Verbesserung der Hautqualität interessieren",
@@ -5462,7 +5585,7 @@
         "Personen, die eine Gewichtskontrolle anstreben",
         "Diejenigen, die das Risiko einer chronischen Erkrankung reduzieren wollen",
         "Menschen, deren Ziel es ist, Energie und Lebensqualität zu steigern",
-        "Patienten, die nach klinischer Bewertung als geeignet erachtet wurden"
+        "Patienten, die nach klinischer Bewertung als geeignet erachtet werden"
       ],
       "quickFacts": [
         {
@@ -5652,7 +5775,7 @@
       "categoryLabel": "Funktionelle Gesundheit",
       "heroTag": "Funktionelle Gesundheit",
       "heroSubtitle": "",
-      "summary": "Ziel der Ozontherapie ist es, das Stoffwechselgleichgewicht zu unterstützen und die Funktionen des Immunsystems zu optimieren; Geplant ist ein personalisierter Behandlungsansatz, bei dem vorhersehbare Ergebnisse und Patientensicherheit im Mittelpunkt stehen.",
+      "summary": "Ziel der Ozontherapie ist es, das Stoffwechselgleichgewicht zu unterstützen und die Funktionen des Immunsystems zu optimieren. Geplant ist ein personalisierter Behandlungsansatz, bei dem vorhersehbare Ergebnisse und Patientensicherheit im Mittelpunkt stehen.",
       "images": {
         "hero": "/images/site/categories/longevity.webp",
         "content": "/images/site/pages/ozone-therapy.webp"

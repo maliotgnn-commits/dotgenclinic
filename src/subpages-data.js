@@ -74,8 +74,7 @@ const DATA = {
       "overview": [
         "Vizyon ve misyonumuz; standartlarımızı, işleyişimizi ve kalite önceliklerimizi sade ve şeffaf bir çerçevede ortaya koyar.",
         "Tedavi planlama süreci başlamadan önce, hastalarımızın tüm süreç hakkında net bilgi sahibi olması için her adım açık şekilde paylaşılır.",
-        "Temel amacımız; hasta yolculuğunun her aşamasında iletişim, kalite ve sürekliliği aynı yüksek seviyede sürdürmektir.",
-        "Dr. Otgen Clinic; T.C. Sağlık Bakanlığı ve TÜV Thüringen (ISO 9001) tarafından belgelendirilmiş, ayrıca European Property Awards tarafından ödüllendirilmiş hizmet yapısıyla sağlık ve estetiği bir arada sunan bir kuruluştur."
+        "Temel amacımız; hasta yolculuğunun her aşamasında iletişim, kalite ve sürekliliği aynı yüksek seviyede sürdürmektir. Dr. Otgen Clinic; T.C. Sağlık Bakanlığı ve TÜV Thüringen (ISO 9001) belgelendirmeleriyle sağlık ve estetiği bir arada sunar."
       ],
       "sections": [],
       "highlights": [
@@ -93,20 +92,20 @@ const DATA = {
       ],
       "quickFacts": [
         {
-          "label": "Süre",
-          "value": "Düzenli güncellemeler ve sürekli gelişim"
+          "label": "Vizyon",
+          "value": "Sağlık ve estetikte güvenilir global referans olmak"
         },
         {
-          "label": "Tedavi Modeli",
-          "value": "Bilgilendirme ve planlama"
+          "label": "Misyon",
+          "value": "Hasta güvenliği ve kalite odaklı kişisel bakım sunmak"
         },
         {
-          "label": "İyileşme",
-          "value": "Hızlı ve doğrudan erişim"
+          "label": "Odak",
+          "value": "Şeffaf iletişim ve sürdürülebilir gelişim"
         },
         {
-          "label": "Yöntem",
-          "value": "Standartlaştırılmış kurumsal süreç yönetimi"
+          "label": "Standart",
+          "value": "ISO 9001 ve Sağlık Bakanlığı belgelendirmeleri"
         }
       ],
       "process": [
@@ -152,22 +151,36 @@ const DATA = {
         "content": "/images/site/pages/our-values.webp"
       },
       "overview": [
-        "Değerlerimiz; standartlarımızı, iş akışlarımızı ve kalite önceliklerimizi yalın ve şeffaf bir yapıda açıklar.Ziyaretçilerimizin tedavi planlaması başlamadan önce beklentilerini netleştirebilmeleri için her adımı şeffaf bir şekilde sunuyoruz.Amacımız; hasta yolculuğunun her aşamasında iletişimi, kaliteyi ve sürekliliği aynı yüksek standartta tutmaktır.",
-        "Hasta Odaklılık: Tüm süreçlerimizin merkezinde danışanlarımız yer alır. Onların güvenliği, konforu ve memnuniyeti, Dr. Otgen Clinic hizmet anlayışının temelini oluşturur.",
-        "Etik ve Şeffaf Yaklaşım: Tıbbi etik ilkelerden asla ödün vermeden, açık iletişim ve güvene dayalı bir hizmet anlayışı sunarız.",
-        "Uluslararası Kalite: Hizmetlerimizi T.C. Sağlık Bakanlığı ve TÜV Thüringen (ISO 9001) standartlarına uygun olarak sunar; Dr. Otgen Clinic bünyesinde global düzeyde akredite edilmiş bir kalite anlayışını benimsiyoruz.",
-        "Bilim ve Teknolojiye Yatırım: En güncel teknolojileri takip eder, tıbbi altyapımızı sürekli geliştirerek estetik ve sağlıkta inovasyonun öncüsü olmayı hedefleriz.",
-        "Uzmanlık ve Deneyim: Her biri alanında uzman, tam zamanlı profesyonellerden oluşan güçlü kadromuzla, yüksek başarı oranı ve güvenilir sonuçlar sunarız.",
-        "Sürdürülebilir Hizmet Anlayışı: Danışan memnuniyetini yalnızca işlem günüyle sınırlı görmeyiz; Dr. Otgen Clinic olarak uzun vadeli güven ilişkisine dayalı, istikrarlı ve kalite odaklı bir hizmet sunarız.",
-        "Estetik ve Sağlığın Uyumlu Dengesi: Her uygulamayı yalnızca estetik kazanım değil, aynı zamanda genel sağlık ve yaşam konforunu destekleyen bir bütün olarak ele alırız.",
-        "Küresel Vizyon: Farklı ülkelerden gelen binlerce hastaya hizmet sunan yapımızla, kültürel farklılıklara saygılı, global düzeyde örnek bir sağlık merkezi olma sorumluluğunu taşırız.",
-        "Şeffaf ve ölçülebilir süreç standartları",
-        "Her karar noktasında net iletişim",
-        "Uluslararası hasta desteği ve koordinasyonu",
-        "Sürekli kalite takibi ve iyileştirme"
+        "Değerlerimiz; standartlarımızı, iş akışlarımızı ve kalite önceliklerimizi yalın ve şeffaf bir yapıda açıklar.",
+        "Tedavi planlaması başlamadan önce beklentilerin netleşmesi için her adım şeffaf biçimde paylaşılır; hasta yolculuğunun her aşamasında iletişim, kalite ve süreklilik önceliğimizdir.",
+        "Dr. Otgen Clinic; T.C. Sağlık Bakanlığı ve TÜV Thüringen (ISO 9001) belgelendirmeleriyle sağlık ve estetiği güvenilir standartlarda bir araya getirir."
       ],
-      "sections": [],
-      "highlights": [],
+      "sections": [
+        {
+          "title": "Temel Değerlerimiz",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "Hasta Odaklılık: Tüm süreçlerimizin merkezinde danışanlarımız yer alır. Güvenlik, konfor ve memnuniyet hizmet anlayışımızın temelini oluşturur.",
+                "Etik ve Şeffaf Yaklaşım: Tıbbi etik ilkelerden ödün vermeden, açık iletişim ve güvene dayalı bir hizmet sunulur.",
+                "Uluslararası Kalite: T.C. Sağlık Bakanlığı ve TÜV Thüringen (ISO 9001) standartlarına uygun global düzeyde akredite kalite anlayışı.",
+                "Bilim ve Teknolojiye Yatırım: En güncel teknolojiler takip edilir; tıbbi altyapı sürekli geliştirilir.",
+                "Uzmanlık ve Deneyim: Alanında uzman, tam zamanlı profesyonellerden oluşan güçlü kadro ile güvenilir sonuçlar hedeflenir.",
+                "Sürdürülebilir Hizmet Anlayışı: Uzun vadeli güven ilişkisine dayalı, istikrarlı ve kalite odaklı hizmet sunulur.",
+                "Estetik ve Sağlığın Dengesi: Her uygulama yalnızca estetik kazanım değil, genel sağlık ve yaşam konforunu destekleyen bir bütün olarak ele alınır.",
+                "Küresel Vizyon: Farklı ülkelerden gelen hastalara, kültürel farklılıklara saygılı global düzeyde hizmet verilir."
+              ]
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Hasta odaklılık ve güvenli bakım anlayışı",
+        "Etik ve şeffaf iletişim",
+        "Uluslararası kalite standartları",
+        "Bilim, teknoloji ve sürdürülebilir hizmet"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Tedavi öncesinde net klinik bilgi arayan ziyaretçilerimiz için",
@@ -177,20 +190,20 @@ const DATA = {
       ],
       "quickFacts": [
         {
-          "label": "Süre",
-          "value": "Sürekli Güncellemeler"
+          "label": "Hasta Odaklılık",
+          "value": "Güvenlik, konfor ve memnuniyet merkezde"
         },
         {
-          "label": "Tedavi Modeli",
-          "value": "Bilgilendirme ve Planlama"
+          "label": "Etik Yaklaşım",
+          "value": "Şeffaf ve güvene dayalı iletişim"
         },
         {
-          "label": "İyileşme",
-          "value": "Hızlı Erişim"
+          "label": "Kalite",
+          "value": "Uluslararası akreditasyon standartları"
         },
         {
-          "label": "Yöntem",
-          "value": "Standartlaştırılmış kurumsal süreç yönetimi"
+          "label": "İnovasyon",
+          "value": "Bilim ve teknolojiye sürekli yatırım"
         }
       ],
       "process": [
@@ -236,26 +249,50 @@ const DATA = {
         "content": "/images/site/pages/quality-policy.webp"
       },
       "overview": [
-        "Kalite politikamız; standartlarımızı, iş akışlarımızı ve kalite önceliklerimizi basit ve şeffaf bir yapıda açıklamaktadır.Tedavi planlaması başlamadan önce beklentilerin netleşmesi için her adımı şeffaf bir şekilde sunuyoruz.Amacımız; hasta yolculuğunun tamamında iletişimi, kaliteyi ve sürekliliği aynı yüksek standartta tutmaktır.Dr. Otgen Clinic olarak; sağlık ve estetik hizmetlerinde yalnızca bugünü değil, geleceği de güvence altına alacak bir kalite anlayışıyla çalışıyoruz.Hizmet sunduğumuz her alanda; hastalarımızın sağlığını, güvenliğini ve memnuniyetini merkeze alıyor; tüm süreçlerimizde etik ilkelere, yasa ve yönetmeliklere tam uyum sağlıyoruz.Gizlilik, tarafsızlık ve insan odaklı yaklaşımı esas alan kliniğimiz, yüksek hijyen standartları ve güçlü teknolojik altyapısıyla her gün daha ileriye gitmeyi hedeflemektedir.",
-        "Kalite Odaklı Yaklaşımımızın Temel Unsurları:",
-        "Uluslararası kalite standartlarında sağlık hizmeti",
-        "Eğitimle güçlenen, tam zamanlı uzman kadro",
-        "Teknolojik yatırımlar ve dijitalleşme odaklı süreçler",
-        "İş sağlığı, çevre bilinci ve hasta güvenliği önceliği",
-        "Yerel ve global sağlık sektörüne sürdürülebilir katkı",
-        "Dr. Otgen Clinic olarak başarılarımızı; ulusal ve uluslararası otoriteler tarafından verilen belgelerle tescilliyoruz. Bu sertifikalar, kaliteye olan bağlılığımızın ve uluslararası standartlarda çalıştığımızın en somut göstergesidir.",
-        "Kalite Belgelerimiz:",
-        "ISO 9001:2015 – Uluslararası Kalite Yönetim Sistemi Sertifikası",
-        "TÜV Thüringen & TÜV SÜD – Kalite denetimlerinden geçmiş altyapı ve medikal güvenlik sistemleri",
-        "T.C. Sağlık Bakanlığı – Yetkili Sağlık Kurumu Belgesi",
-        "Sağlık Turizmi Yetki Belgesi",
-        "Şeffaf ve ölçülebilir süreç standartları",
-        "Her karar noktasında net iletişim",
-        "Uluslararası hasta desteği ve koordinasyonu",
-        "Sürekli kalite takibi ve iyileştirme"
+        "Kalite politikamız; standartlarımızı, iş akışlarımızı ve kalite önceliklerimizi basit ve şeffaf bir yapıda açıklar.",
+        "Tedavi planlaması başlamadan önce beklentilerin netleşmesi için her adım şeffaf biçimde sunulur; hasta güvenliği, etik ilkeler ve süreklilik merkezdedir.",
+        "Dr. Otgen Clinic; sağlık ve estetik hizmetlerinde uluslararası standartlara uygun, sürdürülebilir bir kalite anlayışıyla çalışır."
       ],
-      "sections": [],
-      "highlights": [],
+      "sections": [
+        {
+          "title": "Kalite Odaklı Yaklaşımımız",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "Uluslararası kalite standartlarında sağlık hizmeti",
+                "Eğitimle güçlenen, tam zamanlı uzman kadro",
+                "Teknolojik yatırımlar ve dijitalleşme odaklı süreçler",
+                "İş sağlığı, çevre bilinci ve hasta güvenliği önceliği",
+                "Yerel ve global sağlık sektörüne sürdürülebilir katkı"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Dr. Otgen Clinic olarak başarılarımızı; ulusal ve uluslararası otoriteler tarafından verilen belgelerle tescilliyoruz. Bu sertifikalar, kaliteye olan bağlılığımızın ve uluslararası standartlarda çalıştığımızın en somut göstergesidir."
+            },
+            {
+              "type": "subheading",
+              "text": "Kalite Belgelerimiz"
+            },
+            {
+              "type": "list",
+              "items": [
+                "ISO 9001:2015 – Uluslararası Kalite Yönetim Sistemi Sertifikası",
+                "TÜV Thüringen & TÜV SÜD – Kalite denetimlerinden geçmiş altyapı ve medikal güvenlik sistemleri",
+                "T.C. Sağlık Bakanlığı – Yetkili Sağlık Kurumu Belgesi",
+                "Sağlık Turizmi Yetki Belgesi"
+              ]
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Uluslararası kalite standartlarında sağlık hizmeti",
+        "Eğitimle güçlenen uzman kadro",
+        "Teknolojik yatırım ve dijital süreçler",
+        "Hasta güvenliği ve sürdürülebilir kalite"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Tedavi öncesinde net klinik bilgi arayan ziyaretçilerimiz için",
@@ -265,20 +302,20 @@ const DATA = {
       ],
       "quickFacts": [
         {
-          "label": "Süre",
-          "value": "Devam Eden Güncellemeler"
+          "label": "Sertifikasyon",
+          "value": "ISO 9001:2015 ve TÜV Thüringen"
         },
         {
-          "label": "Tedavi Modeli",
-          "value": "Bilgilendirme ve Planlama"
+          "label": "Güvenlik",
+          "value": "Hasta güvenliği ve hijyen önceliği"
         },
         {
-          "label": "İyileşme",
-          "value": "Kesintisiz ve Hızlı Erişim"
+          "label": "Kadro",
+          "value": "Eğitimli tam zamanlı uzman ekip"
         },
         {
-          "label": "Yöntem",
-          "value": "Standartlaştırılmış kurumsal süreç yönetimi"
+          "label": "İzleme",
+          "value": "Sürekli kalite denetimi ve iyileştirme"
         }
       ],
       "process": [
@@ -344,20 +381,20 @@ const DATA = {
       ],
       "quickFacts": [
         {
-          "label": "Süre",
-          "value": "Düzenli bilgilendirme ve güncellemeler"
+          "label": "Yönetim",
+          "value": "Şeffaf ve ölçülebilir süreç standartları"
         },
         {
-          "label": "Tedavi Modeli",
-          "value": "Bilgilendirme ve planlama"
+          "label": "Koordinasyon",
+          "value": "Departmanlar arası planlı iş birliği"
         },
         {
-          "label": "İyileşme",
-          "value": "Hızlı ve doğrudan erişim"
+          "label": "İletişim",
+          "value": "Her aşamada net hasta bilgilendirmesi"
         },
         {
-          "label": "Yöntem",
-          "value": "Standartlaştırılmış kurumsal süreç yönetimi"
+          "label": "Takip",
+          "value": "Yapılandırılmış operasyonel süreç yönetimi"
         }
       ],
       "process": [
@@ -403,14 +440,17 @@ const DATA = {
         "content": "/images/site/pages/our-doctors.webp"
       },
       "overview": [
-        "Hekimlerimiz; standartlarımızı, iş akışlarımızı ve kalite önceliklerimizi sade ve şeffaf bir yapıda sunmaktadır.Ziyaretçilerimizin tedavi planlaması başlamadan önce beklentilerini netleştirebilmeleri için her adımı şeffaf bir şekilde sunuyoruz.Hedefimiz; hasta yolculuğu boyunca iletişimi, kaliteyi ve sürekliliği aynı yüksek standartta korumaktır.",
+        "Hekimlerimiz; standartlarımızı, iş akışlarımızı ve kalite önceliklerimizi sade ve şeffaf bir yapıda sunmaktadır.",
+        "Tedavi planlaması başlamadan önce beklentilerin netleşmesi için her adım şeffaf biçimde paylaşılır; hasta yolculuğunda iletişim ve güvenlik önceliklidir.",
+        "Alanında uzman, deneyimli hekim kadromuz; estetik, sağlık ve fonksiyonel hedefleri birlikte değerlendirerek kişiye özel planlama yapar."
+      ],
+      "sections": [],
+      "highlights": [
         "Şeffaf ve ölçülebilir süreç standartları",
         "Her karar noktasında net iletişim",
         "Uluslararası hasta desteği ve koordinasyonu",
         "Sürekli kalite izleme ve iyileştirme"
       ],
-      "sections": [],
-      "highlights": [],
       "suitableIntro": "",
       "suitableFor": [
         "Tedavi öncesi net klinik bilgi ve süreç rehberliği arayanlar için",
@@ -420,20 +460,20 @@ const DATA = {
       ],
       "quickFacts": [
         {
-          "label": "Süre",
-          "value": "Düzenli Süreç Bilgilendirmeleri"
+          "label": "Uzmanlık",
+          "value": "Alanında deneyimli tam zamanlı hekim kadrosu"
         },
         {
-          "label": "Tedavi Modeli",
-          "value": "Bilgilendirme ve Planlama"
+          "label": "Değerlendirme",
+          "value": "Kişiye özel tedavi planlaması"
         },
         {
-          "label": "İyileşme",
-          "value": "Anında Erişim"
+          "label": "Standart",
+          "value": "Modern klinik uygulama protokolleri"
         },
         {
-          "label": "Yöntem",
-          "value": "Standartlaştırılmış kurumsal süreç yönetimi"
+          "label": "Takip",
+          "value": "Konsültasyon sonrası yapılandırılmış kontroller"
         }
       ],
       "process": [
@@ -480,28 +520,40 @@ const DATA = {
       },
       "overview": [
         "Sağlık turizmi yaklaşımımız; standartlarımızı, işleyişimizi ve kalite önceliklerimizi sade ve şeffaf bir şekilde açıklar.",
-        "Tedavi süreci başlamadan önce beklentilerin netleşmesi için tüm adımlar açık şekilde paylaşılır.",
-        "Amacımız; hastanın yolculuğu boyunca iletişim, kalite ve sürekliliği aynı yüksek seviyede tutmaktır.",
-        "Dünyada ve Türkiye’de sağlık turizmi son yıllarda hızla büyüyen önemli bir alternatif turizm alanıdır.",
-        "Türkiye’de sağlık sistemi son yıllarda büyük gelişmeler göstermiştir. Yapılan reformlarla birlikte hem kalite hem de verimlilik artmıştır. Kamu sağlık hizmetlerinin yanında özel sağlık hizmetleri de hızlı şekilde gelişmiştir.",
-        "Türkiye; modern hastaneleri, uzman doktorları, eğitimli sağlık personeli ve güçlü teknolojik altyapısı ile Avrupa standartlarında hizmet sunmaktadır.",
-        "Coğrafi konumu, sağlık kuruluşlarının kalitesi, yetişmiş insan gücü, kaplıcaları ve doğal güzellikleri sayesinde Türkiye sağlık turizmi açısından önemli bir merkezdir.",
-        "Tarihi ve kültürel zenginliği ile birlikte sağlık alanındaki gelişmişliği Türkiye’yi dünyanın önde gelen sağlık turizmi ülkeleri arasına taşımaktadır. Ayrıca yüksek teknoloji kullanan ve maliyet avantajı sunan sağlık tesisleri ile dikkat çekmektedir.",
-        "Türkiye, estetik ve plastik cerrahi alanında dünyadaki gelişmeleri yakından takip etmekte, birçok yeni uygulamada öncü rol üstlenmektedir.",
-        "Aynı kalite standartlarına rağmen Türkiye, birçok ülkeye göre daha ekonomik sağlık hizmeti sunmaktadır.",
-        "Doktorların iletişim becerileri ve Türk toplumunun sıcak yaklaşımı, hasta iletişimini kolaylaştırmaktadır.",
-        "Yabancı hastalara kendi dillerinde hizmet veren danışmanlar eşlik etmektedir.",
-        "Tedavi sonrası süreçlerin güçlü şekilde devam etmesi de Türkiye’yi tercih edilen ülkelerden biri haline getirmektedir.",
-        "Son yıllarda sağlık turizmi alanında önemli ilerlemeler kaydedilmiştir. Devlet de bu alandaki yatırımları desteklemektedir. Bu gelişmeler Türkiye’nin uluslararası imajını olumlu yönde etkilemektedir.",
-        "Kendi verilerimize göre 100’e yakın ülkeden hastaya hizmet veriyoruz. Bu da sektörün büyümesini göstermektedir.",
-        "Türkiye; konumu, kaliteli hizmet anlayışı ve ekonomik avantajları ile sağlık turizminde daha da güçlü bir konuma gelecektir."
+        "Tedavi süreci başlamadan önce beklentilerin netleşmesi için tüm adımlar açık şekilde paylaşılır; uluslararası hasta koordinasyonu önceliğimizdir.",
+        "Türkiye; modern altyapısı, uzman kadrosu ve maliyet avantajlarıyla sağlık turizminde güçlü bir merkez konumundadır."
       ],
-      "sections": [],
+      "sections": [
+        {
+          "title": "Türkiye'de Sağlık Turizmi",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Dünyada ve Türkiye'de sağlık turizmi son yıllarda hızla büyüyen önemli bir alternatif turizm alanıdır. Türkiye'de sağlık sistemi son yıllarda büyük gelişmeler göstermiş; kamu ve özel sağlık hizmetleri birlikte güçlenmiştir."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Modern hastaneler, uzman doktorlar ve güçlü teknolojik altyapı",
+                "Coğrafi konum, kaplıca ve doğal güzelliklerle birleşen sağlık hizmeti",
+                "Estetik ve plastik cerrahide dünya standartlarına yakın uygulamalar",
+                "Kalite standartlarına rağmen birçok ülkeye göre daha ekonomik hizmet",
+                "Yabancı dillere hakim danışmanlarla koordineli hasta desteği",
+                "100'e yakın ülkeden hastaya hizmet veren uluslararası deneyim"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Dr. Otgen Clinic; tedavi öncesi planlamadan iyileşme sürecine kadar yapılandırılmış, şeffaf ve güvenli bir sağlık turizmi deneyimi sunar."
+            }
+          ]
+        }
+      ],
       "highlights": [
-        "Şeffaf ve ölçülebilir süreçler",
-        "Her aşamada net iletişim",
-        "Uluslararası hasta desteği ve koordinasyon",
-        "Sürekli kalite takibi ve iyileştirme"
+        "Uluslararası hasta koordinasyonu",
+        "Avrupa standartlarında sağlık altyapısı",
+        "Ekonomik ve kaliteli tedavi seçenekleri",
+        "Tedavi sonrası yapılandırılmış takip"
       ],
       "suitableIntro": "",
       "suitableFor": [
@@ -512,20 +564,20 @@ const DATA = {
       ],
       "quickFacts": [
         {
-          "label": "Süre",
-          "value": "Güncel bilgilendirmelere göre değişir"
+          "label": "Kapsam",
+          "value": "100'e yakın ülkeden hasta deneyimi"
         },
         {
-          "label": "Tedavi Modeli",
-          "value": "Bilgilendirme ve planlama"
+          "label": "Koordinasyon",
+          "value": "Çok dilli danışman desteği"
         },
         {
-          "label": "İyileşme",
-          "value": "Hızlı erişim ve takip"
+          "label": "Altyapı",
+          "value": "Avrupa standartlarında modern tesisler"
         },
         {
-          "label": "Yöntem",
-          "value": "Standartlaştırılmış süreç yönetimi"
+          "label": "Avantaj",
+          "value": "Kaliteli ve ekonomik tedavi seçenekleri"
         }
       ],
       "process": [
@@ -591,20 +643,20 @@ const DATA = {
       ],
       "quickFacts": [
         {
-          "label": "Süre",
-          "value": "Kesintisiz bilgilendirme"
+          "label": "Destek",
+          "value": "Uluslararası hasta koordinasyonu"
         },
         {
-          "label": "Tedavi Modeli",
-          "value": "Bilgilendirme ve planlama"
+          "label": "İletişim",
+          "value": "Hasta dilinde süreç bilgilendirmesi"
         },
         {
-          "label": "İyileşme",
-          "value": "Hızlı erişim ve takip"
+          "label": "Erişim",
+          "value": "Hızlı yönlendirme ve takip hattı"
         },
         {
-          "label": "Yöntem",
-          "value": "Standartlaştırılmış kurumsal süreç yönetimi"
+          "label": "Standart",
+          "value": "Şeffaf ve yapılandırılmış süreç yönetimi"
         }
       ],
       "process": [
@@ -783,7 +835,12 @@ const DATA = {
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Kişiye özel saç çizgisi tasarımı",
+        "Modern Safir FUE teknolojisi",
+        "Hassas kanal oluşturma yaklaşımı",
+        "Yapılandırılmış takip ve iyileşme yönetimi"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Saç ekimi yaptırmayı düşünen kişiler",
@@ -866,7 +923,8 @@ const DATA = {
       },
       "overview": [
         "DHI saç ekimi süreci, kişinin saç yapısı, saç dökülme seviyesi ve beklentileri doğrultusunda özel olarak planlanır. Tedavi öncesinde gerçekleştirilen detaylı konsültasyon sayesinde ihtiyaçlarınız analiz edilir ve size uygun bir yol haritası oluşturulur.",
-        "Amaç; doğal saç çizgisini koruyarak estetik açıdan başarılı, yoğun ve kalıcı sonuçlar elde etmektir. Tedavi sonrası süreç ise düzenli kontrollerle takip edilerek iyileşmenin güvenli ve sağlıklı şekilde ilerlemesi sağlanır."
+        "Amaç; doğal saç çizgisini koruyarak estetik açıdan başarılı, yoğun ve kalıcı sonuçlar elde etmektir. Tedavi sonrası süreç ise düzenli kontrollerle takip edilerek iyileşmenin güvenli ve sağlıklı şekilde ilerlemesi sağlanır.",
+        "Choi implanter kalemi ile doğrudan implantasyon sayesinde ekim açısı, yönü ve yoğunluğu daha hassas biçimde kontrol edilir."
       ],
       "sections": [
         {
@@ -973,7 +1031,12 @@ const DATA = {
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Choi implanter kalemi ile doğrudan implantasyon",
+        "Ekim açısı, yönü ve yoğunluğunun hassas kontrolü",
+        "Kişiselleştirilmiş saç çizgisi ve greft planlaması",
+        "Yapılandırılmış takip ve iyileşme yönetimi"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "DHI saç ekimi yaptırmayı düşünen kişiler",
@@ -1175,7 +1238,12 @@ const DATA = {
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Kişiye özel tedavi planlaması",
+        "Modern saç ekimi teknikleri ile kombine edilebilmesi",
+        "Yenileyici tıp yaklaşımından yararlanılması",
+        "Yapılandırılmış takip ve iyileşme yönetimi"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Saç ekimi yaptırmayı planlayan kişiler",
@@ -1326,7 +1394,12 @@ const DATA = {
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "DHI tekniği ile minimal görünür iz ve doğal sonuç",
+        "İş ve sosyal yaşama kesintisiz dönüş imkânı",
+        "Saçlarını kazıtmak istemeyen adaylar için uygun yöntem",
+        "Kişiye özel protokol tasarımı ve yapılandırılmış takip süreci"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Konsültasyon sonrası tıraşsız saç ekimine ilgi duyan hastalar",
@@ -1545,7 +1618,12 @@ const DATA = {
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Kişiye özel kaş tasarımı",
+        "Doğal görünüm hedefleyen planlama",
+        "Minimal invaziv cerrahi teknikler",
+        "Uzman hekim kontrolünde süreç yönetimi"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Kaş yoğunluğunu artırmak isteyen kişiler",
@@ -1703,7 +1781,12 @@ const DATA = {
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Sakal ve bıyık ekimi için kişiye özel protokol tasarımı",
+        "Uzman gözetiminde modern tedavi standartları",
+        "Fonksiyon, estetik ve güvenlik için dengeli planlama",
+        "Yapılandırılmış takip ve iyileşme yönetimi"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Konsültasyon sonrası sakal ve bıyık ekimine ilgi duyan hastalar",
@@ -1863,7 +1946,12 @@ const DATA = {
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Kişiye özel planlanan saç tedavisi",
+        "Cerrahi olmayan, minimal invaziv uygulama",
+        "Estetik, fonksiyonellik ve güvenlik odaklı yaklaşım",
+        "Düzenli takip ve iyileşme yönetimi"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Saç dökülmesi yaşayan kadın ve erkekler",
@@ -2045,7 +2133,12 @@ const DATA = {
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Cerrahi işlem gerektirmeyen uygulama",
+        "Ağrısız ve konforlu tedavi süreci",
+        "Modern lazer teknolojilerinin kullanılması",
+        "Düzenli takip ve uzman kontrolü"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Lazer saç tedavisi hakkında bilgi almak isteyen kişiler",
@@ -2199,7 +2292,12 @@ const DATA = {
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Kişiye özel tedavi planlaması",
+        "Cerrahi işlem gerektirmeyen uygulama",
+        "Modern yenileyici tıp yaklaşımı",
+        "Planlı takip ve kontrol ziyaretleri"
+      ],
       "suitableIntro": "Eksozom Saç Terapisi;",
       "suitableFor": [
         "Saç dökülmesi yaşayan kişiler",
@@ -2349,7 +2447,12 @@ const DATA = {
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Süreç düzenli kontrollerle takip edilerek uzun vadeli başarı sağlanır",
+        "Uzman gözetiminde modern tedavi standartları uygulanır",
+        "Fonksiyon, estetik ve güvenlik dengesi gözetilir",
+        "Yapılandırılmış takip ve iyileşme planı uygulanır"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Konsültasyon sonrası implant tedavisi planlanan hastalar",
@@ -4372,7 +4475,12 @@ const DATA = {
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Dudak dolgusu için kişiselleştirilmiş protokol tasarımı",
+        "Uzman gözetimi altında modern tedavi standartları",
+        "İşlevsellik, estetik ve güvenlik açısından dengeli planlama",
+        "Yapılandırılmış takip ve iyileşme yönetimi"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Konsültasyon sonrasında dudak dolgusuyla ilgilenen hastalar",
@@ -4630,7 +4738,12 @@ const DATA = {
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Çene hattı dolgusu için kişiye özel tedavi planlaması",
+        "Uzman hekim gözetiminde modern ve güvenli uygulama protokolleri",
+        "Estetik görünüm, yüz dengesi ve hasta güvenliğini birlikte gözeten yaklaşım",
+        "Yapılandırılmış takip süreci ve iyileşme yönetimi"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Çene hattını daha belirgin hale getirmek isteyen kişiler",
@@ -4784,7 +4897,12 @@ const DATA = {
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Kişiye özel planlama",
+        "Uzman kontrolünde uygulama",
+        "Doğal görünüm ve güvenlik odaklı yaklaşım",
+        "Takip ve iyileşme süreci yönetimi"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Göz altı ışık dolgusu yaptırmak isteyen kişiler",
@@ -5191,7 +5309,12 @@ const DATA = {
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Kişiye özel tıbbi cilt bakımı protokolü tasarımı",
+        "Uzman değerlendirmesi eşliğinde modern bakım ve tedavi standartları",
+        "Cilt sağlığı, estetik görünüm ve güvenlik açısından dengeli planlama",
+        "Yapılandırılmış takip ve iyileşme süreci yönetimi"
+      ],
       "suitableIntro": "Tıbbi cilt bakımı şu kişiler için uygun olabilir:",
       "suitableFor": [
         "Profesyonel cilt bakımı ve cilt kalitesini artırmaya yönelik uygulamalarla ilgilenen kişiler",

@@ -74,8 +74,7 @@
       "overview": [
         "Nuestra visión y misión; Revela nuestros estándares, operación y prioridades de calidad en un marco simple y transparente.",
         "Antes de que comience el proceso de planificación del tratamiento, cada paso se comparte claramente para que nuestros pacientes tengan información clara sobre todo el proceso.",
-        "Nuestro principal objetivo es; Mantener la comunicación, la calidad y la continuidad al mismo alto nivel en cada etapa del recorrido del paciente.",
-        "Clínica Dr. Otgen; T.R. Es una organización que ofrece salud y estética junto con su estructura de servicios certificada por el Ministerio de Salud y TÜV Thüringen (ISO 9001) y también galardonada con los European Property Awards."
+        "Nuestro principal objetivo es mantener la comunicación, la calidad y la continuidad al mismo alto nivel en cada etapa del recorrido del paciente. La Clínica Dr. Otgen ofrece salud y estética junto con certificaciones del Ministerio de Salud de la República de Turquía y TÜV Thüringen (ISO 9001)."
       ],
       "sections": [],
       "highlights": [
@@ -93,20 +92,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Duración",
-          "value": "Actualizaciones periódicas y mejora continua."
+          "label": "visión",
+          "value": "Ser un referente mundial confiable en salud y estética."
         },
         {
-          "label": "Modelo de tratamiento",
-          "value": "Información y planificación"
+          "label": "misión",
+          "value": "Brindar atención personal enfocada en la seguridad y calidad del paciente."
         },
         {
-          "label": "recuperación",
-          "value": "Acceso rápido y directo"
+          "label": "Enfoque",
+          "value": "Comunicación transparente y desarrollo sostenible"
         },
         {
-          "label": "Método",
-          "value": "Gestión de procesos empresariales estandarizada"
+          "label": "Estándar",
+          "value": "Certificaciones ISO 9001 y Ministerio de Salud"
         }
       ],
       "process": [
@@ -152,22 +151,36 @@
         "content": "/images/site/pages/our-values.webp"
       },
       "overview": [
-        "Nuestros valores; Explica nuestros estándares, flujos de trabajo y prioridades de calidad en una estructura simple y transparente. Presentamos cada paso de forma transparente para que nuestros visitantes puedan aclarar sus expectativas antes de comenzar la planificación del tratamiento. Nuestro objetivo es; Mantener la comunicación, la calidad y la continuidad al mismo alto nivel en cada etapa del recorrido del paciente.",
-        "Enfoque en el paciente: Nuestros clientes están en el centro de todos nuestros procesos. Su seguridad, comodidad y satisfacción, Dr. Forma la base del enfoque de servicio de Otgen Clinic.",
-        "Enfoque ético y transparente: Ofrecemos un enfoque de servicio basado en la comunicación abierta y la confianza, sin comprometer los principios éticos médicos.",
-        "Calidad Internacional: Prestamos nuestros servicios a T.R. Proporciona de acuerdo con las normas del Ministerio de Salud y TÜV Turingia (ISO 9001); Dr. En Otgen Clinic, adoptamos un enfoque de calidad acreditado a nivel mundial.",
-        "Inversión en Ciencia y Tecnología: Seguimos las tecnologías más actualizadas y pretendemos ser pioneros en innovación en estética y salud mejorando constantemente nuestra infraestructura médica.",
-        "Conocimientos y experiencia: ofrecemos una alta tasa de éxito y resultados confiables con nuestro sólido personal de profesionales de tiempo completo, cada uno de los cuales es un experto en su campo.",
-        "Enfoque de servicio sostenible: no consideramos que la satisfacción del cliente se limite al día de la transacción; Clínica Dr. As Otgen ofrecemos un servicio estable y orientado a la calidad basado en relaciones de confianza a largo plazo.",
-        "Equilibrio armonioso entre estética y salud: consideramos cada aplicación como un todo que respalda no solo el beneficio estético sino también la salud general y el confort de vida.",
-        "Visión Global: Con nuestra estructura que brinda servicios a miles de pacientes de diferentes países, tenemos la responsabilidad de ser un centro de salud ejemplar a nivel global que respeta las diferencias culturales.",
-        "Estándares de proceso transparentes y mensurables",
-        "Comunicación clara en cada punto de decisión",
-        "Atención y coordinación internacional de pacientes.",
-        "Seguimiento y mejora continua de la calidad."
+        "Nuestros valores; Explica nuestros estándares, flujos de trabajo y prioridades de calidad en una estructura simple y transparente.",
+        "Cada paso se comparte de forma transparente para aclarar las expectativas antes de que comience la planificación del tratamiento; La comunicación, la calidad y la continuidad son nuestras prioridades en cada etapa del recorrido del paciente.",
+        "La Clínica Dr. Otgen reúne salud y estética con estándares confiables y certificaciones del Ministerio de Salud de la República de Turquía y TÜV Thüringen (ISO 9001)."
       ],
-      "sections": [],
-      "highlights": [],
+      "sections": [
+        {
+          "title": "Nuestros valores fundamentales",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "Enfoque en el paciente: Nuestros clientes están en el centro de todos nuestros procesos. La seguridad, la comodidad y la satisfacción forman la base de nuestro enfoque de servicio.",
+                "Enfoque ético y transparente: se brinda un servicio basado en la comunicación abierta y la confianza sin comprometer los principios éticos médicos.",
+                "Calidad Internacional: enfoque de calidad acreditado a nivel mundial según las normas del Ministerio de Salud de la República de Turquía y TÜV Thüringen (ISO 9001).",
+                "Inversión en Ciencia y Tecnología: Se siguen las tecnologías más actualizadas; La infraestructura médica se mejora constantemente.",
+                "Conocimientos y experiencia: Se buscan resultados confiables con un sólido personal de profesionales de tiempo completo que son expertos en sus campos.",
+                "Concepto de servicio sostenible: Se proporciona un servicio estable y orientado a la calidad basado en una relación de confianza a largo plazo.",
+                "Equilibrio entre estética y salud: cada aplicación se considera como un todo que respalda no solo el beneficio estético sino también la salud general y el confort de vida.",
+                "Visión global: Los pacientes de diferentes países reciben un servicio global que respeta las diferencias culturales."
+              ]
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Enfoque de atención seguro y orientado al paciente",
+        "Comunicación ética y transparente",
+        "Estándares de calidad internacionales",
+        "Ciencia, tecnología y servicio sostenible"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Para nuestros visitantes que buscan información clínica clara antes del tratamiento.",
@@ -177,20 +190,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Duración",
-          "value": "Actualizaciones continuas"
+          "label": "Enfoque en el paciente",
+          "value": "La seguridad, la comodidad y la satisfacción están en el centro."
         },
         {
-          "label": "Modelo de tratamiento",
-          "value": "Información y planificación"
+          "label": "Enfoque ético",
+          "value": "Comunicación transparente y basada en la confianza."
         },
         {
-          "label": "recuperación",
-          "value": "Acceso rápido"
+          "label": "Calidad",
+          "value": "Estándares internacionales de acreditación."
         },
         {
-          "label": "Método",
-          "value": "Gestión de procesos empresariales estandarizada"
+          "label": "innovación",
+          "value": "Inversión continua en ciencia y tecnología"
         }
       ],
       "process": [
@@ -236,26 +249,50 @@
         "content": "/images/site/pages/quality-policy.webp"
       },
       "overview": [
-        "Nuestra política de calidad; Explica nuestros estándares, flujos de trabajo y prioridades de calidad en una estructura simple y transparente. Presentamos cada paso de forma transparente para aclarar las expectativas antes de que comience la planificación del tratamiento. Nuestro objetivo es; Mantener la comunicación, la calidad y la continuidad al mismo alto nivel durante todo el recorrido del paciente.Dr. Como Clínica Otgen; Trabajamos con un enfoque de calidad que asegurará no sólo el hoy sino también el futuro en los servicios de salud y estética. En todos los campos que servimos; se centra en la salud, seguridad y satisfacción de nuestros pacientes; Cumplimos plenamente con principios éticos, leyes y regulaciones en todos nuestros procesos. Basada en la confidencialidad, la imparcialidad y un enfoque orientado a las personas, nuestra clínica aspira a ir más allá cada día con sus altos estándares de higiene y su sólida infraestructura tecnológica.",
-        "Elementos básicos de nuestro enfoque centrado en la calidad:",
-        "Servicio de salud con estándares de calidad internacionales.",
-        "Personal experto a tiempo completo fortalecido mediante capacitación",
-        "Inversiones tecnológicas y procesos orientados a la digitalización",
-        "Prioridad salud laboral, conciencia ambiental y seguridad del paciente",
-        "Contribución sostenible al sector sanitario local y global",
-        "Dr. Nuestros logros como Clínica Otgen; Nos registramos con documentos emitidos por autoridades nacionales e internacionales. Estos certificados son el indicador más concreto de nuestro compromiso con la calidad y de que trabajamos con estándares internacionales.",
-        "Nuestros Certificados de Calidad:",
-        "ISO 9001:2015 – Certificado Internacional del Sistema de Gestión de Calidad",
-        "TÜV Thüringen y TÜV SÜD: infraestructuras y sistemas de seguridad médica que han superado inspecciones de calidad",
-        "T.R. Ministerio de Salud – Certificado de Institución de Salud Autorizada",
-        "Certificado de Autorización de Turismo de Salud",
-        "Estándares de proceso transparentes y mensurables",
-        "Comunicación clara en cada punto de decisión",
-        "Atención y coordinación internacional de pacientes.",
-        "Seguimiento y mejora continua de la calidad."
+        "Nuestra política de calidad; Explica nuestros estándares, flujos de trabajo y prioridades de calidad en una estructura simple y transparente.",
+        "Cada paso se presenta de forma transparente para aclarar las expectativas antes de que comience la planificación del tratamiento; La seguridad del paciente, los principios éticos y la continuidad están en el centro.",
+        "Clínica Dr. Otgen; Trabaja con un enfoque de calidad sustentable de acuerdo con los estándares internacionales en servicios de salud y estética."
       ],
-      "sections": [],
-      "highlights": [],
+      "sections": [
+        {
+          "title": "Nuestro enfoque orientado a la calidad",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "Servicio de salud con estándares de calidad internacionales.",
+                "Personal experto a tiempo completo fortalecido mediante capacitación",
+                "Inversiones tecnológicas y procesos orientados a la digitalización",
+                "Prioridad salud laboral, conciencia ambiental y seguridad del paciente",
+                "Contribución sostenible al sector sanitario local y global"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Dr. Nuestros logros como Clínica Otgen; Nos registramos con documentos emitidos por autoridades nacionales e internacionales. Estos certificados son el indicador más concreto de nuestro compromiso con la calidad y de que trabajamos con estándares internacionales."
+            },
+            {
+              "type": "subheading",
+              "text": "Nuestros Certificados de Calidad"
+            },
+            {
+              "type": "list",
+              "items": [
+                "ISO 9001:2015 – Certificado Internacional del Sistema de Gestión de Calidad",
+                "TÜV Thüringen y TÜV SÜD: infraestructuras y sistemas de seguridad médica que han superado inspecciones de calidad",
+                "Ministerio de Salud de la República de Turquía – Certificado de Institución de Salud Autorizada",
+                "Certificado de Autorización de Turismo de Salud"
+              ]
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Servicio de salud con estándares de calidad internacionales.",
+        "Personal experto reforzado con formación",
+        "Inversión tecnológica y procesos digitales",
+        "Seguridad del paciente y calidad sostenible"
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Para nuestros visitantes que buscan información clínica clara antes del tratamiento.",
@@ -265,20 +302,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Duración",
-          "value": "Actualizaciones continuas"
+          "label": "Certificación",
+          "value": "ISO 9001:2015 y TÜV Turingia"
         },
         {
-          "label": "Modelo de tratamiento",
-          "value": "Información y planificación"
+          "label": "Seguridad",
+          "value": "Prioridad de seguridad e higiene del paciente"
         },
         {
-          "label": "recuperación",
-          "value": "Acceso rápido e ininterrumpido"
+          "label": "escuadrón",
+          "value": "Equipo de expertos capacitado a tiempo completo"
         },
         {
-          "label": "Método",
-          "value": "Gestión de procesos empresariales estandarizada"
+          "label": "Monitoreo",
+          "value": "Control y mejora continua de la calidad."
         }
       ],
       "process": [
@@ -344,20 +381,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Duración",
-          "value": "Información y actualizaciones periódicas"
+          "label": "Gestión",
+          "value": "Estándares de proceso transparentes y mensurables"
         },
         {
-          "label": "Modelo de tratamiento",
-          "value": "Información y planificación"
+          "label": "coordinación",
+          "value": "Colaboración planificada entre departamentos."
         },
         {
-          "label": "recuperación",
-          "value": "Acceso rápido y directo"
+          "label": "Contacto",
+          "value": "Información clara del paciente en cada etapa"
         },
         {
-          "label": "Método",
-          "value": "Gestión de procesos empresariales estandarizada"
+          "label": "seguimiento",
+          "value": "Gestión estructurada de procesos operativos."
         }
       ],
       "process": [
@@ -403,14 +440,17 @@
         "content": "/images/site/pages/our-doctors.webp"
       },
       "overview": [
-        "Nuestros médicos; Presentamos nuestros estándares, flujos de trabajo y prioridades de calidad en una estructura simple y transparente. Presentamos cada paso de forma transparente para que nuestros visitantes puedan aclarar sus expectativas antes de comenzar la planificación del tratamiento. Nuestro objetivo es; Mantener la comunicación, la calidad y la continuidad al mismo alto nivel durante todo el recorrido del paciente.",
+        "Nuestros médicos; Presenta nuestros estándares, flujos de trabajo y prioridades de calidad en una estructura simple y transparente.",
+        "Cada paso se comparte de forma transparente para aclarar las expectativas antes de que comience la planificación del tratamiento; La comunicación y la seguridad son prioridades durante todo el recorrido del paciente.",
+        "Nuestro personal médico experto y experimentado; Realiza una planificación personalizada evaluando conjuntamente objetivos estéticos, de salud y funcionales."
+      ],
+      "sections": [],
+      "highlights": [
         "Estándares de proceso transparentes y mensurables",
         "Comunicación clara en cada punto de decisión",
         "Atención y coordinación internacional de pacientes.",
         "Seguimiento y mejora continua de la calidad."
       ],
-      "sections": [],
-      "highlights": [],
       "suitableIntro": "",
       "suitableFor": [
         "Para quienes buscan información clínica clara y orientación sobre el proceso antes del tratamiento.",
@@ -420,20 +460,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Duración",
-          "value": "Información del proceso regular"
+          "label": "Experiencia",
+          "value": "Personal médico de tiempo completo con experiencia en su campo."
         },
         {
-          "label": "Modelo de tratamiento",
-          "value": "Información y planificación"
+          "label": "Evaluación",
+          "value": "Planificación de tratamiento personalizada"
         },
         {
-          "label": "recuperación",
-          "value": "Acceso instantáneo"
+          "label": "Estándar",
+          "value": "Protocolos de práctica clínica modernos."
         },
         {
-          "label": "Método",
-          "value": "Gestión de procesos empresariales estandarizada"
+          "label": "seguimiento",
+          "value": "Controles estructurados previa consulta"
         }
       ],
       "process": [
@@ -480,28 +520,40 @@
       },
       "overview": [
         "Nuestro enfoque de turismo de salud; Explica nuestros estándares, operación y prioridades de calidad de manera simple y transparente.",
-        "Todos los pasos se comparten claramente para aclarar las expectativas antes de que comience el proceso de tratamiento.",
-        "Nuestro objetivo; es mantener la comunicación, la calidad y la continuidad al mismo alto nivel durante todo el recorrido del paciente.",
-        "El turismo de salud en el mundo y en Turquía es un importante campo de turismo alternativo que ha crecido rápidamente en los últimos años.",
-        "El sistema de salud en Turquía ha mostrado grandes avances en los últimos años. Con las reformas, tanto la calidad como la eficiencia han aumentado. Además de los servicios de salud públicos, los servicios de salud privados también se han desarrollado rápidamente.",
-        "Turquía; Ofrece servicios a los estándares europeos con sus hospitales modernos, médicos especialistas, personal sanitario capacitado y una sólida infraestructura tecnológica.",
-        "Gracias a su ubicación geográfica, la calidad de las instituciones de salud, mano de obra capacitada, aguas termales y bellezas naturales, Turquía es un centro importante en términos de turismo de salud.",
-        "Su riqueza histórica y cultural y su desarrollo en el campo de la salud hacen de Turquía uno de los principales países del mundo en turismo de salud. También llama la atención por sus instalaciones de salud que utilizan alta tecnología y ofrecen ventajas de costos.",
-        "Turquía sigue de cerca los avances en el mundo en el campo de la estética y la cirugía plástica y desempeña un papel de liderazgo en muchas aplicaciones nuevas.",
-        "A pesar de los mismos estándares de calidad, Turquía ofrece servicios sanitarios más asequibles que muchos países.",
-        "Las habilidades comunicativas de los médicos y el trato cálido de la sociedad turca facilitan la comunicación con los pacientes.",
-        "Los pacientes extranjeros están acompañados por consultores que brindan servicios en su propio idioma.",
-        "La fuerte continuación de los procesos de postratamiento también convierte a Turquía en uno de los países preferidos.",
-        "En los últimos años se han producido importantes avances en el ámbito del turismo de salud. El Estado también apoya las inversiones en este ámbito. Estos acontecimientos afectan positivamente la imagen internacional de Turquía.",
-        "Según nuestros propios datos, atendemos a pacientes de casi 100 países. Esto demuestra el crecimiento del sector.",
-        "Turquía; Gracias a su ubicación, su enfoque de calidad en el servicio y sus ventajas económicas, alcanzará una posición aún más fuerte en el turismo de salud."
+        "Antes de que comience el proceso de tratamiento, todos los pasos se comparten claramente para aclarar las expectativas; La coordinación internacional de pacientes es nuestra prioridad.",
+        "Turquía; Es un centro sólido en turismo de salud con su infraestructura moderna, personal experto y ventajas de costos."
       ],
-      "sections": [],
+      "sections": [
+        {
+          "title": "Turismo de salud en Turquía",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "El turismo de salud en el mundo y en Türkiye es un importante campo de turismo alternativo que ha crecido rápidamente en los últimos años. El sistema sanitario de Türkiye ha mostrado grandes mejoras en los últimos años; Los servicios de salud públicos y privados se han fortalecido juntos."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Hospitales modernos, médicos especialistas y sólida infraestructura tecnológica.",
+                "Servicio de salud combinado con ubicación geográfica, aguas termales y bellezas naturales.",
+                "Prácticas cercanas a los estándares mundiales en cirugía estética y plástica.",
+                "Servicio más económico en comparación con muchos países a pesar de los estándares de calidad.",
+                "Apoyo coordinado al paciente con consultores que dominan idiomas extranjeros.",
+                "Experiencia internacional atendiendo a pacientes de casi 100 países."
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Clínica Dr. Otgen; Ofrece una experiencia de turismo de salud estructurada, transparente y segura, desde la planificación previa al tratamiento hasta el proceso de recuperación."
+            }
+          ]
+        }
+      ],
       "highlights": [
-        "Procesos transparentes y medibles",
-        "Comunicación clara en cada etapa.",
-        "Atención y coordinación internacional de pacientes.",
-        "Seguimiento y mejora continua de la calidad."
+        "Coordinación internacional de pacientes",
+        "Infraestructura sanitaria a los estándares europeos",
+        "Opciones de tratamiento económicas y de calidad.",
+        "Seguimiento estructurado después del tratamiento."
       ],
       "suitableIntro": "",
       "suitableFor": [
@@ -512,20 +564,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Duración",
-          "value": "Varía dependiendo de la información actual."
+          "label": "Alcance",
+          "value": "Experiencia de pacientes de casi 100 países"
         },
         {
-          "label": "Modelo de tratamiento",
-          "value": "Información y planificación"
+          "label": "coordinación",
+          "value": "Soporte de consultor multilingüe"
         },
         {
-          "label": "recuperación",
-          "value": "Acceso rápido y seguimiento"
+          "label": "infraestructura",
+          "value": "Instalaciones modernas según los estándares europeos."
         },
         {
-          "label": "Método",
-          "value": "Gestión de procesos estandarizados"
+          "label": "ventaja",
+          "value": "Opciones de tratamiento económicas y de calidad."
         }
       ],
       "process": [
@@ -591,20 +643,20 @@
       ],
       "quickFacts": [
         {
-          "label": "Duración",
-          "value": "Información ininterrumpida"
+          "label": "Soporte",
+          "value": "Coordinación internacional de pacientes"
         },
         {
-          "label": "Modelo de tratamiento",
-          "value": "Información y planificación"
+          "label": "Contacto",
+          "value": "Procesar información en el idioma del paciente."
         },
         {
-          "label": "recuperación",
-          "value": "Acceso rápido y seguimiento"
+          "label": "Acceso",
+          "value": "Línea de seguimiento y reenvío rápido"
         },
         {
-          "label": "Método",
-          "value": "Gestión de procesos empresariales estandarizada"
+          "label": "Estándar",
+          "value": "Gestión de procesos transparente y estructurada."
         }
       ],
       "process": [
@@ -783,7 +835,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Diseño de rayita personalizado",
+        "Moderna tecnología FUE de zafiro",
+        "Enfoque de canalización de precisión",
+        "Seguimiento estructurado y gestión de recuperación."
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Personas que están considerando un trasplante de cabello.",
@@ -866,7 +923,8 @@
       },
       "overview": [
         "El proceso de trasplante de cabello DHI se planifica especialmente de acuerdo con la estructura del cabello, el nivel de pérdida de cabello y las expectativas de la persona. Gracias a la consulta detallada antes del tratamiento, se analizan sus necesidades y se crea una hoja de ruta adecuada para usted.",
-        "Propósito; es conseguir resultados estéticamente exitosos, intensos y permanentes preservando la línea de nacimiento natural del cabello. El proceso posterior al tratamiento se supervisa con controles periódicos para garantizar que la curación progrese de forma segura y saludable."
+        "Propósito; es conseguir resultados estéticamente exitosos, intensos y permanentes preservando la línea de nacimiento natural del cabello. El proceso posterior al tratamiento se supervisa con controles periódicos para garantizar que la curación progrese de forma segura y saludable.",
+        "Gracias a la implantación directa con el implanter pen Choi, el ángulo, la dirección y la densidad del trasplante se controlan con mayor precisión."
       ],
       "sections": [
         {
@@ -973,7 +1031,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Implantación directa con la pluma implantadora Choi",
+        "Control preciso del ángulo, la dirección y la densidad de plantación.",
+        "Planificación personalizada de rayitas e injertos",
+        "Seguimiento estructurado y gestión de recuperación."
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Personas que están considerando el trasplante de cabello DHI",
@@ -1175,7 +1238,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Planificación de tratamiento personalizada",
+        "Se puede combinar con técnicas modernas de trasplante de cabello.",
+        "Beneficiándose del enfoque de la medicina regenerativa",
+        "Seguimiento estructurado y gestión de recuperación."
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Personas que planean someterse a un trasplante de cabello",
@@ -1326,7 +1394,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Cicatrices mínimas visibles y resultados naturales con la técnica DHI",
+        "Posibilidad de retorno ininterrumpido a la vida empresarial y social.",
+        "Método adecuado para candidatos que no quieren afeitarse el pelo.",
+        "Diseño de protocolo personalizado y proceso de seguimiento estructurado."
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Pacientes interesados en el trasplante de cabello sin afeitar después de la consulta.",
@@ -1545,7 +1618,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Diseño de cejas personalizado",
+        "Planificación dirigida a una apariencia natural",
+        "Técnicas quirúrgicas mínimamente invasivas.",
+        "Gestión de procesos bajo el control de un médico especialista."
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Personas que quieran aumentar la densidad de las cejas.",
@@ -1703,7 +1781,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Diseño de protocolo personalizado para trasplante de barba y bigote.",
+        "Estándares de tratamiento modernos bajo supervisión de expertos",
+        "Planificación equilibrada para función, estética y seguridad.",
+        "Seguimiento estructurado y gestión de recuperación."
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Pacientes interesados en trasplante de barba y bigote tras consulta.",
@@ -1863,7 +1946,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Tratamiento capilar planificado personalmente",
+        "Aplicación no quirúrgica y mínimamente invasiva.",
+        "Enfoque centrado en la estética, la funcionalidad y la seguridad.",
+        "Seguimiento periódico y gestión de recuperación."
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Mujeres y hombres que experimentan pérdida de cabello.",
@@ -2045,7 +2133,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Aplicación que no requiere cirugía",
+        "Proceso de tratamiento indoloro y cómodo.",
+        "Uso de tecnologías láser modernas.",
+        "Seguimiento regular y control experto."
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Personas que quieran obtener información sobre el tratamiento capilar con láser.",
@@ -2199,7 +2292,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Planificación de tratamiento personalizada",
+        "Aplicación que no requiere cirugía",
+        "Enfoque moderno de la medicina regenerativa",
+        "Visitas de seguimiento y control planificadas"
+      ],
       "suitableIntro": "Terapia capilar con exosomas;",
       "suitableFor": [
         "Personas que experimentan pérdida de cabello.",
@@ -2349,7 +2447,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "El éxito a largo plazo se garantiza mediante el seguimiento del proceso mediante controles periódicos.",
+        "Los estándares de tratamiento modernos se aplican bajo supervisión de expertos.",
+        "Se mantiene el equilibrio entre función, estética y seguridad.",
+        "Se implementa un plan estructurado de seguimiento y recuperación."
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Pacientes previstos para tratamiento con implantes después de la consulta.",
@@ -3166,7 +3269,7 @@
             },
             {
               "type": "paragraph",
-              "text": "Elección final; Está determinado por la estructura del tejido, la planificación quirúrgica y la experiencia del especialista."
+              "text": "Elección final; Está determinado por la estructura del tejido, la planificación quirúrgica y la experiencia de los expertos."
             }
           ]
         }
@@ -4372,7 +4475,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Diseño de protocolo personalizado para relleno de labios.",
+        "Estándares de tratamiento modernos bajo supervisión de expertos",
+        "Planificación equilibrada en términos de funcionalidad, estética y seguridad.",
+        "Seguimiento estructurado y gestión de recuperación."
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Pacientes interesados en rellenos de labios después de la consulta.",
@@ -4557,7 +4665,7 @@
         },
         {
           "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "Varía según el área de aplicación seleccionada. Su médico comparte un cronograma detallado."
+          "answer": "Varía dependiendo del área de aplicación seleccionada. Su médico comparte un cronograma detallado."
         },
         {
           "question": "¿Cuándo quedará claro el plan final?",
@@ -4630,7 +4738,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Planificación de tratamiento personalizada para el relleno de la línea de la mandíbula",
+        "Protocolos de aplicación modernos y seguros bajo la supervisión de un médico especialista.",
+        "Un enfoque que considera en conjunto la apariencia estética, el equilibrio facial y la seguridad del paciente.",
+        "Proceso estructurado de seguimiento y gestión de recuperación."
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Personas que quieren resaltar más la línea de su mandíbula.",
@@ -4784,7 +4897,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Planificación personalizada",
+        "Aplicación bajo control experto",
+        "Apariencia natural y enfoque orientado a la seguridad.",
+        "Gestión del proceso de seguimiento y recuperación."
+      ],
       "suitableIntro": "",
       "suitableFor": [
         "Personas que quieren tener un relleno ligero debajo de los ojos.",
@@ -5191,7 +5309,12 @@
           ]
         }
       ],
-      "highlights": [],
+      "highlights": [
+        "Diseño de protocolo médico personalizado para el cuidado de la piel.",
+        "Estándares modernos de atención y tratamiento acompañados de una evaluación de expertos",
+        "Planificación equilibrada en términos de salud de la piel, apariencia estética y seguridad.",
+        "Gestión estructurada del proceso de seguimiento y recuperación."
+      ],
       "suitableIntro": "El cuidado médico de la piel puede ser adecuado para personas que:",
       "suitableFor": [
         "Personas interesadas en el cuidado profesional de la piel y prácticas para mejorar la calidad de la piel.",
