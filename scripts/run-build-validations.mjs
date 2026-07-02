@@ -16,6 +16,7 @@ const steps = [
   ['node', ['scripts/verify-vercel-rewrites.mjs']],
   ['node', ['scripts/verify-vercel-headers.mjs']],
   ['node', ['scripts/verify-sitemap.mjs']],
+  ['node', ['scripts/verify-home-static-i18n.mjs']],
   ['node', ['scripts/verify-home-static-seo.mjs']],
   ['node', ['scripts/verify-form-privacy.mjs']],
 ];
