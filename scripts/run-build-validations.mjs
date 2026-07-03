@@ -7,6 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 
 const steps = [
+  ['node', ['scripts/verify-favicon-assets.mjs']],
   ['node', ['scripts/verify-service-static-seo.mjs']],
   ['node', ['scripts/verify-privacy-content.mjs']],
   ['node', ['scripts/verify-privacy-static-seo.mjs']],
