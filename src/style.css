@@ -1698,6 +1698,28 @@ html[dir=rtl] .form-group select {
   color: var(--gold)
 }
 
+.instagram-float {
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  transition: var(--transition);
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: fixed;
+  bottom: 106px;
+  right: 30px;
+  left: auto;
+  box-shadow: 0 4px 20px #dc274366
+}
+
+.instagram-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px #dc274380
+}
+
 .whatsapp-float {
   z-index: 999;
   width: 60px;
@@ -2000,6 +2022,14 @@ html[dir=rtl] .form-group select {
     letter-spacing: 4px;
     padding: 0 20px;
     font-size: 11px
+  }
+
+.instagram-float {
+    bottom: 88px;
+    width: 52px;
+    height: 52px;
+    right: 20px;
+    left: auto
   }
 
 .whatsapp-float {
