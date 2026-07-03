@@ -46,13 +46,6 @@ $logoWidth = [int]($logo.Width * $scale)
 $logoX = [int](($width - $logoWidth) / 2)
 $logoY = 120
 $graphics.DrawImage($logo, $logoX, $logoY, $logoWidth, $logoHeight)
-$titleFont = New-Object System.Drawing.Font ('Georgia', 36, [System.Drawing.FontStyle]::Regular)
-$titleBrush = New-Object System.Drawing.SolidBrush ([System.Drawing.Color]::FromArgb(255,245,240,230))
-$title = 'Premium Aesthetic Clinic'
-$titleSize = $graphics.MeasureString($title, $titleFont)
-$titleX = [int](($width - $titleSize.Width) / 2)
-$titleY = 420
-$graphics.DrawString($title, $titleFont, $titleBrush, $titleX, $titleY)
 $domainFont = New-Object System.Drawing.Font ('Segoe UI', 22, [System.Drawing.FontStyle]::Regular)
 $domainBrush = New-Object System.Drawing.SolidBrush $goldLight
 $domain = 'www.drotgenclinic.com'
@@ -65,7 +58,7 @@ $dir = Split-Path $output -Parent
 if (!(Test-Path $dir)) { New-Item -ItemType Directory -Force -Path $dir | Out-Null }
 $bitmap.Save($output, [System.Drawing.Imaging.ImageFormat]::Png)
 $logo.Dispose(); $bitmap.Dispose(); $graphics.Dispose(); $background.Dispose()
-$titleBrush.Dispose(); $titleFont.Dispose(); $domainBrush.Dispose(); $domainFont.Dispose()
+$domainBrush.Dispose(); $domainFont.Dispose()
 $goldPen.Dispose(); $goldPenLight.Dispose()
 `;
 
