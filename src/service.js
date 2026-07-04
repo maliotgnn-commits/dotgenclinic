@@ -1,7 +1,7 @@
 import './style.css';
 import './service.css';
 import { initCustomCursor } from './cursor.js';
-import { initSiteHeader, renderMobileNavCtaItem } from './public-header.js';
+import { initSiteHeader } from './public-header.js';
 import { renderEyeHealthNavItem } from './tr-eye-health-nav.js';
 import { loadEyeHealthContent } from './eye-health-content.js';
 import {
@@ -86,7 +86,6 @@ function renderHeader() {
           <div class="nav-primary">
             <ul class="nav-menu" id="nav-menu">
               ${renderNavGroups()}
-              ${renderMobileNavCtaItem(homeUrlFor(locale, '#randevu'), escapeHtml(t('Randevu Al')))}
             </ul>
           </div>
           <div class="nav-actions">

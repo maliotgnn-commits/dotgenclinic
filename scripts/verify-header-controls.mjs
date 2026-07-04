@@ -38,8 +38,8 @@ function assertHeaderTemplate(label, source) {
     `${label}: nav-cta must live inside nav-actions`,
   );
   assert(
-    /nav-mobile-cta-item|renderMobileNavCtaItem/.test(source),
-    `${label}: mobile drawer CTA must live inside nav-menu`,
+    !/nav-mobile-cta-item|renderMobileNavCtaItem/.test(source),
+    `${label}: mobile drawer must not include appointment CTA`,
   );
   assert(
     /class="nav-actions"[\s\S]*?(class="hamburger"|id="hamburger")/.test(source),
@@ -167,8 +167,13 @@ assert(
 );
 
 assert(
-  /\.nav-mobile-cta-item/.test(styleCss) && /\.nav-mobile-cta/.test(styleCss),
-  'mobile drawer CTA styles must be defined',
+  !/\.nav-mobile-cta-item|\.nav-mobile-cta/.test(styleCss),
+  'mobile drawer appointment CTA styles must not be defined',
+);
+
+assert(
+  mobileNavRules.includes('.nav-menu > li > a') && mobileNavRules.includes('.has-dropdown[data-eye-health-nav] .eh-nav-item-head'),
+  'mobile drawer top-level nav rows must share unified styles',
 );
 
 assertHeaderTemplate('index.html', read(resolve(ROOT, 'index.html')));
