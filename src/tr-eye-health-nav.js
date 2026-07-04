@@ -142,12 +142,6 @@ function setDesktopEyeMegaOpen(navRoot, isOpen) {
 
   navRoot.classList.toggle('open', isOpen);
   toggle?.setAttribute('aria-expanded', String(isOpen));
-
-  if (isOpen) {
-    dropdown?.removeAttribute('hidden');
-    return;
-  }
-
   dropdown?.removeAttribute('hidden');
 }
 
@@ -158,6 +152,98 @@ export function initEyeHealthNavBehavior(root = document) {
   const toggle = navRoot.querySelector('.eh-nav-toggle');
   const dropdown = navRoot.querySelector('.mega-dropdown');
   const primaryLink = navRoot.querySelector('.eh-nav-primary-link');
+  let desktopCloseTimer = null;
+
+  const clearDesktopCloseTimer = () => {
+    if (desktopCloseTimer === null) return;
+    window.clearTimeout(desktopCloseTimer);
+    desktopCloseTimer = null;
+  };
+
+  const openDesktopMega = () => {
+    if (window.innerWidth <= 1360) return;
+    clearDesktopCloseTimer();
+    ensureEyeMegaPointerTracking();
+    setDesktopEyeMegaOpen(navRoot, true);
+  };
+
+  const isInEyeMegaZone = (x, y) => {
+    for (const el of [navRoot, dropdown]) {
+      if (!el) continue;
+      const rect = el.getBoundingClientRect();
+      if (x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom) {
+        return true;
+      }
+    }
+
+    if (!dropdown || !navRoot.classList.contains('open')) return false;
+
+    const dropdownRect = dropdown.getBoundingClientRect();
+    const navRect = navRoot.getBoundingClientRect();
+    const corridorTop = Math.min(navRect.top, dropdownRect.top) - 20;
+    const corridorBottom = dropdownRect.bottom;
+
+    return (
+      y >= corridorTop
+      && y <= corridorBottom
+      && x >= dropdownRect.left
+      && x <= dropdownRect.right
+    );
+  };
+
+  let eyeMegaPointerTracking = false;
+
+  const onEyeMegaPointerMove = (event) => {
+    if (window.innerWidth <= 1360) return;
+    if (!navRoot.classList.contains('open') && desktopCloseTimer === null) return;
+
+    if (isInEyeMegaZone(event.clientX, event.clientY)) {
+      clearDesktopCloseTimer();
+      if (!navRoot.classList.contains('open')) {
+        setDesktopEyeMegaOpen(navRoot, true);
+      }
+      return;
+    }
+
+    if (navRoot.classList.contains('open') && desktopCloseTimer === null) {
+      scheduleDesktopClose();
+    }
+  };
+
+  const ensureEyeMegaPointerTracking = () => {
+    if (eyeMegaPointerTracking) return;
+    eyeMegaPointerTracking = true;
+    document.addEventListener('mousemove', onEyeMegaPointerMove);
+  };
+
+  const stopEyeMegaPointerTracking = () => {
+    if (!eyeMegaPointerTracking) return;
+    eyeMegaPointerTracking = false;
+    document.removeEventListener('mousemove', onEyeMegaPointerMove);
+  };
+
+  const scheduleDesktopClose = () => {
+    if (window.innerWidth <= 1360) return;
+    clearDesktopCloseTimer();
+    const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 200 : 400;
+    ensureEyeMegaPointerTracking();
+    desktopCloseTimer = window.setTimeout(() => {
+      setDesktopEyeMegaOpen(navRoot, false);
+      stopEyeMegaPointerTracking();
+    }, delay);
+  };
+
+  const bindDesktopHover = (target) => {
+    target.addEventListener('mouseenter', () => {
+      openDesktopMega();
+    });
+    target.addEventListener('mouseleave', (event) => {
+      if (window.innerWidth <= 1360) return;
+      const nextTarget = event.relatedTarget;
+      if (nextTarget instanceof Node && navRoot.contains(nextTarget)) return;
+      scheduleDesktopClose();
+    });
+  };
 
   toggle?.addEventListener('click', (event) => {
     event.preventDefault();
@@ -184,21 +270,15 @@ export function initEyeHealthNavBehavior(root = document) {
     navRoot.classList.toggle('open', willOpen);
     toggle.setAttribute('aria-expanded', String(willOpen));
     if (willOpen) {
+      clearDesktopCloseTimer();
       dropdown?.removeAttribute('hidden');
+    } else {
+      clearDesktopCloseTimer();
     }
   });
 
-  navRoot.addEventListener('mouseenter', () => {
-    if (window.innerWidth <= 1360) return;
-    setDesktopEyeMegaOpen(navRoot, true);
-  });
-
-  navRoot.addEventListener('mouseleave', (event) => {
-    if (window.innerWidth <= 1360) return;
-    const nextTarget = event.relatedTarget;
-    if (nextTarget instanceof Node && navRoot.contains(nextTarget)) return;
-    setDesktopEyeMegaOpen(navRoot, false);
-  });
+  bindDesktopHover(navRoot);
+  if (dropdown) bindDesktopHover(dropdown);
 
   navRoot.querySelectorAll('.eh-mobile-group-toggle').forEach((groupToggle) => {
     groupToggle.addEventListener('click', (event) => {

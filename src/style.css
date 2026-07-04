@@ -572,6 +572,15 @@ to {
     transform: translateX(-50%) translateY(0);
   }
 
+  .has-dropdown[data-eye-health-nav].open .mega-dropdown.eh-mega-dropdown::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    right: 0;
+    height: 20px;
+  }
+
   .has-dropdown[data-eye-health-nav] .eh-desktop-mega {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
