@@ -134,6 +134,23 @@ function closeEyeHealthTopLevel(navRoot) {
   closeEyeHealthMobileGroups(navRoot);
 }
 
+function setDesktopEyeMegaOpen(navRoot, isOpen) {
+  if (window.innerWidth <= 1360) return;
+
+  const toggle = navRoot.querySelector('.eh-nav-toggle');
+  const dropdown = navRoot.querySelector('.mega-dropdown');
+
+  navRoot.classList.toggle('open', isOpen);
+  toggle?.setAttribute('aria-expanded', String(isOpen));
+
+  if (isOpen) {
+    dropdown?.removeAttribute('hidden');
+    return;
+  }
+
+  dropdown?.removeAttribute('hidden');
+}
+
 export function initEyeHealthNavBehavior(root = document) {
   const navRoot = root.querySelector('[data-eye-health-nav]');
   if (!navRoot) return;
@@ -173,7 +190,14 @@ export function initEyeHealthNavBehavior(root = document) {
 
   navRoot.addEventListener('mouseenter', () => {
     if (window.innerWidth <= 1360) return;
-    dropdown?.removeAttribute('hidden');
+    setDesktopEyeMegaOpen(navRoot, true);
+  });
+
+  navRoot.addEventListener('mouseleave', (event) => {
+    if (window.innerWidth <= 1360) return;
+    const nextTarget = event.relatedTarget;
+    if (nextTarget instanceof Node && navRoot.contains(nextTarget)) return;
+    setDesktopEyeMegaOpen(navRoot, false);
   });
 
   navRoot.querySelectorAll('.eh-mobile-group-toggle').forEach((groupToggle) => {
