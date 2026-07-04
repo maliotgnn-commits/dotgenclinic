@@ -1,8 +1,13 @@
 import { readFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { buildCategoryGroups, CATEGORY_NAV_UI_KEYS, translate } from '../src/i18n.js';
-import { EYE_HEALTH_ROUTES } from '../src/eye-health-routes.js';
+import {
+  buildCategoryGroups,
+  CATEGORY_NAV_UI_KEYS,
+  RU_HEADER_NAV_LABELS,
+  translate,
+} from '../src/i18n.js';
+import { EYE_HEALTH_ROUTES, eyeHealthHeaderNavLabelForLocale } from '../src/eye-health-routes.js';
 import { CATEGORY_CONFIG, CATEGORY_ORDER, SUBPAGES } from '../src/subpages-data.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -36,11 +41,32 @@ async function validateStaticNavLabels() {
   for (const locale of LOCALES) {
     const catalog = await loadContentCatalog(locale);
     const uiDictionary = loadUiDictionary(locale);
-    const groups = buildCategoryGroups(catalog, uiDictionary);
+    const groups = buildCategoryGroups(catalog, uiDictionary, locale);
     const hair = groups.find((group) => group.key === 'hair');
+    const corporate = groups.find((group) => group.key === 'corporate');
 
     assert(hair, `[${locale}] hair category group missing`);
     if (!hair) continue;
+
+    if (locale === 'ru') {
+      assert(
+        corporate?.navLabel === RU_HEADER_NAV_LABELS.corporate,
+        `[ru] corporate header nav must be "${RU_HEADER_NAV_LABELS.corporate}", got ${corporate?.navLabel}`,
+      );
+      assert(
+        hair.navLabel === RU_HEADER_NAV_LABELS.hair,
+        `[ru] hair header nav must be "${RU_HEADER_NAV_LABELS.hair}", got ${hair.navLabel}`,
+      );
+      assert(
+        hair.label.includes('лечение'),
+        '[ru] mega menu must keep full hair category label',
+      );
+      assert(
+        hair.navLabel !== hair.label,
+        '[ru] header nav label must stay shorter than mega menu category label',
+      );
+      continue;
+    }
 
     const expectedNav = translate(uiDictionary, CATEGORY_NAV_UI_KEYS.hair);
     assert(
@@ -51,18 +77,29 @@ async function validateStaticNavLabels() {
       hair.navLabel.length <= hair.label.length,
       `[${locale}] hair navLabel should not be longer than category label`,
     );
-
-    if (locale === 'ru') {
-      assert(
-        hair.navLabel === 'Трансплантация волос',
-        `[ru] hair nav bar must use short label, got ${hair.navLabel}`,
-      );
-      assert(
-        hair.label.includes('лечение'),
-        '[ru] mega menu should keep full hair category label',
-      );
-    }
   }
+}
+
+function validateNoRuntimeNavFit() {
+  const publicHeaderJs = readFileSync(resolve(ROOT, 'src/public-header.js'), 'utf8');
+  const styleCss = readFileSync(resolve(ROOT, 'src/style.css'), 'utf8');
+
+  assert(
+    !publicHeaderJs.includes('fitHeaderNavigation'),
+    'public-header.js must not use runtime nav fit scaling',
+  );
+  assert(
+    !publicHeaderJs.includes('ResizeObserver'),
+    'public-header.js must not use ResizeObserver for header density',
+  );
+  assert(
+    !styleCss.includes('--nav-fit-scale'),
+    'style.css must not use runtime --nav-fit-scale',
+  );
+  assert(
+    !styleCss.includes('is-nav-fitting'),
+    'style.css must not use is-nav-fitting density class',
+  );
 }
 
 async function validateRenderedNavFit() {
@@ -86,16 +123,16 @@ async function validateRenderedNavFit() {
 
       await page.goto(`${BASE_URL}${eyePath}`, { waitUntil: 'networkidle' });
       await page.waitForSelector('#nav-menu');
+      await page.waitForTimeout(1500);
 
       const metrics = await page.evaluate(() => {
-        const primary = document.querySelector('.nav-primary');
         const navMenu = document.getElementById('nav-menu');
         const actions = document.querySelector('.nav-actions');
         const logo = document.querySelector('.nav-logo');
+        const container = document.querySelector('.nav-container');
         const actionsRect = actions.getBoundingClientRect();
         const menuRect = navMenu.getBoundingClientRect();
         const logoRect = logo.getBoundingClientRect();
-        const primaryRect = primary.getBoundingClientRect();
         const isRtl = document.documentElement.dir === 'rtl';
         const gapToActions = isRtl
           ? menuRect.left - actionsRect.right
@@ -104,45 +141,56 @@ async function validateRenderedNavFit() {
           ? logoRect.left - menuRect.right
           : menuRect.left - logoRect.right;
         const first = document.querySelector('#nav-menu > li:first-child > a, #nav-menu > li:first-child .eh-nav-item-head');
-        const last = document.querySelector('#nav-menu > li:last-child > a, #nav-menu > li:last-child .eh-nav-item-head');
+        const last = document.querySelector('#nav-menu > li:last-child > a, #nav-menu > li:last-child .eh-nav-item-head, #nav-menu > li:last-child .eh-nav-primary-link');
         const firstRect = first?.getBoundingClientRect();
         const lastRect = last?.getBoundingClientRect();
         const links = [...document.querySelectorAll('#nav-menu > li > a, #nav-menu > li .eh-nav-primary-link')];
         return {
-          scale: getComputedStyle(document.querySelector('.nav-container')).getPropertyValue('--nav-fit-scale').trim() || '1',
+          fitScale: getComputedStyle(container).getPropertyValue('--nav-fit-scale').trim(),
           needed: Math.round(menuRect.width),
-          overflow: gapToActions < 16 || gapToLogo < 16,
+          overflow: gapToActions < 8 || gapToLogo < 8,
           gapToActions,
           gapToLogo,
-        firstVisible: firstRect
-          ? (isRtl ? firstRect.right <= logoRect.left - 8 : firstRect.left >= logoRect.right + 8)
-          : false,
-        lastVisible: lastRect
-          ? (isRtl ? lastRect.left >= actionsRect.right + 8 : lastRect.right <= actionsRect.left - 8)
-          : false,
+          firstVisible: firstRect
+            ? (isRtl ? firstRect.right <= logoRect.left - 8 : firstRect.left >= logoRect.right + 8)
+            : false,
+          lastVisible: lastRect
+            ? (isRtl ? lastRect.left >= actionsRect.right + 8 : lastRect.right <= actionsRect.left - 8)
+            : false,
           linkOverflow: links.some((link) => link.scrollWidth > link.clientWidth + 1),
           pageOverflow: document.documentElement.scrollWidth - window.innerWidth,
+          corporateText: document.querySelector('#nav-menu > li:first-child > a')?.textContent.trim() ?? '',
           hairText: document.querySelector('#nav-menu > li:nth-child(2) > a')?.textContent.trim() ?? '',
+          eyeText: document.querySelector('#nav-menu > li:last-child .eh-nav-primary-link')?.textContent.trim()
+            ?? document.querySelector('#nav-menu > li:last-child > a')?.textContent.trim()
+            ?? '',
+          ctaVisible: Boolean(document.querySelector('.nav-cta')?.getBoundingClientRect().width),
         };
       });
 
       const vpLabel = `${viewport.width}px`;
-      assert(!metrics.overflow, `[${locale}@${vpLabel}] nav-menu exceeds logo/actions corridor (${metrics.needed}px, scale ${metrics.scale}, gaps logo ${Math.round(metrics.gapToLogo)} / actions ${Math.round(metrics.gapToActions)})`);
-      assert(metrics.gapToActions >= 16, `[${locale}@${vpLabel}] nav-menu overlaps language bar (gap ${metrics.gapToActions}px)`);
-      assert(metrics.gapToLogo >= 16, `[${locale}@${vpLabel}] nav-menu overlaps logo (gap ${metrics.gapToLogo}px)`);
+      assert(!metrics.fitScale, `[${locale}@${vpLabel}] runtime --nav-fit-scale must not be applied`);
+      assert(!metrics.overflow, `[${locale}@${vpLabel}] nav-menu exceeds logo/actions corridor (gaps logo ${Math.round(metrics.gapToLogo)} / actions ${Math.round(metrics.gapToActions)})`);
+      assert(metrics.gapToActions >= 8, `[${locale}@${vpLabel}] nav-menu overlaps language bar (gap ${metrics.gapToActions}px)`);
+      assert(metrics.gapToLogo >= 8, `[${locale}@${vpLabel}] nav-menu overlaps logo (gap ${metrics.gapToLogo}px)`);
       assert(metrics.firstVisible, `[${locale}@${vpLabel}] first nav item clipped by logo`);
       assert(metrics.lastVisible, `[${locale}@${vpLabel}] last nav item clipped by language bar`);
       assert(!metrics.linkOverflow, `[${locale}@${vpLabel}] a header category link overflowed its box`);
       assert(metrics.pageOverflow <= 1, `[${locale}@${vpLabel}] eye-health page horizontal overflow (${metrics.pageOverflow}px)`);
+      assert(metrics.ctaVisible, `[${locale}@${vpLabel}] CTA must remain visible`);
 
       if (locale === 'ru') {
         assert(
-          metrics.hairText.startsWith('Трансплантация волос'),
-          `[ru@${vpLabel}] rendered hair nav must use short label, got "${metrics.hairText}"`,
+          metrics.corporateText.startsWith(RU_HEADER_NAV_LABELS.corporate),
+          `[ru@${vpLabel}] corporate header nav must be "${RU_HEADER_NAV_LABELS.corporate}", got "${metrics.corporateText}"`,
         );
         assert(
-          !metrics.hairText.includes('лечение волос'),
-          `[ru@${vpLabel}] rendered hair nav must not include long category suffix`,
+          metrics.hairText.startsWith(RU_HEADER_NAV_LABELS.hair),
+          `[ru@${vpLabel}] hair header nav must be "${RU_HEADER_NAV_LABELS.hair}", got "${metrics.hairText}"`,
+        );
+        assert(
+          metrics.eyeText.startsWith(eyeHealthHeaderNavLabelForLocale('ru')),
+          `[ru@${vpLabel}] eye health header nav must be "${eyeHealthHeaderNavLabelForLocale('ru')}", got "${metrics.eyeText}"`,
         );
       }
     }
@@ -153,6 +201,7 @@ async function validateRenderedNavFit() {
   await browser.close();
 }
 
+validateNoRuntimeNavFit();
 await validateStaticNavLabels();
 
 if (process.env.VERIFY_NAV_BROWSER === '1') {

@@ -45,6 +45,7 @@
   },
   "nav": {
     "menuLabel": "Здоровье глаз",
+    "headerNavLabel": "Офтальмология",
     "submenuAriaLabel": "Меню «Здоровье глаз»",
     "toggleAriaLabel": "Открыть подменю «Здоровье глаз»",
     "processTitle": "Процесс оценки",

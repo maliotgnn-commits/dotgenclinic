@@ -146,9 +146,11 @@ assertHeaderTemplate('eye-health.js', read(resolve(ROOT, 'src/eye-health.js')));
 
 const publicHeaderJs = read(resolve(ROOT, 'src/public-header.js'));
 const i18nJs = read(resolve(ROOT, 'src/i18n.js'));
-assert(publicHeaderJs.includes('fitHeaderNavigation'), 'public-header.js must fit navigation within the middle column');
+assert(!publicHeaderJs.includes('fitHeaderNavigation'), 'public-header.js must not use runtime nav fit scaling');
+assert(!publicHeaderJs.includes('ResizeObserver'), 'public-header.js must not use ResizeObserver for header density');
 assert(publicHeaderJs.includes('1280'), 'public-header.js must use 1280px mobile breakpoint');
 assert(i18nJs.includes('CATEGORY_NAV_UI_KEYS'), 'i18n.js must map category nav labels to home ui keys');
+assert(i18nJs.includes('RU_HEADER_NAV_LABELS'), 'i18n.js must define compact Russian header nav labels');
 assert(i18nJs.includes('navLabel: categoryNavLabel'), 'buildCategoryGroups must expose short nav labels');
 
 const staticHomePages = [

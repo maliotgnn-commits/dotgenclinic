@@ -3,6 +3,7 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DEFAULT_LOCALE } from './seo-shared.mjs';
 import { injectEyeHealthNavForLocale } from '../src/tr-eye-health-nav.js';
+import { RU_HEADER_NAV_LABELS } from '../src/i18n.js';
 import { getEyeHealthContentSync } from './eye-health-content-node.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -144,6 +145,35 @@ function localeIsSourceOnly(dictionary) {
   return !dictionary?.text || Object.keys(dictionary.text).length === 0;
 }
 
+const RU_HEADER_NAV_FULL_TO_SHORT = [
+  ['Корпоративный', RU_HEADER_NAV_LABELS.corporate],
+  ['Трансплантация волос', RU_HEADER_NAV_LABELS.hair],
+  ['Стоматологическая эстетика', RU_HEADER_NAV_LABELS.dental],
+  ['Пластическая хирургия', RU_HEADER_NAV_LABELS.plastic],
+  ['Медицинская эстетика', RU_HEADER_NAV_LABELS.medical],
+  ['Функциональное здоровье', RU_HEADER_NAV_LABELS.longevity],
+];
+
+function applyRuCompactHeaderNav(html) {
+  return html.replace(
+    /(<ul class="nav-menu" id="nav-menu">)([\s\S]*?)(<\/ul>)/,
+    (match, open, body, close) => {
+      let navBody = body;
+      for (const [fullLabel, shortLabel] of RU_HEADER_NAV_FULL_TO_SHORT) {
+        const pattern = new RegExp(
+          `(<li class="has-dropdown">\\s*<a href="#")([^>]*)>${fullLabel.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(\\s*<svg)`,
+          'g',
+        );
+        navBody = navBody.replace(
+          pattern,
+          `$1 aria-label="${fullLabel}"$2>${shortLabel}$3`,
+        );
+      }
+      return `${open}${navBody}${close}`;
+    },
+  );
+}
+
 export function localizeHomeBodyHtml(html, locale) {
   const dictionary = loadUiDictionary(locale);
   const privacyContent = loadPrivacyContent(locale);
@@ -152,6 +182,9 @@ export function localizeHomeBodyHtml(html, locale) {
   if (locale !== DEFAULT_LOCALE) {
     result = applyStaticTranslationsToHtml(result, dictionary);
     result = injectEyeHealthNavForLocale(result, locale, getEyeHealthContentSync(locale));
+    if (locale === 'ru') {
+      result = applyRuCompactHeaderNav(result);
+    }
   }
 
   result = applyPrivacyMarkup(result, locale, privacyContent);

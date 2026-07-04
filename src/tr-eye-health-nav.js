@@ -1,5 +1,5 @@
 import { buildTrEyeHealthContent } from './eye-health-content.js';
-import { eyeHealthPathForLocale } from './eye-health-routes.js';
+import { eyeHealthHeaderNavLabelForLocale, eyeHealthPathForLocale } from './eye-health-routes.js';
 
 export const EYE_HEALTH_LANDING_PATH = '/tr/goz-hastaliklari.html';
 
@@ -45,15 +45,17 @@ function eyeHealthMobileGroups(categories, landingPath) {
 
 export function renderEyeHealthNavItem({ locale = 'tr', pagePath, content } = {}) {
   const eyeContent = content || buildTrEyeHealthContent();
-  const landingPath = (pagePath || eyeHealthPathForLocale(locale)).split('#')[0];
   const { categories, nav } = eyeContent;
+  const landingPath = (pagePath || eyeHealthPathForLocale(locale)).split('#')[0];
+  const headerLabel = nav.headerNavLabel || eyeHealthHeaderNavLabelForLocale(locale);
+  const fullNavLabel = nav.menuLabel;
   const dropdownId = 'eye-health-mega-menu';
   const trOnlyAttr = locale === 'tr' ? ' data-tr-only-nav' : '';
 
   return `
     <li class="has-dropdown"${trOnlyAttr} data-eye-health-nav>
       <div class="eh-nav-item-head">
-        <a href="${landingPath}" class="eh-nav-primary-link" id="eye-health-nav-link">${nav.menuLabel}</a>
+        <a href="${landingPath}" class="eh-nav-primary-link" id="eye-health-nav-link" aria-label="${fullNavLabel}">${headerLabel}</a>
         <button
           type="button"
           class="eh-nav-toggle"

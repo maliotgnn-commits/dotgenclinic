@@ -3,6 +3,7 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   EYE_HEALTH_ROUTES,
+  eyeHealthHeaderNavLabelForLocale,
   eyeHealthPathForLocale,
 } from '../src/eye-health-routes.js';
 import {
@@ -99,7 +100,11 @@ for (const locale of NON_TR_LOCALES) {
   }
   const homeHtml = readFileSync(homePath, 'utf8');
   const expectedPath = eyeHealthPathForLocale(locale);
-  assert(homeHtml.includes(EYE_HEALTH_ROUTES[locale].navLabel), `[dist/${locale}/index.html] nav label missing`);
+  const headerNavLabel = eyeHealthHeaderNavLabelForLocale(locale);
+  assert(homeHtml.includes(headerNavLabel), `[dist/${locale}/index.html] header nav label missing (${headerNavLabel})`);
+  if (locale === 'ru') {
+    assert(homeHtml.includes(EYE_HEALTH_ROUTES.ru.navLabel), '[dist/ru/index.html] full eye health aria label missing');
+  }
   assertEyeHealthNav(extractEyeHealthNavBlock(homeHtml), `dist/${locale}/index.html`, expectedPath);
 }
 
