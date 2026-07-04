@@ -1,7 +1,7 @@
 import './style.css';
 import './eye-health.css';
 import { initCustomCursor } from './cursor.js';
-import { initSiteHeader } from './public-header.js';
+import { initSiteHeader, renderMobileNavCtaItem } from './public-header.js';
 import { loadEyeHealthContent } from './eye-health-content.js';
 import { detectEyeHealthLocale } from './eye-health-routes.js';
 import {
@@ -33,7 +33,7 @@ const [catalog, uiDictionary, eyeContent] = await Promise.all([
   loadEyeHealthContent(eyeLocale),
 ]);
 const { page: EYE_HEALTH_PAGE, categories: EYE_HEALTH_CATEGORIES, nav: eyeNav } = eyeContent;
-const categoryGroups = buildCategoryGroups(catalog, uiDictionary);
+const categoryGroups = buildCategoryGroups(catalog, uiDictionary, locale);
 const t = (source) => translate(uiDictionary, source);
 const appointmentUrl = homeUrlFor(locale, '#randevu');
 
@@ -74,7 +74,7 @@ function renderNavGroups() {
 
       return `
         <li class="has-dropdown">
-          <a href="#">${escapeHtml(group.navLabel)} ${renderChevron()}</a>
+          <a href="#" aria-label="${escapeHtml(group.label)}">${escapeHtml(group.navLabel)} ${renderChevron()}</a>
           <div class="mega-dropdown">
             <div class="mega-col">
               <h4>${escapeHtml(group.label)}</h4>
@@ -104,6 +104,7 @@ function renderHeader() {
           <div class="nav-primary">
             <ul class="nav-menu" id="nav-menu">
               ${renderNavGroups()}
+              ${renderMobileNavCtaItem(appointmentUrl, escapeHtml(t('Randevu Al')))}
             </ul>
           </div>
           <div class="nav-actions">

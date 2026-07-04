@@ -33,6 +33,7 @@ export const EYE_HEALTH_ROUTES = {
     path: '/ru/здоровье-глаз.html',
     file: 'здоровье-глаз.html',
     navLabel: 'Здоровье глаз',
+    headerNavLabel: 'Офтальмология',
   },
   de: {
     path: '/de/augengesundheit.html',
@@ -53,6 +54,10 @@ export function eyeHealthFileForLocale(locale) {
 
 export function eyeHealthNavLabelForLocale(locale) {
   return EYE_HEALTH_ROUTES[locale]?.navLabel || EYE_HEALTH_ROUTES.tr.navLabel;
+}
+
+export function eyeHealthHeaderNavLabelForLocale(locale) {
+  return EYE_HEALTH_ROUTES[locale]?.headerNavLabel || eyeHealthNavLabelForLocale(locale);
 }
 
 function normalizePathname(pathname) {

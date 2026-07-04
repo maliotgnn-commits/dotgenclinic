@@ -6,6 +6,7 @@ import {
   EYE_HEALTH_LOCALES,
   EYE_HEALTH_ROUTES,
   eyeHealthCanonicalUrl,
+  eyeHealthHeaderNavLabelForLocale,
 } from '../src/eye-health-routes.js';
 import { SITE_ORIGIN, escapeHtml, LOCALES } from './seo-shared.mjs';
 
@@ -103,9 +104,12 @@ for (const locale of LOCALES.filter((code) => code !== 'tr')) {
     continue;
   }
   const homeHtml = readFileSync(homePath, 'utf8');
-  const navLabel = EYE_HEALTH_ROUTES[locale].navLabel;
+  const headerNavLabel = eyeHealthHeaderNavLabelForLocale(locale);
   assert(homeHtml.includes('data-eye-health-nav'), `[dist/${locale}/index.html] eye health nav missing`);
-  assert(homeHtml.includes(navLabel), `[dist/${locale}/index.html] nav label missing`);
+  assert(homeHtml.includes(headerNavLabel), `[dist/${locale}/index.html] header nav label missing (${headerNavLabel})`);
+  if (locale === 'ru') {
+    assert(homeHtml.includes(EYE_HEALTH_ROUTES.ru.navLabel), '[dist/ru/index.html] full eye health label must remain for aria/mega menu');
+  }
 }
 
 const BIDI_CONTROL = /[\u202A-\u202E\u2066-\u2069\u200E\u200F]/;

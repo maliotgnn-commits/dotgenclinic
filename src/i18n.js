@@ -268,6 +268,15 @@ export function applySeoLinks(locale, pageType = 'home', slug = null) {
   upsertSeoLink('alternate', 'x-default', defaultHref);
 }
 
+export const RU_HEADER_NAV_LABELS = {
+  corporate: 'О клинике',
+  hair: 'Волосы',
+  dental: 'Стоматология',
+  plastic: 'Пластика',
+  medical: 'Медэстетика',
+  longevity: 'Функциональная медицина',
+};
+
 export const CATEGORY_NAV_UI_KEYS = {
   corporate: 'Kurumsal',
   hair: 'Saç Ekimi',
@@ -277,20 +286,23 @@ export const CATEGORY_NAV_UI_KEYS = {
   longevity: 'Fonksiyonel Sağlık',
 };
 
-function categoryNavLabel(categoryKey, catalog, uiDictionary) {
+function categoryNavLabel(categoryKey, catalog, uiDictionary, locale) {
+  if (locale === 'ru' && RU_HEADER_NAV_LABELS[categoryKey]) {
+    return RU_HEADER_NAV_LABELS[categoryKey];
+  }
   const uiKey = CATEGORY_NAV_UI_KEYS[categoryKey];
-  if (uiKey) {
+  if (uiKey && uiDictionary) {
     return translate(uiDictionary, uiKey);
   }
   return catalog.categoryConfig[categoryKey]?.label || categoryKey;
 }
 
-export function buildCategoryGroups(catalog, uiDictionary = null) {
+export function buildCategoryGroups(catalog, uiDictionary = null, locale = null) {
   return catalog.categoryOrder
     .map((categoryKey) => ({
       key: categoryKey,
       label: catalog.categoryConfig[categoryKey]?.label || categoryKey,
-      navLabel: categoryNavLabel(categoryKey, catalog, uiDictionary),
+      navLabel: categoryNavLabel(categoryKey, catalog, uiDictionary, locale),
       items: catalog.pages
         .filter((page) => page.category === categoryKey)
         .map(({ slug, navLabel, title }) => ({ slug, navLabel, title })),
