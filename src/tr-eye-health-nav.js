@@ -166,6 +166,14 @@ export function initEyeHealthNavBehavior(root = document) {
     });
     navRoot.classList.toggle('open', willOpen);
     toggle.setAttribute('aria-expanded', String(willOpen));
+    if (willOpen) {
+      dropdown?.removeAttribute('hidden');
+    }
+  });
+
+  navRoot.addEventListener('mouseenter', () => {
+    if (window.innerWidth <= 1360) return;
+    dropdown?.removeAttribute('hidden');
   });
 
   navRoot.querySelectorAll('.eh-mobile-group-toggle').forEach((groupToggle) => {

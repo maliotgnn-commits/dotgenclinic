@@ -7,7 +7,12 @@ export function initMegaMenuA11y(root = document) {
       if (item === except) return;
       item.classList.remove('open');
       item.querySelector('.eh-nav-toggle')?.setAttribute('aria-expanded', 'false');
-      item.querySelector('.mega-dropdown')?.setAttribute('hidden', '');
+      const dropdown = item.querySelector('.mega-dropdown');
+      if (window.innerWidth <= 1360) {
+        dropdown?.setAttribute('hidden', '');
+      } else {
+        dropdown?.removeAttribute('hidden');
+      }
     });
   };
 

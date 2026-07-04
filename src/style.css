@@ -538,13 +538,13 @@ to {
 }
 
 @media (width>=1361px) {
-  .main-nav,
-  .nav-container {
+  .main-nav {
+    position: relative;
     overflow: visible;
   }
 
   .nav-container {
-    position: relative;
+    overflow: visible;
   }
 
   .has-dropdown[data-eye-health-nav] {
