@@ -1,6 +1,10 @@
 import { initMegaMenuA11y } from './mega-menu-a11y.js';
 import { initEyeHealthNavBehavior } from './tr-eye-health-nav.js';
 
+export function renderMobileNavCtaItem(href, label) {
+  return `<li class="nav-mobile-cta-item"><a href="${href}" class="nav-mobile-cta">${label}</a></li>`;
+}
+
 export function initSiteHeader(root = document, { trackScroll = false } = {}) {
   const header = root.getElementById('main-header');
   const hamburger = root.getElementById('hamburger');

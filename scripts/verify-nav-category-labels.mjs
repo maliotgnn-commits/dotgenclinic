@@ -141,7 +141,9 @@ async function validateRenderedNavFit() {
           ? logoRect.left - menuRect.right
           : menuRect.left - logoRect.right;
         const first = document.querySelector('#nav-menu > li:first-child > a, #nav-menu > li:first-child .eh-nav-item-head');
-        const last = document.querySelector('#nav-menu > li:last-child > a, #nav-menu > li:last-child .eh-nav-item-head, #nav-menu > li:last-child .eh-nav-primary-link');
+        const navItems = [...document.querySelectorAll('#nav-menu > li:not(.nav-mobile-cta-item)')];
+        const lastItem = navItems[navItems.length - 1];
+        const last = lastItem?.querySelector(':scope > a, :scope .eh-nav-item-head, :scope .eh-nav-primary-link');
         const firstRect = first?.getBoundingClientRect();
         const lastRect = last?.getBoundingClientRect();
         const links = [...document.querySelectorAll('#nav-menu > li > a, #nav-menu > li .eh-nav-primary-link')];
@@ -161,10 +163,10 @@ async function validateRenderedNavFit() {
           pageOverflow: document.documentElement.scrollWidth - window.innerWidth,
           corporateText: document.querySelector('#nav-menu > li:first-child > a')?.textContent.trim() ?? '',
           hairText: document.querySelector('#nav-menu > li:nth-child(2) > a')?.textContent.trim() ?? '',
-          eyeText: document.querySelector('#nav-menu > li:last-child .eh-nav-primary-link')?.textContent.trim()
-            ?? document.querySelector('#nav-menu > li:last-child > a')?.textContent.trim()
+          eyeText: document.querySelector('[data-eye-health-nav] .eh-nav-primary-link')?.textContent.trim()
+            ?? navItems[navItems.length - 1]?.querySelector(':scope > a, :scope .eh-nav-primary-link')?.textContent.trim()
             ?? '',
-          ctaVisible: Boolean(document.querySelector('.nav-cta')?.getBoundingClientRect().width),
+          ctaVisible: Boolean(document.querySelector('.nav-actions > .nav-cta')?.getBoundingClientRect().width),
         };
       });
 

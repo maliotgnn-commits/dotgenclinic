@@ -38,6 +38,10 @@ function assertHeaderTemplate(label, source) {
     `${label}: nav-cta must live inside nav-actions`,
   );
   assert(
+    /nav-mobile-cta-item|renderMobileNavCtaItem/.test(source),
+    `${label}: mobile drawer CTA must live inside nav-menu`,
+  );
+  assert(
     /class="nav-actions"[\s\S]*?(class="hamburger"|id="hamburger")/.test(source),
     `${label}: hamburger must live inside nav-actions`,
   );
@@ -134,9 +138,37 @@ assert(
   'nav-logo must not shrink',
 );
 
+function collectMobileBreakpointRules(css) {
+  const blocks = [];
+  const marker = '@media (width<=1279px)';
+  let searchFrom = 0;
+  while (searchFrom < css.length) {
+    const start = css.indexOf(marker, searchFrom);
+    if (start === -1) break;
+    const block = css.slice(start).match(/@media \(width<=1279px\)[\s\S]*?(?=@media|$)/)?.[0] || '';
+    blocks.push(block);
+    searchFrom = start + marker.length;
+  }
+  return blocks.join('\n');
+}
+
+const mobileNavRules = collectMobileBreakpointRules(styleCss);
+
 assert(
-  !/\.nav-cta\s*\{[^}]*display:\s*none/.test(styleCss),
-  'nav-cta must never use display:none in CSS',
+  !/\.nav-cta\s*\{[^}]*display:\s*none/.test(navMenuBase + navContainerBase),
+  'nav-cta must not use display:none outside mobile breakpoint',
+);
+
+assert(
+  mobileNavRules.includes('.nav-actions > .nav-cta') && /display:\s*none/.test(
+    mobileNavRules.slice(mobileNavRules.indexOf('.nav-actions > .nav-cta')),
+  ),
+  'header nav-cta must hide only within the mobile breakpoint',
+);
+
+assert(
+  /\.nav-mobile-cta-item/.test(styleCss) && /\.nav-mobile-cta/.test(styleCss),
+  'mobile drawer CTA styles must be defined',
 );
 
 assertHeaderTemplate('index.html', read(resolve(ROOT, 'index.html')));

@@ -904,6 +904,35 @@ to {
   transform: translateY(-2px)
 }
 
+.nav-mobile-cta-item {
+  display: none;
+  list-style: none;
+}
+
+.nav-mobile-cta {
+  background: var(--gold-gradient);
+  border-radius: var(--radius-sm);
+  letter-spacing: .5px;
+  white-space: nowrap;
+  transition: var(--transition);
+  font-weight: 600;
+  color: var(--bg-primary)!important;
+  text-decoration: none;
+  text-align: center;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.nav-mobile-cta:hover {
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
 .nav-actions {
   flex-shrink: 0;
   align-items: center;
@@ -2132,7 +2161,14 @@ html[dir=rtl] .form-group select {
   }
 
   .nav-actions {
-    justify-self: end
+    justify-self: end;
+    align-items: center;
+    gap: clamp(6px, 2vw, 10px);
+    flex-shrink: 0;
+  }
+
+  .nav-actions > .nav-cta {
+    display: none;
   }
 
 .hamburger {
@@ -2154,7 +2190,19 @@ html[dir=rtl] .form-group select {
     position: fixed;
     inset-inline-end: -100%;
     overflow-y: auto;
-    z-index: 1000
+    z-index: 1000;
+    display: flex;
+  }
+
+  .nav-mobile-cta-item {
+    display: list-item;
+    margin-top: auto;
+    padding-top: 24px;
+    flex-shrink: 0;
+  }
+
+  .nav-mobile-cta {
+    display: flex;
   }
 
 .nav-menu.active {
@@ -2199,12 +2247,6 @@ html[dir=rtl] .form-group select {
 
 .has-dropdown:hover .mega-dropdown {
     transform: none
-  }
-
-.nav-cta {
-    display: inline-flex;
-    padding: 8px clamp(10px, 2vw, 14px);
-    font-size: clamp(11px, 2.8vw, 13px)
   }
 
 .language-trigger {
