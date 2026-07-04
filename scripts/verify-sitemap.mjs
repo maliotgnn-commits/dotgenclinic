@@ -32,11 +32,12 @@ for (const locale of LOCALES) {
   }
 }
 
-const expectedUrls = new Set([...homeUrls, ...privacyUrls, ...serviceUrls]);
+const eyeHealthUrls = [`${SITE_ORIGIN}/tr/goz-hastaliklari.html`];
+const expectedUrls = new Set([...homeUrls, ...privacyUrls, ...eyeHealthUrls, ...serviceUrls]);
 const actualUrls = new Set(locs);
 
-assert(locs.length === 368, `Expected 368 sitemap URLs, found ${locs.length}`);
-assert(expectedUrls.size === 368, `Expected URL set size is 368, computed ${expectedUrls.size}`);
+assert(locs.length === 369, `Expected 369 sitemap URLs, found ${locs.length}`);
+assert(expectedUrls.size === 369, `Expected URL set size is 369, computed ${expectedUrls.size}`);
 
 for (const url of homeUrls) {
   assert(actualUrls.has(url), `Missing home URL: ${url}`);
@@ -44,6 +45,10 @@ for (const url of homeUrls) {
 
 for (const url of privacyUrls) {
   assert(actualUrls.has(url), `Missing privacy URL: ${url}`);
+}
+
+for (const url of eyeHealthUrls) {
+  assert(actualUrls.has(url), `Missing eye health URL: ${url}`);
 }
 
 for (const url of serviceUrls) {
@@ -60,8 +65,11 @@ const privacyCount = locs.filter((url) => url.endsWith('/privacy.html')).length;
 const serviceCount = locs.filter((url) => url.includes('/service.html?slug=')).length;
 const homeCount = locs.filter((url) => /\/(tr|en|ar|es|fr|it|ru|de)\/$/.test(url)).length;
 
+const eyeHealthCount = locs.filter((url) => url.endsWith('/goz-hastaliklari.html')).length;
+
 assert(homeCount === 8, `Expected 8 home URLs, found ${homeCount}`);
 assert(privacyCount === 8, `Expected 8 privacy URLs, found ${privacyCount}`);
+assert(eyeHealthCount === 1, `Expected 1 eye health URL, found ${eyeHealthCount}`);
 assert(serviceCount === 352, `Expected 352 service URLs, found ${serviceCount}`);
 
 if (failures.length) {
@@ -70,4 +78,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('[verify-sitemap] Verified 368 public sitemap URLs (8 home, 8 privacy, 352 service)');
+console.log('[verify-sitemap] Verified 369 public sitemap URLs (8 home, 8 privacy, 1 eye health, 352 service)');

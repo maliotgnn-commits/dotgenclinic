@@ -3,10 +3,11 @@ import { resolve } from 'node:path';
 import { prerenderHomeSeo } from './scripts/prerender-home-seo.mjs';
 import { prerenderServiceSeo } from './scripts/prerender-service-seo.mjs';
 import { prerenderPrivacySeo } from './scripts/prerender-privacy-seo.mjs';
+import { prerenderEyeHealthSeo } from './scripts/prerender-eye-health-seo.mjs';
 import { verifyOgSocialImage } from './scripts/verify-og-social-image.mjs';
 import { runBuildValidations } from './scripts/run-build-validations.mjs';
 
-const localePattern = /^\/(?:tr|en|ar|es|fr|it|ru|de)(?:\/(service\.html|privacy\.html)?)?$/;
+const localePattern = /^\/(?:tr|en|ar|es|fr|it|ru|de)(?:\/(service\.html|privacy\.html|goz-hastaliklari\.html)?)?$/;
 
 function localeRoutes() {
   const rewriteLocaleUrl = (request) => {
@@ -20,6 +21,10 @@ function localeRoutes() {
     }
     if (match[1] === 'privacy.html') {
       request.url = `/privacy.html${url.search}`;
+      return;
+    }
+    if (match[1] === 'goz-hastaliklari.html') {
+      request.url = `/goz-hastaliklari.html${url.search}`;
       return;
     }
     request.url = `/index.html${url.search}`;
@@ -52,6 +57,7 @@ function buildSeoPipeline() {
       prerenderHomeSeo(outDir);
       prerenderServiceSeo(outDir);
       prerenderPrivacySeo(outDir);
+      prerenderEyeHealthSeo(outDir);
       runBuildValidations();
     },
   };
@@ -65,6 +71,7 @@ export default defineConfig({
         main: resolve(import.meta.dirname, 'index.html'),
         service: resolve(import.meta.dirname, 'service.html'),
         privacy: resolve(import.meta.dirname, 'privacy.html'),
+        eyeHealth: resolve(import.meta.dirname, 'goz-hastaliklari.html'),
       },
     },
   },
