@@ -68,64 +68,86 @@ async function validateStaticNavLabels() {
 async function validateRenderedNavFit() {
   const { chromium } = await import('playwright');
   const browser = await chromium.launch({ channel: 'chrome', headless: true });
-  const context = await browser.newContext({
-    viewport: { width: 1366, height: 900 },
-    reducedMotion: 'reduce',
-  });
-  const page = await context.newPage();
+  const viewports = [
+    { width: 1280, height: 900 },
+    { width: 1366, height: 900 },
+  ];
 
-  for (const locale of LOCALES) {
-    const eyePath = EYE_HEALTH_ROUTES[locale]?.path;
-    assert(eyePath, `[${locale}] missing eye health route`);
-
-    await page.goto(`${BASE_URL}${eyePath}`, { waitUntil: 'networkidle' });
-    await page.waitForSelector('#nav-menu');
-
-    const metrics = await page.evaluate(() => {
-      const primary = document.querySelector('.nav-primary');
-      const navMenu = document.getElementById('nav-menu');
-      const actions = document.querySelector('.nav-actions');
-      const logo = document.querySelector('.nav-logo');
-      const actionsRect = actions.getBoundingClientRect();
-      const menuRect = navMenu.getBoundingClientRect();
-      const logoRect = logo.getBoundingClientRect();
-      const isRtl = document.documentElement.dir === 'rtl';
-      const gapToActions = isRtl
-        ? menuRect.left - actionsRect.right
-        : actionsRect.left - menuRect.right;
-      const gapToLogo = isRtl
-        ? logoRect.left - menuRect.right
-        : menuRect.left - logoRect.right;
-      const links = [...document.querySelectorAll('#nav-menu > li > a, #nav-menu > li .eh-nav-primary-link')];
-      return {
-        scale: getComputedStyle(document.querySelector('.nav-container')).getPropertyValue('--nav-fit-scale').trim() || '1',
-        available: primary?.clientWidth ?? 0,
-        needed: Math.round(menuRect.width),
-        overflow: gapToActions < 16 || gapToLogo < 16,
-        gapToActions,
-        gapToLogo,
-        linkOverflow: links.some((link) => link.scrollWidth > link.clientWidth + 1),
-        pageOverflow: document.documentElement.scrollWidth - window.innerWidth,
-        hairText: document.querySelector('#nav-menu > li:nth-child(2) > a')?.textContent.trim() ?? '',
-      };
+  for (const viewport of viewports) {
+    const context = await browser.newContext({
+      viewport,
+      reducedMotion: 'reduce',
     });
+    const page = await context.newPage();
 
-    assert(!metrics.overflow, `[${locale}] nav-menu exceeds logo/actions corridor (${metrics.needed}px, scale ${metrics.scale}, gaps logo ${Math.round(metrics.gapToLogo)} / actions ${Math.round(metrics.gapToActions)})`);
-    assert(metrics.gapToActions >= 16, `[${locale}] nav-menu overlaps language bar (gap ${metrics.gapToActions}px)`);
-    assert(metrics.gapToLogo >= 16, `[${locale}] nav-menu overlaps logo (gap ${metrics.gapToLogo}px)`);
-    assert(!metrics.linkOverflow, `[${locale}] a header category link overflowed its box`);
-    assert(metrics.pageOverflow <= 1, `[${locale}] eye-health page horizontal overflow (${metrics.pageOverflow}px)`);
+    for (const locale of LOCALES) {
+      const eyePath = EYE_HEALTH_ROUTES[locale]?.path;
+      assert(eyePath, `[${locale}] missing eye health route`);
 
-    if (locale === 'ru') {
-      assert(
-        metrics.hairText.startsWith('Трансплантация волос'),
-        `[ru] rendered hair nav must use short label, got "${metrics.hairText}"`,
-      );
-      assert(
-        !metrics.hairText.includes('лечение волос'),
-        '[ru] rendered hair nav must not include long category suffix',
-      );
+      await page.goto(`${BASE_URL}${eyePath}`, { waitUntil: 'networkidle' });
+      await page.waitForSelector('#nav-menu');
+
+      const metrics = await page.evaluate(() => {
+        const primary = document.querySelector('.nav-primary');
+        const navMenu = document.getElementById('nav-menu');
+        const actions = document.querySelector('.nav-actions');
+        const logo = document.querySelector('.nav-logo');
+        const actionsRect = actions.getBoundingClientRect();
+        const menuRect = navMenu.getBoundingClientRect();
+        const logoRect = logo.getBoundingClientRect();
+        const primaryRect = primary.getBoundingClientRect();
+        const isRtl = document.documentElement.dir === 'rtl';
+        const gapToActions = isRtl
+          ? menuRect.left - actionsRect.right
+          : actionsRect.left - menuRect.right;
+        const gapToLogo = isRtl
+          ? logoRect.left - menuRect.right
+          : menuRect.left - logoRect.right;
+        const first = document.querySelector('#nav-menu > li:first-child > a, #nav-menu > li:first-child .eh-nav-item-head');
+        const last = document.querySelector('#nav-menu > li:last-child > a, #nav-menu > li:last-child .eh-nav-item-head');
+        const firstRect = first?.getBoundingClientRect();
+        const lastRect = last?.getBoundingClientRect();
+        const links = [...document.querySelectorAll('#nav-menu > li > a, #nav-menu > li .eh-nav-primary-link')];
+        return {
+          scale: getComputedStyle(document.querySelector('.nav-container')).getPropertyValue('--nav-fit-scale').trim() || '1',
+          needed: Math.round(menuRect.width),
+          overflow: gapToActions < 16 || gapToLogo < 16,
+          gapToActions,
+          gapToLogo,
+        firstVisible: firstRect
+          ? (isRtl ? firstRect.right <= logoRect.left - 8 : firstRect.left >= logoRect.right + 8)
+          : false,
+        lastVisible: lastRect
+          ? (isRtl ? lastRect.left >= actionsRect.right + 8 : lastRect.right <= actionsRect.left - 8)
+          : false,
+          linkOverflow: links.some((link) => link.scrollWidth > link.clientWidth + 1),
+          pageOverflow: document.documentElement.scrollWidth - window.innerWidth,
+          hairText: document.querySelector('#nav-menu > li:nth-child(2) > a')?.textContent.trim() ?? '',
+        };
+      });
+
+      const vpLabel = `${viewport.width}px`;
+      assert(!metrics.overflow, `[${locale}@${vpLabel}] nav-menu exceeds logo/actions corridor (${metrics.needed}px, scale ${metrics.scale}, gaps logo ${Math.round(metrics.gapToLogo)} / actions ${Math.round(metrics.gapToActions)})`);
+      assert(metrics.gapToActions >= 16, `[${locale}@${vpLabel}] nav-menu overlaps language bar (gap ${metrics.gapToActions}px)`);
+      assert(metrics.gapToLogo >= 16, `[${locale}@${vpLabel}] nav-menu overlaps logo (gap ${metrics.gapToLogo}px)`);
+      assert(metrics.firstVisible, `[${locale}@${vpLabel}] first nav item clipped by logo`);
+      assert(metrics.lastVisible, `[${locale}@${vpLabel}] last nav item clipped by language bar`);
+      assert(!metrics.linkOverflow, `[${locale}@${vpLabel}] a header category link overflowed its box`);
+      assert(metrics.pageOverflow <= 1, `[${locale}@${vpLabel}] eye-health page horizontal overflow (${metrics.pageOverflow}px)`);
+
+      if (locale === 'ru') {
+        assert(
+          metrics.hairText.startsWith('Трансплантация волос'),
+          `[ru@${vpLabel}] rendered hair nav must use short label, got "${metrics.hairText}"`,
+        );
+        assert(
+          !metrics.hairText.includes('лечение волос'),
+          `[ru@${vpLabel}] rendered hair nav must not include long category suffix`,
+        );
+      }
     }
+
+    await context.close();
   }
 
   await browser.close();

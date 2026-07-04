@@ -46,9 +46,17 @@ function withNavFitting(container, fn) {
 function measureMenuWidthAtScale(container, navMenu, scale) {
   const previous = readNavFitScale(container);
   container.style.setProperty('--nav-fit-scale', String(scale));
-  const width = navMenu.getBoundingClientRect().width;
+  const width = navMenu.scrollWidth;
   container.style.setProperty('--nav-fit-scale', String(previous));
   return width;
+}
+
+function readMenuFitBudget(root) {
+  const primary = root.querySelector('.nav-primary');
+  const corridor = readCenteredMenuBudget(root);
+  const primaryWidth = primary?.clientWidth ?? 0;
+  if (!primaryWidth) return corridor;
+  return Math.min(primaryWidth, corridor);
 }
 
 function readCenteredMenuBudget(root) {
@@ -57,10 +65,20 @@ function readCenteredMenuBudget(root) {
   const primary = root.querySelector('.nav-primary');
   if (!logo || !actions || !primary) return primary?.clientWidth ?? 0;
 
-  const logoRight = logo.getBoundingClientRect().right;
-  const actionsLeft = actions.getBoundingClientRect().left;
+  const isRtl = root.documentElement?.dir === 'rtl';
   const primaryRect = primary.getBoundingClientRect();
   const center = (primaryRect.left + primaryRect.right) / 2;
+
+  if (isRtl) {
+    const logoInner = logo.getBoundingClientRect().left;
+    const actionsInner = actions.getBoundingClientRect().right;
+    const leftRoom = center - actionsInner - NAV_ACTIONS_GAP;
+    const rightRoom = logoInner - center - NAV_ACTIONS_GAP;
+    return Math.max(0, 2 * Math.min(leftRoom, rightRoom));
+  }
+
+  const logoRight = logo.getBoundingClientRect().right;
+  const actionsLeft = actions.getBoundingClientRect().left;
   const leftRoom = center - logoRight - NAV_ACTIONS_GAP;
   const rightRoom = actionsLeft - center - NAV_ACTIONS_GAP;
 
@@ -113,17 +131,22 @@ function readNavLayoutMetrics(root) {
     : menuRect.left - logoRect.right;
 
   return {
-    available: readCenteredMenuBudget(root),
-    needed: menuRect.width,
+    available: readMenuFitBudget(root),
+    needed: navMenu.scrollWidth,
     menuRight: menuRect.right,
     primaryRight: primaryRect.right,
     actionsLeft: actionsRect.left,
     gapToActions,
     gapToLogo,
-    overflowPx: Math.max(
-      menuRect.right - (actionsRect.left - NAV_ACTIONS_GAP),
-      (logoRect.right + NAV_ACTIONS_GAP) - menuRect.left,
-    ),
+    overflowPx: isRtl
+      ? Math.max(
+          menuRect.left - (actionsRect.right + NAV_ACTIONS_GAP),
+          (logoRect.left - NAV_ACTIONS_GAP) - menuRect.right,
+        )
+      : Math.max(
+          menuRect.right - (actionsRect.left - NAV_ACTIONS_GAP),
+          (logoRect.right + NAV_ACTIONS_GAP) - menuRect.left,
+        ),
   };
 }
 
@@ -141,13 +164,13 @@ export function fitHeaderNavigation(root = document) {
   const navMenu = root.getElementById('nav-menu');
   if (!container || !primary || !navMenu) return;
 
-  if (window.innerWidth <= DESKTOP_NAV_BREAKPOINT) {
+  if (window.innerWidth < DESKTOP_NAV_BREAKPOINT) {
     container.style.removeProperty('--nav-fit-scale');
     container.classList.remove(NAV_FITTING_CLASS);
     return;
   }
 
-  const available = readCenteredMenuBudget(root);
+  const available = readMenuFitBudget(root);
   if (!available) return;
 
   const scaleBefore = readNavFitScale(container);
@@ -164,10 +187,11 @@ export function fitHeaderNavigation(root = document) {
   });
 
   const metrics = readNavLayoutMetrics(root);
-  debugNavFit('A', 'fit-applied', {
+    debugNavFit('A', 'fit-applied', {
     innerWidth: window.innerWidth,
     scaleBefore,
     scaleAfter: readNavFitScale(container),
+    scrollOverflow: navMenu.scrollWidth - primary.clientWidth,
     ...metrics,
     fits: navFitsMiddleColumn(root),
   });
