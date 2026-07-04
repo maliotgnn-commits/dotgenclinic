@@ -541,7 +541,8 @@ to {
 }
 
 @media (width>=1361px) {
-  .has-dropdown[data-eye-health-nav].open .mega-dropdown {
+  .has-dropdown[data-eye-health-nav].open .mega-dropdown,
+  .has-dropdown[data-eye-health-nav]:hover .mega-dropdown {
     opacity: 1;
     visibility: visible;
     pointer-events: all;
@@ -553,21 +554,91 @@ to {
   }
 
   .has-dropdown[data-eye-health-nav] .eh-nav-item-head {
-    display: inline-flex;
+    color: var(--text-secondary);
+    letter-spacing: .3px;
+    white-space: nowrap;
+    transition: var(--transition);
     align-items: center;
-    gap: 6px;
+    gap: 5px;
+    padding: 28px clamp(8px, .8vw, 14px);
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    position: relative;
+  }
+
+  .has-dropdown[data-eye-health-nav]:hover .eh-nav-item-head,
+  .has-dropdown[data-eye-health-nav].open .eh-nav-item-head {
+    color: var(--gold);
+  }
+
+  .has-dropdown[data-eye-health-nav] .eh-nav-item-head:after {
+    content: "";
+    background: var(--gold);
+    height: 2px;
+    transition: var(--transition);
+    position: absolute;
+    bottom: 20px;
+    left: 16px;
+    right: 16px;
+    transform: scaleX(0);
+  }
+
+  .has-dropdown[data-eye-health-nav]:hover .eh-nav-item-head:after,
+  .has-dropdown[data-eye-health-nav].open .eh-nav-item-head:after {
+    transform: scaleX(1);
   }
 
   .has-dropdown[data-eye-health-nav] .eh-nav-primary-link {
     color: inherit;
     text-decoration: none;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
   }
 
   .has-dropdown[data-eye-health-nav] .eh-nav-primary-link:after {
-    display: inline-block;
-    content: '';
-    width: 0;
-    height: 0;
+    display: none;
+  }
+
+  .has-dropdown[data-eye-health-nav] .eh-nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    color: inherit;
+    font: inherit;
+    line-height: 1;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    box-shadow: none;
+  }
+
+  .has-dropdown[data-eye-health-nav] .eh-nav-toggle:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  .has-dropdown[data-eye-health-nav] .eh-nav-toggle svg {
+    width: 10px;
+    height: 6px;
+    transition: var(--transition);
+  }
+
+  .has-dropdown[data-eye-health-nav]:hover .eh-nav-toggle svg,
+  .has-dropdown[data-eye-health-nav].open .eh-nav-toggle svg {
+    transform: rotate(180deg);
+  }
+
+  .has-dropdown[data-eye-health-nav] .eh-desktop-mega {
+    display: flex;
   }
 }
 
