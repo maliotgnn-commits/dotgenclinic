@@ -20,6 +20,7 @@ const steps = [
   ['node', ['scripts/verify-home-static-i18n.mjs']],
   ['node', ['scripts/verify-home-static-seo.mjs']],
   ['node', ['scripts/verify-tr-eye-health-page.mjs']],
+  ['node', ['scripts/verify-tr-eye-navigation.mjs']],
   ['node', ['scripts/verify-form-privacy.mjs']],
 ];
 

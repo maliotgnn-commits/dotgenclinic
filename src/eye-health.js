@@ -1,12 +1,15 @@
 import './style.css';
 import './eye-health.css';
 import { initCustomCursor } from './cursor.js';
-import { initMegaMenuA11y } from './mega-menu-a11y.js';
+import { initSiteHeader } from './public-header.js';
 import {
   EYE_HEALTH_CATEGORIES,
   EYE_HEALTH_PAGE,
 } from './eye-health-data.js';
-import { renderEyeHealthNavItem } from './tr-eye-health-nav.js';
+import {
+  normalizeEyeHealthLandingHash,
+  renderEyeHealthNavItem,
+} from './tr-eye-health-nav.js';
 import {
   applySeoLinks,
   buildCategoryGroups,
@@ -309,78 +312,12 @@ function initSkipLink() {
   });
 }
 
-function initHeaderInteractions() {
-  const header = document.getElementById('main-header');
-  const hamburger = document.getElementById('hamburger');
-  const navMenu = document.getElementById('nav-menu');
-  if (!header || !hamburger || !navMenu) return;
-
-  const setMobileNavOpen = (isOpen) => {
-    hamburger.classList.toggle('active', isOpen);
-    navMenu.classList.toggle('active', isOpen);
-    hamburger.setAttribute('aria-expanded', String(isOpen));
-  };
-
-  window.addEventListener('scroll', () => {
-    header.classList.toggle('scrolled', window.scrollY > 100);
-  }, { passive: true });
-
-  hamburger.addEventListener('click', (event) => {
-    event.stopPropagation();
-    setMobileNavOpen(!navMenu.classList.contains('active'));
-  });
-
-  navMenu.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 1360 && link.parentElement?.classList.contains('has-dropdown')) {
-        return;
-      }
-      setMobileNavOpen(false);
-    });
-  });
-
-  document.addEventListener('click', (event) => {
-    if (window.innerWidth > 1360) return;
-    if (!navMenu.classList.contains('active')) return;
-    if (event.target.closest('#main-header')) return;
-    setMobileNavOpen(false);
-  });
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key !== 'Escape') return;
-    if (window.innerWidth > 1360) return;
-    if (!navMenu.classList.contains('active')) return;
-    setMobileNavOpen(false);
-    hamburger.focus();
-  });
-
-  const setupMobileDropdowns = () => {
-    if (window.innerWidth > 1360) return;
-
-    document.querySelectorAll('.has-dropdown > a').forEach((trigger) => {
-      if (trigger.dataset.mobileBound === 'true') return;
-      trigger.dataset.mobileBound = 'true';
-      trigger.addEventListener('click', (event) => {
-        if (window.innerWidth > 1360) return;
-        if (trigger.getAttribute('aria-haspopup') === 'true' && trigger.getAttribute('href')?.includes('goz-hastaliklari')) {
-          return;
-        }
-        event.preventDefault();
-        trigger.parentElement.classList.toggle('open');
-      });
-    });
-  };
-
-  setupMobileDropdowns();
-  window.addEventListener('resize', setupMobileDropdowns, { passive: true });
-}
-
 function bootstrapEyeHealthPage() {
+  normalizeEyeHealthLandingHash();
   renderPage();
   initSkipLink();
   initCustomCursor();
-  initHeaderInteractions();
-  initMegaMenuA11y(document);
+  initSiteHeader(document, { trackScroll: true });
   initLanguageSwitchers();
   initTopicAccordions();
 }

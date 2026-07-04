@@ -547,12 +547,137 @@ to {
     pointer-events: all;
     transform: translateX(-50%) translateY(0);
   }
+
+  .eh-mobile-mega {
+    display: none;
+  }
+
+  .has-dropdown[data-eye-health-nav] .eh-nav-item-head {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .has-dropdown[data-eye-health-nav] .eh-nav-primary-link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .has-dropdown[data-eye-health-nav] .eh-nav-primary-link:after {
+    display: inline-block;
+    content: '';
+    width: 0;
+    height: 0;
+  }
 }
 
 @media (width<=1360px) {
   .mega-dropdown.eh-mega-dropdown {
     min-width: 100%;
     grid-template-columns: 1fr;
+  }
+
+  .has-dropdown[data-eye-health-nav] .eh-nav-item-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 16px 0;
+  }
+
+  .has-dropdown[data-eye-health-nav] .eh-nav-primary-link {
+    flex: 1;
+    color: inherit;
+    text-decoration: none;
+    border: 0;
+    padding: 0;
+  }
+
+  .has-dropdown[data-eye-health-nav] .eh-nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 0;
+    color: inherit;
+    padding: 4px;
+    cursor: pointer;
+  }
+
+  .has-dropdown[data-eye-health-nav] .eh-nav-toggle:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  .has-dropdown[data-eye-health-nav] .mega-dropdown {
+    display: none;
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    width: 100%;
+    min-width: 0;
+    padding: 0 0 0 16px;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+
+  .has-dropdown[data-eye-health-nav].open .mega-dropdown {
+    display: block;
+  }
+
+  .has-dropdown[data-eye-health-nav] .eh-desktop-mega {
+    display: none;
+  }
+
+  .eh-mobile-group-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: transparent;
+    border: 0;
+    border-top: 1px solid var(--border-subtle);
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    padding: 12px 0;
+    cursor: pointer;
+  }
+
+  .eh-mobile-group-toggle:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  .eh-mobile-topics {
+    display: none;
+    padding: 0 0 8px 12px;
+  }
+
+  .eh-mobile-topics[hidden] {
+    display: none !important;
+  }
+
+  .eh-mobile-group.open .eh-mobile-topics {
+    display: block;
+  }
+
+  .eh-mobile-topics a {
+    display: block;
+    padding: 8px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eh-mobile-group-toggle,
+  .eh-nav-toggle,
+  .has-dropdown[data-eye-health-nav] .mega-dropdown {
+    transition: none;
   }
 }
 
@@ -562,6 +687,15 @@ to {
   margin-bottom: 16px;
   font-size: 16px;
   font-weight: 600
+}
+
+.mega-col h4 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.mega-col h4 a:hover {
+  color: var(--gold-light);
 }
 
 .mega-col a {
