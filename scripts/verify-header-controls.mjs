@@ -48,13 +48,79 @@ assert(
 );
 
 assert(
-  /\.nav-actions[\s\S]*?flex-shrink:\s*0/.test(styleCss),
-  'nav-actions must not shrink',
+  /\.nav-container[\s\S]*?min-height:\s*80px/.test(styleCss),
+  'nav-container must grow with wrapped navigation (min-height, not fixed height only)',
+);
+
+function extractRule(css, selector) {
+  const re = new RegExp(`${selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*\\{([\\s\\S]*?)\\}`, '');
+  return re.exec(css)?.[1] ?? '';
+}
+
+const navContainerBase = extractRule(styleCss, '\\.nav-container');
+assert(
+  !/(?:^|[;\s])height:\s*80px/.test(navContainerBase),
+  'nav-container base rule must not lock header to a fixed 80px height',
+);
+
+assert(
+  /\.nav-menu[\s\S]*?flex-wrap:\s*wrap/.test(styleCss),
+  'nav-menu must allow safe wrapping within the middle column',
 );
 
 assert(
   /\.nav-menu[\s\S]*?min-width:\s*0/.test(styleCss),
   'nav-menu must allow middle-column shrinking with min-width: 0',
+);
+
+assert(
+  /\.nav-menu[\s\S]*?max-width:\s*100%/.test(styleCss),
+  'nav-menu must stay within the middle column (max-width: 100%)',
+);
+
+assert(
+  !/\.nav-menu\s*\{[^}]*max-height:/.test(styleCss),
+  'nav-menu must not clip wrapped rows with max-height',
+);
+
+assert(
+  !/\.nav-menu\s*\{[^}]*overflow:\s*hidden/.test(styleCss),
+  'nav-menu must not hide wrapped items with overflow: hidden',
+);
+
+assert(
+  !/\.nav-menu\s*\{[^}]*text-overflow:\s*ellipsis/.test(styleCss),
+  'nav-menu must not ellipsize navigation labels',
+);
+
+const navMenuBase = extractRule(styleCss, '\\.nav-menu');
+const navMenuDesktopRules = (
+  styleCss.match(/@media \(width>=1280px\)[\s\S]*?@media \(width<=1279px\)/)?.[0] || ''
+).match(/\.nav-menu\s*\{[^}]*\}/g)?.join('\n') || '';
+
+assert(
+  !/(?:^|[;\s])position:\s*absolute/.test(navMenuBase),
+  'desktop nav-menu must stay in normal flow (no absolute positioning)',
+);
+
+assert(
+  !/(?:^|[;\s])left:\s*50%/.test(navMenuBase + navMenuDesktopRules),
+  'desktop nav-menu must not use viewport-centered left: 50% positioning',
+);
+
+assert(
+  !/translateX\(/.test(navMenuBase + navMenuDesktopRules),
+  'desktop nav-menu must not use translateX centering hacks',
+);
+
+assert(
+  /\.nav-actions[\s\S]*?flex-shrink:\s*0/.test(styleCss),
+  'nav-actions must not shrink',
+);
+
+assert(
+  /\.nav-logo[\s\S]*?flex-shrink:\s*0/.test(styleCss),
+  'nav-logo must not shrink',
 );
 
 assert(

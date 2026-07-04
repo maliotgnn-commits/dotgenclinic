@@ -422,7 +422,7 @@ to {
   background: #0a1628d9;
   padding: 0;
   max-width: 100%;
-  overflow-x: clip
+  overflow: visible
 }
 
 .nav-container {
@@ -430,14 +430,18 @@ to {
   gap: clamp(6px, 0.75vw, 14px);
   max-width: min(1600px, 100%);
   width: 100%;
-  height: 80px;
+  min-height: 80px;
+  height: auto;
+  padding-block: clamp(8px, 0.9vw, 12px);
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto
 }
 
 .nav-logo {
   flex-shrink: 0;
-  grid-column: 1
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center
 }
 
 .nav-logo img {
@@ -446,20 +450,26 @@ to {
 }
 
 .nav-menu {
-  flex-wrap: nowrap;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
-  gap: 0;
+  align-content: center;
+  gap: clamp(2px, 0.35vw, 6px) clamp(0px, 0.25vw, 4px);
+  width: 100%;
   min-width: 0;
   max-width: 100%;
+  height: auto;
   margin-inline: 0;
   list-style: none;
   grid-column: 2;
-  display: flex
+  grid-row: 1;
+  display: flex;
+  position: relative
 }
 
 .nav-menu>li {
-  flex: none
+  flex: 0 0 auto;
+  max-width: 100%
 }
 
 .nav-menu>li>a {
@@ -468,9 +478,9 @@ to {
   white-space: nowrap;
   transition: var(--transition);
   align-items: center;
-  gap: 5px;
-  padding-block: 28px;
-  padding-inline: clamp(5px, 0.45vw + 2px, 14px);
+  gap: clamp(3px, 0.25vw, 5px);
+  padding-block: clamp(10px, 1.1vw, 16px);
+  padding-inline: clamp(5px, 0.45vw + 2px, 12px);
   font-size: clamp(12px, 0.35vw + 0.55rem, 14px);
   font-weight: 500;
   display: flex;
@@ -483,9 +493,8 @@ to {
   height: 2px;
   transition: var(--transition);
   position: absolute;
-  bottom: 20px;
-  left: 16px;
-  right: 16px;
+  bottom: clamp(6px, 0.8vw, 12px);
+  inset-inline: clamp(8px, 0.8vw, 16px);
   transform: scaleX(0)
 }
 
@@ -553,6 +562,21 @@ to {
 
   .nav-container {
     overflow: visible;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    justify-content: flex-start;
+    align-content: center;
+  }
+
+  .nav-menu>li {
+    flex: 0 0 auto;
   }
 
   .has-dropdown[data-eye-health-nav] {
@@ -629,9 +653,10 @@ to {
     white-space: nowrap;
     transition: var(--transition);
     align-items: center;
-    gap: 5px;
-    padding: 28px clamp(8px, .8vw, 14px);
-    font-size: 14px;
+    gap: clamp(3px, 0.25vw, 5px);
+    padding-block: clamp(10px, 1.1vw, 16px);
+    padding-inline: clamp(5px, 0.45vw + 2px, 12px);
+    font-size: clamp(12px, 0.35vw + 0.55rem, 14px);
     font-weight: 500;
     display: flex;
     position: relative;
@@ -874,6 +899,9 @@ to {
   align-items: center;
   gap: clamp(6px, 0.55vw, 12px);
   grid-column: 3;
+  grid-row: 1;
+  align-self: center;
+  white-space: nowrap;
   display: flex
 }
 
