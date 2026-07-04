@@ -2,10 +2,10 @@ import './style.css';
 import { initCustomCursor } from './cursor.js';
 import { initSiteHeader } from './public-header.js';
 import { renderEyeHealthNavItem } from './tr-eye-health-nav.js';
+import { loadEyeHealthContent } from './eye-health-content.js';
 import {
   applySeoLinks,
   buildCategoryGroups,
-  DEFAULT_LOCALE,
   getCurrentLocale,
   homeUrlFor,
   loadContentCatalog,
@@ -19,9 +19,10 @@ import {
 } from './language-switcher.js';
 
 const locale = getCurrentLocale('privacy');
-const [catalog, uiDictionary] = await Promise.all([
+const [catalog, uiDictionary, eyeContent] = await Promise.all([
   loadContentCatalog(locale),
   loadUiDictionary(locale),
+  loadEyeHealthContent(locale),
 ]);
 const categoryGroups = buildCategoryGroups(catalog);
 const t = (source) => translate(uiDictionary, source);
@@ -60,9 +61,7 @@ function renderNavGroups() {
     })
     .join('');
 
-  return locale === DEFAULT_LOCALE
-    ? `${serviceGroups}${renderEyeHealthNavItem()}`
-    : serviceGroups;
+  return `${serviceGroups}${renderEyeHealthNavItem({ locale, content: eyeContent })}`;
 }
 
 function renderHeader() {

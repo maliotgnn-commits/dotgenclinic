@@ -1,20 +1,25 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { getEyeHealthContentSync } from './eye-health-content-node.mjs';
+import { eyeHealthBreadcrumbLabels } from '../src/eye-health-content.js';
 import {
-  EYE_HEALTH_CATEGORIES,
-  EYE_HEALTH_PAGE,
-} from '../src/eye-health-data.js';
+  EYE_HEALTH_LOCALES,
+  EYE_HEALTH_ROUTES,
+  eyeHealthCanonicalUrl,
+} from '../src/eye-health-routes.js';
 import {
   SITE_ORIGIN,
+  LOCALES,
   escapeHtml,
+  buildCanonicalAndHreflang,
   buildOgTwitterTags,
+  buildEyeHealthSchema,
   injectSeoBundle,
 } from './seo-shared.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
-const CANONICAL = `${SITE_ORIGIN}/tr/goz-hastaliklari.html`;
 
 const CATEGORY_EYE_IMAGES = {
   exam: '/images/goz-hastaliklari/category-eyes/category-eye-general-health.png',
@@ -31,9 +36,10 @@ function renderCategoryEyeImage(iconKey) {
   return `<span class="eh-category-eye-frame"><img class="eh-category-eye" src="${src}" alt="" width="96" height="60" loading="lazy" decoding="async" aria-hidden="true" /></span>`;
 }
 
-function buildStaticFallback() {
-  const { hero, doctor, closingCta, categoriesIntro } = EYE_HEALTH_PAGE;
-  const processHtml = EYE_HEALTH_PAGE.process
+function buildStaticFallback(content) {
+  const { page, categories, nav } = content;
+  const { hero, doctor, closingCta, categoriesIntro } = page;
+  const processHtml = page.process
     .map(
       (step) => `
         <article>
@@ -44,8 +50,9 @@ function buildStaticFallback() {
     )
     .join('');
 
-  const categoriesHtml = EYE_HEALTH_CATEGORIES.map(
-    (category) => `
+  const categoriesHtml = categories
+    .map(
+      (category) => `
       <article class="eh-category-card" id="${escapeHtml(category.id)}">
         ${renderCategoryEyeImage(category.icon)}
         <h3>${escapeHtml(category.title)}</h3>
@@ -63,7 +70,8 @@ function buildStaticFallback() {
         </div>
       </article>
     `,
-  ).join('');
+    )
+    .join('');
 
   return `
     <div class="eh-page">
@@ -76,7 +84,7 @@ function buildStaticFallback() {
         </div>
       </section>
       <section>
-        <h2>Değerlendirme Süreci</h2>
+        <h2>${escapeHtml(nav.processTitle)}</h2>
         ${processHtml}
       </section>
       <section>
@@ -99,23 +107,41 @@ function buildStaticFallback() {
   `.trim();
 }
 
-function injectEyeHealthSeo(html) {
-  const title = EYE_HEALTH_PAGE.title;
-  const description = EYE_HEALTH_PAGE.description;
-  const seoBlock = `    <link data-i18n-seo="true" rel="canonical" href="${CANONICAL}" />`;
-  const ogTwitter = buildOgTwitterTags({ title, description, url: CANONICAL });
+function eyeHealthUrlForLocale(code) {
+  return eyeHealthCanonicalUrl(SITE_ORIGIN, code);
+}
 
-  let result = html.replace(/<html lang="[^"]*">/, '<html lang="tr" dir="ltr">');
+function buildEyeHealthHreflangBlock() {
+  const hreflangLinks = LOCALES.map(
+    (code) =>
+      `    <link data-i18n-seo="true" rel="alternate" hreflang="${code}" href="${eyeHealthUrlForLocale(code)}" />`,
+  ).join('\n');
+  const xDefault = `    <link data-i18n-seo="true" rel="alternate" hreflang="x-default" href="${eyeHealthUrlForLocale('en')}" />`;
+  return `${hreflangLinks}\n${xDefault}`;
+}
+
+function injectEyeHealthSeo(html, locale) {
+  const content = getEyeHealthContentSync(locale);
+  const { page } = content;
+  const canonical = eyeHealthUrlForLocale(locale);
+  const title = page.title;
+  const description = page.description;
+  const dir = locale === 'ar' ? 'rtl' : 'ltr';
+  const seoBlock = `    <link data-i18n-seo="true" rel="canonical" href="${canonical}" />\n${buildEyeHealthHreflangBlock()}`;
+  const ogTwitter = buildOgTwitterTags({ title, description, url: canonical });
+  const jsonLd = buildEyeHealthSchema(locale, page, eyeHealthBreadcrumbLabels(content, locale));
+
+  let result = html.replace(/<html lang="[^"]*">/, `<html lang="${locale}" dir="${dir}">`);
   result = injectSeoBundle(result, {
     title,
     description,
     seoBlock,
     ogTwitter,
-    jsonLd: '',
+    jsonLd,
   });
   result = result.replace(
     /<main id="eye-health-app"><\/main>/,
-    `<main id="eye-health-app">${buildStaticFallback()}</main>`,
+    `<main id="eye-health-app">${buildStaticFallback(content)}</main>`,
   );
   return result;
 }
@@ -128,9 +154,17 @@ export function prerenderEyeHealthSeo(outDir) {
   }
 
   const baseHtml = readFileSync(sourcePath, 'utf8');
-  const localeDir = resolve(outDir, 'tr');
-  mkdirSync(localeDir, { recursive: true });
-  writeFileSync(resolve(localeDir, 'goz-hastaliklari.html'), injectEyeHealthSeo(baseHtml), 'utf8');
 
-  console.log('[prerender-eye-health-seo] Generated dist/tr/goz-hastaliklari.html');
+  for (const locale of EYE_HEALTH_LOCALES) {
+    const route = EYE_HEALTH_ROUTES[locale];
+    const localeDir = resolve(outDir, locale);
+    mkdirSync(localeDir, { recursive: true });
+    writeFileSync(
+      resolve(localeDir, route.file),
+      injectEyeHealthSeo(baseHtml, locale),
+      'utf8',
+    );
+  }
+
+  console.log(`[prerender-eye-health-seo] Generated ${EYE_HEALTH_LOCALES.length} locale eye health pages in ${outDir}`);
 }

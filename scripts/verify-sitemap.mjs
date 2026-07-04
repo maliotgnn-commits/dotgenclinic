@@ -32,12 +32,21 @@ for (const locale of LOCALES) {
   }
 }
 
-const eyeHealthUrls = [`${SITE_ORIGIN}/tr/goz-hastaliklari.html`];
+const eyeHealthUrls = [
+  `${SITE_ORIGIN}/tr/goz-hastaliklari.html`,
+  `${SITE_ORIGIN}/en/eye-health.html`,
+  `${SITE_ORIGIN}/ar/صحة-العين.html`,
+  `${SITE_ORIGIN}/es/salud-ocular.html`,
+  `${SITE_ORIGIN}/fr/sante-oculaire.html`,
+  `${SITE_ORIGIN}/it/salute-oculare.html`,
+  `${SITE_ORIGIN}/ru/здоровье-глаз.html`,
+  `${SITE_ORIGIN}/de/augengesundheit.html`,
+];
 const expectedUrls = new Set([...homeUrls, ...privacyUrls, ...eyeHealthUrls, ...serviceUrls]);
 const actualUrls = new Set(locs);
 
-assert(locs.length === 369, `Expected 369 sitemap URLs, found ${locs.length}`);
-assert(expectedUrls.size === 369, `Expected URL set size is 369, computed ${expectedUrls.size}`);
+assert(locs.length === 376, `Expected 376 sitemap URLs, found ${locs.length}`);
+assert(expectedUrls.size === 376, `Expected URL set size is 376, computed ${expectedUrls.size}`);
 
 for (const url of homeUrls) {
   assert(actualUrls.has(url), `Missing home URL: ${url}`);
@@ -65,11 +74,13 @@ const privacyCount = locs.filter((url) => url.endsWith('/privacy.html')).length;
 const serviceCount = locs.filter((url) => url.includes('/service.html?slug=')).length;
 const homeCount = locs.filter((url) => /\/(tr|en|ar|es|fr|it|ru|de)\/$/.test(url)).length;
 
-const eyeHealthCount = locs.filter((url) => url.endsWith('/goz-hastaliklari.html')).length;
+const eyeHealthCount = locs.filter((url) =>
+  eyeHealthUrls.some((eyeUrl) => url === eyeUrl),
+).length;
 
 assert(homeCount === 8, `Expected 8 home URLs, found ${homeCount}`);
 assert(privacyCount === 8, `Expected 8 privacy URLs, found ${privacyCount}`);
-assert(eyeHealthCount === 1, `Expected 1 eye health URL, found ${eyeHealthCount}`);
+assert(eyeHealthCount === 8, `Expected 8 eye health URLs, found ${eyeHealthCount}`);
 assert(serviceCount === 352, `Expected 352 service URLs, found ${serviceCount}`);
 
 if (failures.length) {
@@ -78,4 +89,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('[verify-sitemap] Verified 369 public sitemap URLs (8 home, 8 privacy, 1 eye health, 352 service)');
+console.log('[verify-sitemap] Verified 376 public sitemap URLs (8 home, 8 privacy, 8 eye health, 352 service)');

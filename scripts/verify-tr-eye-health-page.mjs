@@ -1,4 +1,4 @@
-import { readFileSync, existsSync, readdirSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
@@ -41,7 +41,6 @@ const LEGACY_CATEGORY_SVG_MARKERS = [
   'viewBox="0 0 64 64"',
 ];
 
-const OTHER_LOCALES = ['en', 'ar', 'es', 'fr', 'it', 'ru', 'de'];
 function extractCategoryCard(html, categoryId) {
   const marker = `<article class="eh-category-card" id="${categoryId}">`;
   const start = html.indexOf(marker);
@@ -101,10 +100,8 @@ if (existsSync(PAGE_PATH)) {
   assert(html.includes(`<title>${EYE_HEALTH_PAGE.title}</title>`), 'title missing');
   assert(html.includes(`content="${EYE_HEALTH_PAGE.description}"`), 'description missing');
   assert(html.includes(`href="${SITE_ORIGIN}/tr/goz-hastaliklari.html"`), 'canonical missing');
-  assert(!html.includes('hreflang='), 'hreflang must not be present on TR-only page');
   assert(html.includes('property="og:title"'), 'og:title missing');
   assert(html.includes('name="twitter:card"'), 'twitter:card missing');
-  assert(!html.includes('application/ld+json'), 'JSON-LD must not be added');
   assert(!html.includes('Tıbbi Birimlerimiz'), 'forbidden phrase found');
   assert(html.includes(escapeHtml(EYE_HEALTH_PAGE.hero.title)), 'hero title missing');
   assert(html.includes(EYE_HEALTH_PAGE.hero.image), 'hero image missing');
@@ -159,22 +156,6 @@ if (existsSync(PAGE_PATH)) {
     assert(tag.includes('decoding="async"'), 'category eye image must use decoding="async"');
     assert(tag.includes('width="96"'), 'category eye image must declare width="96"');
     assert(tag.includes('height="60"'), 'category eye image must declare height="60"');
-  }
-}
-
-for (const locale of OTHER_LOCALES) {
-  const localeDist = resolve(DIST, locale);
-  if (!existsSync(localeDist)) continue;
-  const htmlFiles = readdirSync(localeDist).filter((name) => name.endsWith('.html'));
-  for (const file of htmlFiles) {
-    const content = readFileSync(resolve(localeDist, file), 'utf8');
-    for (const eyePath of CATEGORY_EYE_PATHS) {
-      assert(
-        !content.includes(eyePath),
-        `${locale}/${file} must not reference TR category eye image ${eyePath}`,
-      );
-    }
-    assert(!content.includes('class="eh-category-eye"'), `${locale}/${file} must not include TR category eye markup`);
   }
 }
 

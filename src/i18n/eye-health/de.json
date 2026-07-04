@@ -1,0 +1,179 @@
+{
+  "page": {
+    "title": "Augengesundheit | Dr Otgen Clinic",
+    "description": "Allgemeine Informationen zu Augenuntersuchungen, Refraktionsfehlern, Katarakt, Netzhaut, Augenlidern und weiteren Themen der Augengesundheit.",
+    "hero": {
+      "tag": "AUGENGESUNDHEIT",
+      "title": "Umfassende Beurteilung für Ihre Augengesundheit",
+      "description": "Beurteilungen im Zusammenhang mit der Augengesundheit werden entsprechend den Untersuchungsbefunden und individuellen Bedürfnissen geplant.",
+      "cta": "Termin anfragen",
+      "image": "/images/goz-hastaliklari/hero-goz-muayenesi-ai.png",
+      "imageAlt": "Repräsentative Szene einer Augenuntersuchung"
+    },
+    "process": [
+      {
+        "title": "Augenuntersuchung",
+        "description": "Die erste Beurteilung von Sehkraft und Augengesundheit erfolgt entsprechend den Untersuchungsbefunden."
+      },
+      {
+        "title": "Detaillierte Beurteilung",
+        "description": "Erforderliche Untersuchungen werden entsprechend den individuellen Befunden und Bedürfnissen berücksichtigt."
+      },
+      {
+        "title": "Individuelle Planung",
+        "description": "Informationen und das weitere Vorgehen werden entsprechend den persönlichen Bedürfnissen auf Basis der Untersuchung geplant."
+      }
+    ],
+    "doctor": {
+      "sectionTitle": "Fachärztliche Beurteilung in der Augengesundheit",
+      "name": "Uzm. Dr. Sina Evsen",
+      "role": "Facharzt für Augenheilkunde",
+      "description": "Bei Beurteilungen im Zusammenhang mit der Augengesundheit erfolgt die Planung entsprechend den Untersuchungsbefunden und individuellen Bedürfnissen.",
+      "image": "/images/goz-hastaliklari/uzm-dr-sina-evsen.jpg",
+      "imageAlt": "Uzm. Dr. Sina Evsen, Facharzt für Augenheilkunde",
+      "cta": "Termin anfragen"
+    },
+    "categoriesIntro": {
+      "title": "Augenerkrankungen",
+      "description": "Verschiedene Themen der Augengesundheit werden entsprechend den Untersuchungsbefunden und individuellen Bedürfnissen beurteilt."
+    },
+    "closingCta": {
+      "title": "Termin für Ihre Augengesundheit anfragen",
+      "description": "Sie können eine Terminanfrage senden, um Informationen über den Untersuchungs- und Beurteilungsprozess zu erhalten.",
+      "cta": "Termin anfragen"
+    }
+  },
+  "nav": {
+    "menuLabel": "Augengesundheit",
+    "submenuAriaLabel": "Menü Augengesundheit",
+    "toggleAriaLabel": "Untermenü Augengesundheit öffnen",
+    "processTitle": "Beurteilungsprozess",
+    "topicCta": "Termin anfragen",
+    "breadcrumbHome": "Startseite",
+    "pageShortName": "Augengesundheit"
+  },
+  "categories": [
+    {
+      "id": "goz-muayenesi-genel-saglik",
+      "title": "Augenuntersuchung und allgemeine Augengesundheit",
+      "icon": "exam",
+      "topics": [
+        {
+          "title": "Augenuntersuchung",
+          "description": "Ein Prozess, bei dem Sehschärfe, vordere und hintere Strukturen des Auges sowie erforderliche Tests gemeinsam beurteilt werden."
+        },
+        {
+          "title": "Bindehautentzündung",
+          "description": "Umfasst die Beurteilung von Reizungen und entzündlichen Zuständen der Bindehaut, der Schicht auf der Vorderfläche des Auges."
+        },
+        {
+          "title": "Gerstenkorn",
+          "description": "Umfasst die Beurteilung lokaler Lid-drüsenprobleme, die sich durch Rötung, Empfindlichkeit und Schwellung am Augenlid äußern können."
+        },
+        {
+          "title": "Hagelkorn",
+          "description": "Umfasst die Beurteilung lokalisierter Schwellungen, die durch Verstopfung der Talgdrüsen im Augenlid entstehen können."
+        }
+      ]
+    },
+    {
+      "id": "goz-kusurlari-ve-lazer",
+      "title": "Refraktionsfehler und Laserverfahren",
+      "icon": "laser",
+      "topics": [
+        {
+          "title": "Laser-Augenchirurgie",
+          "description": "Die Eignung für Laserverfahren bei Refraktionsfehlern wird nach einer detaillierten Augenuntersuchung beurteilt."
+        },
+        {
+          "title": "Myopie",
+          "description": "Ein Refraktionsfehler, der dazu führen kann, dass entfernte Objekte verschwommen erscheinen."
+        },
+        {
+          "title": "Astigmatismus",
+          "description": "Ein Refraktionsfehler, der durch Unregelmäßigkeiten in der optischen Struktur des Auges verschwommenes oder verzerrtes Sehen verursachen kann."
+        },
+        {
+          "title": "Hyperopie",
+          "description": "Ein Refraktionsfehler, der mit Schwierigkeiten beim Nahsehen in Verbindung gebracht werden kann."
+        }
+      ]
+    },
+    {
+      "id": "katarakt-ve-goz-ici-mercekler",
+      "title": "Katarakt und Intraokularlinsen",
+      "icon": "lens",
+      "topics": [
+        {
+          "title": "Was ist Katarakt?",
+          "description": "Katarakt ist ein Zustand, der mit dem Verlust der Transparenz der natürlichen Linse im Auge verbunden ist."
+        },
+        {
+          "title": "Kataraktoperation",
+          "description": "Chirurgische Optionen bei Katarakt werden entsprechend den Untersuchungsbefunden und individuellen Bedürfnissen beurteilt."
+        },
+        {
+          "title": "Intraokularlinse",
+          "description": "Optionen für Intraokularlinsen werden entsprechend der Augenstruktur und den Sehbedürfnissen beurteilt."
+        },
+        {
+          "title": "Trifokale Linse",
+          "description": "Umfasst die Beurteilung multifokaler Linsenoptionen für Fern-, Zwischen- und Nahsehbedürfnisse."
+        }
+      ]
+    },
+    {
+      "id": "retina-ve-goz-ici-hastaliklar",
+      "title": "Netzhaut und intraokuläre Erkrankungen",
+      "icon": "retina",
+      "topics": [
+        {
+          "title": "Makuladegeneration",
+          "description": "Umfasst die Beurteilung von Zuständen, die die Makula, den für das zentrale Sehen verantwortlichen Bereich, betreffen können."
+        },
+        {
+          "title": "Netzhaut",
+          "description": "Die Netzhaut ist die lichtempfindliche Schicht im hinteren Bereich des Auges, die an der Bildverarbeitung beteiligt ist."
+        },
+        {
+          "title": "Uveitis",
+          "description": "Umfasst die Beurteilung entzündlicher Zustände, die die Uvea-Schicht des Auges betreffen können."
+        }
+      ]
+    },
+    {
+      "id": "goz-kapagi-ve-orbita",
+      "title": "Augenlid und Orbita",
+      "icon": "eyelid",
+      "topics": [
+        {
+          "title": "Lidptose",
+          "description": "Umfasst die Beurteilung von Zuständen, bei denen das obere Augenlid die Augenöffnung beeinflussen kann."
+        },
+        {
+          "title": "Lidästhetik",
+          "description": "Funktionelle oder ästhetische Beurteilungen der Lidregion werden unter Berücksichtigung der Augen- und Gesichtsstruktur geplant."
+        },
+        {
+          "title": "Orbitachirurgie",
+          "description": "Umfasst chirurgische Beurteilungen im Zusammenhang mit Knochen- und Weichteilstrukturen rund um das Auge."
+        }
+      ]
+    },
+    {
+      "id": "diger-goz-tedavileri",
+      "title": "Weitere Augenbehandlungen",
+      "icon": "care",
+      "topics": [
+        {
+          "title": "Augenchirurgie",
+          "description": "Optionen im Zusammenhang mit Augenchirurgie werden entsprechend Diagnose, Untersuchungsbefunden und individuellen Bedürfnissen beurteilt."
+        },
+        {
+          "title": "Schielstellung",
+          "description": "Umfasst die Beurteilung von Zuständen im Zusammenhang mit der Ausrichtung und koordinierten Bewegung der Augen."
+        }
+      ]
+    }
+  ]
+}
