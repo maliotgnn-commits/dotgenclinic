@@ -24,7 +24,7 @@ const [catalog, uiDictionary, eyeContent] = await Promise.all([
   loadUiDictionary(locale),
   loadEyeHealthContent(locale),
 ]);
-const categoryGroups = buildCategoryGroups(catalog);
+const categoryGroups = buildCategoryGroups(catalog, uiDictionary);
 const t = (source) => translate(uiDictionary, source);
 
 function escapeHtml(value) {
@@ -49,7 +49,7 @@ function renderNavGroups() {
 
       return `
         <li class="has-dropdown">
-          <a href="#">${escapeHtml(group.label)} ${renderChevron()}</a>
+          <a href="#">${escapeHtml(group.navLabel)} ${renderChevron()}</a>
           <div class="mega-dropdown">
             <div class="mega-col">
               <h4>${escapeHtml(group.label)}</h4>

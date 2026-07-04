@@ -268,11 +268,29 @@ export function applySeoLinks(locale, pageType = 'home', slug = null) {
   upsertSeoLink('alternate', 'x-default', defaultHref);
 }
 
-export function buildCategoryGroups(catalog) {
+export const CATEGORY_NAV_UI_KEYS = {
+  corporate: 'Kurumsal',
+  hair: 'Saç Ekimi',
+  dental: 'Diş Estetiği',
+  plastic: 'Estetik Cerrahi',
+  medical: 'Medikal Estetik',
+  longevity: 'Fonksiyonel Sağlık',
+};
+
+function categoryNavLabel(categoryKey, catalog, uiDictionary) {
+  const uiKey = CATEGORY_NAV_UI_KEYS[categoryKey];
+  if (uiKey) {
+    return translate(uiDictionary, uiKey);
+  }
+  return catalog.categoryConfig[categoryKey]?.label || categoryKey;
+}
+
+export function buildCategoryGroups(catalog, uiDictionary = null) {
   return catalog.categoryOrder
     .map((categoryKey) => ({
       key: categoryKey,
       label: catalog.categoryConfig[categoryKey]?.label || categoryKey,
+      navLabel: categoryNavLabel(categoryKey, catalog, uiDictionary),
       items: catalog.pages
         .filter((page) => page.category === categoryKey)
         .map(({ slug, navLabel, title }) => ({ slug, navLabel, title })),
