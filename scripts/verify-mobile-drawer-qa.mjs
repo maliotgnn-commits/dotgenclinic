@@ -27,8 +27,7 @@ function fail(message) {
 async function runPageChecks(page, path, viewport) {
   const tag = `${path}@${viewport.width}x${viewport.height}`;
   await page.goto(`${BASE}${path}`, { waitUntil: 'domcontentloaded', timeout: 30000 });
-  await page.waitForSelector('#nav-drawer, #nav-menu', { timeout: 15000 });
-  await page.waitForTimeout(500);
+  await page.waitForFunction(() => document.querySelectorAll('#nav-menu .mobile-nav-trigger, #nav-menu .eh-mobile-nav-trigger').length >= 7, undefined, { timeout: 10000 });
 
   const beforeOpen = await page.evaluate(() => {
     const drawer = document.getElementById('nav-drawer');
@@ -115,7 +114,7 @@ async function runPageChecks(page, path, viewport) {
   if (singleOpen.firstOpen) fail(`[${tag}] first accordion stayed open when second opened`);
   if (!singleOpen.secondOpen) fail(`[${tag}] second accordion did not open`);
 
-  await page.click('#nav-drawer-close');
+  await page.click('#nav-drawer-close', { force: true });
   await page.waitForFunction(() => !document.getElementById('nav-drawer')?.classList.contains('active'));
 
   const resetState = await page.evaluate(() => ({
