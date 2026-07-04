@@ -437,6 +437,13 @@ to {
   grid-template-columns: auto minmax(0, 1fr) auto
 }
 
+.nav-container.is-nav-fitting .nav-menu>li>a,
+.nav-container.is-nav-fitting .nav-menu>li>a:after,
+.nav-container.is-nav-fitting .has-dropdown[data-eye-health-nav] .eh-nav-item-head,
+.nav-container.is-nav-fitting .has-dropdown[data-eye-health-nav] .eh-nav-item-head:after {
+  transition: none !important
+}
+
 .nav-logo {
   flex-shrink: 0;
   grid-column: 1;
@@ -484,7 +491,7 @@ to {
   color: var(--text-secondary);
   letter-spacing: .3px;
   white-space: nowrap;
-  transition: var(--transition);
+  transition: color var(--transition), transform var(--transition);
   align-items: center;
   gap: clamp(3px, 0.2vw, 5px);
   padding-block: 28px;
@@ -662,7 +669,7 @@ to {
     color: var(--text-secondary);
     letter-spacing: .3px;
     white-space: nowrap;
-    transition: var(--transition);
+    transition: color var(--transition), transform var(--transition);
     align-items: center;
     gap: clamp(3px, 0.2vw, 5px);
     padding-block: 28px;

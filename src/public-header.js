@@ -4,13 +4,44 @@ import { initEyeHealthNavBehavior } from './tr-eye-health-nav.js';
 const DESKTOP_NAV_BREAKPOINT = 1280;
 const NAV_FIT_MIN_SCALE = 0.72;
 const NAV_SCALE_EPSILON = 0.008;
+const NAV_FITTING_CLASS = 'is-nav-fitting';
 
 let scheduledFitFrame = null;
+let lastFittedViewport = 0;
+let fitRunCount = 0;
+
+function debugNavFit(hypothesisId, message, data) {
+  fitRunCount += 1;
+  // #region agent log
+  fetch('http://127.0.0.1:7351/ingest/978326e2-ed1a-492b-ba34-cad4578e33a0', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': 'b8423a' },
+    body: JSON.stringify({
+      sessionId: 'b8423a',
+      runId: 'post-fix-v2',
+      hypothesisId,
+      location: 'public-header.js',
+      message,
+      data: { ...data, fitRunCount },
+      timestamp: Date.now(),
+    }),
+  }).catch(() => {});
+  // #endregion
+}
 
 function readNavFitScale(container) {
   const raw = getComputedStyle(container).getPropertyValue('--nav-fit-scale').trim();
   const parsed = parseFloat(raw);
   return Number.isFinite(parsed) ? parsed : 1;
+}
+
+function withNavFitting(container, fn) {
+  container.classList.add(NAV_FITTING_CLASS);
+  try {
+    return fn();
+  } finally {
+    container.classList.remove(NAV_FITTING_CLASS);
+  }
 }
 
 function measureMenuWidthAtScale(container, navMenu, scale) {
@@ -23,11 +54,37 @@ function measureMenuWidthAtScale(container, navMenu, scale) {
 
 function applyNavFitScale(container, nextScale) {
   const current = readNavFitScale(container);
-  if (Math.abs(current - nextScale) < NAV_SCALE_EPSILON) return;
+  if (Math.abs(current - nextScale) < NAV_SCALE_EPSILON) {
+    return { applied: false, current, next: nextScale };
+  }
   container.style.setProperty('--nav-fit-scale', String(nextScale));
+  return { applied: true, current, next: nextScale };
 }
 
-export function fitHeaderNavigation(root = document) {
+function computeTargetScale(container, navMenu, available) {
+  const neededAtFull = measureMenuWidthAtScale(container, navMenu, 1);
+  if (neededAtFull <= available) return { target: 1, neededAtFull };
+
+  let target = Math.max(NAV_FIT_MIN_SCALE, available / neededAtFull);
+
+  if (measureMenuWidthAtScale(container, navMenu, target) > available) {
+    let low = NAV_FIT_MIN_SCALE;
+    let high = target;
+    for (let step = 0; step < 6; step += 1) {
+      const mid = (low + high) / 2;
+      if (measureMenuWidthAtScale(container, navMenu, mid) > available) {
+        high = mid;
+      } else {
+        low = mid;
+      }
+    }
+    target = low;
+  }
+
+  return { target, neededAtFull };
+}
+
+export function fitHeaderNavigation(root = document, source = 'direct') {
   const container = root.querySelector('.nav-container');
   const primary = root.querySelector('.nav-primary');
   const navMenu = root.getElementById('nav-menu');
@@ -35,44 +92,57 @@ export function fitHeaderNavigation(root = document) {
 
   if (window.innerWidth <= DESKTOP_NAV_BREAKPOINT) {
     container.style.removeProperty('--nav-fit-scale');
+    container.classList.remove(NAV_FITTING_CLASS);
+    debugNavFit('D', 'mobile-reset', { source, innerWidth: window.innerWidth });
     return;
   }
 
   const available = primary.clientWidth;
   if (!available) return;
 
-  const neededAtFull = measureMenuWidthAtScale(container, navMenu, 1);
-  if (neededAtFull <= available) {
-    applyNavFitScale(container, 1);
-    return;
-  }
+  const scaleBefore = readNavFitScale(container);
+  const link = navMenu.querySelector('li>a, .eh-nav-item-head');
+  const transitionBefore = link ? getComputedStyle(link).transitionDuration : null;
 
-  let low = NAV_FIT_MIN_SCALE;
-  let high = 1;
+  let result = { applied: false, current: scaleBefore, next: scaleBefore };
+  let neededAtFull = 0;
 
-  if (measureMenuWidthAtScale(container, navMenu, low) > available) {
-    applyNavFitScale(container, low);
-    return;
-  }
+  withNavFitting(container, () => {
+    const computed = computeTargetScale(container, navMenu, available);
+    neededAtFull = computed.neededAtFull;
+    result = applyNavFitScale(container, computed.target);
+  });
 
-  for (let step = 0; step < 8; step += 1) {
-    const mid = (low + high) / 2;
-    if (measureMenuWidthAtScale(container, navMenu, mid) > available) {
-      high = mid;
-    } else {
-      low = mid;
-    }
-  }
-
-  applyNavFitScale(container, low);
+  debugNavFit('A', 'fit-complete', {
+    source,
+    scaleBefore,
+    scaleAfter: readNavFitScale(container),
+    applied: result.applied,
+    available,
+    neededAtFull,
+    transitionBefore,
+    fittingClassActive: container.classList.contains(NAV_FITTING_CLASS),
+  });
 }
 
-function scheduleHeaderNavigationFit(root = document) {
+function scheduleHeaderNavigationFit(root = document, source = 'scheduled') {
   if (scheduledFitFrame !== null) return;
   scheduledFitFrame = requestAnimationFrame(() => {
     scheduledFitFrame = null;
-    fitHeaderNavigation(root);
+    fitHeaderNavigation(root, source);
   });
+}
+
+async function runInitialDesktopNavFit(root) {
+  if (document.fonts?.ready) {
+    try {
+      await document.fonts.ready;
+    } catch {
+      // Ignore font loading errors; fit with fallback metrics.
+    }
+  }
+  lastFittedViewport = window.innerWidth;
+  scheduleHeaderNavigationFit(root, 'initial');
 }
 
 export function initSiteHeader(root = document, { trackScroll = false } = {}) {
@@ -154,17 +224,11 @@ export function initSiteHeader(root = document, { trackScroll = false } = {}) {
   initMegaMenuA11y(root);
   initEyeHealthNavBehavior(root);
 
-  scheduleHeaderNavigationFit(root);
-  window.addEventListener('resize', () => scheduleHeaderNavigationFit(root), { passive: true });
-  if (typeof ResizeObserver !== 'undefined') {
-    const primary = root.querySelector('.nav-primary');
-    if (primary) {
-      const observer = new ResizeObserver(() => scheduleHeaderNavigationFit(root));
-      observer.observe(primary);
-    }
-  }
-  if (document.fonts?.ready) {
-    document.fonts.ready.then(() => scheduleHeaderNavigationFit(root)).catch(() => {});
-  }
-  window.addEventListener('load', () => scheduleHeaderNavigationFit(root), { once: true, passive: true });
+  runInitialDesktopNavFit(root);
+
+  window.addEventListener('resize', () => {
+    if (Math.abs(window.innerWidth - lastFittedViewport) < 1) return;
+    lastFittedViewport = window.innerWidth;
+    scheduleHeaderNavigationFit(root, 'resize');
+  }, { passive: true });
 }
