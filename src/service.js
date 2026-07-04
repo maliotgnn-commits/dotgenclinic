@@ -1,7 +1,7 @@
 import './style.css';
 import './service.css';
 import { initCustomCursor } from './cursor.js';
-import { initSiteHeader } from './public-header.js';
+import { initSiteHeader, renderMobileCategoryTrigger, renderNavChevron } from './public-header.js';
 import { renderEyeHealthNavItem } from './tr-eye-health-nav.js';
 import { loadEyeHealthContent } from './eye-health-content.js';
 import {
@@ -42,7 +42,7 @@ function escapeHtml(value) {
 }
 
 function renderChevron() {
-  return '<svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>';
+  return renderNavChevron();
 }
 
 function renderNavGroups() {
@@ -56,8 +56,12 @@ function renderNavGroups() {
 
       return `
         <li class="has-dropdown">
-          <a href="#" aria-label="${escapeHtml(group.label)}">${escapeHtml(group.navLabel)} ${renderChevron()}</a>
-          <div class="mega-dropdown">
+          ${renderMobileCategoryTrigger({
+            label: escapeHtml(group.navLabel),
+            panelId: `nav-panel-${group.key}`,
+            fullLabel: escapeHtml(group.label),
+          })}
+          <div class="mega-dropdown" id="nav-panel-${group.key}">
             <div class="mega-col">
               <h4>${escapeHtml(group.label)}</h4>
               ${links}
