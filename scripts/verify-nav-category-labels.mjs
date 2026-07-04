@@ -1,7 +1,6 @@
 import { readFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { chromium } from 'playwright';
 import { buildCategoryGroups, CATEGORY_NAV_UI_KEYS, translate } from '../src/i18n.js';
 import { EYE_HEALTH_ROUTES } from '../src/eye-health-routes.js';
 import { CATEGORY_CONFIG, CATEGORY_ORDER, SUBPAGES } from '../src/subpages-data.js';
@@ -67,6 +66,7 @@ async function validateStaticNavLabels() {
 }
 
 async function validateRenderedNavFit() {
+  const { chromium } = await import('playwright');
   const browser = await chromium.launch({ channel: 'chrome', headless: true });
   const context = await browser.newContext({
     viewport: { width: 1440, height: 900 },
