@@ -17,6 +17,8 @@ import {
 import { mountLanguageSwitcher } from './language-switcher.js';
 import { mountInstagramFloat } from './instagram-float.js';
 import { initSiteHeader } from './public-header.js';
+import { loadEyeHealthContent } from './eye-health-content.js';
+import { upgradeLocalizedEyeHealthNav } from './tr-eye-health-nav.js';
 
 const locale = getCurrentLocale('home');
 const uiDictionary = await loadUiDictionary(locale);
@@ -182,6 +184,14 @@ function initIntro() {
 }
 
 function initHeader() {
+  const navMenu = document.getElementById('nav-menu');
+  if (navMenu && locale !== 'tr') {
+    loadEyeHealthContent(locale).then((content) => {
+      upgradeLocalizedEyeHealthNav(navMenu, locale, content);
+      initSiteHeader(document);
+    });
+    return;
+  }
   initSiteHeader(document);
 }
 

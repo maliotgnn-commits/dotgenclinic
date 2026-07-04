@@ -10,13 +10,24 @@ const PAGES = [
   '/tr/',
   '/tr/goz-hastaliklari.html',
   '/en/',
-  '/ru/',
-  '/ru/%D0%B7%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D1%8C%D0%B5-%D0%B3%D0%BB%D0%B0%D0%B7.html',
   '/de/',
   '/fr/',
+  '/ru/',
+  '/ru/%D0%B7%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D1%8C%D0%B5-%D0%B3%D0%BB%D0%B0%D0%B7.html',
   '/ar/',
   '/ar/%D8%B5%D8%AD%D8%A9-%D8%A7%D9%84%D8%B9%D9%8A%D9%86.html',
 ];
+
+const EYE_HEALTH_PATHS = {
+  tr: '/tr/goz-hastaliklari.html',
+  en: '/en/eye-health.html',
+  de: '/de/augengesundheit.html',
+  fr: '/fr/sante-oculaire.html',
+  ru: '/ru/%D0%B7%D0%B4%D0%BE%D1%80%D0%BE%D0%B2%D1%8C%D0%B5-%D0%B3%D0%BB%D0%B0%D0%B7.html',
+  ar: '/ar/%D8%B5%D8%AD%D8%A9-%D8%A7%D9%84%D8%B9%D9%8A%D9%86.html',
+  es: '/es/salud-ocular.html',
+  it: '/it/salute-oculare.html',
+};
 
 const failures = [];
 
@@ -24,24 +35,71 @@ function fail(message) {
   failures.push(message);
 }
 
+function localeFromPath(path) {
+  const match = path.match(/^\/([a-z]{2})\//);
+  return match?.[1] || 'tr';
+}
+
 async function runPageChecks(page, path, viewport) {
   const tag = `${path}@${viewport.width}x${viewport.height}`;
-  await page.goto(`${BASE}${path}`, { waitUntil: 'domcontentloaded', timeout: 30000 });
-  await page.waitForFunction(() => document.querySelectorAll('#nav-menu .mobile-nav-trigger, #nav-menu .eh-mobile-nav-trigger').length >= 7, undefined, { timeout: 10000 });
+  const locale = localeFromPath(path);
+  const expectedEyePath = EYE_HEALTH_PATHS[locale];
 
-  const beforeOpen = await page.evaluate(() => {
+  await page.goto(`${BASE}${path}`, { waitUntil: 'domcontentloaded', timeout: 30000 });
+  await page.waitForFunction(
+    (expectedEyePath) => {
+      const triggers = document.querySelectorAll(
+        '#nav-menu > li > .mobile-nav-trigger, #nav-menu > li > .eh-mobile-nav-trigger',
+      );
+      if (triggers.length < 7) return false;
+      if (!expectedEyePath) return true;
+      const primary = document.querySelector('#nav-menu [data-eye-health-nav] .eh-nav-primary-link');
+      const href = primary?.getAttribute('href') || '';
+      return decodeURIComponent(href.split('#')[0]) === decodeURIComponent(expectedEyePath);
+    },
+    expectedEyePath || null,
+    { timeout: 15000 },
+  );
+
+  const markupState = await page.evaluate(() => {
+    const triggers = [
+      ...document.querySelectorAll('#nav-menu > li > .mobile-nav-trigger, #nav-menu > li > .eh-mobile-nav-trigger'),
+    ];
+    const labels = triggers.map((el) => (el.querySelector('.mobile-nav-label') || el).textContent.trim());
+    const desktopLinks = [...document.querySelectorAll('#nav-menu > li > a.desktop-nav-trigger')];
+    const visibleDesktop = desktopLinks.filter((el) => getComputedStyle(el).display !== 'none');
+    const panelIds = triggers.map((el) => el.getAttribute('aria-controls')).filter(Boolean);
+    const uniquePanelIds = new Set(panelIds);
+    const ariaExpanded = triggers.map((el) => el.getAttribute('aria-expanded'));
     const drawer = document.getElementById('nav-drawer');
     const scroll = document.querySelector('.nav-drawer-scroll');
-    const firstTrigger = document.querySelector('#nav-menu .mobile-nav-trigger');
     const drawerTop = drawer?.querySelector('.nav-drawer-top')?.getBoundingClientRect();
+    const firstTrigger = triggers[0];
     const firstRow = firstTrigger?.getBoundingClientRect();
+    const eyeItem = document.querySelector('#nav-menu [data-eye-health-nav]');
+    const eyeLinks = eyeItem
+      ? [...eyeItem.querySelectorAll('.eh-nav-primary-link[href], .mega-dropdown a[href]')].map((a) =>
+          a.getAttribute('href'),
+        )
+      : [];
+    const closeBtn = document.getElementById('nav-drawer-close');
+    const hamburger = document.getElementById('hamburger');
+
     return {
+      triggerCount: triggers.length,
+      labels,
+      duplicateLabels: labels.filter((label, index) => labels.indexOf(label) !== index),
+      visibleDesktopCount: visibleDesktop.length,
+      panelIds,
+      panelIdDuplicates: panelIds.length !== uniquePanelIds.size,
+      missingAriaExpanded: ariaExpanded.some((value) => value !== 'false' && value !== 'true'),
       hasDrawer: Boolean(drawer),
       hasScroll: Boolean(scroll),
       hasMobileCta: Boolean(document.querySelector('.nav-mobile-cta, .nav-mobile-cta-item')),
-      bodyOverflow: getComputedStyle(document.body).overflow,
+      hasCloseHandler: Boolean(closeBtn),
+      hasHamburger: Boolean(hamburger),
       firstTop: firstRow && drawerTop ? Math.round(firstRow.top - drawerTop.bottom) : null,
-      rowStyles: [...document.querySelectorAll('#nav-menu > li > .mobile-nav-trigger, #nav-menu > li > .eh-mobile-nav-trigger')].slice(0, 7).map((el) => {
+      rowStyles: triggers.slice(0, 7).map((el) => {
         const cs = getComputedStyle(el);
         return {
           fontSize: cs.fontSize,
@@ -52,23 +110,55 @@ async function runPageChecks(page, path, viewport) {
           paddingBottom: cs.paddingBottom,
         };
       }),
+      eyeLinks,
+      desktopNavVisible: getComputedStyle(document.querySelector('.nav-primary .nav-menu') || document.body).display,
     };
   });
 
-  if (!beforeOpen.hasDrawer) fail(`[${tag}] nav-drawer missing`);
-  if (!beforeOpen.hasScroll) fail(`[${tag}] nav-drawer-scroll missing`);
-  if (beforeOpen.hasMobileCta) fail(`[${tag}] mobile drawer CTA still present`);
-  if (beforeOpen.firstTop == null || beforeOpen.firstTop < 8 || beforeOpen.firstTop > 48) {
-    fail(`[${tag}] first menu row not aligned under drawer top bar (gap ${beforeOpen.firstTop}px)`);
+  if (!markupState.hasDrawer) fail(`[${tag}] nav-drawer missing`);
+  if (!markupState.hasScroll) fail(`[${tag}] nav-drawer-scroll missing`);
+  if (!markupState.hasCloseHandler) fail(`[${tag}] nav-drawer-close missing`);
+  if (!markupState.hasHamburger) fail(`[${tag}] hamburger missing`);
+  if (markupState.hasMobileCta) fail(`[${tag}] mobile drawer CTA still present`);
+  if (markupState.triggerCount !== 7) {
+    fail(`[${tag}] expected exactly 7 top-level mobile triggers, found ${markupState.triggerCount}`);
   }
-  if (beforeOpen.rowStyles.length < 7) {
-    fail(`[${tag}] expected 7 mobile triggers, found ${beforeOpen.rowStyles.length}`);
+  if (markupState.duplicateLabels.length) {
+    fail(`[${tag}] duplicate top-level labels: ${markupState.duplicateLabels.join(', ')}`);
+  }
+  if (markupState.visibleDesktopCount > 0) {
+    fail(`[${tag}] ${markupState.visibleDesktopCount} desktop-nav-trigger link(s) visible on mobile`);
+  }
+  if (markupState.panelIdDuplicates) {
+    fail(`[${tag}] duplicate aria-controls panel ids`);
+  }
+  if (markupState.missingAriaExpanded) {
+    fail(`[${tag}] mobile trigger missing aria-expanded`);
+  }
+  if (markupState.firstTop == null || markupState.firstTop < 8 || markupState.firstTop > 48) {
+    fail(`[${tag}] first menu row not aligned under drawer top bar (gap ${markupState.firstTop}px)`);
+  }
+  if (markupState.rowStyles.length < 7) {
+    fail(`[${tag}] expected 7 styled mobile rows, found ${markupState.rowStyles.length}`);
   } else {
-    const ref = beforeOpen.rowStyles[0];
-    beforeOpen.rowStyles.forEach((row, index) => {
+    const ref = markupState.rowStyles[0];
+    markupState.rowStyles.forEach((row, index) => {
       Object.keys(ref).forEach((key) => {
         if (row[key] !== ref[key]) fail(`[${tag}] row ${index} ${key} mismatch (${row[key]} vs ${ref[key]})`);
       });
+    });
+  }
+
+  if (expectedEyePath && markupState.eyeLinks.length) {
+    const normalizedExpected = decodeURIComponent(expectedEyePath);
+    markupState.eyeLinks.forEach((href, index) => {
+      if (!href || href.includes('#')) {
+        fail(`[${tag}] eye health link ${index} contains hash or is empty: ${href}`);
+      }
+      const normalizedHref = decodeURIComponent(href.split('#')[0]);
+      if (normalizedHref !== normalizedExpected) {
+        fail(`[${tag}] eye health link ${index} expected ${normalizedExpected}, got ${normalizedHref}`);
+      }
     });
   }
 
@@ -78,32 +168,48 @@ async function runPageChecks(page, path, viewport) {
   const openState = await page.evaluate(() => ({
     drawerOpen: document.getElementById('nav-drawer')?.classList.contains('active'),
     bodyOverflow: document.body.classList.contains('mobile-nav-open'),
-    bodyScroll: document.body.scrollHeight > window.innerHeight ? getComputedStyle(document.body).overflow : 'ok',
   }));
 
   if (!openState.drawerOpen) fail(`[${tag}] drawer did not open`);
   if (!openState.bodyOverflow) fail(`[${tag}] body scroll lock missing`);
 
-  const firstTrigger = page.locator('#nav-menu > li:first-child .mobile-nav-trigger').first();
+  const firstTrigger = page.locator('#nav-menu > li:first-child .mobile-nav-trigger, #nav-menu > li:first-child .eh-mobile-nav-trigger').first();
   await firstTrigger.click();
 
-  const accordionState = await page.evaluate(() => {
+  const accordionOpen = await page.evaluate(() => {
     const firstItem = document.querySelector('#nav-menu > li:first-child.has-dropdown');
     const panel = firstItem?.querySelector('.mega-dropdown');
-    const trigger = firstItem?.querySelector('.mobile-nav-trigger');
+    const trigger = firstItem?.querySelector('.mobile-nav-trigger, .eh-mobile-nav-trigger');
     return {
       open: firstItem?.classList.contains('open'),
       aria: trigger?.getAttribute('aria-expanded'),
       panelDisplay: panel ? getComputedStyle(panel).display : null,
-      chevronTransform: trigger?.querySelector('svg') ? getComputedStyle(trigger.querySelector('svg')).transform : null,
     };
   });
 
-  if (!accordionState.open) fail(`[${tag}] first accordion did not open`);
-  if (accordionState.aria !== 'true') fail(`[${tag}] aria-expanded not true after open`);
-  if (!accordionState.panelDisplay || accordionState.panelDisplay === 'none') fail(`[${tag}] submenu panel hidden after open`);
+  if (!accordionOpen.open) fail(`[${tag}] first accordion did not open`);
+  if (accordionOpen.aria !== 'true') fail(`[${tag}] aria-expanded not true after open`);
+  if (!accordionOpen.panelDisplay || accordionOpen.panelDisplay === 'none') {
+    fail(`[${tag}] submenu panel hidden after open`);
+  }
 
-  const secondTrigger = page.locator('#nav-menu > li:nth-child(2) .mobile-nav-trigger').first();
+  await firstTrigger.click();
+
+  const accordionClosed = await page.evaluate(() => {
+    const firstItem = document.querySelector('#nav-menu > li:first-child.has-dropdown');
+    const trigger = firstItem?.querySelector('.mobile-nav-trigger, .eh-mobile-nav-trigger');
+    return {
+      open: firstItem?.classList.contains('open'),
+      aria: trigger?.getAttribute('aria-expanded'),
+    };
+  });
+
+  if (accordionClosed.open) fail(`[${tag}] first accordion did not close on second click`);
+  if (accordionClosed.aria !== 'false') fail(`[${tag}] aria-expanded not false after close`);
+
+  await firstTrigger.click();
+
+  const secondTrigger = page.locator('#nav-menu > li:nth-child(2) .mobile-nav-trigger, #nav-menu > li:nth-child(2) .eh-mobile-nav-trigger').first();
   await secondTrigger.click();
 
   const singleOpen = await page.evaluate(() => ({
@@ -114,13 +220,36 @@ async function runPageChecks(page, path, viewport) {
   if (singleOpen.firstOpen) fail(`[${tag}] first accordion stayed open when second opened`);
   if (!singleOpen.secondOpen) fail(`[${tag}] second accordion did not open`);
 
+  const eyeTrigger = page.locator('#nav-menu [data-eye-health-nav] .mobile-nav-trigger, #nav-menu [data-eye-health-nav] .eh-mobile-nav-trigger').first();
+  if (await eyeTrigger.count()) {
+    await eyeTrigger.click();
+    const eyeOpen = await page.evaluate(() => {
+      const item = document.querySelector('#nav-menu [data-eye-health-nav]');
+      const panel = item?.querySelector('.mega-dropdown');
+      return {
+        open: item?.classList.contains('open'),
+        panelDisplay: panel ? getComputedStyle(panel).display : null,
+        linkCount: item ? item.querySelectorAll('.mega-dropdown a[href]').length : 0,
+      };
+    });
+    if (!eyeOpen.open) fail(`[${tag}] eye health accordion did not open`);
+    if (!eyeOpen.panelDisplay || eyeOpen.panelDisplay === 'none') {
+      fail(`[${tag}] eye health submenu hidden after open`);
+    }
+    if (eyeOpen.linkCount < 1) fail(`[${tag}] eye health submenu has no links`);
+  }
+
   await page.click('#nav-drawer-close', { force: true });
   await page.waitForFunction(() => !document.getElementById('nav-drawer')?.classList.contains('active'));
 
   const resetState = await page.evaluate(() => ({
     anyOpen: Boolean(document.querySelector('#nav-menu .has-dropdown.open')),
+    drawerClosed: !document.getElementById('nav-drawer')?.classList.contains('active'),
+    bodyLockCleared: !document.body.classList.contains('mobile-nav-open'),
   }));
   if (resetState.anyOpen) fail(`[${tag}] accordions not reset after drawer close`);
+  if (!resetState.drawerClosed) fail(`[${tag}] drawer did not close`);
+  if (!resetState.bodyLockCleared) fail(`[${tag}] body scroll lock not cleared after close`);
 }
 
 async function main() {
