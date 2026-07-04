@@ -69,7 +69,7 @@ async function validateRenderedNavFit() {
   const { chromium } = await import('playwright');
   const browser = await chromium.launch({ channel: 'chrome', headless: true });
   const context = await browser.newContext({
-    viewport: { width: 1440, height: 900 },
+    viewport: { width: 1366, height: 900 },
     reducedMotion: 'reduce',
   });
   const page = await context.newPage();
@@ -84,19 +84,35 @@ async function validateRenderedNavFit() {
     const metrics = await page.evaluate(() => {
       const primary = document.querySelector('.nav-primary');
       const navMenu = document.getElementById('nav-menu');
+      const actions = document.querySelector('.nav-actions');
+      const logo = document.querySelector('.nav-logo');
+      const actionsRect = actions.getBoundingClientRect();
+      const menuRect = navMenu.getBoundingClientRect();
+      const logoRect = logo.getBoundingClientRect();
+      const isRtl = document.documentElement.dir === 'rtl';
+      const gapToActions = isRtl
+        ? menuRect.left - actionsRect.right
+        : actionsRect.left - menuRect.right;
+      const gapToLogo = isRtl
+        ? logoRect.left - menuRect.right
+        : menuRect.left - logoRect.right;
       const links = [...document.querySelectorAll('#nav-menu > li > a, #nav-menu > li .eh-nav-primary-link')];
       return {
         scale: getComputedStyle(document.querySelector('.nav-container')).getPropertyValue('--nav-fit-scale').trim() || '1',
         available: primary?.clientWidth ?? 0,
-        needed: navMenu?.scrollWidth ?? 0,
-        overflow: (navMenu?.scrollWidth ?? 0) > (primary?.clientWidth ?? 0) + 1,
+        needed: Math.round(menuRect.width),
+        overflow: gapToActions < 16 || gapToLogo < 16,
+        gapToActions,
+        gapToLogo,
         linkOverflow: links.some((link) => link.scrollWidth > link.clientWidth + 1),
         pageOverflow: document.documentElement.scrollWidth - window.innerWidth,
         hairText: document.querySelector('#nav-menu > li:nth-child(2) > a')?.textContent.trim() ?? '',
       };
     });
 
-    assert(!metrics.overflow, `[${locale}] nav-menu exceeds nav-primary (${metrics.needed}/${metrics.available}, scale ${metrics.scale})`);
+    assert(!metrics.overflow, `[${locale}] nav-menu exceeds logo/actions corridor (${metrics.needed}px, scale ${metrics.scale}, gaps logo ${Math.round(metrics.gapToLogo)} / actions ${Math.round(metrics.gapToActions)})`);
+    assert(metrics.gapToActions >= 16, `[${locale}] nav-menu overlaps language bar (gap ${metrics.gapToActions}px)`);
+    assert(metrics.gapToLogo >= 16, `[${locale}] nav-menu overlaps logo (gap ${metrics.gapToLogo}px)`);
     assert(!metrics.linkOverflow, `[${locale}] a header category link overflowed its box`);
     assert(metrics.pageOverflow <= 1, `[${locale}] eye-health page horizontal overflow (${metrics.pageOverflow}px)`);
 

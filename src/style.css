@@ -581,7 +581,8 @@ to {
 
   .nav-primary {
     justify-content: center;
-    overflow: visible;
+    overflow-x: clip;
+    overflow-y: visible;
   }
 
   .nav-menu {
@@ -591,10 +592,16 @@ to {
     max-width: 100%;
     min-width: 0;
     position: relative;
+    gap: calc(clamp(0px, 0.2vw, 4px) * var(--nav-fit-scale));
   }
 
   .nav-menu>li {
     flex: 0 0 auto;
+  }
+
+  .nav-menu svg {
+    width: calc(10px * var(--nav-fit-scale));
+    height: calc(6px * var(--nav-fit-scale));
   }
 
   .has-dropdown[data-eye-health-nav] {
