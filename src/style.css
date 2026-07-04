@@ -588,9 +588,25 @@ to {
     flex-wrap: nowrap;
     justify-content: center;
     width: max-content;
-    max-width: 100%;
+    max-width: none;
     min-width: 0;
     position: relative;
+    gap: calc(clamp(0px, 0.2vw, 4px) * var(--nav-fit-scale));
+  }
+
+  .nav-menu>li>a {
+    padding-block: calc(28px * var(--nav-fit-scale));
+    padding-inline: calc(clamp(4px, 0.4vw + 2px, 12px) * var(--nav-fit-scale));
+    font-size: calc(clamp(11px, 0.3vw + 0.5rem, 14px) * var(--nav-fit-scale));
+  }
+
+  .nav-menu>li>a:after {
+    inset-inline: calc(clamp(8px, 0.7vw, 14px) * var(--nav-fit-scale));
+  }
+
+  .nav-menu svg {
+    width: calc(10px * var(--nav-fit-scale));
+    height: calc(6px * var(--nav-fit-scale));
   }
 
   .nav-menu>li {
@@ -671,8 +687,8 @@ to {
     white-space: nowrap;
     transition: color var(--transition), transform var(--transition);
     align-items: center;
-    gap: clamp(3px, 0.2vw, 5px);
-    padding-block: 28px;
+    gap: calc(clamp(3px, 0.2vw, 5px) * var(--nav-fit-scale));
+    padding-block: calc(28px * var(--nav-fit-scale));
     padding-inline: calc(clamp(4px, 0.4vw + 2px, 12px) * var(--nav-fit-scale));
     font-size: calc(clamp(11px, 0.3vw + 0.5rem, 14px) * var(--nav-fit-scale));
     font-weight: 500;
