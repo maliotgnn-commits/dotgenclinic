@@ -60,7 +60,7 @@ const CATEGORY_EYE_IMAGES = {
 function renderCategoryEyeImage(iconKey) {
   const src = CATEGORY_EYE_IMAGES[iconKey];
   if (!src) return '';
-  return `<img class="eh-category-eye" src="${src}" alt="" width="96" height="60" loading="lazy" decoding="async" aria-hidden="true" />`;
+  return `<span class="eh-category-eye-frame"><img class="eh-category-eye" src="${src}" alt="" width="96" height="60" loading="lazy" decoding="async" aria-hidden="true" /></span>`;
 }
 
 function renderNavGroups() {
