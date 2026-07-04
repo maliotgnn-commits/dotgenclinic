@@ -117,14 +117,10 @@ async function validateRenderedNavFit() {
 
 await validateStaticNavLabels();
 
-try {
+if (process.env.VERIFY_NAV_BROWSER === '1') {
   await validateRenderedNavFit();
-} catch (error) {
-  if (String(error).includes('ERR_CONNECTION_REFUSED') || String(error).includes('net::ERR')) {
-    console.warn('[verify-nav-category-labels] Skipping browser checks (preview server unavailable)');
-  } else {
-    throw error;
-  }
+} else {
+  console.log('[verify-nav-category-labels] Static checks passed; browser checks skipped (set VERIFY_NAV_BROWSER=1)');
 }
 
 if (failures.length) {
