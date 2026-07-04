@@ -243,5 +243,4 @@ export function initSiteHeader(root = document, { trackScroll = false } = {}) {
 
   initMegaMenuA11y(root);
   initEyeHealthNavBehavior(root);
-  refreshMobileNav();
 }

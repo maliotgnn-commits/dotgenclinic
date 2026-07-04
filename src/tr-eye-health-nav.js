@@ -97,6 +97,21 @@ export function extractEyeHealthNavBlock(html) {
   return match?.[0] ?? '';
 }
 
+export function upgradeLocalizedEyeHealthNav(navMenu, locale, content) {
+  if (!navMenu || locale === 'tr') return false;
+
+  const trOnlyItem = navMenu.querySelector('li[data-eye-health-nav][data-tr-only-nav]');
+  if (!trOnlyItem) return false;
+
+  const wrapper = document.createElement('div');
+  wrapper.innerHTML = renderEyeHealthNavItem({ locale, content }).trim();
+  const newItem = wrapper.firstElementChild;
+  if (!newItem) return false;
+
+  trOnlyItem.replaceWith(newItem);
+  return true;
+}
+
 export function injectEyeHealthNavForLocale(html, locale, content) {
   if (locale === 'tr') return html;
   const stripped = stripTrOnlyNav(html);

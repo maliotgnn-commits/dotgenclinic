@@ -780,8 +780,7 @@ to {
   }
 
   .mobile-nav-trigger,
-  .nav-menu > li > a.desktop-nav-trigger,
-  .has-dropdown[data-eye-health-nav] .eh-nav-item-head {
+  .eh-mobile-nav-trigger {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -800,6 +799,11 @@ to {
     box-sizing: border-box;
   }
 
+  .nav-menu > li > a.desktop-nav-trigger,
+  .has-dropdown[data-eye-health-nav] .eh-nav-item-head {
+    display: none;
+  }
+
   .mobile-nav-trigger {
     background: transparent;
     border-inline: 0;
@@ -809,6 +813,7 @@ to {
   }
 
   .mobile-nav-trigger:focus-visible,
+  .eh-mobile-nav-trigger:focus-visible,
   .has-dropdown[data-eye-health-nav] .eh-nav-toggle:focus-visible {
     outline: 2px solid var(--gold);
     outline-offset: 2px;
@@ -820,8 +825,7 @@ to {
   }
 
   .mobile-nav-trigger svg,
-  .nav-menu > li > a.desktop-nav-trigger svg,
-  .has-dropdown[data-eye-health-nav] .eh-nav-toggle svg {
+  .eh-mobile-nav-trigger svg {
     width: 10px;
     height: 6px;
     flex: 0 0 10px;
@@ -829,15 +833,8 @@ to {
   }
 
   .has-dropdown.open > .mobile-nav-trigger svg,
-  .has-dropdown.open > a.desktop-nav-trigger svg,
-  .has-dropdown[data-eye-health-nav].open .eh-nav-toggle svg,
   .has-dropdown[data-eye-health-nav].open > .eh-mobile-nav-trigger svg {
     transform: rotate(180deg);
-  }
-
-  .desktop-nav-trigger,
-  .has-dropdown[data-eye-health-nav] .eh-nav-item-head {
-    display: none;
   }
 
   .mobile-nav-label {

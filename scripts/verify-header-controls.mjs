@@ -181,6 +181,16 @@ assert(
   'mobile drawer category triggers must share unified row styles',
 );
 
+assert(
+  !/\.mobile-nav-trigger,\s*\n\s*\.nav-menu > li > a\.desktop-nav-trigger/.test(mobileNavRules),
+  'desktop-nav-trigger must not share mobile row display:flex styling (prevents duplicate visible rows)',
+);
+
+assert(
+  /\.nav-menu > li > a\.desktop-nav-trigger[\s\S]*?display:\s*none/.test(mobileNavRules),
+  'desktop-nav-trigger links must be display:none within the mobile breakpoint',
+);
+
 assertHeaderTemplate('index.html', read(resolve(ROOT, 'index.html')));
 assertHeaderTemplate('service.js', read(resolve(ROOT, 'src/service.js')));
 assertHeaderTemplate('privacy.js', read(resolve(ROOT, 'src/privacy.js')));
