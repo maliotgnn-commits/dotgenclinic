@@ -6,40 +6,15 @@ import { prerenderPrivacySeo } from './scripts/prerender-privacy-seo.mjs';
 import { prerenderEyeHealthSeo } from './scripts/prerender-eye-health-seo.mjs';
 import { verifyOgSocialImage } from './scripts/verify-og-social-image.mjs';
 import { runBuildValidations } from './scripts/run-build-validations.mjs';
-
-const localePattern = /^\/(?:tr|en|ar|es|fr|it|ru|de)(?:\/(?:service\.html|privacy\.html|goz-hastaliklari\.html|eye-health\.html|salud-ocular\.html|sante-oculaire\.html|salute-oculare\.html|augengesundheit\.html|[\u0600-\u06FF\u0400-\u04FF-]+\.html)?)?$/;
-
-const EYE_HEALTH_FILES = new Set([
-  'goz-hastaliklari.html',
-  'eye-health.html',
-  'salud-ocular.html',
-  'sante-oculaire.html',
-  'salute-oculare.html',
-  'augengesundheit.html',
-  'صحة-العين.html',
-  'здоровье-глаз.html',
-]);
+import { rewriteLocaleRequestUrl } from './scripts/locale-route-rewrite.mjs';
 
 function localeRoutes() {
   const rewriteLocaleUrl = (request) => {
     if (!request.url) return;
-    const url = new URL(request.url, 'http://localhost');
-    const match = url.pathname.match(localePattern);
-    if (!match) return;
-    const segment = url.pathname.split('/').pop();
-    if (match[1] === 'service.html') {
-      request.url = `/service.html${url.search}`;
-      return;
+    const rewritten = rewriteLocaleRequestUrl(request.url);
+    if (rewritten !== request.url) {
+      request.url = rewritten;
     }
-    if (match[1] === 'privacy.html') {
-      request.url = `/privacy.html${url.search}`;
-      return;
-    }
-    if (EYE_HEALTH_FILES.has(segment)) {
-      request.url = `/goz-hastaliklari.html${url.search}`;
-      return;
-    }
-    request.url = `/index.html${url.search}`;
   };
 
   return {

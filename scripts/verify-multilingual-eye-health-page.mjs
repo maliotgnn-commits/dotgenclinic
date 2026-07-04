@@ -108,6 +108,70 @@ for (const locale of LOCALES.filter((code) => code !== 'tr')) {
   assert(homeHtml.includes(navLabel), `[dist/${locale}/index.html] nav label missing`);
 }
 
+const BIDI_CONTROL = /[\u202A-\u202E\u2066-\u2069\u200E\u200F]/;
+const LATIN = /[A-Za-z]/;
+const CYRILLIC = /[\u0400-\u04FF]/;
+const ALLOWED_LATIN_SNIPPETS = [
+  'Uzm. Dr. Sina Evsen',
+  'Dr Otgen Clinic',
+];
+
+function stripAllowedLatin(value) {
+  let result = value;
+  for (const snippet of ALLOWED_LATIN_SNIPPETS) {
+    result = result.split(snippet).join('');
+  }
+  return result;
+}
+
+function walkStrings(node, visitor, key = '') {
+  if (typeof node === 'string') {
+    visitor(node, key);
+    return;
+  }
+  if (Array.isArray(node)) {
+    node.forEach((item) => walkStrings(item, visitor, key));
+    return;
+  }
+  if (node && typeof node === 'object') {
+    Object.entries(node).forEach(([childKey, value]) => walkStrings(value, visitor, childKey));
+  }
+}
+
+function validateLocaleCopy(locale) {
+  const filePath = resolve(ROOT, `src/i18n/eye-health/${locale}.json`);
+  const raw = readFileSync(filePath, 'utf8');
+  const data = JSON.parse(raw);
+
+  walkStrings(data, (value, key) => {
+    assert(!BIDI_CONTROL.test(value), `[${locale}] bidi control character in ${key}: ${JSON.stringify(value)}`);
+
+    if (key === 'id' || key === 'icon') return;
+    if (value.startsWith('/images/')) return;
+
+    if (locale === 'ar') {
+      assert(!value.includes('Astigmatism'), `[ar] forbidden mixed astigmatism label in ${key}`);
+      const stripped = stripAllowedLatin(value);
+      assert(!LATIN.test(stripped), `[ar] unexpected Latin letters in ${key}: ${JSON.stringify(value)}`);
+    }
+
+    if (locale === 'ru') {
+      const stripped = stripAllowedLatin(value);
+      const words = stripped.split(/[^\p{L}\p{N}-]+/u).filter(Boolean);
+      for (const word of words) {
+        if (CYRILLIC.test(word) && LATIN.test(word)) {
+          failures.push(`[ru] mixed Latin-Cyrillic word "${word}" in ${key}`);
+        }
+      }
+      assert(!/\b(intra|uve)[\u0400-\u04FF]/i.test(stripped), `[ru] Latin-Cyrillic medical term residue in ${key}`);
+      assert(!/[\u0400-\u04FF](tra|ok)[\u0400-\u04FF]/i.test(stripped), `[ru] Latin-Cyrillic medical term residue in ${key}`);
+    }
+  });
+}
+
+validateLocaleCopy('ar');
+validateLocaleCopy('ru');
+
 if (failures.length) {
   console.error('[verify-multilingual-eye-health-page] Verification failed:');
   failures.forEach((failure) => console.error(`  - ${failure}`));
