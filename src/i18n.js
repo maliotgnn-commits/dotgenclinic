@@ -1,3 +1,5 @@
+import { eyeHealthPathForLocale } from './eye-health-routes.js';
+
 export const DEFAULT_LOCALE = 'tr';
 export const LOCALE_STORAGE_KEY = 'dr-otgen-locale';
 
@@ -65,18 +67,17 @@ export function getCurrentLocale(pageType = 'home') {
   const pathLocale = getPathLocale();
   const locale = pathLocale || getStoredLocale() || DEFAULT_LOCALE;
 
-  if (pageType === 'eye-health' && pathLocale && pathLocale !== DEFAULT_LOCALE) {
-    window.location.replace('/tr/goz-hastaliklari.html');
-    storeLocale(DEFAULT_LOCALE);
-    applyDocumentDirection(DEFAULT_LOCALE);
-    return DEFAULT_LOCALE;
+  if (pageType === 'eye-health' && pathLocale) {
+    storeLocale(pathLocale);
+    applyDocumentDirection(pathLocale);
+    return pathLocale;
   }
 
   if (!pathLocale) {
     const target = pageType === 'service'
       ? serviceUrlForLocale(new URLSearchParams(window.location.search).get('slug'), locale)
       : pageType === 'eye-health'
-        ? '/tr/goz-hastaliklari.html'
+        ? eyeHealthPathForLocale(locale)
         : pageType === 'privacy'
           ? `/${locale}/privacy.html`
           : homeUrlFor(locale, window.location.hash);
@@ -127,10 +128,7 @@ export function currentPageUrlForLocale(locale, pageType = 'home') {
   }
 
   if (pageType === 'eye-health') {
-    if (locale === DEFAULT_LOCALE) {
-      return '/tr/goz-hastaliklari.html';
-    }
-    return homeUrlFor(locale, window.location.hash);
+    return eyeHealthPathForLocale(locale);
   }
 
   if (pageType === 'privacy') {
@@ -238,10 +236,11 @@ function upsertSeoLink(rel, hreflang, href) {
 
 export function applySeoLinks(locale, pageType = 'home', slug = null) {
   if (pageType === 'eye-health') {
-    upsertSeoLink('canonical', null, '/tr/goz-hastaliklari.html');
-    document.head.querySelectorAll('link[data-i18n-seo][rel="alternate"]').forEach((link) => {
-      link.remove();
+    upsertSeoLink('canonical', null, eyeHealthPathForLocale(locale));
+    LOCALES.forEach(({ code }) => {
+      upsertSeoLink('alternate', code, eyeHealthPathForLocale(code));
     });
+    upsertSeoLink('alternate', 'x-default', eyeHealthPathForLocale('en'));
     return;
   }
 

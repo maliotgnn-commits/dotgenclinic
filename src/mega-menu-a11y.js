@@ -8,7 +8,7 @@ export function initMegaMenuA11y(root = document) {
       item.classList.remove('open');
       item.querySelector('.eh-nav-toggle')?.setAttribute('aria-expanded', 'false');
       const dropdown = item.querySelector('.mega-dropdown');
-      if (window.innerWidth <= 1360) {
+      if (window.innerWidth <= 1280) {
         dropdown?.setAttribute('hidden', '');
       } else {
         dropdown?.removeAttribute('hidden');
@@ -26,7 +26,7 @@ export function initMegaMenuA11y(root = document) {
         toggle.focus();
       }
       if (event.key === 'Enter' || event.key === ' ') {
-        if (window.innerWidth <= 1360) return;
+        if (window.innerWidth <= 1280) return;
         event.preventDefault();
         toggle.click();
       }
@@ -35,12 +35,12 @@ export function initMegaMenuA11y(root = document) {
 
   root.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
-    if (window.innerWidth <= 1360) return;
+    if (window.innerWidth <= 1280) return;
     closeAll();
   });
 
   root.addEventListener('click', (event) => {
-    if (window.innerWidth <= 1360) return;
+    if (window.innerWidth <= 1280) return;
     if (event.target.closest('.has-dropdown[data-eye-health-nav], .has-dropdown[data-tr-only-nav]')) return;
     closeAll();
   });

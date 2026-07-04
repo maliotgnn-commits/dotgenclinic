@@ -1,57 +1,29 @@
-import { EYE_HEALTH_CATEGORIES } from './eye-health-data.js';
+import { buildTrEyeHealthContent } from './eye-health-content.js';
+import { eyeHealthPathForLocale } from './eye-health-routes.js';
 
 export const EYE_HEALTH_LANDING_PATH = '/tr/goz-hastaliklari.html';
 
 const CHEVRON = '<svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>';
 
-function eyeHealthMegaColumns(landingPath = EYE_HEALTH_LANDING_PATH) {
+function eyeHealthMegaColumns(categories, landingPath) {
   const url = landingPath;
 
-  return `
+  return categories
+    .map(
+      (category) => `
     <div class="mega-col">
-      <h4><a href="${url}">Göz Muayenesi ve Genel Göz Sağlığı</a></h4>
-      <a href="${url}">Göz Muayenesi</a>
-      <a href="${url}">Konjonktivit</a>
-      <a href="${url}">Arpacık</a>
-      <a href="${url}">Şalazyon</a>
+      <h4><a href="${url}">${category.title}</a></h4>
+      ${category.topics.map((topic) => `<a href="${url}">${topic.title}</a>`).join('')}
     </div>
-    <div class="mega-col">
-      <h4><a href="${url}">Göz Kusurları ve Lazer Uygulamaları</a></h4>
-      <a href="${url}">Göz Çizdirme</a>
-      <a href="${url}">Miyop</a>
-      <a href="${url}">Astigmat</a>
-      <a href="${url}">Hipermetrop</a>
-    </div>
-    <div class="mega-col">
-      <h4><a href="${url}">Katarakt ve Göz İçi Mercekler</a></h4>
-      <a href="${url}">Katarakt Nedir?</a>
-      <a href="${url}">Katarakt Ameliyatı</a>
-      <a href="${url}">Göz İçi Mercek</a>
-      <a href="${url}">Trifokal Mercek</a>
-    </div>
-    <div class="mega-col">
-      <h4><a href="${url}">Retina ve Göz İçi Hastalıklar</a></h4>
-      <a href="${url}">Sarı Nokta Hastalığı</a>
-      <a href="${url}">Retina</a>
-      <a href="${url}">Üveit</a>
-    </div>
-    <div class="mega-col">
-      <h4><a href="${url}">Göz Kapağı ve Orbita</a></h4>
-      <a href="${url}">Göz Kapağı Düşüklüğü</a>
-      <a href="${url}">Göz Kapağı Estetiği</a>
-      <a href="${url}">Orbita Cerrahisi</a>
-    </div>
-    <div class="mega-col">
-      <h4><a href="${url}">Diğer Göz Tedavileri</a></h4>
-      <a href="${url}">Göz Ameliyatı</a>
-      <a href="${url}">Göz Kayması</a>
-    </div>
-  `;
+  `,
+    )
+    .join('');
 }
 
-function eyeHealthMobileGroups(landingPath = EYE_HEALTH_LANDING_PATH) {
-  return EYE_HEALTH_CATEGORIES.map(
-    (category, index) => `
+function eyeHealthMobileGroups(categories, landingPath) {
+  return categories
+    .map(
+      (category, index) => `
       <div class="eh-mobile-group">
         <button
           type="button"
@@ -67,32 +39,36 @@ function eyeHealthMobileGroups(landingPath = EYE_HEALTH_LANDING_PATH) {
         </div>
       </div>
     `,
-  ).join('');
+    )
+    .join('');
 }
 
-export function renderEyeHealthNavItem({ pagePath = EYE_HEALTH_LANDING_PATH } = {}) {
+export function renderEyeHealthNavItem({ locale = 'tr', pagePath, content } = {}) {
+  const eyeContent = content || buildTrEyeHealthContent();
+  const landingPath = (pagePath || eyeHealthPathForLocale(locale)).split('#')[0];
+  const { categories, nav } = eyeContent;
   const dropdownId = 'eye-health-mega-menu';
-  const landingPath = pagePath.split('#')[0] || EYE_HEALTH_LANDING_PATH;
+  const trOnlyAttr = locale === 'tr' ? ' data-tr-only-nav' : '';
 
   return `
-    <li class="has-dropdown" data-tr-only-nav data-eye-health-nav>
+    <li class="has-dropdown"${trOnlyAttr} data-eye-health-nav>
       <div class="eh-nav-item-head">
-        <a href="${landingPath}" class="eh-nav-primary-link" id="eye-health-nav-link">Göz Hastalıkları</a>
+        <a href="${landingPath}" class="eh-nav-primary-link" id="eye-health-nav-link">${nav.menuLabel}</a>
         <button
           type="button"
           class="eh-nav-toggle"
           id="eye-health-nav-trigger"
           aria-expanded="false"
           aria-controls="${dropdownId}"
-          aria-label="Göz Hastalıkları alt menüsünü aç"
+          aria-label="${nav.toggleAriaLabel}"
         >${CHEVRON}</button>
       </div>
-      <div class="mega-dropdown eh-mega-dropdown" id="${dropdownId}" role="region" aria-label="Göz Hastalıkları menüsü">
+      <div class="mega-dropdown eh-mega-dropdown" id="${dropdownId}" role="region" aria-label="${nav.submenuAriaLabel}">
         <div class="eh-desktop-mega">
-          ${eyeHealthMegaColumns(landingPath)}
+          ${eyeHealthMegaColumns(categories, landingPath)}
         </div>
         <div class="eh-mobile-mega">
-          ${eyeHealthMobileGroups(landingPath)}
+          ${eyeHealthMobileGroups(categories, landingPath)}
         </div>
       </div>
     </li>
@@ -108,8 +84,20 @@ export function extractEyeHealthNavBlock(html) {
   return match?.[0] ?? '';
 }
 
+export function injectEyeHealthNavForLocale(html, locale, content) {
+  if (locale === 'tr') return html;
+  const stripped = stripTrOnlyNav(html);
+  const navBlock = renderEyeHealthNavItem({ locale, content });
+  return stripped.replace(
+    /(<ul class="nav-menu" id="nav-menu">[\s\S]*?)(\s*<\/ul>)/,
+    `$1\n            ${navBlock}$2`,
+  );
+}
+
 export function normalizeEyeHealthLandingHash() {
-  const onEyeHealthPage = /\/goz-hastaliklari\.html$/i.test(window.location.pathname);
+  const onEyeHealthPage = /\/goz-hastaliklari\.html$|\/eye-health\.html$|\/salud-ocular\.html$|\/sante-oculaire\.html$|\/salute-oculare\.html$|\/augengesundheit\.html$|\/[\u0600-\u06FF\u0400-\u04FF-]+\.html$/i.test(
+    window.location.pathname,
+  );
   if (!onEyeHealthPage || !window.location.hash) return false;
 
   const cleanUrl = `${window.location.pathname}${window.location.search}`;
@@ -135,7 +123,7 @@ function closeEyeHealthTopLevel(navRoot) {
 }
 
 function setDesktopEyeMegaOpen(navRoot, isOpen) {
-  if (window.innerWidth <= 1360) return;
+  if (window.innerWidth <= 1280) return;
 
   const toggle = navRoot.querySelector('.eh-nav-toggle');
   const dropdown = navRoot.querySelector('.mega-dropdown');
@@ -161,7 +149,7 @@ export function initEyeHealthNavBehavior(root = document) {
   };
 
   const openDesktopMega = () => {
-    if (window.innerWidth <= 1360) return;
+    if (window.innerWidth <= 1280) return;
     clearDesktopCloseTimer();
     ensureEyeMegaPointerTracking();
     setDesktopEyeMegaOpen(navRoot, true);
@@ -198,7 +186,7 @@ export function initEyeHealthNavBehavior(root = document) {
   let eyeMegaPointerTracking = false;
 
   const onEyeMegaPointerMove = (event) => {
-    if (window.innerWidth <= 1360) return;
+    if (window.innerWidth <= 1280) return;
     if (!navRoot.classList.contains('open') && desktopCloseTimer === null) return;
 
     if (isInEyeMegaZone(event.clientX, event.clientY)) {
@@ -227,7 +215,7 @@ export function initEyeHealthNavBehavior(root = document) {
   };
 
   const scheduleDesktopClose = () => {
-    if (window.innerWidth <= 1360) return;
+    if (window.innerWidth <= 1280) return;
     clearDesktopCloseTimer();
     const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 200 : 400;
     ensureEyeMegaPointerTracking();
@@ -242,7 +230,7 @@ export function initEyeHealthNavBehavior(root = document) {
       openDesktopMega();
     });
     target.addEventListener('mouseleave', (event) => {
-      if (window.innerWidth <= 1360) return;
+      if (window.innerWidth <= 1280) return;
       const nextTarget = event.relatedTarget;
       if (nextTarget instanceof Node && navRoot.contains(nextTarget)) return;
       scheduleDesktopClose();
@@ -253,7 +241,7 @@ export function initEyeHealthNavBehavior(root = document) {
     event.preventDefault();
     event.stopPropagation();
 
-    if (window.innerWidth <= 1360) {
+    if (window.innerWidth <= 1280) {
       const willOpen = !navRoot.classList.contains('open');
       if (!willOpen) {
         closeEyeHealthTopLevel(navRoot);
@@ -288,7 +276,7 @@ export function initEyeHealthNavBehavior(root = document) {
     groupToggle.addEventListener('click', (event) => {
       event.preventDefault();
       event.stopPropagation();
-      if (window.innerWidth > 1360) return;
+      if (window.innerWidth > 1280) return;
 
       const group = groupToggle.closest('.eh-mobile-group');
       const panel = document.getElementById(groupToggle.getAttribute('aria-controls'));
@@ -303,18 +291,20 @@ export function initEyeHealthNavBehavior(root = document) {
     });
   });
 
-  navRoot.querySelectorAll(`a[href="${EYE_HEALTH_LANDING_PATH}"], a[href$="/goz-hastaliklari.html"]`).forEach((link) => {
+  const landingHref = primaryLink?.getAttribute('href') || EYE_HEALTH_LANDING_PATH;
+
+  navRoot.querySelectorAll(`a[href="${landingHref}"]`).forEach((link) => {
     if (link.classList.contains('eh-nav-primary-link')) return;
 
     link.addEventListener('click', () => {
-      if (window.innerWidth <= 1360) {
+      if (window.innerWidth <= 1280) {
         closeEyeHealthTopLevel(navRoot);
         root.querySelector('#main-header')?.querySelector('.nav-menu')?.classList.remove('active');
         root.querySelector('#hamburger')?.classList.remove('active');
         root.querySelector('#hamburger')?.setAttribute('aria-expanded', 'false');
       }
 
-      if (!/\/goz-hastaliklari\.html$/i.test(window.location.pathname)) return;
+      if (window.location.pathname !== landingHref.split('#')[0]) return;
 
       primaryLink?.click();
       normalizeEyeHealthLandingHash();
@@ -330,7 +320,7 @@ export function initEyeHealthNavBehavior(root = document) {
   });
 
   primaryLink?.addEventListener('click', (event) => {
-    if (/\/goz-hastaliklari\.html$/i.test(window.location.pathname)) {
+    if (window.location.pathname === landingHref.split('#')[0]) {
       event.preventDefault();
       normalizeEyeHealthLandingHash();
       window.scrollTo(0, 0);

@@ -6,28 +6,15 @@ import { prerenderPrivacySeo } from './scripts/prerender-privacy-seo.mjs';
 import { prerenderEyeHealthSeo } from './scripts/prerender-eye-health-seo.mjs';
 import { verifyOgSocialImage } from './scripts/verify-og-social-image.mjs';
 import { runBuildValidations } from './scripts/run-build-validations.mjs';
-
-const localePattern = /^\/(?:tr|en|ar|es|fr|it|ru|de)(?:\/(service\.html|privacy\.html|goz-hastaliklari\.html)?)?$/;
+import { rewriteLocaleRequestUrl } from './scripts/locale-route-rewrite.mjs';
 
 function localeRoutes() {
   const rewriteLocaleUrl = (request) => {
     if (!request.url) return;
-    const url = new URL(request.url, 'http://localhost');
-    const match = url.pathname.match(localePattern);
-    if (!match) return;
-    if (match[1] === 'service.html') {
-      request.url = `/service.html${url.search}`;
-      return;
+    const rewritten = rewriteLocaleRequestUrl(request.url);
+    if (rewritten !== request.url) {
+      request.url = rewritten;
     }
-    if (match[1] === 'privacy.html') {
-      request.url = `/privacy.html${url.search}`;
-      return;
-    }
-    if (match[1] === 'goz-hastaliklari.html') {
-      request.url = `/goz-hastaliklari.html${url.search}`;
-      return;
-    }
-    request.url = `/index.html${url.search}`;
   };
 
   return {

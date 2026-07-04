@@ -259,6 +259,41 @@ export function buildPrivacySchema(locale, title, description) {
   ]);
 }
 
+export function buildEyeHealthSchema(locale, page, breadcrumbs) {
+  const pageUrl = `${SITE_ORIGIN}${page.canonicalPath}`;
+  const pageName = page.title.replace(/\s*\|\s*Dr Otgen Clinic\s*$/, '');
+  return buildJsonLdScript([
+    {
+      '@type': 'MedicalWebPage',
+      '@id': `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: pageName,
+      description: page.description,
+      inLanguage: locale,
+      isPartOf: { '@id': websiteId() },
+      publisher: { '@id': locationId('izmir') },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: breadcrumbs.home,
+          item: `${SITE_ORIGIN}/${locale}/`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: breadcrumbs.page,
+          item: pageUrl,
+        },
+      ],
+    },
+  ]);
+}
+
 export function injectSeoBundle(html, { title, description, seoBlock, ogTwitter, jsonLd }) {
   let result = html;
   result = result.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(title)}</title>`);

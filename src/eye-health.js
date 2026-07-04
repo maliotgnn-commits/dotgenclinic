@@ -2,10 +2,8 @@ import './style.css';
 import './eye-health.css';
 import { initCustomCursor } from './cursor.js';
 import { initSiteHeader } from './public-header.js';
-import {
-  EYE_HEALTH_CATEGORIES,
-  EYE_HEALTH_PAGE,
-} from './eye-health-data.js';
+import { loadEyeHealthContent } from './eye-health-content.js';
+import { detectEyeHealthLocale } from './eye-health-routes.js';
 import {
   normalizeEyeHealthLandingHash,
   renderEyeHealthNavItem,
@@ -26,14 +24,18 @@ import {
 } from './language-switcher.js';
 
 const app = document.getElementById('eye-health-app');
+const pathLocale = detectEyeHealthLocale();
 const locale = getCurrentLocale('eye-health');
-const [catalog, uiDictionary] = await Promise.all([
+const eyeLocale = pathLocale || locale;
+const [catalog, uiDictionary, eyeContent] = await Promise.all([
   loadContentCatalog(locale),
   loadUiDictionary(locale),
+  loadEyeHealthContent(eyeLocale),
 ]);
+const { page: EYE_HEALTH_PAGE, categories: EYE_HEALTH_CATEGORIES, nav: eyeNav } = eyeContent;
 const categoryGroups = buildCategoryGroups(catalog);
 const t = (source) => translate(uiDictionary, source);
-const appointmentUrl = homeUrlFor('tr', '#randevu');
+const appointmentUrl = homeUrlFor(locale, '#randevu');
 
 function escapeHtml(value) {
   return String(value ?? '')
@@ -84,7 +86,7 @@ function renderNavGroups() {
     })
     .join('');
 
-  return `${serviceGroups}${renderEyeHealthNavItem()}`;
+  return `${serviceGroups}${renderEyeHealthNavItem({ locale: eyeLocale, content: eyeContent })}`;
 }
 
 function renderSkipLink() {
@@ -99,16 +101,20 @@ function renderHeader() {
           <a href="${homeUrlFor(locale)}" class="nav-logo">
             <img src="/images/logo-transparent.png" alt="Dr Otgen Clinic" />
           </a>
-          <button class="hamburger" id="hamburger" aria-label="${escapeHtml(t('Menü'))}" aria-expanded="false">
-            <span></span><span></span><span></span>
-          </button>
-          <ul class="nav-menu" id="nav-menu">
-            ${renderNavGroups()}
-          </ul>
-          <div class="nav-language-slot">
-            ${renderLanguageSwitcher(locale, 'eye-health', uiDictionary)}
+          <div class="nav-primary">
+            <ul class="nav-menu" id="nav-menu">
+              ${renderNavGroups()}
+            </ul>
           </div>
-          <a href="${appointmentUrl}" class="nav-cta">${escapeHtml(t('Randevu Al'))}</a>
+          <div class="nav-actions">
+            <div class="nav-language-slot">
+              ${renderLanguageSwitcher(locale, 'eye-health', uiDictionary)}
+            </div>
+            <a href="${appointmentUrl}" class="nav-cta">${escapeHtml(t('Randevu Al'))}</a>
+            <button class="hamburger" id="hamburger" aria-label="${escapeHtml(t('Menü'))}" aria-expanded="false">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
         </div>
       </nav>
     </header>
@@ -139,7 +145,7 @@ function renderProcess() {
     <section class="eh-section eh-section-soft" aria-labelledby="eh-process-title">
       <div class="container">
         <div class="eh-section-head">
-          <h2 id="eh-process-title">Değerlendirme Süreci</h2>
+          <h2 id="eh-process-title">${escapeHtml(eyeNav.processTitle)}</h2>
         </div>
         <div class="eh-process-grid">
           ${EYE_HEALTH_PAGE.process
@@ -224,7 +230,7 @@ function renderCategoryCard(category) {
                 <div class="eh-topic-panel" id="${panelId}" hidden>
                   <div class="eh-topic-panel-inner">
                     <p>${escapeHtml(topic.description)}</p>
-                    <a href="${appointmentUrl}">Randevu Talep Et</a>
+                    <a href="${appointmentUrl}">${escapeHtml(eyeNav.topicCta)}</a>
                   </div>
                 </div>
               </div>

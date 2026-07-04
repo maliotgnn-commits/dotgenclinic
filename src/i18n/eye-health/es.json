@@ -1,0 +1,179 @@
+{
+  "page": {
+    "title": "Salud Ocular | Dr Otgen Clinic",
+    "description": "Información general sobre exploraciones oculares, defectos de refracción, cataratas, retina, párpados y otros temas de salud ocular.",
+    "hero": {
+      "tag": "SALUD OCULAR",
+      "title": "Evaluación Integral para su Salud Ocular",
+      "description": "Las evaluaciones relacionadas con la salud ocular se planifican conforme a los hallazgos de la exploración y a las necesidades individuales.",
+      "cta": "Solicitar Cita",
+      "image": "/images/goz-hastaliklari/hero-goz-muayenesi-ai.png",
+      "imageAlt": "Escena representativa de exploración ocular"
+    },
+    "process": [
+      {
+        "title": "Exploración Ocular",
+        "description": "La evaluación inicial de la visión y la salud ocular se realiza conforme a los hallazgos de la exploración."
+      },
+      {
+        "title": "Evaluación Detallada",
+        "description": "Los estudios necesarios se abordan conforme a los hallazgos y necesidades individuales."
+      },
+      {
+        "title": "Planificación Personalizada",
+        "description": "La información y el enfoque a seguir se planifican conforme a las necesidades personales derivadas de la exploración."
+      }
+    ],
+    "doctor": {
+      "sectionTitle": "Evaluación Especializada en Salud Ocular",
+      "name": "Uzm. Dr. Sina Evsen",
+      "role": "Especialista en Oftalmología",
+      "description": "En las evaluaciones relacionadas con la salud ocular, la planificación se realiza conforme a los hallazgos de la exploración y a las necesidades individuales.",
+      "image": "/images/goz-hastaliklari/uzm-dr-sina-evsen.jpg",
+      "imageAlt": "Uzm. Dr. Sina Evsen, Especialista en Oftalmología",
+      "cta": "Solicitar Cita"
+    },
+    "categoriesIntro": {
+      "title": "Patologías Oculares",
+      "description": "Diferentes temas relacionados con la salud ocular se evalúan conforme a los hallazgos de la exploración y a las necesidades individuales."
+    },
+    "closingCta": {
+      "title": "Solicite una Cita para su Salud Ocular",
+      "description": "Puede enviar una solicitud de cita para obtener información sobre el proceso de exploración y evaluación.",
+      "cta": "Solicitar Cita"
+    }
+  },
+  "nav": {
+    "menuLabel": "Salud Ocular",
+    "submenuAriaLabel": "Menú de Salud Ocular",
+    "toggleAriaLabel": "Abrir submenú de Salud Ocular",
+    "processTitle": "Proceso de Evaluación",
+    "topicCta": "Solicitar Cita",
+    "breadcrumbHome": "Inicio",
+    "pageShortName": "Salud Ocular"
+  },
+  "categories": [
+    {
+      "id": "goz-muayenesi-genel-saglik",
+      "title": "Exploración Ocular y Salud Ocular General",
+      "icon": "exam",
+      "topics": [
+        {
+          "title": "Exploración Ocular",
+          "description": "Proceso en el que se evalúan conjuntamente la agudeza visual, las estructuras anterior y posterior del ojo y las pruebas necesarias."
+        },
+        {
+          "title": "Conjuntivitis",
+          "description": "Abarca la evaluación de irritaciones y procesos inflamatorios relacionados con la conjuntiva, la capa que recubre la superficie anterior del ojo."
+        },
+        {
+          "title": "Orzuelo",
+          "description": "Abarca la evaluación de problemas locales de las glándulas del párpado que pueden manifestarse con enrojecimiento, sensibilidad e hinchazón."
+        },
+        {
+          "title": "Chalazion",
+          "description": "Abarca la evaluación de hinchazones localizadas que pueden desarrollarse por obstrucción de las glándulas sebáceas del párpado."
+        }
+      ]
+    },
+    {
+      "id": "goz-kusurlari-ve-lazer",
+      "title": "Defectos de Refracción y Procedimientos Láser",
+      "icon": "laser",
+      "topics": [
+        {
+          "title": "Cirugía Láser Ocular",
+          "description": "La idoneidad para procedimientos láser en defectos de refracción se evalúa tras una exploración ocular detallada."
+        },
+        {
+          "title": "Miopía",
+          "description": "Defecto de refracción que puede provocar visión borrosa de objetos lejanos."
+        },
+        {
+          "title": "Astigmatismo",
+          "description": "Defecto de refracción que puede causar visión borrosa o distorsionada debido a irregularidades en la estructura óptica del ojo."
+        },
+        {
+          "title": "Hipermetropía",
+          "description": "Defecto de refracción que puede asociarse a dificultad para ver de cerca."
+        }
+      ]
+    },
+    {
+      "id": "katarakt-ve-goz-ici-mercekler",
+      "title": "Catarata y Lentes Intraoculares",
+      "icon": "lens",
+      "topics": [
+        {
+          "title": "¿Qué es la Catarata?",
+          "description": "La catarata es una condición asociada a la pérdida de transparencia del cristalino natural del ojo."
+        },
+        {
+          "title": "Cirugía de Catarata",
+          "description": "Las opciones quirúrgicas para la catarata se evalúan conforme a los hallazgos de la exploración y a las necesidades individuales."
+        },
+        {
+          "title": "Lente Intraocular",
+          "description": "Las opciones de lente intraocular se evalúan conforme a la estructura ocular y las necesidades visuales."
+        },
+        {
+          "title": "Lente Trifocal",
+          "description": "Abarca la evaluación de opciones de lentes multifocales para necesidades de visión lejana, intermedia y cercana."
+        }
+      ]
+    },
+    {
+      "id": "retina-ve-goz-ici-hastaliklar",
+      "title": "Retina y Patologías Intraoculares",
+      "icon": "retina",
+      "topics": [
+        {
+          "title": "Degeneración Macular",
+          "description": "Abarca la evaluación de condiciones que pueden afectar la mácula, la zona responsable de la visión central."
+        },
+        {
+          "title": "Retina",
+          "description": "La retina es la capa sensible a la luz en la parte posterior del ojo implicada en la percepción de las imágenes."
+        },
+        {
+          "title": "Uveítis",
+          "description": "Abarca la evaluación de procesos inflamatorios que pueden afectar la capa uveal del ojo."
+        }
+      ]
+    },
+    {
+      "id": "goz-kapagi-ve-orbita",
+      "title": "Párpado y Órbita",
+      "icon": "eyelid",
+      "topics": [
+        {
+          "title": "Ptosis Palpebral",
+          "description": "Abarca la evaluación de condiciones en las que el párpado superior puede afectar la apertura ocular."
+        },
+        {
+          "title": "Estética Palpebral",
+          "description": "Las evaluaciones funcionales o estéticas de la región palpebral se planifican considerando la estructura ocular y facial."
+        },
+        {
+          "title": "Cirugía de Órbita",
+          "description": "Abarca evaluaciones quirúrgicas relacionadas con las estructuras óseas y de tejidos blandos alrededor del ojo."
+        }
+      ]
+    },
+    {
+      "id": "diger-goz-tedavileri",
+      "title": "Otros Tratamientos Oculares",
+      "icon": "care",
+      "topics": [
+        {
+          "title": "Cirugía Ocular",
+          "description": "Las opciones relacionadas con la cirugía ocular se evalúan conforme al diagnóstico, los hallazgos de la exploración y las necesidades individuales."
+        },
+        {
+          "title": "Estrabismo",
+          "description": "Abarca la evaluación de condiciones relacionadas con la alineación y el movimiento coordinado de los ojos."
+        }
+      ]
+    }
+  ]
+}

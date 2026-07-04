@@ -2,10 +2,10 @@ import './style.css';
 import { initCustomCursor } from './cursor.js';
 import { initSiteHeader } from './public-header.js';
 import { renderEyeHealthNavItem } from './tr-eye-health-nav.js';
+import { loadEyeHealthContent } from './eye-health-content.js';
 import {
   applySeoLinks,
   buildCategoryGroups,
-  DEFAULT_LOCALE,
   getCurrentLocale,
   homeUrlFor,
   loadContentCatalog,
@@ -19,9 +19,10 @@ import {
 } from './language-switcher.js';
 
 const locale = getCurrentLocale('privacy');
-const [catalog, uiDictionary] = await Promise.all([
+const [catalog, uiDictionary, eyeContent] = await Promise.all([
   loadContentCatalog(locale),
   loadUiDictionary(locale),
+  loadEyeHealthContent(locale),
 ]);
 const categoryGroups = buildCategoryGroups(catalog);
 const t = (source) => translate(uiDictionary, source);
@@ -60,9 +61,7 @@ function renderNavGroups() {
     })
     .join('');
 
-  return locale === DEFAULT_LOCALE
-    ? `${serviceGroups}${renderEyeHealthNavItem()}`
-    : serviceGroups;
+  return `${serviceGroups}${renderEyeHealthNavItem({ locale, content: eyeContent })}`;
 }
 
 function renderHeader() {
@@ -73,16 +72,20 @@ function renderHeader() {
           <a href="${homeUrlFor(locale)}" class="nav-logo">
             <img src="/images/logo-transparent.png" alt="Dr Otgen Clinic" />
           </a>
-          <button class="hamburger" id="hamburger" aria-label="${escapeHtml(t('Menü'))}" aria-expanded="false">
-            <span></span><span></span><span></span>
-          </button>
-          <ul class="nav-menu" id="nav-menu">
-            ${renderNavGroups()}
-          </ul>
-          <div class="nav-language-slot">
-            ${renderLanguageSwitcher(locale, 'privacy', uiDictionary)}
+          <div class="nav-primary">
+            <ul class="nav-menu" id="nav-menu">
+              ${renderNavGroups()}
+            </ul>
           </div>
-          <a href="${homeUrlFor(locale, '#randevu')}" class="nav-cta">${escapeHtml(t('Randevu Al'))}</a>
+          <div class="nav-actions">
+            <div class="nav-language-slot">
+              ${renderLanguageSwitcher(locale, 'privacy', uiDictionary)}
+            </div>
+            <a href="${homeUrlFor(locale, '#randevu')}" class="nav-cta">${escapeHtml(t('Randevu Al'))}</a>
+            <button class="hamburger" id="hamburger" aria-label="${escapeHtml(t('Menü'))}" aria-expanded="false">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
         </div>
       </nav>
     </header>

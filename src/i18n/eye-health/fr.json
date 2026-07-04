@@ -1,0 +1,179 @@
+{
+  "page": {
+    "title": "Santé oculaire | Dr Otgen Clinic",
+    "description": "Informations générales sur l'examen oculaire, les défauts de réfraction, la cataracte, la rétine, les paupières et d'autres sujets de santé oculaire.",
+    "hero": {
+      "tag": "SANTÉ OCULAIRE",
+      "title": "Évaluation complète pour votre santé oculaire",
+      "description": "Les évaluations liées à la santé oculaire sont planifiées en fonction des résultats de l'examen et des besoins individuels.",
+      "cta": "Demander un rendez-vous",
+      "image": "/images/goz-hastaliklari/hero-goz-muayenesi-ai.png",
+      "imageAlt": "Scène représentative d'un examen oculaire"
+    },
+    "process": [
+      {
+        "title": "Examen oculaire",
+        "description": "La première évaluation de la vision et de la santé oculaire est réalisée en fonction des résultats de l'examen."
+      },
+      {
+        "title": "Évaluation détaillée",
+        "description": "Les examens nécessaires sont abordés en fonction des résultats et des besoins individuels."
+      },
+      {
+        "title": "Planification personnalisée",
+        "description": "Les informations et l'approche à suivre sont planifiées en fonction des besoins personnels issus de l'examen."
+      }
+    ],
+    "doctor": {
+      "sectionTitle": "Évaluation spécialisée en santé oculaire",
+      "name": "Uzm. Dr. Sina Evsen",
+      "role": "Spécialiste en ophtalmologie",
+      "description": "Dans les évaluations liées à la santé oculaire, la planification est réalisée en fonction des résultats de l'examen et des besoins individuels.",
+      "image": "/images/goz-hastaliklari/uzm-dr-sina-evsen.jpg",
+      "imageAlt": "Uzm. Dr. Sina Evsen, spécialiste en ophtalmologie",
+      "cta": "Demander un rendez-vous"
+    },
+    "categoriesIntro": {
+      "title": "Affections oculaires",
+      "description": "Différents sujets liés à la santé oculaire sont évalués en fonction des résultats de l'examen et des besoins individuels."
+    },
+    "closingCta": {
+      "title": "Demandez un rendez-vous pour votre santé oculaire",
+      "description": "Vous pouvez transmettre une demande de rendez-vous pour obtenir des informations sur le processus d'examen et d'évaluation.",
+      "cta": "Demander un rendez-vous"
+    }
+  },
+  "nav": {
+    "menuLabel": "Santé oculaire",
+    "submenuAriaLabel": "Menu Santé oculaire",
+    "toggleAriaLabel": "Ouvrir le sous-menu Santé oculaire",
+    "processTitle": "Processus d'évaluation",
+    "topicCta": "Demander un rendez-vous",
+    "breadcrumbHome": "Accueil",
+    "pageShortName": "Santé oculaire"
+  },
+  "categories": [
+    {
+      "id": "goz-muayenesi-genel-saglik",
+      "title": "Examen oculaire et santé oculaire générale",
+      "icon": "exam",
+      "topics": [
+        {
+          "title": "Examen oculaire",
+          "description": "Processus dans lequel l'acuité visuelle, les structures antérieure et postérieure de l'œil et les tests nécessaires sont évalués conjointement."
+        },
+        {
+          "title": "Conjonctivite",
+          "description": "Couvre l'évaluation des irritations et des états inflammatoires liés à la conjonctive, la couche recouvrant la surface antérieure de l'œil."
+        },
+        {
+          "title": "Orgelet",
+          "description": "Couvre l'évaluation des problèmes locaux des glandes palpébrales pouvant se manifester par rougeur, sensibilité et gonflement."
+        },
+        {
+          "title": "Chalazion",
+          "description": "Couvre l'évaluation des gonflements localisés pouvant survenir en cas d'obstruction des glandes sébacées de la paupière."
+        }
+      ]
+    },
+    {
+      "id": "goz-kusurlari-ve-lazer",
+      "title": "Défauts de réfraction et procédures au laser",
+      "icon": "laser",
+      "topics": [
+        {
+          "title": "Chirurgie laser des yeux",
+          "description": "L'adéquation aux procédures laser pour les défauts de réfraction est évaluée après un examen oculaire détaillé."
+        },
+        {
+          "title": "Myopie",
+          "description": "Défaut de réfraction pouvant entraîner une vision floue des objets éloignés."
+        },
+        {
+          "title": "Astigmatisme",
+          "description": "Défaut de réfraction pouvant provoquer une vision floue ou déformée en raison d'irrégularités de la structure optique de l'œil."
+        },
+        {
+          "title": "Hypermétropie",
+          "description": "Défaut de réfraction pouvant être associé à une difficulté à voir de près."
+        }
+      ]
+    },
+    {
+      "id": "katarakt-ve-goz-ici-mercekler",
+      "title": "Cataracte et lentilles intraoculaires",
+      "icon": "lens",
+      "topics": [
+        {
+          "title": "Qu'est-ce que la cataracte ?",
+          "description": "La cataracte est une affection associée à la perte de transparence du cristallin naturel de l'œil."
+        },
+        {
+          "title": "Chirurgie de la cataracte",
+          "description": "Les options chirurgicales pour la cataracte sont évaluées en fonction des résultats de l'examen et des besoins individuels."
+        },
+        {
+          "title": "Lentille intraoculaire",
+          "description": "Les options de lentilles intraoculaires sont évaluées en fonction de la structure oculaire et des besoins visuels."
+        },
+        {
+          "title": "Lentille trifocale",
+          "description": "Couvre l'évaluation des options de lentilles multifocales pour les besoins de vision de loin, intermédiaire et de près."
+        }
+      ]
+    },
+    {
+      "id": "retina-ve-goz-ici-hastaliklar",
+      "title": "Rétine et affections intraoculaires",
+      "icon": "retina",
+      "topics": [
+        {
+          "title": "Dégénérescence maculaire",
+          "description": "Couvre l'évaluation des affections pouvant toucher la macula, la zone responsable de la vision centrale."
+        },
+        {
+          "title": "Rétine",
+          "description": "La rétine est la couche photosensible à l'arrière de l'œil impliquée dans la perception des images."
+        },
+        {
+          "title": "Uvéite",
+          "description": "Couvre l'évaluation des états inflammatoires pouvant affecter la couche uvéale de l'œil."
+        }
+      ]
+    },
+    {
+      "id": "goz-kapagi-ve-orbita",
+      "title": "Paupière et orbite",
+      "icon": "eyelid",
+      "topics": [
+        {
+          "title": "Ptosis",
+          "description": "Couvre l'évaluation des affections dans lesquelles la paupière supérieure peut affecter l'ouverture de l'œil."
+        },
+        {
+          "title": "Esthétique des paupières",
+          "description": "Les évaluations fonctionnelles ou esthétiques de la région palpébrale sont planifiées en tenant compte de la structure oculaire et faciale."
+        },
+        {
+          "title": "Chirurgie de l'orbite",
+          "description": "Couvre les évaluations chirurgicales liées aux structures osseuses et aux tissus mous autour de l'œil."
+        }
+      ]
+    },
+    {
+      "id": "diger-goz-tedavileri",
+      "title": "Autres traitements oculaires",
+      "icon": "care",
+      "topics": [
+        {
+          "title": "Chirurgie oculaire",
+          "description": "Les options liées à la chirurgie oculaire sont évaluées en fonction du diagnostic, des résultats de l'examen et des besoins individuels."
+        },
+        {
+          "title": "Strabisme",
+          "description": "Couvre l'évaluation des affections liées à l'alignement et au mouvement coordonné des yeux."
+        }
+      ]
+    }
+  ]
+}

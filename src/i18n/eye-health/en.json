@@ -1,0 +1,179 @@
+{
+  "page": {
+    "title": "Eye Health | Dr Otgen Clinic",
+    "description": "General information on eye examinations, refractive errors, cataracts, retina, eyelid conditions and other eye health topics.",
+    "hero": {
+      "tag": "EYE HEALTH",
+      "title": "Comprehensive Assessment for Your Eye Health",
+      "description": "Assessments related to eye health are planned according to examination findings and individual needs.",
+      "cta": "Request Appointment",
+      "image": "/images/goz-hastaliklari/hero-goz-muayenesi-ai.png",
+      "imageAlt": "Representative eye examination scene"
+    },
+    "process": [
+      {
+        "title": "Eye Examination",
+        "description": "The initial assessment of vision and eye health is conducted based on examination findings."
+      },
+      {
+        "title": "Detailed Evaluation",
+        "description": "Examinations required are addressed according to individual findings and needs."
+      },
+      {
+        "title": "Personalised Planning",
+        "description": "Information and the approach to follow are planned according to personal needs based on examination results."
+      }
+    ],
+    "doctor": {
+      "sectionTitle": "Specialist Assessment in Eye Health",
+      "name": "Uzm. Dr. Sina Evsen",
+      "role": "Ophthalmology Specialist",
+      "description": "In assessments related to eye health, planning is carried out according to examination findings and individual needs.",
+      "image": "/images/goz-hastaliklari/uzm-dr-sina-evsen.jpg",
+      "imageAlt": "Uzm. Dr. Sina Evsen, Ophthalmology Specialist",
+      "cta": "Request Appointment"
+    },
+    "categoriesIntro": {
+      "title": "Eye Conditions",
+      "description": "Different topics related to eye health are evaluated according to examination findings and individual needs."
+    },
+    "closingCta": {
+      "title": "Request an Appointment for Your Eye Health",
+      "description": "You may submit an appointment request to obtain information about the examination and assessment process.",
+      "cta": "Request Appointment"
+    }
+  },
+  "nav": {
+    "menuLabel": "Eye Health",
+    "submenuAriaLabel": "Eye Health menu",
+    "toggleAriaLabel": "Open Eye Health submenu",
+    "processTitle": "Assessment Process",
+    "topicCta": "Request Appointment",
+    "breadcrumbHome": "Home",
+    "pageShortName": "Eye Health"
+  },
+  "categories": [
+    {
+      "id": "goz-muayenesi-genel-saglik",
+      "title": "Eye Examination and General Eye Health",
+      "icon": "exam",
+      "topics": [
+        {
+          "title": "Eye Examination",
+          "description": "A process in which visual acuity, the anterior and posterior structures of the eye, and required tests are evaluated together."
+        },
+        {
+          "title": "Conjunctivitis",
+          "description": "Covers the evaluation of irritation and inflammatory conditions related to the conjunctiva, the layer covering the front surface of the eye."
+        },
+        {
+          "title": "Stye",
+          "description": "Covers the evaluation of local eyelid gland issues that may present with redness, tenderness and swelling on the eyelid."
+        },
+        {
+          "title": "Chalazion",
+          "description": "Covers the evaluation of localised swellings that may develop due to blockage of the oil glands in the eyelid."
+        }
+      ]
+    },
+    {
+      "id": "goz-kusurlari-ve-lazer",
+      "title": "Refractive Errors and Laser Procedures",
+      "icon": "laser",
+      "topics": [
+        {
+          "title": "Laser Eye Surgery",
+          "description": "Suitability for laser procedures in refractive errors is evaluated after a detailed eye examination."
+        },
+        {
+          "title": "Myopia",
+          "description": "A refractive error that may cause distant objects to appear blurred."
+        },
+        {
+          "title": "Astigmatism",
+          "description": "A refractive error that may cause blurred or distorted vision due to irregularities in the optical structure of the eye."
+        },
+        {
+          "title": "Hyperopia",
+          "description": "A refractive error that may be associated with difficulty seeing at close range."
+        }
+      ]
+    },
+    {
+      "id": "katarakt-ve-goz-ici-mercekler",
+      "title": "Cataract and Intraocular Lenses",
+      "icon": "lens",
+      "topics": [
+        {
+          "title": "What Is Cataract?",
+          "description": "Cataract is a condition associated with the natural lens inside the eye losing its transparency."
+        },
+        {
+          "title": "Cataract Surgery",
+          "description": "Surgical options for cataract are evaluated according to examination findings and individual needs."
+        },
+        {
+          "title": "Intraocular Lens",
+          "description": "Intraocular lens options are evaluated according to eye structure and visual needs."
+        },
+        {
+          "title": "Trifocal Lens",
+          "description": "Covers the evaluation of multifocal lens options for distance, intermediate and near vision needs."
+        }
+      ]
+    },
+    {
+      "id": "retina-ve-goz-ici-hastaliklar",
+      "title": "Retina and Intraocular Conditions",
+      "icon": "retina",
+      "topics": [
+        {
+          "title": "Macular Degeneration",
+          "description": "Covers the evaluation of conditions that may affect the macula, the area responsible for central vision."
+        },
+        {
+          "title": "Retina",
+          "description": "The retina is the light-sensitive layer at the back of the eye involved in processing visual images."
+        },
+        {
+          "title": "Uveitis",
+          "description": "Covers the evaluation of inflammatory conditions that may affect the uvea layer of the eye."
+        }
+      ]
+    },
+    {
+      "id": "goz-kapagi-ve-orbita",
+      "title": "Eyelid and Orbit",
+      "icon": "eyelid",
+      "topics": [
+        {
+          "title": "Ptosis",
+          "description": "Covers the evaluation of conditions in which the upper eyelid may affect the opening of the eye."
+        },
+        {
+          "title": "Eyelid Aesthetics",
+          "description": "Functional or aesthetic assessments related to the eyelid region are planned with consideration of eye and facial structure."
+        },
+        {
+          "title": "Orbital Surgery",
+          "description": "Covers surgical assessments related to the bone and soft tissue structures around the eye."
+        }
+      ]
+    },
+    {
+      "id": "diger-goz-tedavileri",
+      "title": "Other Eye Treatments",
+      "icon": "care",
+      "topics": [
+        {
+          "title": "Eye Surgery",
+          "description": "Options related to eye surgery are evaluated according to diagnosis, examination findings and individual needs."
+        },
+        {
+          "title": "Strabismus",
+          "description": "Covers the evaluation of conditions related to the alignment and coordinated movement of the eyes."
+        }
+      ]
+    }
+  ]
+}

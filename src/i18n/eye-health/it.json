@@ -1,0 +1,179 @@
+{
+  "page": {
+    "title": "Salute oculare | Dr Otgen Clinic",
+    "description": "Informazioni generali su visita oculistica, difetti di rifrazione, cataratta, retina, palpebre e altri temi di salute oculare.",
+    "hero": {
+      "tag": "SALUTE OCULARE",
+      "title": "Valutazione completa per la salute dei tuoi occhi",
+      "description": "Le valutazioni relative alla salute oculare sono pianificate in base ai risultati dell'esame e alle esigenze individuali.",
+      "cta": "Richiedi appuntamento",
+      "image": "/images/goz-hastaliklari/hero-goz-muayenesi-ai.png",
+      "imageAlt": "Scena rappresentativa di visita oculistica"
+    },
+    "process": [
+      {
+        "title": "Visita oculistica",
+        "description": "La valutazione iniziale della vista e della salute oculare viene effettuata in base ai risultati dell'esame."
+      },
+      {
+        "title": "Valutazione dettagliata",
+        "description": "Gli accertamenti necessari vengono affrontati in base ai risultati e alle esigenze individuali."
+      },
+      {
+        "title": "Pianificazione personalizzata",
+        "description": "Le informazioni e l'approccio da seguire vengono pianificati in base alle esigenze personali emerse dall'esame."
+      }
+    ],
+    "doctor": {
+      "sectionTitle": "Valutazione specialistica in salute oculare",
+      "name": "Uzm. Dr. Sina Evsen",
+      "role": "Specialista in Oftalmologia",
+      "description": "Nelle valutazioni relative alla salute oculare, la pianificazione viene effettuata in base ai risultati dell'esame e alle esigenze individuali.",
+      "image": "/images/goz-hastaliklari/uzm-dr-sina-evsen.jpg",
+      "imageAlt": "Uzm. Dr. Sina Evsen, specialista in oftalmologia",
+      "cta": "Richiedi appuntamento"
+    },
+    "categoriesIntro": {
+      "title": "Patologie oculari",
+      "description": "Diversi temi relativi alla salute oculare vengono valutati in base ai risultati dell'esame e alle esigenze individuali."
+    },
+    "closingCta": {
+      "title": "Richiedi un appuntamento per la salute dei tuoi occhi",
+      "description": "Puoi inviare una richiesta di appuntamento per ottenere informazioni sul processo di esame e valutazione.",
+      "cta": "Richiedi appuntamento"
+    }
+  },
+  "nav": {
+    "menuLabel": "Salute oculare",
+    "submenuAriaLabel": "Menu Salute oculare",
+    "toggleAriaLabel": "Apri sottomenu Salute oculare",
+    "processTitle": "Processo di valutazione",
+    "topicCta": "Richiedi appuntamento",
+    "breadcrumbHome": "Home",
+    "pageShortName": "Salute oculare"
+  },
+  "categories": [
+    {
+      "id": "goz-muayenesi-genel-saglik",
+      "title": "Visita oculistica e salute oculare generale",
+      "icon": "exam",
+      "topics": [
+        {
+          "title": "Visita oculistica",
+          "description": "Processo in cui vengono valutati congiuntamente l'acuità visiva, le strutture anteriore e posteriore dell'occhio e i test necessari."
+        },
+        {
+          "title": "Congiuntivite",
+          "description": "Comprende la valutazione di irritazioni e stati infiammatori legati alla congiuntiva, lo strato che ricopre la superficie anteriore dell'occhio."
+        },
+        {
+          "title": "Orzaiolo",
+          "description": "Comprende la valutazione di problemi locali delle ghiandole palpebrali che possono manifestarsi con arrossamento, sensibilità e gonfiore."
+        },
+        {
+          "title": "Calazio",
+          "description": "Comprende la valutazione di gonfiori localizzati che possono svilupparsi per l'ostruzione delle ghiandole sebacee della palpebra."
+        }
+      ]
+    },
+    {
+      "id": "goz-kusurlari-ve-lazer",
+      "title": "Difetti di rifrazione e procedure laser",
+      "icon": "laser",
+      "topics": [
+        {
+          "title": "Chirurgia laser degli occhi",
+          "description": "L'idoneità alle procedure laser per i difetti di rifrazione viene valutata dopo una visita oculistica dettagliata."
+        },
+        {
+          "title": "Miopia",
+          "description": "Difetto di rifrazione che può causare visione offuscata degli oggetti distanti."
+        },
+        {
+          "title": "Astigmatismo",
+          "description": "Difetto di rifrazione che può provocare visione offuscata o distorta a causa di irregolarità nella struttura ottica dell'occhio."
+        },
+        {
+          "title": "Ipermetropia",
+          "description": "Difetto di rifrazione che può essere associato a difficoltà nella visione da vicino."
+        }
+      ]
+    },
+    {
+      "id": "katarakt-ve-goz-ici-mercekler",
+      "title": "Cataratta e lenti intraoculari",
+      "icon": "lens",
+      "topics": [
+        {
+          "title": "Cos'è la cataratta?",
+          "description": "La cataratta è una condizione associata alla perdita di trasparenza del cristallino naturale dell'occhio."
+        },
+        {
+          "title": "Chirurgia della cataratta",
+          "description": "Le opzioni chirurgiche per la cataratta vengono valutate in base ai risultati dell'esame e alle esigenze individuali."
+        },
+        {
+          "title": "Lente intraoculare",
+          "description": "Le opzioni di lenti intraoculari vengono valutate in base alla struttura oculare e alle esigenze visive."
+        },
+        {
+          "title": "Lente trifocale",
+          "description": "Comprende la valutazione delle opzioni di lenti multifocali per esigenze di visione da lontano, intermedia e da vicino."
+        }
+      ]
+    },
+    {
+      "id": "retina-ve-goz-ici-hastaliklar",
+      "title": "Retina e patologie intraoculari",
+      "icon": "retina",
+      "topics": [
+        {
+          "title": "Degenerazione maculare",
+          "description": "Comprende la valutazione di condizioni che possono interessare la macula, l'area responsabile della visione centrale."
+        },
+        {
+          "title": "Retina",
+          "description": "La retina è lo strato sensibile alla luce nella parte posteriore dell'occhio coinvolto nella percezione delle immagini."
+        },
+        {
+          "title": "Uveite",
+          "description": "Comprende la valutazione di stati infiammatori che possono interessare lo strato uveale dell'occhio."
+        }
+      ]
+    },
+    {
+      "id": "goz-kapagi-ve-orbita",
+      "title": "Palpebra e orbita",
+      "icon": "eyelid",
+      "topics": [
+        {
+          "title": "Ptosi palpebrale",
+          "description": "Comprende la valutazione di condizioni in cui la palpebra superiore può influire sull'apertura dell'occhio."
+        },
+        {
+          "title": "Estetica palpebrale",
+          "description": "Le valutazioni funzionali o estetiche della regione palpebrale vengono pianificate considerando la struttura oculare e facciale."
+        },
+        {
+          "title": "Chirurgia dell'orbita",
+          "description": "Comprende valutazioni chirurgiche relative alle strutture ossee e ai tessuti molli intorno all'occhio."
+        }
+      ]
+    },
+    {
+      "id": "diger-goz-tedavileri",
+      "title": "Altri trattamenti oculari",
+      "icon": "care",
+      "topics": [
+        {
+          "title": "Chirurgia oculare",
+          "description": "Le opzioni relative alla chirurgia oculare vengono valutate in base alla diagnosi, ai risultati dell'esame e alle esigenze individuali."
+        },
+        {
+          "title": "Strabismo",
+          "description": "Comprende la valutazione di condizioni relative all'allineamento e al movimento coordinato degli occhi."
+        }
+      ]
+    }
+  ]
+}

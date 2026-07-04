@@ -49,9 +49,7 @@
           <a href="/index.html" class="nav-logo">
             <img src="/images/logo-transparent.png" alt="Dr Otgen Clinic" />
           </a>
-          <button class="hamburger" id="hamburger" aria-label="Menü" aria-expanded="false">
-            <span></span><span></span><span></span>
-          </button>
+          <div class="nav-primary">
           <ul class="nav-menu" id="nav-menu">
             <li class="has-dropdown">
               <a href="#">Kurumsal <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
@@ -284,8 +282,14 @@
       </div>
     </li>
           </ul>
-          <div id="language-switcher-slot" class="nav-language-slot"></div>
-          <a href="#randevu" class="nav-cta">Randevu Al</a>
+          </div>
+          <div class="nav-actions">
+            <div id="language-switcher-slot" class="nav-language-slot"></div>
+            <a href="#randevu" class="nav-cta">Randevu Al</a>
+            <button class="hamburger" id="hamburger" aria-label="Menü" aria-expanded="false">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
         </div>
       </nav>
     </header>
