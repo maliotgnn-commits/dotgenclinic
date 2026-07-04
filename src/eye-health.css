@@ -200,11 +200,14 @@
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
 }
 
-.eh-category-icon {
-  width: 42px;
-  height: 42px;
+.eh-category-eye {
+  display: block;
+  width: 96px;
+  height: 60px;
   margin-bottom: 14px;
-  color: var(--gold);
+  border-radius: 6px;
+  object-fit: cover;
+  object-position: center;
 }
 
 .eh-category-card h3 {

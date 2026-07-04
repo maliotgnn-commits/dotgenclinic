@@ -16,6 +16,21 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const CANONICAL = `${SITE_ORIGIN}/tr/goz-hastaliklari.html`;
 
+const CATEGORY_EYE_IMAGES = {
+  exam: '/images/goz-hastaliklari/category-eyes/category-eye-general-health.png',
+  laser: '/images/goz-hastaliklari/category-eyes/category-eye-laser.png',
+  lens: '/images/goz-hastaliklari/category-eyes/category-eye-cataract.png',
+  retina: '/images/goz-hastaliklari/category-eyes/category-eye-retina.png',
+  eyelid: '/images/goz-hastaliklari/category-eyes/category-eye-eyelid-orbita.png',
+  care: '/images/goz-hastaliklari/category-eyes/category-eye-other-treatments.png',
+};
+
+function renderCategoryEyeImage(iconKey) {
+  const src = CATEGORY_EYE_IMAGES[iconKey];
+  if (!src) return '';
+  return `<img class="eh-category-eye" src="${src}" alt="" width="96" height="60" loading="lazy" decoding="async" aria-hidden="true" />`;
+}
+
 function buildStaticFallback() {
   const { hero, doctor, closingCta, categoriesIntro } = EYE_HEALTH_PAGE;
   const processHtml = EYE_HEALTH_PAGE.process
@@ -31,19 +46,22 @@ function buildStaticFallback() {
 
   const categoriesHtml = EYE_HEALTH_CATEGORIES.map(
     (category) => `
-      <section id="${escapeHtml(category.id)}">
+      <article class="eh-category-card" id="${escapeHtml(category.id)}">
+        ${renderCategoryEyeImage(category.icon)}
         <h3>${escapeHtml(category.title)}</h3>
-        ${category.topics
-          .map(
-            (topic) => `
-          <article>
-            <h4>${escapeHtml(topic.title)}</h4>
-            <p>${escapeHtml(topic.description)}</p>
-          </article>
-        `,
-          )
-          .join('')}
-      </section>
+        <div class="eh-topic-list">
+          ${category.topics
+            .map(
+              (topic) => `
+            <article>
+              <h4>${escapeHtml(topic.title)}</h4>
+              <p>${escapeHtml(topic.description)}</p>
+            </article>
+          `,
+            )
+            .join('')}
+        </div>
+      </article>
     `,
   ).join('');
 

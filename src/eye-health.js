@@ -48,14 +48,20 @@ function renderChevron() {
   return '<svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>';
 }
 
-const CATEGORY_ICONS = {
-  exam: '<svg class="eh-category-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="18" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="32" r="6" stroke="currentColor" stroke-width="2"/><path d="M32 14v8M32 42v8M14 32h8M42 32h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',
-  laser: '<svg class="eh-category-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M12 44l28-28M36 16l16-4-4 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="44" r="6" stroke="currentColor" stroke-width="2"/></svg>',
-  lens: '<svg class="eh-category-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true"><ellipse cx="32" cy="32" rx="22" ry="14" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="32" r="8" stroke="currentColor" stroke-width="2"/></svg>',
-  retina: '<svg class="eh-category-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M12 32c8-10 16-14 20-14s12 4 20 14" stroke="currentColor" stroke-width="2"/><path d="M18 38c6 8 12 12 14 12s8-4 14-12" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="32" r="4" fill="currentColor"/></svg>',
-  eyelid: '<svg class="eh-category-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M10 34c10-12 44-12 44 0" stroke="currentColor" stroke-width="2"/><path d="M18 30c6-4 22-4 28 0" stroke="currentColor" stroke-width="2"/><circle cx="32" cy="34" r="4" stroke="currentColor" stroke-width="2"/></svg>',
-  care: '<svg class="eh-category-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M32 14v36M20 26h24M20 38h24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="16" y="18" width="32" height="28" rx="4" stroke="currentColor" stroke-width="2"/></svg>',
+const CATEGORY_EYE_IMAGES = {
+  exam: '/images/goz-hastaliklari/category-eyes/category-eye-general-health.png',
+  laser: '/images/goz-hastaliklari/category-eyes/category-eye-laser.png',
+  lens: '/images/goz-hastaliklari/category-eyes/category-eye-cataract.png',
+  retina: '/images/goz-hastaliklari/category-eyes/category-eye-retina.png',
+  eyelid: '/images/goz-hastaliklari/category-eyes/category-eye-eyelid-orbita.png',
+  care: '/images/goz-hastaliklari/category-eyes/category-eye-other-treatments.png',
 };
+
+function renderCategoryEyeImage(iconKey) {
+  const src = CATEGORY_EYE_IMAGES[iconKey];
+  if (!src) return '';
+  return `<img class="eh-category-eye" src="${src}" alt="" width="96" height="60" loading="lazy" decoding="async" aria-hidden="true" />`;
+}
 
 function renderNavGroups() {
   const serviceGroups = categoryGroups
@@ -197,7 +203,7 @@ function renderCategories() {
 function renderCategoryCard(category) {
   return `
     <article class="eh-category-card" id="${escapeHtml(category.id)}">
-      ${CATEGORY_ICONS[category.icon] || ''}
+      ${renderCategoryEyeImage(category.icon)}
       <h3>${escapeHtml(category.title)}</h3>
       <div class="eh-topic-list">
         ${category.topics
