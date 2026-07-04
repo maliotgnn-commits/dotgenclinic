@@ -1,9 +1,10 @@
 import { buildTrEyeHealthContent } from './eye-health-content.js';
 import { eyeHealthHeaderNavLabelForLocale, eyeHealthPathForLocale } from './eye-health-routes.js';
+import { NAV_CHEVRON_SVG } from './nav-shared.js';
 
 export const EYE_HEALTH_LANDING_PATH = '/tr/goz-hastaliklari.html';
 
-const CHEVRON = '<svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>';
+const CHEVRON = NAV_CHEVRON_SVG;
 
 function eyeHealthMegaColumns(categories, landingPath) {
   const url = landingPath;
@@ -54,6 +55,16 @@ export function renderEyeHealthNavItem({ locale = 'tr', pagePath, content } = {}
 
   return `
     <li class="has-dropdown"${trOnlyAttr} data-eye-health-nav>
+      <button
+        type="button"
+        class="mobile-nav-trigger eh-mobile-nav-trigger"
+        aria-expanded="false"
+        aria-controls="${dropdownId}"
+        aria-label="${fullNavLabel}"
+      >
+        <span class="mobile-nav-label">${headerLabel}</span>
+        ${CHEVRON}
+      </button>
       <div class="eh-nav-item-head">
         <a href="${landingPath}" class="eh-nav-primary-link" id="eye-health-nav-link" aria-label="${fullNavLabel}">${headerLabel}</a>
         <button
@@ -243,17 +254,7 @@ export function initEyeHealthNavBehavior(root = document) {
     event.preventDefault();
     event.stopPropagation();
 
-    if (window.innerWidth <= 1280) {
-      const willOpen = !navRoot.classList.contains('open');
-      if (!willOpen) {
-        closeEyeHealthTopLevel(navRoot);
-        return;
-      }
-      navRoot.classList.add('open');
-      toggle.setAttribute('aria-expanded', 'true');
-      closeEyeHealthMobileGroups(navRoot);
-      return;
-    }
+    if (window.innerWidth <= 1280) return;
 
     const willOpen = !navRoot.classList.contains('open');
     root.querySelectorAll('[data-eye-health-nav].has-dropdown.open').forEach((item) => {
@@ -301,9 +302,10 @@ export function initEyeHealthNavBehavior(root = document) {
     link.addEventListener('click', () => {
       if (window.innerWidth <= 1280) {
         closeEyeHealthTopLevel(navRoot);
-        root.querySelector('#main-header')?.querySelector('.nav-menu')?.classList.remove('active');
+        root.querySelector('#nav-drawer')?.classList.remove('active');
         root.querySelector('#hamburger')?.classList.remove('active');
         root.querySelector('#hamburger')?.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('mobile-nav-open');
       }
 
       if (window.location.pathname !== landingHref.split('#')[0]) return;
