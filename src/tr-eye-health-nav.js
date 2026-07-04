@@ -123,7 +123,7 @@ function closeEyeHealthTopLevel(navRoot) {
 }
 
 function setDesktopEyeMegaOpen(navRoot, isOpen) {
-  if (window.innerWidth <= 1360) return;
+  if (window.innerWidth <= 1280) return;
 
   const toggle = navRoot.querySelector('.eh-nav-toggle');
   const dropdown = navRoot.querySelector('.mega-dropdown');
@@ -149,7 +149,7 @@ export function initEyeHealthNavBehavior(root = document) {
   };
 
   const openDesktopMega = () => {
-    if (window.innerWidth <= 1360) return;
+    if (window.innerWidth <= 1280) return;
     clearDesktopCloseTimer();
     ensureEyeMegaPointerTracking();
     setDesktopEyeMegaOpen(navRoot, true);
@@ -186,7 +186,7 @@ export function initEyeHealthNavBehavior(root = document) {
   let eyeMegaPointerTracking = false;
 
   const onEyeMegaPointerMove = (event) => {
-    if (window.innerWidth <= 1360) return;
+    if (window.innerWidth <= 1280) return;
     if (!navRoot.classList.contains('open') && desktopCloseTimer === null) return;
 
     if (isInEyeMegaZone(event.clientX, event.clientY)) {
@@ -215,7 +215,7 @@ export function initEyeHealthNavBehavior(root = document) {
   };
 
   const scheduleDesktopClose = () => {
-    if (window.innerWidth <= 1360) return;
+    if (window.innerWidth <= 1280) return;
     clearDesktopCloseTimer();
     const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 200 : 400;
     ensureEyeMegaPointerTracking();
@@ -230,7 +230,7 @@ export function initEyeHealthNavBehavior(root = document) {
       openDesktopMega();
     });
     target.addEventListener('mouseleave', (event) => {
-      if (window.innerWidth <= 1360) return;
+      if (window.innerWidth <= 1280) return;
       const nextTarget = event.relatedTarget;
       if (nextTarget instanceof Node && navRoot.contains(nextTarget)) return;
       scheduleDesktopClose();
@@ -241,7 +241,7 @@ export function initEyeHealthNavBehavior(root = document) {
     event.preventDefault();
     event.stopPropagation();
 
-    if (window.innerWidth <= 1360) {
+    if (window.innerWidth <= 1280) {
       const willOpen = !navRoot.classList.contains('open');
       if (!willOpen) {
         closeEyeHealthTopLevel(navRoot);
@@ -276,7 +276,7 @@ export function initEyeHealthNavBehavior(root = document) {
     groupToggle.addEventListener('click', (event) => {
       event.preventDefault();
       event.stopPropagation();
-      if (window.innerWidth > 1360) return;
+      if (window.innerWidth > 1280) return;
 
       const group = groupToggle.closest('.eh-mobile-group');
       const panel = document.getElementById(groupToggle.getAttribute('aria-controls'));
@@ -297,7 +297,7 @@ export function initEyeHealthNavBehavior(root = document) {
     if (link.classList.contains('eh-nav-primary-link')) return;
 
     link.addEventListener('click', () => {
-      if (window.innerWidth <= 1360) {
+      if (window.innerWidth <= 1280) {
         closeEyeHealthTopLevel(navRoot);
         root.querySelector('#main-header')?.querySelector('.nav-menu')?.classList.remove('active');
         root.querySelector('#hamburger')?.classList.remove('active');

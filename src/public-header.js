@@ -32,13 +32,13 @@ export function initSiteHeader(root = document, { trackScroll = false } = {}) {
 
   navMenu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => {
-      if (window.innerWidth <= 1360 && link.closest('.eh-nav-item-head')) {
+      if (window.innerWidth <= 1280 && link.closest('.eh-nav-item-head')) {
         return;
       }
-      if (window.innerWidth <= 1360 && link.parentElement?.classList.contains('has-dropdown')) {
+      if (window.innerWidth <= 1280 && link.parentElement?.classList.contains('has-dropdown')) {
         return;
       }
-      if (window.innerWidth <= 1360 && link.closest('[data-eye-health-nav]')) {
+      if (window.innerWidth <= 1280 && link.closest('[data-eye-health-nav]')) {
         setMobileNavOpen(false);
         return;
       }
@@ -47,7 +47,7 @@ export function initSiteHeader(root = document, { trackScroll = false } = {}) {
   });
 
   root.addEventListener('click', (event) => {
-    if (window.innerWidth > 1360) return;
+    if (window.innerWidth > 1280) return;
     if (!navMenu.classList.contains('active')) return;
     if (event.target.closest('#main-header')) return;
     setMobileNavOpen(false);
@@ -55,20 +55,20 @@ export function initSiteHeader(root = document, { trackScroll = false } = {}) {
 
   root.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
-    if (window.innerWidth > 1360) return;
+    if (window.innerWidth > 1280) return;
     if (!navMenu.classList.contains('active')) return;
     setMobileNavOpen(false);
     hamburger.focus();
   });
 
   const bindMobileDropdowns = () => {
-    if (window.innerWidth > 1360) return;
+    if (window.innerWidth > 1280) return;
 
     navMenu.querySelectorAll('.has-dropdown:not([data-eye-health-nav]) > a').forEach((trigger) => {
       if (trigger.dataset.mobileBound === 'true') return;
       trigger.dataset.mobileBound = 'true';
       trigger.addEventListener('click', (event) => {
-        if (window.innerWidth > 1360) return;
+        if (window.innerWidth > 1280) return;
         event.preventDefault();
         trigger.parentElement.classList.toggle('open');
       });

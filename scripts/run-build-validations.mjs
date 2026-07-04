@@ -23,6 +23,7 @@ const steps = [
   ['node', ['scripts/verify-multilingual-eye-health-page.mjs']],
   ['node', ['scripts/verify-locale-route-rewrite.mjs']],
   ['node', ['scripts/verify-tr-eye-navigation.mjs']],
+  ['node', ['scripts/verify-header-controls.mjs']],
   ['node', ['scripts/verify-form-privacy.mjs']],
 ];
 

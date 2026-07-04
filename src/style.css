@@ -375,7 +375,8 @@ to {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0
+  right: 0;
+  max-width: 100%
 }
 
 .header-top {
@@ -419,35 +420,41 @@ to {
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-subtle);
   background: #0a1628d9;
-  padding: 0
+  padding: 0;
+  max-width: 100%;
+  overflow-x: clip
 }
 
 .nav-container {
-  justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  max-width: 1600px;
+  gap: clamp(6px, 0.75vw, 14px);
+  max-width: min(1600px, 100%);
+  width: 100%;
   height: 80px;
-  display: flex
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto
 }
 
 .nav-logo {
-  flex: none;
-  order: 1
+  flex-shrink: 0;
+  grid-column: 1
 }
 
 .nav-logo img {
   width: auto;
-  height: 55px
+  height: clamp(48px, 4.2vw, 55px)
 }
 
 .nav-menu {
   flex-wrap: nowrap;
-  flex: none;
-  order: 2;
+  justify-content: center;
+  align-items: center;
   gap: 0;
-  margin-inline: auto;
+  min-width: 0;
+  max-width: 100%;
+  margin-inline: 0;
   list-style: none;
+  grid-column: 2;
   display: flex
 }
 
@@ -462,8 +469,9 @@ to {
   transition: var(--transition);
   align-items: center;
   gap: 5px;
-  padding: 28px clamp(8px, .8vw, 14px);
-  font-size: 14px;
+  padding-block: 28px;
+  padding-inline: clamp(5px, 0.45vw + 2px, 14px);
+  font-size: clamp(12px, 0.35vw + 0.55rem, 14px);
   font-weight: 500;
   display: flex;
   position: relative
@@ -537,7 +545,7 @@ to {
   box-sizing: border-box;
 }
 
-@media (width>=1361px) {
+@media (width>=1280px) {
   .main-nav {
     position: relative;
     overflow: visible;
@@ -700,7 +708,7 @@ to {
   }
 }
 
-@media (width<=1360px) {
+@media (width<=1279px) {
   .mega-dropdown.eh-mega-dropdown {
     min-width: 0;
     width: 100%;
@@ -846,12 +854,14 @@ to {
   letter-spacing: .5px;
   white-space: nowrap;
   transition: var(--transition);
-  flex: none;
-  order: 4;
-  padding: 10px 22px;
-  font-size: 14px;
+  flex-shrink: 0;
+  padding: clamp(8px, 0.55vw + 4px, 10px) clamp(12px, 1vw + 6px, 22px);
+  font-size: clamp(12px, 0.3vw + 0.55rem, 14px);
   font-weight: 600;
-  color: var(--bg-primary)!important
+  color: var(--bg-primary)!important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center
 }
 
 .nav-cta:hover {
@@ -859,9 +869,16 @@ to {
   transform: translateY(-2px)
 }
 
+.nav-actions {
+  flex-shrink: 0;
+  align-items: center;
+  gap: clamp(6px, 0.55vw, 12px);
+  grid-column: 3;
+  display: flex
+}
+
 .nav-language-slot {
-  flex: none;
-  order: 3
+  flex-shrink: 0
 }
 
 .language-switcher {
@@ -963,7 +980,7 @@ to {
   background: 0 0;
   border: none;
   flex-direction: column;
-  order: 5;
+  flex-shrink: 0;
   gap: 6px;
   padding: 4px;
   display: none
@@ -2051,9 +2068,30 @@ html[dir=rtl] .form-group select {
 }
 
 
-@media (width<=1360px) {
-  .nav-language-slot {
-    margin-inline-start: auto
+@media (width>=1280px) and (width<=1535px) {
+  .nav-logo img {
+    height: clamp(46px, 3.6vw, 52px)
+  }
+
+  .language-trigger {
+    min-width: 68px;
+    height: 40px;
+    padding: 0 9px;
+    font-size: 11px
+  }
+
+  .nav-actions {
+    gap: clamp(5px, 0.45vw, 10px)
+  }
+}
+
+@media (width<=1279px) {
+  .nav-container {
+    grid-template-columns: auto minmax(0, 1fr) auto
+  }
+
+  .nav-actions {
+    justify-self: end
   }
 
 .hamburger {
@@ -2065,7 +2103,7 @@ html[dir=rtl] .form-group select {
     top: 0;
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
-    width: 300px;
+    width: min(300px, 100vw - 48px);
     height: 100vh;
     transition: var(--transition);
     border-inline-start: 1px solid var(--border-subtle);
@@ -2074,7 +2112,8 @@ html[dir=rtl] .form-group select {
     padding: 100px 30px 30px;
     position: fixed;
     inset-inline-end: -100%;
-    overflow-y: auto
+    overflow-y: auto;
+    z-index: 1000
   }
 
 .nav-menu.active {
@@ -2083,7 +2122,8 @@ html[dir=rtl] .form-group select {
 
 .nav-menu>li>a {
     border-bottom: 1px solid var(--border-subtle);
-    padding: 16px 0
+    padding: 16px 0;
+    font-size: 14px
   }
 
 .nav-menu>li>a:after {
@@ -2121,7 +2161,15 @@ html[dir=rtl] .form-group select {
   }
 
 .nav-cta {
-    display: none
+    display: inline-flex;
+    padding: 8px clamp(10px, 2vw, 14px);
+    font-size: clamp(11px, 2.8vw, 13px)
+  }
+
+.language-trigger {
+    min-width: 64px;
+    height: 38px;
+    padding: 0 8px
   }
 
 }
@@ -2227,10 +2275,6 @@ html[dir=rtl] .form-group select {
 
 .has-dropdown.open .mega-dropdown {
     display: flex
-  }
-
-.nav-cta {
-    display: none
   }
 
 .hero-content h1 {

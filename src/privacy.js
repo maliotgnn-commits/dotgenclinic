@@ -72,16 +72,18 @@ function renderHeader() {
           <a href="${homeUrlFor(locale)}" class="nav-logo">
             <img src="/images/logo-transparent.png" alt="Dr Otgen Clinic" />
           </a>
-          <button class="hamburger" id="hamburger" aria-label="${escapeHtml(t('Menü'))}" aria-expanded="false">
-            <span></span><span></span><span></span>
-          </button>
           <ul class="nav-menu" id="nav-menu">
             ${renderNavGroups()}
           </ul>
-          <div class="nav-language-slot">
-            ${renderLanguageSwitcher(locale, 'privacy', uiDictionary)}
+          <div class="nav-actions">
+            <div class="nav-language-slot">
+              ${renderLanguageSwitcher(locale, 'privacy', uiDictionary)}
+            </div>
+            <a href="${homeUrlFor(locale, '#randevu')}" class="nav-cta">${escapeHtml(t('Randevu Al'))}</a>
+            <button class="hamburger" id="hamburger" aria-label="${escapeHtml(t('Menü'))}" aria-expanded="false">
+              <span></span><span></span><span></span>
+            </button>
           </div>
-          <a href="${homeUrlFor(locale, '#randevu')}" class="nav-cta">${escapeHtml(t('Randevu Al'))}</a>
         </div>
       </nav>
     </header>

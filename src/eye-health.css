@@ -375,7 +375,7 @@
   grid-template-columns: repeat(3, minmax(180px, 1fr));
 }
 
-@media (max-width: 1360px) {
+@media (max-width: 1279px) {
   .eh-mega-dropdown {
     min-width: 100%;
     grid-template-columns: 1fr;
