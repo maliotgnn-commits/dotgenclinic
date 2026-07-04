@@ -16,6 +16,7 @@ import {
 } from './i18n.js';
 import { mountLanguageSwitcher } from './language-switcher.js';
 import { mountInstagramFloat } from './instagram-float.js';
+import { initMegaMenuA11y } from './mega-menu-a11y.js';
 
 const locale = getCurrentLocale('home');
 const uiDictionary = await loadUiDictionary(locale);
@@ -221,11 +222,15 @@ function initHeader() {
   document.querySelectorAll('.has-dropdown > a').forEach((trigger) => {
     trigger.addEventListener('click', (event) => {
       if (window.innerWidth > 1360) return;
+      if (trigger.getAttribute('aria-haspopup') === 'true' && trigger.getAttribute('href')?.includes('goz-hastaliklari')) {
+        return;
+      }
       event.preventDefault();
       trigger.parentElement.classList.toggle('open');
     });
   });
 
+  initMegaMenuA11y(document);
 }
 
 function setupHeroVideoLoop() {

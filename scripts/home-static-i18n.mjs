@@ -2,6 +2,7 @@ import { readFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DEFAULT_LOCALE } from './seo-shared.mjs';
+import { stripTrOnlyNav } from '../src/tr-eye-health-nav.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -149,6 +150,7 @@ export function localizeHomeBodyHtml(html, locale) {
 
   if (locale !== DEFAULT_LOCALE) {
     result = applyStaticTranslationsToHtml(result, dictionary);
+    result = stripTrOnlyNav(result);
   }
 
   result = applyPrivacyMarkup(result, locale, privacyContent);

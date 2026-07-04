@@ -533,6 +533,29 @@ to {
   transform: translateX(-50%) translateY(0)
 }
 
+.mega-dropdown.eh-mega-dropdown {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  min-width: min(920px, 92vw);
+  gap: 24px 40px;
+}
+
+@media (width>=1361px) {
+  .has-dropdown[data-eye-health-nav].open .mega-dropdown {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@media (width<=1360px) {
+  .mega-dropdown.eh-mega-dropdown {
+    min-width: 100%;
+    grid-template-columns: 1fr;
+  }
+}
+
 .mega-col h4 {
   font-family: var(--font-heading);
   color: var(--gold);
