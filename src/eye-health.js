@@ -101,9 +101,11 @@ function renderHeader() {
           <a href="${homeUrlFor(locale)}" class="nav-logo">
             <img src="/images/logo-transparent.png" alt="Dr Otgen Clinic" />
           </a>
-          <ul class="nav-menu" id="nav-menu">
-            ${renderNavGroups()}
-          </ul>
+          <div class="nav-primary">
+            <ul class="nav-menu" id="nav-menu">
+              ${renderNavGroups()}
+            </ul>
+          </div>
           <div class="nav-actions">
             <div class="nav-language-slot">
               ${renderLanguageSwitcher(locale, 'eye-health', uiDictionary)}

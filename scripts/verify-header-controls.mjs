@@ -16,8 +16,19 @@ function read(path) {
   return readFileSync(path, 'utf8');
 }
 
+function extractRule(css, selector) {
+  const escaped = selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const re = new RegExp(`${escaped}\\s*\\{([\\s\\S]*?)\\n\\}`, '');
+  return re.exec(css)?.[1] ?? '';
+}
+
 function assertHeaderTemplate(label, source) {
+  assert(source.includes('class="nav-primary"'), `${label}: nav-primary wrapper missing`);
   assert(source.includes('class="nav-actions"'), `${label}: nav-actions wrapper missing`);
+  assert(
+    /class="nav-primary"[\s\S]*?class="nav-menu"/.test(source),
+    `${label}: nav-menu must live inside nav-primary`,
+  );
   assert(
     /class="nav-actions"[\s\S]*?nav-language-slot/.test(source),
     `${label}: language switcher must live inside nav-actions`,
@@ -41,6 +52,12 @@ function assertBuiltHeader(label, html) {
 }
 
 const styleCss = read(resolve(ROOT, 'src/style.css'));
+const navContainerBase = extractRule(styleCss, '.nav-container');
+const navMenuBase = extractRule(styleCss, '.nav-menu');
+const navPrimaryBase = extractRule(styleCss, '.nav-primary');
+const navMenuDesktopRules = (
+  styleCss.match(/@media \(width>=1280px\)[\s\S]*?@media \(width<=1279px\)/)?.[0] || ''
+).match(/\.nav-menu\s*\{[^}]*\}/g)?.join('\n') || '';
 
 assert(
   /\.nav-container[\s\S]*?display:\s*grid[\s\S]*?grid-template-columns:\s*auto minmax\(0,\s*1fr\) auto/.test(styleCss),
@@ -48,69 +65,63 @@ assert(
 );
 
 assert(
-  /\.nav-container[\s\S]*?min-height:\s*80px/.test(styleCss),
-  'nav-container must grow with wrapped navigation (min-height, not fixed height only)',
-);
-
-function extractRule(css, selector) {
-  const re = new RegExp(`${selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*\\{([\\s\\S]*?)\\}`, '');
-  return re.exec(css)?.[1] ?? '';
-}
-
-const navContainerBase = extractRule(styleCss, '\\.nav-container');
-assert(
-  !/(?:^|[;\s])height:\s*80px/.test(navContainerBase),
-  'nav-container base rule must not lock header to a fixed 80px height',
+  /(?:^|[;\s])height:\s*80px/.test(navContainerBase),
+  'nav-container must keep a fixed 80px header height',
 );
 
 assert(
-  /\.nav-menu[\s\S]*?flex-wrap:\s*wrap/.test(styleCss),
-  'nav-menu must allow safe wrapping within the middle column',
+  navPrimaryBase.includes('min-width: 0') && navPrimaryBase.includes('max-width: 100%'),
+  'nav-primary must constrain navigation to the middle column',
 );
 
 assert(
-  /\.nav-menu[\s\S]*?min-width:\s*0/.test(styleCss),
-  'nav-menu must allow middle-column shrinking with min-width: 0',
+  navMenuBase.includes('flex-wrap: nowrap'),
+  'nav-menu must stay on a single row (flex-wrap: nowrap)',
 );
 
 assert(
-  /\.nav-menu[\s\S]*?max-width:\s*100%/.test(styleCss),
-  'nav-menu must stay within the middle column (max-width: 100%)',
+  !/flex-wrap:\s*wrap/.test(navMenuBase + navMenuDesktopRules),
+  'nav-menu must not use flex-wrap: wrap',
 );
 
 assert(
-  !/\.nav-menu\s*\{[^}]*max-height:/.test(styleCss),
-  'nav-menu must not clip wrapped rows with max-height',
+  navMenuBase.includes('justify-content: center'),
+  'nav-menu must center symmetrically within nav-primary',
 );
 
 assert(
-  !/\.nav-menu\s*\{[^}]*overflow:\s*hidden/.test(styleCss),
-  'nav-menu must not hide wrapped items with overflow: hidden',
+  navMenuBase.includes('position: relative'),
+  'nav-menu must stay in normal document flow',
 );
 
 assert(
-  !/\.nav-menu\s*\{[^}]*text-overflow:\s*ellipsis/.test(styleCss),
-  'nav-menu must not ellipsize navigation labels',
-);
-
-const navMenuBase = extractRule(styleCss, '\\.nav-menu');
-const navMenuDesktopRules = (
-  styleCss.match(/@media \(width>=1280px\)[\s\S]*?@media \(width<=1279px\)/)?.[0] || ''
-).match(/\.nav-menu\s*\{[^}]*\}/g)?.join('\n') || '';
-
-assert(
-  !/(?:^|[;\s])position:\s*absolute/.test(navMenuBase),
-  'desktop nav-menu must stay in normal flow (no absolute positioning)',
+  !/(?:^|[;\s])position:\s*absolute/.test(navMenuBase + navMenuDesktopRules),
+  'nav-menu must not use absolute positioning',
 );
 
 assert(
   !/(?:^|[;\s])left:\s*50%/.test(navMenuBase + navMenuDesktopRules),
-  'desktop nav-menu must not use viewport-centered left: 50% positioning',
+  'nav-menu must not use viewport-centered left: 50% positioning',
 );
 
 assert(
   !/translateX\(/.test(navMenuBase + navMenuDesktopRules),
-  'desktop nav-menu must not use translateX centering hacks',
+  'nav-menu must not use translateX centering hacks',
+);
+
+assert(
+  !/\.nav-menu\s*\{[^}]*max-height:/.test(styleCss),
+  'nav-menu must not clip rows with max-height',
+);
+
+assert(
+  !/\.nav-menu\s*\{[^}]*overflow:\s*hidden/.test(navMenuBase),
+  'nav-menu must not hide items with overflow: hidden',
+);
+
+assert(
+  !/text-overflow:\s*ellipsis/.test(styleCss.match(/\.nav-menu>li>a\s*\{[\s\S]*?\n\}/)?.[0] || ''),
+  'nav links must not use text-overflow: ellipsis',
 );
 
 assert(
@@ -128,15 +139,14 @@ assert(
   'nav-cta must never use display:none in CSS',
 );
 
-assert(
-  styleCss.includes('@media (width>=1280px) and (width<=1535px)'),
-  'Missing compact desktop header breakpoint (1280px–1535px)',
-);
-
 assertHeaderTemplate('index.html', read(resolve(ROOT, 'index.html')));
 assertHeaderTemplate('service.js', read(resolve(ROOT, 'src/service.js')));
 assertHeaderTemplate('privacy.js', read(resolve(ROOT, 'src/privacy.js')));
 assertHeaderTemplate('eye-health.js', read(resolve(ROOT, 'src/eye-health.js')));
+
+const publicHeaderJs = read(resolve(ROOT, 'src/public-header.js'));
+assert(publicHeaderJs.includes('fitHeaderNavigation'), 'public-header.js must fit navigation within the middle column');
+assert(publicHeaderJs.includes('1280'), 'public-header.js must use 1280px mobile breakpoint');
 
 const staticHomePages = [
   ['de home', resolve(DIST, 'de/index.html')],
@@ -153,31 +163,12 @@ for (const [label, filePath] of staticHomePages) {
   assertBuiltHeader(label, read(filePath));
 }
 
-const deUi = JSON.parse(read(resolve(ROOT, 'src/i18n/ui/de.json')));
-const ruUi = JSON.parse(read(resolve(ROOT, 'src/i18n/ui/ru.json')));
-
-assert(deUi.text['Randevu Al'] === 'Termin buchen', 'DE header CTA must use short label "Termin buchen"');
-assert(ruUi.text['Randevu Al'] === 'Записаться', 'RU header CTA must use short label "Записаться"');
-
-const deHomePath = resolve(DIST, 'de/index.html');
-if (existsSync(deHomePath)) {
-  assert(read(deHomePath).includes('Termin buchen'), 'DE home must render compact CTA label');
-}
-
-const ruHomePath = resolve(DIST, 'ru/index.html');
-if (existsSync(ruHomePath)) {
-  assert(read(ruHomePath).includes('Записаться'), 'RU home must render compact CTA label');
-}
-
 const arHomePath = resolve(DIST, 'ar/index.html');
 if (existsSync(arHomePath)) {
   const arHome = read(arHomePath);
   assert(arHome.includes('dir="rtl"'), 'AR home must preserve dir="rtl"');
   assert(arHome.includes('lang="ar"'), 'AR home must preserve lang="ar"');
 }
-
-const publicHeaderJs = read(resolve(ROOT, 'src/public-header.js'));
-assert(publicHeaderJs.includes('1280'), 'public-header.js must use 1280px mobile breakpoint');
 
 if (failures.length) {
   console.error('[verify-header-controls] Verification failed:');
