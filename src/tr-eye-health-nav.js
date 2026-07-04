@@ -168,27 +168,31 @@ export function initEyeHealthNavBehavior(root = document) {
   };
 
   const isInEyeMegaZone = (x, y) => {
-    for (const el of [navRoot, dropdown]) {
-      if (!el) continue;
-      const rect = el.getBoundingClientRect();
-      if (x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom) {
-        return true;
-      }
-    }
+    if (!dropdown) return false;
 
-    if (!dropdown || !navRoot.classList.contains('open')) return false;
-
-    const dropdownRect = dropdown.getBoundingClientRect();
     const navRect = navRoot.getBoundingClientRect();
-    const corridorTop = Math.min(navRect.top, dropdownRect.top) - 20;
-    const corridorBottom = dropdownRect.bottom;
+    const dropdownRect = dropdown.getBoundingClientRect();
+    const isOpen = navRoot.classList.contains('open');
+    const pad = isOpen ? 40 : 0;
 
-    return (
-      y >= corridorTop
-      && y <= corridorBottom
-      && x >= dropdownRect.left
-      && x <= dropdownRect.right
+    const inRect = (rect, padding = 0) => (
+      x >= rect.left - padding
+      && x <= rect.right + padding
+      && y >= rect.top - padding
+      && y <= rect.bottom + padding
     );
+
+    if (inRect(navRect)) return true;
+    if (inRect(dropdownRect, pad)) return true;
+
+    if (!isOpen) return false;
+
+    const mainNav = navRoot.closest('.main-nav');
+    const bandRect = mainNav?.getBoundingClientRect() ?? navRect;
+    const bandTop = Math.min(bandRect.top, navRect.top, dropdownRect.top) - pad;
+    const bandBottom = dropdownRect.top + pad;
+
+    return y >= bandTop && y <= bandBottom;
   };
 
   let eyeMegaPointerTracking = false;
