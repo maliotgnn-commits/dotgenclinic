@@ -16,7 +16,7 @@ import {
 } from './i18n.js';
 import { mountLanguageSwitcher } from './language-switcher.js';
 import { mountInstagramFloat } from './instagram-float.js';
-import { initMegaMenuA11y } from './mega-menu-a11y.js';
+import { initSiteHeader } from './public-header.js';
 
 const locale = getCurrentLocale('home');
 const uiDictionary = await loadUiDictionary(locale);
@@ -182,55 +182,7 @@ function initIntro() {
 }
 
 function initHeader() {
-  if (!header || !hamburger || !navMenu) return;
-
-  const setMobileNavOpen = (isOpen) => {
-    hamburger.classList.toggle('active', isOpen);
-    navMenu.classList.toggle('active', isOpen);
-    hamburger.setAttribute('aria-expanded', String(isOpen));
-  };
-
-  hamburger.addEventListener('click', (event) => {
-    event.stopPropagation();
-    setMobileNavOpen(!navMenu.classList.contains('active'));
-  });
-
-  navMenu.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      if (window.innerWidth <= 1360 && link.parentElement?.classList.contains('has-dropdown')) {
-        return;
-      }
-      setMobileNavOpen(false);
-    });
-  });
-
-  document.addEventListener('click', (event) => {
-    if (window.innerWidth > 1360) return;
-    if (!navMenu.classList.contains('active')) return;
-    if (event.target.closest('#main-header')) return;
-    setMobileNavOpen(false);
-  });
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key !== 'Escape') return;
-    if (window.innerWidth > 1360) return;
-    if (!navMenu.classList.contains('active')) return;
-    setMobileNavOpen(false);
-    hamburger.focus();
-  });
-
-  document.querySelectorAll('.has-dropdown > a').forEach((trigger) => {
-    trigger.addEventListener('click', (event) => {
-      if (window.innerWidth > 1360) return;
-      if (trigger.getAttribute('aria-haspopup') === 'true' && trigger.getAttribute('href')?.includes('goz-hastaliklari')) {
-        return;
-      }
-      event.preventDefault();
-      trigger.parentElement.classList.toggle('open');
-    });
-  });
-
-  initMegaMenuA11y(document);
+  initSiteHeader(document);
 }
 
 function setupHeroVideoLoop() {
