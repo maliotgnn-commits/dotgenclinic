@@ -206,15 +206,10 @@
   width: 96px;
   height: 60px;
   margin-bottom: 14px;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
-  background: rgba(5, 17, 34, 0.72);
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.18);
-  transition: box-shadow 0.25s ease;
-}
-
-.eh-category-card:hover .eh-category-eye-frame {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
+  background: rgba(5, 17, 34, 0.82);
+  isolation: isolate;
 }
 
 .eh-category-eye-frame::before {
@@ -224,22 +219,34 @@
   z-index: 2;
   pointer-events: none;
   border-radius: inherit;
-  box-shadow: inset 0 0 10px rgba(5, 17, 34, 0.28);
+  box-shadow: inset 0 0 20px 8px rgba(5, 17, 34, 0.48);
 }
 
 .eh-category-eye-frame::after {
   content: '';
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 3;
   pointer-events: none;
   border-radius: inherit;
-  background: linear-gradient(
-    165deg,
-    rgba(5, 17, 34, 0.14) 0%,
-    rgba(5, 17, 34, 0.02) 48%,
-    rgba(5, 17, 34, 0.12) 100%
-  );
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 17, 34, 0.34) 0%,
+      rgba(5, 17, 34, 0.06) 20%,
+      transparent 36%,
+      transparent 64%,
+      rgba(5, 17, 34, 0.06) 80%,
+      rgba(5, 17, 34, 0.34) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(5, 17, 34, 0.1) 0%,
+      transparent 34%,
+      transparent 52%,
+      rgba(5, 17, 34, 0.18) 78%,
+      rgba(5, 17, 34, 0.52) 100%
+    );
 }
 
 .eh-category-eye {
@@ -248,8 +255,24 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  -webkit-mask-image: radial-gradient(ellipse 98% 96% at 50% 50%, #000 72%, transparent 100%);
-  mask-image: radial-gradient(ellipse 98% 96% at 50% 50%, #000 72%, transparent 100%);
+  -webkit-mask-image: radial-gradient(
+    ellipse 108% 102% at 50% 44%,
+    #000 0%,
+    #000 52%,
+    rgba(0, 0, 0, 0.94) 66%,
+    rgba(0, 0, 0, 0.62) 80%,
+    rgba(0, 0, 0, 0.22) 92%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 108% 102% at 50% 44%,
+    #000 0%,
+    #000 52%,
+    rgba(0, 0, 0, 0.94) 66%,
+    rgba(0, 0, 0, 0.62) 80%,
+    rgba(0, 0, 0, 0.22) 92%,
+    transparent 100%
+  );
 }
 
 .eh-category-card h3 {
