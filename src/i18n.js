@@ -66,7 +66,7 @@ export function getCurrentLocale(pageType = 'home') {
   const locale = pathLocale || getStoredLocale() || DEFAULT_LOCALE;
 
   if (pageType === 'eye-health' && pathLocale && pathLocale !== DEFAULT_LOCALE) {
-    window.location.replace(`/tr/goz-hastaliklari.html${window.location.hash}`);
+    window.location.replace('/tr/goz-hastaliklari.html');
     storeLocale(DEFAULT_LOCALE);
     applyDocumentDirection(DEFAULT_LOCALE);
     return DEFAULT_LOCALE;
@@ -76,7 +76,7 @@ export function getCurrentLocale(pageType = 'home') {
     const target = pageType === 'service'
       ? serviceUrlForLocale(new URLSearchParams(window.location.search).get('slug'), locale)
       : pageType === 'eye-health'
-        ? `/tr/goz-hastaliklari.html${window.location.hash || ''}`
+        ? '/tr/goz-hastaliklari.html'
         : homeUrlFor(locale, window.location.hash);
 
     window.history.replaceState(window.history.state, '', target);
@@ -126,7 +126,7 @@ export function currentPageUrlForLocale(locale, pageType = 'home') {
 
   if (pageType === 'eye-health') {
     if (locale === DEFAULT_LOCALE) {
-      return `/tr/goz-hastaliklari.html${window.location.hash || ''}`;
+      return '/tr/goz-hastaliklari.html';
     }
     return homeUrlFor(locale, window.location.hash);
   }

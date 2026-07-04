@@ -200,6 +200,14 @@ function initHeader() {
       if (window.innerWidth <= 1360 && link.parentElement?.classList.contains('has-dropdown')) {
         return;
       }
+      if (window.innerWidth <= 1360 && link.closest('[data-eye-health-nav]')) {
+        setMobileNavOpen(false);
+        document.querySelectorAll('[data-eye-health-nav].has-dropdown.open').forEach((item) => {
+          item.classList.remove('open');
+          item.querySelector(':scope > a')?.setAttribute('aria-expanded', 'false');
+        });
+        return;
+      }
       setMobileNavOpen(false);
     });
   });
@@ -223,6 +231,9 @@ function initHeader() {
     trigger.addEventListener('click', (event) => {
       if (window.innerWidth > 1360) return;
       if (trigger.getAttribute('aria-haspopup') === 'true' && trigger.getAttribute('href')?.includes('goz-hastaliklari')) {
+        event.preventDefault();
+        trigger.parentElement.classList.toggle('open');
+        trigger.setAttribute('aria-expanded', String(trigger.parentElement.classList.contains('open')));
         return;
       }
       event.preventDefault();

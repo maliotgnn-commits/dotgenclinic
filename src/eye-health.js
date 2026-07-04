@@ -6,7 +6,7 @@ import {
   EYE_HEALTH_CATEGORIES,
   EYE_HEALTH_PAGE,
 } from './eye-health-data.js';
-import { renderEyeHealthNavItem } from './tr-eye-health-nav.js';
+import { renderEyeHealthNavItem, normalizeEyeHealthLandingHash, initEyeHealthNavLinks } from './tr-eye-health-nav.js';
 import {
   applySeoLinks,
   buildCategoryGroups,
@@ -335,6 +335,14 @@ function initHeaderInteractions() {
       if (window.innerWidth <= 1360 && link.parentElement?.classList.contains('has-dropdown')) {
         return;
       }
+      if (window.innerWidth <= 1360 && link.closest('[data-eye-health-nav]')) {
+        setMobileNavOpen(false);
+        document.querySelectorAll('[data-eye-health-nav].has-dropdown.open').forEach((item) => {
+          item.classList.remove('open');
+          item.querySelector(':scope > a')?.setAttribute('aria-expanded', 'false');
+        });
+        return;
+      }
       setMobileNavOpen(false);
     });
   });
@@ -363,6 +371,9 @@ function initHeaderInteractions() {
       trigger.addEventListener('click', (event) => {
         if (window.innerWidth > 1360) return;
         if (trigger.getAttribute('aria-haspopup') === 'true' && trigger.getAttribute('href')?.includes('goz-hastaliklari')) {
+          event.preventDefault();
+          trigger.parentElement.classList.toggle('open');
+          trigger.setAttribute('aria-expanded', String(trigger.parentElement.classList.contains('open')));
           return;
         }
         event.preventDefault();
@@ -376,11 +387,13 @@ function initHeaderInteractions() {
 }
 
 function bootstrapEyeHealthPage() {
+  normalizeEyeHealthLandingHash();
   renderPage();
   initSkipLink();
   initCustomCursor();
   initHeaderInteractions();
   initMegaMenuA11y(document);
+  initEyeHealthNavLinks(document);
   initLanguageSwitchers();
   initTopicAccordions();
 }

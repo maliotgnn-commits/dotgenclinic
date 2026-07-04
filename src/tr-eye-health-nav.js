@@ -1,57 +1,61 @@
+export const EYE_HEALTH_LANDING_PATH = '/tr/goz-hastaliklari.html';
+
 const CHEVRON = '<svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>';
 
 function eyeHealthMegaColumns() {
+  const url = EYE_HEALTH_LANDING_PATH;
+
   return `
     <div class="mega-col">
-      <h4>Göz Muayenesi ve Genel Göz Sağlığı</h4>
-      <a href="/tr/goz-hastaliklari.html#goz-muayenesi-genel-saglik">Göz Muayenesi</a>
-      <a href="/tr/goz-hastaliklari.html#goz-muayenesi-genel-saglik">Konjonktivit</a>
-      <a href="/tr/goz-hastaliklari.html#goz-muayenesi-genel-saglik">Arpacık</a>
-      <a href="/tr/goz-hastaliklari.html#goz-muayenesi-genel-saglik">Şalazyon</a>
+      <h4><a href="${url}">Göz Muayenesi ve Genel Göz Sağlığı</a></h4>
+      <a href="${url}">Göz Muayenesi</a>
+      <a href="${url}">Konjonktivit</a>
+      <a href="${url}">Arpacık</a>
+      <a href="${url}">Şalazyon</a>
     </div>
     <div class="mega-col">
-      <h4>Göz Kusurları ve Lazer Uygulamaları</h4>
-      <a href="/tr/goz-hastaliklari.html#goz-kusurlari-ve-lazer">Göz Çizdirme</a>
-      <a href="/tr/goz-hastaliklari.html#goz-kusurlari-ve-lazer">Miyop</a>
-      <a href="/tr/goz-hastaliklari.html#goz-kusurlari-ve-lazer">Astigmat</a>
-      <a href="/tr/goz-hastaliklari.html#goz-kusurlari-ve-lazer">Hipermetrop</a>
+      <h4><a href="${url}">Göz Kusurları ve Lazer Uygulamaları</a></h4>
+      <a href="${url}">Göz Çizdirme</a>
+      <a href="${url}">Miyop</a>
+      <a href="${url}">Astigmat</a>
+      <a href="${url}">Hipermetrop</a>
     </div>
     <div class="mega-col">
-      <h4>Katarakt ve Göz İçi Mercekler</h4>
-      <a href="/tr/goz-hastaliklari.html#katarakt-ve-goz-ici-mercekler">Katarakt Nedir?</a>
-      <a href="/tr/goz-hastaliklari.html#katarakt-ve-goz-ici-mercekler">Katarakt Ameliyatı</a>
-      <a href="/tr/goz-hastaliklari.html#katarakt-ve-goz-ici-mercekler">Göz İçi Mercek</a>
-      <a href="/tr/goz-hastaliklari.html#katarakt-ve-goz-ici-mercekler">Trifokal Mercek</a>
+      <h4><a href="${url}">Katarakt ve Göz İçi Mercekler</a></h4>
+      <a href="${url}">Katarakt Nedir?</a>
+      <a href="${url}">Katarakt Ameliyatı</a>
+      <a href="${url}">Göz İçi Mercek</a>
+      <a href="${url}">Trifokal Mercek</a>
     </div>
     <div class="mega-col">
-      <h4>Retina ve Göz İçi Hastalıklar</h4>
-      <a href="/tr/goz-hastaliklari.html#retina-ve-goz-ici-hastaliklar">Sarı Nokta Hastalığı</a>
-      <a href="/tr/goz-hastaliklari.html#retina-ve-goz-ici-hastaliklar">Retina</a>
-      <a href="/tr/goz-hastaliklari.html#retina-ve-goz-ici-hastaliklar">Üveit</a>
+      <h4><a href="${url}">Retina ve Göz İçi Hastalıklar</a></h4>
+      <a href="${url}">Sarı Nokta Hastalığı</a>
+      <a href="${url}">Retina</a>
+      <a href="${url}">Üveit</a>
     </div>
     <div class="mega-col">
-      <h4>Göz Kapağı ve Orbita</h4>
-      <a href="/tr/goz-hastaliklari.html#goz-kapagi-ve-orbita">Göz Kapağı Düşüklüğü</a>
-      <a href="/tr/goz-hastaliklari.html#goz-kapagi-ve-orbita">Göz Kapağı Estetiği</a>
-      <a href="/tr/goz-hastaliklari.html#goz-kapagi-ve-orbita">Orbita Cerrahisi</a>
+      <h4><a href="${url}">Göz Kapağı ve Orbita</a></h4>
+      <a href="${url}">Göz Kapağı Düşüklüğü</a>
+      <a href="${url}">Göz Kapağı Estetiği</a>
+      <a href="${url}">Orbita Cerrahisi</a>
     </div>
     <div class="mega-col">
-      <h4>Diğer Göz Tedavileri</h4>
-      <a href="/tr/goz-hastaliklari.html#diger-goz-tedavileri">Göz Ameliyatı</a>
-      <a href="/tr/goz-hastaliklari.html#diger-goz-tedavileri">Göz Kayması</a>
+      <h4><a href="${url}">Diğer Göz Tedavileri</a></h4>
+      <a href="${url}">Göz Ameliyatı</a>
+      <a href="${url}">Göz Kayması</a>
     </div>
   `;
 }
 
-export function renderEyeHealthNavItem({ pagePath = '/tr/goz-hastaliklari.html' } = {}) {
+export function renderEyeHealthNavItem({ pagePath = EYE_HEALTH_LANDING_PATH } = {}) {
   const dropdownId = 'eye-health-mega-menu';
-  const prefix = pagePath.includes('#') ? pagePath.split('#')[0] : pagePath;
-  const columns = eyeHealthMegaColumns().replaceAll('/tr/goz-hastaliklari.html', prefix);
+  const landingPath = pagePath.split('#')[0] || EYE_HEALTH_LANDING_PATH;
+  const columns = eyeHealthMegaColumns().replaceAll(EYE_HEALTH_LANDING_PATH, landingPath);
 
   return `
     <li class="has-dropdown" data-tr-only-nav data-eye-health-nav>
       <a
-        href="${pagePath}"
+        href="${landingPath}"
         aria-haspopup="true"
         aria-expanded="false"
         aria-controls="${dropdownId}"
@@ -66,4 +70,42 @@ export function renderEyeHealthNavItem({ pagePath = '/tr/goz-hastaliklari.html' 
 
 export function stripTrOnlyNav(html) {
   return html.replace(/<li\b[^>]*\bdata-tr-only-nav\b[^>]*>[\s\S]*?<\/li>/gi, '');
+}
+
+export function extractEyeHealthNavBlock(html) {
+  const match = html.match(/<li\b[^>]*\bdata-eye-health-nav\b[^>]*>[\s\S]*?<\/li>/i);
+  return match?.[0] ?? '';
+}
+
+export function normalizeEyeHealthLandingHash() {
+  const onEyeHealthPage = /\/goz-hastaliklari\.html$/i.test(window.location.pathname);
+  if (!onEyeHealthPage || !window.location.hash) return false;
+
+  const cleanUrl = `${window.location.pathname}${window.location.search}`;
+  window.history.replaceState(window.history.state, '', cleanUrl);
+  window.scrollTo(0, 0);
+  return true;
+}
+
+export function initEyeHealthNavLinks(root = document) {
+  const navRoot = root.querySelector('[data-eye-health-nav]');
+  if (!navRoot) return;
+
+  navRoot.querySelectorAll(`a[href="${EYE_HEALTH_LANDING_PATH}"], a[href$="/goz-hastaliklari.html"]`).forEach((link) => {
+    link.addEventListener('click', (event) => {
+      if (!/\/goz-hastaliklari\.html$/i.test(window.location.pathname)) return;
+
+      event.preventDefault();
+      normalizeEyeHealthLandingHash();
+      window.scrollTo(0, 0);
+
+      root.querySelectorAll('[data-topic-toggle][aria-expanded="true"]').forEach((toggle) => {
+        toggle.setAttribute('aria-expanded', 'false');
+        const panel = document.getElementById(toggle.getAttribute('aria-controls'));
+        panel?.classList.remove('is-open');
+        panel?.style.setProperty('max-height', '0px');
+        panel?.setAttribute('hidden', '');
+      });
+    });
+  });
 }
