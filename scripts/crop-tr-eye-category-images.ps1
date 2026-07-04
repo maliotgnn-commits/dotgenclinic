@@ -1,7 +1,7 @@
 # One-time crop utility: extracts 6 category eye images from approved source collage.
 # Requires: approved source at $SourcePath (3x2 grid, 1536x1024).
 param(
-  [string]$SourcePath = "$env:USERPROFILE\OneDrive\Desktop\goz-kategori-kaynak.png",
+  [string]$SourcePath = "$env:USERPROFILE\OneDrive\Desktop\goz-kategori-kaynak-v2.png",
   [string]$OutputDir = "$PSScriptRoot\..\public\images\goz-hastaliklari\category-eyes"
 )
 
@@ -13,21 +13,26 @@ if (-not (Test-Path $SourcePath)) {
 }
 
 $source = [System.Drawing.Image]::FromFile($SourcePath)
-if ($source.Width -ne 1536 -or $source.Height -ne 1024) {
-  Write-Error "Unexpected source dimensions: $($source.Width)x$($source.Height), expected 1536x1024"
+$gridCols = 3
+$gridRows = 2
+$cellW = [math]::Floor($source.Width / $gridCols)
+$cellH = [math]::Floor($source.Height / $gridRows)
+
+if ($cellW -lt 320 -or $cellH -lt 240) {
+  Write-Error "Source too small for category eye crops: $($source.Width)x$($source.Height)"
   $source.Dispose()
   exit 1
 }
 
+Write-Output "Source dimensions: $($source.Width)x$($source.Height); cell: ${cellW}x${cellH}"
+
 New-Item -ItemType Directory -Force -Path $OutputDir | Out-Null
 
-# 3x2 grid: each cell 512x512; inset past gold frame to center on eye (4:3 crop).
-$cellW = 512
-$cellH = 512
-$cropW = 400
-$cropH = 300
-$insetX = [math]::Floor(($cellW - $cropW) / 2) + 12
-$insetY = [math]::Floor(($cellH - $cropH) / 2) + 18
+# 3x2 grid; include dark navy margins for card blend (4:3 crop).
+$cropW = [math]::Min($cellW - 24, [math]::Floor($cellW * 0.92))
+$cropH = [math]::Floor($cropW * 0.75)
+$insetX = [math]::Floor(($cellW - $cropW) / 2) + 4
+$insetY = [math]::Floor(($cellH - $cropH) / 2) + 6
 
 $crops = @(
   @{ Name = 'category-eye-general-health';     Col = 0; Row = 0 },

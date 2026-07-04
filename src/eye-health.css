@@ -206,19 +206,15 @@
   width: 96px;
   height: 60px;
   margin-bottom: 14px;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
-  background: rgba(5, 17, 34, 0.4);
-  box-shadow:
-    0 2px 10px rgba(0, 0, 0, 0.22),
-    inset 0 0 12px rgba(5, 17, 34, 0.18);
+  background: rgba(5, 17, 34, 0.72);
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.18);
   transition: box-shadow 0.25s ease;
 }
 
 .eh-category-card:hover .eh-category-eye-frame {
-  box-shadow:
-    0 4px 14px rgba(0, 0, 0, 0.26),
-    inset 0 0 14px rgba(5, 17, 34, 0.14);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.22);
 }
 
 .eh-category-eye-frame::before {
@@ -228,7 +224,7 @@
   z-index: 2;
   pointer-events: none;
   border-radius: inherit;
-  box-shadow: inset 0 0 16px 2px rgba(5, 17, 34, 0.42);
+  box-shadow: inset 0 0 10px rgba(5, 17, 34, 0.28);
 }
 
 .eh-category-eye-frame::after {
@@ -240,9 +236,9 @@
   border-radius: inherit;
   background: linear-gradient(
     165deg,
-    rgba(5, 17, 34, 0.24) 0%,
-    rgba(5, 17, 34, 0.05) 45%,
-    rgba(5, 17, 34, 0.18) 100%
+    rgba(5, 17, 34, 0.14) 0%,
+    rgba(5, 17, 34, 0.02) 48%,
+    rgba(5, 17, 34, 0.12) 100%
   );
 }
 
@@ -252,9 +248,8 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transform: scale(1.04);
-  -webkit-mask-image: radial-gradient(ellipse 96% 92% at 50% 50%, #000 58%, transparent 100%);
-  mask-image: radial-gradient(ellipse 96% 92% at 50% 50%, #000 58%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 98% 96% at 50% 50%, #000 72%, transparent 100%);
+  mask-image: radial-gradient(ellipse 98% 96% at 50% 50%, #000 72%, transparent 100%);
 }
 
 .eh-category-card h3 {
