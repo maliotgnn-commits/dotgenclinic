@@ -1,3 +1,5 @@
+import { renderLegalCorporateNavLink } from './tr-legal-nav.js';
+
 export const FINANCE_DEPARTMENT_PATH = '/tr/finans-departmani.html';
 export const FINANCE_NAV_LABEL = 'Finans Departmanı';
 
@@ -7,7 +9,7 @@ export function renderFinanceCorporateNavLink() {
 
 export function appendFinanceNavLinkIfTr(linksHtml, groupKey, locale) {
   if (groupKey !== 'corporate' || locale !== 'tr') return linksHtml;
-  return `${linksHtml}\n              ${renderFinanceCorporateNavLink()}`;
+  return `${linksHtml}\n              ${renderFinanceCorporateNavLink()}\n              ${renderLegalCorporateNavLink()}`;
 }
 
 export function stripFinanceNavLink(html) {
