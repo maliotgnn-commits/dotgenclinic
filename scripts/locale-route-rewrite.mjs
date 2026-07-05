@@ -2,6 +2,7 @@ export const LOCALE_CODES = ['tr', 'en', 'ar', 'es', 'fr', 'it', 'ru', 'de'];
 
 export const FINANCE_PREVIEW_FILE = 'finans-departmani.html';
 export const LEGAL_PREVIEW_FILE = 'hukuk-departmani.html';
+export const PHARMA_RD_PREVIEW_FILE = 'ilac-ar-ge.html';
 
 export const LEGAL_FILES = new Set([
   'hukuk-departmani.html',
@@ -81,6 +82,10 @@ export function resolveLocaleRewrite(pathname, search = '') {
 
   if (LEGAL_FILES.has(routeFile) || LEGAL_FILES.has(routeFileRaw)) {
     return `/hukuk-departmani.html${search}`;
+  }
+
+  if (routeFile === PHARMA_RD_PREVIEW_FILE || routeFileRaw === PHARMA_RD_PREVIEW_FILE) {
+    return `/ilac-ar-ge.html${search}`;
   }
 
   return `/index.html${search}`;

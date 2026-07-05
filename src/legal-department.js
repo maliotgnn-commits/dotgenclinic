@@ -5,6 +5,7 @@ import { initSiteHeader, renderMobileCategoryTrigger } from './public-header.js'
 import { desktopMenuIdForCategory } from './nav-shared.js';
 import { renderEyeHealthNavItem } from './tr-eye-health-nav.js';
 import { appendFinanceNavLink } from './tr-finance-nav.js';
+import { appendArgeNavItem } from './tr-arge-nav.js';
 import { loadEyeHealthContent } from './eye-health-content.js';
 import { loadLegalContent } from './legal-content.js';
 import { detectLegalLocale } from './legal-routes.js';
@@ -76,7 +77,10 @@ function renderNavGroups() {
     })
     .join('');
 
-  return `${serviceGroups}${renderEyeHealthNavItem({ locale, content: eyeContent })}`;
+  return appendArgeNavItem(
+    `${serviceGroups}${renderEyeHealthNavItem({ locale, content: eyeContent })}`,
+    locale,
+  );
 }
 
 function renderSkipLink() {

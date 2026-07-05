@@ -10,6 +10,7 @@ import {
   renderEyeHealthNavItem,
 } from './tr-eye-health-nav.js';
 import { appendFinanceNavLink } from './tr-finance-nav.js';
+import { appendArgeNavItem } from './tr-arge-nav.js';
 import {
   applySeoLinks,
   buildCategoryGroups,
@@ -92,7 +93,10 @@ function renderNavGroups() {
     })
     .join('');
 
-  return `${serviceGroups}${renderEyeHealthNavItem({ locale: eyeLocale, content: eyeContent })}`;
+  return appendArgeNavItem(
+    `${serviceGroups}${renderEyeHealthNavItem({ locale: eyeLocale, content: eyeContent })}`,
+    eyeLocale,
+  );
 }
 
 function renderSkipLink() {

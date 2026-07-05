@@ -8,6 +8,7 @@ const ROOT = resolve(__dirname, '..');
 
 import { buildFinancePreviewPage } from './build-finance-preview-page.mjs';
 import { buildLegalPreviewPage } from './build-legal-preview-page.mjs';
+import { buildPharmaRdPreviewPage } from './build-pharma-rd-preview-page.mjs';
 
 const steps = [
   ['node', ['scripts/verify-favicon-assets.mjs']],
@@ -28,6 +29,7 @@ const steps = [
   ['node', ['scripts/verify-tr-eye-navigation.mjs']],
   ['node', ['scripts/verify-tr-finance-preview-page.mjs']],
   ['node', ['scripts/verify-tr-legal-preview-page.mjs']],
+  ['node', ['scripts/verify-tr-pharma-rd-page.mjs']],
   ['node', ['scripts/verify-multilingual-legal-page.mjs']],
   ['node', ['scripts/verify-multilingual-finance-page.mjs']],
   ['node', ['scripts/verify-header-controls.mjs']],
@@ -41,6 +43,7 @@ export function runBuildValidations() {
   JSON.parse(readFileSync(resolve(ROOT, 'vercel.json'), 'utf8'));
   buildFinancePreviewPage();
   buildLegalPreviewPage();
+  buildPharmaRdPreviewPage();
 
   for (const [command, args] of steps) {
     const result = spawnSync(command, args, { cwd: ROOT, stdio: 'inherit', shell: process.platform === 'win32' });

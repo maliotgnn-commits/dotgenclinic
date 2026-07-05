@@ -15,7 +15,11 @@ const EXPECTED_MENU_IDS = [
   'medical-aesthetics',
   'functional-health',
   'eye-health',
+  'arge',
 ];
+
+const TR_MENU_IDS = EXPECTED_MENU_IDS;
+const LOCALIZED_MENU_IDS = EXPECTED_MENU_IDS.filter((menuId) => menuId !== 'arge');
 
 function assert(condition, message) {
   if (!condition) failures.push(message);
@@ -40,9 +44,12 @@ assert(desktopNavJs.includes('dataset.desktopMenuId'), 'desktop-nav.js must read
 assert(publicHeaderJs.includes('desktopMenuIdForIndex'), 'public-header.js must assign stable menu IDs during trigger upgrade');
 assert(eyeHealthNavJs.includes('data-desktop-menu-id="eye-health"'), 'eye health nav must expose stable eye-health menu id');
 
+const argeNavJs = readFileSync(resolve(ROOT, 'src/tr-arge-nav.js'), 'utf8');
+assert(argeNavJs.includes('data-desktop-menu-id="arge"'), 'Ar-Ge nav must expose stable arge menu id');
+
 const indexIds = collectMenuIds(indexHtml);
-assert(indexIds.length === 7, `index.html must define 7 desktop menu ids (found ${indexIds.length})`);
-EXPECTED_MENU_IDS.forEach((menuId) => {
+assert(indexIds.length === TR_MENU_IDS.length, `index.html must define ${TR_MENU_IDS.length} desktop menu ids (found ${indexIds.length})`);
+TR_MENU_IDS.forEach((menuId) => {
   assert(indexIds.includes(menuId), `index.html missing data-desktop-menu-id="${menuId}"`);
 });
 assert(new Set(indexIds).size === indexIds.length, `index.html desktop menu ids must be unique: ${indexIds.join(', ')}`);
@@ -69,11 +76,12 @@ assert(existsSync(ruHome), 'Missing dist/ru/index.html for desktop nav trigger c
 if (existsSync(ruHome)) {
   const ruHtml = readFileSync(ruHome, 'utf8');
   const ruIds = collectMenuIds(ruHtml);
-  assert(ruIds.length === 7, `[dist/ru/index.html] expected 7 desktop menu ids, found ${ruIds.length}`);
-  assert(new Set(ruIds).size === 7, `[dist/ru/index.html] desktop menu ids must be unique: ${ruIds.join(', ')}`);
-  EXPECTED_MENU_IDS.forEach((menuId) => {
+  assert(ruIds.length === LOCALIZED_MENU_IDS.length, `[dist/ru/index.html] expected ${LOCALIZED_MENU_IDS.length} desktop menu ids, found ${ruIds.length}`);
+  assert(new Set(ruIds).size === LOCALIZED_MENU_IDS.length, `[dist/ru/index.html] desktop menu ids must be unique: ${ruIds.join(', ')}`);
+  LOCALIZED_MENU_IDS.forEach((menuId) => {
     assert(ruIds.includes(menuId), `[dist/ru/index.html] missing data-desktop-menu-id="${menuId}"`);
   });
+  assert(!ruIds.includes('arge'), '[dist/ru/index.html] TR-only Ar-Ge nav must not appear');
   assert(ruHtml.includes('О клинике'), '[dist/ru/index.html] Russian short corporate label must remain visible');
   assert(ruHtml.includes('Офтальмология'), '[dist/ru/index.html] Russian short eye health label must remain visible');
 }
