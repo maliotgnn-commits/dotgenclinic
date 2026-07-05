@@ -615,6 +615,19 @@ to {
     flex: 0 0 auto;
   }
 
+  .nav-menu > li.has-dropdown {
+    position: relative;
+    z-index: 2;
+  }
+
+  .nav-menu > li.has-dropdown.open {
+    z-index: 3;
+  }
+
+  .has-dropdown .mega-dropdown {
+    z-index: 1;
+  }
+
   .has-dropdown[data-eye-health-nav] {
     position: static;
   }

@@ -1,4 +1,4 @@
-import { MOBILE_NAV_MAX_WIDTH } from './nav-shared.js';
+import { MOBILE_NAV_MAX_WIDTH, desktopMenuIdForCategory } from './nav-shared.js';
 
 export const DESKTOP_NAV_MIN_WIDTH = MOBILE_NAV_MAX_WIDTH;
 
@@ -7,24 +7,23 @@ function isDesktopNavViewport() {
 }
 
 function resolveMenuId(item, index) {
-  if (item.dataset.desktopMenuId) return item.dataset.desktopMenuId;
+  const fromAttr = item.dataset.desktopMenuId?.trim();
+  if (fromAttr) return fromAttr;
+
   if (item.hasAttribute('data-eye-health-nav')) {
     item.dataset.desktopMenuId = 'eye-health';
     return 'eye-health';
   }
-  const label = item.querySelector(':scope > a.desktop-nav-trigger, :scope > a, .eh-nav-primary-link')
-    ?.textContent
-    ?.replace(/\s+/g, ' ')
-    .trim();
-  const menuId = label ? `nav-${label.toLowerCase().replace(/[^a-z0-9]+/g, '-')}` : `nav-menu-${index}`;
-  item.dataset.desktopMenuId = menuId;
-  return menuId;
+
+  const fallbackId = `nav-menu-${index}`;
+  item.dataset.desktopMenuId = fallbackId;
+  return fallbackId;
 }
 
 export function getDesktopMenuRegistry(navMenu) {
   if (!navMenu) return [];
 
-  return [...navMenu.querySelectorAll(':scope > li.has-dropdown')].map((item, index) => {
+  const entries = [...navMenu.querySelectorAll(':scope > li.has-dropdown')].map((item, index) => {
     const menuId = resolveMenuId(item, index);
     const isEyeHealth = item.hasAttribute('data-eye-health-nav');
     const trigger = isEyeHealth
@@ -44,6 +43,15 @@ export function getDesktopMenuRegistry(navMenu) {
 
     return { menuId, item, trigger, panel, ariaTrigger, isEyeHealth };
   });
+
+  const duplicateIds = entries
+    .map(({ menuId }) => menuId)
+    .filter((menuId, index, ids) => ids.indexOf(menuId) !== index);
+  if (duplicateIds.length) {
+    console.error('[desktop-nav] duplicate data-desktop-menu-id values:', [...new Set(duplicateIds)]);
+  }
+
+  return entries;
 }
 
 export function closeAllDesktopMenus(registry, exceptMenuId = null) {

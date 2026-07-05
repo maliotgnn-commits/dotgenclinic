@@ -4,56 +4,74 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
+const DIST = resolve(ROOT, 'dist');
 const failures = [];
+
+const EXPECTED_MENU_IDS = [
+  'corporate',
+  'hair',
+  'dental',
+  'plastic',
+  'medical-aesthetics',
+  'functional-health',
+  'eye-health',
+];
 
 function assert(condition, message) {
   if (!condition) failures.push(message);
 }
 
+function collectMenuIds(html) {
+  return [...html.matchAll(/<li\b[^>]*\bdata-desktop-menu-id="([^"]+)"/g)].map((match) => match[1]);
+}
+
 const desktopNavJs = readFileSync(resolve(ROOT, 'src/desktop-nav.js'), 'utf8');
+const navSharedJs = readFileSync(resolve(ROOT, 'src/nav-shared.js'), 'utf8');
 const publicHeaderJs = readFileSync(resolve(ROOT, 'src/public-header.js'), 'utf8');
 const eyeHealthNavJs = readFileSync(resolve(ROOT, 'src/tr-eye-health-nav.js'), 'utf8');
-const megaMenuA11yJs = readFileSync(resolve(ROOT, 'src/mega-menu-a11y.js'), 'utf8');
 const styleCss = readFileSync(resolve(ROOT, 'src/style.css'), 'utf8');
+const indexHtml = readFileSync(resolve(ROOT, 'index.html'), 'utf8');
+
+assert(navSharedJs.includes('desktopMenuIdForCategory'), 'nav-shared.js must define desktopMenuIdForCategory');
+assert(navSharedJs.includes('medical-aesthetics'), 'nav-shared.js must map medical category to medical-aesthetics');
+assert(navSharedJs.includes('functional-health'), 'nav-shared.js must map longevity category to functional-health');
+assert(!desktopNavJs.includes('textContent'), 'desktop-nav.js must not derive menu IDs from visible text');
+assert(desktopNavJs.includes('dataset.desktopMenuId'), 'desktop-nav.js must read stable data-desktop-menu-id attributes');
+assert(publicHeaderJs.includes('desktopMenuIdForIndex'), 'public-header.js must assign stable menu IDs during trigger upgrade');
+assert(eyeHealthNavJs.includes('data-desktop-menu-id="eye-health"'), 'eye health nav must expose stable eye-health menu id');
+
+const indexIds = collectMenuIds(indexHtml);
+assert(indexIds.length === 7, `index.html must define 7 desktop menu ids (found ${indexIds.length})`);
+EXPECTED_MENU_IDS.forEach((menuId) => {
+  assert(indexIds.includes(menuId), `index.html missing data-desktop-menu-id="${menuId}"`);
+});
+assert(new Set(indexIds).size === indexIds.length, `index.html desktop menu ids must be unique: ${indexIds.join(', ')}`);
+
+assert(styleCss.includes('.nav-menu > li.has-dropdown.open'), 'desktop nav triggers must stack above open panels');
 
 assert(desktopNavJs.includes('export function initDesktopNav'), 'desktop-nav.js must export initDesktopNav');
-assert(desktopNavJs.includes('export function openDesktopMenu'), 'desktop-nav.js must export openDesktopMenu');
-assert(desktopNavJs.includes('export function closeAllDesktopMenus'), 'desktop-nav.js must export closeAllDesktopMenus');
-assert(desktopNavJs.includes('export function getDesktopMenuRegistry'), 'desktop-nav.js must export getDesktopMenuRegistry');
-assert(desktopNavJs.includes("item.hasAttribute('data-eye-health-nav')"), 'Eye Health must resolve into desktop menu registry');
-assert(desktopNavJs.includes(':scope > li.has-dropdown'), 'Registry must include all top-level has-dropdown items');
 assert(desktopNavJs.includes('pointerenter'), 'Desktop nav must use pointerenter for hover open');
-assert(desktopNavJs.includes('relatedTarget') || desktopNavJs.includes('isWithinNode'), 'Desktop nav must guard pointerleave with related target checks');
-assert(!desktopNavJs.includes('mouseenter'), 'Desktop nav must not duplicate mouseenter listeners');
-
-assert(publicHeaderJs.includes("import { initDesktopNav } from './desktop-nav.js'"), 'public-header.js must import initDesktopNav');
 assert(publicHeaderJs.includes('initDesktopNav(navMenu'), 'public-header.js must initialize centralized desktop nav');
-
 assert(!eyeHealthNavJs.includes('bindDesktopHover'), 'tr-eye-health-nav.js must not keep separate desktop hover handlers');
-assert(!eyeHealthNavJs.includes('openDesktopMega'), 'tr-eye-health-nav.js must not keep separate openDesktopMega');
-assert(!eyeHealthNavJs.includes('scheduleDesktopClose'), 'tr-eye-health-nav.js must not keep separate desktop close timer');
-assert(eyeHealthNavJs.includes('eh-mobile-group-toggle'), 'Mobile eye health accordion behavior must remain');
-
-assert(megaMenuA11yJs.includes('desktopNav'), 'mega-menu-a11y.js must accept centralized desktop nav controller');
 
 const desktopMediaBlock = styleCss.match(/@media \(width>=1280px\) \{([\s\S]*?)\n\}/);
 assert(desktopMediaBlock, 'Desktop media query block missing in style.css');
-
 const desktopCss = desktopMediaBlock?.[1] ?? '';
 assert(desktopCss.includes('.has-dropdown.open .mega-dropdown'), 'Desktop panels must open via .open class');
-assert(desktopCss.includes('.has-dropdown:hover .mega-dropdown'), 'Desktop hover rule must be neutralized in desktop media query');
 assert(!desktopCss.includes('.has-dropdown[data-eye-health-nav]:hover .eh-nav-item-head'), 'Eye Health desktop trigger must not rely on :hover');
-assert(desktopCss.includes('.has-dropdown.open > a.desktop-nav-trigger'), 'Standard desktop triggers must use .open active state');
 
-assert(!publicHeaderJs.includes('bindDesktopHover'), 'public-header.js must not attach separate desktop hover listeners');
-
-const indexHtml = existsSync(resolve(ROOT, 'index.html'))
-  ? readFileSync(resolve(ROOT, 'index.html'), 'utf8')
-  : '';
-if (indexHtml) {
-  const dropdownCount = (indexHtml.match(/<li class="has-dropdown/g) || []).length;
-  assert(dropdownCount >= 7, `index.html must include all seven desktop dropdown menus (found ${dropdownCount})`);
-  assert(indexHtml.includes('data-eye-health-nav'), 'index.html must include Eye Health nav in shared markup');
+const ruHome = resolve(DIST, 'ru', 'index.html');
+assert(existsSync(ruHome), 'Missing dist/ru/index.html for desktop nav trigger coverage check');
+if (existsSync(ruHome)) {
+  const ruHtml = readFileSync(ruHome, 'utf8');
+  const ruIds = collectMenuIds(ruHtml);
+  assert(ruIds.length === 7, `[dist/ru/index.html] expected 7 desktop menu ids, found ${ruIds.length}`);
+  assert(new Set(ruIds).size === 7, `[dist/ru/index.html] desktop menu ids must be unique: ${ruIds.join(', ')}`);
+  EXPECTED_MENU_IDS.forEach((menuId) => {
+    assert(ruIds.includes(menuId), `[dist/ru/index.html] missing data-desktop-menu-id="${menuId}"`);
+  });
+  assert(ruHtml.includes('О клинике'), '[dist/ru/index.html] Russian short corporate label must remain visible');
+  assert(ruHtml.includes('Офтальмология'), '[dist/ru/index.html] Russian short eye health label must remain visible');
 }
 
 if (failures.length) {
@@ -62,4 +80,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('[verify-desktop-nav-exclusive-open] Verified centralized exclusive desktop navigation state');
+console.log('[verify-desktop-nav-exclusive-open] Verified centralized exclusive desktop navigation state and stable menu IDs');

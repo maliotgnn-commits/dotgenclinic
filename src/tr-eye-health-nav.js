@@ -54,7 +54,7 @@ export function renderEyeHealthNavItem({ locale = 'tr', pagePath, content } = {}
   const trOnlyAttr = locale === 'tr' ? ' data-tr-only-nav' : '';
 
   return `
-    <li class="has-dropdown"${trOnlyAttr} data-eye-health-nav>
+    <li class="has-dropdown" data-desktop-menu-id="eye-health"${trOnlyAttr} data-eye-health-nav>
       <button
         type="button"
         class="mobile-nav-trigger eh-mobile-nav-trigger"
