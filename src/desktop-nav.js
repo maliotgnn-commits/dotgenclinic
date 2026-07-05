@@ -52,19 +52,9 @@ export function closeAllDesktopMenus(registry, exceptMenuId = null) {
     item.classList.remove('open');
     ariaTrigger?.setAttribute('aria-expanded', 'false');
   });
-
-  // #region agent log
-  const expandedCount = registry.filter(({ ariaTrigger }) => ariaTrigger?.getAttribute('aria-expanded') === 'true').length;
-  const openCount = registry.filter(({ item }) => item.classList.contains('open')).length;
-  fetch('http://127.0.0.1:7351/ingest/978326e2-ed1a-492b-ba34-cad4578e33a0', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': '834132' }, body: JSON.stringify({ sessionId: '834132', location: 'desktop-nav.js:closeAllDesktopMenus', message: 'closeAllDesktopMenus', data: { exceptMenuId, expandedCount, openCount }, timestamp: Date.now(), hypothesisId: 'A', runId: 'pre-fix' }) }).catch(() => {});
-  // #endregion
 }
 
 export function openDesktopMenu(registry, menuId) {
-  const previousOpen = registry
-    .filter(({ item }) => item.classList.contains('open'))
-    .map(({ menuId: id }) => id);
-
   closeAllDesktopMenus(registry, menuId);
 
   const entry = registry.find(({ menuId: id }) => id === menuId);
@@ -73,10 +63,6 @@ export function openDesktopMenu(registry, menuId) {
   entry.item.classList.add('open');
   entry.ariaTrigger?.setAttribute('aria-expanded', 'true');
   entry.panel?.removeAttribute('hidden');
-
-  // #region agent log
-  fetch('http://127.0.0.1:7351/ingest/978326e2-ed1a-492b-ba34-cad4578e33a0', { method: 'POST', headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': '834132' }, body: JSON.stringify({ sessionId: '834132', location: 'desktop-nav.js:openDesktopMenu', message: 'openDesktopMenu', data: { menuId, previousOpen, expandedAfter: registry.filter(({ ariaTrigger }) => ariaTrigger?.getAttribute('aria-expanded') === 'true').map(({ menuId: id }) => id) }, timestamp: Date.now(), hypothesisId: 'B', runId: 'pre-fix' }) }).catch(() => {});
-  // #endregion
 }
 
 function isWithinNode(node, container) {
@@ -181,6 +167,5 @@ export function initDesktopNav(navMenu, root = document) {
     scheduleClose,
   };
 
-  window.__desktopNavController = controller;
   return controller;
 }
