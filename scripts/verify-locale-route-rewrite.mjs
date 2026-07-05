@@ -1,4 +1,4 @@
-import { resolveLocaleRewrite, rewriteLocaleRequestUrl, FINANCE_PREVIEW_FILE, FINANCE_FILES } from './locale-route-rewrite.mjs';
+import { resolveLocaleRewrite, rewriteLocaleRequestUrl, FINANCE_PREVIEW_FILE, FINANCE_FILES, LEGAL_PREVIEW_FILE } from './locale-route-rewrite.mjs';
 
 const failures = [];
 
@@ -19,6 +19,7 @@ expect('/ar/service.html', '?slug=botox', '/service.html?slug=botox');
 expect('/ru/privacy.html', '', '/privacy.html');
 expect('/tr/goz-hastaliklari.html', '', '/goz-hastaliklari.html');
 expect('/tr/finans-departmani.html', '', '/finans-departmani.html');
+expect('/tr/hukuk-departmani.html', '', '/hukuk-departmani.html');
 expect('/en/finance-department.html', '', '/finans-departmani.html');
 expect('/de/finanzabteilung.html', '', '/finans-departmani.html');
 expect('/en/eye-health.html', '', '/goz-hastaliklari.html');
@@ -47,6 +48,14 @@ assert(
 assert(
   rewriteLocaleRequestUrl('/tr/finans-departmani.html') === '/finans-departmani.html',
   'rewriteLocaleRequestUrl must map finance preview route',
+);
+assert(
+  rewriteLocaleRequestUrl('/tr/hukuk-departmani.html') === '/hukuk-departmani.html',
+  'rewriteLocaleRequestUrl must map legal preview route',
+);
+assert(
+  LEGAL_PREVIEW_FILE === 'hukuk-departmani.html',
+  'Legal preview route file constant mismatch',
 );
 assert(
   FINANCE_FILES.size === 8,
