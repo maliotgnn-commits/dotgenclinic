@@ -1,5 +1,7 @@
 export const LOCALE_CODES = ['tr', 'en', 'ar', 'es', 'fr', 'it', 'ru', 'de'];
 
+export const FINANCE_PREVIEW_FILE = 'finans-departmani.html';
+
 export const EYE_HEALTH_FILES = new Set([
   'goz-hastaliklari.html',
   'eye-health.html',
@@ -44,6 +46,10 @@ export function resolveLocaleRewrite(pathname, search = '') {
 
   if (EYE_HEALTH_FILES.has(routeFile) || EYE_HEALTH_FILES.has(routeFileRaw)) {
     return `/goz-hastaliklari.html${search}`;
+  }
+
+  if (routeFile === FINANCE_PREVIEW_FILE || routeFileRaw === FINANCE_PREVIEW_FILE) {
+    return `/finans-departmani.html${search}`;
   }
 
   return `/index.html${search}`;

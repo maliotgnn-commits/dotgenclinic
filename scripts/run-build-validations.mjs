@@ -6,6 +6,8 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 
+import { buildFinancePreviewPage } from './build-finance-preview-page.mjs';
+
 const steps = [
   ['node', ['scripts/verify-favicon-assets.mjs']],
   ['node', ['scripts/verify-service-static-seo.mjs']],
@@ -23,6 +25,7 @@ const steps = [
   ['node', ['scripts/verify-multilingual-eye-health-page.mjs']],
   ['node', ['scripts/verify-locale-route-rewrite.mjs']],
   ['node', ['scripts/verify-tr-eye-navigation.mjs']],
+  ['node', ['scripts/verify-tr-finance-preview-page.mjs']],
   ['node', ['scripts/verify-header-controls.mjs']],
   ['node', ['scripts/verify-nav-category-labels.mjs']],
   ['node', ['scripts/verify-form-privacy.mjs']],
@@ -30,6 +33,7 @@ const steps = [
 
 export function runBuildValidations() {
   JSON.parse(readFileSync(resolve(ROOT, 'vercel.json'), 'utf8'));
+  buildFinancePreviewPage();
 
   for (const [command, args] of steps) {
     const result = spawnSync(command, args, { cwd: ROOT, stdio: 'inherit', shell: process.platform === 'win32' });

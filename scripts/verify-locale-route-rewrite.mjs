@@ -1,4 +1,4 @@
-import { resolveLocaleRewrite, rewriteLocaleRequestUrl } from './locale-route-rewrite.mjs';
+import { resolveLocaleRewrite, rewriteLocaleRequestUrl, FINANCE_PREVIEW_FILE } from './locale-route-rewrite.mjs';
 
 const failures = [];
 
@@ -18,6 +18,7 @@ expect('/de/privacy.html', '', '/privacy.html');
 expect('/ar/service.html', '?slug=botox', '/service.html?slug=botox');
 expect('/ru/privacy.html', '', '/privacy.html');
 expect('/tr/goz-hastaliklari.html', '', '/goz-hastaliklari.html');
+expect('/tr/finans-departmani.html', '', '/finans-departmani.html');
 expect('/en/eye-health.html', '', '/goz-hastaliklari.html');
 expect('/ar/صحة-العين.html', '', '/goz-hastaliklari.html');
 expect('/ru/здоровье-глаз.html', '', '/goz-hastaliklari.html');
@@ -40,6 +41,14 @@ assert(
 assert(
   rewriteLocaleRequestUrl('/de/privacy.html') !== '/index.html',
   'privacy routes must not fall back to index.html',
+);
+assert(
+  rewriteLocaleRequestUrl('/tr/finans-departmani.html') === '/finans-departmani.html',
+  'rewriteLocaleRequestUrl must map finance preview route',
+);
+assert(
+  FINANCE_PREVIEW_FILE === 'finans-departmani.html',
+  'Finance preview route file constant mismatch',
 );
 
 if (failures.length) {
