@@ -1,0 +1,98 @@
+{
+  "page": {
+    "title": "Département Juridique | Dr Otgen Clinic",
+    "description": "Le Département Juridique de Dr Otgen Clinic informe sur les droits des patients, la confidentialité, les processus documentaires et la communication juridique institutionnelle.",
+    "hero": {
+      "tag": "DÉPARTEMENT JURIDIQUE",
+      "title": "Communication Transparente et Sécurisée dans les Processus Juridiques",
+      "description": "Les demandes d'information, de documents et de communication de nature juridique liées à Dr Otgen Clinic sont examinées conformément aux registres pertinents, aux droits des patients, aux principes de confidentialité et à la législation en vigueur.",
+      "cta": "Contacter le Département Juridique"
+    },
+    "profile": {
+      "title": "Coordination Professionnelle dans les Processus Juridiques",
+      "description": "Notre Département Juridique contribue à l'examen coordonné des demandes documentaires, de communication, de confidentialité et de processus liées à l'institution avec les unités concernées.",
+      "person": {
+        "name": "Av. Aslı Karakula",
+        "role": "Avocate",
+        "description": "Soutient la communication et le suivi des processus avec les unités concernées en matière de droits des patients, de protection des données personnelles, de processus documentaires contractuels et de coordination juridique interne.",
+        "image": "/images/legal_department/asli_karakula.jpg",
+        "imageAlt": "Av. Aslı Karakula"
+      }
+    },
+    "support": {
+      "title": "Sur Quels Sujets Pouvez-vous Demander des Informations ?",
+      "cards": [
+        {
+          "title": "Droits des Patients et Processus de Communication",
+          "text": "Les demandes de communication de nature juridique liées aux droits des patients et au processus de service sont examinées conformément aux registres pertinents."
+        },
+        {
+          "title": "Données Personnelles et Confidentialité",
+          "text": "La protection des données personnelles, les demandes de confidentialité et les processus d'information associés sont traités conformément à la réglementation en vigueur et aux registres internes."
+        },
+        {
+          "title": "Consentement, Contrat et Processus Documentaires",
+          "text": "Les demandes liées au consentement, aux contrats, aux candidatures ou aux processus documentaires institutionnels sont examinées en coordination avec les départements concernés."
+        },
+        {
+          "title": "Coordination Juridique du Tourisme de Santé",
+          "text": "Les demandes documentaires, de communication et de processus pouvant survenir dans le cadre des services internationaux aux patients sont examinées conformément à la législation, aux registres et à l'autorité compétente."
+        }
+      ]
+    },
+    "process": {
+      "title": "Comment Votre Demande Est-elle Examinée ?",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Transmettez Votre Demande",
+          "text": "Partagez votre demande d'information, de document ou de communication liée à un processus juridique via le formulaire."
+        },
+        {
+          "num": "02",
+          "title": "Examen des Registres Pertinents",
+          "text": "Votre demande est examinée conformément à l'opération, au document, à l'unité et aux registres pertinents."
+        },
+        {
+          "num": "03",
+          "title": "Information et Orientation",
+          "text": "Les informations et orientations jugées nécessaires dans le cadre du processus sont transmises par les unités concernées."
+        }
+      ]
+    },
+    "security": {
+      "title": "Partage Sécurisé des Informations",
+      "description": "Ne partagez pas de numéros d'identité, de données de passeport, d'informations bancaires, de mots de passe, de données de santé ou d'autres données personnelles sensibles via le formulaire. Si nécessaire, les informations et documents pertinents seront demandés par un canal de communication approprié."
+    },
+    "contact": {
+      "title": "Contactez Notre Département Juridique",
+      "description": "Vous pouvez utiliser le formulaire ci-dessous pour obtenir des informations sur les processus juridiques, les demandes de documents et les sujets de communication liés à notre institution.",
+      "fields": {
+        "name": "Nom et Prénom",
+        "phone": "Numéro de Téléphone",
+        "email": "Adresse E-mail",
+        "topic": "Objet de la Demande",
+        "message": "Votre Message",
+        "topicPlaceholder": "Sélectionner",
+        "submit": "Envoyer la Demande"
+      },
+      "topics": [
+        "Information sur les Droits des Patients",
+        "Données Personnelles et Demande de Confidentialité",
+        "Processus Documentaire ou Contractuel",
+        "Processus de Tourisme de Santé",
+        "Communication Juridique Institutionnelle",
+        "Autre"
+      ],
+      "previewMessage": "L'envoi du formulaire n'est pas actif dans le cadre de ce test de prévisualisation."
+    },
+    "closing": {
+      "title": "Obtenir des Informations sur les Processus Juridiques",
+      "description": "Vous pouvez contacter notre Département Juridique pour obtenir des informations sur les processus juridiques, les demandes de documents et les sujets de communication liés à notre institution.",
+      "cta": "Contacter le Département Juridique"
+    }
+  },
+  "nav": {
+    "menuLabel": "Département Juridique"
+  }
+}

@@ -28,6 +28,7 @@ const steps = [
   ['node', ['scripts/verify-tr-eye-navigation.mjs']],
   ['node', ['scripts/verify-tr-finance-preview-page.mjs']],
   ['node', ['scripts/verify-tr-legal-preview-page.mjs']],
+  ['node', ['scripts/verify-multilingual-legal-page.mjs']],
   ['node', ['scripts/verify-multilingual-finance-page.mjs']],
   ['node', ['scripts/verify-header-controls.mjs']],
   ['node', ['scripts/verify-nav-breakpoint-alignment.mjs']],

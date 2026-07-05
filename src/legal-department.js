@@ -6,10 +6,12 @@ import { desktopMenuIdForCategory } from './nav-shared.js';
 import { renderEyeHealthNavItem } from './tr-eye-health-nav.js';
 import { appendFinanceNavLink } from './tr-finance-nav.js';
 import { loadEyeHealthContent } from './eye-health-content.js';
-import { LEGAL_PAGE } from './legal-data.js';
+import { loadLegalContent } from './legal-content.js';
+import { detectLegalLocale } from './legal-routes.js';
 import {
   applySeoLinks,
   buildCategoryGroups,
+  getCurrentLocale,
   homeUrlFor,
   loadContentCatalog,
   loadUiDictionary,
@@ -22,13 +24,16 @@ import {
 } from './language-switcher.js';
 
 const app = document.getElementById('legal-app');
-const locale = 'tr';
-const { page } = { page: LEGAL_PAGE };
-const [catalog, uiDictionary, eyeContent] = await Promise.all([
+const pathLocale = detectLegalLocale();
+const locale = getCurrentLocale('legal');
+const legalLocale = pathLocale || locale;
+const [catalog, uiDictionary, eyeContent, legalContent] = await Promise.all([
   loadContentCatalog(locale),
   loadUiDictionary(locale),
   loadEyeHealthContent(locale),
+  loadLegalContent(legalLocale),
 ]);
+const { page } = legalContent;
 const categoryGroups = buildCategoryGroups(catalog, uiDictionary, locale);
 const t = (source) => translate(uiDictionary, source);
 const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -93,7 +98,7 @@ function renderHeader() {
           </div>
           <div class="nav-actions">
             <div class="nav-language-slot">
-              ${renderLanguageSwitcher(locale, 'home', uiDictionary)}
+              ${renderLanguageSwitcher(locale, 'legal', uiDictionary)}
             </div>
             <a href="${homeUrlFor(locale, '#randevu')}" class="nav-cta">${escapeHtml(t('Randevu Al'))}</a>
             <button class="hamburger" id="hamburger" aria-label="${escapeHtml(t('Menü'))}" aria-expanded="false">

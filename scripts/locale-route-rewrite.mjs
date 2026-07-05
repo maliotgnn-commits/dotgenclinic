@@ -3,6 +3,17 @@ export const LOCALE_CODES = ['tr', 'en', 'ar', 'es', 'fr', 'it', 'ru', 'de'];
 export const FINANCE_PREVIEW_FILE = 'finans-departmani.html';
 export const LEGAL_PREVIEW_FILE = 'hukuk-departmani.html';
 
+export const LEGAL_FILES = new Set([
+  'hukuk-departmani.html',
+  'legal-department.html',
+  'departamento-juridico.html',
+  'departement-juridique.html',
+  'dipartimento-legale.html',
+  'rechtsabteilung.html',
+  'قسم-الشؤون-القانونية.html',
+  'юридический-отдел.html',
+]);
+
 export const FINANCE_FILES = new Set([
   'finans-departmani.html',
   'finance-department.html',
@@ -65,6 +76,10 @@ export function resolveLocaleRewrite(pathname, search = '') {
   }
 
   if (routeFile === LEGAL_PREVIEW_FILE || routeFileRaw === LEGAL_PREVIEW_FILE) {
+    return `/hukuk-departmani.html${search}`;
+  }
+
+  if (LEGAL_FILES.has(routeFile) || LEGAL_FILES.has(routeFileRaw)) {
     return `/hukuk-departmani.html${search}`;
   }
 

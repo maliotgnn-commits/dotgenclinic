@@ -1,0 +1,98 @@
+{
+  "page": {
+    "title": "Dipartimento Legale | Dr Otgen Clinic",
+    "description": "Il Dipartimento Legale di Dr Otgen Clinic fornisce informazioni su diritti del paziente, privacy, processi documentali e comunicazione legale istituzionale.",
+    "hero": {
+      "tag": "DIPARTIMENTO LEGALE",
+      "title": "Comunicazione Trasparente e Sicura nei Processi Legali",
+      "description": "Le richieste di informazioni, documenti e comunicazioni di natura legale relative a Dr Otgen Clinic vengono valutate nel quadro dei registri pertinenti, dei diritti del paziente, dei principi di privacy e della normativa vigente.",
+      "cta": "Contattare il Dipartimento Legale"
+    },
+    "profile": {
+      "title": "Coordinamento Professionale nei Processi Legali",
+      "description": "Il nostro Dipartimento Legale contribuisce alla valutazione coordinata delle richieste documentali, di comunicazione, privacy e processi relative all'istituto con le unità competenti.",
+      "person": {
+        "name": "Av. Aslı Karakula",
+        "role": "Avvocato",
+        "description": "Supporta la comunicazione e il monitoraggio dei processi con le unità competenti in materia di diritti del paziente, protezione dei dati personali, processi documentali contrattuali e coordinamento legale interno.",
+        "image": "/images/legal_department/asli_karakula.jpg",
+        "imageAlt": "Av. Aslı Karakula"
+      }
+    },
+    "support": {
+      "title": "Su Quali Argomenti Potete Richiedere Informazioni?",
+      "cards": [
+        {
+          "title": "Diritti del Paziente e Processi di Comunicazione",
+          "text": "Le richieste di comunicazione di natura legale relative ai diritti del paziente e al processo di servizio vengono valutate conformemente ai registri pertinenti."
+        },
+        {
+          "title": "Dati Personali e Privacy",
+          "text": "La protezione dei dati personali, le richieste di privacy e i relativi processi informativi vengono trattati nel quadro della normativa vigente e dei registri interni."
+        },
+        {
+          "title": "Consenso, Contratto e Processi Documentali",
+          "text": "Le richieste relative a consensi, contratti, domande o processi documentali istituzionali vengono esaminate in coordinamento con i dipartimenti competenti."
+        },
+        {
+          "title": "Coordinamento Legale del Turismo Sanitario",
+          "text": "Le richieste documentali, di comunicazione e di processo che possono emergere nei servizi internazionali ai pazienti vengono valutate nel quadro della normativa, dei registri e dell'autorità competenti."
+        }
+      ]
+    },
+    "process": {
+      "title": "Come Viene Valutata la Vostra Richiesta?",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Inviate la Vostra Richiesta",
+          "text": "Condividete la vostra richiesta di informazioni, documenti o comunicazione relativa a un processo legale tramite il modulo."
+        },
+        {
+          "num": "02",
+          "title": "Revisione dei Registri Pertinenti",
+          "text": "La vostra richiesta viene valutata conformemente all'operazione, al documento, all'unità e ai registri pertinenti."
+        },
+        {
+          "num": "03",
+          "title": "Informazione e Orientamento",
+          "text": "Le informazioni e le indicazioni necessarie nell'ambito del processo vengono condivise tramite le unità competenti."
+        }
+      ]
+    },
+    "security": {
+      "title": "Condivisione Sicura delle Informazioni",
+      "description": "Non condividete numeri di identità, dati del passaporto, informazioni sulla carta, password, dati sanitari o altri dati personali sensibili tramite il modulo. Se necessario, le informazioni e i documenti pertinenti saranno richiesti attraverso un canale di comunicazione appropriato."
+    },
+    "contact": {
+      "title": "Contattate il Nostro Dipartimento Legale",
+      "description": "Potete utilizzare il modulo sottostante per ottenere informazioni su processi legali, richieste di documenti e argomenti di comunicazione relativi alla nostra istituzione.",
+      "fields": {
+        "name": "Nome e Cognome",
+        "phone": "Numero di Telefono",
+        "email": "Indirizzo E-mail",
+        "topic": "Oggetto della Richiesta",
+        "message": "Il Vostro Messaggio",
+        "topicPlaceholder": "Selezionare",
+        "submit": "Invia Richiesta"
+      },
+      "topics": [
+        "Informazioni sui Diritti del Paziente",
+        "Dati Personali e Richiesta di Privacy",
+        "Processo Documentale o Contrattuale",
+        "Processi di Turismo Sanitario",
+        "Comunicazione Legale Istituzionale",
+        "Altro"
+      ],
+      "previewMessage": "L'invio del modulo non è attivo nell'ambito di questo test di anteprima."
+    },
+    "closing": {
+      "title": "Ottenere Informazioni sui Processi Legali",
+      "description": "Potete contattare il nostro Dipartimento Legale per ottenere informazioni su processi legali, richieste di documenti e argomenti di comunicazione relativi alla nostra istituzione.",
+      "cta": "Contattare il Dipartimento Legale"
+    }
+  },
+  "nav": {
+    "menuLabel": "Dipartimento Legale"
+  }
+}

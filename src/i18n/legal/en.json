@@ -1,0 +1,98 @@
+{
+  "page": {
+    "title": "Legal Department | Dr Otgen Clinic",
+    "description": "Dr Otgen Clinic Legal Department provides information on patient rights, privacy, document processes and corporate legal communication requests.",
+    "hero": {
+      "tag": "LEGAL DEPARTMENT",
+      "title": "Transparent and Secure Communication in Legal Processes",
+      "description": "Information, document and communication requests of a legal nature related to Dr Otgen Clinic are reviewed within the framework of relevant records, patient rights, privacy principles and applicable legislation.",
+      "cta": "Contact the Legal Department"
+    },
+    "profile": {
+      "title": "Professional Coordination in Legal Processes",
+      "description": "Our Legal Department supports the coordinated review of document, communication, privacy and process requests related to the institution together with the relevant units.",
+      "person": {
+        "name": "Av. Aslı Karakula",
+        "role": "Lawyer",
+        "description": "Supports communication and process follow-up with relevant units on patient rights, personal data protection, contractual document processes and in-house legal coordination.",
+        "image": "/images/legal_department/asli_karakula.jpg",
+        "imageAlt": "Av. Aslı Karakula"
+      }
+    },
+    "support": {
+      "title": "What Can You Request Information About?",
+      "cards": [
+        {
+          "title": "Patient Rights and Communication Processes",
+          "text": "Communication requests of a legal nature related to patient rights and the service process are reviewed in line with relevant records."
+        },
+        {
+          "title": "Personal Data and Privacy",
+          "text": "Personal data protection, privacy requests and related information processes are addressed within the framework of applicable regulations and in-house records."
+        },
+        {
+          "title": "Consent, Contract and Document Processes",
+          "text": "Requests related to consent, contracts, applications or corporate document processes are reviewed in coordination with the relevant departments."
+        },
+        {
+          "title": "Health Tourism Legal Coordination",
+          "text": "Document, communication and process requests that may arise within international patient services are reviewed within the framework of applicable legislation, record-keeping and authority."
+        }
+      ]
+    },
+    "process": {
+      "title": "How Is Your Request Reviewed?",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Submit Your Request",
+          "text": "Share your information, document or communication request related to a legal process via the form."
+        },
+        {
+          "num": "02",
+          "title": "Relevant Records Reviewed",
+          "text": "Your request is reviewed in line with the relevant transaction, document, unit and records."
+        },
+        {
+          "num": "03",
+          "title": "Information and Guidance",
+          "text": "Information and guidance deemed necessary within the process are shared through the relevant units."
+        }
+      ]
+    },
+    "security": {
+      "title": "Secure Information Sharing",
+      "description": "Do not share identity numbers, passport details, card information, passwords, health data or other sensitive personal data via the form. If deemed necessary, the relevant information and documents will be requested through an appropriate communication channel."
+    },
+    "contact": {
+      "title": "Contact Our Legal Department",
+      "description": "You may use the form below to obtain information on legal processes, document requests and related communication matters concerning our institution.",
+      "fields": {
+        "name": "Full Name",
+        "phone": "Phone Number",
+        "email": "Email Address",
+        "topic": "Request Topic",
+        "message": "Your Message",
+        "topicPlaceholder": "Select",
+        "submit": "Send Request"
+      },
+      "topics": [
+        "Information on Patient Rights",
+        "Personal Data and Privacy Request",
+        "Document or Contract Process",
+        "Health Tourism Processes",
+        "Corporate Legal Communication",
+        "Other"
+      ],
+      "previewMessage": "Form submission is not active as part of this preview test."
+    },
+    "closing": {
+      "title": "Get Information About Legal Processes",
+      "description": "You may contact our Legal Department for information on legal processes, document requests and related communication matters concerning our institution.",
+      "cta": "Contact the Legal Department"
+    }
+  },
+  "nav": {
+    "menuLabel": "Legal Department"
+  }
+}

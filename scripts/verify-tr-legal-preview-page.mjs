@@ -13,7 +13,6 @@ import {
   renderLegalCorporateNavLink,
 } from '../src/tr-legal-nav.js';
 import { LEGAL_PAGE } from '../src/legal-data.js';
-import { LOCALES, DEFAULT_LOCALE } from './seo-shared.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -85,7 +84,7 @@ assert(legalJs.includes('page.contact.previewMessage'), 'Missing preview form me
 assert(legalData.includes('Preview testi kapsamında form gönderimi aktif değildir.'), 'Missing preview form message text');
 assert(!/fetch\s*\(|XMLHttpRequest|mailto:|formspree|web3forms/i.test(legalJs), 'Legal page must not include outbound form submission hooks');
 
-const legalLink = renderLegalCorporateNavLink();
+const legalLink = renderLegalCorporateNavLink('tr');
 assert(legalLink.includes(LEGAL_DEPARTMENT_PATH), 'Legal nav link must target /tr/hukuk-departmani.html');
 
 const trHomeHtml = readDistHtml('tr/index.html');
@@ -103,16 +102,6 @@ if (trHomeHtml) {
   assert(trHomeHtml.includes(`href="${FINANCE_DEPARTMENT_PATH}"`), 'TR home finance nav href must remain correct');
 }
 
-for (const locale of LOCALES.filter((code) => code !== DEFAULT_LOCALE)) {
-  const homeHtml = readDistHtml(`${locale}/index.html`);
-  if (!homeHtml) {
-    failures.push(`Missing dist/${locale}/index.html for legal nav isolation check`);
-    continue;
-  }
-  assert(!homeHtml.includes(LEGAL_NAV_LABEL), `[${locale}] legal nav must not appear in non-TR home`);
-  assert(!homeHtml.includes('data-tr-legal-nav'), `[${locale}] legal nav marker must not appear in non-TR home`);
-}
-
 assert(legalJs.includes('ld-profile-featured'), 'Profile card layout marker missing in legal page source');
 assert(legalData.includes('Av. Aslı Karakula'), 'Missing Asli profile name in legal source data');
 assert(legalData.includes('imageAlt: \'Av. Aslı Karakula\''), 'Missing Asli image alt text in legal source data');
@@ -128,7 +117,7 @@ const financePageHtml = readFileSync(FINANCE_PAGE_PATH, 'utf8');
 assert(financePageHtml.includes('id="finance-app"'), 'Finance preview page shell must remain intact');
 assert(financePageHtml.includes(FINANCE_NAV_LABEL) || readDistHtml('tr/index.html')?.includes(FINANCE_NAV_LABEL), 'Finance nav label must remain available');
 
-const financeLink = renderFinanceCorporateNavLink();
+const financeLink = renderFinanceCorporateNavLink('tr');
 assert(financeLink.includes(FINANCE_DEPARTMENT_PATH), 'Finance nav link must still target /tr/finans-departmani.html');
 
 const forbiddenDiffPaths = [

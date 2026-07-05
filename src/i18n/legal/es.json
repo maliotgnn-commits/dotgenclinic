@@ -1,0 +1,98 @@
+{
+  "page": {
+    "title": "Departamento Jurídico | Dr Otgen Clinic",
+    "description": "El Departamento Jurídico de Dr Otgen Clinic ofrece información sobre derechos del paciente, privacidad, procesos documentales y comunicación jurídica corporativa.",
+    "hero": {
+      "tag": "DEPARTAMENTO JURÍDICO",
+      "title": "Comunicación Transparente y Segura en Procesos Jurídicos",
+      "description": "Las solicitudes de información, documentos y comunicación de naturaleza jurídica relacionadas con Dr Otgen Clinic se evalúan conforme a los registros pertinentes, los derechos del paciente, los principios de privacidad y la legislación vigente.",
+      "cta": "Contactar con el Departamento Jurídico"
+    },
+    "profile": {
+      "title": "Coordinación Profesional en Procesos Jurídicos",
+      "description": "Nuestro Departamento Jurídico contribuye a la evaluación coordinada de solicitudes documentales, de comunicación, privacidad y procesos relacionados con la institución junto con las unidades pertinentes.",
+      "person": {
+        "name": "Av. Aslı Karakula",
+        "role": "Abogada",
+        "description": "Apoya la comunicación y el seguimiento de procesos con las unidades pertinentes en materia de derechos del paciente, protección de datos personales, procesos documentales contractuales y coordinación jurídica interna.",
+        "image": "/images/legal_department/asli_karakula.jpg",
+        "imageAlt": "Av. Aslı Karakula"
+      }
+    },
+    "support": {
+      "title": "¿Sobre Qué Temas Puede Solicitar Información?",
+      "cards": [
+        {
+          "title": "Derechos del Paciente y Procesos de Comunicación",
+          "text": "Las solicitudes de comunicación de naturaleza jurídica relacionadas con los derechos del paciente y el proceso de servicio se evalúan conforme a los registros pertinentes."
+        },
+        {
+          "title": "Datos Personales y Privacidad",
+          "text": "La protección de datos personales, las solicitudes de privacidad y los procesos informativos relacionados se abordan conforme a la normativa vigente y los registros internos."
+        },
+        {
+          "title": "Consentimiento, Contrato y Procesos Documentales",
+          "text": "Las solicitudes relacionadas con consentimientos, contratos, solicitudes o procesos documentales corporativos se examinan de forma coordinada con los departamentos pertinentes."
+        },
+        {
+          "title": "Coordinación Jurídica en Turismo de Salud",
+          "text": "Las solicitudes documentales, de comunicación y de procesos que puedan surgir en servicios internacionales a pacientes se evalúan conforme a la legislación, el registro y la autoridad pertinentes."
+        }
+      ]
+    },
+    "process": {
+      "title": "¿Cómo Se Evalúa Su Solicitud?",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Envíe Su Solicitud",
+          "text": "Comparta su solicitud de información, documento o comunicación relacionada con un proceso jurídico a través del formulario."
+        },
+        {
+          "num": "02",
+          "title": "Revisión de Registros Pertinentes",
+          "text": "Su solicitud se evalúa conforme a la operación, documento, unidad y registros pertinentes."
+        },
+        {
+          "num": "03",
+          "title": "Información y Orientación",
+          "text": "La información y orientación necesarias dentro del proceso se comparten a través de las unidades pertinentes."
+        }
+      ]
+    },
+    "security": {
+      "title": "Intercambio Seguro de Información",
+      "description": "No comparta números de identidad, datos de pasaporte, información de tarjetas, contraseñas, datos de salud u otros datos personales sensibles a través del formulario. Si se considera necesario, la información y los documentos pertinentes se solicitarán por un canal de comunicación adecuado."
+    },
+    "contact": {
+      "title": "Contacte con Nuestro Departamento Jurídico",
+      "description": "Puede utilizar el siguiente formulario para obtener información sobre procesos jurídicos, solicitudes de documentos y temas de comunicación relacionados con nuestra institución.",
+      "fields": {
+        "name": "Nombre y Apellidos",
+        "phone": "Número de Teléfono",
+        "email": "Correo Electrónico",
+        "topic": "Asunto de la Solicitud",
+        "message": "Su Mensaje",
+        "topicPlaceholder": "Seleccione",
+        "submit": "Enviar Solicitud"
+      },
+      "topics": [
+        "Información sobre Derechos del Paciente",
+        "Datos Personales y Solicitud de Privacidad",
+        "Proceso Documental o Contractual",
+        "Procesos de Turismo de Salud",
+        "Comunicación Jurídica Corporativa",
+        "Otro"
+      ],
+      "previewMessage": "El envío del formulario no está activo en el marco de esta prueba de vista previa."
+    },
+    "closing": {
+      "title": "Obtenga Información sobre Procesos Jurídicos",
+      "description": "Puede contactar con nuestro Departamento Jurídico para obtener información sobre procesos jurídicos, solicitudes de documentos y temas de comunicación relacionados con nuestra institución.",
+      "cta": "Contactar con el Departamento Jurídico"
+    }
+  },
+  "nav": {
+    "menuLabel": "Departamento Jurídico"
+  }
+}
