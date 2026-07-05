@@ -600,6 +600,7 @@ to {
   .nav-primary {
     justify-content: center;
     overflow: visible;
+    position: relative;
   }
 
   .nav-menu {
@@ -608,7 +609,7 @@ to {
     width: max-content;
     max-width: none;
     min-width: 0;
-    position: relative;
+    position: static;
   }
 
   .nav-menu>li {
@@ -632,10 +633,14 @@ to {
     position: static;
   }
 
+  .nav-menu > li.has-dropdown[data-eye-health-nav] {
+    position: static;
+  }
+
   .has-dropdown[data-eye-health-nav] .mega-dropdown.eh-mega-dropdown {
     display: block;
-    width: min(1180px, calc(100vw - 48px));
-    max-width: min(1180px, calc(100vw - 48px));
+    width: min(1296px, calc(100vw - 48px));
+    max-width: calc(100vw - 48px);
     min-width: 0;
     left: 50%;
     right: auto;

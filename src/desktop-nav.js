@@ -77,11 +77,6 @@ function isWithinNode(node, container) {
   return node instanceof Node && container.contains(node);
 }
 
-function findMenuEntryForNode(registry, node) {
-  if (!(node instanceof Node)) return null;
-  return registry.find(({ item }) => item.contains(node)) ?? null;
-}
-
 export function initDesktopNav(navMenu, root = document) {
   const registry = getDesktopMenuRegistry(navMenu);
   if (!registry.length) return null;
@@ -105,34 +100,17 @@ export function initDesktopNav(navMenu, root = document) {
     }, delay);
   };
 
+  const resolveMenuItem = (node) => {
+    if (!(node instanceof Element)) return null;
+    const item = node.closest('li.has-dropdown[data-desktop-menu-id]');
+    if (!item || !navMenu.contains(item)) return null;
+    return item;
+  };
+
   const bindMenuGroup = (entry) => {
     const { item, menuId, ariaTrigger } = entry;
     if (item.dataset.desktopNavBound === 'true') return;
     item.dataset.desktopNavBound = 'true';
-
-    item.addEventListener('pointerenter', () => {
-      if (!isDesktopNavViewport()) return;
-      clearCloseTimer();
-      openDesktopMenu(registry, menuId);
-    });
-
-    item.addEventListener('pointerleave', (event) => {
-      if (!isDesktopNavViewport()) return;
-
-      const related = event.relatedTarget;
-      if (isWithinNode(related, item)) return;
-
-      const otherEntry = findMenuEntryForNode(registry, related);
-      if (otherEntry) {
-        clearCloseTimer();
-        closeAllDesktopMenus(registry, otherEntry.menuId);
-        return;
-      }
-
-      if (!isWithinNode(related, navGroup)) {
-        scheduleClose();
-      }
-    });
 
     ariaTrigger?.addEventListener('click', (event) => {
       if (!isDesktopNavViewport()) return;
@@ -151,13 +129,28 @@ export function initDesktopNav(navMenu, root = document) {
 
   registry.forEach(bindMenuGroup);
 
-  if (navGroup.dataset.desktopNavGroupBound !== 'true') {
-    navGroup.dataset.desktopNavGroupBound = 'true';
+  if (navGroup.dataset.desktopNavDelegated !== 'true') {
+    navGroup.dataset.desktopNavDelegated = 'true';
+
+    navGroup.addEventListener('pointerover', (event) => {
+      if (!isDesktopNavViewport()) return;
+      const item = resolveMenuItem(event.target);
+      if (!item) return;
+      const menuId = item.dataset.desktopMenuId;
+      if (!menuId) return;
+      clearCloseTimer();
+      openDesktopMenu(registry, menuId);
+    });
+
     navGroup.addEventListener('pointerleave', (event) => {
       if (!isDesktopNavViewport()) return;
       if (isWithinNode(event.relatedTarget, navGroup)) return;
       scheduleClose();
     });
+  }
+
+  if (navGroup.dataset.desktopNavGroupBound !== 'true') {
+    navGroup.dataset.desktopNavGroupBound = 'true';
   }
 
   root.addEventListener('pointerdown', (event) => {

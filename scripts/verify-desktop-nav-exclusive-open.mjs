@@ -50,7 +50,8 @@ assert(new Set(indexIds).size === indexIds.length, `index.html desktop menu ids 
 assert(styleCss.includes('.nav-menu > li.has-dropdown.open'), 'desktop nav triggers must stack above open panels');
 
 assert(desktopNavJs.includes('export function initDesktopNav'), 'desktop-nav.js must export initDesktopNav');
-assert(desktopNavJs.includes('pointerenter'), 'Desktop nav must use pointerenter for hover open');
+assert(desktopNavJs.includes('pointerover'), 'Desktop nav must delegate pointerover for trigger and panel hit targets');
+assert(desktopNavJs.includes('li.has-dropdown[data-desktop-menu-id]'), 'Desktop nav delegation must resolve stable menu ids');
 assert(publicHeaderJs.includes('initDesktopNav(navMenu'), 'public-header.js must initialize centralized desktop nav');
 assert(!eyeHealthNavJs.includes('bindDesktopHover'), 'tr-eye-health-nav.js must not keep separate desktop hover handlers');
 
@@ -59,6 +60,9 @@ assert(desktopMediaBlock, 'Desktop media query block missing in style.css');
 const desktopCss = desktopMediaBlock?.[1] ?? '';
 assert(desktopCss.includes('.has-dropdown.open .mega-dropdown'), 'Desktop panels must open via .open class');
 assert(!desktopCss.includes('.has-dropdown[data-eye-health-nav]:hover .eh-nav-item-head'), 'Eye Health desktop trigger must not rely on :hover');
+assert(desktopCss.includes('width: min(1296px, calc(100vw - 48px))'), 'Eye health mega menu must use viewport-safe centered width');
+assert(/\.nav-primary[\s\S]*position:\s*relative/.test(desktopCss), 'Desktop nav-primary must anchor eye health mega menu centering');
+assert(desktopNavJs.includes('pointerover'), 'Desktop nav must delegate pointerover for trigger hit targets');
 
 const ruHome = resolve(DIST, 'ru', 'index.html');
 assert(existsSync(ruHome), 'Missing dist/ru/index.html for desktop nav trigger coverage check');

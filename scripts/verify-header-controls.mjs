@@ -98,6 +98,20 @@ assert(
   'nav-menu must stay in normal document flow',
 );
 
+const navPrimaryDesktopRules = (
+  styleCss.match(/@media \(width>=1280px\)[\s\S]*?@media \(width<=1279px\)/)?.[0] || ''
+).match(/\.nav-primary\s*\{[^}]*\}/g)?.join('\n') || '';
+
+assert(
+  navPrimaryDesktopRules.includes('position: relative'),
+  'desktop nav-primary must anchor eye health mega menu centering',
+);
+
+assert(
+  /(?:^|[;\s])position:\s*static/.test(navMenuDesktopRules),
+  'desktop nav-menu must use static positioning so eye health mega menu centers in nav-primary',
+);
+
 assert(
   !/(?:^|[;\s])position:\s*absolute/.test(navMenuBase + navMenuDesktopRules),
   'nav-menu must not use absolute positioning',
