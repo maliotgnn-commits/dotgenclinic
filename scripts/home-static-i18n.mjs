@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { DEFAULT_LOCALE } from './seo-shared.mjs';
 import { injectEyeHealthNavForLocale } from '../src/tr-eye-health-nav.js';
 import { injectFinanceNavForLocale, stripFinanceNavLink } from '../src/tr-finance-nav.js';
+import { stripLegalNavLink } from '../src/tr-legal-nav.js';
 import { RU_HEADER_NAV_LABELS } from '../src/i18n.js';
 import { getEyeHealthContentSync } from './eye-health-content-node.mjs';
 
@@ -182,6 +183,7 @@ export function localizeHomeBodyHtml(html, locale) {
 
   if (locale !== DEFAULT_LOCALE) {
     result = stripFinanceNavLink(result);
+    result = stripLegalNavLink(result);
     result = applyStaticTranslationsToHtml(result, dictionary);
     result = injectEyeHealthNavForLocale(result, locale, getEyeHealthContentSync(locale));
     result = injectFinanceNavForLocale(result, locale);
