@@ -26,6 +26,7 @@ const steps = [
   ['node', ['scripts/verify-locale-route-rewrite.mjs']],
   ['node', ['scripts/verify-tr-eye-navigation.mjs']],
   ['node', ['scripts/verify-tr-finance-preview-page.mjs']],
+  ['node', ['scripts/verify-multilingual-finance-page.mjs']],
   ['node', ['scripts/verify-header-controls.mjs']],
   ['node', ['scripts/verify-nav-category-labels.mjs']],
   ['node', ['scripts/verify-form-privacy.mjs']],

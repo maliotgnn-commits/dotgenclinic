@@ -1,0 +1,113 @@
+{
+  "page": {
+    "title": "Finance Department | Dr Otgen Clinic",
+    "description": "Dr Otgen Clinic Finance Department provides information on payments, invoicing, document requests and financial processes related to health tourism.",
+    "hero": {
+      "tag": "FINANCE DEPARTMENT",
+      "title": "Transparent and Reliable Coordination in Financial Processes",
+      "description": "You may contact our Finance Department for information on payments, invoicing, document requests and eligible financial processes within the scope of health tourism. Your request is reviewed in line with relevant records and applicable regulations.",
+      "cta": "Contact the Finance Department"
+    },
+    "profiles": {
+      "title": "Expert Coordination in Our Financial Processes",
+      "description": "Our Finance Department supports the orderly, transparent management of payments, documents, invoicing and eligible financial processes related to health tourism, in accordance with relevant records.",
+      "people": [
+        {
+          "name": "Ahmet ÖTGEN",
+          "role": "Certified Public Accountant",
+          "description": "Provides advisory support on the compliant execution of financial processes, review of financial records and financial coordination for eligible transactions within the scope of health tourism.",
+          "image": "/images/finance_department/ahmet_otgen_finance.jpg",
+          "imageAlt": "Certified Public Accountant Ahmet ÖTGEN"
+        },
+        {
+          "name": "Zehra ÖTGEN",
+          "role": "Accountant",
+          "description": "Supports invoicing, document tracking, financial request management and process coordination with relevant departments.",
+          "image": "/images/finance_department/zehra_otgen_finance.jpg",
+          "imageAlt": "Accountant Zehra ÖTGEN"
+        }
+      ]
+    },
+    "tourism": {
+      "title": "Financial Processes within the Scope of Health Tourism",
+      "description": "In international patient services, financial records, documents and application processes related to eligible healthcare services are reviewed within the framework of applicable regulations. Financial coordination for exemption and refund files within the scope of health tourism is carried out taking into account the nature of the service, relevant permits, patient information and required documents.",
+      "note": "Exemption or refund processes within the scope of health tourism do not constitute an automatic entitlement or guarantee of outcome. Eligibility is assessed separately for each transaction, within the framework of the nature of the service, applicable regulations, permit conditions, patient status and document compliance.",
+      "highlight": {
+        "title": "VAT Exemption and Refund Processes",
+        "description": "For eligible transactions within the scope of health tourism, coordination is provided for the review of financial records, document compliance and application files related to VAT exemption and refund processes."
+      }
+    },
+    "support": {
+      "title": "What Can We Help You With?",
+      "cards": [
+        {
+          "title": "Payments and Invoicing",
+          "text": "You may contact our Finance Department for information on payment steps, invoice arrangements and relevant financial documents before or during ongoing processes."
+        },
+        {
+          "title": "Invoice and Document Requests",
+          "text": "Requests for invoices, payment receipts, financial records or related financial documents are reviewed in line with your existing transaction information."
+        },
+        {
+          "title": "Health Tourism Financial Coordination",
+          "text": "In international patient services, guidance on eligible financial transactions and document processes is addressed within the framework of applicable regulations and record-keeping requirements."
+        }
+      ]
+    },
+    "process": {
+      "title": "How Is Your Request Reviewed?",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Submit Your Request",
+          "text": "Share your financial request related to payment, invoicing, documents or health tourism via the contact form."
+        },
+        {
+          "num": "02",
+          "title": "Records and Documents Reviewed",
+          "text": "Your request is reviewed in line with existing transaction information, relevant financial records and required documents."
+        },
+        {
+          "num": "03",
+          "title": "Information and Guidance",
+          "text": "Information and guidance required within the process are shared through the relevant departments."
+        }
+      ]
+    },
+    "security": {
+      "title": "Secure Information Sharing",
+      "description": "Do not share card numbers, card security codes, passwords or other sensitive financial information via the contact form. Our Finance Department will contact you through an appropriate communication channel for any information and documents required."
+    },
+    "contact": {
+      "title": "Contact Our Finance Department",
+      "description": "You may use the form below to submit your request regarding payments, invoicing or financial processes.",
+      "fields": {
+        "name": "Full Name",
+        "phone": "Phone Number",
+        "email": "Email Address",
+        "topic": "Subject of Request",
+        "message": "Your Message",
+        "topicPlaceholder": "Select",
+        "submit": "Submit Request"
+      },
+      "topics": [
+        "Information on Payment Process",
+        "Invoice Request",
+        "Payment Receipt Request",
+        "Existing Transaction Record",
+        "Health Tourism Financial Processes",
+        "Information on VAT Exemption / Refund Process",
+        "Other"
+      ],
+      "previewMessage": "Form submission is not active within the scope of the preview test."
+    },
+    "closing": {
+      "title": "Get Information About Your Financial Processes",
+      "description": "You may contact our Finance Department for information on payments, invoicing and related financial transactions.",
+      "cta": "Contact the Finance Department"
+    }
+  },
+  "nav": {
+    "menuLabel": "Finance Department"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "page": {
+    "title": "Département Financier | Dr Otgen Clinic",
+    "description": "Le Département Financier de Dr Otgen Clinic informe sur les paiements, la facturation, les demandes de documents et les processus financiers liés au tourisme médical.",
+    "hero": {
+      "tag": "DÉPARTEMENT FINANCIER",
+      "title": "Coordination transparente et fiable des processus financiers",
+      "description": "Vous pouvez contacter notre Département Financier pour obtenir des informations sur les paiements, la facturation, les demandes de documents et les processus financiers applicables dans le cadre du tourisme médical. Votre demande est examinée conformément aux dossiers pertinents et à la réglementation en vigueur.",
+      "cta": "Contacter le Département Financier"
+    },
+    "profiles": {
+      "title": "Coordination experte de nos processus financiers",
+      "description": "Notre Département Financier contribue à la gestion ordonnée et transparente des paiements, documents, facturation et processus financiers applicables liés au tourisme médical, conformément aux dossiers pertinents.",
+      "people": [
+        {
+          "name": "Ahmet ÖTGEN",
+          "role": "Expert-comptable",
+          "description": "Fournit un accompagnement sur l'exécution conforme des processus financiers, l'évaluation des dossiers financiers et la coordination financière des opérations applicables dans le cadre du tourisme médical.",
+          "image": "/images/finance_department/ahmet_otgen_finance.jpg",
+          "imageAlt": "Expert-comptable Ahmet ÖTGEN"
+        },
+        {
+          "name": "Zehra ÖTGEN",
+          "role": "Comptable",
+          "description": "Assiste dans la facturation, le suivi des documents, la gestion des demandes financières et la coordination des processus avec les départements concernés.",
+          "image": "/images/finance_department/zehra_otgen_finance.jpg",
+          "imageAlt": "Comptable Zehra ÖTGEN"
+        }
+      ]
+    },
+    "tourism": {
+      "title": "Processus financiers dans le cadre du tourisme médical",
+      "description": "Dans les services aux patients internationaux, les dossiers financiers, documents et processus de demande liés aux services de santé applicables sont examinés conformément à la réglementation pertinente. La coordination financière des dossiers d'exonération et de remboursement dans le cadre du tourisme médical est menée en tenant compte de la nature du service, des autorisations pertinentes, des informations patient et des documents requis.",
+      "note": "Les processus d'exonération ou de remboursement dans le cadre du tourisme médical ne constituent pas un droit automatique ni une garantie de résultat. L'éligibilité est évaluée séparément pour chaque opération, dans le cadre de la nature du service, de la réglementation applicable, des conditions d'autorisation, du statut du patient et de la conformité documentaire.",
+      "highlight": {
+        "title": "Processus d'exonération et de remboursement de la TVA",
+        "description": "Pour les opérations applicables dans le cadre du tourisme médical, une coordination est assurée pour l'examen des dossiers financiers, de la conformité documentaire et des dossiers de demande liés aux processus d'exonération et de remboursement de la TVA."
+      }
+    },
+    "support": {
+      "title": "Sur quels sujets pouvons-nous vous aider ?",
+      "cards": [
+        {
+          "title": "Paiements et facturation",
+          "text": "Vous pouvez contacter notre Département Financier pour obtenir des informations sur les étapes de paiement, la facturation et les documents financiers pertinents avant ou pendant les processus en cours."
+        },
+        {
+          "title": "Demandes de factures et de documents",
+          "text": "Les demandes de factures, reçus de paiement, dossiers financiers ou documents financiers pertinents sont examinées conformément aux informations de votre opération existante."
+        },
+        {
+          "title": "Coordination financière du tourisme médical",
+          "text": "Dans les services aux patients internationaux, l'orientation sur les opérations financières applicables et les processus documentaires est abordée dans le cadre de la réglementation pertinente et des exigences de tenue de dossiers."
+        }
+      ]
+    },
+    "process": {
+      "title": "Comment votre demande est-elle examinée ?",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Transmettez votre demande",
+          "text": "Partagez votre demande financière relative au paiement, à la facture, aux documents ou au tourisme médical via le formulaire de contact."
+        },
+        {
+          "num": "02",
+          "title": "Examen des dossiers et documents",
+          "text": "Votre demande est examinée conformément aux informations d'opération existantes, aux dossiers financiers pertinents et aux documents requis."
+        },
+        {
+          "num": "03",
+          "title": "Information et orientation",
+          "text": "Les informations et orientations nécessaires dans le cadre du processus sont transmises via les départements concernés."
+        }
+      ]
+    },
+    "security": {
+      "title": "Partage sécurisé des informations",
+      "description": "Ne partagez pas de numéros de carte, codes de sécurité, mots de passe ou autres informations financières sensibles via le formulaire de contact. Notre Département Financier vous contactera via le canal de communication approprié pour les informations et documents nécessaires."
+    },
+    "contact": {
+      "title": "Contactez notre Département Financier",
+      "description": "Vous pouvez utiliser le formulaire ci-dessous pour transmettre votre demande relative aux paiements, à la facturation ou aux processus financiers.",
+      "fields": {
+        "name": "Nom complet",
+        "phone": "Numéro de téléphone",
+        "email": "Adresse e-mail",
+        "topic": "Objet de la demande",
+        "message": "Votre message",
+        "topicPlaceholder": "Sélectionner",
+        "submit": "Envoyer la demande"
+      },
+      "topics": [
+        "Information sur le processus de paiement",
+        "Demande de facture",
+        "Demande de reçu de paiement",
+        "Dossier d'opération existant",
+        "Processus financiers du tourisme médical",
+        "Information sur l'exonération / remboursement de la TVA",
+        "Autre"
+      ],
+      "previewMessage": "L'envoi du formulaire n'est pas actif dans le cadre du test de prévisualisation."
+    },
+    "closing": {
+      "title": "Obtenez des informations sur vos processus financiers",
+      "description": "Vous pouvez contacter notre Département Financier pour obtenir des informations sur les paiements, la facturation et les opérations financières pertinentes.",
+      "cta": "Contacter le Département Financier"
+    }
+  },
+  "nav": {
+    "menuLabel": "Département Financier"
+  }
+}

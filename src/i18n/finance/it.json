@@ -1,0 +1,113 @@
+{
+  "page": {
+    "title": "Dipartimento Finanziario | Dr Otgen Clinic",
+    "description": "Il Dipartimento Finanziario di Dr Otgen Clinic fornisce informazioni su pagamenti, fatturazione, richieste di documenti e processi finanziari legati al turismo sanitario.",
+    "hero": {
+      "tag": "DIPARTIMENTO FINANZIARIO",
+      "title": "Coordinamento trasparente e affidabile nei processi finanziari",
+      "description": "Può contattare il nostro Dipartimento Finanziario per informazioni su pagamenti, fatturazione, richieste di documenti e processi finanziari applicabili nell'ambito del turismo sanitario. La sua richiesta viene valutata in conformità con i registri pertinenti e la normativa vigente.",
+      "cta": "Contattare il Dipartimento Finanziario"
+    },
+    "profiles": {
+      "title": "Coordinamento specialistico nei nostri processi finanziari",
+      "description": "Il nostro Dipartimento Finanziario contribuisce alla gestione ordinata e trasparente di pagamenti, documenti, fatturazione e processi finanziari applicabili legati al turismo sanitario, in conformità con i registri pertinenti.",
+      "people": [
+        {
+          "name": "Ahmet ÖTGEN",
+          "role": "Dottore Commercialista",
+          "description": "Fornisce orientamento sull'esecuzione conforme dei processi finanziari, sulla valutazione dei registri finanziari e sul coordinamento finanziario delle operazioni applicabili nell'ambito del turismo sanitario.",
+          "image": "/images/finance_department/ahmet_otgen_finance.jpg",
+          "imageAlt": "Dottore Commercialista Ahmet ÖTGEN"
+        },
+        {
+          "name": "Zehra ÖTGEN",
+          "role": "Commercialista",
+          "description": "Supporta fatturazione, tracciamento documenti, gestione delle richieste finanziarie e coordinamento dei processi con i dipartimenti pertinenti.",
+          "image": "/images/finance_department/zehra_otgen_finance.jpg",
+          "imageAlt": "Commercialista Zehra ÖTGEN"
+        }
+      ]
+    },
+    "tourism": {
+      "title": "Processi finanziari nell'ambito del turismo sanitario",
+      "description": "Nei servizi ai pazienti internazionali, i registri finanziari, i documenti e i processi di richiesta relativi ai servizi sanitari applicabili vengono valutati nel quadro della normativa pertinente. Il coordinamento finanziario per i fascicoli di esenzione e rimborso nell'ambito del turismo sanitario viene svolto tenendo conto della natura del servizio, dei permessi pertinenti, delle informazioni del paziente e dei documenti richiesti.",
+      "note": "I processi di esenzione o rimborso nell'ambito del turismo sanitario non costituiscono un diritto automatico né una garanzia di esito. L'idoneità viene valutata separatamente per ogni operazione, nel quadro della natura del servizio, della normativa applicabile, delle condizioni di permesso, dello status del paziente e della conformità documentale.",
+      "highlight": {
+        "title": "Processi di esenzione e rimborso IVA",
+        "description": "Per le operazioni applicabili nell'ambito del turismo sanitario, viene fornito coordinamento per la valutazione dei registri finanziari, della conformità documentale e dei fascicoli di richiesta relativi ai processi di esenzione e rimborso IVA."
+      }
+    },
+    "support": {
+      "title": "Su quali argomenti possiamo aiutarla?",
+      "cards": [
+        {
+          "title": "Pagamenti e fatturazione",
+          "text": "Può contattare il nostro Dipartimento Finanziario per informazioni sui passaggi di pagamento, la fatturazione e i documenti finanziari pertinenti prima o durante i processi in corso."
+        },
+        {
+          "title": "Richieste di fatture e documenti",
+          "text": "Le richieste di fatture, ricevute di pagamento, registri finanziari o documenti finanziari pertinenti vengono valutate in conformità con le informazioni della sua operazione esistente."
+        },
+        {
+          "title": "Coordinamento finanziario del turismo sanitario",
+          "text": "Nei servizi ai pazienti internazionali, l'orientamento sulle operazioni finanziarie applicabili e sui processi documentali viene affrontato nel quadro della normativa pertinente e dei requisiti di registrazione."
+        }
+      ]
+    },
+    "process": {
+      "title": "Come viene valutata la sua richiesta?",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Invii la sua richiesta",
+          "text": "Condivida la sua richiesta finanziaria relativa a pagamento, fattura, documenti o turismo sanitario tramite il modulo di contatto."
+        },
+        {
+          "num": "02",
+          "title": "Revisione di registri e documenti",
+          "text": "La sua richiesta viene valutata in conformità con le informazioni dell'operazione esistente, i registri finanziari pertinenti e i documenti richiesti."
+        },
+        {
+          "num": "03",
+          "title": "Informazione e orientamento",
+          "text": "Le informazioni e orientamenti necessari nel processo vengono condivisi attraverso i dipartimenti pertinenti."
+        }
+      ]
+    },
+    "security": {
+      "title": "Condivisione sicura delle informazioni",
+      "description": "Non condivida numeri di carta, codici di sicurezza, password o altre informazioni finanziarie sensibili tramite il modulo di contatto. Il nostro Dipartimento Finanziario la contatterà attraverso il canale di comunicazione appropriato per le informazioni e i documenti necessari."
+    },
+    "contact": {
+      "title": "Contatti il nostro Dipartimento Finanziario",
+      "description": "Può utilizzare il modulo seguente per inviare la sua richiesta relativa a pagamenti, fatturazione o processi finanziari.",
+      "fields": {
+        "name": "Nome completo",
+        "phone": "Numero di telefono",
+        "email": "Indirizzo e-mail",
+        "topic": "Oggetto della richiesta",
+        "message": "Il suo messaggio",
+        "topicPlaceholder": "Selezionare",
+        "submit": "Invia richiesta"
+      },
+      "topics": [
+        "Informazioni sul processo di pagamento",
+        "Richiesta fattura",
+        "Richiesta ricevuta di pagamento",
+        "Registro operazione esistente",
+        "Processi finanziari del turismo sanitario",
+        "Informazioni su esenzione / rimborso IVA",
+        "Altro"
+      ],
+      "previewMessage": "L'invio del modulo non è attivo nell'ambito del test di anteprima."
+    },
+    "closing": {
+      "title": "Ottenga informazioni sui suoi processi finanziari",
+      "description": "Può contattare il nostro Dipartimento Finanziario per informazioni su pagamenti, fatturazione e operazioni finanziarie pertinenti.",
+      "cta": "Contattare il Dipartimento Finanziario"
+    }
+  },
+  "nav": {
+    "menuLabel": "Dipartimento Finanziario"
+  }
+}

@@ -2,6 +2,17 @@ export const LOCALE_CODES = ['tr', 'en', 'ar', 'es', 'fr', 'it', 'ru', 'de'];
 
 export const FINANCE_PREVIEW_FILE = 'finans-departmani.html';
 
+export const FINANCE_FILES = new Set([
+  'finans-departmani.html',
+  'finance-department.html',
+  'departamento-financiero.html',
+  'departement-financier.html',
+  'dipartimento-finanziario.html',
+  'finanzabteilung.html',
+  'قسم-المالية.html',
+  'финансовый-отдел.html',
+]);
+
 export const EYE_HEALTH_FILES = new Set([
   'goz-hastaliklari.html',
   'eye-health.html',
@@ -48,7 +59,7 @@ export function resolveLocaleRewrite(pathname, search = '') {
     return `/goz-hastaliklari.html${search}`;
   }
 
-  if (routeFile === FINANCE_PREVIEW_FILE || routeFileRaw === FINANCE_PREVIEW_FILE) {
+  if (FINANCE_FILES.has(routeFile) || FINANCE_FILES.has(routeFileRaw)) {
     return `/finans-departmani.html${search}`;
   }
 

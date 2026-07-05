@@ -1,4 +1,4 @@
-import { resolveLocaleRewrite, rewriteLocaleRequestUrl, FINANCE_PREVIEW_FILE } from './locale-route-rewrite.mjs';
+import { resolveLocaleRewrite, rewriteLocaleRequestUrl, FINANCE_PREVIEW_FILE, FINANCE_FILES } from './locale-route-rewrite.mjs';
 
 const failures = [];
 
@@ -19,6 +19,8 @@ expect('/ar/service.html', '?slug=botox', '/service.html?slug=botox');
 expect('/ru/privacy.html', '', '/privacy.html');
 expect('/tr/goz-hastaliklari.html', '', '/goz-hastaliklari.html');
 expect('/tr/finans-departmani.html', '', '/finans-departmani.html');
+expect('/en/finance-department.html', '', '/finans-departmani.html');
+expect('/de/finanzabteilung.html', '', '/finans-departmani.html');
 expect('/en/eye-health.html', '', '/goz-hastaliklari.html');
 expect('/ar/صحة-العين.html', '', '/goz-hastaliklari.html');
 expect('/ru/здоровье-глаз.html', '', '/goz-hastaliklari.html');
@@ -47,8 +49,16 @@ assert(
   'rewriteLocaleRequestUrl must map finance preview route',
 );
 assert(
+  FINANCE_FILES.size === 8,
+  'Finance locale route file set must include 8 locale filenames',
+);
+assert(
   FINANCE_PREVIEW_FILE === 'finans-departmani.html',
   'Finance preview route file constant mismatch',
+);
+assert(
+  rewriteLocaleRequestUrl('/en/finance-department.html') === '/finans-departmani.html',
+  'rewriteLocaleRequestUrl must map localized finance routes',
 );
 
 if (failures.length) {
