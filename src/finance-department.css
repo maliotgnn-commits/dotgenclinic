@@ -1,4 +1,5 @@
 .fd-page {
+  --header-height: 80px;
   background: #0b1628;
   color: #e8e4dc;
 }
@@ -7,8 +8,11 @@
   position: relative;
   min-height: clamp(460px, 62vh, 640px);
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   overflow: hidden;
+  box-sizing: border-box;
+  padding-block-start: calc(var(--header-height, 86px) + clamp(32px, 5vw, 72px));
+  padding-block-end: clamp(32px, 5vw, 56px);
   background-color: #0b1628;
   background-image:
     linear-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px),
@@ -31,7 +35,7 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  padding: 0 0 56px;
+  padding: 0;
 }
 
 .fd-hero-panel {
@@ -46,6 +50,8 @@
 
 .fd-hero-tag {
   display: inline-block;
+  position: relative;
+  z-index: 1;
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   font-weight: 600;
