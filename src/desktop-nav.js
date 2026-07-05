@@ -1,10 +1,8 @@
-import { MOBILE_NAV_MAX_WIDTH, desktopMenuIdForCategory } from './nav-shared.js';
+import { isDesktopNavViewport, MOBILE_NAV_MAX_WIDTH, desktopMenuIdForCategory } from './nav-shared.js';
 
 export const DESKTOP_NAV_MIN_WIDTH = MOBILE_NAV_MAX_WIDTH;
 
-function isDesktopNavViewport() {
-  return window.innerWidth > DESKTOP_NAV_MIN_WIDTH;
-}
+export { isDesktopNavViewport };
 
 function resolveMenuId(item, index) {
   const fromAttr = item.dataset.desktopMenuId?.trim();

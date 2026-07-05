@@ -1,3 +1,5 @@
+import { isMobileNavViewport } from './nav-shared.js';
+
 export function initMegaMenuA11y(root = document, desktopNav = null) {
   const closeAll = () => {
     if (desktopNav) {
@@ -11,7 +13,7 @@ export function initMegaMenuA11y(root = document, desktopNav = null) {
       item.classList.remove('open');
       item.querySelector('.eh-nav-toggle')?.setAttribute('aria-expanded', 'false');
       const dropdown = item.querySelector('.mega-dropdown');
-      if (window.innerWidth <= 1280) {
+      if (isMobileNavViewport()) {
         dropdown?.setAttribute('hidden', '');
       } else {
         dropdown?.removeAttribute('hidden');
@@ -32,7 +34,7 @@ export function initMegaMenuA11y(root = document, desktopNav = null) {
         toggle.focus();
       }
       if (event.key === 'Enter' || event.key === ' ') {
-        if (window.innerWidth <= 1280) return;
+        if (isMobileNavViewport()) return;
         event.preventDefault();
         toggle.click();
       }
@@ -41,12 +43,12 @@ export function initMegaMenuA11y(root = document, desktopNav = null) {
 
   root.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
-    if (window.innerWidth <= 1280) return;
+    if (isMobileNavViewport()) return;
     closeAll();
   });
 
   root.addEventListener('click', (event) => {
-    if (window.innerWidth <= 1280) return;
+    if (isMobileNavViewport()) return;
     if (event.target.closest('.nav-primary')) return;
     closeAll();
   });

@@ -1,13 +1,14 @@
 import { initDesktopNav } from './desktop-nav.js';
 import { initMegaMenuA11y } from './mega-menu-a11y.js';
 import { initEyeHealthNavBehavior } from './tr-eye-health-nav.js';
-import { MOBILE_NAV_MAX_WIDTH, NAV_CHEVRON_SVG, desktopMenuIdForIndex } from './nav-shared.js';
+import {
+  isMobileNavViewport,
+  MOBILE_NAV_MAX_WIDTH,
+  NAV_CHEVRON_SVG,
+  desktopMenuIdForIndex,
+} from './nav-shared.js';
 
 export { MOBILE_NAV_MAX_WIDTH, NAV_CHEVRON_SVG, renderMobileCategoryTrigger, renderNavChevron } from './nav-shared.js';
-
-function isMobileViewport() {
-  return window.innerWidth <= MOBILE_NAV_MAX_WIDTH;
-}
 
 export function closeAllMobileAccordions(navMenu) {
   if (!navMenu) return;
@@ -139,7 +140,7 @@ function bindMobileAccordions(navMenu) {
     trigger.dataset.accordionBound = 'true';
 
     const onActivate = (event) => {
-      if (!isMobileViewport()) return;
+      if (!isMobileNavViewport()) return;
       event.preventDefault();
       event.stopPropagation();
 
@@ -212,7 +213,7 @@ export function initSiteHeader(root = document, { trackScroll = false } = {}) {
 
   navMenu.querySelectorAll('.mega-dropdown a, .eh-mobile-topics a').forEach((link) => {
     link.addEventListener('click', (event) => {
-      if (!isMobileViewport()) return;
+      if (!isMobileNavViewport()) return;
       if (link.getAttribute('href') === '#') {
         event.preventDefault();
         return;
@@ -223,13 +224,13 @@ export function initSiteHeader(root = document, { trackScroll = false } = {}) {
 
   navMenu.querySelectorAll('a.desktop-nav-trigger').forEach((link) => {
     link.addEventListener('click', (event) => {
-      if (!isMobileViewport()) return;
+      if (!isMobileNavViewport()) return;
       event.preventDefault();
     });
   });
 
   document.addEventListener('click', (event) => {
-    if (!isMobileViewport()) return;
+    if (!isMobileNavViewport()) return;
     if (!drawer.classList.contains('active')) return;
     if (event.target.closest('#nav-drawer')) return;
     if (event.target.closest('#hamburger')) return;
@@ -238,7 +239,7 @@ export function initSiteHeader(root = document, { trackScroll = false } = {}) {
 
   root.addEventListener('keydown', (event) => {
     if (event.key !== 'Escape') return;
-    if (!isMobileViewport()) return;
+    if (!isMobileNavViewport()) return;
     if (!drawer.classList.contains('active')) return;
     setMobileNavOpen(false);
     hamburger.focus();
