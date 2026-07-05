@@ -13,11 +13,7 @@ export function renderFinanceCorporateNavLink(locale = 'tr') {
 
 export function appendFinanceNavLink(linksHtml, groupKey, locale) {
   if (groupKey !== 'corporate') return linksHtml;
-  let result = `${linksHtml}\n              ${renderFinanceCorporateNavLink(locale)}`;
-  if (locale === 'tr') {
-    result = `${result}\n              ${renderLegalCorporateNavLink()}`;
-  }
-  return result;
+  return `${linksHtml}\n              ${renderFinanceCorporateNavLink(locale)}\n              ${renderLegalCorporateNavLink(locale)}`;
 }
 
 /** @deprecated Use appendFinanceNavLink */

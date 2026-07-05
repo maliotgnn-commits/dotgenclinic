@@ -1,0 +1,98 @@
+{
+  "page": {
+    "title": "Rechtsabteilung | Dr Otgen Clinic",
+    "description": "Die Rechtsabteilung der Dr Otgen Clinic informiert über Patientenrechte, Datenschutz, Dokumentenprozesse und institutionelle rechtliche Kommunikation.",
+    "hero": {
+      "tag": "RECHTSABTEILUNG",
+      "title": "Transparente und Sichere Kommunikation in Rechtsprozessen",
+      "description": "Informations-, Dokumenten- und Kommunikationsanfragen rechtlicher Natur im Zusammenhang mit Dr Otgen Clinic werden im Rahmen relevanter Aufzeichnungen, Patientenrechte, Datenschutzgrundsätze und geltender Vorschriften geprüft.",
+      "cta": "Rechtsabteilung Kontaktieren"
+    },
+    "profile": {
+      "title": "Professionelle Koordination in Rechtsprozessen",
+      "description": "Unsere Rechtsabteilung unterstützt die koordinierte Prüfung von Dokumenten-, Kommunikations-, Datenschutz- und Prozessanfragen im Zusammenhang mit der Einrichtung gemeinsam mit den zuständigen Bereichen.",
+      "person": {
+        "name": "Av. Aslı Karakula",
+        "role": "Rechtsanwältin",
+        "description": "Unterstützt Kommunikation und Prozessverfolgung mit den zuständigen Bereichen zu Patientenrechten, Datenschutz, vertraglichen Dokumentenprozessen und interner rechtlicher Koordination.",
+        "image": "/images/legal_department/asli_karakula.jpg",
+        "imageAlt": "Av. Aslı Karakula"
+      }
+    },
+    "support": {
+      "title": "Zu Welchen Themen Können Sie Informationen Anfordern?",
+      "cards": [
+        {
+          "title": "Patientenrechte und Kommunikationsprozesse",
+          "text": "Kommunikationsanfragen rechtlicher Natur im Zusammenhang mit Patientenrechten und dem Serviceprozess werden anhand relevanter Aufzeichnungen geprüft."
+        },
+        {
+          "title": "Personenbezogene Daten und Datenschutz",
+          "text": "Datenschutz, Datenschutzanfragen und zugehörige Informationsprozesse werden im Rahmen geltender Vorschriften und interner Aufzeichnungen behandelt."
+        },
+        {
+          "title": "Einwilligung, Vertrag und Dokumentenprozesse",
+          "text": "Anfragen zu Einwilligungen, Verträgen, Anträgen oder institutionellen Dokumentenprozessen werden koordiniert mit den zuständigen Abteilungen geprüft."
+        },
+        {
+          "title": "Rechtliche Koordination im Gesundheitstourismus",
+          "text": "Dokumenten-, Kommunikations- und Prozessanfragen im Rahmen internationaler Patientendienste werden im Rahmen geltender Vorschriften, Aufzeichnungen und Zuständigkeit geprüft."
+        }
+      ]
+    },
+    "process": {
+      "title": "Wie Wird Ihre Anfrage Geprüft?",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Anfrage Übermitteln",
+          "text": "Teilen Sie Ihre Informations-, Dokumenten- oder Kommunikationsanfrage im Zusammenhang mit einem Rechtsprozess über das Formular mit."
+        },
+        {
+          "num": "02",
+          "title": "Prüfung Relevanter Aufzeichnungen",
+          "text": "Ihre Anfrage wird anhand des relevanten Vorgangs, Dokuments, Bereichs und der Aufzeichnungen geprüft."
+        },
+        {
+          "num": "03",
+          "title": "Information und Weiterleitung",
+          "text": "Erforderliche Informationen und Weiterleitungen werden im Rahmen des Prozesses über die zuständigen Bereiche mitgeteilt."
+        }
+      ]
+    },
+    "security": {
+      "title": "Sichere Informationsweitergabe",
+      "description": "Geben Sie keine Ausweisnummern, Passdaten, Kartendaten, Passwörter, Gesundheitsdaten oder andere sensible personenbezogene Daten über das Formular weiter. Bei Bedarf werden die erforderlichen Informationen und Dokumente über einen geeigneten Kommunikationskanal angefordert."
+    },
+    "contact": {
+      "title": "Kontaktieren Sie Unsere Rechtsabteilung",
+      "description": "Sie können das untenstehende Formular nutzen, um Informationen zu Rechtsprozessen, Dokumentenanfragen und verwandten Kommunikationsthemen unserer Einrichtung zu erhalten.",
+      "fields": {
+        "name": "Vor- und Nachname",
+        "phone": "Telefonnummer",
+        "email": "E-Mail-Adresse",
+        "topic": "Anliegen",
+        "message": "Ihre Nachricht",
+        "topicPlaceholder": "Auswählen",
+        "submit": "Anfrage Senden"
+      },
+      "topics": [
+        "Information zu Patientenrechten",
+        "Personenbezogene Daten und Datenschutzanfrage",
+        "Dokumenten- oder Vertragsprozess",
+        "Gesundheitstourismus-Prozesse",
+        "Institutionelle Rechtliche Kommunikation",
+        "Sonstiges"
+      ],
+      "previewMessage": "Das Absenden des Formulars ist im Rahmen dieses Vorschautests nicht aktiv."
+    },
+    "closing": {
+      "title": "Informationen zu Rechtsprozessen Erhalten",
+      "description": "Sie können unsere Rechtsabteilung kontaktieren, um Informationen zu Rechtsprozessen, Dokumentenanfragen und verwandten Kommunikationsthemen unserer Einrichtung zu erhalten.",
+      "cta": "Rechtsabteilung Kontaktieren"
+    }
+  },
+  "nav": {
+    "menuLabel": "Rechtsabteilung"
+  }
+}
