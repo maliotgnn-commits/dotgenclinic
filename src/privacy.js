@@ -3,6 +3,7 @@ import { initCustomCursor } from './cursor.js';
 import { initSiteHeader } from './public-header.js';
 import { desktopMenuIdForCategory } from './nav-shared.js';
 import { renderEyeHealthNavItem } from './tr-eye-health-nav.js';
+import { appendFinanceNavLinkIfTr } from './tr-finance-nav.js';
 import { loadEyeHealthContent } from './eye-health-content.js';
 import {
   applySeoLinks,
@@ -44,9 +45,13 @@ function renderChevron() {
 function renderNavGroups() {
   const serviceGroups = categoryGroups
     .map((group) => {
-      const links = group.items
-        .map((item) => `<a href="${serviceUrlForLocale(item.slug, locale)}">${escapeHtml(item.navLabel)}</a>`)
-        .join('');
+      const links = appendFinanceNavLinkIfTr(
+        group.items
+          .map((item) => `<a href="${serviceUrlForLocale(item.slug, locale)}">${escapeHtml(item.navLabel)}</a>`)
+          .join(''),
+        group.key,
+        locale,
+      );
 
       return `
         <li class="has-dropdown" data-desktop-menu-id="${desktopMenuIdForCategory(group.key)}">
