@@ -1,10 +1,13 @@
-export function initMegaMenuA11y(root = document) {
-  const items = [...root.querySelectorAll('.has-dropdown[data-eye-health-nav], .has-dropdown[data-tr-only-nav]')];
-  if (!items.length) return;
+export function initMegaMenuA11y(root = document, desktopNav = null) {
+  const closeAll = () => {
+    if (desktopNav) {
+      desktopNav.clearCloseTimer?.();
+      desktopNav.closeAllDesktopMenus();
+      return;
+    }
 
-  const closeAll = (except = null) => {
+    const items = [...root.querySelectorAll('.has-dropdown[data-eye-health-nav], .has-dropdown[data-tr-only-nav]')];
     items.forEach((item) => {
-      if (item === except) return;
       item.classList.remove('open');
       item.querySelector('.eh-nav-toggle')?.setAttribute('aria-expanded', 'false');
       const dropdown = item.querySelector('.mega-dropdown');
@@ -15,6 +18,9 @@ export function initMegaMenuA11y(root = document) {
       }
     });
   };
+
+  const items = desktopNav?.registry?.map(({ item }) => item)
+    ?? [...root.querySelectorAll('.has-dropdown[data-eye-health-nav], .has-dropdown[data-tr-only-nav]')];
 
   items.forEach((item) => {
     const toggle = item.querySelector('.eh-nav-toggle');
@@ -41,7 +47,7 @@ export function initMegaMenuA11y(root = document) {
 
   root.addEventListener('click', (event) => {
     if (window.innerWidth <= 1280) return;
-    if (event.target.closest('.has-dropdown[data-eye-health-nav], .has-dropdown[data-tr-only-nav]')) return;
+    if (event.target.closest('.nav-primary')) return;
     closeAll();
   });
 }

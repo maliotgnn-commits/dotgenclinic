@@ -1,3 +1,4 @@
+import { initDesktopNav } from './desktop-nav.js';
 import { initMegaMenuA11y } from './mega-menu-a11y.js';
 import { initEyeHealthNavBehavior } from './tr-eye-health-nav.js';
 import { MOBILE_NAV_MAX_WIDTH, NAV_CHEVRON_SVG } from './nav-shared.js';
@@ -241,6 +242,7 @@ export function initSiteHeader(root = document, { trackScroll = false } = {}) {
 
   window.addEventListener('resize', refreshMobileNav, { passive: true });
 
-  initMegaMenuA11y(root);
+  const desktopNav = initDesktopNav(navMenu, root);
+  initMegaMenuA11y(root, desktopNav);
   initEyeHealthNavBehavior(root);
 }
