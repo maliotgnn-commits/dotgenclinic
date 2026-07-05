@@ -6,7 +6,7 @@
 
 .ld-hero {
   position: relative;
-  min-height: clamp(420px, 58vh, 580px);
+  min-height: clamp(460px, 62vh, 640px);
   display: flex;
   align-items: flex-start;
   overflow: hidden;
@@ -15,29 +15,18 @@
   padding-block-end: clamp(32px, 5vw, 56px);
   background-color: #031226;
   background-image:
-    linear-gradient(160deg, rgba(3, 18, 38, 0.98) 0%, rgba(6, 24, 48, 0.94) 48%, rgba(4, 20, 42, 0.92) 100%),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 31px,
-      rgba(201, 168, 76, 0.035) 31px,
-      rgba(201, 168, 76, 0.035) 32px
+    linear-gradient(
+      90deg,
+      rgba(3, 18, 38, 0.96) 0%,
+      rgba(3, 18, 38, 0.88) 35%,
+      rgba(3, 18, 38, 0.42) 62%,
+      rgba(3, 18, 38, 0.12) 100%
     ),
-    linear-gradient(90deg, rgba(201, 168, 76, 0.08) 0%, transparent 28%);
+    url('/images/legal_department/legal_hero_asli.png');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
   border-bottom: 1px solid rgba(201, 168, 76, 0.18);
-}
-
-.ld-hero::before {
-  content: '';
-  position: absolute;
-  top: 18%;
-  right: 8%;
-  width: min(280px, 38vw);
-  height: min(280px, 38vw);
-  border: 1px solid rgba(201, 168, 76, 0.14);
-  border-radius: 2px;
-  opacity: 0.55;
-  pointer-events: none;
 }
 
 .ld-hero::after {
@@ -331,6 +320,10 @@
 }
 
 @media (max-width: 640px) {
+  .ld-hero {
+    background-position: 68% center;
+  }
+
   .ld-hero-panel {
     margin-left: 16px;
     margin-right: 16px;

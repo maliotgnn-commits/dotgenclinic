@@ -75,7 +75,11 @@ for (const phrase of forbiddenPhrases) {
 
 assert(legalJs.includes('id="legal_contact"'), 'Missing legal_contact section id in legal page source');
 assert(legalData.includes('/images/legal_department/asli_karakula.jpg'), 'Missing Asli profile image reference');
-assert(existsSync(resolve(DIST, 'images/legal_department/asli_karakula.jpg')), 'Missing built Asli image asset');
+assert(existsSync(resolve(DIST, 'images/legal_department/asli_karakula.jpg')), 'Missing built Asli profile image asset');
+const legalCss = readFileSync(resolve(ROOT, 'src/legal-department.css'), 'utf8');
+assert(legalCss.includes('/images/legal_department/legal_hero_asli.png'), 'Missing legal hero background image reference');
+assert(legalCss.includes('background-position: center right'), 'Missing desktop legal hero background positioning');
+assert(existsSync(resolve(DIST, 'images/legal_department/legal_hero_asli.png')), 'Missing built legal hero image asset');
 assert(legalJs.includes('aria-live="polite"'), 'Missing aria-live preview status region');
 assert(legalJs.includes('page.contact.previewMessage'), 'Missing preview form message binding');
 assert(legalData.includes('Preview testi kapsamında form gönderimi aktif değildir.'), 'Missing preview form message text');
