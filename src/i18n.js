@@ -1,4 +1,5 @@
 import { eyeHealthPathForLocale } from './eye-health-routes.js';
+import { financePathForLocale } from './finance-routes.js';
 
 export const DEFAULT_LOCALE = 'tr';
 export const LOCALE_STORAGE_KEY = 'dr-otgen-locale';
@@ -67,7 +68,7 @@ export function getCurrentLocale(pageType = 'home') {
   const pathLocale = getPathLocale();
   const locale = pathLocale || getStoredLocale() || DEFAULT_LOCALE;
 
-  if (pageType === 'eye-health' && pathLocale) {
+  if ((pageType === 'eye-health' || pageType === 'finance') && pathLocale) {
     storeLocale(pathLocale);
     applyDocumentDirection(pathLocale);
     return pathLocale;
@@ -78,9 +79,11 @@ export function getCurrentLocale(pageType = 'home') {
       ? serviceUrlForLocale(new URLSearchParams(window.location.search).get('slug'), locale)
       : pageType === 'eye-health'
         ? eyeHealthPathForLocale(locale)
-        : pageType === 'privacy'
-          ? `/${locale}/privacy.html`
-          : homeUrlFor(locale, window.location.hash);
+        : pageType === 'finance'
+          ? financePathForLocale(locale)
+          : pageType === 'privacy'
+            ? `/${locale}/privacy.html`
+            : homeUrlFor(locale, window.location.hash);
 
     window.history.replaceState(window.history.state, '', target);
   }
@@ -129,6 +132,10 @@ export function currentPageUrlForLocale(locale, pageType = 'home') {
 
   if (pageType === 'eye-health') {
     return eyeHealthPathForLocale(locale);
+  }
+
+  if (pageType === 'finance') {
+    return financePathForLocale(locale);
   }
 
   if (pageType === 'privacy') {

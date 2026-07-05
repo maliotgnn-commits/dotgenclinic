@@ -4,7 +4,7 @@ import { initCustomCursor } from './cursor.js';
 import { initSiteHeader, renderMobileCategoryTrigger, renderNavChevron } from './public-header.js';
 import { desktopMenuIdForCategory } from './nav-shared.js';
 import { renderEyeHealthNavItem } from './tr-eye-health-nav.js';
-import { appendFinanceNavLinkIfTr } from './tr-finance-nav.js';
+import { appendFinanceNavLink } from './tr-finance-nav.js';
 import { loadEyeHealthContent } from './eye-health-content.js';
 import {
   applySeoLinks,
@@ -50,7 +50,7 @@ function renderChevron() {
 function renderNavGroups() {
   const serviceGroups = categoryGroups
     .map((group) => {
-      const links = appendFinanceNavLinkIfTr(
+      const links = appendFinanceNavLink(
         group.items
           .map((item) => `
           <a href="${serviceUrlForLocale(item.slug, locale)}">${escapeHtml(item.navLabel)}</a>

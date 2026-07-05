@@ -9,7 +9,7 @@ import {
   normalizeEyeHealthLandingHash,
   renderEyeHealthNavItem,
 } from './tr-eye-health-nav.js';
-import { appendFinanceNavLinkIfTr } from './tr-finance-nav.js';
+import { appendFinanceNavLink } from './tr-finance-nav.js';
 import {
   applySeoLinks,
   buildCategoryGroups,
@@ -70,7 +70,7 @@ function renderCategoryEyeImage(iconKey) {
 function renderNavGroups() {
   const serviceGroups = categoryGroups
     .map((group) => {
-      const links = appendFinanceNavLinkIfTr(
+      const links = appendFinanceNavLink(
         group.items
           .map((item) => `<a href="${serviceUrlForLocale(item.slug, locale)}">${escapeHtml(item.navLabel)}</a>`)
           .join(''),

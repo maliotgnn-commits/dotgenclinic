@@ -3,7 +3,7 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { DEFAULT_LOCALE } from './seo-shared.mjs';
 import { injectEyeHealthNavForLocale } from '../src/tr-eye-health-nav.js';
-import { stripFinanceNavLink } from '../src/tr-finance-nav.js';
+import { injectFinanceNavForLocale, stripFinanceNavLink } from '../src/tr-finance-nav.js';
 import { RU_HEADER_NAV_LABELS } from '../src/i18n.js';
 import { getEyeHealthContentSync } from './eye-health-content-node.mjs';
 
@@ -184,6 +184,7 @@ export function localizeHomeBodyHtml(html, locale) {
     result = stripFinanceNavLink(result);
     result = applyStaticTranslationsToHtml(result, dictionary);
     result = injectEyeHealthNavForLocale(result, locale, getEyeHealthContentSync(locale));
+    result = injectFinanceNavForLocale(result, locale);
     if (locale === 'ru') {
       result = applyRuCompactHeaderNav(result);
     }

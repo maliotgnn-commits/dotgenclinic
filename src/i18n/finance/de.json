@@ -1,0 +1,113 @@
+{
+  "page": {
+    "title": "Finanzabteilung | Dr Otgen Clinic",
+    "description": "Die Finanzabteilung der Dr Otgen Clinic informiert über Zahlungen, Rechnungsstellung, Dokumentenanfragen und finanzielle Prozesse im Zusammenhang mit Gesundheitstourismus.",
+    "hero": {
+      "tag": "FINANZABTEILUNG",
+      "title": "Transparente und zuverlässige Koordination in finanziellen Prozessen",
+      "description": "Sie können unsere Finanzabteilung kontaktieren, um Informationen über Zahlungen, Rechnungsstellung, Dokumentenanfragen und zulässige finanzielle Prozesse im Rahmen des Gesundheitstourismus zu erhalten. Ihre Anfrage wird im Einklang mit den relevanten Unterlagen und geltenden Vorschriften geprüft.",
+      "cta": "Finanzabteilung kontaktieren"
+    },
+    "profiles": {
+      "title": "Fachkundige Koordination in unseren finanziellen Prozessen",
+      "description": "Unsere Finanzabteilung unterstützt die ordnungsgemäße und transparente Abwicklung von Zahlungen, Dokumenten, Rechnungsstellung und zulässigen finanziellen Prozessen im Zusammenhang mit Gesundheitstourismus gemäß den relevanten Unterlagen.",
+      "people": [
+        {
+          "name": "Ahmet ÖTGEN",
+          "role": "Wirtschaftsprüfer",
+          "description": "Bietet Beratung zur regelkonformen Durchführung finanzieller Prozesse, zur Prüfung finanzieller Unterlagen und zur finanziellen Koordination zulässiger Vorgänge im Rahmen des Gesundheitstourismus.",
+          "image": "/images/finance_department/ahmet_otgen_finance.jpg",
+          "imageAlt": "Wirtschaftsprüfer Ahmet ÖTGEN"
+        },
+        {
+          "name": "Zehra ÖTGEN",
+          "role": "Steuerberaterin",
+          "description": "Unterstützt bei Rechnungsstellung, Dokumentenverfolgung, Verwaltung finanzieller Anfragen und Prozesskoordination mit relevanten Abteilungen.",
+          "image": "/images/finance_department/zehra_otgen_finance.jpg",
+          "imageAlt": "Steuerberaterin Zehra ÖTGEN"
+        }
+      ]
+    },
+    "tourism": {
+      "title": "Finanzielle Prozesse im Rahmen des Gesundheitstourismus",
+      "description": "Bei internationalen Patientendienstleistungen werden finanzielle Unterlagen, Dokumente und Antragsverfahren im Zusammenhang mit zulässigen Gesundheitsleistungen im Rahmen der geltenden Vorschriften geprüft. Die finanzielle Koordination für Befreiungs- und Erstattungsakten im Rahmen des Gesundheitstourismus erfolgt unter Berücksichtigung der Art der Leistung, relevanter Genehmigungen, Patienteninformationen und erforderlicher Dokumente.",
+      "note": "Befreiungs- oder Erstattungsverfahren im Rahmen des Gesundheitstourismus stellen keinen automatischen Anspruch oder Ergebnisgarantie dar. Die Zulässigkeit wird für jeden Vorgang gesondert im Rahmen der Art der Leistung, geltender Vorschriften, Genehmigungsbedingungen, Patientenstatus und Dokumentenkonformität bewertet.",
+      "highlight": {
+        "title": "Mehrwertsteuerbefreiung und Erstattungsverfahren",
+        "description": "Für zulässige Vorgänge im Rahmen des Gesundheitstourismus wird Koordination für die Prüfung finanzieller Unterlagen, Dokumentenkonformität und Antragsakten im Zusammenhang mit Mehrwertsteuerbefreiung und Erstattungsverfahren bereitgestellt."
+      }
+    },
+    "support": {
+      "title": "Wobei können wir Ihnen helfen?",
+      "cards": [
+        {
+          "title": "Zahlungen und Rechnungsstellung",
+          "text": "Sie können unsere Finanzabteilung kontaktieren, um Informationen über Zahlungsschritte, Rechnungsstellung und relevante finanzielle Dokumente vor oder während laufender Prozesse zu erhalten."
+        },
+        {
+          "title": "Rechnungs- und Dokumentenanfragen",
+          "text": "Anfragen für Rechnungen, Zahlungsbelege, finanzielle Unterlagen oder relevante finanzielle Dokumente werden im Einklang mit Ihren bestehenden Transaktionsinformationen geprüft."
+        },
+        {
+          "title": "Finanzielle Koordination im Gesundheitstourismus",
+          "text": "Bei internationalen Patientendienstleistungen wird Orientierung zu zulässigen finanziellen Vorgängen und Dokumentenprozessen im Rahmen der geltenden Vorschriften und Aufzeichnungspflichten gegeben."
+        }
+      ]
+    },
+    "process": {
+      "title": "Wie wird Ihre Anfrage geprüft?",
+      "steps": [
+        {
+          "num": "01",
+          "title": "Anfrage übermitteln",
+          "text": "Teilen Sie Ihre finanzielle Anfrage zu Zahlung, Rechnung, Dokumenten oder Gesundheitstourismus über das Kontaktformular mit."
+        },
+        {
+          "num": "02",
+          "title": "Unterlagen und Dokumente prüfen",
+          "text": "Ihre Anfrage wird im Einklang mit bestehenden Transaktionsinformationen, relevanten finanziellen Unterlagen und erforderlichen Dokumenten geprüft."
+        },
+        {
+          "num": "03",
+          "title": "Information und Orientierung",
+          "text": "Erforderliche Informationen und Orientierung im Prozess werden über die relevanten Abteilungen mitgeteilt."
+        }
+      ]
+    },
+    "security": {
+      "title": "Sichere Informationsweitergabe",
+      "description": "Geben Sie keine Kartennummern, Sicherheitscodes, Passwörter oder andere sensible Finanzinformationen über das Kontaktformular weiter. Unsere Finanzabteilung wird Sie über einen geeigneten Kommunikationskanal kontaktieren, wenn Informationen oder Dokumente benötigt werden."
+    },
+    "contact": {
+      "title": "Kontaktieren Sie unsere Finanzabteilung",
+      "description": "Sie können das untenstehende Formular verwenden, um Ihre Anfrage zu Zahlungen, Rechnungsstellung oder finanziellen Prozessen zu übermitteln.",
+      "fields": {
+        "name": "Vollständiger Name",
+        "phone": "Telefonnummer",
+        "email": "E-Mail-Adresse",
+        "topic": "Betreff der Anfrage",
+        "message": "Ihre Nachricht",
+        "topicPlaceholder": "Auswählen",
+        "submit": "Anfrage senden"
+      },
+      "topics": [
+        "Information zum Zahlungsprozess",
+        "Rechnungsanfrage",
+        "Anfrage für Zahlungsbeleg",
+        "Bestehender Transaktionsdatensatz",
+        "Finanzielle Prozesse im Gesundheitstourismus",
+        "Information zu Mehrwertsteuerbefreiung / Erstattungsverfahren",
+        "Sonstiges"
+      ],
+      "previewMessage": "Die Formularübermittlung ist im Rahmen des Preview-Tests nicht aktiv."
+    },
+    "closing": {
+      "title": "Informationen zu Ihren finanziellen Prozessen",
+      "description": "Sie können unsere Finanzabteilung kontaktieren, um Informationen über Zahlungen, Rechnungsstellung und relevante finanzielle Vorgänge zu erhalten.",
+      "cta": "Finanzabteilung kontaktieren"
+    }
+  },
+  "nav": {
+    "menuLabel": "Finanzabteilung"
+  }
+}
