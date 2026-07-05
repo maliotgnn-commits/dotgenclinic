@@ -161,7 +161,7 @@ function applyRuCompactHeaderNav(html) {
       let navBody = body;
       for (const [fullLabel, shortLabel] of RU_HEADER_NAV_FULL_TO_SHORT) {
         const pattern = new RegExp(
-          `(<li class="has-dropdown">\\s*<a href="#")([^>]*)>${fullLabel.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(\\s*<svg)`,
+          `(<li class="has-dropdown"[^>]*>\\s*<a href="#")([^>]*)>${fullLabel.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(\\s*<svg)`,
           'g',
         );
         navBody = navBody.replace(

@@ -2,6 +2,7 @@ import './style.css';
 import './eye-health.css';
 import { initCustomCursor } from './cursor.js';
 import { initSiteHeader } from './public-header.js';
+import { desktopMenuIdForCategory } from './nav-shared.js';
 import { loadEyeHealthContent } from './eye-health-content.js';
 import { detectEyeHealthLocale } from './eye-health-routes.js';
 import {
@@ -73,7 +74,7 @@ function renderNavGroups() {
         .join('');
 
       return `
-        <li class="has-dropdown">
+        <li class="has-dropdown" data-desktop-menu-id="${desktopMenuIdForCategory(group.key)}">
           <a href="#" aria-label="${escapeHtml(group.label)}">${escapeHtml(group.navLabel)} ${renderChevron()}</a>
           <div class="mega-dropdown">
             <div class="mega-col">

@@ -2,6 +2,7 @@ import './style.css';
 import './service.css';
 import { initCustomCursor } from './cursor.js';
 import { initSiteHeader, renderMobileCategoryTrigger, renderNavChevron } from './public-header.js';
+import { desktopMenuIdForCategory } from './nav-shared.js';
 import { renderEyeHealthNavItem } from './tr-eye-health-nav.js';
 import { loadEyeHealthContent } from './eye-health-content.js';
 import {
@@ -55,7 +56,7 @@ function renderNavGroups() {
         .join('');
 
       return `
-        <li class="has-dropdown">
+        <li class="has-dropdown" data-desktop-menu-id="${desktopMenuIdForCategory(group.key)}">
           ${renderMobileCategoryTrigger({
             label: escapeHtml(group.navLabel),
             panelId: `nav-panel-${group.key}`,

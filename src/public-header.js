@@ -1,6 +1,7 @@
+import { initDesktopNav } from './desktop-nav.js';
 import { initMegaMenuA11y } from './mega-menu-a11y.js';
 import { initEyeHealthNavBehavior } from './tr-eye-health-nav.js';
-import { MOBILE_NAV_MAX_WIDTH, NAV_CHEVRON_SVG } from './nav-shared.js';
+import { MOBILE_NAV_MAX_WIDTH, NAV_CHEVRON_SVG, desktopMenuIdForIndex } from './nav-shared.js';
 
 export { MOBILE_NAV_MAX_WIDTH, NAV_CHEVRON_SVG, renderMobileCategoryTrigger, renderNavChevron } from './nav-shared.js';
 
@@ -31,7 +32,13 @@ function ensurePanelId(panel, fallbackId) {
 
 function upgradeEyeHealthMobileTrigger(navMenu) {
   const item = navMenu.querySelector('[data-eye-health-nav]');
-  if (!item || item.querySelector('.eh-mobile-nav-trigger')) return;
+  if (!item) return;
+
+  if (!item.dataset.desktopMenuId) {
+    item.dataset.desktopMenuId = 'eye-health';
+  }
+
+  if (item.querySelector('.eh-mobile-nav-trigger')) return;
 
   const head = item.querySelector('.eh-nav-item-head');
   const link = item.querySelector('.eh-nav-primary-link');
@@ -59,6 +66,10 @@ function upgradeEyeHealthMobileTrigger(navMenu) {
 
 function upgradeCategoryTriggers(navMenu) {
   navMenu.querySelectorAll('.has-dropdown:not([data-eye-health-nav])').forEach((item, index) => {
+    if (!item.dataset.desktopMenuId) {
+      item.dataset.desktopMenuId = desktopMenuIdForIndex(index);
+    }
+
     const panel = item.querySelector(':scope > .mega-dropdown');
     const anchor = item.querySelector(':scope > a.desktop-nav-trigger, :scope > a');
     if (!panel || !anchor || item.querySelector(':scope > .mobile-nav-trigger')) return;
@@ -241,6 +252,7 @@ export function initSiteHeader(root = document, { trackScroll = false } = {}) {
 
   window.addEventListener('resize', refreshMobileNav, { passive: true });
 
-  initMegaMenuA11y(root);
+  const desktopNav = initDesktopNav(navMenu, root);
+  initMegaMenuA11y(root, desktopNav);
   initEyeHealthNavBehavior(root);
 }
