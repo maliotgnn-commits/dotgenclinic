@@ -1,6 +1,6 @@
 import { buildTrEyeHealthContent } from './eye-health-content.js';
 import { eyeHealthHeaderNavLabelForLocale, eyeHealthPathForLocale } from './eye-health-routes.js';
-import { NAV_CHEVRON_SVG } from './nav-shared.js';
+import { isDesktopNavViewport, isMobileNavViewport, NAV_CHEVRON_SVG } from './nav-shared.js';
 
 export const EYE_HEALTH_LANDING_PATH = '/tr/goz-hastaliklari.html';
 
@@ -160,7 +160,7 @@ export function initEyeHealthNavBehavior(root = document) {
     groupToggle.addEventListener('click', (event) => {
       event.preventDefault();
       event.stopPropagation();
-      if (window.innerWidth > 1280) return;
+      if (isDesktopNavViewport()) return;
 
       const group = groupToggle.closest('.eh-mobile-group');
       const panel = document.getElementById(groupToggle.getAttribute('aria-controls'));
@@ -181,7 +181,7 @@ export function initEyeHealthNavBehavior(root = document) {
     if (link.classList.contains('eh-nav-primary-link')) return;
 
     link.addEventListener('click', () => {
-      if (window.innerWidth <= 1280) {
+      if (isMobileNavViewport()) {
         closeEyeHealthTopLevel(navRoot);
         root.querySelector('#nav-drawer')?.classList.remove('active');
         root.querySelector('#hamburger')?.classList.remove('active');

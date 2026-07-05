@@ -28,6 +28,8 @@ const steps = [
   ['node', ['scripts/verify-tr-finance-preview-page.mjs']],
   ['node', ['scripts/verify-multilingual-finance-page.mjs']],
   ['node', ['scripts/verify-header-controls.mjs']],
+  ['node', ['scripts/verify-nav-breakpoint-alignment.mjs']],
+  ['node', ['scripts/verify-desktop-nav-exclusive-open.mjs']],
   ['node', ['scripts/verify-nav-category-labels.mjs']],
   ['node', ['scripts/verify-form-privacy.mjs']],
 ];

@@ -1,4 +1,12 @@
 export const MOBILE_NAV_MAX_WIDTH = 1280;
+
+export function isMobileNavViewport(width = window.innerWidth) {
+  return width < MOBILE_NAV_MAX_WIDTH;
+}
+
+export function isDesktopNavViewport(width = window.innerWidth) {
+  return width >= MOBILE_NAV_MAX_WIDTH;
+}
 export const NAV_CHEVRON_SVG =
   '<svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg>';
 
