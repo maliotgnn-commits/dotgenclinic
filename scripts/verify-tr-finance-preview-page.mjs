@@ -70,6 +70,10 @@ assert(financeJs.includes('/images/finance_department/ahmet_otgen_finance.jpg'),
 assert(financeJs.includes('/images/finance_department/zehra_otgen_finance.jpg'), 'Missing Zehra profile image reference');
 assert(existsSync(resolve(DIST, 'images/finance_department/ahmet_otgen_finance.jpg')), 'Missing built Ahmet image asset');
 assert(existsSync(resolve(DIST, 'images/finance_department/zehra_otgen_finance.jpg')), 'Missing built Zehra image asset');
+assert(existsSync(resolve(DIST, 'images/finance_department/finance_hero_zehra.png')), 'Missing built finance hero image asset');
+const financeCss = readFileSync(resolve(ROOT, 'src/finance-department.css'), 'utf8');
+assert(financeCss.includes('/images/finance_department/finance_hero_zehra.png'), 'Missing finance hero background image reference');
+assert(financeCss.includes('background-position: center right'), 'Missing desktop finance hero background positioning');
 assert(financeJs.includes('aria-live="polite"'), 'Missing aria-live preview status region');
 assert(financeJs.includes('Preview testi kapsamında form gönderimi aktif değildir.'), 'Missing preview form message text');
 assert(!/fetch\s*\(|XMLHttpRequest|mailto:|formspree|web3forms/i.test(financeJs), 'Finance page must not include outbound form submission hooks');

@@ -13,13 +13,19 @@
   box-sizing: border-box;
   padding-block-start: calc(var(--header-height, 86px) + clamp(32px, 5vw, 72px));
   padding-block-end: clamp(32px, 5vw, 56px);
-  background-color: #0b1628;
+  background-color: #031226;
   background-image:
-    linear-gradient(rgba(201, 168, 76, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201, 168, 76, 0.07) 1px, transparent 1px),
-    radial-gradient(circle at 20% 20%, rgba(201, 168, 76, 0.08), transparent 45%),
-    linear-gradient(180deg, rgba(5, 17, 34, 0.35), rgba(5, 17, 34, 0.92));
-  background-size: 52px 52px, 52px 52px, auto, auto;
+    linear-gradient(
+      90deg,
+      rgba(3, 18, 38, 0.96) 0%,
+      rgba(3, 18, 38, 0.88) 35%,
+      rgba(3, 18, 38, 0.42) 62%,
+      rgba(3, 18, 38, 0.12) 100%
+    ),
+    url('/images/finance_department/finance_hero_zehra.png');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
   border-bottom: 1px solid rgba(201, 168, 76, 0.18);
 }
 
@@ -42,10 +48,10 @@
   width: min(100%, 620px);
   margin-left: max(20px, calc((100% - var(--container-width, 1200px)) / 2 + 20px));
   padding: 32px 34px 36px;
-  background: rgba(5, 17, 34, 0.88);
-  border: 1px solid rgba(201, 168, 76, 0.35);
+  background: rgba(5, 17, 34, 0.58);
+  border: 1px solid rgba(201, 168, 76, 0.28);
   border-radius: 0 18px 0 0;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
 }
 
 .fd-hero-tag {
@@ -360,6 +366,10 @@
 }
 
 @media (max-width: 640px) {
+  .fd-hero {
+    background-position: 68% center;
+  }
+
   .fd-hero-panel {
     margin-left: 16px;
     margin-right: 16px;
