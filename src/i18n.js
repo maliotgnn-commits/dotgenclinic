@@ -1,6 +1,7 @@
 import { eyeHealthPathForLocale } from './eye-health-routes.js';
 import { financePathForLocale } from './finance-routes.js';
 import { legalPathForLocale } from './legal-routes.js';
+import { pharmaRdPathForLocale } from './pharma-rd-routes.js';
 
 export const DEFAULT_LOCALE = 'tr';
 export const LOCALE_STORAGE_KEY = 'dr-otgen-locale';
@@ -69,7 +70,7 @@ export function getCurrentLocale(pageType = 'home') {
   const pathLocale = getPathLocale();
   const locale = pathLocale || getStoredLocale() || DEFAULT_LOCALE;
 
-  if ((pageType === 'eye-health' || pageType === 'finance' || pageType === 'legal') && pathLocale) {
+  if ((pageType === 'eye-health' || pageType === 'finance' || pageType === 'legal' || pageType === 'pharma-rd') && pathLocale) {
     storeLocale(pathLocale);
     applyDocumentDirection(pathLocale);
     return pathLocale;
@@ -84,6 +85,8 @@ export function getCurrentLocale(pageType = 'home') {
           ? financePathForLocale(locale)
           : pageType === 'legal'
             ? legalPathForLocale(locale)
+            : pageType === 'pharma-rd'
+              ? pharmaRdPathForLocale('tr')
             : pageType === 'privacy'
             ? `/${locale}/privacy.html`
             : homeUrlFor(locale, window.location.hash);
@@ -143,6 +146,10 @@ export function currentPageUrlForLocale(locale, pageType = 'home') {
 
   if (pageType === 'legal') {
     return legalPathForLocale(locale);
+  }
+
+  if (pageType === 'pharma-rd') {
+    return locale === 'tr' ? pharmaRdPathForLocale(locale) : homeUrlFor(locale);
   }
 
   if (pageType === 'privacy') {
@@ -255,6 +262,15 @@ export function applySeoLinks(locale, pageType = 'home', slug = null) {
       upsertSeoLink('alternate', code, eyeHealthPathForLocale(code));
     });
     upsertSeoLink('alternate', 'x-default', eyeHealthPathForLocale('en'));
+    return;
+  }
+
+  if (pageType === 'pharma-rd') {
+    upsertSeoLink('canonical', null, pharmaRdPathForLocale('tr'));
+    LOCALES.forEach(({ code }) => {
+      upsertSeoLink('alternate', code, code === 'tr' ? pharmaRdPathForLocale('tr') : homeUrlFor(code));
+    });
+    upsertSeoLink('alternate', 'x-default', pharmaRdPathForLocale('tr'));
     return;
   }
 

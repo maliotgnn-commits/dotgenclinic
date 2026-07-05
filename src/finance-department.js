@@ -5,6 +5,7 @@ import { initSiteHeader, renderMobileCategoryTrigger, renderNavChevron } from '.
 import { desktopMenuIdForCategory } from './nav-shared.js';
 import { renderEyeHealthNavItem } from './tr-eye-health-nav.js';
 import { appendFinanceNavLink } from './tr-finance-nav.js';
+import { appendArgeNavItem } from './tr-arge-nav.js';
 import { loadEyeHealthContent } from './eye-health-content.js';
 import { loadFinanceContent } from './finance-content.js';
 import { detectFinanceLocale } from './finance-routes.js';
@@ -76,7 +77,10 @@ function renderNavGroups() {
     })
     .join('');
 
-  return `${serviceGroups}${renderEyeHealthNavItem({ locale, content: eyeContent })}`;
+  return appendArgeNavItem(
+    `${serviceGroups}${renderEyeHealthNavItem({ locale, content: eyeContent })}`,
+    locale,
+  );
 }
 
 function renderSkipLink() {

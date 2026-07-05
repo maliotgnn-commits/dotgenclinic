@@ -1,4 +1,4 @@
-import { resolveLocaleRewrite, rewriteLocaleRequestUrl, FINANCE_PREVIEW_FILE, FINANCE_FILES, LEGAL_PREVIEW_FILE, LEGAL_FILES } from './locale-route-rewrite.mjs';
+import { resolveLocaleRewrite, rewriteLocaleRequestUrl, FINANCE_PREVIEW_FILE, FINANCE_FILES, LEGAL_PREVIEW_FILE, LEGAL_FILES, PHARMA_RD_PREVIEW_FILE } from './locale-route-rewrite.mjs';
 
 const failures = [];
 
@@ -20,6 +20,7 @@ expect('/ru/privacy.html', '', '/privacy.html');
 expect('/tr/goz-hastaliklari.html', '', '/goz-hastaliklari.html');
 expect('/tr/finans-departmani.html', '', '/finans-departmani.html');
 expect('/tr/hukuk-departmani.html', '', '/hukuk-departmani.html');
+expect('/tr/ilac-ar-ge.html', '', '/ilac-ar-ge.html');
 expect('/en/legal-department.html', '', '/hukuk-departmani.html');
 expect('/de/rechtsabteilung.html', '', '/hukuk-departmani.html');
 expect('/en/finance-department.html', '', '/finans-departmani.html');
@@ -54,6 +55,14 @@ assert(
 assert(
   rewriteLocaleRequestUrl('/tr/hukuk-departmani.html') === '/hukuk-departmani.html',
   'rewriteLocaleRequestUrl must map legal preview route',
+);
+assert(
+  rewriteLocaleRequestUrl('/tr/ilac-ar-ge.html') === '/ilac-ar-ge.html',
+  'rewriteLocaleRequestUrl must map pharma R&D preview route',
+);
+assert(
+  PHARMA_RD_PREVIEW_FILE === 'ilac-ar-ge.html',
+  'Pharma R&D preview route file constant mismatch',
 );
 assert(
   LEGAL_PREVIEW_FILE === 'hukuk-departmani.html',
