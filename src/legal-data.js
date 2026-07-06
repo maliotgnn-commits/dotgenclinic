@@ -8,19 +8,30 @@ export const LEGAL_PAGE = {
     description:
       'Dr Otgen Clinic ile ilişkili hukuki nitelikteki bilgi, belge ve iletişim talepleri; ilgili kayıtlar, hasta hakları, gizlilik ilkeleri ve yürürlükteki mevzuat çerçevesinde değerlendirilir.',
     cta: 'Hukuk Departmanına Ulaşın',
+    image: '/images/legal_department/legal_hero.png',
   },
-  profile: {
+  profiles: {
     title: 'Hukuki Süreçlerde Profesyonel Koordinasyon',
     description:
       'Hukuk Departmanımız; kurumla ilişkili belge, iletişim, gizlilik ve süreç taleplerinin ilgili birimlerle koordineli biçimde değerlendirilmesine katkı sağlar.',
-    person: {
-      name: 'Av. Aslı Karakula',
-      role: 'Avukat',
-      description:
-        'Hasta hakları, kişisel verilerin korunması, sözleşmesel belge süreçleri ve kurum içi hukuki koordinasyon konularında ilgili birimlerle iletişim ve süreç takibini destekler.',
-      image: '/images/legal_department/asli_karakula.jpg',
-      imageAlt: 'Av. Aslı Karakula',
-    },
+    people: [
+      {
+        name: 'Av. Çağatay Güler',
+        role: 'Avukat',
+        description:
+          'Hasta hakları, kişisel verilerin korunması, sözleşmesel belge süreçleri ve kurum içi hukuki koordinasyon konularında hukuki danışmanlık ve süreç takibi sağlar.',
+        image: '/images/legal_department/cagatay_guler.jpg',
+        imageAlt: 'Av. Çağatay Güler',
+      },
+      {
+        name: 'Av. Aslı Karakula',
+        role: 'Avukat',
+        description:
+          'Hasta hakları, kişisel verilerin korunması, sözleşmesel belge süreçleri ve kurum içi hukuki koordinasyon konularında ilgili birimlerle iletişim ve süreç takibini destekler.',
+        image: '/images/legal_department/asli_karakula.jpg',
+        imageAlt: 'Av. Aslı Karakula',
+      },
+    ],
   },
   support: {
     title: 'Hangi Konularda Bilgi Alabilirsiniz?',

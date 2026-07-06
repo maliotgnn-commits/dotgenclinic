@@ -6,18 +6,28 @@
       "tag": "DEPARTAMENTO JURÍDICO",
       "title": "Comunicación Transparente y Segura en Procesos Jurídicos",
       "description": "Las solicitudes de información, documentos y comunicación de naturaleza jurídica relacionadas con Dr Otgen Clinic se evalúan conforme a los registros pertinentes, los derechos del paciente, los principios de privacidad y la legislación vigente.",
-      "cta": "Contactar con el Departamento Jurídico"
+      "cta": "Contactar con el Departamento Jurídico",
+      "image": "/images/legal_department/legal_hero.png"
     },
-    "profile": {
+    "profiles": {
       "title": "Coordinación Profesional en Procesos Jurídicos",
       "description": "Nuestro Departamento Jurídico contribuye a la evaluación coordinada de solicitudes documentales, de comunicación, privacidad y procesos relacionados con la institución junto con las unidades pertinentes.",
-      "person": {
-        "name": "Av. Aslı Karakula",
-        "role": "Abogada",
-        "description": "Apoya la comunicación y el seguimiento de procesos con las unidades pertinentes en materia de derechos del paciente, protección de datos personales, procesos documentales contractuales y coordinación jurídica interna.",
-        "image": "/images/legal_department/asli_karakula.jpg",
-        "imageAlt": "Av. Aslı Karakula"
-      }
+      "people": [
+        {
+          "name": "Av. Çağatay Güler",
+          "role": "Abogado",
+          "description": "Proporciona asesoramiento jurídico y seguimiento de procesos en materia de derechos del paciente, protección de datos personales, procesos documentales contractuales y coordinación jurídica interna.",
+          "image": "/images/legal_department/cagatay_guler.jpg",
+          "imageAlt": "Av. Çağatay Güler"
+        },
+        {
+          "name": "Av. Aslı Karakula",
+          "role": "Abogada",
+          "description": "Apoya la comunicación y el seguimiento de procesos con las unidades pertinentes en materia de derechos del paciente, protección de datos personales, procesos documentales contractuales y coordinación jurídica interna.",
+          "image": "/images/legal_department/asli_karakula.jpg",
+          "imageAlt": "Av. Aslı Karakula"
+        }
+      ]
     },
     "support": {
       "title": "¿Sobre Qué Temas Puede Solicitar Información?",
