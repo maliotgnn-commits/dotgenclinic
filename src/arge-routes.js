@@ -1,4 +1,11 @@
 import {
+  medikalRdFileForLocale,
+  medikalRdPageNavLabelForLocale,
+  medikalRdPathForLocale,
+  detectMedikalRdLocale,
+  isMedikalRdPath,
+} from './medikal-rd-routes.js';
+import {
   PHARMA_RD_ROUTES,
   argeMenuLabelForLocale,
   detectPharmaRdLocale,
@@ -22,6 +29,12 @@ export function argePagesForLocale(locale = 'tr') {
       path: pharmaRdPathForLocale(locale),
       file: pharmaRdFileForLocale(locale),
     },
+    {
+      id: 'medikal-ar-ge',
+      navLabel: medikalRdPageNavLabelForLocale(locale),
+      path: medikalRdPathForLocale(locale),
+      file: medikalRdFileForLocale(locale),
+    },
   ];
 }
 
@@ -38,13 +51,17 @@ export function argePagePathForId(id, locale = 'tr') {
 }
 
 export function detectArgePage(pathname = window.location.pathname) {
+  const medikalLocale = detectMedikalRdLocale(pathname);
+  if (medikalLocale) {
+    return argePagesForLocale(medikalLocale).find((page) => page.id === 'medikal-ar-ge') || null;
+  }
   const locale = detectPharmaRdLocale(pathname);
   if (!locale) return null;
-  return argePagesForLocale(locale)[0] || null;
+  return argePagesForLocale(locale).find((page) => page.id === 'ilac-ar-ge') || null;
 }
 
 export function isArgePagePath(pathname = window.location.pathname) {
-  return isPharmaRdPath(pathname);
+  return isPharmaRdPath(pathname) || isMedikalRdPath(pathname);
 }
 
 export { argeMenuLabelForLocale, detectPharmaRdLocale, pharmaRdPathForLocale };

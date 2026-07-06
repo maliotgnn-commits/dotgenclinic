@@ -1,0 +1,38 @@
+{
+  "page": {
+    "title": "I+D Médica | Dr Otgen Clinic",
+    "description": "Información sobre la colaboración de I+D en tecnología médica entre Dr Otgen Clinic y Demcon, con sede en los Países Bajos, en ingeniería de sistemas médicos, robótica y desarrollo de dispositivos médicos innovadores.",
+    "hero": {
+      "tag": "COLABORACIÓN NEERLANDESA",
+      "title": "Dr Otgen Clinic x Demcon",
+      "subtitle": "Colaboración de I+D en Tecnología Médica de los Países Bajos",
+      "lead": "Soluciones innovadoras en ingeniería de sistemas médicos, robótica y desarrollo de dispositivos",
+      "image": "/images/medikal_rd/medikal_rd_hero.png"
+    },
+    "intro": {
+      "title": "Dr Otgen Clinic – Demcon Colaboración de I+D en Tecnología Médica de los Países Bajos",
+      "paragraphs": [
+        "En el marco de su colaboración de I+D centrada en tecnología médica con Demcon, empresa neerlandesa de tecnología e ingeniería, Dr Otgen Clinic realiza trabajos en ingeniería de sistemas médicos, soluciones robóticas y desarrollo de dispositivos médicos innovadores. A través de esta colaboración, el objetivo es combinar las necesidades clínicas con enfoques de ingeniería avanzados para desarrollar soluciones que mejoren la seguridad del paciente, la precisión de los procesos de diagnóstico y tratamiento y la eficiencia operativa en los servicios de salud.",
+        "Las actividades de investigación y desarrollo avanzan en los ámbitos de sistemas inteligentes de dispositivos médicos, aplicaciones asistidas por robótica, diseño de dispositivos centrado en el usuario, prototipado, procesos de prueba e integración tecnológica adecuada para el uso clínico. Junto con la experiencia de Demcon en ingeniería y fabricación de alta tecnología, Dr Otgen Clinic aspira a aportar innovaciones fiables y sostenibles de alto valor al sector sanitario."
+      ]
+    },
+    "focusAreas": {
+      "title": "Áreas de enfoque de I+D",
+      "items": [
+        "Sistemas inteligentes de dispositivos médicos",
+        "Aplicaciones asistidas por robótica",
+        "Diseño de dispositivos centrado en el usuario",
+        "Prototipado",
+        "Procesos de prueba",
+        "Integración tecnológica para uso clínico"
+      ]
+    },
+    "closing": {
+      "quote": "La experiencia clínica y la ingeniería avanzada se unen para innovaciones fiables y sostenibles en tecnología médica.",
+      "cta": "Solicitar cita"
+    },
+    "breadcrumbHome": "Inicio",
+    "sectionName": "I+D",
+    "pageShortName": "I+D Médica"
+  }
+}

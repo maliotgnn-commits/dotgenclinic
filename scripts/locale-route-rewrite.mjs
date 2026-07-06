@@ -3,6 +3,7 @@ export const LOCALE_CODES = ['tr', 'en', 'ar', 'es', 'fr', 'it', 'ru', 'de'];
 export const FINANCE_PREVIEW_FILE = 'finans-departmani.html';
 export const LEGAL_PREVIEW_FILE = 'hukuk-departmani.html';
 export const PHARMA_RD_PREVIEW_FILE = 'ilac-ar-ge.html';
+export const MEDIKAL_RD_PREVIEW_FILE = 'medikal-ar-ge.html';
 
 export const PHARMA_RD_FILES = new Set([
   'ilac-ar-ge.html',
@@ -13,6 +14,17 @@ export const PHARMA_RD_FILES = new Set([
   'r-d-farmaceutica.html',
   'фармацевтические-разработки.html',
   'pharmazeutische-forschung.html',
+]);
+
+export const MEDIKAL_RD_FILES = new Set([
+  'medikal-ar-ge.html',
+  'medical-r-d.html',
+  'البحث-والتطوير-الطبي.html',
+  'i-d-medica.html',
+  'r-d-medical.html',
+  'r-d-medica.html',
+  'медицинские-разработки.html',
+  'medizinische-forschung.html',
 ]);
 
 export const LEGAL_FILES = new Set([
@@ -101,6 +113,14 @@ export function resolveLocaleRewrite(pathname, search = '') {
 
   if (PHARMA_RD_FILES.has(routeFile) || PHARMA_RD_FILES.has(routeFileRaw)) {
     return `/ilac-ar-ge.html${search}`;
+  }
+
+  if (routeFile === MEDIKAL_RD_PREVIEW_FILE || routeFileRaw === MEDIKAL_RD_PREVIEW_FILE) {
+    return `/medikal-ar-ge.html${search}`;
+  }
+
+  if (MEDIKAL_RD_FILES.has(routeFile) || MEDIKAL_RD_FILES.has(routeFileRaw)) {
+    return `/medikal-ar-ge.html${search}`;
   }
 
   return `/index.html${search}`;

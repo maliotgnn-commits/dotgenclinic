@@ -1,0 +1,38 @@
+{
+  "page": {
+    "title": "R&D Médical | Dr Otgen Clinic",
+    "description": "Informations sur la collaboration de R&D en technologie médicale entre Dr Otgen Clinic et Demcon, basée aux Pays-Bas, en ingénierie des systèmes médicaux, robotique et développement de dispositifs médicaux innovants.",
+    "hero": {
+      "tag": "PARTENARIAT NÉERLANDAIS",
+      "title": "Dr Otgen Clinic x Demcon",
+      "subtitle": "Collaboration R&D en Technologie Médicale des Pays-Bas",
+      "lead": "Solutions innovantes en ingénierie des systèmes médicaux, robotique et développement de dispositifs",
+      "image": "/images/medikal_rd/medikal_rd_hero.png"
+    },
+    "intro": {
+      "title": "Dr Otgen Clinic – Demcon Collaboration R&D en Technologie Médicale des Pays-Bas",
+      "paragraphs": [
+        "Dans le cadre de sa collaboration R&D axée sur la technologie médicale avec Demcon, entreprise néerlandaise de technologie et d'ingénierie, Dr Otgen Clinic mène des travaux en ingénierie des systèmes médicaux, solutions robotiques et développement de dispositifs médicaux innovants. Grâce à ce partenariat, l'objectif est de combiner les besoins cliniques avec des approches d'ingénierie avancées pour développer des solutions améliorant la sécurité des patients, la précision des processus de diagnostic et de traitement et l'efficacité opérationnelle des services de santé.",
+        "Les activités de recherche et développement progressent dans les domaines des systèmes intelligents de dispositifs médicaux, des applications assistées par robotique, de la conception de dispositifs centrée sur l'utilisateur, du prototypage, des processus de test et de l'intégration technologique adaptée à l'usage clinique. Avec l'expertise de Demcon en ingénierie et fabrication de haute technologie, Dr Otgen Clinic vise à apporter des innovations fiables et durables à forte valeur ajoutée au secteur de la santé."
+      ]
+    },
+    "focusAreas": {
+      "title": "Domaines de focus R&D",
+      "items": [
+        "Systèmes intelligents de dispositifs médicaux",
+        "Applications assistées par robotique",
+        "Conception de dispositifs centrée sur l'utilisateur",
+        "Prototypage",
+        "Processus de test",
+        "Intégration technologique pour usage clinique"
+      ]
+    },
+    "closing": {
+      "quote": "L'expérience clinique et l'ingénierie avancée se rejoignent pour des innovations fiables et durables en technologie médicale.",
+      "cta": "Demander un rendez-vous"
+    },
+    "breadcrumbHome": "Accueil",
+    "sectionName": "R&D",
+    "pageShortName": "R&D Médical"
+  }
+}

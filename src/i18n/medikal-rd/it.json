@@ -1,0 +1,38 @@
+{
+  "page": {
+    "title": "R&S Medica | Dr Otgen Clinic",
+    "description": "Informazioni sulla collaborazione di R&S in tecnologia medica tra Dr Otgen Clinic e Demcon, con sede nei Paesi Bassi, in ingegneria dei sistemi medici, robotica e sviluppo di dispositivi medici innovativi.",
+    "hero": {
+      "tag": "PARTNERSHIP OLANDESE",
+      "title": "Dr Otgen Clinic x Demcon",
+      "subtitle": "Collaborazione R&S in Tecnologia Medica dei Paesi Bassi",
+      "lead": "Soluzioni innovative in ingegneria dei sistemi medici, robotica e sviluppo di dispositivi",
+      "image": "/images/medikal_rd/medikal_rd_hero.png"
+    },
+    "intro": {
+      "title": "Dr Otgen Clinic – Demcon Collaborazione R&S in Tecnologia Medica dei Paesi Bassi",
+      "paragraphs": [
+        "Nell'ambito della collaborazione R&S focalizzata sulla tecnologia medica con Demcon, azienda olandese di tecnologia e ingegneria, Dr Otgen Clinic conduce attività in ingegneria dei sistemi medici, soluzioni robotiche e sviluppo di dispositivi medici innovativi. Attraverso questa partnership, l'obiettivo è combinare le esigenze cliniche con approcci ingegneristici avanzati per sviluppare soluzioni che migliorino la sicurezza del paziente, la precisione dei processi diagnostici e terapeutici e l'efficienza operativa nei servizi sanitari.",
+        "Le attività di ricerca e sviluppo procedono nei settori dei sistemi intelligenti di dispositivi medici, applicazioni assistite dalla robotica, design di dispositivi centrato sull'utente, prototipazione, processi di test e integrazione tecnologica adatta all'uso clinico. Insieme all'expertise ingegneristica e produttiva ad alta tecnologia di Demcon, Dr Otgen Clinic mira a portare innovazioni affidabili e sostenibili ad alto valore aggiunto al settore sanitario."
+      ]
+    },
+    "focusAreas": {
+      "title": "Aree di focus R&S",
+      "items": [
+        "Sistemi intelligenti di dispositivi medici",
+        "Applicazioni assistite dalla robotica",
+        "Design di dispositivi centrato sull'utente",
+        "Prototipazione",
+        "Processi di test",
+        "Integrazione tecnologica per uso clinico"
+      ]
+    },
+    "closing": {
+      "quote": "Esperienza clinica e ingegneria avanzata si uniscono per innovazioni affidabili e sostenibili nella tecnologia medica.",
+      "cta": "Richiedi appuntamento"
+    },
+    "breadcrumbHome": "Home",
+    "sectionName": "R&S",
+    "pageShortName": "R&S Medica"
+  }
+}

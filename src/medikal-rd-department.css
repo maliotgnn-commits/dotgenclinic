@@ -1,0 +1,210 @@
+.mr-page {
+  --header-height: 80px;
+  background: #0b1628;
+  color: #e8e4dc;
+}
+
+.mr-hero {
+  position: relative;
+  min-height: clamp(460px, 62vh, 640px);
+  display: flex;
+  align-items: flex-start;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding-block-start: calc(var(--header-height, 86px) + clamp(32px, 5vw, 72px));
+  padding-block-end: clamp(32px, 5vw, 56px);
+  background-color: #031226;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(3, 18, 38, 0.96) 0%,
+      rgba(3, 18, 38, 0.88) 35%,
+      rgba(3, 18, 38, 0.42) 62%,
+      rgba(3, 18, 38, 0.12) 100%
+    ),
+    var(--mr-hero-image, url('/images/medikal_rd/medikal_rd_hero.png'));
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.18);
+}
+
+.mr-hero::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.55), transparent);
+}
+
+.mr-hero-panel-wrap {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 0;
+}
+
+.mr-hero-panel {
+  width: min(100%, 640px);
+  margin-left: max(20px, calc((100% - var(--container-width, 1200px)) / 2 + 20px));
+  padding: 32px 34px 36px;
+  background: rgba(5, 17, 34, 0.62);
+  border: 1px solid rgba(201, 168, 76, 0.28);
+  border-radius: 0 18px 0 0;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+}
+
+.mr-hero-tag {
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.mr-hero-panel h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.65rem, 3vw, 2.35rem);
+  line-height: 1.25;
+  color: #f5f0e6;
+  margin: 0 0 14px;
+}
+
+.mr-hero-subtitle {
+  margin: 0 0 8px;
+  color: #d5d0c8;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.mr-hero-lead {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  line-height: 1.4;
+  color: rgba(201, 168, 76, 0.92);
+  margin: 0;
+  font-weight: 500;
+}
+
+.mr-breadcrumb {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+  background: rgba(5, 17, 34, 0.55);
+}
+
+.mr-breadcrumb ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.82rem;
+  color: #a8a29a;
+}
+
+.mr-breadcrumb a {
+  color: #c9a84c;
+  text-decoration: none;
+}
+
+.mr-breadcrumb li:not(:last-child)::after {
+  content: '/';
+  margin-left: 8px;
+  color: #6b6560;
+}
+
+.mr-section {
+  padding: 72px 0;
+}
+
+.mr-section-soft {
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(201, 168, 76, 0.12);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+}
+
+.mr-section-head {
+  max-width: 760px;
+  margin-bottom: 40px;
+}
+
+.mr-section-head h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: #f5f0e6;
+  margin: 0 0 20px;
+}
+
+.mr-prose p {
+  margin: 0 0 18px;
+  color: #d5d0c8;
+  line-height: 1.75;
+}
+
+.mr-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.mr-focus-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.mr-focus-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 22px 24px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.16);
+  border-radius: 12px;
+}
+
+.mr-focus-card span {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.mr-focus-card p {
+  margin: 0;
+  color: #d5d0c8;
+  line-height: 1.6;
+}
+
+.mr-closing {
+  padding: 80px 0 96px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(5, 17, 34, 0.4) 0%, rgba(3, 18, 38, 0.85) 100%);
+}
+
+.mr-closing blockquote {
+  max-width: 720px;
+  margin: 0 auto 28px;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  line-height: 1.5;
+  color: #f5f0e6;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .mr-hero-panel {
+    margin-left: 16px;
+    margin-right: 16px;
+    width: auto;
+    padding: 24px 22px 28px;
+  }
+
+  .mr-section {
+    padding: 56px 0;
+  }
+}
