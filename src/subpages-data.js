@@ -775,6 +775,7 @@ const DATA = {
           "value": "Uluslararası festival ve yarışma platformları"
         }
       ],
+      "processTitle": "Prodüksiyon Süreci",
       "process": [
         {
           "title": "Konsept ve Senaryo",
