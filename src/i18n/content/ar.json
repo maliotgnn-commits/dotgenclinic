@@ -691,116 +691,116 @@
     {
       "category": "corporate",
       "slug": "production",
-      "navLabel": "Prodüksiyon",
       "navAppendOnly": true,
-      "title": "Dr Otgen Clinic Prodüksiyon",
-      "categoryLabel": "الشركات",
-      "heroTag": "معلومات الشركة",
-      "heroSubtitle": "Sinema diliyle anlatılan sağlık ve bilim hikâyeleri",
-      "summary": "Dr Otgen Clinic, sağlık ve bilim alanındaki çalışmalarını yaratıcı prodüksiyon projeleriyle de anlatıyor; kısa metraj filmlerimizle insan hikâyelerini güçlü bir sinema diliyle buluşturuyoruz.",
       "images": {
         "hero": "/images/production/production-hero.png",
         "content": "/images/production/mert-can-director.png"
       },
+      "navLabel": "الإنتاج",
+      "title": "إنتاج Dr Otgen Clinic",
+      "categoryLabel": "الشركات",
+      "heroTag": "معلومات الشركة",
+      "heroSubtitle": "قصص الصحة والعلم رواها لغة السينما",
+      "summary": "تروي Dr Otgen Clinic أعمالها في مجال الصحة والعلم أيضًا من خلال مشاريع إنتاج إبداعية؛ أفلامنا القصيرة تجمع بين قصص الإنسان ولغة سينمائية قوية.",
       "overview": [
-        "Dr Otgen Clinic, sağlık ve bilim alanındaki çalışmalarını yaratıcı prodüksiyon projeleriyle de anlatıyor. Yönetmenliğini Mert Can'ın üstlendiği kısa metrajlı film projelerimiz; insan hikâyelerini, farkındalık temalarını ve toplumsal mesajları güçlü bir sinema diliyle buluşturuyor.",
-        "Ürettiğimiz kısa filmler, yurt dışındaki seçkin kısa film festivalleri ve yarışmalarına gönderilmekte; bu alanda elde ettiğimiz ödüllerle yaratıcı vizyonumuzu uluslararası platformlara taşıyoruz.",
-        "Her projede yalnızca bir film üretmeyi değil, izleyicide iz bırakan, düşündüren ve ilham veren hikâyeler anlatmayı hedefliyoruz."
+        "تروي Dr Otgen Clinic أعمالها في مجال الصحة والعلم أيضًا من خلال مشاريع إنتاج إبداعية. مشاريع أفلامنا القصيرة التي يخرجها Mert Can تجمع بين قصص الإنسان وموضوعات التوعية والرسائل المجتمعية بلغة سينمائية قوية.",
+        "تُرسل الأفلام القصيرة التي ننتجها إلى مهرجانات ومسابقات أفلام قصيرة دولية مرموقة؛ والجوائز التي حصلنا عليها في هذا المجال تنقل رؤيتنا الإبداعية إلى منصات دولية.",
+        "في كل مشروع، لا نهدف فقط إلى إنتاج فيلم، بل إلى سرد قصص تترك أثرًا لدى المشاهد وتدفعه للتفكير وتلهمه."
       ],
       "sections": [
         {
-          "title": "Yaratıcı Anlatım ve Yönetmenlik",
+          "title": "السرد الإبداعي والإخراج",
           "blocks": [
             {
               "type": "subheading",
-              "text": "Yönetmen: Mert Can"
+              "text": "المخرج: Mert Can"
             },
             {
               "type": "paragraph",
-              "text": "Kısa metraj projelerimizin yönetmenliğini üstlenen Mert Can; insan odaklı anlatım, güçlü görsel dil ve toplumsal farkındalık temalarını bir araya getiren bir sinema yaklaşımı benimsiyor. Her çekimde duygusal derinlik ile mesajın netliğini aynı kadrajda buluşturmayı hedefliyor."
+              "text": "يتبنى Mert Can، مخرج مشاريع أفلامنا القصيرة، نهجًا سينمائيًا يجمع بين سرد يركز على الإنسان ولغة بصرية قوية وموضوعات التوعية المجتمعية. في كل لقطة، يسعى إلى الجمع بين العمق العاطفي ووضوح الرسالة في الإطار نفسه."
             },
             {
               "type": "paragraph",
-              "text": "Prodüksiyon sürecimiz; senaryo geliştirmeden post-prodüksiyona kadar disiplinli bir planlama, profesyonel ekip koordinasyonu ve yüksek prodüksiyon standartları üzerine kuruludur."
+              "text": "تقوم عملية الإنتاج لدينا على تخطيط منضبط وتنسيق احترافي للفريق ومعايير إنتاج عالية من تطوير السيناريو إلى ما بعد الإنتاج."
             }
           ]
         },
         {
-          "title": "Festivaller ve Uluslararası Tanınırlık",
+          "title": "المهرجانات والاعتراف الدولي",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Kısa metraj filmlerimiz, uluslararası festival programları ve yarışmalar aracılığıyla geniş bir izleyici kitlesine ulaşır. Bu platformlar, klinik olarak yürüttüğümüz bilim ve sağlık çalışmalarının ötesinde toplumsal farkındalık yaratma hedefimizi destekler."
+              "text": "تصل أفلامنا القصيرة إلى جمهور واسع من خلال برامج ومسابقات المهرجانات الدولية. تدعم هذه المنصات هدفنا في خلق توعية مجتمعية تتجاوز الأعمال العلمية والصحية التي ننفذها كعيادة."
             },
             {
               "type": "list",
               "items": [
-                "Seçkin uluslararası kısa film festivallerine başvuru ve gösterim",
-                "Ödül ve seçilme süreçleriyle uluslararası görünürlük",
-                "Sağlık, bilim ve insan hikâyesi temalarında özgün sinema dili",
-                "Marka değerini sanat ve toplumsal etki ile bütünleştiren prodüksiyon yaklaşımı"
+                "التقديم والعرض في مهرجانات أفلام قصيرة دولية مرموقة",
+                "ظهور دولي من خلال الجوائز وعمليات الاختيار",
+                "لغة سينمائية مميزة في موضوعات الصحة والعلم وقصص الإنسان",
+                "نهج إنتاج يدمج قيمة العلامة التجارية مع الفن والأثر المجتمعي"
               ]
             }
           ]
         }
       ],
       "highlights": [
-        "Kısa metraj sinema projeleri",
-        "Uluslararası festival katılımları ve ödüller",
-        "Farkındalık ve toplumsal mesaj odaklı anlatım",
-        "Profesyonel prodüksiyon ekibi ve yönetmenlik"
+        "مشاريع أفلام قصيرة",
+        "المشاركة في المهرجانات الدولية والجوائز",
+        "سرد يركز على التوعية والرسائل المجتمعية",
+        "فريق إنتاج محترف وإخراج"
       ],
-      "suitableIntro": "Prodüksiyon projelerimiz, klinik hizmetlerimizden bağımsız yaratıcı içerik çalışmalarıdır.",
+      "suitableIntro": "مشاريع الإنتاج لدينا هي أعمال محتوى إبداعي مستقلة عن خدماتنا السريرية.",
       "suitableFor": [
-        "Sinema ve kısa film festivalleri için proje arayan kurumlar",
-        "Sağlık ve bilim temalı farkındalık kampanyaları yürüten paydaşlar",
-        "Yaratıcı prodüksiyon iş birlikleri arayan medya ve marka ekipleri",
-        "Toplumsal mesaj taşıyan özgün hikâye anlatımına ilgi duyan izleyiciler"
+        "المؤسسات التي تبحث عن مشاريع لمهرجانات السينما والأفلام القصيرة",
+        "الشركاء الذين ينفذون حملات توعية في مجال الصحة والعلم",
+        "فرق الإعلام والعلامات التجارية التي تبحث عن شراكات إنتاج إبداعية",
+        "المشاهدون المهتمون بسرد قصصي أصيل يحمل رسالة مجتمعية"
       ],
       "quickFacts": [
         {
-          "label": "Format",
-          "value": "Kısa metraj sinema"
+          "label": "الصيغة",
+          "value": "أفلام قصيرة"
         },
         {
-          "label": "Yönetmen",
+          "label": "المخرج",
           "value": "Mert Can"
         },
         {
           "label": "التركيز",
-          "value": "Sağlık, bilim ve insan hikâyeleri"
+          "value": "الصحة والعلم وقصص الإنسان"
         },
         {
           "label": "الوصول",
-          "value": "Uluslararası festival ve yarışma platformları"
+          "value": "منصات المهرجانات والمسابقات الدولية"
         }
       ],
       "process": [
         {
-          "title": "Konsept ve Senaryo",
-          "description": "Hikâye fikri, mesaj ve hedef kitle netleştirilir; senaryo ve prodüksiyon planı oluşturulur."
+          "title": "المفهوم والسيناريو",
+          "description": "يتم توضيح فكرة القصة والرسالة والجمهور المستهدف؛ ويُعد السيناريو وخطة الإنتاج."
         },
         {
-          "title": "Çekim ve Prodüksiyon",
-          "description": "Profesyonel ekip ve ekipmanlarla çekimler tamamlanır; yönetmenlik ve sanat yönetimi süreçleri koordine edilir."
+          "title": "التصوير والإنتاج",
+          "description": "تُنجز عمليات التصوير بفريق ومعدات احترافية؛ ويُنسَّق الإخراج وإدارة الفن."
         },
         {
-          "title": "Post-Prodüksiyon ve Festival Süreci",
-          "description": "Kurgu, ses ve renk işlemleri tamamlanır; filmler uluslararası festival ve yarışma başvurularına yönlendirilir."
+          "title": "ما بعد الإنتاج وعملية المهرجانات",
+          "description": "تُكمل أعمال المونتاج والصوت والألوان؛ وتُوجَّه الأفلام إلى طلبات المهرجانات والمسابقات الدولية."
         }
       ],
       "faqs": [
         {
-          "question": "Prodüksiyon projeleri klinik hizmetlerle ilişkili midir?",
-          "answer": "Prodüksiyon çalışmalarımız, klinik hizmetlerimizden bağımsız yaratıcı projelerdir; sağlık ve bilim temalarını sinema diliyle anlatmayı amaçlar."
+          "question": "هل ترتبط مشاريع الإنتاج بالخدمات السريرية؟",
+          "answer": "أعمال الإنتاج لدينا مشاريع إبداعية مستقلة عن خدماتنا السريرية؛ وتهدف إلى سرد موضوعات الصحة والعلم بلغة السينما."
         },
         {
-          "question": "Filmler hangi platformlarda gösteriliyor?",
-          "answer": "Kısa metraj filmlerimiz uluslararası festival programları, yarışmalar ve seçkin gösterim platformları aracılığıyla izleyiciyle buluşur."
+          "question": "على أي منصات تُعرض الأفلام؟",
+          "answer": "تصل أفلامنا القصيرة إلى الجمهور من خلال برامج المهرجانات الدولية والمسابقات ومنصات العرض المختارة."
         },
         {
-          "question": "İş birliği veya prodüksiyon talebi nasıl iletilir?",
-          "answer": "Yaratıcı prodüksiyon iş birlikleri için klinik iletişim kanallarımız üzerinden talebinizi iletebilirsiniz; uygun projeler değerlendirilir."
+          "question": "كيف يمكن تقديم طلب تعاون أو إنتاج؟",
+          "answer": "يمكنكم إرسال طلبكم عبر قنوات التواصل في العيادة للتعاون الإنتاجي الإبداعي؛ ويتم تقييم المشاريع المناسبة."
         }
       ]
     },
