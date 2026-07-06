@@ -1,0 +1,43 @@
+{
+  "page": {
+    "title": "Software R&D | Dr Otgen Clinic",
+    "description": "Information on Dr Otgen Clinic hospital software R&D projects in HIS, electronic health records, laboratory and radiology information systems, telemedicine and digital patient experience.",
+    "hero": {
+      "tag": "DIGITAL TRANSFORMATION",
+      "title": "Software R&D",
+      "subtitle": "Hospital Software Solutions",
+      "lead": "Comprehensive software solutions for the digital transformation of healthcare institutions",
+      "image": "/images/yazilim_rd/yazilim_rd_hero.png"
+    },
+    "intro": {
+      "title": "Hospital Software Solutions",
+      "paragraphs": [
+        "Dr Otgen Clinic works on comprehensive hospital software solutions to meet the digital transformation needs of healthcare institutions. Projects aimed at making hospitals' clinical, administrative and operational processes faster, safer and more efficient help different units work in a coordinated manner over a single digital infrastructure.",
+        "Within the scope of our work, Hospital Information Management Systems (HIS), electronic patient record systems, appointment and patient communication platforms, laboratory information management systems, radiology information systems and PACS solutions are being developed. Through these systems, the aim is to manage processes from patient admission to discharge digitally, archive medical data in an orderly manner and provide healthcare professionals with rapid access to the information they need.",
+        "Dr Otgen Clinic also conducts work on e-prescription and medication management software, digital systems supporting operating theatre and intensive care processes, emergency department and triage applications, billing and financial management solutions, stock and warehouse tracking infrastructure, and human resources and shift planning systems.",
+        "Telemedicine, remote patient monitoring systems, AI-assisted clinical decision mechanisms, patient flow analyses, early risk alerts and digital patient experience solutions — an important part of tomorrow's healthcare services — are also among our areas of work.",
+        "Our fundamental goal across all these software solutions is to contribute to making healthcare services more accessible, integrated, transparent and sustainable. Dr Otgen Clinic aims to add value to hospitals' digital future with user-friendly interfaces, robust data security infrastructure and systems that scale according to institutional needs."
+      ]
+    },
+    "focusAreas": {
+      "title": "Software Solution Areas",
+      "items": [
+        "Hospital Information Management Systems (HIS)",
+        "Electronic patient records and appointment systems",
+        "Laboratory and radiology information systems",
+        "e-prescription and medication management software",
+        "Operating theatre and intensive care digital systems",
+        "Emergency, triage and financial management solutions",
+        "Telemedicine and remote patient monitoring systems",
+        "AI-assisted clinical decision mechanisms"
+      ]
+    },
+    "closing": {
+      "quote": "We add value to hospitals' digital future with user-friendly interfaces, robust data security and scalable systems.",
+      "cta": "Request Appointment"
+    },
+    "breadcrumbHome": "Home",
+    "sectionName": "R&D",
+    "pageShortName": "Software R&D"
+  }
+}

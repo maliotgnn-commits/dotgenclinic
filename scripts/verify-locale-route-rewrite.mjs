@@ -1,4 +1,4 @@
-import { resolveLocaleRewrite, rewriteLocaleRequestUrl, FINANCE_PREVIEW_FILE, FINANCE_FILES, LEGAL_PREVIEW_FILE, LEGAL_FILES, PHARMA_RD_PREVIEW_FILE, PHARMA_RD_FILES, MEDIKAL_RD_PREVIEW_FILE, MEDIKAL_RD_FILES } from './locale-route-rewrite.mjs';
+import { resolveLocaleRewrite, rewriteLocaleRequestUrl, FINANCE_PREVIEW_FILE, FINANCE_FILES, LEGAL_PREVIEW_FILE, LEGAL_FILES, PHARMA_RD_PREVIEW_FILE, PHARMA_RD_FILES, MEDIKAL_RD_PREVIEW_FILE, MEDIKAL_RD_FILES, YAZILIM_RD_PREVIEW_FILE, YAZILIM_RD_FILES } from './locale-route-rewrite.mjs';
 
 const failures = [];
 
@@ -22,6 +22,7 @@ expect('/tr/finans-departmani.html', '', '/finans-departmani.html');
 expect('/tr/hukuk-departmani.html', '', '/hukuk-departmani.html');
 expect('/tr/ilac-ar-ge.html', '', '/ilac-ar-ge.html');
 expect('/tr/medikal-ar-ge.html', '', '/medikal-ar-ge.html');
+expect('/tr/yazilim-ar-ge.html', '', '/yazilim-ar-ge.html');
 expect('/en/legal-department.html', '', '/hukuk-departmani.html');
 expect('/de/rechtsabteilung.html', '', '/hukuk-departmani.html');
 expect('/en/finance-department.html', '', '/finans-departmani.html');
@@ -116,6 +117,20 @@ expect('/de/medizinische-forschung.html', '', '/medikal-ar-ge.html');
 assert(
   rewriteLocaleRequestUrl('/en/medical-r-d.html') === '/medikal-ar-ge.html',
   'rewriteLocaleRequestUrl must map localized medical R&D routes',
+);
+assert(
+  YAZILIM_RD_PREVIEW_FILE === 'yazilim-ar-ge.html',
+  'Software R&D preview route file constant mismatch',
+);
+assert(
+  YAZILIM_RD_FILES.size === 8,
+  'Software R&D locale route file set must include 8 locale filenames',
+);
+expect('/en/software-r-d.html', '', '/yazilim-ar-ge.html');
+expect('/de/software-forschung.html', '', '/yazilim-ar-ge.html');
+assert(
+  rewriteLocaleRequestUrl('/en/software-r-d.html') === '/yazilim-ar-ge.html',
+  'rewriteLocaleRequestUrl must map localized software R&D routes',
 );
 
 if (failures.length) {

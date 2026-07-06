@@ -1,0 +1,43 @@
+{
+  "page": {
+    "title": "Software F&E | Dr Otgen Clinic",
+    "description": "Informationen zu den Krankenhaus-Software-F&E-Projekten von Dr Otgen Clinic in den Bereichen KIS, elektronische Patientenakten, Labor- und Radiologieinformationssysteme, Telemedizin und digitales Patientenerlebnis.",
+    "hero": {
+      "tag": "DIGITALE TRANSFORMATION",
+      "title": "Software F&E",
+      "subtitle": "Krankenhaus-Softwarelösungen",
+      "lead": "Umfassende Softwarelösungen für die digitale Transformation von Gesundheitseinrichtungen",
+      "image": "/images/yazilim_rd/yazilim_rd_hero.png"
+    },
+    "intro": {
+      "title": "Krankenhaus-Softwarelösungen",
+      "paragraphs": [
+        "Dr Otgen Clinic arbeitet an umfassenden Krankenhaus-Softwarelösungen, um den digitalen Transformationsbedarf von Gesundheitseinrichtungen zu erfüllen. Projekte, die darauf abzielen, klinische, administrative und operative Prozesse in Krankenhäusern schneller, sicherer und effizienter zu gestalten, tragen dazu bei, dass verschiedene Abteilungen koordiniert über eine einzige digitale Infrastruktur zusammenarbeiten.",
+        "Im Rahmen unserer Arbeit werden Krankenhausinformationssysteme (KIS), elektronische Patientenakten, Termin- und Patientenkommunikationsplattformen, Laborinformationssysteme, Radiologieinformationssysteme und PACS-Lösungen entwickelt. Durch diese Systeme soll der digitale Managementprozess von der Patientenaufnahme bis zur Entlassung, die geordnete Archivierung medizinischer Daten und der schnelle Zugang von Gesundheitsfachkräften zu benötigten Informationen gewährleistet werden.",
+        "Dr Otgen Clinic führt außerdem Arbeiten zu E-Rezept- und Medikamentenverwaltungssoftware, digitalen Systemen zur Unterstützung von Operationssaal- und Intensivprozessen, Notaufnahme- und Triage-Anwendungen, Abrechnungs- und Finanzmanagementlösungen, Lager- und Bestandsverfolgungsinfrastrukturen sowie Personal- und Schichtplanungssystemen durch.",
+        "Telemedizin, Fernüberwachungssysteme für Patienten, KI-gestützte klinische Entscheidungsmechanismen, Patientenstromanalysen, Frühwarnungen bei Risiken und Lösungen für das digitale Patientenerlebnis — ein wichtiger Teil der Gesundheitsdienste der Zukunft — gehören ebenfalls zu unseren Arbeitsbereichen.",
+        "Unser grundlegendes Ziel bei all diesen Softwarelösungen ist es, dazu beizutragen, Gesundheitsdienste zugänglicher, integrierter, transparenter und nachhaltiger zu gestalten. Dr Otgen Clinic möchte mit benutzerfreundlichen Oberflächen, robuster Datensicherheitsinfrastruktur und skalierbaren Systemen nach den Bedürfnissen der Einrichtung zur digitalen Zukunft von Krankenhäusern beitragen."
+      ]
+    },
+    "focusAreas": {
+      "title": "Softwarelösungsbereiche",
+      "items": [
+        "Krankenhausinformationssysteme (KIS)",
+        "Elektronische Patientenakten und Terminsysteme",
+        "Labor- und Radiologieinformationssysteme",
+        "E-Rezept- und Medikamentenverwaltungssoftware",
+        "Digitale Operationssaal- und Intensivsysteme",
+        "Notaufnahme-, Triage- und Finanzlösungen",
+        "Telemedizin und Fernüberwachung von Patienten",
+        "KI-gestützte klinische Entscheidungsmechanismen"
+      ]
+    },
+    "closing": {
+      "quote": "Wir tragen mit benutzerfreundlichen Oberflächen, robuster Datensicherheit und skalierbaren Systemen zur digitalen Zukunft von Krankenhäusern bei.",
+      "cta": "Termin Anfragen"
+    },
+    "breadcrumbHome": "Startseite",
+    "sectionName": "F&E",
+    "pageShortName": "Software F&E"
+  }
+}

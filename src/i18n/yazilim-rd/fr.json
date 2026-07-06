@@ -1,0 +1,43 @@
+{
+  "page": {
+    "title": "R&D Logiciel | Dr Otgen Clinic",
+    "description": "Informations sur les projets de R&D logiciel hospitalier de Dr Otgen Clinic en SIH, dossiers patients électroniques, systèmes de laboratoire et radiologie, télémédecine et expérience patient numérique.",
+    "hero": {
+      "tag": "TRANSFORMATION NUMÉRIQUE",
+      "title": "R&D Logiciel",
+      "subtitle": "Solutions Logicielles Hospitalières",
+      "lead": "Des solutions logicielles complètes pour la transformation numérique des établissements de santé",
+      "image": "/images/yazilim_rd/yazilim_rd_hero.png"
+    },
+    "intro": {
+      "title": "Solutions Logicielles Hospitalières",
+      "paragraphs": [
+        "Dr Otgen Clinic travaille sur des solutions logicielles hospitalières complètes pour répondre aux besoins de transformation numérique des établissements de santé. Les projets visant à rendre les processus cliniques, administratifs et opérationnels des hôpitaux plus rapides, plus sûrs et plus efficaces contribuent à une coordination des différentes unités sur une infrastructure numérique unique.",
+        "Dans le cadre de nos travaux, des Systèmes d'Information Hospitaliers (SIH), des systèmes de dossiers patients électroniques, des plateformes de rendez-vous et de communication patient, des systèmes de gestion de l'information de laboratoire, des systèmes d'information radiologique et des solutions PACS sont développés. Grâce à ces systèmes, l'objectif est de gérer numériquement les processus de l'admission à la sortie, d'archiver les données médicales de manière structurée et d'offrir aux professionnels de santé un accès rapide aux informations dont ils ont besoin.",
+        "Dr Otgen Clinic mène également des travaux sur les logiciels d'ordonnances électroniques et de gestion des médicaments, les systèmes numériques de soutien aux blocs opératoires et aux soins intensifs, les applications d'urgence et de triage, les solutions de facturation et de gestion financière, les infrastructures de suivi des stocks et entrepôts, ainsi que les systèmes de ressources humaines et de planification des gardes.",
+        "La télémédecine, les systèmes de suivi à distance des patients, les mécanismes de décision clinique assistés par IA, les analyses de flux de patients, les alertes précoces de risque et les solutions d'expérience patient numérique — partie importante des services de santé de demain — font également partie de nos domaines d'activité.",
+        "Notre objectif fondamental à travers toutes ces solutions logicielles est de contribuer à rendre les services de santé plus accessibles, intégrés, transparents et durables. Dr Otgen Clinic vise à apporter de la valeur à l'avenir numérique des hôpitaux grâce à des interfaces conviviales, une infrastructure de sécurité des données robuste et des systèmes évolutifs selon les besoins de chaque établissement."
+      ]
+    },
+    "focusAreas": {
+      "title": "Domaines de Solutions Logicielles",
+      "items": [
+        "Systèmes d'Information Hospitaliers (SIH)",
+        "Dossiers patients électroniques et systèmes de rendez-vous",
+        "Systèmes d'information de laboratoire et radiologie",
+        "Ordonnances électroniques et logiciels de gestion des médicaments",
+        "Systèmes numériques de bloc opératoire et soins intensifs",
+        "Solutions d'urgence, triage et gestion financière",
+        "Télémédecine et suivi à distance des patients",
+        "Mécanismes de décision clinique assistés par IA"
+      ]
+    },
+    "closing": {
+      "quote": "Nous apportons de la valeur à l'avenir numérique des hôpitaux grâce à des interfaces conviviales, une sécurité des données robuste et des systèmes évolutifs.",
+      "cta": "Demander un Rendez-vous"
+    },
+    "breadcrumbHome": "Accueil",
+    "sectionName": "R&D",
+    "pageShortName": "R&D Logiciel"
+  }
+}

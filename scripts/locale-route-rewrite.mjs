@@ -4,6 +4,7 @@ export const FINANCE_PREVIEW_FILE = 'finans-departmani.html';
 export const LEGAL_PREVIEW_FILE = 'hukuk-departmani.html';
 export const PHARMA_RD_PREVIEW_FILE = 'ilac-ar-ge.html';
 export const MEDIKAL_RD_PREVIEW_FILE = 'medikal-ar-ge.html';
+export const YAZILIM_RD_PREVIEW_FILE = 'yazilim-ar-ge.html';
 
 export const PHARMA_RD_FILES = new Set([
   'ilac-ar-ge.html',
@@ -25,6 +26,17 @@ export const MEDIKAL_RD_FILES = new Set([
   'r-d-medica.html',
   'медицинские-разработки.html',
   'medizinische-forschung.html',
+]);
+
+export const YAZILIM_RD_FILES = new Set([
+  'yazilim-ar-ge.html',
+  'software-r-d.html',
+  'البحث-والتطوير-البرمجي.html',
+  'i-d-de-software.html',
+  'r-d-logiciel.html',
+  'r-d-software.html',
+  'программные-разработки.html',
+  'software-forschung.html',
 ]);
 
 export const LEGAL_FILES = new Set([
@@ -121,6 +133,14 @@ export function resolveLocaleRewrite(pathname, search = '') {
 
   if (MEDIKAL_RD_FILES.has(routeFile) || MEDIKAL_RD_FILES.has(routeFileRaw)) {
     return `/medikal-ar-ge.html${search}`;
+  }
+
+  if (routeFile === YAZILIM_RD_PREVIEW_FILE || routeFileRaw === YAZILIM_RD_PREVIEW_FILE) {
+    return `/yazilim-ar-ge.html${search}`;
+  }
+
+  if (YAZILIM_RD_FILES.has(routeFile) || YAZILIM_RD_FILES.has(routeFileRaw)) {
+    return `/yazilim-ar-ge.html${search}`;
   }
 
   return `/index.html${search}`;

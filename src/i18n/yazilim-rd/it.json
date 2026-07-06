@@ -1,0 +1,43 @@
+{
+  "page": {
+    "title": "R&S Software | Dr Otgen Clinic",
+    "description": "Informazioni sui progetti di R&S software ospedaliero di Dr Otgen Clinic in HIS, cartelle cliniche elettroniche, sistemi di laboratorio e radiologia, telemedicina ed esperienza digitale del paziente.",
+    "hero": {
+      "tag": "TRASFORMAZIONE DIGITALE",
+      "title": "R&S Software",
+      "subtitle": "Soluzioni Software Ospedaliere",
+      "lead": "Soluzioni software complete per la trasformazione digitale delle istituzioni sanitarie",
+      "image": "/images/yazilim_rd/yazilim_rd_hero.png"
+    },
+    "intro": {
+      "title": "Soluzioni Software Ospedaliere",
+      "paragraphs": [
+        "Dr Otgen Clinic lavora su soluzioni software ospedaliere complete per soddisfare le esigenze di trasformazione digitale delle istituzioni sanitarie. I progetti volti a rendere i processi clinici, amministrativi e operativi degli ospedali più rapidi, sicuri ed efficienti contribuiscono a far lavorare le diverse unità in modo coordinato su un'unica infrastruttura digitale.",
+        "Nell'ambito del nostro lavoro vengono sviluppati Sistemi di Gestione delle Informazioni Ospedaliere (HIS), sistemi di cartelle cliniche elettroniche, piattaforme di appuntamenti e comunicazione con i pazienti, sistemi di gestione delle informazioni di laboratorio, sistemi di informazione radiologica e soluzioni PACS. Grazie a questi sistemi, l'obiettivo è gestire digitalmente i processi dall'accettazione del paziente alla dimissione, archiviare i dati medici in modo ordinato e offrire ai professionisti sanitari un accesso rapido alle informazioni di cui hanno bisogno.",
+        "Dr Otgen Clinic conduce anche lavori su software di e-prescrizione e gestione dei farmaci, sistemi digitali di supporto ai processi di sala operatoria e terapia intensiva, applicazioni di pronto soccorso e triage, soluzioni di fatturazione e gestione finanziaria, infrastrutture di tracciamento stock e magazzino, e sistemi di risorse umane e pianificazione dei turni.",
+        "Telemedicina, sistemi di monitoraggio remoto del paziente, meccanismi di decisione clinica assistiti dall'IA, analisi del flusso dei pazienti, allerte precoci di rischio e soluzioni di esperienza digitale del paziente — parte importante dei servizi sanitari del futuro — fanno anch'essi parte delle nostre aree di lavoro.",
+        "Il nostro obiettivo fondamentale in tutte queste soluzioni software è contribuire a rendere i servizi sanitari più accessibili, integrati, trasparenti e sostenibili. Dr Otgen Clinic mira ad aggiungere valore al futuro digitale degli ospedali con interfacce intuitive, un'infrastruttura di sicurezza dei dati robusta e sistemi scalabili in base alle esigenze dell'istituzione."
+      ]
+    },
+    "focusAreas": {
+      "title": "Aree di Soluzione Software",
+      "items": [
+        "Sistemi di Gestione delle Informazioni Ospedaliere (HIS)",
+        "Cartelle cliniche elettroniche e sistemi di appuntamenti",
+        "Sistemi di informazione di laboratorio e radiologia",
+        "e-prescrizione e software di gestione dei farmaci",
+        "Sistemi digitali di sala operatoria e terapia intensiva",
+        "Soluzioni di pronto soccorso, triage e gestione finanziaria",
+        "Telemedicina e monitoraggio remoto del paziente",
+        "Meccanismi di decisione clinica assistiti dall'IA"
+      ]
+    },
+    "closing": {
+      "quote": "Aggiungiamo valore al futuro digitale degli ospedali con interfacce intuitive, sicurezza dei dati robusta e sistemi scalabili.",
+      "cta": "Richiedi Appuntamento"
+    },
+    "breadcrumbHome": "Home",
+    "sectionName": "R&S",
+    "pageShortName": "R&S Software"
+  }
+}
