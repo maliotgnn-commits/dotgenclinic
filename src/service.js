@@ -216,6 +216,10 @@ function renderOverviewQuickFacts(facts) {
   `;
 }
 
+function getProcessSectionTitle(page) {
+  return page.processTitle ?? t('Tedavi Süreci');
+}
+
 function renderPage(currentPage, relatedPages) {
   document.title = `${currentPage.title} | Dr Otgen Clinic`;
 
@@ -227,6 +231,7 @@ function renderPage(currentPage, relatedPages) {
 
   const quickFacts = Array.isArray(currentPage.quickFacts) ? currentPage.quickFacts : [];
   const heroGradientDirection = document.documentElement.dir === 'rtl' ? '270deg' : '90deg';
+  const processSectionTitle = getProcessSectionTitle(currentPage);
 
   app.innerHTML = `
     ${renderSkipLink()}
@@ -276,7 +281,7 @@ function renderPage(currentPage, relatedPages) {
 
       <section class="sv-section sv-section-soft">
         <div class="container">
-          <h3>${escapeHtml(t('Tedavi Süreci'))}</h3>
+          <h3>${escapeHtml(processSectionTitle)}</h3>
           <div class="sv-process-grid">
             ${renderProcess(currentPage.process || [])}
           </div>
