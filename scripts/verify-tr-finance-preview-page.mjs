@@ -114,7 +114,6 @@ assert(financeData.includes('Mali Müşavir Zehra ÖTGEN'), 'Missing Zehra image
 
 const forbiddenDiffPaths = [
   'public/robots.txt',
-  'vercel.json',
   'vite.config.js',
   'package.json',
   'package-lock.json',

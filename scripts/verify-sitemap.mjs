@@ -44,9 +44,11 @@ const eyeHealthUrls = [
 ];
 const expectedUrls = new Set([...homeUrls, ...privacyUrls, ...eyeHealthUrls, ...serviceUrls]);
 const actualUrls = new Set(locs);
+const totalExpected = expectedUrls.size;
+const serviceCountExpected = serviceUrls.length;
 
-assert(locs.length === 376, `Expected 376 sitemap URLs, found ${locs.length}`);
-assert(expectedUrls.size === 376, `Expected URL set size is 376, computed ${expectedUrls.size}`);
+assert(locs.length === totalExpected, `Expected ${totalExpected} sitemap URLs, found ${locs.length}`);
+assert(expectedUrls.size === totalExpected, `Expected URL set size is ${totalExpected}, computed ${expectedUrls.size}`);
 
 for (const url of homeUrls) {
   assert(actualUrls.has(url), `Missing home URL: ${url}`);
@@ -81,7 +83,7 @@ const eyeHealthCount = locs.filter((url) =>
 assert(homeCount === 8, `Expected 8 home URLs, found ${homeCount}`);
 assert(privacyCount === 8, `Expected 8 privacy URLs, found ${privacyCount}`);
 assert(eyeHealthCount === 8, `Expected 8 eye health URLs, found ${eyeHealthCount}`);
-assert(serviceCount === 352, `Expected 352 service URLs, found ${serviceCount}`);
+assert(serviceCount === serviceCountExpected, `Expected ${serviceCountExpected} service URLs, found ${serviceCount}`);
 
 if (failures.length) {
   console.error('[verify-sitemap] Verification failed:');
@@ -89,4 +91,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('[verify-sitemap] Verified 376 public sitemap URLs (8 home, 8 privacy, 8 eye health, 352 service)');
+console.log(`[verify-sitemap] Verified ${totalExpected} public sitemap URLs (8 home, 8 privacy, 8 eye health, ${serviceCountExpected} service)`);

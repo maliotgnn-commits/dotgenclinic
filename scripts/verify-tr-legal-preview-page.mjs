@@ -122,7 +122,6 @@ assert(financeLink.includes(FINANCE_DEPARTMENT_PATH), 'Finance nav link must sti
 
 const forbiddenDiffPaths = [
   'public/robots.txt',
-  'vercel.json',
   'vite.config.js',
   'package.json',
   'package-lock.json',

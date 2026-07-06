@@ -164,7 +164,7 @@
               "items": [
                 "التركيز على المريض: عملائنا هم محور جميع عملياتنا. يشكل الأمن والراحة والرضا أساس نهج الخدمة لدينا.",
                 "النهج الأخلاقي والشفاف: يتم تقديم خدمة تعتمد على التواصل المفتوح والثقة دون المساس بالمبادئ الأخلاقية الطبية.",
-                "الجودة العالمية: نهج الجودة المعتمد عالميًا وفقًا لمعايير وزارة الصحة التركية و TÜV Thüringen (ISO 9001).",
+                "الجودة العالمية: T.R. نهج الجودة المعتمد عالميًا وفقًا لمعايير وزارة الصحة و TÜV Thüringen (ISO 9001).",
                 "الاستثمار في العلوم والتكنولوجيا: يتم اتباع أحدث التقنيات؛ يتم تحسين البنية التحتية الطبية باستمرار.",
                 "الخبرة والخبرة: تهدف النتائج الموثوقة إلى وجود فريق عمل قوي من المهنيين المتفرغين والخبراء في مجالاتهم.",
                 "مفهوم الخدمة المستدامة: يتم تقديم خدمة مستقرة وموجهة نحو الجودة على أساس علاقة ثقة طويلة الأمد.",
@@ -685,6 +685,122 @@
         {
           "question": "متى سيتم الانتهاء من خطة العلاج النهائية؟",
           "answer": "ويصبح نهائيا بعد الانتهاء من التقييم السريري وتوضيح الطريقة التي سيتم تطبيقها."
+        }
+      ]
+    },
+    {
+      "category": "corporate",
+      "slug": "production",
+      "navLabel": "Prodüksiyon",
+      "navAppendOnly": true,
+      "title": "Dr Otgen Clinic Prodüksiyon",
+      "categoryLabel": "الشركات",
+      "heroTag": "معلومات الشركة",
+      "heroSubtitle": "Sinema diliyle anlatılan sağlık ve bilim hikâyeleri",
+      "summary": "Dr Otgen Clinic, sağlık ve bilim alanındaki çalışmalarını yaratıcı prodüksiyon projeleriyle de anlatıyor; kısa metraj filmlerimizle insan hikâyelerini güçlü bir sinema diliyle buluşturuyoruz.",
+      "images": {
+        "hero": "/images/production/production-hero.png",
+        "content": "/images/production/mert-can-director.png"
+      },
+      "overview": [
+        "Dr Otgen Clinic, sağlık ve bilim alanındaki çalışmalarını yaratıcı prodüksiyon projeleriyle de anlatıyor. Yönetmenliğini Mert Can'ın üstlendiği kısa metrajlı film projelerimiz; insan hikâyelerini, farkındalık temalarını ve toplumsal mesajları güçlü bir sinema diliyle buluşturuyor.",
+        "Ürettiğimiz kısa filmler, yurt dışındaki seçkin kısa film festivalleri ve yarışmalarına gönderilmekte; bu alanda elde ettiğimiz ödüllerle yaratıcı vizyonumuzu uluslararası platformlara taşıyoruz.",
+        "Her projede yalnızca bir film üretmeyi değil, izleyicide iz bırakan, düşündüren ve ilham veren hikâyeler anlatmayı hedefliyoruz."
+      ],
+      "sections": [
+        {
+          "title": "Yaratıcı Anlatım ve Yönetmenlik",
+          "blocks": [
+            {
+              "type": "subheading",
+              "text": "Yönetmen: Mert Can"
+            },
+            {
+              "type": "paragraph",
+              "text": "Kısa metraj projelerimizin yönetmenliğini üstlenen Mert Can; insan odaklı anlatım, güçlü görsel dil ve toplumsal farkındalık temalarını bir araya getiren bir sinema yaklaşımı benimsiyor. Her çekimde duygusal derinlik ile mesajın netliğini aynı kadrajda buluşturmayı hedefliyor."
+            },
+            {
+              "type": "paragraph",
+              "text": "Prodüksiyon sürecimiz; senaryo geliştirmeden post-prodüksiyona kadar disiplinli bir planlama, profesyonel ekip koordinasyonu ve yüksek prodüksiyon standartları üzerine kuruludur."
+            }
+          ]
+        },
+        {
+          "title": "Festivaller ve Uluslararası Tanınırlık",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Kısa metraj filmlerimiz, uluslararası festival programları ve yarışmalar aracılığıyla geniş bir izleyici kitlesine ulaşır. Bu platformlar, klinik olarak yürüttüğümüz bilim ve sağlık çalışmalarının ötesinde toplumsal farkındalık yaratma hedefimizi destekler."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Seçkin uluslararası kısa film festivallerine başvuru ve gösterim",
+                "Ödül ve seçilme süreçleriyle uluslararası görünürlük",
+                "Sağlık, bilim ve insan hikâyesi temalarında özgün sinema dili",
+                "Marka değerini sanat ve toplumsal etki ile bütünleştiren prodüksiyon yaklaşımı"
+              ]
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Kısa metraj sinema projeleri",
+        "Uluslararası festival katılımları ve ödüller",
+        "Farkındalık ve toplumsal mesaj odaklı anlatım",
+        "Profesyonel prodüksiyon ekibi ve yönetmenlik"
+      ],
+      "suitableIntro": "Prodüksiyon projelerimiz, klinik hizmetlerimizden bağımsız yaratıcı içerik çalışmalarıdır.",
+      "suitableFor": [
+        "Sinema ve kısa film festivalleri için proje arayan kurumlar",
+        "Sağlık ve bilim temalı farkındalık kampanyaları yürüten paydaşlar",
+        "Yaratıcı prodüksiyon iş birlikleri arayan medya ve marka ekipleri",
+        "Toplumsal mesaj taşıyan özgün hikâye anlatımına ilgi duyan izleyiciler"
+      ],
+      "quickFacts": [
+        {
+          "label": "Format",
+          "value": "Kısa metraj sinema"
+        },
+        {
+          "label": "Yönetmen",
+          "value": "Mert Can"
+        },
+        {
+          "label": "التركيز",
+          "value": "Sağlık, bilim ve insan hikâyeleri"
+        },
+        {
+          "label": "الوصول",
+          "value": "Uluslararası festival ve yarışma platformları"
+        }
+      ],
+      "process": [
+        {
+          "title": "Konsept ve Senaryo",
+          "description": "Hikâye fikri, mesaj ve hedef kitle netleştirilir; senaryo ve prodüksiyon planı oluşturulur."
+        },
+        {
+          "title": "Çekim ve Prodüksiyon",
+          "description": "Profesyonel ekip ve ekipmanlarla çekimler tamamlanır; yönetmenlik ve sanat yönetimi süreçleri koordine edilir."
+        },
+        {
+          "title": "Post-Prodüksiyon ve Festival Süreci",
+          "description": "Kurgu, ses ve renk işlemleri tamamlanır; filmler uluslararası festival ve yarışma başvurularına yönlendirilir."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Prodüksiyon projeleri klinik hizmetlerle ilişkili midir?",
+          "answer": "Prodüksiyon çalışmalarımız, klinik hizmetlerimizden bağımsız yaratıcı projelerdir; sağlık ve bilim temalarını sinema diliyle anlatmayı amaçlar."
+        },
+        {
+          "question": "Filmler hangi platformlarda gösteriliyor?",
+          "answer": "Kısa metraj filmlerimiz uluslararası festival programları, yarışmalar ve seçkin gösterim platformları aracılığıyla izleyiciyle buluşur."
+        },
+        {
+          "question": "İş birliği veya prodüksiyon talebi nasıl iletilir?",
+          "answer": "Yaratıcı prodüksiyon iş birlikleri için klinik iletişim kanallarımız üzerinden talebinizi iletebilirsiniz; uygun projeler değerlendirilir."
         }
       ]
     },
