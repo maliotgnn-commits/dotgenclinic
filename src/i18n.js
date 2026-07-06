@@ -86,7 +86,7 @@ export function getCurrentLocale(pageType = 'home') {
           : pageType === 'legal'
             ? legalPathForLocale(locale)
             : pageType === 'pharma-rd'
-              ? pharmaRdPathForLocale('tr')
+              ? pharmaRdPathForLocale(locale)
             : pageType === 'privacy'
             ? `/${locale}/privacy.html`
             : homeUrlFor(locale, window.location.hash);
@@ -149,7 +149,7 @@ export function currentPageUrlForLocale(locale, pageType = 'home') {
   }
 
   if (pageType === 'pharma-rd') {
-    return locale === 'tr' ? pharmaRdPathForLocale(locale) : homeUrlFor(locale);
+    return pharmaRdPathForLocale(locale);
   }
 
   if (pageType === 'privacy') {
@@ -266,11 +266,11 @@ export function applySeoLinks(locale, pageType = 'home', slug = null) {
   }
 
   if (pageType === 'pharma-rd') {
-    upsertSeoLink('canonical', null, pharmaRdPathForLocale('tr'));
+    upsertSeoLink('canonical', null, pharmaRdPathForLocale(locale));
     LOCALES.forEach(({ code }) => {
-      upsertSeoLink('alternate', code, code === 'tr' ? pharmaRdPathForLocale('tr') : homeUrlFor(code));
+      upsertSeoLink('alternate', code, pharmaRdPathForLocale(code));
     });
-    upsertSeoLink('alternate', 'x-default', pharmaRdPathForLocale('tr'));
+    upsertSeoLink('alternate', 'x-default', pharmaRdPathForLocale('en'));
     return;
   }
 

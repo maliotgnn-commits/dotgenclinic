@@ -19,7 +19,7 @@ const EXPECTED_MENU_IDS = [
 ];
 
 const TR_MENU_IDS = EXPECTED_MENU_IDS;
-const LOCALIZED_MENU_IDS = EXPECTED_MENU_IDS.filter((menuId) => menuId !== 'arge');
+const LOCALIZED_MENU_IDS = EXPECTED_MENU_IDS;
 
 function assert(condition, message) {
   if (!condition) failures.push(message);
@@ -81,7 +81,7 @@ if (existsSync(ruHome)) {
   LOCALIZED_MENU_IDS.forEach((menuId) => {
     assert(ruIds.includes(menuId), `[dist/ru/index.html] missing data-desktop-menu-id="${menuId}"`);
   });
-  assert(!ruIds.includes('arge'), '[dist/ru/index.html] TR-only Ar-Ge nav must not appear');
+  assert(ruIds.includes('arge'), '[dist/ru/index.html] localized Ar-Ge nav must appear');
   assert(ruHtml.includes('О клинике'), '[dist/ru/index.html] Russian short corporate label must remain visible');
   assert(ruHtml.includes('Офтальмология'), '[dist/ru/index.html] Russian short eye health label must remain visible');
 }

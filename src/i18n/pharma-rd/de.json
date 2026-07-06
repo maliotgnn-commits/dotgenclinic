@@ -1,0 +1,50 @@
+{
+  "page": {
+    "title": "Pharmazeutische F&E | Dr Otgen Clinic",
+    "description": "Informationen zur gemeinsamen pharmazeutischen F&E-Kooperation zwischen Dr Otgen Clinic und Laboratoires Expanscience in Dermatologie, dermokosmetischer Innovation und wissenschaftlicher Forschung.",
+    "hero": {
+      "tag": "WISSENSCHAFTLICHE PARTNERSCHAFT",
+      "title": "Pharmazeutische F&E",
+      "subtitle": "Dr Otgen Clinic & Laboratoires Expanscience",
+      "lead": "Gemeinsame pharmazeutische F&E-Kooperation",
+      "description": "Dr Otgen Clinic möchte seine Erfahrung in Dermatologie, Hautgesundheit und patientenzentrierter klinischer Praxis mit dem Know-how von Laboratoires Expanscience in Frankreich in pharmazeutischer Forschung, dermokosmetischer Innovation und Produktentwicklung verbinden."
+    },
+    "vision": {
+      "title": "Gemeinsamer Forschungsansatz",
+      "description": "Im Rahmen dieser Zusammenarbeit sind wissenschaftliche Forschungs- und Entwicklungsarbeiten zur Stärkung der Hautbarriere, entzündlichen Hautprozessen, Anti-Aging-Pflege, Unterstützung empfindlicher Haut und personalisierten dermokosmetischen Lösungen geplant."
+    },
+    "focusAreas": {
+      "title": "F&E-Schwerpunkte",
+      "items": [
+        "Stärkung der Hautbarriere",
+        "Entzündliche Hautprozesse",
+        "Anti-Aging-Pflege",
+        "Unterstützung empfindlicher Haut",
+        "Personalisierte dermokosmetische Lösungen"
+      ]
+    },
+    "clinical": {
+      "title": "Klinische Daten und Formulierungsentwicklung",
+      "description": "Daten aus klinischer Beobachtung, Patientenerfahrung und Anwendungsprozessen von Dr Otgen Clinic sollen gemeinsam mit der Formulierungsentwicklung, Wirksamkeitsanalyse und internationalen F&E-Infrastruktur von Laboratoires Expanscience bewertet werden, um innovative Produkt- und Behandlungsansätze zu entwickeln."
+    },
+    "standards": {
+      "title": "Wissenschaftliche Standards",
+      "description": "Der zentrale Fokus der gemeinsamen F&E-Arbeit liegt in der Entwicklung einer neuen Generation evidenzbasierter, verlässlicher und gut verträglicher Lösungen für unterschiedliche Hautbedürfnisse. Klinische Bewertung, dermatologische Sicherheit, Inhaltsstoff-Innovation und Nutzererfahrung werden dabei gemeinsam berücksichtigt."
+    },
+    "cooperation": {
+      "title": "Internationale wissenschaftliche Zusammenarbeit",
+      "description": "Das zwischen Dr Otgen Clinic und Laboratoires Expanscience entwickelte wissenschaftliche Kooperationsmodell zielt nicht nur auf Produktentwicklung ab, sondern auch auf internationalen Wissensaustausch in der Dermatologie, Bildungsaktivitäten und die Gestaltung zukünftiger Standards für Hautgesundheit."
+    },
+    "closing": {
+      "quote": "Wissenschaftlicher Ansatz, klinische Erfahrung und französische F&E-Tradition vereinen sich in derselben Vision für Hautgesundheit.",
+      "cta": "Termin Anfragen"
+    },
+    "breadcrumbHome": "Startseite",
+    "sectionName": "F&E",
+    "pageShortName": "Pharmazeutische F&E"
+  },
+  "nav": {
+    "menuLabel": "F&E",
+    "submenuAriaLabel": "F&E-Menü"
+  }
+}

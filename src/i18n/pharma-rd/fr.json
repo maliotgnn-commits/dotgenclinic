@@ -1,0 +1,50 @@
+{
+  "page": {
+    "title": "R&D Pharmaceutique | Dr Otgen Clinic",
+    "description": "Informations sur la collaboration conjointe en R&D pharmaceutique entre Dr Otgen Clinic et Laboratoires Expanscience en dermatologie, innovation dermocosmétique et recherche scientifique.",
+    "hero": {
+      "tag": "PARTENARIAT SCIENTIFIQUE",
+      "title": "R&D Pharmaceutique",
+      "subtitle": "Dr Otgen Clinic & Laboratoires Expanscience",
+      "lead": "Collaboration Conjointe en R&D Pharmaceutique",
+      "description": "Dr Otgen Clinic vise à associer son expérience en dermatologie, santé cutanée et pratique clinique centrée sur le patient à l'expertise de Laboratoires Expanscience, basée en France, en recherche pharmaceutique, innovation dermocosmétique et développement de produits."
+    },
+    "vision": {
+      "title": "Approche de Recherche Conjointe",
+      "description": "Dans le cadre de cette collaboration, des travaux de recherche et de développement scientifique sont prévus sur le renforcement de la barrière cutanée, les processus inflammatoires de la peau, les soins anti-âge, le soutien des peaux sensibles et les solutions dermocosmétiques personnalisées."
+    },
+    "focusAreas": {
+      "title": "Domaines Prioritaires de R&D",
+      "items": [
+        "Renforcement de la barrière cutanée",
+        "Processus inflammatoires de la peau",
+        "Soins anti-âge",
+        "Soutien des peaux sensibles",
+        "Solutions dermocosmétiques personnalisées"
+      ]
+    },
+    "clinical": {
+      "title": "Données Cliniques et Développement de Formulations",
+      "description": "Les données issues de l'observation clinique, de l'expérience patient et des processus d'application de Dr Otgen Clinic doivent être évaluées avec l'infrastructure internationale de développement de formulations, d'analyse d'efficacité et de R&D de Laboratoires Expanscience afin de créer des approches innovantes de produits et de traitement."
+    },
+    "standards": {
+      "title": "Standards Scientifiques",
+      "description": "L'objectif principal des travaux conjoints de R&D est de développer une nouvelle génération de solutions fondées sur des preuves scientifiques, fiables et très bien tolérées, adaptées aux différents besoins cutanés. Tout au long du processus, l'évaluation clinique, la sécurité dermatologique, l'innovation des actifs et l'expérience utilisateur seront abordées conjointement."
+    },
+    "cooperation": {
+      "title": "Collaboration Scientifique Internationale",
+      "description": "Le modèle de collaboration scientifique développé entre Dr Otgen Clinic et Laboratoires Expanscience vise à contribuer non seulement au développement de produits, mais aussi au partage international de connaissances en dermatologie, aux activités de formation et à l'élaboration des futurs standards de santé cutanée."
+    },
+    "closing": {
+      "quote": "Approche scientifique, expérience clinique et tradition française de R&D se rejoignent dans une même vision au service de la santé cutanée.",
+      "cta": "Demander un Rendez-vous"
+    },
+    "breadcrumbHome": "Accueil",
+    "sectionName": "R&D",
+    "pageShortName": "R&D Pharmaceutique"
+  },
+  "nav": {
+    "menuLabel": "R&D",
+    "submenuAriaLabel": "Menu R&D"
+  }
+}

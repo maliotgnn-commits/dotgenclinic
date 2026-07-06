@@ -4,6 +4,17 @@ export const FINANCE_PREVIEW_FILE = 'finans-departmani.html';
 export const LEGAL_PREVIEW_FILE = 'hukuk-departmani.html';
 export const PHARMA_RD_PREVIEW_FILE = 'ilac-ar-ge.html';
 
+export const PHARMA_RD_FILES = new Set([
+  'ilac-ar-ge.html',
+  'pharmaceutical-r-d.html',
+  'البحث-والتطوير-الدوائي.html',
+  'i-d-farmaceutica.html',
+  'r-d-pharmaceutique.html',
+  'r-d-farmaceutica.html',
+  'фармацевтические-разработки.html',
+  'pharmazeutische-forschung.html',
+]);
+
 export const LEGAL_FILES = new Set([
   'hukuk-departmani.html',
   'legal-department.html',
@@ -85,6 +96,10 @@ export function resolveLocaleRewrite(pathname, search = '') {
   }
 
   if (routeFile === PHARMA_RD_PREVIEW_FILE || routeFileRaw === PHARMA_RD_PREVIEW_FILE) {
+    return `/ilac-ar-ge.html${search}`;
+  }
+
+  if (PHARMA_RD_FILES.has(routeFile) || PHARMA_RD_FILES.has(routeFileRaw)) {
     return `/ilac-ar-ge.html${search}`;
   }
 

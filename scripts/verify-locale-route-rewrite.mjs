@@ -1,4 +1,4 @@
-import { resolveLocaleRewrite, rewriteLocaleRequestUrl, FINANCE_PREVIEW_FILE, FINANCE_FILES, LEGAL_PREVIEW_FILE, LEGAL_FILES, PHARMA_RD_PREVIEW_FILE } from './locale-route-rewrite.mjs';
+import { resolveLocaleRewrite, rewriteLocaleRequestUrl, FINANCE_PREVIEW_FILE, FINANCE_FILES, LEGAL_PREVIEW_FILE, LEGAL_FILES, PHARMA_RD_PREVIEW_FILE, PHARMA_RD_FILES } from './locale-route-rewrite.mjs';
 
 const failures = [];
 
@@ -87,6 +87,16 @@ assert(
 assert(
   rewriteLocaleRequestUrl('/en/finance-department.html') === '/finans-departmani.html',
   'rewriteLocaleRequestUrl must map localized finance routes',
+);
+assert(
+  PHARMA_RD_FILES.size === 8,
+  'Pharma R&D locale route file set must include 8 locale filenames',
+);
+expect('/en/pharmaceutical-r-d.html', '', '/ilac-ar-ge.html');
+expect('/de/pharmazeutische-forschung.html', '', '/ilac-ar-ge.html');
+assert(
+  rewriteLocaleRequestUrl('/en/pharmaceutical-r-d.html') === '/ilac-ar-ge.html',
+  'rewriteLocaleRequestUrl must map localized pharma R&D routes',
 );
 
 if (failures.length) {

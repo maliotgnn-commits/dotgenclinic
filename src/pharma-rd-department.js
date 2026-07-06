@@ -9,6 +9,7 @@ import { appendArgeNavItem } from './tr-arge-nav.js';
 import { argeLandingPath } from './arge-routes.js';
 import { loadEyeHealthContent } from './eye-health-content.js';
 import { loadPharmaRdContent } from './pharma-rd-content.js';
+import { detectPharmaRdLocale } from './pharma-rd-routes.js';
 import {
   applySeoLinks,
   buildCategoryGroups,
@@ -25,12 +26,14 @@ import {
 } from './language-switcher.js';
 
 const app = document.getElementById('pharma-rd-app');
+const pathLocale = detectPharmaRdLocale();
 const locale = getCurrentLocale('pharma-rd');
+const pharmaLocale = pathLocale || locale;
 const [catalog, uiDictionary, eyeContent, pharmaContent] = await Promise.all([
   loadContentCatalog(locale),
   loadUiDictionary(locale),
   loadEyeHealthContent(locale),
-  loadPharmaRdContent(locale),
+  loadPharmaRdContent(pharmaLocale),
 ]);
 const { page } = pharmaContent;
 const categoryGroups = buildCategoryGroups(catalog, uiDictionary, locale);
@@ -134,7 +137,7 @@ function renderBreadcrumb() {
       <div class="container">
         <ol>
           <li><a href="${homeUrlFor(locale)}">${escapeHtml(page.breadcrumbHome)}</a></li>
-          <li><a href="${argeLandingPath()}">${escapeHtml(page.sectionName)}</a></li>
+          <li><a href="${argeLandingPath(pharmaLocale)}">${escapeHtml(page.sectionName)}</a></li>
           <li aria-current="page">${escapeHtml(page.pageShortName)}</li>
         </ol>
       </div>
@@ -233,7 +236,7 @@ function renderPage() {
   document.title = page.title;
   const descriptionMeta = document.querySelector('meta[name="description"]');
   if (descriptionMeta) descriptionMeta.setAttribute('content', page.description);
-  applySeoLinks(locale, 'pharma-rd');
+  applySeoLinks(pharmaLocale, 'pharma-rd');
 
   app.innerHTML = `
     ${renderSkipLink()}
