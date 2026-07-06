@@ -6,6 +6,13 @@ import {
   isMedikalRdPath,
 } from './medikal-rd-routes.js';
 import {
+  yazilimRdFileForLocale,
+  yazilimRdPageNavLabelForLocale,
+  yazilimRdPathForLocale,
+  detectYazilimRdLocale,
+  isYazilimRdPath,
+} from './yazilim-rd-routes.js';
+import {
   PHARMA_RD_ROUTES,
   argeMenuLabelForLocale,
   detectPharmaRdLocale,
@@ -35,6 +42,12 @@ export function argePagesForLocale(locale = 'tr') {
       path: medikalRdPathForLocale(locale),
       file: medikalRdFileForLocale(locale),
     },
+    {
+      id: 'yazilim-ar-ge',
+      navLabel: yazilimRdPageNavLabelForLocale(locale),
+      path: yazilimRdPathForLocale(locale),
+      file: yazilimRdFileForLocale(locale),
+    },
   ];
 }
 
@@ -51,6 +64,10 @@ export function argePagePathForId(id, locale = 'tr') {
 }
 
 export function detectArgePage(pathname = window.location.pathname) {
+  const yazilimLocale = detectYazilimRdLocale(pathname);
+  if (yazilimLocale) {
+    return argePagesForLocale(yazilimLocale).find((page) => page.id === 'yazilim-ar-ge') || null;
+  }
   const medikalLocale = detectMedikalRdLocale(pathname);
   if (medikalLocale) {
     return argePagesForLocale(medikalLocale).find((page) => page.id === 'medikal-ar-ge') || null;
@@ -61,7 +78,7 @@ export function detectArgePage(pathname = window.location.pathname) {
 }
 
 export function isArgePagePath(pathname = window.location.pathname) {
-  return isPharmaRdPath(pathname) || isMedikalRdPath(pathname);
+  return isPharmaRdPath(pathname) || isMedikalRdPath(pathname) || isYazilimRdPath(pathname);
 }
 
 export { argeMenuLabelForLocale, detectPharmaRdLocale, pharmaRdPathForLocale };

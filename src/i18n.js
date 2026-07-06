@@ -2,6 +2,7 @@ import { eyeHealthPathForLocale } from './eye-health-routes.js';
 import { financePathForLocale } from './finance-routes.js';
 import { legalPathForLocale } from './legal-routes.js';
 import { medikalRdPathForLocale } from './medikal-rd-routes.js';
+import { yazilimRdPathForLocale } from './yazilim-rd-routes.js';
 import { pharmaRdPathForLocale } from './pharma-rd-routes.js';
 
 export const DEFAULT_LOCALE = 'tr';
@@ -71,7 +72,7 @@ export function getCurrentLocale(pageType = 'home') {
   const pathLocale = getPathLocale();
   const locale = pathLocale || getStoredLocale() || DEFAULT_LOCALE;
 
-  if ((pageType === 'eye-health' || pageType === 'finance' || pageType === 'legal' || pageType === 'pharma-rd' || pageType === 'medikal-rd') && pathLocale) {
+  if ((pageType === 'eye-health' || pageType === 'finance' || pageType === 'legal' || pageType === 'pharma-rd' || pageType === 'medikal-rd' || pageType === 'yazilim-rd') && pathLocale) {
     storeLocale(pathLocale);
     applyDocumentDirection(pathLocale);
     return pathLocale;
@@ -90,6 +91,8 @@ export function getCurrentLocale(pageType = 'home') {
               ? pharmaRdPathForLocale(locale)
             : pageType === 'medikal-rd'
               ? medikalRdPathForLocale(locale)
+            : pageType === 'yazilim-rd'
+              ? yazilimRdPathForLocale(locale)
             : pageType === 'privacy'
             ? `/${locale}/privacy.html`
             : homeUrlFor(locale, window.location.hash);
@@ -157,6 +160,10 @@ export function currentPageUrlForLocale(locale, pageType = 'home') {
 
   if (pageType === 'medikal-rd') {
     return medikalRdPathForLocale(locale);
+  }
+
+  if (pageType === 'yazilim-rd') {
+    return yazilimRdPathForLocale(locale);
   }
 
   if (pageType === 'privacy') {
@@ -287,6 +294,15 @@ export function applySeoLinks(locale, pageType = 'home', slug = null) {
       upsertSeoLink('alternate', code, medikalRdPathForLocale(code));
     });
     upsertSeoLink('alternate', 'x-default', medikalRdPathForLocale('en'));
+    return;
+  }
+
+  if (pageType === 'yazilim-rd') {
+    upsertSeoLink('canonical', null, yazilimRdPathForLocale(locale));
+    LOCALES.forEach(({ code }) => {
+      upsertSeoLink('alternate', code, yazilimRdPathForLocale(code));
+    });
+    upsertSeoLink('alternate', 'x-default', yazilimRdPathForLocale('en'));
     return;
   }
 
