@@ -34,8 +34,9 @@ function readDistHtml(relativePath) {
 const requiredSections = [
   LEGAL_PAGE.hero.tag,
   LEGAL_PAGE.hero.title,
-  LEGAL_PAGE.profile.title,
-  LEGAL_PAGE.profile.person.name,
+  LEGAL_PAGE.profiles.title,
+  LEGAL_PAGE.profiles.people[0].name,
+  LEGAL_PAGE.profiles.people[1].name,
   LEGAL_PAGE.support.title,
   LEGAL_PAGE.process.title,
   LEGAL_PAGE.security.title,
@@ -73,12 +74,14 @@ for (const phrase of forbiddenPhrases) {
 }
 
 assert(legalJs.includes('id="legal_contact"'), 'Missing legal_contact section id in legal page source');
+assert(legalData.includes('/images/legal_department/cagatay_guler.jpg'), 'Missing Cagatay profile image reference');
+assert(existsSync(resolve(DIST, 'images/legal_department/cagatay_guler.jpg')), 'Missing built Cagatay profile image asset');
 assert(legalData.includes('/images/legal_department/asli_karakula.jpg'), 'Missing Asli profile image reference');
 assert(existsSync(resolve(DIST, 'images/legal_department/asli_karakula.jpg')), 'Missing built Asli profile image asset');
 const legalCss = readFileSync(resolve(ROOT, 'src/legal-department.css'), 'utf8');
-assert(legalCss.includes('/images/legal_department/legal_hero_asli.png'), 'Missing legal hero background image reference');
+assert(legalCss.includes('/images/legal_department/legal_hero.png'), 'Missing legal hero background image reference');
 assert(legalCss.includes('background-position: center right'), 'Missing desktop legal hero background positioning');
-assert(existsSync(resolve(DIST, 'images/legal_department/legal_hero_asli.png')), 'Missing built legal hero image asset');
+assert(existsSync(resolve(DIST, 'images/legal_department/legal_hero.png')), 'Missing built legal hero image asset');
 assert(legalJs.includes('aria-live="polite"'), 'Missing aria-live preview status region');
 assert(legalJs.includes('page.contact.previewMessage'), 'Missing preview form message binding');
 assert(legalData.includes('Preview testi kapsamında form gönderimi aktif değildir.'), 'Missing preview form message text');
@@ -102,7 +105,9 @@ if (trHomeHtml) {
   assert(trHomeHtml.includes(`href="${FINANCE_DEPARTMENT_PATH}"`), 'TR home finance nav href must remain correct');
 }
 
-assert(legalJs.includes('ld-profile-featured'), 'Profile card layout marker missing in legal page source');
+assert(legalJs.includes('ld-profile-grid'), 'Profile card layout marker missing in legal page source');
+assert(legalData.includes('Av. Çağatay Güler'), 'Missing Cagatay profile name in legal source data');
+assert(legalData.includes('imageAlt: \'Av. Çağatay Güler\''), 'Missing Cagatay image alt text in legal source data');
 assert(legalData.includes('Av. Aslı Karakula'), 'Missing Asli profile name in legal source data');
 assert(legalData.includes('imageAlt: \'Av. Aslı Karakula\''), 'Missing Asli image alt text in legal source data');
 

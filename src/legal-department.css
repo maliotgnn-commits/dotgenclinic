@@ -22,7 +22,7 @@
       rgba(3, 18, 38, 0.42) 62%,
       rgba(3, 18, 38, 0.12) 100%
     ),
-    url('/images/legal_department/legal_hero_asli.png');
+    var(--ld-hero-image, url('/images/legal_department/legal_hero.png'));
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
@@ -107,21 +107,26 @@
   line-height: 1.75;
 }
 
-.ld-profile-featured {
-  max-width: 920px;
+.ld-profile-grid {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 28px;
-  padding: 28px 32px;
+}
+
+.ld-profile-card {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 22px;
+  padding: 24px;
   background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(201, 168, 76, 0.22);
-  border-radius: 16px;
+  border: 1px solid rgba(201, 168, 76, 0.18);
+  border-radius: 14px;
 }
 
 .ld-profile-photo {
-  width: 220px;
-  height: 280px;
-  border-radius: 12px;
+  width: 160px;
+  height: 200px;
+  border-radius: 10px;
   overflow: hidden;
   border: 1px solid rgba(201, 168, 76, 0.25);
   background: rgba(5, 17, 34, 0.6);
@@ -144,18 +149,18 @@
   margin-bottom: 6px;
 }
 
-.ld-profile-featured h3 {
+.ld-profile-card h3 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
+  font-size: 1.35rem;
   color: #f5f0e6;
-  margin: 0 0 14px;
+  margin: 0 0 12px;
 }
 
-.ld-profile-featured p {
+.ld-profile-card p {
   margin: 0;
   color: #d5d0c8;
-  line-height: 1.75;
-  font-size: 0.98rem;
+  line-height: 1.7;
+  font-size: 0.96rem;
 }
 
 .ld-support-grid,
@@ -306,16 +311,20 @@
 }
 
 @media (max-width: 960px) {
-  .ld-profile-featured,
+  .ld-profile-grid,
   .ld-support-grid,
   .ld-process-grid {
     grid-template-columns: 1fr;
   }
 
+  .ld-profile-card {
+    grid-template-columns: 1fr;
+  }
+
   .ld-profile-photo {
     width: 100%;
-    max-width: 240px;
-    height: 300px;
+    max-width: 200px;
+    height: 240px;
   }
 }
 

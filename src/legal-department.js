@@ -116,8 +116,9 @@ function renderHeader() {
 }
 
 function renderHero() {
+  const heroImage = page.hero.image || '/images/legal_department/legal_hero.png';
   return `
-    <section class="ld-hero" aria-labelledby="ld-hero-title">
+    <section class="ld-hero" style="--ld-hero-image: url('${heroImage}')" aria-labelledby="ld-hero-title">
       <div class="ld-hero-panel-wrap">
         <div class="container ld-hero-panel">
           <span class="ld-hero-tag">${escapeHtml(page.hero.tag)}</span>
@@ -130,25 +131,32 @@ function renderHero() {
   `;
 }
 
-function renderProfile() {
-  const person = page.profile.person;
+function renderProfiles() {
   return `
-    <section class="ld-section ld-section-soft" aria-labelledby="ld-profile-title">
+    <section class="ld-section ld-section-soft" aria-labelledby="ld-profiles-title">
       <div class="container">
         <div class="ld-section-head">
-          <h2 id="ld-profile-title">${escapeHtml(page.profile.title)}</h2>
-          <p>${escapeHtml(page.profile.description)}</p>
+          <h2 id="ld-profiles-title">${escapeHtml(page.profiles.title)}</h2>
+          <p>${escapeHtml(page.profiles.description)}</p>
         </div>
-        <article class="ld-profile-featured">
-          <div class="ld-profile-photo">
-            <img src="${person.image}" alt="${escapeHtml(person.imageAlt)}" width="220" height="280" loading="lazy" decoding="async" />
-          </div>
-          <div>
-            <span class="ld-profile-role">${escapeHtml(person.role)}</span>
-            <h3>${escapeHtml(person.name)}</h3>
-            <p>${escapeHtml(person.description)}</p>
-          </div>
-        </article>
+        <div class="ld-profile-grid">
+          ${page.profiles.people
+            .map(
+              (person) => `
+          <article class="ld-profile-card">
+            <div class="ld-profile-photo">
+              <img src="${person.image}" alt="${escapeHtml(person.imageAlt)}" width="160" height="200" loading="lazy" decoding="async" />
+            </div>
+            <div>
+              <span class="ld-profile-role">${escapeHtml(person.role)}</span>
+              <h3>${escapeHtml(person.name)}</h3>
+              <p>${escapeHtml(person.description)}</p>
+            </div>
+          </article>
+          `,
+            )
+            .join('')}
+        </div>
       </div>
     </section>
   `;
@@ -283,7 +291,7 @@ function renderPage() {
     ${renderHeader()}
     <div class="ld-page" id="main-content" tabindex="-1">
       ${renderHero()}
-      ${renderProfile()}
+      ${renderProfiles()}
       ${renderSupportAreas()}
       ${renderProcess()}
       ${renderSecuritySection()}

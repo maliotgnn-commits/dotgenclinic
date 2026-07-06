@@ -6,18 +6,28 @@
       "tag": "LEGAL DEPARTMENT",
       "title": "Transparent and Secure Communication in Legal Processes",
       "description": "Information, document and communication requests of a legal nature related to Dr Otgen Clinic are reviewed within the framework of relevant records, patient rights, privacy principles and applicable legislation.",
-      "cta": "Contact the Legal Department"
+      "cta": "Contact the Legal Department",
+      "image": "/images/legal_department/legal_hero.png"
     },
-    "profile": {
+    "profiles": {
       "title": "Professional Coordination in Legal Processes",
       "description": "Our Legal Department supports the coordinated review of document, communication, privacy and process requests related to the institution together with the relevant units.",
-      "person": {
-        "name": "Av. Aslı Karakula",
-        "role": "Lawyer",
-        "description": "Supports communication and process follow-up with relevant units on patient rights, personal data protection, contractual document processes and in-house legal coordination.",
-        "image": "/images/legal_department/asli_karakula.jpg",
-        "imageAlt": "Av. Aslı Karakula"
-      }
+      "people": [
+        {
+          "name": "Av. Çağatay Güler",
+          "role": "Lawyer",
+          "description": "Provides legal counsel and process follow-up on patient rights, personal data protection, contractual document processes and in-house legal coordination.",
+          "image": "/images/legal_department/cagatay_guler.jpg",
+          "imageAlt": "Av. Çağatay Güler"
+        },
+        {
+          "name": "Av. Aslı Karakula",
+          "role": "Lawyer",
+          "description": "Supports communication and process follow-up with relevant units on patient rights, personal data protection, contractual document processes and in-house legal coordination.",
+          "image": "/images/legal_department/asli_karakula.jpg",
+          "imageAlt": "Av. Aslı Karakula"
+        }
+      ]
     },
     "support": {
       "title": "What Can You Request Information About?",

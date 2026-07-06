@@ -6,18 +6,28 @@
       "tag": "DIPARTIMENTO LEGALE",
       "title": "Comunicazione Trasparente e Sicura nei Processi Legali",
       "description": "Le richieste di informazioni, documenti e comunicazioni di natura legale relative a Dr Otgen Clinic vengono valutate nel quadro dei registri pertinenti, dei diritti del paziente, dei principi di privacy e della normativa vigente.",
-      "cta": "Contattare il Dipartimento Legale"
+      "cta": "Contattare il Dipartimento Legale",
+      "image": "/images/legal_department/legal_hero.png"
     },
-    "profile": {
+    "profiles": {
       "title": "Coordinamento Professionale nei Processi Legali",
       "description": "Il nostro Dipartimento Legale contribuisce alla valutazione coordinata delle richieste documentali, di comunicazione, privacy e processi relative all'istituto con le unità competenti.",
-      "person": {
-        "name": "Av. Aslı Karakula",
-        "role": "Avvocato",
-        "description": "Supporta la comunicazione e il monitoraggio dei processi con le unità competenti in materia di diritti del paziente, protezione dei dati personali, processi documentali contrattuali e coordinamento legale interno.",
-        "image": "/images/legal_department/asli_karakula.jpg",
-        "imageAlt": "Av. Aslı Karakula"
-      }
+      "people": [
+        {
+          "name": "Av. Çağatay Güler",
+          "role": "Avvocato",
+          "description": "Fornisce consulenza legale e monitoraggio dei processi in materia di diritti del paziente, protezione dei dati personali, processi documentali contrattuali e coordinamento legale interno.",
+          "image": "/images/legal_department/cagatay_guler.jpg",
+          "imageAlt": "Av. Çağatay Güler"
+        },
+        {
+          "name": "Av. Aslı Karakula",
+          "role": "Avvocato",
+          "description": "Supporta la comunicazione e il monitoraggio dei processi con le unità competenti in materia di diritti del paziente, protezione dei dati personali, processi documentali contrattuali e coordinamento legale interno.",
+          "image": "/images/legal_department/asli_karakula.jpg",
+          "imageAlt": "Av. Aslı Karakula"
+        }
+      ]
     },
     "support": {
       "title": "Su Quali Argomenti Potete Richiedere Informazioni?",

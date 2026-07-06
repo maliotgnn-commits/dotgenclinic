@@ -6,18 +6,28 @@
       "tag": "RECHTSABTEILUNG",
       "title": "Transparente und Sichere Kommunikation in Rechtsprozessen",
       "description": "Informations-, Dokumenten- und Kommunikationsanfragen rechtlicher Natur im Zusammenhang mit Dr Otgen Clinic werden im Rahmen relevanter Aufzeichnungen, Patientenrechte, Datenschutzgrundsätze und geltender Vorschriften geprüft.",
-      "cta": "Rechtsabteilung Kontaktieren"
+      "cta": "Rechtsabteilung Kontaktieren",
+      "image": "/images/legal_department/legal_hero.png"
     },
-    "profile": {
+    "profiles": {
       "title": "Professionelle Koordination in Rechtsprozessen",
       "description": "Unsere Rechtsabteilung unterstützt die koordinierte Prüfung von Dokumenten-, Kommunikations-, Datenschutz- und Prozessanfragen im Zusammenhang mit der Einrichtung gemeinsam mit den zuständigen Bereichen.",
-      "person": {
-        "name": "Av. Aslı Karakula",
-        "role": "Rechtsanwältin",
-        "description": "Unterstützt Kommunikation und Prozessverfolgung mit den zuständigen Bereichen zu Patientenrechten, Datenschutz, vertraglichen Dokumentenprozessen und interner rechtlicher Koordination.",
-        "image": "/images/legal_department/asli_karakula.jpg",
-        "imageAlt": "Av. Aslı Karakula"
-      }
+      "people": [
+        {
+          "name": "Av. Çağatay Güler",
+          "role": "Rechtsanwalt",
+          "description": "Bietet Rechtsberatung und Prozessverfolgung zu Patientenrechten, Datenschutz, vertraglichen Dokumentenprozessen und interner rechtlicher Koordination.",
+          "image": "/images/legal_department/cagatay_guler.jpg",
+          "imageAlt": "Av. Çağatay Güler"
+        },
+        {
+          "name": "Av. Aslı Karakula",
+          "role": "Rechtsanwältin",
+          "description": "Unterstützt Kommunikation und Prozessverfolgung mit den zuständigen Bereichen zu Patientenrechten, Datenschutz, vertraglichen Dokumentenprozessen und interner rechtlicher Koordination.",
+          "image": "/images/legal_department/asli_karakula.jpg",
+          "imageAlt": "Av. Aslı Karakula"
+        }
+      ]
     },
     "support": {
       "title": "Zu Welchen Themen Können Sie Informationen Anfordern?",

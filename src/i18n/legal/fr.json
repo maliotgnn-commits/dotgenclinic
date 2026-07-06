@@ -6,18 +6,28 @@
       "tag": "DÉPARTEMENT JURIDIQUE",
       "title": "Communication Transparente et Sécurisée dans les Processus Juridiques",
       "description": "Les demandes d'information, de documents et de communication de nature juridique liées à Dr Otgen Clinic sont examinées conformément aux registres pertinents, aux droits des patients, aux principes de confidentialité et à la législation en vigueur.",
-      "cta": "Contacter le Département Juridique"
+      "cta": "Contacter le Département Juridique",
+      "image": "/images/legal_department/legal_hero.png"
     },
-    "profile": {
+    "profiles": {
       "title": "Coordination Professionnelle dans les Processus Juridiques",
       "description": "Notre Département Juridique contribue à l'examen coordonné des demandes documentaires, de communication, de confidentialité et de processus liées à l'institution avec les unités concernées.",
-      "person": {
-        "name": "Av. Aslı Karakula",
-        "role": "Avocate",
-        "description": "Soutient la communication et le suivi des processus avec les unités concernées en matière de droits des patients, de protection des données personnelles, de processus documentaires contractuels et de coordination juridique interne.",
-        "image": "/images/legal_department/asli_karakula.jpg",
-        "imageAlt": "Av. Aslı Karakula"
-      }
+      "people": [
+        {
+          "name": "Av. Çağatay Güler",
+          "role": "Avocat",
+          "description": "Fournit des conseils juridiques et un suivi des processus en matière de droits des patients, de protection des données personnelles, de processus documentaires contractuels et de coordination juridique interne.",
+          "image": "/images/legal_department/cagatay_guler.jpg",
+          "imageAlt": "Av. Çağatay Güler"
+        },
+        {
+          "name": "Av. Aslı Karakula",
+          "role": "Avocate",
+          "description": "Soutient la communication et le suivi des processus avec les unités concernées en matière de droits des patients, de protection des données personnelles, de processus documentaires contractuels et de coordination juridique interne.",
+          "image": "/images/legal_department/asli_karakula.jpg",
+          "imageAlt": "Av. Aslı Karakula"
+        }
+      ]
     },
     "support": {
       "title": "Sur Quels Sujets Pouvez-vous Demander des Informations ?",
