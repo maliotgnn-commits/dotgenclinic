@@ -692,6 +692,10 @@ to {
     line-height: 1.5;
   }
 
+  .has-dropdown[data-eye-health-nav] .eh-desktop-mega .mega-col a:hover {
+    padding-inline-start: 8px;
+  }
+
   .has-dropdown[data-eye-health-nav] .eh-desktop-mega .mega-col a + a {
     margin-top: 2px;
   }
