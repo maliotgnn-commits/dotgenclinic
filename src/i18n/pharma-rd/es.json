@@ -1,0 +1,50 @@
+{
+  "page": {
+    "title": "I+D Farmacéutica | Dr Otgen Clinic",
+    "description": "Información sobre la colaboración conjunta en I+D farmacéutica entre Dr Otgen Clinic y Laboratoires Expanscience en dermatología, innovación dermocosmética e investigación científica.",
+    "hero": {
+      "tag": "COLABORACIÓN CIENTÍFICA",
+      "title": "I+D Farmacéutica",
+      "subtitle": "Dr Otgen Clinic & Laboratoires Expanscience",
+      "lead": "Colaboración Conjunta en I+D Farmacéutica",
+      "description": "Dr Otgen Clinic busca combinar su experiencia en dermatología, salud cutánea y práctica clínica centrada en el paciente con la experiencia de Laboratoires Expanscience, con sede en Francia, en investigación farmacéutica, innovación dermocosmética y desarrollo de productos."
+    },
+    "vision": {
+      "title": "Enfoque de Investigación Conjunta",
+      "description": "En el marco de esta colaboración, se planean trabajos de investigación y desarrollo científico sobre el refuerzo de la barrera cutánea, los procesos inflamatorios de la piel, el cuidado antienvejecimiento, el apoyo a pieles sensibles y soluciones dermocosméticas personalizadas."
+    },
+    "focusAreas": {
+      "title": "Áreas de Enfoque de I+D",
+      "items": [
+        "Refuerzo de la barrera cutánea",
+        "Procesos inflamatorios de la piel",
+        "Cuidado antienvejecimiento",
+        "Apoyo a pieles sensibles",
+        "Soluciones dermocosméticas personalizadas"
+      ]
+    },
+    "clinical": {
+      "title": "Datos Clínicos y Desarrollo de Formulaciones",
+      "description": "Los datos obtenidos de la observación clínica, la experiencia del paciente y los procesos de aplicación de Dr Otgen Clinic pretenden evaluarse junto con la infraestructura internacional de desarrollo de formulaciones, análisis de eficacia e I+D de Laboratoires Expanscience para convertirse en enfoques innovadores de productos y tratamientos."
+    },
+    "standards": {
+      "title": "Estándares Científicos",
+      "description": "El enfoque principal del trabajo conjunto de I+D es desarrollar una nueva generación de soluciones basadas en evidencia científica, fiables y de alta tolerancia que respondan a diferentes necesidades cutáneas. Durante el proceso, la evaluación clínica, la seguridad dermatológica, la innovación en ingredientes y la experiencia del usuario se abordarán de forma conjunta."
+    },
+    "cooperation": {
+      "title": "Colaboración Científica Internacional",
+      "description": "El modelo de colaboración científica que se desarrollará entre Dr Otgen Clinic y Laboratoires Expanscience pretende contribuir no solo al desarrollo de productos, sino también al intercambio internacional de conocimientos en dermatología, actividades formativas y la configuración de los futuros estándares de salud cutánea."
+    },
+    "closing": {
+      "quote": "El enfoque científico, la experiencia clínica y la tradición francesa de I+D convergen en la misma visión para la salud de la piel.",
+      "cta": "Solicitar Cita"
+    },
+    "breadcrumbHome": "Inicio",
+    "sectionName": "I+D",
+    "pageShortName": "I+D Farmacéutica"
+  },
+  "nav": {
+    "menuLabel": "I+D",
+    "submenuAriaLabel": "Menú de I+D"
+  }
+}

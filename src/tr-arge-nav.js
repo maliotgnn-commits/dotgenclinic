@@ -1,37 +1,40 @@
 import {
-  ARGE_MENU_LABEL,
-  ARGE_PAGES,
   argeLandingPath,
+  argeMenuLabelForLocale,
+  argePagesForLocale,
 } from './arge-routes.js';
+import { argeSubmenuAriaLabelForLocale } from './pharma-rd-routes.js';
 import { NAV_CHEVRON_SVG } from './nav-shared.js';
 
-export const ARGE_LANDING_PATH = argeLandingPath();
-export const ARGE_NAV_LABEL = ARGE_MENU_LABEL;
+export const ARGE_LANDING_PATH = argeLandingPath('tr');
+export const ARGE_NAV_LABEL = argeMenuLabelForLocale('tr');
 
 export function renderArgeNavItem(locale = 'tr') {
-  if (locale !== 'tr') return '';
-
-  const landingPath = argeLandingPath();
-  const pageLinks = ARGE_PAGES.map(
-    (page) => `<a href="${page.path}" data-arge-page-link="${page.id}">${page.navLabel}</a>`,
-  ).join('\n              ');
+  const menuLabel = argeMenuLabelForLocale(locale);
+  const landingPath = argeLandingPath(locale);
+  const submenuAriaLabel = argeSubmenuAriaLabelForLocale(locale);
+  const pageLinks = argePagesForLocale(locale)
+    .map(
+      (page) => `<a href="${page.path}" data-arge-page-link="${page.id}">${page.navLabel}</a>`,
+    )
+    .join('\n              ');
 
   return `
-    <li class="has-dropdown" data-desktop-menu-id="arge" data-tr-only-nav data-arge-nav>
+    <li class="has-dropdown" data-desktop-menu-id="arge"${locale === 'tr' ? ' data-tr-only-nav' : ''} data-arge-nav>
       <button
         type="button"
         class="mobile-nav-trigger"
         aria-expanded="false"
         aria-controls="nav-panel-arge"
-        aria-label="${ARGE_MENU_LABEL}"
+        aria-label="${menuLabel}"
       >
-        <span class="mobile-nav-label">${ARGE_MENU_LABEL}</span>
+        <span class="mobile-nav-label">${menuLabel}</span>
         ${NAV_CHEVRON_SVG}
       </button>
-      <a href="${landingPath}" class="desktop-nav-trigger" aria-label="${ARGE_MENU_LABEL}">${ARGE_MENU_LABEL} ${NAV_CHEVRON_SVG}</a>
-      <div class="mega-dropdown" id="nav-panel-arge" role="region" aria-label="${ARGE_MENU_LABEL} menüsü">
+      <a href="${landingPath}" class="desktop-nav-trigger" aria-label="${menuLabel}">${menuLabel} ${NAV_CHEVRON_SVG}</a>
+      <div class="mega-dropdown" id="nav-panel-arge" role="region" aria-label="${submenuAriaLabel}">
         <div class="mega-col">
-          <h4><a href="${landingPath}">${ARGE_MENU_LABEL}</a></h4>
+          <h4><a href="${landingPath}">${menuLabel}</a></h4>
           ${pageLinks}
         </div>
       </div>
@@ -45,6 +48,16 @@ export function appendArgeNavItem(navHtml, locale) {
 
 export function stripArgeNavItem(html) {
   return html.replace(/<li\b[^>]*\bdata-arge-nav\b[^>]*>[\s\S]*?<\/li>\s*/gi, '');
+}
+
+export function injectArgeNavForLocale(html, locale) {
+  if (locale === 'tr') return html;
+  const stripped = stripArgeNavItem(html);
+  const navBlock = renderArgeNavItem(locale);
+  return stripped.replace(
+    /(<ul class="nav-menu" id="nav-menu">[\s\S]*?)(\s*<\/ul>)/,
+    `$1\n            ${navBlock}$2`,
+  );
 }
 
 /** @deprecated Use appendArgeNavItem */

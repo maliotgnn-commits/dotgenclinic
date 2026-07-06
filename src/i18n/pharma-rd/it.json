@@ -1,0 +1,50 @@
+{
+  "page": {
+    "title": "R&S Farmaceutica | Dr Otgen Clinic",
+    "description": "Informazioni sulla collaborazione congiunta in R&S farmaceutica tra Dr Otgen Clinic e Laboratoires Expanscience in dermatologia, innovazione dermocosmetica e ricerca scientifica.",
+    "hero": {
+      "tag": "PARTnership SCIENTIFICA",
+      "title": "R&S Farmaceutica",
+      "subtitle": "Dr Otgen Clinic & Laboratoires Expanscience",
+      "lead": "Collaborazione Congiunta in R&S Farmaceutica",
+      "description": "Dr Otgen Clinic intende unire la propria esperienza in dermatologia, salute della pelle e pratica clinica orientata al paziente con l'expertise di Laboratoires Expanscience, con sede in Francia, in ricerca farmaceutica, innovazione dermocosmetica e sviluppo di prodotti."
+    },
+    "vision": {
+      "title": "Approccio di Ricerca Congiunta",
+      "description": "Nell'ambito di questa collaborazione, sono previste attività di ricerca e sviluppo scientifico sul rafforzamento della barriera cutanea, i processi infiammatori della pelle, la cura anti-age, il supporto delle pelli sensibili e soluzioni dermocosmetiche personalizzate."
+    },
+    "focusAreas": {
+      "title": "Aree di Focus R&S",
+      "items": [
+        "Rafforzamento della barriera cutanea",
+        "Processi infiammatori della pelle",
+        "Cura anti-age",
+        "Supporto delle pelli sensibili",
+        "Soluzioni dermocosmetiche personalizzate"
+      ]
+    },
+    "clinical": {
+      "title": "Dati Clinici e Sviluppo delle Formulazioni",
+      "description": "I dati derivati dall'osservazione clinica, dall'esperienza del paziente e dai processi applicativi di Dr Otgen Clinic devono essere valutati insieme all'infrastruttura internazionale di sviluppo formulativo, analisi dell'efficacia e R&S di Laboratoires Expanscience per trasformarsi in approcci innovativi di prodotti e trattamento."
+    },
+    "standards": {
+      "title": "Standard Scientifici",
+      "description": "Il focus principale del lavoro congiunto di R&S è sviluppare una nuova generazione di soluzioni basate su evidenze scientifiche, affidabili e ad alta tollerabilità in grado di rispondere a diverse esigenze cutanee. Durante il processo, valutazione clinica, sicurezza dermatologica, innovazione degli ingredienti ed esperienza utente saranno affrontate congiuntamente."
+    },
+    "cooperation": {
+      "title": "Collaborazione Scientifica Internazionale",
+      "description": "Il modello di collaborazione scientifica che verrà sviluppato tra Dr Otgen Clinic e Laboratoires Expanscience mira a contribuire non solo allo sviluppo di prodotti, ma anche alla condivisione internazionale di conoscenze in dermatologia, ad attività formative e alla definizione dei futuri standard di salute della pelle."
+    },
+    "closing": {
+      "quote": "Approccio scientifico, esperienza clinica e tradizione francese di R&S convergono nella stessa visione per la salute della pelle.",
+      "cta": "Richiedi Appuntamento"
+    },
+    "breadcrumbHome": "Home",
+    "sectionName": "R&S",
+    "pageShortName": "R&S Farmaceutica"
+  },
+  "nav": {
+    "menuLabel": "R&S",
+    "submenuAriaLabel": "Menu R&S"
+  }
+}

@@ -1,41 +1,50 @@
-export const ARGE_MENU_LABEL = 'Ar-Ge';
+import {
+  PHARMA_RD_ROUTES,
+  argeMenuLabelForLocale,
+  detectPharmaRdLocale,
+  isPharmaRdPath,
+  pharmaRdFileForLocale,
+  pharmaRdPageNavLabelForLocale,
+  pharmaRdPathForLocale,
+} from './pharma-rd-routes.js';
 
-export const ARGE_PAGES = [
-  {
-    id: 'ilac-ar-ge',
-    navLabel: 'İlaç Ar-Ge',
-    path: '/tr/ilac-ar-ge.html',
-    file: 'ilac-ar-ge.html',
-  },
-];
+export const ARGE_MENU_LABEL = PHARMA_RD_ROUTES.tr.menuLabel;
 
-export function argeLandingPath() {
-  return ARGE_PAGES[0]?.path || '/tr/ilac-ar-ge.html';
+export function argeLandingPath(locale = 'tr') {
+  return pharmaRdPathForLocale(locale);
 }
+
+export function argePagesForLocale(locale = 'tr') {
+  return [
+    {
+      id: 'ilac-ar-ge',
+      navLabel: pharmaRdPageNavLabelForLocale(locale),
+      path: pharmaRdPathForLocale(locale),
+      file: pharmaRdFileForLocale(locale),
+    },
+  ];
+}
+
+/** @deprecated Use argePagesForLocale */
+export const ARGE_PAGES = argePagesForLocale('tr');
 
 export function argePageByFile(file) {
-  return ARGE_PAGES.find((page) => page.file === file) || null;
+  return argePagesForLocale('tr').find((page) => page.file === file) || null;
 }
 
-export function argePagePathForId(id) {
-  return ARGE_PAGES.find((page) => page.id === id)?.path || argeLandingPath();
-}
-
-function normalizePathname(pathname) {
-  try {
-    return decodeURIComponent(pathname);
-  } catch {
-    return pathname;
-  }
+export function argePagePathForId(id, locale = 'tr') {
+  const page = argePagesForLocale(locale).find((entry) => entry.id === id);
+  return page?.path || argeLandingPath(locale);
 }
 
 export function detectArgePage(pathname = window.location.pathname) {
-  const normalized = normalizePathname(pathname);
-  return ARGE_PAGES.find(
-    (page) => normalized.endsWith(`/${page.file}`) || normalized === page.path,
-  ) || null;
+  const locale = detectPharmaRdLocale(pathname);
+  if (!locale) return null;
+  return argePagesForLocale(locale)[0] || null;
 }
 
 export function isArgePagePath(pathname = window.location.pathname) {
-  return Boolean(detectArgePage(pathname));
+  return isPharmaRdPath(pathname);
 }
+
+export { argeMenuLabelForLocale, detectPharmaRdLocale, pharmaRdPathForLocale };

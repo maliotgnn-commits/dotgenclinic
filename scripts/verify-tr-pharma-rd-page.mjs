@@ -7,7 +7,7 @@ import {
   ARGE_NAV_LABEL,
   renderArgeNavItem,
 } from '../src/tr-arge-nav.js';
-import { ARGE_PAGES } from '../src/arge-routes.js';
+import { argePagesForLocale } from '../src/arge-routes.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -57,6 +57,8 @@ assert(pharmaCss.includes('/images/pharma_rd/pharma_rd_hero.png'), 'Missing phar
 assert(existsSync(resolve(DIST, 'images/pharma_rd/pharma_rd_hero.png')), 'Missing built pharma R&D hero image asset');
 assert(!pharmaJs.includes('pr-hero-partner-logo'), 'Hero panel must not render a duplicate partner logo');
 assert(pharmaJs.includes("getCurrentLocale('pharma-rd')"), 'pharma-rd-department.js must use pharma-rd page type');
+assert(pharmaJs.includes('loadPharmaRdContent'), 'pharma-rd-department.js must load locale content');
+assert(pharmaJs.includes('detectPharmaRdLocale'), 'pharma-rd-department.js must detect pharma R&D locale from path');
 assert(pharmaJs.includes('appendArgeNavItem'), 'pharma-rd-department.js must render Ar-Ge nav item');
 
 const navItem = renderArgeNavItem('tr');
@@ -64,7 +66,7 @@ assert(navItem.includes(ARGE_LANDING_PATH), 'Ar-Ge nav must target /tr/ilac-ar-g
 assert(navItem.includes('data-arge-nav'), 'Ar-Ge nav marker missing');
 assert(navItem.includes(ARGE_NAV_LABEL), 'Ar-Ge nav label missing');
 
-for (const page of ARGE_PAGES) {
+for (const page of argePagesForLocale('tr')) {
   assert(navItem.includes(`href="${page.path}"`), `Ar-Ge nav missing link for ${page.navLabel}`);
   assert(navItem.includes(page.navLabel), `Ar-Ge nav missing label for ${page.navLabel}`);
 }
