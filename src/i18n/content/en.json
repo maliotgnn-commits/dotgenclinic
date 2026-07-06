@@ -72,9 +72,9 @@
         "content": "/images/site/pages/vision-mission.webp"
       },
       "overview": [
-        "Our vision and mission reveal our standards, operations, and quality priorities in a simple and transparent framework.",
+        "Our vision and mission; It reveals our standards, operation and quality priorities in a simple and transparent framework.",
         "Before the treatment planning process begins, each step is clearly shared so that our patients have clear information about the entire process.",
-        "Our main goal is to maintain communication, quality, and continuity at the same high level at every stage of the patient journey. Dr. Otgen Clinic brings health and aesthetics together with Ministry of Health of the Republic of Türkiye and TÜV Thüringen (ISO 9001) certifications."
+        "Our main aim is; To maintain communication, quality and continuity at the same high level at every stage of the patient journey. Dr. Otgen Clinic; T.R. It offers health and aesthetics together with the Ministry of Health and TÜV Thüringen (ISO 9001) certifications."
       ],
       "sections": [],
       "highlights": [
@@ -92,11 +92,11 @@
       ],
       "quickFacts": [
         {
-          "label": "Vision",
+          "label": "vision",
           "value": "To be a reliable global reference in health and aesthetics"
         },
         {
-          "label": "Mission",
+          "label": "mission",
           "value": "Providing personal care focused on patient safety and quality"
         },
         {
@@ -153,7 +153,7 @@
       "overview": [
         "Our values; It explains our standards, workflows and quality priorities in a simple and transparent structure.",
         "Every step is shared transparently to clarify expectations before treatment planning begins; Communication, quality and continuity are our priorities at every stage of the patient journey.",
-        "Dr. Otgen Clinic brings together health and aesthetics at reliable standards with certifications from the Ministry of Health of the Republic of Türkiye and TÜV Thüringen (ISO 9001)."
+        "Dr. Otgen Clinic; T.R. It brings together health and aesthetics at reliable standards with certifications from the Ministry of Health and TÜV Thüringen (ISO 9001)."
       ],
       "sections": [
         {
@@ -164,7 +164,7 @@
               "items": [
                 "Patient Focus: Our clients are at the center of all our processes. Security, comfort and satisfaction form the basis of our service approach.",
                 "Ethical and Transparent Approach: A service based on open communication and trust is provided without compromising medical ethical principles.",
-                "International Quality: A globally accredited quality approach in accordance with the standards of the Ministry of Health of the Republic of Türkiye and TÜV Thüringen (ISO 9001).",
+                "International Quality: T.R. Globally accredited quality approach in accordance with the standards of the Ministry of Health and TÜV Thüringen (ISO 9001).",
                 "Investment in Science and Technology: The most up-to-date technologies are followed; The medical infrastructure is constantly improved.",
                 "Expertise and Experience: Reliable results are aimed with a strong staff of full-time professionals who are experts in their fields.",
                 "Sustainable Service Concept: Stable and quality-oriented service is provided based on long-term trust relationship.",
@@ -280,7 +280,7 @@
               "items": [
                 "ISO 9001:2015 – International Quality Management System Certificate",
                 "TÜV Thüringen & TÜV SÜD – Infrastructure and medical security systems that have passed quality inspections",
-                "Ministry of Health of the Republic of Türkiye – Authorized Health Institution Certificate",
+                "T.R. Ministry of Health – Authorized Health Institution Certificate",
                 "Health Tourism Authorization Certificate"
               ]
             }
@@ -685,6 +685,122 @@
         {
           "question": "When will the final treatment plan be finalized?",
           "answer": "It becomes final after the clinical evaluation is completed and the method to be applied is clarified."
+        }
+      ]
+    },
+    {
+      "category": "corporate",
+      "slug": "production",
+      "navLabel": "Prodüksiyon",
+      "navAppendOnly": true,
+      "title": "Dr Otgen Clinic Prodüksiyon",
+      "categoryLabel": "Corporate",
+      "heroTag": "Corporate Information",
+      "heroSubtitle": "Sinema diliyle anlatılan sağlık ve bilim hikâyeleri",
+      "summary": "Dr Otgen Clinic, sağlık ve bilim alanındaki çalışmalarını yaratıcı prodüksiyon projeleriyle de anlatıyor; kısa metraj filmlerimizle insan hikâyelerini güçlü bir sinema diliyle buluşturuyoruz.",
+      "images": {
+        "hero": "/images/production/production-hero.png",
+        "content": "/images/production/mert-can-director.png"
+      },
+      "overview": [
+        "Dr Otgen Clinic, sağlık ve bilim alanındaki çalışmalarını yaratıcı prodüksiyon projeleriyle de anlatıyor. Yönetmenliğini Mert Can'ın üstlendiği kısa metrajlı film projelerimiz; insan hikâyelerini, farkındalık temalarını ve toplumsal mesajları güçlü bir sinema diliyle buluşturuyor.",
+        "Ürettiğimiz kısa filmler, yurt dışındaki seçkin kısa film festivalleri ve yarışmalarına gönderilmekte; bu alanda elde ettiğimiz ödüllerle yaratıcı vizyonumuzu uluslararası platformlara taşıyoruz.",
+        "Her projede yalnızca bir film üretmeyi değil, izleyicide iz bırakan, düşündüren ve ilham veren hikâyeler anlatmayı hedefliyoruz."
+      ],
+      "sections": [
+        {
+          "title": "Yaratıcı Anlatım ve Yönetmenlik",
+          "blocks": [
+            {
+              "type": "subheading",
+              "text": "Yönetmen: Mert Can"
+            },
+            {
+              "type": "paragraph",
+              "text": "Kısa metraj projelerimizin yönetmenliğini üstlenen Mert Can; insan odaklı anlatım, güçlü görsel dil ve toplumsal farkındalık temalarını bir araya getiren bir sinema yaklaşımı benimsiyor. Her çekimde duygusal derinlik ile mesajın netliğini aynı kadrajda buluşturmayı hedefliyor."
+            },
+            {
+              "type": "paragraph",
+              "text": "Prodüksiyon sürecimiz; senaryo geliştirmeden post-prodüksiyona kadar disiplinli bir planlama, profesyonel ekip koordinasyonu ve yüksek prodüksiyon standartları üzerine kuruludur."
+            }
+          ]
+        },
+        {
+          "title": "Festivaller ve Uluslararası Tanınırlık",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Kısa metraj filmlerimiz, uluslararası festival programları ve yarışmalar aracılığıyla geniş bir izleyici kitlesine ulaşır. Bu platformlar, klinik olarak yürüttüğümüz bilim ve sağlık çalışmalarının ötesinde toplumsal farkındalık yaratma hedefimizi destekler."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Seçkin uluslararası kısa film festivallerine başvuru ve gösterim",
+                "Ödül ve seçilme süreçleriyle uluslararası görünürlük",
+                "Sağlık, bilim ve insan hikâyesi temalarında özgün sinema dili",
+                "Marka değerini sanat ve toplumsal etki ile bütünleştiren prodüksiyon yaklaşımı"
+              ]
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Kısa metraj sinema projeleri",
+        "Uluslararası festival katılımları ve ödüller",
+        "Farkındalık ve toplumsal mesaj odaklı anlatım",
+        "Profesyonel prodüksiyon ekibi ve yönetmenlik"
+      ],
+      "suitableIntro": "Prodüksiyon projelerimiz, klinik hizmetlerimizden bağımsız yaratıcı içerik çalışmalarıdır.",
+      "suitableFor": [
+        "Sinema ve kısa film festivalleri için proje arayan kurumlar",
+        "Sağlık ve bilim temalı farkındalık kampanyaları yürüten paydaşlar",
+        "Yaratıcı prodüksiyon iş birlikleri arayan medya ve marka ekipleri",
+        "Toplumsal mesaj taşıyan özgün hikâye anlatımına ilgi duyan izleyiciler"
+      ],
+      "quickFacts": [
+        {
+          "label": "Format",
+          "value": "Kısa metraj sinema"
+        },
+        {
+          "label": "Yönetmen",
+          "value": "Mert Can"
+        },
+        {
+          "label": "Focus",
+          "value": "Sağlık, bilim ve insan hikâyeleri"
+        },
+        {
+          "label": "Access",
+          "value": "Uluslararası festival ve yarışma platformları"
+        }
+      ],
+      "process": [
+        {
+          "title": "Konsept ve Senaryo",
+          "description": "Hikâye fikri, mesaj ve hedef kitle netleştirilir; senaryo ve prodüksiyon planı oluşturulur."
+        },
+        {
+          "title": "Çekim ve Prodüksiyon",
+          "description": "Profesyonel ekip ve ekipmanlarla çekimler tamamlanır; yönetmenlik ve sanat yönetimi süreçleri koordine edilir."
+        },
+        {
+          "title": "Post-Prodüksiyon ve Festival Süreci",
+          "description": "Kurgu, ses ve renk işlemleri tamamlanır; filmler uluslararası festival ve yarışma başvurularına yönlendirilir."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Prodüksiyon projeleri klinik hizmetlerle ilişkili midir?",
+          "answer": "Prodüksiyon çalışmalarımız, klinik hizmetlerimizden bağımsız yaratıcı projelerdir; sağlık ve bilim temalarını sinema diliyle anlatmayı amaçlar."
+        },
+        {
+          "question": "Filmler hangi platformlarda gösteriliyor?",
+          "answer": "Kısa metraj filmlerimiz uluslararası festival programları, yarışmalar ve seçkin gösterim platformları aracılığıyla izleyiciyle buluşur."
+        },
+        {
+          "question": "İş birliği veya prodüksiyon talebi nasıl iletilir?",
+          "answer": "Yaratıcı prodüksiyon iş birlikleri için klinik iletişim kanallarımız üzerinden talebinizi iletebilirsiniz; uygun projeler değerlendirilir."
         }
       ]
     },

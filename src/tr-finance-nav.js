@@ -3,6 +3,7 @@ import {
   financePathForLocale,
 } from './finance-routes.js';
 import { renderLegalCorporateNavLink } from './tr-legal-nav.js';
+import { renderProductionCorporateNavLink } from './tr-production-nav.js';
 
 export const FINANCE_DEPARTMENT_PATH = financePathForLocale('tr');
 export const FINANCE_NAV_LABEL = financeNavLabelForLocale('tr');
@@ -13,7 +14,7 @@ export function renderFinanceCorporateNavLink(locale = 'tr') {
 
 export function appendFinanceNavLink(linksHtml, groupKey, locale) {
   if (groupKey !== 'corporate') return linksHtml;
-  return `${linksHtml}\n              ${renderFinanceCorporateNavLink(locale)}\n              ${renderLegalCorporateNavLink(locale)}`;
+  return `${linksHtml}\n              ${renderFinanceCorporateNavLink(locale)}\n              ${renderLegalCorporateNavLink(locale)}\n              ${renderProductionCorporateNavLink(locale)}`;
 }
 
 /** @deprecated Use appendFinanceNavLink */

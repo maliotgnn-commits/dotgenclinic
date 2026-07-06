@@ -334,7 +334,7 @@ export function buildCategoryGroups(catalog, uiDictionary = null, locale = null)
       label: catalog.categoryConfig[categoryKey]?.label || categoryKey,
       navLabel: categoryNavLabel(categoryKey, catalog, uiDictionary, locale),
       items: catalog.pages
-        .filter((page) => page.category === categoryKey)
+        .filter((page) => page.category === categoryKey && !page.navAppendOnly)
         .map(({ slug, navLabel, title }) => ({ slug, navLabel, title })),
     }))
     .filter((group) => group.items.length);
