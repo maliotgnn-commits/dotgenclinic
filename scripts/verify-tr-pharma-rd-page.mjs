@@ -30,7 +30,6 @@ const requiredSections = [
   PHARMA_RD_PAGE.hero.title,
   PHARMA_RD_PAGE.hero.subtitle,
   PHARMA_RD_PAGE.hero.lead,
-  PHARMA_RD_PAGE.hero.partnerLogo.alt,
   PHARMA_RD_PAGE.sectionName,
   PHARMA_RD_PAGE.vision.title,
   PHARMA_RD_PAGE.focusAreas.title,
@@ -55,9 +54,8 @@ for (const section of requiredSections) {
 }
 
 assert(pharmaCss.includes('/images/pharma_rd/pharma_rd_hero.png'), 'Missing pharma R&D hero background image reference');
-assert(pharmaData.includes('/images/pharma_rd/expanscience-logo.png') || pharmaCss.includes('/images/pharma_rd/expanscience-logo.png'), 'Missing Expanscience logo reference');
 assert(existsSync(resolve(DIST, 'images/pharma_rd/pharma_rd_hero.png')), 'Missing built pharma R&D hero image asset');
-assert(existsSync(resolve(DIST, 'images/pharma_rd/expanscience-logo.png')), 'Missing built Expanscience logo asset');
+assert(!pharmaJs.includes('pr-hero-partner-logo'), 'Hero panel must not render a duplicate partner logo');
 assert(pharmaJs.includes("getCurrentLocale('pharma-rd')"), 'pharma-rd-department.js must use pharma-rd page type');
 assert(pharmaJs.includes('appendArgeNavItem'), 'pharma-rd-department.js must render Ar-Ge nav item');
 

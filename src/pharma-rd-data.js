@@ -9,10 +9,6 @@ export const PHARMA_RD_PAGE = {
     lead: 'Ortak İlaç Ar-Ge Çalışmaları',
     description:
       'Dr Otgen Clinic, dermatoloji, cilt sağlığı ve hasta odaklı klinik uygulamalar alanındaki deneyimini; Fransa merkezli Laboratoires Expanscience\'ın farmasötik araştırma, dermokozmetik inovasyon ve ürün geliştirme birikimiyle bir araya getirmeyi hedeflemektedir.',
-    partnerLogo: {
-      src: '/images/pharma_rd/expanscience-logo.png',
-      alt: 'Laboratoires Expanscience',
-    },
   },
   vision: {
     title: 'Ortak Araştırma Yaklaşımı',

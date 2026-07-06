@@ -85,23 +85,8 @@
   font-size: clamp(1.05rem, 1.8vw, 1.25rem);
   line-height: 1.4;
   color: rgba(201, 168, 76, 0.92);
-  margin: 0 0 20px;
+  margin: 0 0 16px;
   font-weight: 500;
-}
-
-.pr-hero-partner {
-  margin: 0 0 20px;
-}
-
-.pr-hero-partner-logo {
-  display: block;
-  width: min(100%, 220px);
-  height: auto;
-  padding: 10px 14px;
-  background: #000;
-  border: 1px solid rgba(201, 168, 76, 0.22);
-  border-radius: 4px;
-  object-fit: contain;
 }
 
 .pr-hero-description {

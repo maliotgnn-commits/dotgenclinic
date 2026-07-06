@@ -113,7 +113,6 @@ function renderHeader() {
 }
 
 function renderHero() {
-  const { partnerLogo } = page.hero;
   return `
     <section class="pr-hero" aria-labelledby="pr-hero-title">
       <div class="pr-hero-panel-wrap">
@@ -122,17 +121,6 @@ function renderHero() {
           <h1 id="pr-hero-title">${escapeHtml(page.hero.title)}</h1>
           <p class="pr-hero-subtitle">${escapeHtml(page.hero.subtitle)}</p>
           <p class="pr-hero-lead">${escapeHtml(page.hero.lead)}</p>
-          <div class="pr-hero-partner">
-            <img
-              class="pr-hero-partner-logo"
-              src="${escapeHtml(partnerLogo.src)}"
-              alt="${escapeHtml(partnerLogo.alt)}"
-              width="220"
-              height="72"
-              loading="eager"
-              decoding="async"
-            />
-          </div>
           <p class="pr-hero-description">${escapeHtml(page.hero.description)}</p>
         </div>
       </div>
