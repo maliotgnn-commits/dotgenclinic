@@ -947,17 +947,30 @@ to {
     pointer-events: all;
     width: 100%;
     min-width: 0;
-    padding: 0 0 0 16px;
+    padding: 0;
+    padding-inline-start: 16px;
     box-shadow: none;
-    border: none;
+    border-width: 0;
+    border-inline-start-width: 1px;
+    border-inline-start-style: solid;
+    border-inline-start-color: var(--border-gold);
+    border-radius: 0;
     background: transparent;
+    flex-direction: column;
+    gap: 16px;
   }
 
   .has-dropdown[data-eye-health-nav].open .mega-dropdown {
-    display: block;
+    display: flex;
   }
 
   .has-dropdown[data-eye-health-nav] .eh-desktop-mega {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .has-dropdown[data-eye-health-nav] .eh-mobile-mega {
     display: none;
   }
 
