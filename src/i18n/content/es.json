@@ -691,116 +691,116 @@
     {
       "category": "corporate",
       "slug": "production",
-      "navLabel": "Prodüksiyon",
       "navAppendOnly": true,
-      "title": "Dr Otgen Clinic Prodüksiyon",
-      "categoryLabel": "Corporativo",
-      "heroTag": "Información corporativa",
-      "heroSubtitle": "Sinema diliyle anlatılan sağlık ve bilim hikâyeleri",
-      "summary": "Dr Otgen Clinic, sağlık ve bilim alanındaki çalışmalarını yaratıcı prodüksiyon projeleriyle de anlatıyor; kısa metraj filmlerimizle insan hikâyelerini güçlü bir sinema diliyle buluşturuyoruz.",
       "images": {
         "hero": "/images/production/production-hero.png",
         "content": "/images/production/mert-can-director.png"
       },
+      "navLabel": "Producción",
+      "title": "Producción Dr Otgen Clinic",
+      "categoryLabel": "Corporativo",
+      "heroTag": "Información corporativa",
+      "heroSubtitle": "Historias de salud y ciencia contadas con lenguaje cinematográfico",
+      "summary": "Dr Otgen Clinic también comunica su trabajo en salud y ciencia a través de proyectos de producción creativa; nuestros cortometrajes unen historias humanas con un potente lenguaje cinematográfico.",
       "overview": [
-        "Dr Otgen Clinic, sağlık ve bilim alanındaki çalışmalarını yaratıcı prodüksiyon projeleriyle de anlatıyor. Yönetmenliğini Mert Can'ın üstlendiği kısa metrajlı film projelerimiz; insan hikâyelerini, farkındalık temalarını ve toplumsal mesajları güçlü bir sinema diliyle buluşturuyor.",
-        "Ürettiğimiz kısa filmler, yurt dışındaki seçkin kısa film festivalleri ve yarışmalarına gönderilmekte; bu alanda elde ettiğimiz ödüllerle yaratıcı vizyonumuzu uluslararası platformlara taşıyoruz.",
-        "Her projede yalnızca bir film üretmeyi değil, izleyicide iz bırakan, düşündüren ve ilham veren hikâyeler anlatmayı hedefliyoruz."
+        "Dr Otgen Clinic también narra su trabajo en salud y ciencia mediante proyectos de producción creativa. Nuestros cortometrajes, dirigidos por Mert Can, combinan historias humanas, temas de concienciación y mensajes sociales con un fuerte lenguaje cinematográfico.",
+        "Los cortometrajes que producimos se envían a prestigiosos festivales y concursos internacionales de cortometrajes; los premios obtenidos en este ámbito llevan nuestra visión creativa a plataformas internacionales.",
+        "En cada proyecto, no buscamos solo producir una película, sino contar historias que dejen huella en el espectador, inviten a la reflexión e inspiren."
       ],
       "sections": [
         {
-          "title": "Yaratıcı Anlatım ve Yönetmenlik",
+          "title": "Narrativa creativa y dirección",
           "blocks": [
             {
               "type": "subheading",
-              "text": "Yönetmen: Mert Can"
+              "text": "Director: Mert Can"
             },
             {
               "type": "paragraph",
-              "text": "Kısa metraj projelerimizin yönetmenliğini üstlenen Mert Can; insan odaklı anlatım, güçlü görsel dil ve toplumsal farkındalık temalarını bir araya getiren bir sinema yaklaşımı benimsiyor. Her çekimde duygusal derinlik ile mesajın netliğini aynı kadrajda buluşturmayı hedefliyor."
+              "text": "Mert Can, director de nuestros cortometrajes, adopta un enfoque cinematográfico que combina narrativa centrada en las personas, un lenguaje visual sólido y temas de concienciación social. En cada toma, busca reunir profundidad emocional y claridad del mensaje en el mismo encuadre."
             },
             {
               "type": "paragraph",
-              "text": "Prodüksiyon sürecimiz; senaryo geliştirmeden post-prodüksiyona kadar disiplinli bir planlama, profesyonel ekip koordinasyonu ve yüksek prodüksiyon standartları üzerine kuruludur."
+              "text": "Nuestro proceso de producción se basa en una planificación disciplinada, coordinación profesional del equipo y altos estándares de producción, desde el desarrollo del guion hasta la postproducción."
             }
           ]
         },
         {
-          "title": "Festivaller ve Uluslararası Tanınırlık",
+          "title": "Festivales y reconocimiento internacional",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Kısa metraj filmlerimiz, uluslararası festival programları ve yarışmalar aracılığıyla geniş bir izleyici kitlesine ulaşır. Bu platformlar, klinik olarak yürüttüğümüz bilim ve sağlık çalışmalarının ötesinde toplumsal farkındalık yaratma hedefimizi destekler."
+              "text": "Nuestros cortometrajes llegan a una amplia audiencia a través de programas y concursos de festivales internacionales. Estas plataformas apoyan nuestro objetivo de generar concienciación social más allá del trabajo científico y sanitario que realizamos como clínica."
             },
             {
               "type": "list",
               "items": [
-                "Seçkin uluslararası kısa film festivallerine başvuru ve gösterim",
-                "Ödül ve seçilme süreçleriyle uluslararası görünürlük",
-                "Sağlık, bilim ve insan hikâyesi temalarında özgün sinema dili",
-                "Marka değerini sanat ve toplumsal etki ile bütünleştiren prodüksiyon yaklaşımı"
+                "Presentación y proyección en prestigiosos festivales internacionales de cortometrajes",
+                "Visibilidad internacional mediante premios y selecciones oficiales",
+                "Lenguaje cinematográfico distintivo en temas de salud, ciencia e historias humanas",
+                "Enfoque de producción que integra el valor de marca con el arte y el impacto social"
               ]
             }
           ]
         }
       ],
       "highlights": [
-        "Kısa metraj sinema projeleri",
-        "Uluslararası festival katılımları ve ödüller",
-        "Farkındalık ve toplumsal mesaj odaklı anlatım",
-        "Profesyonel prodüksiyon ekibi ve yönetmenlik"
+        "Proyectos de cortometrajes",
+        "Participación en festivales internacionales y premios",
+        "Narrativa centrada en la concienciación y mensajes sociales",
+        "Equipo de producción profesional y dirección"
       ],
-      "suitableIntro": "Prodüksiyon projelerimiz, klinik hizmetlerimizden bağımsız yaratıcı içerik çalışmalarıdır.",
+      "suitableIntro": "Nuestros proyectos de producción son iniciativas creativas independientes de nuestros servicios clínicos.",
       "suitableFor": [
-        "Sinema ve kısa film festivalleri için proje arayan kurumlar",
-        "Sağlık ve bilim temalı farkındalık kampanyaları yürüten paydaşlar",
-        "Yaratıcı prodüksiyon iş birlikleri arayan medya ve marka ekipleri",
-        "Toplumsal mesaj taşıyan özgün hikâye anlatımına ilgi duyan izleyiciler"
+        "Instituciones que buscan proyectos para festivales de cine y cortometrajes",
+        "Interesados en campañas de concienciación sobre salud y ciencia",
+        "Equipos de medios y marcas que buscan colaboraciones de producción creativa",
+        "Espectadores interesados en narrativas originales con mensaje social"
       ],
       "quickFacts": [
         {
-          "label": "Format",
-          "value": "Kısa metraj sinema"
+          "label": "Formato",
+          "value": "Cortometraje"
         },
         {
-          "label": "Yönetmen",
+          "label": "Director",
           "value": "Mert Can"
         },
         {
           "label": "Enfoque",
-          "value": "Sağlık, bilim ve insan hikâyeleri"
+          "value": "Salud, ciencia e historias humanas"
         },
         {
           "label": "Acceso",
-          "value": "Uluslararası festival ve yarışma platformları"
+          "value": "Plataformas de festivales y concursos internacionales"
         }
       ],
       "process": [
         {
-          "title": "Konsept ve Senaryo",
-          "description": "Hikâye fikri, mesaj ve hedef kitle netleştirilir; senaryo ve prodüksiyon planı oluşturulur."
+          "title": "Concepto y guion",
+          "description": "Se definen la idea, el mensaje y el público objetivo; se elabora el guion y el plan de producción."
         },
         {
-          "title": "Çekim ve Prodüksiyon",
-          "description": "Profesyonel ekip ve ekipmanlarla çekimler tamamlanır; yönetmenlik ve sanat yönetimi süreçleri koordine edilir."
+          "title": "Rodaje y producción",
+          "description": "Se completan las grabaciones con equipo y material profesional; se coordinan la dirección y la dirección artística."
         },
         {
-          "title": "Post-Prodüksiyon ve Festival Süreci",
-          "description": "Kurgu, ses ve renk işlemleri tamamlanır; filmler uluslararası festival ve yarışma başvurularına yönlendirilir."
+          "title": "Postproducción y proceso de festivales",
+          "description": "Se completan montaje, sonido y color; las películas se envían a festivales y concursos internacionales."
         }
       ],
       "faqs": [
         {
-          "question": "Prodüksiyon projeleri klinik hizmetlerle ilişkili midir?",
-          "answer": "Prodüksiyon çalışmalarımız, klinik hizmetlerimizden bağımsız yaratıcı projelerdir; sağlık ve bilim temalarını sinema diliyle anlatmayı amaçlar."
+          "question": "¿Los proyectos de producción están relacionados con los servicios clínicos?",
+          "answer": "Nuestro trabajo de producción son proyectos creativos independientes de nuestros servicios clínicos; busca narrar temas de salud y ciencia con lenguaje cinematográfico."
         },
         {
-          "question": "Filmler hangi platformlarda gösteriliyor?",
-          "answer": "Kısa metraj filmlerimiz uluslararası festival programları, yarışmalar ve seçkin gösterim platformları aracılığıyla izleyiciyle buluşur."
+          "question": "¿En qué plataformas se muestran las películas?",
+          "answer": "Nuestros cortometrajes llegan al público a través de programas de festivales internacionales, concursos y plataformas selectas de proyección."
         },
         {
-          "question": "İş birliği veya prodüksiyon talebi nasıl iletilir?",
-          "answer": "Yaratıcı prodüksiyon iş birlikleri için klinik iletişim kanallarımız üzerinden talebinizi iletebilirsiniz; uygun projeler değerlendirilir."
+          "question": "¿Cómo se puede enviar una solicitud de colaboración o producción?",
+          "answer": "Puede enviar su solicitud a través de nuestros canales de comunicación de la clínica para colaboraciones de producción creativa; se evalúan los proyectos adecuados."
         }
       ]
     },
