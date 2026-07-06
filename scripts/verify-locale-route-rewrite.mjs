@@ -1,4 +1,4 @@
-import { resolveLocaleRewrite, rewriteLocaleRequestUrl, FINANCE_PREVIEW_FILE, FINANCE_FILES, LEGAL_PREVIEW_FILE, LEGAL_FILES, PHARMA_RD_PREVIEW_FILE, PHARMA_RD_FILES } from './locale-route-rewrite.mjs';
+import { resolveLocaleRewrite, rewriteLocaleRequestUrl, FINANCE_PREVIEW_FILE, FINANCE_FILES, LEGAL_PREVIEW_FILE, LEGAL_FILES, PHARMA_RD_PREVIEW_FILE, PHARMA_RD_FILES, MEDIKAL_RD_PREVIEW_FILE, MEDIKAL_RD_FILES } from './locale-route-rewrite.mjs';
 
 const failures = [];
 
@@ -21,6 +21,7 @@ expect('/tr/goz-hastaliklari.html', '', '/goz-hastaliklari.html');
 expect('/tr/finans-departmani.html', '', '/finans-departmani.html');
 expect('/tr/hukuk-departmani.html', '', '/hukuk-departmani.html');
 expect('/tr/ilac-ar-ge.html', '', '/ilac-ar-ge.html');
+expect('/tr/medikal-ar-ge.html', '', '/medikal-ar-ge.html');
 expect('/en/legal-department.html', '', '/hukuk-departmani.html');
 expect('/de/rechtsabteilung.html', '', '/hukuk-departmani.html');
 expect('/en/finance-department.html', '', '/finans-departmani.html');
@@ -61,6 +62,10 @@ assert(
   'rewriteLocaleRequestUrl must map pharma R&D preview route',
 );
 assert(
+  rewriteLocaleRequestUrl('/tr/medikal-ar-ge.html') === '/medikal-ar-ge.html',
+  'rewriteLocaleRequestUrl must map medical R&D preview route',
+);
+assert(
   PHARMA_RD_PREVIEW_FILE === 'ilac-ar-ge.html',
   'Pharma R&D preview route file constant mismatch',
 );
@@ -97,6 +102,20 @@ expect('/de/pharmazeutische-forschung.html', '', '/ilac-ar-ge.html');
 assert(
   rewriteLocaleRequestUrl('/en/pharmaceutical-r-d.html') === '/ilac-ar-ge.html',
   'rewriteLocaleRequestUrl must map localized pharma R&D routes',
+);
+assert(
+  MEDIKAL_RD_PREVIEW_FILE === 'medikal-ar-ge.html',
+  'Medical R&D preview route file constant mismatch',
+);
+assert(
+  MEDIKAL_RD_FILES.size === 8,
+  'Medical R&D locale route file set must include 8 locale filenames',
+);
+expect('/en/medical-r-d.html', '', '/medikal-ar-ge.html');
+expect('/de/medizinische-forschung.html', '', '/medikal-ar-ge.html');
+assert(
+  rewriteLocaleRequestUrl('/en/medical-r-d.html') === '/medikal-ar-ge.html',
+  'rewriteLocaleRequestUrl must map localized medical R&D routes',
 );
 
 if (failures.length) {

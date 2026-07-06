@@ -1,0 +1,38 @@
+{
+  "page": {
+    "title": "Medical R&D | Dr Otgen Clinic",
+    "description": "Information on the medical technology R&D collaboration between Dr Otgen Clinic and Netherlands-based Demcon in medical systems engineering, robotics and innovative medical device development.",
+    "hero": {
+      "tag": "NETHERLANDS PARTNERSHIP",
+      "title": "Dr Otgen Clinic x Demcon",
+      "subtitle": "Netherlands Medical Technology R&D Collaboration",
+      "lead": "Innovative solutions in medical systems engineering, robotics and device development",
+      "image": "/images/medikal_rd/medikal_rd_hero.png"
+    },
+    "intro": {
+      "title": "Dr Otgen Clinic – Demcon Netherlands Medical Technology R&D Collaboration",
+      "paragraphs": [
+        "Within its medical technology-focused R&D collaboration with Demcon, a Netherlands-based technology and engineering company, Dr Otgen Clinic conducts work in medical systems engineering, robotics solutions and innovative medical device development. Through this partnership, the aim is to combine clinical needs with advanced engineering approaches to develop solutions that enhance patient safety, the precision of diagnosis and treatment processes, and operational efficiency in healthcare services.",
+        "Research and development activities progress under the headings of smart medical device systems, robotics-assisted applications, user-centred device design, prototyping, testing processes and technology integration suitable for clinical use. Together with Demcon's engineering and high-technology manufacturing expertise, Dr Otgen Clinic aims to bring high-value, reliable and sustainable innovations to the healthcare sector."
+      ]
+    },
+    "focusAreas": {
+      "title": "R&D Focus Areas",
+      "items": [
+        "Smart medical device systems",
+        "Robotics-assisted applications",
+        "User-centred device design",
+        "Prototyping",
+        "Testing processes",
+        "Technology integration for clinical use"
+      ]
+    },
+    "closing": {
+      "quote": "Clinical experience and advanced engineering come together for reliable and sustainable innovations in medical technology.",
+      "cta": "Request Appointment"
+    },
+    "breadcrumbHome": "Home",
+    "sectionName": "R&D",
+    "pageShortName": "Medical R&D"
+  }
+}

@@ -1,6 +1,7 @@
 import { eyeHealthPathForLocale } from './eye-health-routes.js';
 import { financePathForLocale } from './finance-routes.js';
 import { legalPathForLocale } from './legal-routes.js';
+import { medikalRdPathForLocale } from './medikal-rd-routes.js';
 import { pharmaRdPathForLocale } from './pharma-rd-routes.js';
 
 export const DEFAULT_LOCALE = 'tr';
@@ -70,7 +71,7 @@ export function getCurrentLocale(pageType = 'home') {
   const pathLocale = getPathLocale();
   const locale = pathLocale || getStoredLocale() || DEFAULT_LOCALE;
 
-  if ((pageType === 'eye-health' || pageType === 'finance' || pageType === 'legal' || pageType === 'pharma-rd') && pathLocale) {
+  if ((pageType === 'eye-health' || pageType === 'finance' || pageType === 'legal' || pageType === 'pharma-rd' || pageType === 'medikal-rd') && pathLocale) {
     storeLocale(pathLocale);
     applyDocumentDirection(pathLocale);
     return pathLocale;
@@ -87,6 +88,8 @@ export function getCurrentLocale(pageType = 'home') {
             ? legalPathForLocale(locale)
             : pageType === 'pharma-rd'
               ? pharmaRdPathForLocale(locale)
+            : pageType === 'medikal-rd'
+              ? medikalRdPathForLocale(locale)
             : pageType === 'privacy'
             ? `/${locale}/privacy.html`
             : homeUrlFor(locale, window.location.hash);
@@ -150,6 +153,10 @@ export function currentPageUrlForLocale(locale, pageType = 'home') {
 
   if (pageType === 'pharma-rd') {
     return pharmaRdPathForLocale(locale);
+  }
+
+  if (pageType === 'medikal-rd') {
+    return medikalRdPathForLocale(locale);
   }
 
   if (pageType === 'privacy') {
@@ -271,6 +278,15 @@ export function applySeoLinks(locale, pageType = 'home', slug = null) {
       upsertSeoLink('alternate', code, pharmaRdPathForLocale(code));
     });
     upsertSeoLink('alternate', 'x-default', pharmaRdPathForLocale('en'));
+    return;
+  }
+
+  if (pageType === 'medikal-rd') {
+    upsertSeoLink('canonical', null, medikalRdPathForLocale(locale));
+    LOCALES.forEach(({ code }) => {
+      upsertSeoLink('alternate', code, medikalRdPathForLocale(code));
+    });
+    upsertSeoLink('alternate', 'x-default', medikalRdPathForLocale('en'));
     return;
   }
 

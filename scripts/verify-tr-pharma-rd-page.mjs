@@ -83,6 +83,8 @@ if (trHomeHtml) {
   assert(trHomeHtml.includes('data-arge-nav'), 'TR home Ar-Ge nav marker missing');
   assert(trHomeHtml.includes('data-arge-page-link="ilac-ar-ge"'), 'TR home Ar-Ge submenu missing İlaç Ar-Ge page link');
   assert(trHomeHtml.includes('İlaç Ar-Ge'), 'TR home Ar-Ge submenu missing İlaç Ar-Ge label');
+  assert(trHomeHtml.includes('data-arge-page-link="medikal-ar-ge"'), 'TR home Ar-Ge submenu missing Medikal Ar-Ge page link');
+  assert(trHomeHtml.includes('Medikal Ar-Ge'), 'TR home Ar-Ge submenu missing Medikal Ar-Ge label');
 }
 
 if (failures.length) {

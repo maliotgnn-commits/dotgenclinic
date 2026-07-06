@@ -1,0 +1,38 @@
+{
+  "page": {
+    "title": "Medizinische F&E | Dr Otgen Clinic",
+    "description": "Informationen zur medizintechnischen F&E-Zusammenarbeit zwischen Dr Otgen Clinic und dem niederländischen Unternehmen Demcon in den Bereichen Medizintechnik, Robotik und innovative Medizingeräteentwicklung.",
+    "hero": {
+      "tag": "NIEDERLÄNDISCHE PARTNERSCHAFT",
+      "title": "Dr Otgen Clinic x Demcon",
+      "subtitle": "Niederländische Medizintechnologie-F&E-Zusammenarbeit",
+      "lead": "Innovative Lösungen in Medizintechnik, Robotik und Geräteentwicklung",
+      "image": "/images/medikal_rd/medikal_rd_hero.png"
+    },
+    "intro": {
+      "title": "Dr Otgen Clinic – Demcon Niederländische Medizintechnologie-F&E-Zusammenarbeit",
+      "paragraphs": [
+        "Im Rahmen der medizintechnologieorientierten F&E-Zusammenarbeit mit Demcon, einem niederländischen Technologie- und Ingenieurunternehmen, führt Dr Otgen Clinic Arbeiten in den Bereichen Medizintechnik, Robotiklösungen und innovative Medizingeräteentwicklung durch. Durch diese Partnerschaft soll klinische Bedürfnisse mit fortgeschrittenen Ingenieuransätzen verbinden, um Lösungen zu entwickeln, die Patientensicherheit, Präzision diagnostischer und therapeutischer Prozesse und operative Effizienz im Gesundheitswesen steigern.",
+        "Forschungs- und Entwicklungsaktivitäten schreiten in den Bereichen intelligente Medizingerätesysteme, robotergestützte Anwendungen, nutzerorientiertes Gerätedesign, Prototyping, Testprozesse und technologieintegration für den klinischen Einsatz voran. Zusammen mit Demcons Ingenieur- und Hightech-Fertigungskompetenz strebt Dr Otgen Clinic an, zuverlässige und nachhaltige Innovationen mit hohem Mehrwert für den Gesundheitssektor zu schaffen."
+      ]
+    },
+    "focusAreas": {
+      "title": "F&E-Schwerpunkte",
+      "items": [
+        "Intelligente Medizingerätesysteme",
+        "Robotergestützte Anwendungen",
+        "Nutzerorientiertes Gerätedesign",
+        "Prototyping",
+        "Testprozesse",
+        "Technologieintegration für den klinischen Einsatz"
+      ]
+    },
+    "closing": {
+      "quote": "Klinische Erfahrung und fortgeschrittenes Engineering vereinen sich für zuverlässige und nachhaltige Innovationen in der Medizintechnik.",
+      "cta": "Termin anfragen"
+    },
+    "breadcrumbHome": "Startseite",
+    "sectionName": "F&E",
+    "pageShortName": "Medizinische F&E"
+  }
+}
