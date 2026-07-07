@@ -2907,8 +2907,8 @@
     {
       "category": "dental",
       "slug": "orthodontics",
-      "navLabel": "orthodontie",
-      "title": "orthodontie",
+      "navLabel": "Orthodontie",
+      "title": "Orthodontie",
       "categoryLabel": "Esthétique dentaire",
       "heroTag": "Conception de sourire",
       "heroSubtitle": "",
@@ -3725,8 +3725,8 @@
     {
       "category": "plastic",
       "slug": "rhinoplasty",
-      "navLabel": "rhinoplastie",
-      "title": "rhinoplastie",
+      "navLabel": "Rhinoplastie",
+      "title": "Rhinoplastie",
       "categoryLabel": "Chirurgie Plastique",
       "heroTag": "Esthétique chirurgicale",
       "heroSubtitle": "Rhinoplastie (esthétique du nez)",
@@ -4016,8 +4016,8 @@
     {
       "category": "plastic",
       "slug": "blepharoplasty",
-      "navLabel": "blépharoplastie",
-      "title": "blépharoplastie",
+      "navLabel": "Blépharoplastie",
+      "title": "Blépharoplastie",
       "categoryLabel": "Chirurgie Plastique",
       "heroTag": "Esthétique chirurgicale",
       "heroSubtitle": "",
@@ -4265,8 +4265,8 @@
     {
       "category": "plastic",
       "slug": "liposuction",
-      "navLabel": "liposuccion",
-      "title": "liposuccion",
+      "navLabel": "Liposuccion",
+      "title": "Liposuccion",
       "categoryLabel": "Chirurgie Plastique",
       "heroTag": "Esthétique chirurgicale",
       "heroSubtitle": "",

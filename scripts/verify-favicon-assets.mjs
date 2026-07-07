@@ -20,6 +20,7 @@ const DIST_HTML_CHECKS = [
 const FAVICON_LINKS = [
   '<link rel="icon" href="/favicon.ico" sizes="any" />',
   '<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />',
+  '<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />',
   '<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />',
 ];
 
@@ -71,25 +72,32 @@ function readIcoSizes(filePath) {
 function verifyPublicAssets() {
   const icoPath = resolve(PUBLIC, 'favicon.ico');
   const png48Path = resolve(PUBLIC, 'favicon-48.png');
+  const png96Path = resolve(PUBLIC, 'favicon-96.png');
+  const png192Path = resolve(PUBLIC, 'favicon-192.png');
   const applePath = resolve(PUBLIC, 'apple-touch-icon.png');
 
   if (!existsSync(icoPath) || readFileSync(icoPath).length === 0) {
     fail('Missing or empty public/favicon.ico');
   }
   if (!existsSync(png48Path)) fail('Missing public/favicon-48.png');
+  if (!existsSync(png96Path)) fail('Missing public/favicon-96.png');
+  if (!existsSync(png192Path)) fail('Missing public/favicon-192.png');
   if (!existsSync(applePath)) fail('Missing public/apple-touch-icon.png');
 
-  const png48 = readPngDimensions(png48Path);
-  if (png48.width !== 48 || png48.height !== 48) {
-    fail(`Expected favicon-48.png to be 48x48, got ${png48.width}x${png48.height}`);
+  for (const [label, filePath, expectedSize] of [
+    ['favicon-48.png', png48Path, 48],
+    ['favicon-96.png', png96Path, 96],
+    ['favicon-192.png', png192Path, 192],
+    ['apple-touch-icon.png', applePath, 180],
+  ]) {
+    const png = readPngDimensions(filePath);
+    if (png.width !== expectedSize || png.height !== expectedSize) {
+      fail(`Expected ${label} to be ${expectedSize}x${expectedSize}, got ${png.width}x${png.height}`);
+    }
+    if (png.hasAlpha) {
+      fail(`${label} must use an opaque background for Google SERP visibility`);
+    }
   }
-  if (!png48.hasAlpha) fail('favicon-48.png must preserve alpha/transparency');
-
-  const apple = readPngDimensions(applePath);
-  if (apple.width !== 180 || apple.height !== 180) {
-    fail(`Expected apple-touch-icon.png to be 180x180, got ${apple.width}x${apple.height}`);
-  }
-  if (!apple.hasAlpha) fail('apple-touch-icon.png must preserve alpha/transparency');
 
   const icoSizes = readIcoSizes(icoPath);
   for (const required of [16, 32, 48]) {
@@ -118,8 +126,8 @@ function verifyHtmlFile(relativePath) {
     }
   }
 
-  if ((html.match(/rel=["']icon["']/gi) || []).length !== 2) {
-    fail(`${relativePath} must contain exactly two rel="icon" links`);
+  if ((html.match(/rel=["']icon["']/gi) || []).length !== 3) {
+    fail(`${relativePath} must contain exactly three rel="icon" links`);
   }
 
   console.log(`[verify-favicon-assets] Verified favicon links in ${relativePath}`);
@@ -144,7 +152,7 @@ function verifyTemplateLogoAndSchema() {
 }
 
 function verifyDistOutputs() {
-  for (const asset of ['favicon.ico', 'favicon-48.png', 'apple-touch-icon.png']) {
+  for (const asset of ['favicon.ico', 'favicon-48.png', 'favicon-96.png', 'favicon-192.png', 'apple-touch-icon.png']) {
     const path = resolve(DIST, asset);
     if (!existsSync(path)) {
       fail(`Missing dist asset: ${asset}`);

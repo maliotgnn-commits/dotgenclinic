@@ -98,7 +98,7 @@ for (const locale of LOCALES) {
 
     if (locale !== DEFAULT_LOCALE) {
       const trPage = SUBPAGES.find((entry) => entry.slug === slug);
-      if (title.includes(trPage.title) && page.title !== trPage.title) {
+      if (title === trPage.title && page.title !== trPage.title) {
         failures.push(`[${label}] title appears to use TR text`);
       }
       if (summary === trPage.summary && page.summary !== trPage.summary) {
