@@ -336,7 +336,7 @@ export const RU_HEADER_NAV_LABELS = {
   dental: 'Стоматология',
   plastic: 'Пластика',
   medical: 'Медэстетика',
-  longevity: 'Функциональная медицина',
+  longevity: 'Longevity',
 };
 
 export const CATEGORY_NAV_UI_KEYS = {
@@ -345,7 +345,7 @@ export const CATEGORY_NAV_UI_KEYS = {
   dental: 'Diş Estetiği',
   plastic: 'Estetik Cerrahi',
   medical: 'Medikal Estetik',
-  longevity: 'Fonksiyonel Sağlık',
+  longevity: 'Longevity',
 };
 
 function categoryNavLabel(categoryKey, catalog, uiDictionary, locale) {

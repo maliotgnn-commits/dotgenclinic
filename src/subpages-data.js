@@ -41,12 +41,12 @@ const DATA = {
       "method": "Minimal invaziv estetik tedavi protokolleri"
     },
     "longevity": {
-      "label": "Fonksiyonel Sağlık",
-      "heroTag": "Fonksiyonel Sağlık",
+      "label": "Longevity",
+      "heroTag": "Longevity",
       "duration": "30-90 dakika",
       "sessionModel": "Program bazlı periyodik seanslar",
       "recovery": "Aynı gün",
-      "method": "Kişiye özel fonksiyonel sağlık ve destekleyici bakım protokolleri"
+      "method": "Kişiye özel longevity, koruyucu sağlık ve wellness protokolleri"
     }
   },
   "categoryOrder": [
@@ -5641,8 +5641,8 @@ const DATA = {
       "slug": "healthy-nutrition",
       "navLabel": "Sağlıklı Beslenme",
       "title": "Sağlıklı Beslenme",
-      "categoryLabel": "Fonksiyonel Sağlık",
-      "heroTag": "Fonksiyonel Sağlık",
+      "categoryLabel": "Longevity",
+      "heroTag": "Longevity",
       "heroSubtitle": "",
       "summary": "Sağlıklı beslenme, metabolik dengeyi desteklemek ve sürdürülebilir yaşam kalitesini artırmak amacıyla; öngörülebilir sonuçlar ve hasta güvenliğini esas alan kişiselleştirilmiş bir yaklaşımla planlanır.",
       "images": {
@@ -5756,8 +5756,8 @@ const DATA = {
       "slug": "lpg-treatment",
       "navLabel": "LPG İşlemi",
       "title": "LPG İşlemi",
-      "categoryLabel": "Fonksiyonel Sağlık",
-      "heroTag": "Fonksiyonel Sağlık",
+      "categoryLabel": "Longevity",
+      "heroTag": "Longevity",
       "heroSubtitle": "",
       "summary": "LPG tedavisi, metabolik dengeyi desteklemek, vücut formunu iyileştirmek ve sürdürülebilir iyilik hâlini hedeflemek amacıyla; öngörülebilir sonuçlar ve hasta güvenliğini esas alan kişiselleştirilmiş bir planlama ile uygulanır.",
       "images": {
@@ -5889,8 +5889,8 @@ const DATA = {
       "slug": "ozone-therapy",
       "navLabel": "Ozon Terapisi",
       "title": "Ozon Terapisi",
-      "categoryLabel": "Fonksiyonel Sağlık",
-      "heroTag": "Fonksiyonel Sağlık",
+      "categoryLabel": "Longevity",
+      "heroTag": "Longevity",
       "heroSubtitle": "",
       "summary": "Ozon terapisi, metabolik dengeyi desteklemek ve bağışıklık sisteminin fonksiyonlarını optimize etmek amacıyla; öngörülebilir sonuçlar ve hasta güvenliğini merkeze alan kişiselleştirilmiş bir tedavi yaklaşımıyla planlanır.",
       "images": {
@@ -6027,8 +6027,8 @@ const DATA = {
       "slug": "iv-therapies",
       "navLabel": "İntravenöz (IV) Tedaviler",
       "title": "İntravenöz (IV) Tedaviler",
-      "categoryLabel": "Fonksiyonel Sağlık",
-      "heroTag": "Fonksiyonel Sağlık",
+      "categoryLabel": "Longevity",
+      "heroTag": "Longevity",
       "heroSubtitle": "",
       "summary": "İntravenöz tedaviler, metabolik dengeyi desteklemek ve sürdürülebilir iyilik hâlini hedeflemek amacıyla; öngörülebilir sonuçlar ve hasta güvenliğini merkeze alan kişiselleştirilmiş bir yaklaşımla planlanır.",
       "images": {
@@ -6152,8 +6152,8 @@ const DATA = {
       "slug": "glutathione",
       "navLabel": "Glutatyon Terapisi",
       "title": "Glutatyon Terapisi",
-      "categoryLabel": "Fonksiyonel Sağlık",
-      "heroTag": "Fonksiyonel Sağlık",
+      "categoryLabel": "Longevity",
+      "heroTag": "Longevity",
       "heroSubtitle": "",
       "summary": "Glutatyon tedavisi; metabolik denge ve sürdürülebilir iyilik halini, öngörülebilir sonuçları ve hasta güvenliğini merkeze alan kişiselleştirilmiş bir strateji ile planlanmaktadır.",
       "images": {
@@ -6270,6 +6270,223 @@ const DATA = {
         {
           "question": "Tedavi planı ne zaman kesinleşir?",
           "answer": "Klinik değerlendirme sonrası kişiye özel plan oluşturulur."
+        }
+      ]
+    },
+    {
+      "category": "longevity",
+      "slug": "maxx-royal-wellness-bodrum",
+      "navLabel": "Bodrum'da Kişiselleştirilmiş Wellness Deneyimi",
+      "title": "Bodrum'da Kişiselleştirilmiş Wellness Deneyimi",
+      "categoryLabel": "Longevity",
+      "heroTag": "Dr. Otgen Clinic at Maxx Royal Bodrum",
+      "heroSubtitle": "Longevity, Yeniden Tanımlandı.",
+      "summary": "Sağlığınızın geleceği, bugün başlar. Modern tıbbı, kişiselleştirilmiş koruyucu sağlık yaklaşımını ve dünyaca ünlü Maxx Royal deneyimini bir araya getiriyoruz.",
+      "images": {
+        "hero": "/images/site/pages/maxx-royal-wellness-hero.webp",
+        "content": "/images/site/pages/maxx-royal-wellness-1.webp",
+        "gallery": [
+          "/images/site/pages/maxx-royal-wellness-1.webp",
+          "/images/site/pages/maxx-royal-wellness-2.webp",
+          "/images/site/pages/maxx-royal-wellness-3.webp",
+          "/images/site/pages/maxx-royal-wellness-4.webp",
+          "/images/site/pages/maxx-royal-wellness-5.webp",
+          "/images/site/pages/maxx-royal-wellness-6.webp",
+          "/images/site/pages/maxx-royal-wellness-7.webp",
+          "/images/site/pages/maxx-royal-wellness-8.webp",
+          "/images/site/pages/maxx-royal-wellness-9.webp",
+          "/images/site/pages/maxx-royal-wellness-10.webp",
+          "/images/site/pages/maxx-royal-wellness-11.webp",
+          "/images/site/pages/maxx-royal-wellness-12.webp"
+        ]
+      },
+      "galleryTitle": "Maxx Royal Bodrum'dan Kareler",
+      "overview": [
+        "Dr. Otgen Clinic at Maxx Royal Bodrum; modern tıbbı, kişiselleştirilmiş koruyucu sağlık yaklaşımını ve dünyaca ünlü Maxx Royal deneyimini bir araya getirir.",
+        "Burada amaç yalnızca iyi hissetmek değildir. Amaç; daha uzun, daha güçlü, daha dengeli ve daha kaliteli bir yaşam için vücudunuzu anlamak, riskleri erken fark etmek ve size özel bir sağlık planı oluşturmaktır.",
+        "Her misafirimiz için yaşam tarzı, aile öyküsü, metabolik sağlık, kardiyovasküler riskler, uyku kalitesi, stres düzeyi, fiziksel performans ve kişisel hedefler bütüncül olarak değerlendirilir. Çünkü gerçek lüks, sağlığınızı şansa bırakmamaktır."
+      ],
+      "sections": [
+        {
+          "title": "Kişisel Sağlık Yol Haritanız",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Dr. Otgen Clinic'te her program, uzman hekim değerlendirmesiyle başlar."
+            },
+            {
+              "type": "paragraph",
+              "text": "Kapsamlı sağlık analizleri, ileri düzey laboratuvar değerlendirmeleri, vücut kompozisyonu ölçümleri, metabolik risk analizi, kardiyovasküler değerlendirme, uyku ve stres taramaları; ihtiyaçlarınıza göre planlanan kişisel sağlık yol haritasının temelini oluşturur."
+            },
+            {
+              "type": "paragraph",
+              "text": "Sonuçlarınız yalnızca raporlanmaz. Hekimlerimiz tarafından yorumlanır, öncelikleriniz belirlenir ve yaşamınıza uygulanabilir bir plan hazırlanır. Sağlığınızla ilgili tüm önemli veriler, tek bir merkezde ve size özel bir sistem içinde ele alınır."
+            }
+          ]
+        },
+        {
+          "title": "Uzun ve Sağlıklı Yaşam Programları",
+          "blocks": [
+            {
+              "type": "subheading",
+              "text": "Yönetici Sağlık Değerlendirmesi"
+            },
+            {
+              "type": "paragraph",
+              "text": "Zamanı değerli olanlar için tasarlanan kapsamlı sağlık değerlendirme programı. Kısa süre içinde genel sağlık durumunuz, metabolik dengeniz, kalp-damar riskleriniz, vücut kompozisyonunuz, uyku kaliteniz ve yaşam tarzı faktörleriniz uzman ekip tarafından değerlendirilir. Program sonunda size özel bir sağlık raporu ve önümüzdeki 12 aya yönelik uygulanabilir bir yaşam planı sunulur."
+            },
+            {
+              "type": "subheading",
+              "text": "Metabolik Denge ve Kilo Yönetimi"
+            },
+            {
+              "type": "paragraph",
+              "text": "Sadece kilo vermek değil, sağlıklı bir metabolik denge kurmak için. Kilo yönetimi; kan şekeri dengesi, insülin direnci, kas kütlesi, yağ oranı, beslenme alışkanlıkları, uyku ve stres ile birlikte değerlendirilir. Hekim, diyetisyen ve performans uzmanlarından oluşan ekip; hedeflerinize uygun, sürdürülebilir ve kişiselleştirilmiş bir program oluşturur."
+            },
+            {
+              "type": "subheading",
+              "text": "Kardiyovasküler Performans"
+            },
+            {
+              "type": "paragraph",
+              "text": "Kalbiniz için daha güçlü bir gelecek. Kardiyovasküler sağlık, uzun ve aktif bir yaşamın merkezindedir. Kişisel risk faktörlerinize göre planlanan değerlendirmelerle; kalp-damar sağlığınız, tansiyon dengeniz, kolesterol profiliniz, egzersiz kapasiteniz ve yaşam tarzı alışkanlıklarınız ele alınır."
+            },
+            {
+              "type": "subheading",
+              "text": "Uyku, Stres ve Yenilenme"
+            },
+            {
+              "type": "paragraph",
+              "text": "Daha iyi uyku, daha net bir zihin ve daha yüksek yaşam kalitesi. Uyku kalitesi, stres yükü, tükenmişlik riski ve günlük enerji düzeyi; uzman değerlendirmesiyle ele alınır. Kişisel yaşam ritminize uygun, uygulanabilir iyileşme ve yenilenme stratejileri geliştirilir."
+            },
+            {
+              "type": "subheading",
+              "text": "Güç, Hareket Kabiliyeti ve Aktif Yaş Alma"
+            },
+            {
+              "type": "paragraph",
+              "text": "Yaş almak değil, güçlü kalmak. Kas kütlesi, denge, hareket kabiliyeti, eklem sağlığı ve fiziksel dayanıklılık; yaşam kalitesinin en önemli belirleyicilerindendir. Kişiye özel hareket, kuvvet, mobilite ve rehabilitasyon programlarıyla; günlük yaşamda daha enerjik, daha güçlü ve daha özgür hissetmeniz hedeflenir."
+            },
+            {
+              "type": "subheading",
+              "text": "Kadın Sağlığı ve Menopoz"
+            },
+            {
+              "type": "paragraph",
+              "text": "Hayatın her döneminde bütüncül kadın sağlığı. Hormonal değişimler, uyku, enerji seviyesi, kemik sağlığı, metabolizma, kas kütlesi ve ruh hali; kadın sağlığının birbirine bağlı parçalarıdır. Dr. Otgen Clinic'te kadınların ihtiyaçları; uzman hekim değerlendirmesi, kişiselleştirilmiş takip ve yaşam tarzı yaklaşımıyla ele alınır."
+            },
+            {
+              "type": "subheading",
+              "text": "Erkek Sağlığı ve Performansı"
+            },
+            {
+              "type": "paragraph",
+              "text": "Performans, denge ve uzun vadeli sağlık için. Erkek sağlığı; enerji seviyeleri, metabolik denge, uyku, stres, kas sağlığı, kardiyovasküler riskler ve hormonal değerlendirme gibi birçok faktörü içerir. Kişisel hedeflerinize ve tıbbi ihtiyaçlarınıza göre planlanan programlarla; daha güçlü, daha dengeli ve daha sürdürülebilir bir yaşam performansı desteklenir."
+            }
+          ]
+        },
+        {
+          "title": "Kişisel Sağlık Danışmanlığı",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Sağlık yolculuğunuzun her aşamasında size özel bir ekip yanınızda. Kişisel Sağlık Danışmanlığı hizmeti; randevu planlamasından sonuç takibine, uzman görüşmelerinden kişisel program koordinasyonuna kadar tüm süreci sizin için kolaylaştırır."
+            },
+            {
+              "type": "paragraph",
+              "text": "Gizlilik, konfor ve zaman yönetimi; hizmet anlayışımızın merkezindedir. Çünkü sağlık hizmeti yalnızca doğru tıbbi yaklaşımı değil, kusursuz bir deneyimi de hak eder."
+            }
+          ]
+        },
+        {
+          "title": "Maxx Royal Bodrum'da Sağlık ve Yenilenme",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Ege'nin dinginliği, Maxx Royal Bodrum'un ayrıcalıklı atmosferi ve Dr. Otgen Clinic'in tıbbi yaklaşımı; bedeninizle ve zihninizle yeniden bağ kurmanız için tasarlandı."
+            },
+            {
+              "type": "paragraph",
+              "text": "Burada sağlık, günlük hayatın dışında kalan bir görev değildir. Sağlık; daha iyi hissetmenin, daha yüksek performansın, daha kaliteli yaş almanın ve hayatın her anını daha güçlü yaşamanın temelidir."
+            }
+          ]
+        },
+        {
+          "title": "Gelecekteki En Değerli Yatırımınız: Siz.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Dr. Otgen Clinic at Maxx Royal Bodrum'da sağlığınız, tek bir check-up ile sınırlı kalmaz. Size özel sağlık verileri, uzman hekim değerlendirmeleri, yaşam tarzı önerileri ve düzenli takip ile uzun vadeli bir iyi yaşam ve uzun ömür yolculuğuna dönüşür."
+            },
+            {
+              "type": "subheading",
+              "text": "Daha uzun yaşamak için değil. Daha iyi yaşamak için."
+            },
+            {
+              "type": "paragraph",
+              "text": "Kişisel uzun ve sağlıklı yaşam programınızı keşfetmek için bizimle iletişime geçin."
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Maxx Royal Bodrum'da premium wellness deneyimi",
+        "Kişiselleştirilmiş koruyucu sağlık ve longevity programları",
+        "Uzman hekim değerlendirmesiyle bütüncül sağlık yol haritası",
+        "Gizlilik, konfor ve kişisel sağlık danışmanlığı"
+      ],
+      "suitableIntro": "",
+      "suitableFor": [
+        "Uzun vadeli sağlık ve yaşam kalitesini önceliklendiren kişiler",
+        "Koruyucu tıp ve kişiselleştirilmiş wellness deneyimi arayan misafirler",
+        "Metabolik denge, performans ve yenilenme hedefleyen bireyler",
+        "Maxx Royal Bodrum'da premium sağlık hizmeti planlayanlar"
+      ],
+      "quickFacts": [
+        {
+          "label": "Lokasyon",
+          "value": "Maxx Royal Bodrum"
+        },
+        {
+          "label": "Yaklaşım",
+          "value": "Kişiselleştirilmiş koruyucu sağlık"
+        },
+        {
+          "label": "Program",
+          "value": "Longevity ve wellness"
+        },
+        {
+          "label": "Deneyim",
+          "value": "Premium tıbbi bakım ve danışmanlık"
+        }
+      ],
+      "processTitle": "Sağlık Yolculuğunuz",
+      "process": [
+        {
+          "title": "Kapsamlı Değerlendirme",
+          "description": "Yaşam tarzı, aile öyküsü, metabolik sağlık, kardiyovasküler riskler, uyku, stres ve performans hedefleriniz uzman hekim değerlendirmesiyle analiz edilir."
+        },
+        {
+          "title": "Kişisel Sağlık Yol Haritası",
+          "description": "Laboratuvar, vücut kompozisyonu ve risk analizleri sonucunda size özel, uygulanabilir bir sağlık planı oluşturulur."
+        },
+        {
+          "title": "Program ve Takip",
+          "description": "Seçilen longevity programı Maxx Royal Bodrum'da uygulanır; kişisel sağlık danışmanlığı ile süreç boyunca koordine edilir."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Maxx Royal Bodrum'daki program kimler için uygundur?",
+          "answer": "Koruyucu sağlık, longevity ve kişiselleştirilmiş wellness deneyimi arayan; klinik değerlendirme sonrası uygun bulunan misafirler için planlanır."
+        },
+        {
+          "question": "Program ne kadar sürer?",
+          "answer": "Süre, seçilen değerlendirme ve wellness programının kapsamına göre değişir. İlk konsültasyonda size özel bir zaman planı sunulur."
+        },
+        {
+          "question": "Kişisel Sağlık Danışmanlığı neleri kapsar?",
+          "answer": "Randevu planlaması, sonuç takibi, uzman görüşmeleri ve program koordinasyonunu kapsayan bütüncül bir destek hizmetidir."
         }
       ]
     }
