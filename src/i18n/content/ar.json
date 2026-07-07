@@ -6302,191 +6302,191 @@
       },
       "galleryTitle": "لحظات من Maxx Royal Bodrum",
       "overview": [
-        "Dr. Otgen Clinic at Maxx Royal Bodrum; modern tıbbı, kişiselleştirilmiş koruyucu sağlık yaklaşımını ve dünyaca ünlü Maxx Royal deneyimini bir araya getirir.",
-        "Burada amaç yalnızca iyi hissetmek değildir. Amaç; daha uzun, daha güçlü, daha dengeli ve daha kaliteli bir yaşam için vücudunuzu anlamak, riskleri erken fark etmek ve size özel bir sağlık planı oluşturmaktır.",
-        "Her misafirimiz için yaşam tarzı, aile öyküsü, metabolik sağlık, kardiyovasküler riskler, uyku kalitesi, stres düzeyi, fiziksel performans ve kişisel hedefler bütüncül olarak değerlendirilir. Çünkü gerçek lüks, sağlığınızı şansa bırakmamaktır."
+        "تجمع Dr. Otgen Clinic at Maxx Royal Bodrum بين الطب الحديث ونهج الصحة الوقائية المخصص وتجربة Maxx Royal المعروفة عالميًا.",
+        "الهدف هنا ليس مجرد الشعور بالراحة. الهدف هو فهم جسمك واكتشاف المخاطر مبكرًا ووضع خطة صحية مخصصة لك من أجل حياة أطول وأقوى وأكثر توازنًا وأعلى جودة.",
+        "يُقيَّم لكل ضيف نمط الحياة والتاريخ العائلي والصحة الأيضية والمخاطر القلبية الوعائية وجودة النوم ومستوى التوتر والأداء البدني والأهداف الشخصية بشكل شامل. لأن الرفاهية الحقيقية هي ألا تترك صحتك للصدفة."
       ],
       "sections": [
         {
-          "title": "Kişisel Sağlık Yol Haritanız",
+          "title": "خارطة طريقك الصحية الشخصية",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Dr. Otgen Clinic'te her program, uzman hekim değerlendirmesiyle başlar."
+              "text": "في Dr. Otgen Clinic يبدأ كل برنامج بتقييم من طبيب متخصص."
             },
             {
               "type": "paragraph",
-              "text": "Kapsamlı sağlık analizleri, ileri düzey laboratuvar değerlendirmeleri, vücut kompozisyonu ölçümleri, metabolik risk analizi, kardiyovasküler değerlendirme, uyku ve stres taramaları; ihtiyaçlarınıza göre planlanan kişisel sağlık yol haritasının temelini oluşturur."
+              "text": "تشكّل التحليلات الصحية الشاملة والتقييمات المخبرية المتقدمة وقياسات تكوين الجسم وتحليل المخاطر الأيضية والتقييم القلبي الوعائي وفحوصات النوم والتوتر أساس خارطة طريق صحية شخصية مخطط لها وفق احتياجاتك."
             },
             {
               "type": "paragraph",
-              "text": "Sonuçlarınız yalnızca raporlanmaz. Hekimlerimiz tarafından yorumlanır, öncelikleriniz belirlenir ve yaşamınıza uygulanabilir bir plan hazırlanır. Sağlığınızla ilgili tüm önemli veriler, tek bir merkezde ve size özel bir sistem içinde ele alınır."
+              "text": "لا يتم الإبلاغ عن نتائجك فحسب، بل يفسّرها أطباؤنا وتُحدَّد أولوياتك وتُعدّ خطة قابلة للتطبيق في حياتك. تُدار جميع البيانات المهمة المتعلقة بصحتك في مركز واحد ضمن نظام مخصص لك."
             }
           ]
         },
         {
-          "title": "Uzun ve Sağlıklı Yaşam Programları",
+          "title": "برامج الحياة الطويلة والصحية",
           "blocks": [
             {
               "type": "subheading",
-              "text": "Yönetici Sağlık Değerlendirmesi"
+              "text": "التقييم الصحي التنفيذي"
             },
             {
               "type": "paragraph",
-              "text": "Zamanı değerli olanlar için tasarlanan kapsamlı sağlık değerlendirme programı. Kısa süre içinde genel sağlık durumunuz, metabolik dengeniz, kalp-damar riskleriniz, vücut kompozisyonunuz, uyku kaliteniz ve yaşam tarzı faktörleriniz uzman ekip tarafından değerlendirilir. Program sonunda size özel bir sağlık raporu ve önümüzdeki 12 aya yönelik uygulanabilir bir yaşam planı sunulur."
+              "text": "برنامج تقييم صحي شامل مصمم لمن وقتهم ثمين. في وقت قصير يقيّم فريق من الخبراء حالتك الصحية العامة وتوازنك الأيضي ومخاطرك القلبية الوعائية وتكوين جسمك وجودة نومك وعوامل نمط حياتك. في نهاية البرنامج تحصل على تقرير صحي مخصص وخطة حياة قابلة للتطبيق للأشهر الـ12 القادمة."
             },
             {
               "type": "subheading",
-              "text": "Metabolik Denge ve Kilo Yönetimi"
+              "text": "التوازن الأيضي وإدارة الوزن"
             },
             {
               "type": "paragraph",
-              "text": "Sadece kilo vermek değil, sağlıklı bir metabolik denge kurmak için. Kilo yönetimi; kan şekeri dengesi, insülin direnci, kas kütlesi, yağ oranı, beslenme alışkanlıkları, uyku ve stres ile birlikte değerlendirilir. Hekim, diyetisyen ve performans uzmanlarından oluşan ekip; hedeflerinize uygun, sürdürülebilir ve kişiselleştirilmiş bir program oluşturur."
+              "text": "ليس فقدان الوزن فحسب، بل إرساء توازن أيضي صحي. تُقيَّم إدارة الوزن مع توازن سكر الدم ومقاومة الإنسولين والكتلة العضلية ونسبة الدهون والعادات الغذائية والنوم والتوتر. يضع فريق من الأطباء وأخصائيي التغذية وخبراء الأداء برنامجًا مستدامًا ومخصصًا يتوافق مع أهدافك."
             },
             {
               "type": "subheading",
-              "text": "Kardiyovasküler Performans"
+              "text": "الأداء القلبي الوعائي"
             },
             {
               "type": "paragraph",
-              "text": "Kalbiniz için daha güçlü bir gelecek. Kardiyovasküler sağlık, uzun ve aktif bir yaşamın merkezindedir. Kişisel risk faktörlerinize göre planlanan değerlendirmelerle; kalp-damar sağlığınız, tansiyon dengeniz, kolesterol profiliniz, egzersiz kapasiteniz ve yaşam tarzı alışkanlıklarınız ele alınır."
+              "text": "مستقبل أقوى لقلبك. تقع الصحة القلبية الوعائية في صميم حياة طويلة ونشطة. من خلال تقييمات مخطط لها وفق عوامل الخطر الشخصية لديك، تتم مراعاة صحة القلب والأوعية الدموية وتوازن ضغط الدم وملف الكوليسترول والقدرة على ممارسة الرياضة وعادات نمط الحياة."
             },
             {
               "type": "subheading",
-              "text": "Uyku, Stres ve Yenilenme"
+              "text": "النوم والتوتر والتعافي"
             },
             {
               "type": "paragraph",
-              "text": "Daha iyi uyku, daha net bir zihin ve daha yüksek yaşam kalitesi. Uyku kalitesi, stres yükü, tükenmişlik riski ve günlük enerji düzeyi; uzman değerlendirmesiyle ele alınır. Kişisel yaşam ritminize uygun, uygulanabilir iyileşme ve yenilenme stratejileri geliştirilir."
+              "text": "نوم أفضل وذهن أصفى وجودة حياة أعلى. تتم معالجة جودة النوم وعبء التوتر وخطر الإرهاق ومستوى الطاقة اليومي عبر تقييم متخصص. وتُطوَّر استراتيجيات تعافٍ وتجديد قابلة للتطبيق تناسب إيقاع حياتك الشخصي."
             },
             {
               "type": "subheading",
-              "text": "Güç, Hareket Kabiliyeti ve Aktif Yaş Alma"
+              "text": "القوة والقدرة على الحركة والشيخوخة النشطة"
             },
             {
               "type": "paragraph",
-              "text": "Yaş almak değil, güçlü kalmak. Kas kütlesi, denge, hareket kabiliyeti, eklem sağlığı ve fiziksel dayanıklılık; yaşam kalitesinin en önemli belirleyicilerindendir. Kişiye özel hareket, kuvvet, mobilite ve rehabilitasyon programlarıyla; günlük yaşamda daha enerjik, daha güçlü ve daha özgür hissetmeniz hedeflenir."
+              "text": "ليس مجرد التقدم في العمر، بل البقاء قويًا. تُعد الكتلة العضلية والتوازن والقدرة على الحركة وصحة المفاصل والقدرة على التحمل البدني من أهم محددات جودة الحياة. من خلال برامج مخصصة للحركة والقوة والمرونة وإعادة التأهيل، يُستهدف أن تشعر بمزيد من النشاط والقوة والحرية في حياتك اليومية."
             },
             {
               "type": "subheading",
-              "text": "Kadın Sağlığı ve Menopoz"
+              "text": "صحة المرأة وسن اليأس"
             },
             {
               "type": "paragraph",
-              "text": "Hayatın her döneminde bütüncül kadın sağlığı. Hormonal değişimler, uyku, enerji seviyesi, kemik sağlığı, metabolizma, kas kütlesi ve ruh hali; kadın sağlığının birbirine bağlı parçalarıdır. Dr. Otgen Clinic'te kadınların ihtiyaçları; uzman hekim değerlendirmesi, kişiselleştirilmiş takip ve yaşam tarzı yaklaşımıyla ele alınır."
+              "text": "صحة نسائية شاملة في كل مرحلة من مراحل الحياة. التغيرات الهرمونية والنوم ومستوى الطاقة وصحة العظام والأيض والكتلة العضلية والمزاج أجزاء مترابطة من صحة المرأة. في Dr. Otgen Clinic تُعالَج احتياجات النساء بتقييم من طبيب متخصص ومتابعة مخصصة ونهج قائم على نمط الحياة."
             },
             {
               "type": "subheading",
-              "text": "Erkek Sağlığı ve Performansı"
+              "text": "صحة الرجل وأداؤه"
             },
             {
               "type": "paragraph",
-              "text": "Performans, denge ve uzun vadeli sağlık için. Erkek sağlığı; enerji seviyeleri, metabolik denge, uyku, stres, kas sağlığı, kardiyovasküler riskler ve hormonal değerlendirme gibi birçok faktörü içerir. Kişisel hedeflerinize ve tıbbi ihtiyaçlarınıza göre planlanan programlarla; daha güçlü, daha dengeli ve daha sürdürülebilir bir yaşam performansı desteklenir."
+              "text": "من أجل الأداء والتوازن والصحة على المدى الطويل. تشمل صحة الرجل عوامل عديدة مثل مستويات الطاقة والتوازن الأيضي والنوم والتوتر وصحة العضلات والمخاطر القلبية الوعائية والتقييم الهرموني. من خلال برامج مخطط لها وفق أهدافك الشخصية واحتياجاتك الطبية، يُدعم أداء حياة أقوى وأكثر توازنًا واستدامة."
             }
           ]
         },
         {
-          "title": "Kişisel Sağlık Danışmanlığı",
+          "title": "الاستشارة الصحية الشخصية",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Sağlık yolculuğunuzun her aşamasında size özel bir ekip yanınızda. Kişisel Sağlık Danışmanlığı hizmeti; randevu planlamasından sonuç takibine, uzman görüşmelerinden kişisel program koordinasyonuna kadar tüm süreci sizin için kolaylaştırır."
+              "text": "في كل مرحلة من رحلتك الصحية، هناك فريق مخصص إلى جانبك. تبسّط خدمة الاستشارة الصحية الشخصية العملية بأكملها من أجلك، من تخطيط المواعيد إلى متابعة النتائج، ومن استشارات الخبراء إلى تنسيق برنامجك الشخصي."
             },
             {
               "type": "paragraph",
-              "text": "Gizlilik, konfor ve zaman yönetimi; hizmet anlayışımızın merkezindedir. Çünkü sağlık hizmeti yalnızca doğru tıbbi yaklaşımı değil, kusursuz bir deneyimi de hak eder."
+              "text": "الخصوصية والراحة وإدارة الوقت في صميم فلسفتنا في الخدمة. لأن الرعاية الصحية تستحق ليس فقط النهج الطبي الصحيح، بل أيضًا تجربة لا تشوبها شائبة."
             }
           ]
         },
         {
-          "title": "Maxx Royal Bodrum'da Sağlık ve Yenilenme",
+          "title": "الصحة والتجدد في Maxx Royal Bodrum",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Ege'nin dinginliği, Maxx Royal Bodrum'un ayrıcalıklı atmosferi ve Dr. Otgen Clinic'in tıbbi yaklaşımı; bedeninizle ve zihninizle yeniden bağ kurmanız için tasarlandı."
+              "text": "صُمم هدوء بحر إيجه والأجواء المميزة لـ Maxx Royal Bodrum والنهج الطبي لـ Dr. Otgen Clinic لمساعدتك على إعادة التواصل مع جسدك وعقلك."
             },
             {
               "type": "paragraph",
-              "text": "Burada sağlık, günlük hayatın dışında kalan bir görev değildir. Sağlık; daha iyi hissetmenin, daha yüksek performansın, daha kaliteli yaş almanın ve hayatın her anını daha güçlü yaşamanın temelidir."
+              "text": "هنا الصحة ليست مهمة تبقى خارج الحياة اليومية. الصحة هي أساس الشعور بتحسّن وأداء أعلى وشيخوخة أعلى جودة وعيش كل لحظة من الحياة بقوة أكبر."
             }
           ]
         },
         {
-          "title": "Gelecekteki En Değerli Yatırımınız: Siz.",
+          "title": "أثمن استثمار لمستقبلك: أنت.",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Dr. Otgen Clinic at Maxx Royal Bodrum'da sağlığınız, tek bir check-up ile sınırlı kalmaz. Size özel sağlık verileri, uzman hekim değerlendirmeleri, yaşam tarzı önerileri ve düzenli takip ile uzun vadeli bir iyi yaşam ve uzun ömür yolculuğuna dönüşür."
+              "text": "في Dr. Otgen Clinic at Maxx Royal Bodrum لا تقتصر صحتك على فحص واحد. مع بيانات صحية مخصصة وتقييمات من أطباء متخصصين وتوصيات لنمط الحياة ومتابعة منتظمة، تتحول إلى رحلة طويلة الأمد نحو العافية وطول العمر."
             },
             {
               "type": "subheading",
-              "text": "Daha uzun yaşamak için değil. Daha iyi yaşamak için."
+              "text": "ليس لتعيش أطول. بل لتعيش أفضل."
             },
             {
               "type": "paragraph",
-              "text": "Kişisel uzun ve sağlıklı yaşam programınızı keşfetmek için bizimle iletişime geçin."
+              "text": "تواصل معنا لاكتشاف برنامجك الشخصي للحياة الطويلة والصحية."
             }
           ]
         }
       ],
       "highlights": [
-        "Maxx Royal Bodrum'da premium wellness deneyimi",
-        "Kişiselleştirilmiş koruyucu sağlık ve longevity programları",
-        "Uzman hekim değerlendirmesiyle bütüncül sağlık yol haritası",
-        "Gizlilik, konfor ve kişisel sağlık danışmanlığı"
+        "تجربة عافية راقية في Maxx Royal Bodrum",
+        "برامج مخصصة للصحة الوقائية وطول العمر",
+        "خارطة طريق صحية شاملة بتقييم من طبيب متخصص",
+        "الخصوصية والراحة والاستشارة الصحية الشخصية"
       ],
       "suitableIntro": "",
       "suitableFor": [
-        "Uzun vadeli sağlık ve yaşam kalitesini önceliklendiren kişiler",
-        "Koruyucu tıp ve kişiselleştirilmiş wellness deneyimi arayan misafirler",
-        "Metabolik denge, performans ve yenilenme hedefleyen bireyler",
-        "Maxx Royal Bodrum'da premium sağlık hizmeti planlayanlar"
+        "من يعطون الأولوية للصحة وجودة الحياة على المدى الطويل",
+        "الضيوف الباحثون عن الطب الوقائي وتجربة عافية مخصصة",
+        "الأفراد الذين يستهدفون التوازن الأيضي والأداء والتجدد",
+        "من يخططون لرعاية صحية راقية في Maxx Royal Bodrum"
       ],
       "quickFacts": [
         {
-          "label": "Lokasyon",
+          "label": "الموقع",
           "value": "Maxx Royal Bodrum"
         },
         {
-          "label": "Yaklaşım",
-          "value": "Kişiselleştirilmiş koruyucu sağlık"
+          "label": "النهج",
+          "value": "صحة وقائية مخصصة"
         },
         {
-          "label": "Program",
-          "value": "Longevity ve wellness"
+          "label": "البرنامج",
+          "value": "طول العمر والعافية"
         },
         {
-          "label": "Deneyim",
-          "value": "Premium tıbbi bakım ve danışmanlık"
+          "label": "التجربة",
+          "value": "رعاية طبية واستشارة راقية"
         }
       ],
       "processTitle": "رحلتك الصحية",
       "process": [
         {
-          "title": "Kapsamlı Değerlendirme",
-          "description": "Yaşam tarzı, aile öyküsü, metabolik sağlık, kardiyovasküler riskler, uyku, stres ve performans hedefleriniz uzman hekim değerlendirmesiyle analiz edilir."
+          "title": "تقييم شامل",
+          "description": "يُحلَّل نمط حياتك وتاريخك العائلي وصحتك الأيضية ومخاطرك القلبية الوعائية ونومك وتوترك وأهداف الأداء لديك عبر تقييم من طبيب متخصص."
         },
         {
-          "title": "Kişisel Sağlık Yol Haritası",
-          "description": "Laboratuvar, vücut kompozisyonu ve risk analizleri sonucunda size özel, uygulanabilir bir sağlık planı oluşturulur."
+          "title": "خارطة طريق صحية شخصية",
+          "description": "بعد تحاليل المختبر وتكوين الجسم وتحليل المخاطر، تُوضع لك خطة صحية مخصصة قابلة للتطبيق."
         },
         {
-          "title": "Program ve Takip",
-          "description": "Seçilen longevity programı Maxx Royal Bodrum'da uygulanır; kişisel sağlık danışmanlığı ile süreç boyunca koordine edilir."
+          "title": "البرنامج والمتابعة",
+          "description": "يُطبَّق برنامج طول العمر المختار في Maxx Royal Bodrum ويُنسَّق طوال العملية عبر الاستشارة الصحية الشخصية."
         }
       ],
       "faqs": [
         {
-          "question": "Maxx Royal Bodrum'daki program kimler için uygundur?",
-          "answer": "Koruyucu sağlık, longevity ve kişiselleştirilmiş wellness deneyimi arayan; klinik değerlendirme sonrası uygun bulunan misafirler için planlanır."
+          "question": "لمن يناسب البرنامج في Maxx Royal Bodrum؟",
+          "answer": "يُخطَّط للضيوف الباحثين عن الصحة الوقائية وطول العمر وتجربة عافية مخصصة، ممن تثبت ملاءمتهم بعد التقييم السريري."
         },
         {
-          "question": "Program ne kadar sürer?",
-          "answer": "Süre, seçilen değerlendirme ve wellness programının kapsamına göre değişir. İlk konsültasyonda size özel bir zaman planı sunulur."
+          "question": "كم تدوم مدة البرنامج؟",
+          "answer": "تختلف المدة حسب نطاق برنامج التقييم والعافية المختار. تُقدَّم لك خطة زمنية مخصصة في الاستشارة الأولى."
         },
         {
-          "question": "Kişisel Sağlık Danışmanlığı neleri kapsar?",
-          "answer": "Randevu planlaması, sonuç takibi, uzman görüşmeleri ve program koordinasyonunu kapsayan bütüncül bir destek hizmetidir."
+          "question": "ماذا تشمل الاستشارة الصحية الشخصية؟",
+          "answer": "هي خدمة دعم شاملة تغطي تخطيط المواعيد ومتابعة النتائج واستشارات الخبراء وتنسيق البرنامج."
         }
       ]
     }
