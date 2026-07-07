@@ -543,6 +543,17 @@
       "destination": "/_seo/tr/service/glutathione.html"
     },
     {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "maxx-royal-wellness-bodrum"
+        }
+      ],
+      "destination": "/_seo/tr/service/maxx-royal-wellness-bodrum.html"
+    },
+    {
       "source": "/en/service.html",
       "has": [
         {
@@ -1036,6 +1047,17 @@
         }
       ],
       "destination": "/_seo/en/service/glutathione.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "maxx-royal-wellness-bodrum"
+        }
+      ],
+      "destination": "/_seo/en/service/maxx-royal-wellness-bodrum.html"
     },
     {
       "source": "/ar/service.html",
@@ -1533,6 +1555,17 @@
       "destination": "/_seo/ar/service/glutathione.html"
     },
     {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "maxx-royal-wellness-bodrum"
+        }
+      ],
+      "destination": "/_seo/ar/service/maxx-royal-wellness-bodrum.html"
+    },
+    {
       "source": "/es/service.html",
       "has": [
         {
@@ -2026,6 +2059,17 @@
         }
       ],
       "destination": "/_seo/es/service/glutathione.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "maxx-royal-wellness-bodrum"
+        }
+      ],
+      "destination": "/_seo/es/service/maxx-royal-wellness-bodrum.html"
     },
     {
       "source": "/fr/service.html",
@@ -2523,6 +2567,17 @@
       "destination": "/_seo/fr/service/glutathione.html"
     },
     {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "maxx-royal-wellness-bodrum"
+        }
+      ],
+      "destination": "/_seo/fr/service/maxx-royal-wellness-bodrum.html"
+    },
+    {
       "source": "/it/service.html",
       "has": [
         {
@@ -3016,6 +3071,17 @@
         }
       ],
       "destination": "/_seo/it/service/glutathione.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "maxx-royal-wellness-bodrum"
+        }
+      ],
+      "destination": "/_seo/it/service/maxx-royal-wellness-bodrum.html"
     },
     {
       "source": "/ru/service.html",
@@ -3513,6 +3579,17 @@
       "destination": "/_seo/ru/service/glutathione.html"
     },
     {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "maxx-royal-wellness-bodrum"
+        }
+      ],
+      "destination": "/_seo/ru/service/maxx-royal-wellness-bodrum.html"
+    },
+    {
       "source": "/de/service.html",
       "has": [
         {
@@ -4006,6 +4083,17 @@
         }
       ],
       "destination": "/_seo/de/service/glutathione.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "maxx-royal-wellness-bodrum"
+        }
+      ],
+      "destination": "/_seo/de/service/maxx-royal-wellness-bodrum.html"
     },
     {
       "source": "/:locale(tr|en|ar|es|fr|it|ru|de)/service.html",

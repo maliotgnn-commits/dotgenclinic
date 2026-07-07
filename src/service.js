@@ -220,6 +220,41 @@ function getProcessSectionTitle(page) {
   return page.processTitle ?? t('Tedavi Süreci');
 }
 
+function renderGalleryCarousel(page) {
+  const gallery = Array.isArray(page.images?.gallery) ? page.images.gallery.filter(Boolean) : [];
+  if (gallery.length < 2) return '';
+
+  const slides = gallery
+    .map(
+      (src, index) => `
+        <li class="sv-gallery-slide" role="group" aria-roledescription="${escapeHtml(t('Görsel'))}" aria-label="${index + 1} / ${gallery.length}">
+          <img src="${src}" alt="${escapeHtml(page.title)} ${index + 1}" loading="${index === 0 ? 'eager' : 'lazy'}" decoding="async" />
+        </li>
+      `,
+    )
+    .join('');
+  const dots = gallery
+    .map(
+      (_src, index) => `<button type="button" class="sv-gallery-dot${index === 0 ? ' is-active' : ''}" data-gallery-index="${index}" aria-label="${index + 1}"></button>`,
+    )
+    .join('');
+
+  return `
+    <div class="sv-gallery-wrap">
+      <div class="sv-gallery" data-gallery>
+        <ul class="sv-gallery-track" data-gallery-track>${slides}</ul>
+        <button type="button" class="sv-gallery-nav sv-gallery-prev" data-gallery-prev aria-label="${escapeHtml(t('Önceki'))}">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button type="button" class="sv-gallery-nav sv-gallery-next" data-gallery-next aria-label="${escapeHtml(t('Sonraki'))}">
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" stroke="currentColor" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="sv-gallery-dots" data-gallery-dots>${dots}</div>
+    </div>
+  `;
+}
+
 function renderPage(currentPage, relatedPages) {
   document.title = `${currentPage.title} | Dr Otgen Clinic`;
 
@@ -261,12 +296,12 @@ function renderPage(currentPage, relatedPages) {
       <section class="sv-section">
         <div class="container sv-split">
           <div class="sv-image-col">
-            <img
+            ${renderGalleryCarousel(currentPage) || `<img
               src="${currentPage.images.content}"
               alt="${escapeHtml(currentPage.title)}"
               loading="lazy"
               decoding="async"
-            />
+            />`}
           </div>
           <div class="sv-text-col">
             <h2>${escapeHtml(t('Genel Bakış'))}</h2>
@@ -350,6 +385,63 @@ function initRelatedCardNavigation() {
   });
 }
 
+function initGalleryCarousel() {
+  const gallery = document.querySelector('[data-gallery]');
+  if (!gallery) return;
+
+  const track = gallery.querySelector('[data-gallery-track]');
+  const slides = Array.from(gallery.querySelectorAll('.sv-gallery-slide'));
+  const prevBtn = gallery.querySelector('[data-gallery-prev]');
+  const nextBtn = gallery.querySelector('[data-gallery-next]');
+  const dots = Array.from(document.querySelectorAll('.sv-gallery-dot'));
+  if (!track || slides.length < 2) return;
+
+  let index = 0;
+
+  const update = () => {
+    track.style.transform = `translateX(${document.documentElement.dir === 'rtl' ? '' : '-'}${index * 100}%)`;
+    dots.forEach((dot, dotIndex) => dot.classList.toggle('is-active', dotIndex === index));
+  };
+
+  const goTo = (next) => {
+    index = (next + slides.length) % slides.length;
+    update();
+  };
+
+  prevBtn?.addEventListener('click', () => goTo(index - 1));
+  nextBtn?.addEventListener('click', () => goTo(index + 1));
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => goTo(Number(dot.dataset.galleryIndex)));
+  });
+
+  let startX = 0;
+  let isDragging = false;
+  const onStart = (clientX) => {
+    startX = clientX;
+    isDragging = true;
+  };
+  const onEnd = (clientX) => {
+    if (!isDragging) return;
+    isDragging = false;
+    const delta = clientX - startX;
+    const rtl = document.documentElement.dir === 'rtl';
+    if (Math.abs(delta) < 40) return;
+    const forward = rtl ? delta > 0 : delta < 0;
+    goTo(index + (forward ? 1 : -1));
+  };
+
+  gallery.addEventListener('touchstart', (event) => onStart(event.touches[0].clientX), { passive: true });
+  gallery.addEventListener('touchend', (event) => onEnd(event.changedTouches[0].clientX));
+  gallery.addEventListener('pointerdown', (event) => {
+    if (event.pointerType === 'mouse') onStart(event.clientX);
+  });
+  gallery.addEventListener('pointerup', (event) => {
+    if (event.pointerType === 'mouse') onEnd(event.clientX);
+  });
+
+  update();
+}
+
 function bootstrapServicePage() {
   const requestedSlug = params.get('slug');
   const currentPage = requestedSlug ? pagesBySlug[requestedSlug] : null;
@@ -365,6 +457,7 @@ function bootstrapServicePage() {
   initSiteHeader(document, { trackScroll: true });
   initLanguageSwitchers();
   initRelatedCardNavigation();
+  initGalleryCarousel();
 }
 
 bootstrapServicePage();

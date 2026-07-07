@@ -41,12 +41,12 @@
       "method": "Minimally invasive aesthetic treatment protocols"
     },
     "longevity": {
-      "label": "Functional Health",
-      "heroTag": "Functional Health",
+      "label": "Longevity",
+      "heroTag": "Longevity",
       "duration": "30-90 minutes",
       "sessionModel": "Program based periodic sessions",
       "recovery": "same day",
-      "method": "Personalized functional health and supportive care protocols"
+      "method": "Personalized longevity, preventive health and wellness protocols"
     }
   },
   "categoryOrder": [
@@ -691,17 +691,17 @@
     {
       "category": "corporate",
       "slug": "production",
-      "navAppendOnly": true,
-      "images": {
-        "hero": "/images/production/production-hero.png",
-        "content": "/images/production/mert-can-director.png"
-      },
       "navLabel": "Production",
+      "navAppendOnly": true,
       "title": "Dr Otgen Clinic Production",
       "categoryLabel": "Corporate",
       "heroTag": "Corporate Information",
       "heroSubtitle": "Health and science stories told through the language of cinema",
       "summary": "Dr Otgen Clinic also communicates its work in health and science through creative production projects; our short films bring human stories together with a powerful cinematic language.",
+      "images": {
+        "hero": "/images/production/production-hero.png",
+        "content": "/images/production/mert-can-director.png"
+      },
       "overview": [
         "Dr Otgen Clinic also tells its work in health and science through creative production projects. Our short film projects, directed by Mert Can, bring together human stories, awareness themes, and social messages through a strong cinematic language.",
         "The short films we produce are submitted to prestigious international short film festivals and competitions; the awards we have received in this field carry our creative vision to international platforms.",
@@ -5641,8 +5641,8 @@
       "slug": "healthy-nutrition",
       "navLabel": "Healthy Nutrition",
       "title": "Healthy Nutrition",
-      "categoryLabel": "Functional Health",
-      "heroTag": "Functional Health",
+      "categoryLabel": "Longevity",
+      "heroTag": "Longevity",
       "heroSubtitle": "",
       "summary": "In order to support healthy nutrition, metabolic balance and increase sustainable quality of life; It is planned with a personalized approach based on predictable results and patient safety.",
       "images": {
@@ -5756,8 +5756,8 @@
       "slug": "lpg-treatment",
       "navLabel": "LPG Process",
       "title": "LPG Process",
-      "categoryLabel": "Functional Health",
-      "heroTag": "Functional Health",
+      "categoryLabel": "Longevity",
+      "heroTag": "Longevity",
       "heroSubtitle": "",
       "summary": "LPG treatment aims to support metabolic balance, improve body form and achieve sustainable well-being; It is applied with personalized planning based on predictable results and patient safety.",
       "images": {
@@ -5889,8 +5889,8 @@
       "slug": "ozone-therapy",
       "navLabel": "Ozone Therapy",
       "title": "Ozone Therapy",
-      "categoryLabel": "Functional Health",
-      "heroTag": "Functional Health",
+      "categoryLabel": "Longevity",
+      "heroTag": "Longevity",
       "heroSubtitle": "",
       "summary": "Ozone therapy aims to support metabolic balance and optimize the functions of the immune system; It is planned with a personalized treatment approach that centers on predictable results and patient safety.",
       "images": {
@@ -6027,8 +6027,8 @@
       "slug": "iv-therapies",
       "navLabel": "Intravenous (IV) Treatments",
       "title": "Intravenous (IV) Treatments",
-      "categoryLabel": "Functional Health",
-      "heroTag": "Functional Health",
+      "categoryLabel": "Longevity",
+      "heroTag": "Longevity",
       "heroSubtitle": "",
       "summary": "Intravenous treatments aim to support metabolic balance and achieve sustainable well-being; It is planned with a personalized approach that centers on predictable results and patient safety.",
       "images": {
@@ -6152,8 +6152,8 @@
       "slug": "glutathione",
       "navLabel": "Glutathione Therapy",
       "title": "Glutathione Therapy",
-      "categoryLabel": "Functional Health",
-      "heroTag": "Functional Health",
+      "categoryLabel": "Longevity",
+      "heroTag": "Longevity",
       "heroSubtitle": "",
       "summary": "Glutathione treatment; It is planned with a personalized strategy that centers on metabolic balance and sustainable well-being, predictable results and patient safety.",
       "images": {
@@ -6270,6 +6270,223 @@
         {
           "question": "When will the treatment plan be finalized?",
           "answer": "After clinical evaluation, a personalized plan is created."
+        }
+      ]
+    },
+    {
+      "category": "longevity",
+      "slug": "maxx-royal-wellness-bodrum",
+      "navLabel": "Personalized Wellness Experience in Bodrum",
+      "title": "Personalized Wellness Experience in Bodrum",
+      "categoryLabel": "Longevity",
+      "heroTag": "Dr. Otgen Clinic at Maxx Royal Bodrum",
+      "heroSubtitle": "Longevity, Redefined.",
+      "summary": "The future of your health starts today. We combine modern medicine, personalized preventive health and the world-renowned Maxx Royal experience.",
+      "images": {
+        "hero": "/images/site/pages/maxx-royal-wellness-hero.webp",
+        "content": "/images/site/pages/maxx-royal-wellness-1.webp",
+        "gallery": [
+          "/images/site/pages/maxx-royal-wellness-1.webp",
+          "/images/site/pages/maxx-royal-wellness-2.webp",
+          "/images/site/pages/maxx-royal-wellness-3.webp",
+          "/images/site/pages/maxx-royal-wellness-4.webp",
+          "/images/site/pages/maxx-royal-wellness-5.webp",
+          "/images/site/pages/maxx-royal-wellness-6.webp",
+          "/images/site/pages/maxx-royal-wellness-7.webp",
+          "/images/site/pages/maxx-royal-wellness-8.webp",
+          "/images/site/pages/maxx-royal-wellness-9.webp",
+          "/images/site/pages/maxx-royal-wellness-10.webp",
+          "/images/site/pages/maxx-royal-wellness-11.webp",
+          "/images/site/pages/maxx-royal-wellness-12.webp"
+        ]
+      },
+      "galleryTitle": "Moments from Maxx Royal Bodrum",
+      "overview": [
+        "Dr. Otgen Clinic at Maxx Royal Bodrum brings together modern medicine, a personalized preventive health approach and the world-renowned Maxx Royal experience.",
+        "Here, the goal is not simply to feel good. The goal is to understand your body, detect risks early and build a health plan tailored to you for a longer, stronger, more balanced and higher-quality life.",
+        "For every guest, lifestyle, family history, metabolic health, cardiovascular risks, sleep quality, stress levels, physical performance and personal goals are evaluated holistically. Because true luxury is not leaving your health to chance."
+      ],
+      "sections": [
+        {
+          "title": "Your Personal Health Roadmap",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "At Dr. Otgen Clinic, every program begins with an expert physician evaluation."
+            },
+            {
+              "type": "paragraph",
+              "text": "Comprehensive health analyses, advanced laboratory assessments, body composition measurements, metabolic risk analysis, cardiovascular evaluation, and sleep and stress screenings form the foundation of a personal health roadmap planned around your needs."
+            },
+            {
+              "type": "paragraph",
+              "text": "Your results are not merely reported. They are interpreted by our physicians, your priorities are defined and an actionable plan is prepared for your life. All the important data about your health is handled in a single center within a system dedicated to you."
+            }
+          ]
+        },
+        {
+          "title": "Long and Healthy Life Programs",
+          "blocks": [
+            {
+              "type": "subheading",
+              "text": "Executive Health Assessment"
+            },
+            {
+              "type": "paragraph",
+              "text": "A comprehensive health assessment program designed for those whose time is precious. In a short time, your general health status, metabolic balance, cardiovascular risks, body composition, sleep quality and lifestyle factors are evaluated by an expert team. At the end of the program you receive a personalized health report and an actionable life plan for the next 12 months."
+            },
+            {
+              "type": "subheading",
+              "text": "Metabolic Balance and Weight Management"
+            },
+            {
+              "type": "paragraph",
+              "text": "Not just about losing weight, but about establishing a healthy metabolic balance. Weight management is evaluated together with blood sugar balance, insulin resistance, muscle mass, body fat ratio, nutritional habits, sleep and stress. A team of physicians, dietitians and performance specialists creates a sustainable, personalized program aligned with your goals."
+            },
+            {
+              "type": "subheading",
+              "text": "Cardiovascular Performance"
+            },
+            {
+              "type": "paragraph",
+              "text": "A stronger future for your heart. Cardiovascular health is at the center of a long and active life. With assessments planned according to your personal risk factors, your heart health, blood pressure balance, cholesterol profile, exercise capacity and lifestyle habits are addressed."
+            },
+            {
+              "type": "subheading",
+              "text": "Sleep, Stress and Recovery"
+            },
+            {
+              "type": "paragraph",
+              "text": "Better sleep, a clearer mind and higher quality of life. Sleep quality, stress load, burnout risk and daily energy levels are addressed through expert evaluation. Applicable recovery and regeneration strategies are developed to fit your personal life rhythm."
+            },
+            {
+              "type": "subheading",
+              "text": "Strength, Mobility and Active Aging"
+            },
+            {
+              "type": "paragraph",
+              "text": "Not just getting older, but staying strong. Muscle mass, balance, mobility, joint health and physical endurance are among the most important determinants of quality of life. With personalized movement, strength, mobility and rehabilitation programs, the goal is to help you feel more energetic, stronger and freer in daily life."
+            },
+            {
+              "type": "subheading",
+              "text": "Women's Health and Menopause"
+            },
+            {
+              "type": "paragraph",
+              "text": "Holistic women's health at every stage of life. Hormonal changes, sleep, energy levels, bone health, metabolism, muscle mass and mood are interconnected parts of women's health. At Dr. Otgen Clinic, women's needs are addressed with expert physician evaluation, personalized follow-up and a lifestyle approach."
+            },
+            {
+              "type": "subheading",
+              "text": "Men's Health and Performance"
+            },
+            {
+              "type": "paragraph",
+              "text": "For performance, balance and long-term health. Men's health involves many factors such as energy levels, metabolic balance, sleep, stress, muscle health, cardiovascular risks and hormonal evaluation. With programs planned according to your personal goals and medical needs, a stronger, more balanced and more sustainable life performance is supported."
+            }
+          ]
+        },
+        {
+          "title": "Personal Health Consultancy",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "A dedicated team is by your side at every stage of your health journey. The Personal Health Consultancy service simplifies the entire process for you, from appointment planning to results follow-up, and from expert consultations to personal program coordination."
+            },
+            {
+              "type": "paragraph",
+              "text": "Privacy, comfort and time management are at the heart of our service philosophy. Because healthcare deserves not only the right medical approach but also a flawless experience."
+            }
+          ]
+        },
+        {
+          "title": "Health and Renewal at Maxx Royal Bodrum",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "The serenity of the Aegean, the privileged atmosphere of Maxx Royal Bodrum and the medical approach of Dr. Otgen Clinic are designed to help you reconnect with your body and mind."
+            },
+            {
+              "type": "paragraph",
+              "text": "Here, health is not a task that stays outside of daily life. Health is the foundation of feeling better, performing higher, aging with greater quality and living every moment of life more strongly."
+            }
+          ]
+        },
+        {
+          "title": "Your Most Valuable Future Investment: You.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "At Dr. Otgen Clinic at Maxx Royal Bodrum, your health is not limited to a single check-up. With personalized health data, expert physician evaluations, lifestyle recommendations and regular follow-up, it turns into a long-term journey of well-being and longevity."
+            },
+            {
+              "type": "subheading",
+              "text": "Not to live longer. To live better."
+            },
+            {
+              "type": "paragraph",
+              "text": "Get in touch with us to discover your personal long and healthy life program."
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Premium wellness experience at Maxx Royal Bodrum",
+        "Personalized preventive health and longevity programs",
+        "A holistic health roadmap with expert physician evaluation",
+        "Privacy, comfort and personal health consultancy"
+      ],
+      "suitableIntro": "",
+      "suitableFor": [
+        "Those who prioritize long-term health and quality of life",
+        "Guests seeking preventive medicine and a personalized wellness experience",
+        "Individuals aiming for metabolic balance, performance and renewal",
+        "Those planning premium healthcare at Maxx Royal Bodrum"
+      ],
+      "quickFacts": [
+        {
+          "label": "Location",
+          "value": "Maxx Royal Bodrum"
+        },
+        {
+          "label": "Approach",
+          "value": "Personalized preventive health"
+        },
+        {
+          "label": "Program",
+          "value": "Longevity and wellness"
+        },
+        {
+          "label": "Experience",
+          "value": "Premium medical care and consultancy"
+        }
+      ],
+      "processTitle": "Your Health Journey",
+      "process": [
+        {
+          "title": "Comprehensive Assessment",
+          "description": "Your lifestyle, family history, metabolic health, cardiovascular risks, sleep, stress and performance goals are analyzed with an expert physician evaluation."
+        },
+        {
+          "title": "Personal Health Roadmap",
+          "description": "Following laboratory, body composition and risk analyses, a personalized, actionable health plan is created for you."
+        },
+        {
+          "title": "Program and Follow-up",
+          "description": "The selected longevity program is delivered at Maxx Royal Bodrum and coordinated throughout the process with personal health consultancy."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Who is the program at Maxx Royal Bodrum suitable for?",
+          "answer": "It is planned for guests seeking preventive health, longevity and a personalized wellness experience who are found suitable after clinical evaluation."
+        },
+        {
+          "question": "How long does the program take?",
+          "answer": "The duration varies according to the scope of the selected assessment and wellness program. A personalized time plan is presented at the first consultation."
+        },
+        {
+          "question": "What does Personal Health Consultancy include?",
+          "answer": "It is a holistic support service covering appointment planning, results follow-up, expert consultations and program coordination."
         }
       ]
     }

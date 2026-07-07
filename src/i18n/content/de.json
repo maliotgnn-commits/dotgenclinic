@@ -41,8 +41,8 @@
       "method": "Minimalinvasive ästhetische Behandlungsprotokolle"
     },
     "longevity": {
-      "label": "Funktionelle Gesundheit",
-      "heroTag": "Funktionelle Gesundheit",
+      "label": "Longevity",
+      "heroTag": "Longevity",
       "duration": "30-90 Minuten",
       "sessionModel": "Programmbasierte regelmäßige Sitzungen",
       "recovery": "am selben Tag",
@@ -100,7 +100,7 @@
           "value": "Persönliche Betreuung mit Fokus auf Patientensicherheit und Qualität"
         },
         {
-          "label": "Konzentrieren Sie sich",
+          "label": "Fokus",
           "value": "Transparente Kommunikation und nachhaltige Entwicklung"
         },
         {
@@ -691,17 +691,17 @@
     {
       "category": "corporate",
       "slug": "production",
-      "navAppendOnly": true,
-      "images": {
-        "hero": "/images/production/production-hero.png",
-        "content": "/images/production/mert-can-director.png"
-      },
       "navLabel": "Produktion",
+      "navAppendOnly": true,
       "title": "Dr Otgen Clinic Produktion",
       "categoryLabel": "Unternehmen",
       "heroTag": "Unternehmensinformationen",
       "heroSubtitle": "Geschichten über Gesundheit und Wissenschaft in der Sprache des Kinos",
       "summary": "Dr Otgen Clinic erzählt seine Arbeit in Gesundheit und Wissenschaft auch durch kreative Produktionsprojekte; unsere Kurzfilme verbinden menschliche Geschichten mit einer starken Filmsprache.",
+      "images": {
+        "hero": "/images/production/production-hero.png",
+        "content": "/images/production/mert-can-director.png"
+      },
       "overview": [
         "Dr Otgen Clinic erzählt seine Arbeit in Gesundheit und Wissenschaft auch durch kreative Produktionsprojekte. Unsere Kurzfilmprojekte unter der Regie von Mert Can verbinden menschliche Geschichten, Bewusstseinsthemen und gesellschaftliche Botschaften mit einer starken Filmsprache.",
         "Die von uns produzierten Kurzfilme werden an renommierte internationale Kurzfilmfestivals und Wettbewerbe eingereicht; die in diesem Bereich gewonnenen Auszeichnungen tragen unsere kreative Vision auf internationale Plattformen.",
@@ -5641,8 +5641,8 @@
       "slug": "healthy-nutrition",
       "navLabel": "Gesunde Ernährung",
       "title": "Gesunde Ernährung",
-      "categoryLabel": "Funktionelle Gesundheit",
-      "heroTag": "Funktionelle Gesundheit",
+      "categoryLabel": "Longevity",
+      "heroTag": "Longevity",
       "heroSubtitle": "",
       "summary": "Um eine gesunde Ernährung, ein ausgeglichenes Stoffwechselgleichgewicht und eine nachhaltige Steigerung der Lebensqualität zu unterstützen; Die Planung erfolgt mit einem personalisierten Ansatz, der auf vorhersehbaren Ergebnissen und der Patientensicherheit basiert.",
       "images": {
@@ -5756,8 +5756,8 @@
       "slug": "lpg-treatment",
       "navLabel": "LPG-Prozess",
       "title": "LPG-Prozess",
-      "categoryLabel": "Funktionelle Gesundheit",
-      "heroTag": "Funktionelle Gesundheit",
+      "categoryLabel": "Longevity",
+      "heroTag": "Longevity",
       "heroSubtitle": "",
       "summary": "Die LPG-Behandlung zielt darauf ab, das Stoffwechselgleichgewicht zu unterstützen, die Körperform zu verbessern und ein nachhaltiges Wohlbefinden zu erreichen. Die Anwendung erfolgt mit personalisierter Planung basierend auf vorhersehbaren Ergebnissen und Patientensicherheit.",
       "images": {
@@ -5889,8 +5889,8 @@
       "slug": "ozone-therapy",
       "navLabel": "Ozontherapie",
       "title": "Ozontherapie",
-      "categoryLabel": "Funktionelle Gesundheit",
-      "heroTag": "Funktionelle Gesundheit",
+      "categoryLabel": "Longevity",
+      "heroTag": "Longevity",
       "heroSubtitle": "",
       "summary": "Ziel der Ozontherapie ist es, das Stoffwechselgleichgewicht zu unterstützen und die Funktionen des Immunsystems zu optimieren. Geplant ist ein personalisierter Behandlungsansatz, bei dem vorhersehbare Ergebnisse und Patientensicherheit im Mittelpunkt stehen.",
       "images": {
@@ -6027,8 +6027,8 @@
       "slug": "iv-therapies",
       "navLabel": "Intravenöse (IV) Behandlungen",
       "title": "Intravenöse (IV) Behandlungen",
-      "categoryLabel": "Funktionelle Gesundheit",
-      "heroTag": "Funktionelle Gesundheit",
+      "categoryLabel": "Longevity",
+      "heroTag": "Longevity",
       "heroSubtitle": "",
       "summary": "Ziel intravenöser Behandlungen ist es, das Stoffwechselgleichgewicht zu unterstützen und ein nachhaltiges Wohlbefinden zu erreichen. Die Planung erfolgt mit einem personalisierten Ansatz, bei dem vorhersehbare Ergebnisse und Patientensicherheit im Mittelpunkt stehen.",
       "images": {
@@ -6152,8 +6152,8 @@
       "slug": "glutathione",
       "navLabel": "Glutathion-Therapie",
       "title": "Glutathion-Therapie",
-      "categoryLabel": "Funktionelle Gesundheit",
-      "heroTag": "Funktionelle Gesundheit",
+      "categoryLabel": "Longevity",
+      "heroTag": "Longevity",
       "heroSubtitle": "",
       "summary": "Glutathion-Behandlung; Die Planung erfolgt mit einer personalisierten Strategie, die sich auf Stoffwechselgleichgewicht und nachhaltiges Wohlbefinden, vorhersehbare Ergebnisse und Patientensicherheit konzentriert.",
       "images": {
@@ -6270,6 +6270,223 @@
         {
           "question": "Wann wird der Behandlungsplan fertiggestellt?",
           "answer": "Nach der klinischen Bewertung wird ein personalisierter Plan erstellt."
+        }
+      ]
+    },
+    {
+      "category": "longevity",
+      "slug": "maxx-royal-wellness-bodrum",
+      "navLabel": "Personalisiertes Wellness-Erlebnis in Bodrum",
+      "title": "Personalisiertes Wellness-Erlebnis in Bodrum",
+      "categoryLabel": "Longevity",
+      "heroTag": "Dr. Otgen Clinic at Maxx Royal Bodrum",
+      "heroSubtitle": "Longevity, neu definiert.",
+      "summary": "Die Zukunft Ihrer Gesundheit beginnt heute. Wir verbinden moderne Medizin, personalisierte Präventivmedizin und das weltbekannte Maxx Royal Erlebnis.",
+      "images": {
+        "hero": "/images/site/pages/maxx-royal-wellness-hero.webp",
+        "content": "/images/site/pages/maxx-royal-wellness-1.webp",
+        "gallery": [
+          "/images/site/pages/maxx-royal-wellness-1.webp",
+          "/images/site/pages/maxx-royal-wellness-2.webp",
+          "/images/site/pages/maxx-royal-wellness-3.webp",
+          "/images/site/pages/maxx-royal-wellness-4.webp",
+          "/images/site/pages/maxx-royal-wellness-5.webp",
+          "/images/site/pages/maxx-royal-wellness-6.webp",
+          "/images/site/pages/maxx-royal-wellness-7.webp",
+          "/images/site/pages/maxx-royal-wellness-8.webp",
+          "/images/site/pages/maxx-royal-wellness-9.webp",
+          "/images/site/pages/maxx-royal-wellness-10.webp",
+          "/images/site/pages/maxx-royal-wellness-11.webp",
+          "/images/site/pages/maxx-royal-wellness-12.webp"
+        ]
+      },
+      "galleryTitle": "Momente aus dem Maxx Royal Bodrum",
+      "overview": [
+        "Dr. Otgen Clinic at Maxx Royal Bodrum vereint moderne Medizin, einen personalisierten präventiven Gesundheitsansatz und das weltbekannte Maxx-Royal-Erlebnis.",
+        "Hier geht es nicht nur darum, sich gut zu fühlen. Das Ziel ist, Ihren Körper zu verstehen, Risiken frühzeitig zu erkennen und einen auf Sie zugeschnittenen Gesundheitsplan für ein längeres, stärkeres, ausgeglicheneres und hochwertigeres Leben zu erstellen.",
+        "Für jeden Gast werden Lebensstil, Familienanamnese, metabolische Gesundheit, kardiovaskuläre Risiken, Schlafqualität, Stressniveau, körperliche Leistungsfähigkeit und persönliche Ziele ganzheitlich bewertet. Denn wahrer Luxus bedeutet, Ihre Gesundheit nicht dem Zufall zu überlassen."
+      ],
+      "sections": [
+        {
+          "title": "Ihr persönlicher Gesundheitsfahrplan",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Bei Dr. Otgen Clinic beginnt jedes Programm mit einer fachärztlichen Untersuchung."
+            },
+            {
+              "type": "paragraph",
+              "text": "Umfassende Gesundheitsanalysen, fortschrittliche Laboruntersuchungen, Messungen der Körperzusammensetzung, metabolische Risikoanalysen, kardiovaskuläre Bewertung sowie Schlaf- und Stress-Screenings bilden die Grundlage eines auf Ihre Bedürfnisse abgestimmten persönlichen Gesundheitsfahrplans."
+            },
+            {
+              "type": "paragraph",
+              "text": "Ihre Ergebnisse werden nicht nur berichtet. Sie werden von unseren Ärzten interpretiert, Ihre Prioritäten werden festgelegt und ein für Ihr Leben umsetzbarer Plan wird erstellt. Alle wichtigen Daten zu Ihrer Gesundheit werden an einem einzigen Zentrum in einem für Sie bestimmten System bearbeitet."
+            }
+          ]
+        },
+        {
+          "title": "Programme für ein langes und gesundes Leben",
+          "blocks": [
+            {
+              "type": "subheading",
+              "text": "Executive Health Assessment"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ein umfassendes Gesundheitsbewertungsprogramm für alle, deren Zeit kostbar ist. In kurzer Zeit werden Ihr allgemeiner Gesundheitszustand, Ihre metabolische Balance, kardiovaskuläre Risiken, Körperzusammensetzung, Schlafqualität und Lebensstilfaktoren von einem Expertenteam bewertet. Am Ende des Programms erhalten Sie einen personalisierten Gesundheitsbericht und einen umsetzbaren Lebensplan für die nächsten 12 Monate."
+            },
+            {
+              "type": "subheading",
+              "text": "Metabolische Balance und Gewichtsmanagement"
+            },
+            {
+              "type": "paragraph",
+              "text": "Es geht nicht nur ums Abnehmen, sondern um eine gesunde metabolische Balance. Das Gewichtsmanagement wird zusammen mit Blutzuckerbalance, Insulinresistenz, Muskelmasse, Körperfettanteil, Ernährungsgewohnheiten, Schlaf und Stress bewertet. Ein Team aus Ärzten, Ernährungsberatern und Leistungsexperten erstellt ein nachhaltiges, personalisiertes Programm, das auf Ihre Ziele abgestimmt ist."
+            },
+            {
+              "type": "subheading",
+              "text": "Kardiovaskuläre Leistungsfähigkeit"
+            },
+            {
+              "type": "paragraph",
+              "text": "Eine stärkere Zukunft für Ihr Herz. Die kardiovaskuläre Gesundheit steht im Zentrum eines langen und aktiven Lebens. Mit Untersuchungen, die auf Ihre persönlichen Risikofaktoren abgestimmt sind, werden Ihre Herz-Kreislauf-Gesundheit, Ihr Blutdruck, Ihr Cholesterinprofil, Ihre Belastungskapazität und Ihre Lebensstilgewohnheiten berücksichtigt."
+            },
+            {
+              "type": "subheading",
+              "text": "Schlaf, Stress und Regeneration"
+            },
+            {
+              "type": "paragraph",
+              "text": "Besserer Schlaf, ein klarerer Geist und höhere Lebensqualität. Schlafqualität, Stressbelastung, Burnout-Risiko und tägliches Energieniveau werden durch eine fachkundige Bewertung berücksichtigt. Es werden umsetzbare Erholungs- und Regenerationsstrategien entwickelt, die zu Ihrem persönlichen Lebensrhythmus passen."
+            },
+            {
+              "type": "subheading",
+              "text": "Kraft, Beweglichkeit und aktives Altern"
+            },
+            {
+              "type": "paragraph",
+              "text": "Nicht nur älter werden, sondern stark bleiben. Muskelmasse, Gleichgewicht, Beweglichkeit, Gelenkgesundheit und körperliche Ausdauer gehören zu den wichtigsten Faktoren der Lebensqualität. Mit personalisierten Bewegungs-, Kraft-, Mobilitäts- und Rehabilitationsprogrammen sollen Sie sich im Alltag energiegeladener, stärker und freier fühlen."
+            },
+            {
+              "type": "subheading",
+              "text": "Frauengesundheit und Menopause"
+            },
+            {
+              "type": "paragraph",
+              "text": "Ganzheitliche Frauengesundheit in jeder Lebensphase. Hormonelle Veränderungen, Schlaf, Energieniveau, Knochengesundheit, Stoffwechsel, Muskelmasse und Stimmung sind miteinander verbundene Teile der Frauengesundheit. Bei Dr. Otgen Clinic werden die Bedürfnisse von Frauen mit fachärztlicher Bewertung, personalisierter Betreuung und einem Lebensstilansatz behandelt."
+            },
+            {
+              "type": "subheading",
+              "text": "Männergesundheit und Leistungsfähigkeit"
+            },
+            {
+              "type": "paragraph",
+              "text": "Für Leistung, Balance und langfristige Gesundheit. Die Männergesundheit umfasst viele Faktoren wie Energieniveau, metabolische Balance, Schlaf, Stress, Muskelgesundheit, kardiovaskuläre Risiken und hormonelle Bewertung. Mit Programmen, die auf Ihre persönlichen Ziele und medizinischen Bedürfnisse abgestimmt sind, wird eine stärkere, ausgeglichenere und nachhaltigere Lebensleistung unterstützt."
+            }
+          ]
+        },
+        {
+          "title": "Persönliche Gesundheitsberatung",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "In jeder Phase Ihrer Gesundheitsreise steht Ihnen ein engagiertes Team zur Seite. Der Service der persönlichen Gesundheitsberatung erleichtert Ihnen den gesamten Prozess – von der Terminplanung über die Ergebnisverfolgung bis hin zu Facharztgesprächen und der Koordination Ihres persönlichen Programms."
+            },
+            {
+              "type": "paragraph",
+              "text": "Diskretion, Komfort und Zeitmanagement stehen im Mittelpunkt unseres Serviceverständnisses. Denn Gesundheitsversorgung verdient nicht nur den richtigen medizinischen Ansatz, sondern auch ein makelloses Erlebnis."
+            }
+          ]
+        },
+        {
+          "title": "Gesundheit und Erneuerung im Maxx Royal Bodrum",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Die Ruhe der Ägäis, die privilegierte Atmosphäre des Maxx Royal Bodrum und der medizinische Ansatz der Dr. Otgen Clinic wurden dafür geschaffen, dass Sie wieder mit Ihrem Körper und Geist in Verbindung treten."
+            },
+            {
+              "type": "paragraph",
+              "text": "Hier ist Gesundheit keine Aufgabe außerhalb des Alltags. Gesundheit ist die Grundlage dafür, sich besser zu fühlen, leistungsfähiger zu sein, mit höherer Qualität zu altern und jeden Moment des Lebens stärker zu erleben."
+            }
+          ]
+        },
+        {
+          "title": "Ihre wertvollste Investition in die Zukunft: Sie.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Bei Dr. Otgen Clinic at Maxx Royal Bodrum beschränkt sich Ihre Gesundheit nicht auf einen einzigen Check-up. Mit personalisierten Gesundheitsdaten, fachärztlichen Bewertungen, Lebensstilempfehlungen und regelmäßiger Betreuung wird sie zu einer langfristigen Reise zu Wohlbefinden und Langlebigkeit."
+            },
+            {
+              "type": "subheading",
+              "text": "Nicht um länger zu leben. Um besser zu leben."
+            },
+            {
+              "type": "paragraph",
+              "text": "Kontaktieren Sie uns, um Ihr persönliches Programm für ein langes und gesundes Leben zu entdecken."
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Premium-Wellness-Erlebnis im Maxx Royal Bodrum",
+        "Personalisierte präventive Gesundheits- und Longevity-Programme",
+        "Ganzheitlicher Gesundheitsfahrplan mit fachärztlicher Bewertung",
+        "Diskretion, Komfort und persönliche Gesundheitsberatung"
+      ],
+      "suitableIntro": "",
+      "suitableFor": [
+        "Menschen, die langfristige Gesundheit und Lebensqualität priorisieren",
+        "Gäste, die Präventivmedizin und ein personalisiertes Wellness-Erlebnis suchen",
+        "Personen, die metabolische Balance, Leistung und Regeneration anstreben",
+        "Personen, die eine Premium-Gesundheitsversorgung im Maxx Royal Bodrum planen"
+      ],
+      "quickFacts": [
+        {
+          "label": "Standort",
+          "value": "Maxx Royal Bodrum"
+        },
+        {
+          "label": "Ansatz",
+          "value": "Personalisierte präventive Gesundheit"
+        },
+        {
+          "label": "Programm",
+          "value": "Longevity und Wellness"
+        },
+        {
+          "label": "Erlebnis",
+          "value": "Premium-medizinische Betreuung und Beratung"
+        }
+      ],
+      "processTitle": "Ihre Gesundheitsreise",
+      "process": [
+        {
+          "title": "Umfassende Bewertung",
+          "description": "Ihr Lebensstil, Ihre Familienanamnese, metabolische Gesundheit, kardiovaskuläre Risiken, Schlaf, Stress und Leistungsziele werden mit einer fachärztlichen Bewertung analysiert."
+        },
+        {
+          "title": "Persönlicher Gesundheitsfahrplan",
+          "description": "Nach Labor-, Körperzusammensetzungs- und Risikoanalysen wird ein personalisierter, umsetzbarer Gesundheitsplan für Sie erstellt."
+        },
+        {
+          "title": "Programm und Betreuung",
+          "description": "Das ausgewählte Longevity-Programm wird im Maxx Royal Bodrum durchgeführt und während des gesamten Prozesses mit persönlicher Gesundheitsberatung koordiniert."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Für wen ist das Programm im Maxx Royal Bodrum geeignet?",
+          "answer": "Es ist für Gäste geplant, die präventive Gesundheit, Longevity und ein personalisiertes Wellness-Erlebnis suchen und nach einer klinischen Bewertung als geeignet befunden werden."
+        },
+        {
+          "question": "Wie lange dauert das Programm?",
+          "answer": "Die Dauer richtet sich nach dem Umfang des gewählten Bewertungs- und Wellnessprogramms. Beim ersten Beratungsgespräch wird Ihnen ein persönlicher Zeitplan vorgestellt."
+        },
+        {
+          "question": "Was umfasst die persönliche Gesundheitsberatung?",
+          "answer": "Es handelt sich um einen ganzheitlichen Unterstützungsservice, der Terminplanung, Ergebnisverfolgung, Facharztgespräche und Programmkoordination umfasst."
         }
       ]
     }
