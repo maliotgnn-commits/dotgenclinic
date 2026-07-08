@@ -1477,6 +1477,37 @@ to {
   display: inline-flex
 }
 
+.partners-marquee-track .partner-logo {
+  height: clamp(28px, 3.2vw, 44px);
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: .92;
+  transition: opacity .25s ease
+}
+
+.partners-marquee-track .partner-logo:hover {
+  opacity: 1
+}
+
+.partners-marquee-track .partner-logo--icon {
+  height: clamp(32px, 3.6vw, 48px);
+  max-width: 48px
+}
+
+.partners-marquee-track .partner-logo--badge {
+  height: clamp(36px, 4vw, 52px);
+  max-width: 56px;
+  border-radius: 8px
+}
+
+.partners-marquee-track .partner-logo--light {
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: #ffffffeb
+}
+
 @keyframes partnersMarquee {
   0% {
     transform: translate(0)
@@ -2547,6 +2578,16 @@ html[dir=rtl] .form-group select {
 
 .partners-marquee-track span {
     font-size: clamp(13px, 2.2vw, 20px)
+  }
+
+.partners-marquee-track .partner-logo {
+    height: clamp(24px, 5vw, 36px);
+    max-width: 140px
+  }
+
+.partners-marquee-track .partner-logo--badge {
+    height: clamp(32px, 6vw, 44px);
+    max-width: 48px
   }
 
 .services-grid {
