@@ -51,10 +51,10 @@ const DATA = {
   },
   "categoryOrder": [
     "corporate",
+    "medical",
+    "plastic",
     "hair",
     "dental",
-    "plastic",
-    "medical",
     "longevity"
   ],
   "pages": [

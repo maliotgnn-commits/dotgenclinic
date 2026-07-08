@@ -9,12 +9,12 @@ const failures = [];
 
 const EXPECTED_MENU_IDS = [
   'corporate',
+  'medical-aesthetics',
+  'plastic',
   'hair',
   'dental',
-  'plastic',
-  'medical-aesthetics',
-  'functional-health',
   'eye-health',
+  'functional-health',
   'arge',
 ];
 
@@ -52,6 +52,10 @@ assert(indexIds.length === TR_MENU_IDS.length, `index.html must define ${TR_MENU
 TR_MENU_IDS.forEach((menuId) => {
   assert(indexIds.includes(menuId), `index.html missing data-desktop-menu-id="${menuId}"`);
 });
+assert(
+  JSON.stringify(indexIds) === JSON.stringify(TR_MENU_IDS),
+  `index.html desktop menu order mismatch: ${indexIds.join(' > ')}`,
+);
 assert(new Set(indexIds).size === indexIds.length, `index.html desktop menu ids must be unique: ${indexIds.join(', ')}`);
 
 assert(styleCss.includes('.nav-menu > li.has-dropdown.open'), 'desktop nav triggers must stack above open panels');
@@ -81,6 +85,10 @@ if (existsSync(ruHome)) {
   LOCALIZED_MENU_IDS.forEach((menuId) => {
     assert(ruIds.includes(menuId), `[dist/ru/index.html] missing data-desktop-menu-id="${menuId}"`);
   });
+  assert(
+    JSON.stringify(ruIds) === JSON.stringify(LOCALIZED_MENU_IDS),
+    `[dist/ru/index.html] desktop menu order mismatch: ${ruIds.join(' > ')}`,
+  );
   assert(ruIds.includes('arge'), '[dist/ru/index.html] localized Ar-Ge nav must appear');
   assert(ruHtml.includes('О клинике'), '[dist/ru/index.html] Russian short corporate label must remain visible');
   assert(ruHtml.includes('Офтальмология'), '[dist/ru/index.html] Russian short eye health label must remain visible');

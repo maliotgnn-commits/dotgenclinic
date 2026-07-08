@@ -12,10 +12,10 @@ export const NAV_CHEVRON_SVG =
 
 export const DESKTOP_MENU_CATEGORY_ORDER = [
   'corporate',
+  'medical',
+  'plastic',
   'hair',
   'dental',
-  'plastic',
-  'medical',
   'longevity',
 ];
 
@@ -33,6 +33,13 @@ export function desktopMenuIdForIndex(index) {
 
 export function renderNavChevron() {
   return NAV_CHEVRON_SVG;
+}
+
+export function insertNavItemBeforeDesktopMenuId(navHtml, desktopMenuId, navItemHtml) {
+  const marker = `<li class="has-dropdown" data-desktop-menu-id="${desktopMenuId}"`;
+  const markerIndex = navHtml.indexOf(marker);
+  if (markerIndex === -1) return `${navHtml}${navItemHtml}`;
+  return `${navHtml.slice(0, markerIndex)}${navItemHtml}${navHtml.slice(markerIndex)}`;
 }
 
 export function renderMobileCategoryTrigger({ label, panelId, fullLabel }) {
