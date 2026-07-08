@@ -160,7 +160,7 @@ async function validateRenderedNavFit() {
           linkOverflow: links.some((link) => link.scrollWidth > link.clientWidth + 1),
           pageOverflow: document.documentElement.scrollWidth - window.innerWidth,
           corporateText: document.querySelector('#nav-menu > li:first-child > a')?.textContent.trim() ?? '',
-          hairText: document.querySelector('#nav-menu > li:nth-child(2) > a')?.textContent.trim() ?? '',
+          hairText: document.querySelector('[data-desktop-menu-id="hair"] > a')?.textContent.trim() ?? '',
           eyeText: document.querySelector('[data-eye-health-nav] .eh-nav-primary-link')?.textContent.trim()
             ?? document.querySelector('#nav-menu > li:last-child .eh-nav-primary-link')?.textContent.trim()
             ?? document.querySelector('#nav-menu > li:last-child > a')?.textContent.trim()

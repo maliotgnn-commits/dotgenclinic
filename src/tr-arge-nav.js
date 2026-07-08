@@ -60,6 +60,21 @@ export function injectArgeNavForLocale(html, locale) {
   );
 }
 
+export function upgradeLocalizedArgeNav(navMenu, locale) {
+  if (!navMenu || locale === 'tr') return false;
+
+  const trOnlyItem = navMenu.querySelector('li[data-arge-nav][data-tr-only-nav]');
+  if (!trOnlyItem) return false;
+
+  const wrapper = document.createElement('div');
+  wrapper.innerHTML = renderArgeNavItem(locale).trim();
+  const newItem = wrapper.firstElementChild;
+  if (!newItem) return false;
+
+  trOnlyItem.replaceWith(newItem);
+  return true;
+}
+
 /** @deprecated Use appendArgeNavItem */
 export function appendPharmaRdNavItem(navHtml, locale) {
   return appendArgeNavItem(navHtml, locale);

@@ -67,7 +67,7 @@ CATEGORY_CONFIG = {
     },
 }
 
-CATEGORY_ORDER = ["corporate", "hair", "dental", "plastic", "medical", "longevity"]
+CATEGORY_ORDER = ["corporate", "medical", "plastic", "hair", "dental", "longevity"]
 
 CATEGORY_SOURCE_DIRS = {
     "corporate": "Kurumsal",

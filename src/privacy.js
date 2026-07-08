@@ -1,7 +1,7 @@
 import './style.css';
 import { initCustomCursor } from './cursor.js';
 import { initSiteHeader } from './public-header.js';
-import { desktopMenuIdForCategory } from './nav-shared.js';
+import { desktopMenuIdForCategory, insertNavItemBeforeDesktopMenuId } from './nav-shared.js';
 import { renderEyeHealthNavItem } from './tr-eye-health-nav.js';
 import { appendFinanceNavLink } from './tr-finance-nav.js';
 import { appendArgeNavItem } from './tr-arge-nav.js';
@@ -68,10 +68,13 @@ function renderNavGroups() {
     })
     .join('');
 
-  return appendArgeNavItem(
-    `${serviceGroups}${renderEyeHealthNavItem({ locale, content: eyeContent })}`,
-    locale,
+  const navWithEyeHealth = insertNavItemBeforeDesktopMenuId(
+    serviceGroups,
+    desktopMenuIdForCategory('longevity'),
+    renderEyeHealthNavItem({ locale, content: eyeContent }),
   );
+
+  return appendArgeNavItem(navWithEyeHealth, locale);
 }
 
 function renderHeader() {

@@ -4,6 +4,7 @@ import { applySubcategoryLinks } from './subpages-data.js';
 import { initCustomCursor } from './cursor.js';
 import {
   applyPrivacyUi,
+  applyRuCompactHeaderNavDom,
   applySeoLinks,
   applyStaticTranslations,
   getCurrentLocale,
@@ -19,6 +20,7 @@ import { mountInstagramFloat } from './instagram-float.js';
 import { initSiteHeader } from './public-header.js';
 import { loadEyeHealthContent } from './eye-health-content.js';
 import { upgradeLocalizedEyeHealthNav } from './tr-eye-health-nav.js';
+import { upgradeLocalizedArgeNav } from './tr-arge-nav.js';
 
 const locale = getCurrentLocale('home');
 const uiDictionary = await loadUiDictionary(locale);
@@ -183,16 +185,24 @@ function initIntro() {
 
 }
 
+function finalizeHomeHeader() {
+  initSiteHeader(document);
+  if (locale === 'ru') {
+    applyRuCompactHeaderNavDom(document, uiDictionary);
+  }
+}
+
 function initHeader() {
   const navMenu = document.getElementById('nav-menu');
   if (navMenu && locale !== 'tr') {
     loadEyeHealthContent(locale).then((content) => {
       upgradeLocalizedEyeHealthNav(navMenu, locale, content);
-      initSiteHeader(document);
+      upgradeLocalizedArgeNav(navMenu, locale);
+      finalizeHomeHeader();
     });
     return;
   }
-  initSiteHeader(document);
+  finalizeHomeHeader();
 }
 
 function setupHeroVideoLoop() {

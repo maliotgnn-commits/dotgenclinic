@@ -1,6 +1,12 @@
 import { buildTrEyeHealthContent } from './eye-health-content.js';
 import { eyeHealthHeaderNavLabelForLocale, eyeHealthPathForLocale } from './eye-health-routes.js';
-import { isDesktopNavViewport, isMobileNavViewport, NAV_CHEVRON_SVG } from './nav-shared.js';
+import {
+  desktopMenuIdForCategory,
+  insertNavItemBeforeDesktopMenuId,
+  isDesktopNavViewport,
+  isMobileNavViewport,
+  NAV_CHEVRON_SVG,
+} from './nav-shared.js';
 
 export const EYE_HEALTH_LANDING_PATH = '/tr/goz-hastaliklari.html';
 
@@ -117,8 +123,15 @@ export function injectEyeHealthNavForLocale(html, locale, content) {
   const stripped = stripTrOnlyNav(html);
   const navBlock = renderEyeHealthNavItem({ locale, content });
   return stripped.replace(
-    /(<ul class="nav-menu" id="nav-menu">[\s\S]*?)(\s*<\/ul>)/,
-    `$1\n            ${navBlock}$2`,
+    /(<ul class="nav-menu" id="nav-menu">)([\s\S]*?)(\s*<\/ul>)/,
+    (_match, open, body, close) => {
+      const orderedBody = insertNavItemBeforeDesktopMenuId(
+        body,
+        desktopMenuIdForCategory('longevity'),
+        `\n            ${navBlock}`,
+      );
+      return `${open}${orderedBody}${close}`;
+    },
   );
 }
 

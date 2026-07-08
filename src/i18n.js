@@ -1,4 +1,5 @@
-import { eyeHealthPathForLocale } from './eye-health-routes.js';
+import { eyeHealthHeaderNavLabelForLocale, eyeHealthPathForLocale } from './eye-health-routes.js';
+import { argeMenuLabelForLocale } from './arge-routes.js';
 import { financePathForLocale } from './finance-routes.js';
 import { legalPathForLocale } from './legal-routes.js';
 import { medikalRdPathForLocale } from './medikal-rd-routes.js';
@@ -347,6 +348,97 @@ export const CATEGORY_NAV_UI_KEYS = {
   medical: 'Medikal Estetik',
   longevity: 'Longevity',
 };
+
+const RU_HEADER_NAV_MENU_IDS = {
+  corporate: { short: () => RU_HEADER_NAV_LABELS.corporate, uiKey: 'Kurumsal' },
+  'medical-aesthetics': { short: () => RU_HEADER_NAV_LABELS.medical, uiKey: 'Medikal Estetik' },
+  plastic: { short: () => RU_HEADER_NAV_LABELS.plastic, uiKey: 'Estetik Cerrahi' },
+  hair: { short: () => RU_HEADER_NAV_LABELS.hair, uiKey: 'Saç Ekimi' },
+  dental: { short: () => RU_HEADER_NAV_LABELS.dental, uiKey: 'Diş Estetiği' },
+  'functional-health': { short: () => RU_HEADER_NAV_LABELS.longevity, uiKey: 'Longevity' },
+  'eye-health': { short: () => eyeHealthHeaderNavLabelForLocale('ru'), uiKey: null },
+  arge: { short: () => argeMenuLabelForLocale('ru'), uiKey: null },
+};
+
+export const RU_HEADER_NAV_FULL_TO_SHORT = [
+  ['Корпоративный', RU_HEADER_NAV_LABELS.corporate],
+  ['Медицинская эстетика', RU_HEADER_NAV_LABELS.medical],
+  ['Пластическая хирургия', RU_HEADER_NAV_LABELS.plastic],
+  ['Трансплантация волос', RU_HEADER_NAV_LABELS.hair],
+  ['Стоматологическая эстетика', RU_HEADER_NAV_LABELS.dental],
+  ['Longevity', RU_HEADER_NAV_LABELS.longevity],
+  ['Функциональное здоровье', RU_HEADER_NAV_LABELS.longevity],
+];
+
+function ruNavFullLabel(uiDictionary, uiKey, shortLabel) {
+  if (!uiKey) return shortLabel;
+  return translate(uiDictionary, uiKey);
+}
+
+function applyShortLabelToAnchor(anchor, shortLabel, fullLabel) {
+  if (!anchor) return;
+  anchor.setAttribute('aria-label', fullLabel);
+  const svg = anchor.querySelector('svg');
+  anchor.textContent = '';
+  anchor.append(`${shortLabel} `);
+  if (svg) anchor.appendChild(svg);
+}
+
+function applyShortLabelToNavItem(item, shortLabel, fullLabel) {
+  item.querySelectorAll('.mobile-nav-trigger, .eh-mobile-nav-trigger').forEach((trigger) => {
+    trigger.setAttribute('aria-label', fullLabel);
+  });
+  item.querySelectorAll('.mobile-nav-label').forEach((label) => {
+    label.textContent = shortLabel;
+  });
+  item.querySelectorAll('a.desktop-nav-trigger, .eh-nav-primary-link').forEach((anchor) => {
+    applyShortLabelToAnchor(anchor, shortLabel, fullLabel);
+  });
+  const legacyAnchor = item.querySelector(':scope > a[href="#"]:not(.desktop-nav-trigger)');
+  if (legacyAnchor && !item.querySelector('a.desktop-nav-trigger')) {
+    applyShortLabelToAnchor(legacyAnchor, shortLabel, fullLabel);
+  }
+}
+
+export function applyRuCompactHeaderNavDom(root = document, uiDictionary = null) {
+  const navMenu = root.getElementById('nav-menu');
+  if (!navMenu) return { applied: 0, labels: [] };
+
+  const labels = [];
+  let applied = 0;
+
+  navMenu.querySelectorAll('li[data-desktop-menu-id]').forEach((item) => {
+    const config = RU_HEADER_NAV_MENU_IDS[item.dataset.desktopMenuId];
+    if (!config) return;
+    const shortLabel = config.short();
+    const fullLabel = ruNavFullLabel(uiDictionary, config.uiKey, shortLabel);
+    applyShortLabelToNavItem(item, shortLabel, fullLabel);
+    labels.push({ menuId: item.dataset.desktopMenuId, shortLabel, fullLabel });
+    applied += 1;
+  });
+
+  return { applied, labels };
+}
+
+export function applyRuCompactHeaderNavHtml(html, uiDictionary = null) {
+  return html.replace(
+    /(<ul class="nav-menu" id="nav-menu">)([\s\S]*?)(<\/ul>)/,
+    (_match, open, body, close) => {
+      let navBody = body;
+      for (const [fullLabel, shortLabel] of RU_HEADER_NAV_FULL_TO_SHORT) {
+        const pattern = new RegExp(
+          `(<li class="has-dropdown"[^>]*>\\s*<a href="#")([^>]*)>${fullLabel.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(\\s*<svg)`,
+          'g',
+        );
+        navBody = navBody.replace(
+          pattern,
+          `$1 aria-label="${fullLabel}"$2>${shortLabel}$3`,
+        );
+      }
+      return `${open}${navBody}${close}`;
+    },
+  );
+}
 
 function categoryNavLabel(categoryKey, catalog, uiDictionary, locale) {
   if (locale === 'ru' && RU_HEADER_NAV_LABELS[categoryKey]) {
