@@ -1502,6 +1502,17 @@ to {
   border-radius: 8px
 }
 
+.partners-marquee-track .partner-logo--medicana {
+  height: clamp(36px, 4.5vw, 56px);
+  max-width: 260px
+}
+
+.partners-marquee-track .partner-logo--memorial {
+  height: clamp(26px, 3vw, 40px);
+  max-width: 160px;
+  mix-blend-mode: lighten
+}
+
 .partners-marquee-track .partner-logo--light {
   padding: 4px 10px;
   border-radius: 6px;
@@ -2583,6 +2594,11 @@ html[dir=rtl] .form-group select {
 .partners-marquee-track .partner-logo {
     height: clamp(24px, 5vw, 36px);
     max-width: 140px
+  }
+
+.partners-marquee-track .partner-logo--medicana {
+    height: clamp(32px, 7vw, 48px);
+    max-width: 220px
   }
 
 .partners-marquee-track .partner-logo--badge {
