@@ -1436,9 +1436,9 @@ to {
 }
 
 .partners-marquee-section {
-  border-top: 1px solid var(--gold-dark);
-  border-bottom: 1px solid var(--gold-dark);
-  background: linear-gradient(90deg, var(--gold-dark) 0%, var(--gold-light) 45%, var(--gold) 50%, var(--gold-light) 55%, var(--gold-dark) 100%);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  background: linear-gradient(90deg, #060d18f2 0%, #0a1628f2 50%, #060d18f2 100%);
   padding: 26px 0;
   position: relative;
   overflow: hidden
@@ -1458,10 +1458,9 @@ to {
 }
 
 .partners-marquee-track {
-  white-space: nowrap;
   align-items: center;
-  gap: 84px;
-  padding: 18px 84px;
+  gap: 72px;
+  padding: 20px 72px;
   display: flex
 }
 
@@ -1478,12 +1477,14 @@ to {
 }
 
 .partners-marquee-track .partner-logo {
-  height: clamp(28px, 3.2vw, 44px);
-  width: auto;
-  max-width: 180px;
+  flex: 0 0 156px;
+  width: 156px;
+  height: 40px;
+  max-width: none;
   object-fit: contain;
+  object-position: center center;
   flex-shrink: 0;
-  opacity: 1;
+  opacity: .92;
   transition: opacity .25s ease
 }
 
@@ -1503,14 +1504,18 @@ to {
 }
 
 .partners-marquee-track .partner-logo--medicana {
-  height: clamp(36px, 4.5vw, 56px);
-  max-width: 260px
+  flex-basis: 188px;
+  width: 188px;
+  height: 40px;
+  max-width: none
 }
 
 .partners-marquee-track .partner-logo--memorial {
-  height: clamp(26px, 3vw, 40px);
-  max-width: 160px;
-  mix-blend-mode: screen
+  flex-basis: 156px;
+  width: 156px;
+  height: 40px;
+  max-width: none;
+  mix-blend-mode: lighten
 }
 
 .partners-marquee-track .partner-logo--light {
@@ -2583,8 +2588,8 @@ html[dir=rtl] .form-group select {
   }
 
 .partners-marquee-track {
-    gap: 54px;
-    padding: 14px 54px
+    gap: 48px;
+    padding: 16px 48px
   }
 
 .partners-marquee-track span {
@@ -2592,13 +2597,21 @@ html[dir=rtl] .form-group select {
   }
 
 .partners-marquee-track .partner-logo {
-    height: clamp(24px, 5vw, 36px);
-    max-width: 140px
+    flex-basis: 120px;
+    width: 120px;
+    height: 32px
   }
 
 .partners-marquee-track .partner-logo--medicana {
-    height: clamp(32px, 7vw, 48px);
-    max-width: 220px
+    flex-basis: 144px;
+    width: 144px;
+    height: 32px
+  }
+
+.partners-marquee-track .partner-logo--memorial {
+    flex-basis: 120px;
+    width: 120px;
+    height: 32px
   }
 
 .partners-marquee-track .partner-logo--badge {
