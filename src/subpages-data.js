@@ -6489,6 +6489,224 @@ const DATA = {
           "answer": "Randevu planlaması, sonuç takibi, uzman görüşmeleri ve program koordinasyonunu kapsayan bütüncül bir destek hizmetidir."
         }
       ]
+    },
+    {
+      "category": "longevity",
+      "slug": "museum-hotel-wellness-kapadokya",
+      "navLabel": "Kapadokya'da Kişiselleştirilmiş Wellness Deneyimi",
+      "title": "Kapadokya'da Kişiselleştirilmiş Wellness Deneyimi",
+      "categoryLabel": "Longevity",
+      "heroTag": "Dr. Otgen Clinic x Museum Hotel Kapadokya",
+      "heroSubtitle": "Longevity, Yeniden Tanımlandı.",
+      "summary": "Sağlığınızın geleceği, bugün başlar. Dr. Otgen Clinic ve Museum Hotel Kapadokya iş birliğiyle; modern tıbbı, kişiselleştirilmiş koruyucu sağlık yaklaşımını ve Kapadokya'nın eşsiz doğal atmosferinde sunulan ayrıcalıklı konaklama deneyimini bir araya getiriyoruz.",
+      "images": {
+        "hero": "/images/site/pages/museum-hotel-wellness-hero.webp",
+        "content": "/images/site/pages/museum-hotel-wellness-1.webp",
+        "gallery": [
+          "/images/site/pages/museum-hotel-wellness-1.webp",
+          "/images/site/pages/museum-hotel-wellness-2.webp",
+          "/images/site/pages/museum-hotel-wellness-3.webp",
+          "/images/site/pages/museum-hotel-wellness-4.webp",
+          "/images/site/pages/museum-hotel-wellness-5.webp",
+          "/images/site/pages/museum-hotel-wellness-6.webp",
+          "/images/site/pages/museum-hotel-wellness-7.webp",
+          "/images/site/pages/museum-hotel-wellness-8.webp",
+          "/images/site/pages/museum-hotel-wellness-9.webp",
+          "/images/site/pages/museum-hotel-wellness-10.webp",
+          "/images/site/pages/museum-hotel-wellness-11.webp",
+          "/images/site/pages/museum-hotel-wellness-12.webp"
+        ]
+      },
+      "galleryTitle": "Museum Hotel Kapadokya'dan Kareler",
+      "overview": [
+        "Dr. Otgen Clinic x Museum Hotel Kapadokya; bilimsel sağlık yaklaşımını, kişiselleştirilmiş longevity programlarını ve Kapadokya'nın zamansız atmosferini bir araya getiren özel bir wellness deneyimi sunar.",
+        "Burada amaç yalnızca iyi hissetmek değildir. Amaç; yaşam kalitenizi artırmak, sağlığınızı korumak, gelecekteki sağlık risklerinizi öngörmek ve size özel sürdürülebilir bir yaşam planı oluşturmaktır.",
+        "Her misafirimiz için yaşam tarzı, aile öyküsü, metabolik sağlık, kardiyovasküler riskler, uyku kalitesi, stres düzeyi, fiziksel performans ve kişisel hedefler bütüncül olarak değerlendirilir. Çünkü gerçek lüks; zamanınızı, bedeninizi ve sağlığınızı en doğru şekilde yönetebilmektir."
+      ],
+      "sections": [
+        {
+          "title": "Kişisel Sağlık Yol Haritanız",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Dr. Otgen Clinic x Museum Hotel Kapadokya deneyimi, uzman hekim değerlendirmesiyle başlar."
+            },
+            {
+              "type": "paragraph",
+              "text": "Kapsamlı sağlık analizleri, ileri laboratuvar değerlendirmeleri, vücut kompozisyonu ölçümleri, metabolik risk analizleri, kardiyovasküler değerlendirmeler, uyku ve stres analizleri; kişisel sağlık yol haritanızın temelini oluşturur."
+            },
+            {
+              "type": "paragraph",
+              "text": "Elde edilen veriler yalnızca raporlanmaz. Uzman hekimlerimiz tarafından değerlendirilir, sağlık öncelikleriniz belirlenir ve günlük yaşamınıza uygulanabilir kişisel bir plan hazırlanır. Sağlığınızla ilgili tüm önemli veriler, size özel bir sistem içerisinde ele alınır."
+            }
+          ]
+        },
+        {
+          "title": "Uzun ve Sağlıklı Yaşam Programları",
+          "blocks": [
+            {
+              "type": "subheading",
+              "text": "Yönetici Sağlık Değerlendirmesi"
+            },
+            {
+              "type": "paragraph",
+              "text": "Yoğun yaşam temposuna sahip kişiler için tasarlanan kapsamlı sağlık değerlendirme programıdır. Kısa süre içerisinde genel sağlık durumunuz, metabolik dengeniz, kardiyovasküler riskleriniz, vücut kompozisyonunuz, uyku kaliteniz ve yaşam tarzı faktörleriniz uzman ekip tarafından değerlendirilir. Program sonunda size özel sağlık raporu ve önümüzdeki dönem için uygulanabilir yaşam planı hazırlanır."
+            },
+            {
+              "type": "subheading",
+              "text": "Metabolik Denge ve Kilo Yönetimi"
+            },
+            {
+              "type": "paragraph",
+              "text": "Sağlıklı kilo yönetimi yalnızca kilo kaybı değildir. Metabolizma, kan şekeri dengesi, insülin hassasiyeti, kas kütlesi, yağ oranı, beslenme alışkanlıkları, uyku ve stres faktörleri birlikte değerlendirilir. Uzman hekim, diyetisyen ve performans ekibi tarafından kişisel hedeflerinize uygun sürdürülebilir bir plan oluşturulur."
+            },
+            {
+              "type": "subheading",
+              "text": "Kardiyovasküler Performans"
+            },
+            {
+              "type": "paragraph",
+              "text": "Kalbiniz için daha güçlü bir gelecek. Uzun ve aktif yaşamın temel taşlarından biri olan kardiyovasküler sağlık; kişisel risk faktörleri doğrultusunda değerlendirilir. Kalp-damar sağlığı, tansiyon dengesi, kolesterol profili, egzersiz kapasitesi ve yaşam alışkanlıkları detaylı olarak analiz edilir."
+            },
+            {
+              "type": "subheading",
+              "text": "Uyku, Stres ve Yenilenme"
+            },
+            {
+              "type": "paragraph",
+              "text": "Daha kaliteli uyku, daha yüksek enerji ve daha dengeli bir yaşam. Uyku kalitesi, stres yükü, zihinsel yorgunluk ve günlük enerji seviyeleri uzman değerlendirmesiyle ele alınır. Kapadokya'nın sakinliği, doğal çevresi ve Museum Hotel'in benzersiz atmosferi; zihinsel yenilenme ve yaşam ritminizi yeniden düzenleme sürecini destekler."
+            },
+            {
+              "type": "subheading",
+              "text": "Güç, Hareket Kabiliyeti ve Aktif Yaş Alma"
+            },
+            {
+              "type": "paragraph",
+              "text": "Güçlü kalmak, kaliteli yaş almanın temelidir. Kas kütlesi, denge, hareket kabiliyeti, eklem sağlığı ve fiziksel dayanıklılık değerlendirilerek kişiye özel hareket ve performans programları oluşturulur. Hedef; daha enerjik, daha güçlü ve daha bağımsız bir yaşam sürdürmektir."
+            },
+            {
+              "type": "subheading",
+              "text": "Kadın Sağlığı ve Menopoz"
+            },
+            {
+              "type": "paragraph",
+              "text": "Kadın sağlığına bütüncül yaklaşım. Hormonal değişimler, uyku, enerji seviyesi, kemik sağlığı, metabolizma, kas kütlesi ve yaşam kalitesi bir bütün olarak değerlendirilir. Kişiselleştirilmiş takip ve yaşam tarzı yaklaşımıyla kadınların her dönemindeki sağlık ihtiyaçları desteklenir."
+            },
+            {
+              "type": "subheading",
+              "text": "Erkek Sağlığı ve Performansı"
+            },
+            {
+              "type": "paragraph",
+              "text": "Daha güçlü, dengeli ve sürdürülebilir yaşam performansı. Enerji seviyeleri, metabolik sağlık, uyku, stres, kas sağlığı, kardiyovasküler riskler ve hormonal denge kişisel hedefler doğrultusunda değerlendirilir."
+            }
+          ]
+        },
+        {
+          "title": "Kişisel Sağlık Danışmanlığı",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Sağlık yolculuğunuz boyunca size özel bir ekip yanınızda. Randevu planlaması, sağlık değerlendirmeleri, uzman görüşmeleri, sonuç takibi ve kişisel program koordinasyonu profesyonel sağlık danışmanlığı ile yönetilir."
+            },
+            {
+              "type": "paragraph",
+              "text": "Museum Hotel Kapadokya'nın konforu ve Dr. Otgen Clinic'in tıbbi yaklaşımı ile kusursuz bir wellness deneyimi oluşturulur."
+            }
+          ]
+        },
+        {
+          "title": "Museum Hotel Kapadokya'da Sağlık ve Yenilenme",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Kapadokya'nın büyüleyici manzaraları, tarihi dokusu ve Museum Hotel'in benzersiz konaklama deneyimi; Dr. Otgen Clinic'in bilimsel sağlık yaklaşımıyla birleşerek yeni nesil bir wellness deneyimi sunar."
+            },
+            {
+              "type": "paragraph",
+              "text": "Burada sağlık yalnızca bir kontrol süreci değildir. Sağlık; daha iyi hissetmek, daha yüksek performans göstermek, yaşam enerjinizi artırmak ve geleceğe daha güçlü hazırlanmak için yapılan kişisel bir yatırımdır."
+            }
+          ]
+        },
+        {
+          "title": "Gelecekteki En Değerli Yatırımınız: Siz.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Dr. Otgen Clinic x Museum Hotel Kapadokya deneyiminde sağlık, tek bir check-up ile sınırlı değildir. Kişisel sağlık verileriniz, uzman değerlendirmeleri, yaşam tarzı önerileri ve takip planları ile uzun vadeli bir iyi yaşam yolculuğuna dönüşür."
+            },
+            {
+              "type": "subheading",
+              "text": "Daha uzun yaşamak için değil. Daha iyi yaşamak için."
+            },
+            {
+              "type": "paragraph",
+              "text": "Kişisel longevity programınızı keşfetmek için bizimle iletişime geçin."
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Museum Hotel Kapadokya'da premium wellness deneyimi",
+        "Dr. Otgen Clinic uzman hekim yaklaşımıyla kişiselleştirilmiş sağlık programları",
+        "Kapadokya'nın doğal atmosferinde yenilenme ve dönüşüm deneyimi",
+        "Gizlilik, konfor ve kişisel sağlık danışmanlığı"
+      ],
+      "suitableIntro": "",
+      "suitableFor": [
+        "Uzun vadeli sağlık ve yaşam kalitesini önceliklendiren kişiler",
+        "Koruyucu tıp ve kişiselleştirilmiş wellness deneyimi arayan misafirler",
+        "Metabolik denge, performans ve yenilenme hedefleyen bireyler",
+        "Kapadokya'da premium sağlık ve konaklama deneyimi yaşamak isteyenler",
+        "Yoğun yaşam temposundan uzaklaşıp beden ve zihin dengesini yeniden kurmak isteyenler"
+      ],
+      "quickFacts": [
+        {
+          "label": "Lokasyon",
+          "value": "Museum Hotel Kapadokya"
+        },
+        {
+          "label": "Yaklaşım",
+          "value": "Kişiselleştirilmiş koruyucu sağlık"
+        },
+        {
+          "label": "Program",
+          "value": "Longevity ve wellness"
+        },
+        {
+          "label": "Deneyim",
+          "value": "Premium konaklama + uzman sağlık danışmanlığı"
+        }
+      ],
+      "processTitle": "Sağlık Yolculuğunuz",
+      "process": [
+        {
+          "title": "Kapsamlı Değerlendirme",
+          "description": "Yaşam tarzı, aile öyküsü, metabolik sağlık, kardiyovasküler riskler, uyku, stres ve performans hedefleri uzman hekim değerlendirmesiyle analiz edilir."
+        },
+        {
+          "title": "Kişisel Sağlık Yol Haritası",
+          "description": "Laboratuvar sonuçları, vücut kompozisyonu ve risk analizleri doğrultusunda kişisel sağlık planınız hazırlanır."
+        },
+        {
+          "title": "Program ve Takip",
+          "description": "Belirlenen longevity programı Museum Hotel Kapadokya'nın konforunda uygulanır ve kişisel sağlık danışmanlığı ile süreç boyunca takip edilir."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Dr. Otgen Clinic x Museum Hotel Kapadokya programı kimler için uygundur?",
+          "answer": "Uzun vadeli sağlığını önemseyen, kişiselleştirilmiş sağlık değerlendirmesi ve premium wellness deneyimi arayan kişiler için uygundur."
+        },
+        {
+          "question": "Program ne kadar sürer?",
+          "answer": "Program süresi kişinin sağlık hedefleri ve ihtiyaçlarına göre belirlenir. İlk değerlendirme sonrasında kişiye özel plan oluşturulur."
+        },
+        {
+          "question": "Program kapsamında neler bulunur?",
+          "answer": "Sağlık değerlendirmeleri, uzman hekim görüşmeleri, kişisel sağlık planlaması, wellness deneyimleri ve takip süreçleri program kapsamına göre düzenlenir."
+        }
+      ]
     }
   ]
 };

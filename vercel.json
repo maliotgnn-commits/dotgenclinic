@@ -554,6 +554,17 @@
       "destination": "/_seo/tr/service/maxx-royal-wellness-bodrum.html"
     },
     {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "museum-hotel-wellness-kapadokya"
+        }
+      ],
+      "destination": "/_seo/tr/service/museum-hotel-wellness-kapadokya.html"
+    },
+    {
       "source": "/en/service.html",
       "has": [
         {
@@ -1058,6 +1069,17 @@
         }
       ],
       "destination": "/_seo/en/service/maxx-royal-wellness-bodrum.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "museum-hotel-wellness-kapadokya"
+        }
+      ],
+      "destination": "/_seo/en/service/museum-hotel-wellness-kapadokya.html"
     },
     {
       "source": "/ar/service.html",
@@ -1566,6 +1588,17 @@
       "destination": "/_seo/ar/service/maxx-royal-wellness-bodrum.html"
     },
     {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "museum-hotel-wellness-kapadokya"
+        }
+      ],
+      "destination": "/_seo/ar/service/museum-hotel-wellness-kapadokya.html"
+    },
+    {
       "source": "/es/service.html",
       "has": [
         {
@@ -2070,6 +2103,17 @@
         }
       ],
       "destination": "/_seo/es/service/maxx-royal-wellness-bodrum.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "museum-hotel-wellness-kapadokya"
+        }
+      ],
+      "destination": "/_seo/es/service/museum-hotel-wellness-kapadokya.html"
     },
     {
       "source": "/fr/service.html",
@@ -2578,6 +2622,17 @@
       "destination": "/_seo/fr/service/maxx-royal-wellness-bodrum.html"
     },
     {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "museum-hotel-wellness-kapadokya"
+        }
+      ],
+      "destination": "/_seo/fr/service/museum-hotel-wellness-kapadokya.html"
+    },
+    {
       "source": "/it/service.html",
       "has": [
         {
@@ -3082,6 +3137,17 @@
         }
       ],
       "destination": "/_seo/it/service/maxx-royal-wellness-bodrum.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "museum-hotel-wellness-kapadokya"
+        }
+      ],
+      "destination": "/_seo/it/service/museum-hotel-wellness-kapadokya.html"
     },
     {
       "source": "/ru/service.html",
@@ -3590,6 +3656,17 @@
       "destination": "/_seo/ru/service/maxx-royal-wellness-bodrum.html"
     },
     {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "museum-hotel-wellness-kapadokya"
+        }
+      ],
+      "destination": "/_seo/ru/service/museum-hotel-wellness-kapadokya.html"
+    },
+    {
       "source": "/de/service.html",
       "has": [
         {
@@ -4094,6 +4171,17 @@
         }
       ],
       "destination": "/_seo/de/service/maxx-royal-wellness-bodrum.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "museum-hotel-wellness-kapadokya"
+        }
+      ],
+      "destination": "/_seo/de/service/museum-hotel-wellness-kapadokya.html"
     },
     {
       "source": "/:locale(tr|en|ar|es|fr|it|ru|de)/service.html",
