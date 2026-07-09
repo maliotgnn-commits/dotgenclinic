@@ -21,6 +21,7 @@ import { initSiteHeader } from './public-header.js';
 import { loadEyeHealthContent } from './eye-health-content.js';
 import { upgradeLocalizedEyeHealthNav } from './tr-eye-health-nav.js';
 import { upgradeLocalizedArgeNav } from './tr-arge-nav.js';
+import { initPartnersMarquee } from './partners-marquee.js';
 
 const locale = getCurrentLocale('home');
 const uiDictionary = await loadUiDictionary(locale);
@@ -624,4 +625,5 @@ initSmoothScroll();
 initVisibilityPause();
 initReducedMotionWatch();
 initFooterVideoLazyLoad();
+initPartnersMarquee();
 window.addEventListener('scroll', handleWindowScroll, { passive: true });
