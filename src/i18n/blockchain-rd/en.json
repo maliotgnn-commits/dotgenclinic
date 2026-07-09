@@ -1,7 +1,7 @@
 {
   "page": {
     "title": "Blockchain R&D | Dr Otgen Clinic",
-    "description": "Information on Dr Otgen Clinic blockchain R&D; MediBloc vision, blockchain-based health data solutions, AI integration and secure health data infrastructure.",
+    "description": "Information on Dr Otgen Clinic blockchain R&D; MediBloc vision, digital token project, blockchain-based health data solutions, AI and secure health data infrastructure.",
     "hero": {
       "tag": "HEALTH TECHNOLOGY",
       "title": "Blockchain R&D",
@@ -13,27 +13,29 @@
       "title": "MediBloc Founding Team and Dr. Otgen Clinic Health Technology Vision",
       "paragraphs": [
         "The team behind MediBloc aimed to develop blockchain-based health data solutions by bringing together diverse expertise in healthcare and technology.",
-        "Dr. Allen Wookyun Kho, one of MediBloc's co-founders, has a career that bridges technology and healthcare. After working as a software engineer at Samsung Electronics early in his career, Kho pursued dental education and moved into the healthcare sector. By combining his experience in software, blockchain and medicine, he played a key role in shaping the MediBloc concept.",
-        "The other co-founder, Dr. Eunsol Lee, contributed to the project with her expertise in radiology and biomedical informatics. Specialising in medical imaging data, health information systems and digital health technologies, Lee focuses on developing solutions for the secure and effective management of health data.",
-        "In line with this vision, Dr. Otgen Clinic conducts research on the future of the healthcare ecosystem through work in aesthetic health, digital health technologies and innovative treatment approaches. Dr Otgen Clinic, in partnership with MediBloc, is among the key technology areas evaluating blockchain integration into healthcare services, artificial intelligence and secure health data infrastructure.",
-        "In tomorrow's healthcare system, the convergence of technology, data security and personalised health services will contribute to developing more transparent, accessible and patient-centred solutions."
+        "Dr. Allen Wookyun Kho, one of MediBloc's co-founders, has a strong career that bridges technology and healthcare. After working as a software engineer at Samsung Electronics early in his career, Kho pursued dental education and moved into the healthcare sector. By combining his experience in software, blockchain and medicine, he played a key role in shaping the MediBloc concept.",
+        "The other co-founder, Dr. Eunsol Lee, contributed to the project with her expertise in radiology and biomedical informatics. Specialising in medical imaging data, health information systems and digital health technologies, Lee focuses on developing solutions for the secure, transparent and effective management of health data.",
+        "In line with this vision, Dr. Otgen Clinic conducts research on the future of the healthcare ecosystem through work in aesthetic health, digital health technologies, AI-assisted health solutions and innovative treatment approaches.",
+        "Dr. Otgen Clinic, together with Dr. Eunsol Lee and Dr. Allen Wookyun Kho, is working on a new digital token project aimed at strengthening the use of blockchain technology in healthcare services. This new token project is planned to be designed for secure management of health data, patient-centred digital health services, AI-assisted medical infrastructure and the development of blockchain-based health solutions.",
+        "The developed token structure is intended to be evaluated for compatibility with the global crypto ecosystem and to have the technical infrastructure suitable for trading on international digital asset exchanges such as Binance.",
+        "In tomorrow's healthcare system, the convergence of technology, data security, artificial intelligence and personalised health services will contribute to developing more transparent, accessible and patient-centred solutions. Dr. Otgen Clinic aims to play an active role in this transformation through blockchain-based health solutions and next-generation digital asset projects."
       ]
     },
     "focusAreas": {
       "title": "Blockchain and Health Technology Areas",
       "items": [
         "Blockchain-based health data management",
-        "MediBloc partnership and technology development",
-        "Secure health data infrastructure",
-        "AI-assisted health solutions",
+        "Digital token project and crypto ecosystem integration",
+        "AI-assisted medical infrastructure",
+        "Secure and transparent health data infrastructure",
+        "Patient-centred digital health services",
         "Medical imaging and biomedical informatics",
-        "Digital health technologies",
-        "Personalised health services",
-        "Aesthetic health and innovative treatment approaches"
+        "Global digital asset exchange compatibility",
+        "Next-generation digital health technologies"
       ]
     },
     "closing": {
-      "quote": "The convergence of technology, data security and personalised health services will contribute to developing more transparent, accessible and patient-centred solutions.",
+      "quote": "The convergence of technology, data security, artificial intelligence and personalised health services will contribute to developing more transparent, accessible and patient-centred solutions.",
       "cta": "Request Appointment"
     },
     "breadcrumbHome": "Home",

@@ -1,7 +1,7 @@
 {
   "page": {
     "title": "Blockchain F&E | Dr Otgen Clinic",
-    "description": "Informationen zu Blockchain-F&E bei Dr Otgen Clinic; MediBloc-Vision, blockchainbasierte Gesundheitsdatenlösungen, KI-Integration und sichere Gesundheitsdateninfrastruktur.",
+    "description": "Informationen zu Blockchain-F&E bei Dr Otgen Clinic; MediBloc-Vision, digitales Token-Projekt, blockchainbasierte Gesundheitsdatenlösungen, KI und sichere Gesundheitsdateninfrastruktur.",
     "hero": {
       "tag": "GESUNDHEITSTECHNOLOGIE",
       "title": "Blockchain F&E",
@@ -13,27 +13,29 @@
       "title": "MediBloc-Gründerteam und Gesundheitstechnologie-Vision von Dr. Otgen Clinic",
       "paragraphs": [
         "Das Team hinter MediBloc zielte darauf ab, blockchainbasierte Gesundheitsdatenlösungen zu entwickeln, indem es verschiedene Expertisen in den Bereichen Gesundheit und Technologie zusammenführte.",
-        "Dr. Allen Wookyun Kho, einer der Mitbegründer von MediBloc, verfügt über eine Karriere, die Technologie und Gesundheitswesen verbindet. Nachdem er zu Beginn seiner Laufbahn als Softwareingenieur bei Samsung Electronics tätig war, absolvierte Kho eine zahnmedizinische Ausbildung und wandte sich dem Gesundheitssektor zu. Durch die Verbindung seiner Erfahrung in Software, Blockchain und Medizin spielte er eine Schlüsselrolle bei der Entwicklung des MediBloc-Konzepts.",
-        "Die andere Mitbegründerin, Dr. Eunsol Lee, trug mit ihrer Expertise in Radiologie und biomedizinischer Informatik zum Projekt bei. Spezialisiert auf medizinische Bilddaten, Gesundheitsinformationssysteme und digitale Gesundheitstechnologien konzentriert sich Lee auf die Entwicklung von Lösungen für die sichere und effektive Verwaltung von Gesundheitsdaten.",
-        "Entsprechend dieser Vision führt Dr. Otgen Clinic Forschungen zur Zukunft des Gesundheitsökosystems durch Arbeiten in ästhetischer Gesundheit, digitalen Gesundheitstechnologien und innovativen Behandlungsansätzen durch. Dr Otgen Clinic gehört in Partnerschaft mit MediBloc zu den wichtigsten Technologiebereichen, die die Integration von Blockchain in Gesundheitsdienste, künstliche Intelligenz und sichere Gesundheitsdateninfrastrukturen bewerten.",
-        "Im Gesundheitssystem der Zukunft wird die Verbindung von Technologie, Datensicherheit und personalisierten Gesundheitsdiensten zur Entwicklung transparenterer, zugänglicherer und patientenzentrierter Lösungen beitragen."
+        "Dr. Allen Wookyun Kho, einer der Mitbegründer von MediBloc, verfügt über eine starke Karriere, die Technologie und Gesundheitswesen verbindet. Nachdem er zu Beginn seiner Laufbahn als Softwareingenieur bei Samsung Electronics tätig war, absolvierte Kho eine zahnmedizinische Ausbildung und wandte sich dem Gesundheitssektor zu. Durch die Verbindung seiner Erfahrung in Software, Blockchain und Medizin spielte er eine Schlüsselrolle bei der Entwicklung des MediBloc-Konzepts.",
+        "Die andere Mitbegründerin, Dr. Eunsol Lee, trug mit ihrer Expertise in Radiologie und biomedizinischer Informatik zum Projekt bei. Spezialisiert auf medizinische Bilddaten, Gesundheitsinformationssysteme und digitale Gesundheitstechnologien konzentriert sich Lee auf die Entwicklung von Lösungen für die sichere, transparente und effektive Verwaltung von Gesundheitsdaten.",
+        "Entsprechend dieser Vision führt Dr. Otgen Clinic Forschungen zur Zukunft des Gesundheitsökosystems durch Arbeiten in ästhetischer Gesundheit, digitalen Gesundheitstechnologien, KI-gestützten Gesundheitslösungen und innovativen Behandlungsansätzen durch.",
+        "Dr. Otgen Clinic arbeitet gemeinsam mit Dr. Eunsol Lee und Dr. Allen Wookyun Kho an einem neuen digitalen Token-Projekt, das darauf abzielt, den Einsatz der Blockchain-Technologie im Gesundheitswesen zu stärken. Dieses neue Token-Projekt soll für die sichere Verwaltung von Gesundheitsdaten, patientenzentrierte digitale Gesundheitsdienste, KI-gestützte medizinische Infrastrukturen und die Entwicklung blockchainbasierter Gesundheitslösungen konzipiert werden.",
+        "Die entwickelte Token-Struktur soll auf Kompatibilität mit dem globalen Krypto-Ökosystem geprüft werden und über die technische Infrastruktur verfügen, die für den Handel an internationalen digitalen Asset-Börsen wie Binance geeignet ist.",
+        "Im Gesundheitssystem der Zukunft wird die Verbindung von Technologie, Datensicherheit, künstlicher Intelligenz und personalisierten Gesundheitsdiensten zur Entwicklung transparenterer, zugänglicherer und patientenzentrierter Lösungen beitragen. Dr. Otgen Clinic strebt an, in dieser Transformation durch blockchainbasierte Gesundheitslösungen und digitale Asset-Projekte der nächsten Generation eine aktive Rolle zu spielen."
       ]
     },
     "focusAreas": {
       "title": "Blockchain- und Gesundheitstechnologie-Bereiche",
       "items": [
         "Blockchainbasierte Gesundheitsdatenverwaltung",
-        "MediBloc-Partnerschaft und Technologieentwicklung",
-        "Sichere Gesundheitsdateninfrastruktur",
-        "KI-gestützte Gesundheitslösungen",
+        "Digitales Token-Projekt und Krypto-Ökosystem-Integration",
+        "KI-gestützte medizinische Infrastruktur",
+        "Sichere und transparente Gesundheitsdateninfrastruktur",
+        "Patientenzentrierte digitale Gesundheitsdienste",
         "Medizinische Bildgebung und biomedizinische Informatik",
-        "Digitale Gesundheitstechnologien",
-        "Personalisierte Gesundheitsdienste",
-        "Ästhetische Gesundheit und innovative Behandlungsansätze"
+        "Kompatibilität mit globalen digitalen Asset-Börsen",
+        "Digitale Gesundheitstechnologien der nächsten Generation"
       ]
     },
     "closing": {
-      "quote": "Die Verbindung von Technologie, Datensicherheit und personalisierten Gesundheitsdiensten wird zur Entwicklung transparenterer, zugänglicherer und patientenzentrierter Lösungen beitragen.",
+      "quote": "Die Verbindung von Technologie, Datensicherheit, künstlicher Intelligenz und personalisierten Gesundheitsdiensten wird zur Entwicklung transparenterer, zugänglicherer und patientenzentrierter Lösungen beitragen.",
       "cta": "Termin Anfragen"
     },
     "breadcrumbHome": "Startseite",
