@@ -1,0 +1,43 @@
+{
+  "page": {
+    "title": "R&D Blockchain | Dr Otgen Clinic",
+    "description": "Informations sur la R&D blockchain de Dr Otgen Clinic ; vision MediBloc, solutions de données de santé basées sur la blockchain, intégration de l'IA et infrastructure sécurisée de données de santé.",
+    "hero": {
+      "tag": "TECHNOLOGIES DE SANTÉ",
+      "title": "R&D Blockchain",
+      "subtitle": "Vision MediBloc et Données de Santé",
+      "lead": "Solutions de données de santé basées sur la blockchain et infrastructure numérique de santé sécurisée",
+      "image": "/images/blockchain_rd/blockchain_rd_hero.png"
+    },
+    "intro": {
+      "title": "Équipe Fondatrice de MediBloc et Vision des Technologies de Santé de Dr. Otgen Clinic",
+      "paragraphs": [
+        "L'équipe derrière MediBloc visait à développer des solutions de données de santé basées sur la blockchain en réunissant diverses expertises dans les domaines de la santé et de la technologie.",
+        "Le Dr Allen Wookyun Kho, l'un des cofondateurs de MediBloc, a une carrière qui unit technologie et santé. Après avoir travaillé comme ingénieur logiciel chez Samsung Electronics au début de sa carrière, Kho a suivi une formation en dentisterie et s'est orienté vers le secteur de la santé. En combinant son expérience en logiciels, blockchain et médecine, il a joué un rôle clé dans la création du concept MediBloc.",
+        "L'autre cofondatrice, le Dr Eunsol Lee, a contribué au projet grâce à son expertise en radiologie et en informatique biomédicale. Spécialisée dans les données d'imagerie médicale, les systèmes d'information de santé et les technologies de santé numérique, Lee se concentre sur le développement de solutions pour la gestion sécurisée et efficace des données de santé.",
+        "Conformément à cette vision, Dr. Otgen Clinic mène des recherches sur l'avenir de l'écosystème de santé à travers des travaux en santé esthétique, technologies de santé numérique et approches thérapeutiques innovantes. Dr Otgen Clinic, en partenariat avec MediBloc, figure parmi les domaines technologiques clés évaluant l'intégration de la blockchain dans les services de santé, l'intelligence artificielle et les infrastructures sécurisées de données de santé.",
+        "Dans le système de santé de demain, la convergence de la technologie, de la sécurité des données et des services de santé personnalisés contribuera au développement de solutions plus transparentes, accessibles et centrées sur le patient."
+      ]
+    },
+    "focusAreas": {
+      "title": "Domaines Blockchain et Technologies de Santé",
+      "items": [
+        "Gestion des données de santé basée sur la blockchain",
+        "Partenariat MediBloc et développement technologique",
+        "Infrastructure sécurisée de données de santé",
+        "Solutions de santé assistées par IA",
+        "Imagerie médicale et informatique biomédicale",
+        "Technologies de santé numérique",
+        "Services de santé personnalisés",
+        "Santé esthétique et approches thérapeutiques innovantes"
+      ]
+    },
+    "closing": {
+      "quote": "La convergence de la technologie, de la sécurité des données et des services de santé personnalisés contribuera au développement de solutions plus transparentes, accessibles et centrées sur le patient.",
+      "cta": "Demander un Rendez-vous"
+    },
+    "breadcrumbHome": "Accueil",
+    "sectionName": "R&D",
+    "pageShortName": "R&D Blockchain"
+  }
+}

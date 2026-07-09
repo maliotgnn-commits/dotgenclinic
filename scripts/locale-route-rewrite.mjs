@@ -5,6 +5,7 @@ export const LEGAL_PREVIEW_FILE = 'hukuk-departmani.html';
 export const PHARMA_RD_PREVIEW_FILE = 'ilac-ar-ge.html';
 export const MEDIKAL_RD_PREVIEW_FILE = 'medikal-ar-ge.html';
 export const YAZILIM_RD_PREVIEW_FILE = 'yazilim-ar-ge.html';
+export const BLOCKCHAIN_RD_PREVIEW_FILE = 'blockchain-ar-ge.html';
 
 export const PHARMA_RD_FILES = new Set([
   'ilac-ar-ge.html',
@@ -37,6 +38,17 @@ export const YAZILIM_RD_FILES = new Set([
   'r-d-software.html',
   'программные-разработки.html',
   'software-forschung.html',
+]);
+
+export const BLOCKCHAIN_RD_FILES = new Set([
+  'blockchain-ar-ge.html',
+  'blockchain-r-d.html',
+  'البحث-والتطوير-البلوكشين.html',
+  'i-d-blockchain.html',
+  'r-d-blockchain.html',
+  'r-s-blockchain.html',
+  'блокчейн-разработки.html',
+  'blockchain-forschung.html',
 ]);
 
 export const LEGAL_FILES = new Set([
@@ -141,6 +153,14 @@ export function resolveLocaleRewrite(pathname, search = '') {
 
   if (YAZILIM_RD_FILES.has(routeFile) || YAZILIM_RD_FILES.has(routeFileRaw)) {
     return `/yazilim-ar-ge.html${search}`;
+  }
+
+  if (routeFile === BLOCKCHAIN_RD_PREVIEW_FILE || routeFileRaw === BLOCKCHAIN_RD_PREVIEW_FILE) {
+    return `/blockchain-ar-ge.html${search}`;
+  }
+
+  if (BLOCKCHAIN_RD_FILES.has(routeFile) || BLOCKCHAIN_RD_FILES.has(routeFileRaw)) {
+    return `/blockchain-ar-ge.html${search}`;
   }
 
   return `/index.html${search}`;

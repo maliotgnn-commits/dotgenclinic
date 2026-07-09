@@ -1,4 +1,4 @@
-import { resolveLocaleRewrite, rewriteLocaleRequestUrl, FINANCE_PREVIEW_FILE, FINANCE_FILES, LEGAL_PREVIEW_FILE, LEGAL_FILES, PHARMA_RD_PREVIEW_FILE, PHARMA_RD_FILES, MEDIKAL_RD_PREVIEW_FILE, MEDIKAL_RD_FILES, YAZILIM_RD_PREVIEW_FILE, YAZILIM_RD_FILES } from './locale-route-rewrite.mjs';
+import { resolveLocaleRewrite, rewriteLocaleRequestUrl, FINANCE_PREVIEW_FILE, FINANCE_FILES, LEGAL_PREVIEW_FILE, LEGAL_FILES, PHARMA_RD_PREVIEW_FILE, PHARMA_RD_FILES, MEDIKAL_RD_PREVIEW_FILE, MEDIKAL_RD_FILES, YAZILIM_RD_PREVIEW_FILE, YAZILIM_RD_FILES, BLOCKCHAIN_RD_PREVIEW_FILE, BLOCKCHAIN_RD_FILES } from './locale-route-rewrite.mjs';
 
 const failures = [];
 
@@ -23,6 +23,7 @@ expect('/tr/hukuk-departmani.html', '', '/hukuk-departmani.html');
 expect('/tr/ilac-ar-ge.html', '', '/ilac-ar-ge.html');
 expect('/tr/medikal-ar-ge.html', '', '/medikal-ar-ge.html');
 expect('/tr/yazilim-ar-ge.html', '', '/yazilim-ar-ge.html');
+expect('/tr/blockchain-ar-ge.html', '', '/blockchain-ar-ge.html');
 expect('/en/legal-department.html', '', '/hukuk-departmani.html');
 expect('/de/rechtsabteilung.html', '', '/hukuk-departmani.html');
 expect('/en/finance-department.html', '', '/finans-departmani.html');
@@ -131,6 +132,20 @@ expect('/de/software-forschung.html', '', '/yazilim-ar-ge.html');
 assert(
   rewriteLocaleRequestUrl('/en/software-r-d.html') === '/yazilim-ar-ge.html',
   'rewriteLocaleRequestUrl must map localized software R&D routes',
+);
+assert(
+  BLOCKCHAIN_RD_PREVIEW_FILE === 'blockchain-ar-ge.html',
+  'Blockchain R&D preview route file constant mismatch',
+);
+assert(
+  BLOCKCHAIN_RD_FILES.size === 8,
+  'Blockchain R&D locale route file set must include 8 locale filenames',
+);
+expect('/en/blockchain-r-d.html', '', '/blockchain-ar-ge.html');
+expect('/de/blockchain-forschung.html', '', '/blockchain-ar-ge.html');
+assert(
+  rewriteLocaleRequestUrl('/en/blockchain-r-d.html') === '/blockchain-ar-ge.html',
+  'rewriteLocaleRequestUrl must map localized blockchain R&D routes',
 );
 
 if (failures.length) {

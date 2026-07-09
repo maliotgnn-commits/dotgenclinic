@@ -4,6 +4,7 @@ import { financePathForLocale } from './finance-routes.js';
 import { legalPathForLocale } from './legal-routes.js';
 import { medikalRdPathForLocale } from './medikal-rd-routes.js';
 import { yazilimRdPathForLocale } from './yazilim-rd-routes.js';
+import { blockchainRdPathForLocale } from './blockchain-rd-routes.js';
 import { pharmaRdPathForLocale } from './pharma-rd-routes.js';
 
 export const DEFAULT_LOCALE = 'tr';
@@ -73,7 +74,7 @@ export function getCurrentLocale(pageType = 'home') {
   const pathLocale = getPathLocale();
   const locale = pathLocale || getStoredLocale() || DEFAULT_LOCALE;
 
-  if ((pageType === 'eye-health' || pageType === 'finance' || pageType === 'legal' || pageType === 'pharma-rd' || pageType === 'medikal-rd' || pageType === 'yazilim-rd') && pathLocale) {
+  if ((pageType === 'eye-health' || pageType === 'finance' || pageType === 'legal' || pageType === 'pharma-rd' || pageType === 'medikal-rd' || pageType === 'yazilim-rd' || pageType === 'blockchain-rd') && pathLocale) {
     storeLocale(pathLocale);
     applyDocumentDirection(pathLocale);
     return pathLocale;
@@ -94,6 +95,8 @@ export function getCurrentLocale(pageType = 'home') {
               ? medikalRdPathForLocale(locale)
             : pageType === 'yazilim-rd'
               ? yazilimRdPathForLocale(locale)
+            : pageType === 'blockchain-rd'
+              ? blockchainRdPathForLocale(locale)
             : pageType === 'privacy'
             ? `/${locale}/privacy.html`
             : homeUrlFor(locale, window.location.hash);
@@ -165,6 +168,10 @@ export function currentPageUrlForLocale(locale, pageType = 'home') {
 
   if (pageType === 'yazilim-rd') {
     return yazilimRdPathForLocale(locale);
+  }
+
+  if (pageType === 'blockchain-rd') {
+    return blockchainRdPathForLocale(locale);
   }
 
   if (pageType === 'privacy') {
@@ -304,6 +311,15 @@ export function applySeoLinks(locale, pageType = 'home', slug = null) {
       upsertSeoLink('alternate', code, yazilimRdPathForLocale(code));
     });
     upsertSeoLink('alternate', 'x-default', yazilimRdPathForLocale('en'));
+    return;
+  }
+
+  if (pageType === 'blockchain-rd') {
+    upsertSeoLink('canonical', null, blockchainRdPathForLocale(locale));
+    LOCALES.forEach(({ code }) => {
+      upsertSeoLink('alternate', code, blockchainRdPathForLocale(code));
+    });
+    upsertSeoLink('alternate', 'x-default', blockchainRdPathForLocale('en'));
     return;
   }
 
