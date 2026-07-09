@@ -141,6 +141,17 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "international-health-insurance"
+        }
+      ],
+      "destination": "/_seo/tr/service/international-health-insurance.html"
+    },
+    {
+      "source": "/tr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "sapphire-fue-hair-transplant"
         }
       ],
@@ -651,6 +662,17 @@
         }
       ],
       "destination": "/_seo/en/service/production.html"
+    },
+    {
+      "source": "/en/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "international-health-insurance"
+        }
+      ],
+      "destination": "/_seo/en/service/international-health-insurance.html"
     },
     {
       "source": "/en/service.html",
@@ -1175,6 +1197,17 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "international-health-insurance"
+        }
+      ],
+      "destination": "/_seo/ar/service/international-health-insurance.html"
+    },
+    {
+      "source": "/ar/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "sapphire-fue-hair-transplant"
         }
       ],
@@ -1685,6 +1718,17 @@
         }
       ],
       "destination": "/_seo/es/service/production.html"
+    },
+    {
+      "source": "/es/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "international-health-insurance"
+        }
+      ],
+      "destination": "/_seo/es/service/international-health-insurance.html"
     },
     {
       "source": "/es/service.html",
@@ -2209,6 +2253,17 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "international-health-insurance"
+        }
+      ],
+      "destination": "/_seo/fr/service/international-health-insurance.html"
+    },
+    {
+      "source": "/fr/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "sapphire-fue-hair-transplant"
         }
       ],
@@ -2719,6 +2774,17 @@
         }
       ],
       "destination": "/_seo/it/service/production.html"
+    },
+    {
+      "source": "/it/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "international-health-insurance"
+        }
+      ],
+      "destination": "/_seo/it/service/international-health-insurance.html"
     },
     {
       "source": "/it/service.html",
@@ -3243,6 +3309,17 @@
         {
           "type": "query",
           "key": "slug",
+          "value": "international-health-insurance"
+        }
+      ],
+      "destination": "/_seo/ru/service/international-health-insurance.html"
+    },
+    {
+      "source": "/ru/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
           "value": "sapphire-fue-hair-transplant"
         }
       ],
@@ -3753,6 +3830,17 @@
         }
       ],
       "destination": "/_seo/de/service/production.html"
+    },
+    {
+      "source": "/de/service.html",
+      "has": [
+        {
+          "type": "query",
+          "key": "slug",
+          "value": "international-health-insurance"
+        }
+      ],
+      "destination": "/_seo/de/service/international-health-insurance.html"
     },
     {
       "source": "/de/service.html",
