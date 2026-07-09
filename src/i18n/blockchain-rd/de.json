@@ -1,0 +1,43 @@
+{
+  "page": {
+    "title": "Blockchain F&E | Dr Otgen Clinic",
+    "description": "Informationen zu Blockchain-F&E bei Dr Otgen Clinic; MediBloc-Vision, blockchainbasierte Gesundheitsdatenlösungen, KI-Integration und sichere Gesundheitsdateninfrastruktur.",
+    "hero": {
+      "tag": "GESUNDHEITSTECHNOLOGIE",
+      "title": "Blockchain F&E",
+      "subtitle": "MediBloc-Vision und Gesundheitsdaten",
+      "lead": "Blockchainbasierte Gesundheitsdatenlösungen und sichere digitale Gesundheitsinfrastruktur",
+      "image": "/images/blockchain_rd/blockchain_rd_hero.png"
+    },
+    "intro": {
+      "title": "MediBloc-Gründerteam und Gesundheitstechnologie-Vision von Dr. Otgen Clinic",
+      "paragraphs": [
+        "Das Team hinter MediBloc zielte darauf ab, blockchainbasierte Gesundheitsdatenlösungen zu entwickeln, indem es verschiedene Expertisen in den Bereichen Gesundheit und Technologie zusammenführte.",
+        "Dr. Allen Wookyun Kho, einer der Mitbegründer von MediBloc, verfügt über eine Karriere, die Technologie und Gesundheitswesen verbindet. Nachdem er zu Beginn seiner Laufbahn als Softwareingenieur bei Samsung Electronics tätig war, absolvierte Kho eine zahnmedizinische Ausbildung und wandte sich dem Gesundheitssektor zu. Durch die Verbindung seiner Erfahrung in Software, Blockchain und Medizin spielte er eine Schlüsselrolle bei der Entwicklung des MediBloc-Konzepts.",
+        "Die andere Mitbegründerin, Dr. Eunsol Lee, trug mit ihrer Expertise in Radiologie und biomedizinischer Informatik zum Projekt bei. Spezialisiert auf medizinische Bilddaten, Gesundheitsinformationssysteme und digitale Gesundheitstechnologien konzentriert sich Lee auf die Entwicklung von Lösungen für die sichere und effektive Verwaltung von Gesundheitsdaten.",
+        "Entsprechend dieser Vision führt Dr. Otgen Clinic Forschungen zur Zukunft des Gesundheitsökosystems durch Arbeiten in ästhetischer Gesundheit, digitalen Gesundheitstechnologien und innovativen Behandlungsansätzen durch. Dr Otgen Clinic gehört in Partnerschaft mit MediBloc zu den wichtigsten Technologiebereichen, die die Integration von Blockchain in Gesundheitsdienste, künstliche Intelligenz und sichere Gesundheitsdateninfrastrukturen bewerten.",
+        "Im Gesundheitssystem der Zukunft wird die Verbindung von Technologie, Datensicherheit und personalisierten Gesundheitsdiensten zur Entwicklung transparenterer, zugänglicherer und patientenzentrierter Lösungen beitragen."
+      ]
+    },
+    "focusAreas": {
+      "title": "Blockchain- und Gesundheitstechnologie-Bereiche",
+      "items": [
+        "Blockchainbasierte Gesundheitsdatenverwaltung",
+        "MediBloc-Partnerschaft und Technologieentwicklung",
+        "Sichere Gesundheitsdateninfrastruktur",
+        "KI-gestützte Gesundheitslösungen",
+        "Medizinische Bildgebung und biomedizinische Informatik",
+        "Digitale Gesundheitstechnologien",
+        "Personalisierte Gesundheitsdienste",
+        "Ästhetische Gesundheit und innovative Behandlungsansätze"
+      ]
+    },
+    "closing": {
+      "quote": "Die Verbindung von Technologie, Datensicherheit und personalisierten Gesundheitsdiensten wird zur Entwicklung transparenterer, zugänglicherer und patientenzentrierter Lösungen beitragen.",
+      "cta": "Termin Anfragen"
+    },
+    "breadcrumbHome": "Startseite",
+    "sectionName": "F&E",
+    "pageShortName": "Blockchain F&E"
+  }
+}

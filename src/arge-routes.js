@@ -13,6 +13,13 @@ import {
   isYazilimRdPath,
 } from './yazilim-rd-routes.js';
 import {
+  blockchainRdFileForLocale,
+  blockchainRdPageNavLabelForLocale,
+  blockchainRdPathForLocale,
+  detectBlockchainRdLocale,
+  isBlockchainRdPath,
+} from './blockchain-rd-routes.js';
+import {
   PHARMA_RD_ROUTES,
   argeMenuLabelForLocale,
   detectPharmaRdLocale,
@@ -48,6 +55,12 @@ export function argePagesForLocale(locale = 'tr') {
       path: yazilimRdPathForLocale(locale),
       file: yazilimRdFileForLocale(locale),
     },
+    {
+      id: 'blockchain-ar-ge',
+      navLabel: blockchainRdPageNavLabelForLocale(locale),
+      path: blockchainRdPathForLocale(locale),
+      file: blockchainRdFileForLocale(locale),
+    },
   ];
 }
 
@@ -64,6 +77,10 @@ export function argePagePathForId(id, locale = 'tr') {
 }
 
 export function detectArgePage(pathname = window.location.pathname) {
+  const blockchainLocale = detectBlockchainRdLocale(pathname);
+  if (blockchainLocale) {
+    return argePagesForLocale(blockchainLocale).find((page) => page.id === 'blockchain-ar-ge') || null;
+  }
   const yazilimLocale = detectYazilimRdLocale(pathname);
   if (yazilimLocale) {
     return argePagesForLocale(yazilimLocale).find((page) => page.id === 'yazilim-ar-ge') || null;
@@ -78,7 +95,7 @@ export function detectArgePage(pathname = window.location.pathname) {
 }
 
 export function isArgePagePath(pathname = window.location.pathname) {
-  return isPharmaRdPath(pathname) || isMedikalRdPath(pathname) || isYazilimRdPath(pathname);
+  return isPharmaRdPath(pathname) || isMedikalRdPath(pathname) || isYazilimRdPath(pathname) || isBlockchainRdPath(pathname);
 }
 
 export { argeMenuLabelForLocale, detectPharmaRdLocale, pharmaRdPathForLocale };

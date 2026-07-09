@@ -1,0 +1,43 @@
+{
+  "page": {
+    "title": "Blockchain R&D | Dr Otgen Clinic",
+    "description": "Information on Dr Otgen Clinic blockchain R&D; MediBloc vision, blockchain-based health data solutions, AI integration and secure health data infrastructure.",
+    "hero": {
+      "tag": "HEALTH TECHNOLOGY",
+      "title": "Blockchain R&D",
+      "subtitle": "MediBloc Vision and Health Data",
+      "lead": "Blockchain-based health data solutions and secure digital health infrastructure",
+      "image": "/images/blockchain_rd/blockchain_rd_hero.png"
+    },
+    "intro": {
+      "title": "MediBloc Founding Team and Dr. Otgen Clinic Health Technology Vision",
+      "paragraphs": [
+        "The team behind MediBloc aimed to develop blockchain-based health data solutions by bringing together diverse expertise in healthcare and technology.",
+        "Dr. Allen Wookyun Kho, one of MediBloc's co-founders, has a career that bridges technology and healthcare. After working as a software engineer at Samsung Electronics early in his career, Kho pursued dental education and moved into the healthcare sector. By combining his experience in software, blockchain and medicine, he played a key role in shaping the MediBloc concept.",
+        "The other co-founder, Dr. Eunsol Lee, contributed to the project with her expertise in radiology and biomedical informatics. Specialising in medical imaging data, health information systems and digital health technologies, Lee focuses on developing solutions for the secure and effective management of health data.",
+        "In line with this vision, Dr. Otgen Clinic conducts research on the future of the healthcare ecosystem through work in aesthetic health, digital health technologies and innovative treatment approaches. Dr Otgen Clinic, in partnership with MediBloc, is among the key technology areas evaluating blockchain integration into healthcare services, artificial intelligence and secure health data infrastructure.",
+        "In tomorrow's healthcare system, the convergence of technology, data security and personalised health services will contribute to developing more transparent, accessible and patient-centred solutions."
+      ]
+    },
+    "focusAreas": {
+      "title": "Blockchain and Health Technology Areas",
+      "items": [
+        "Blockchain-based health data management",
+        "MediBloc partnership and technology development",
+        "Secure health data infrastructure",
+        "AI-assisted health solutions",
+        "Medical imaging and biomedical informatics",
+        "Digital health technologies",
+        "Personalised health services",
+        "Aesthetic health and innovative treatment approaches"
+      ]
+    },
+    "closing": {
+      "quote": "The convergence of technology, data security and personalised health services will contribute to developing more transparent, accessible and patient-centred solutions.",
+      "cta": "Request Appointment"
+    },
+    "breadcrumbHome": "Home",
+    "sectionName": "R&D",
+    "pageShortName": "Blockchain R&D"
+  }
+}
