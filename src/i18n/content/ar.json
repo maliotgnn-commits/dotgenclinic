@@ -808,127 +808,127 @@
     {
       "category": "corporate",
       "slug": "international-health-insurance",
-      "navLabel": "Uluslararası Sağlık Sigortası",
+      "navLabel": "التأمين الصحي الدولي",
       "navAppendOnly": true,
-      "title": "Uluslararası Sağlık Sigortası",
+      "title": "التأمين الصحي الدولي",
       "categoryLabel": "الشركات",
       "heroTag": "معلومات الشركة",
-      "heroSubtitle": "Uluslararası Sigorta Anlaşmaları: Bupa Global ve Cigna Healthcare ile Güvendesiniz",
-      "summary": "Dr Otgen Clinic, Bupa Global ve Cigna Healthcare anlaşmalarıyla uluslararası hastalara estetik, saç sağlığı, diş estetiği, medikal estetik ve longevity hizmetlerinde güvenli ve kapsamlı sağlık desteği sunar.",
+      "heroSubtitle": "اتفاقيات التأمين الدولية: أنت بأمان مع Bupa Global وCigna Healthcare",
+      "summary": "من خلال اتفاقيات مع Bupa Global وCigna Healthcare، تقدم عيادة Dr Otgen Clinic للمرضى الدوليين دعماً صحياً آمناً وشاملاً في التجميل وصحة الشعر وتجميل الأسنان والتجميل الطبي وخدمات longevity.",
       "images": {
         "hero": "/images/site/pages/international-health-insurance-hero.webp",
         "content": "/images/site/pages/international-health-insurance-hero.webp"
       },
       "overview": [
-        "Dr Otgen Clinic olarak, global standartlarda sunduğumuz estetik, saç sağlığı, diş estetiği, medikal estetik ve longevity hizmetlerimizi uluslararası hastalarımızın erişimine sunmaktan gurur duyuyoruz.",
-        "Sağlık yolculuğunuzda size tam destek olmak amacıyla, dünyanın önde gelen sağlık sigortası sağlayıcıları Bupa Global ve Cigna Healthcare ile anlaşmalı olarak hizmet vermekteyiz."
+        "في عيادة Dr Otgen Clinic، نفخر بتقديم خدمات التجميل وصحة الشعر وتجميل الأسنان والتجميل الطبي وlongevity للمرضى الدوليين وفق معايير عالمية.",
+        "لدعمكم بالكامل خلال رحلتكم الصحية، نعمل بموجب اتفاقيات مع Bupa Global وCigna Healthcare، من أبرز مزودي التأمين الصحي في العالم."
       ],
       "sections": [
         {
-          "title": "Bupa Global ve Cigna Healthcare ile Ayrıcalıklı Sağlık Hizmetleri",
+          "title": "خدمات صحية متميزة مع Bupa Global وCigna Healthcare",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Bupa Global ve Cigna Healthcare, dünya genelinde milyonlarca kişiye kapsamlı sağlık sigortası çözümleri sunan köklü kuruluşlardır. Dr Otgen Clinic'in bu prestijli sigorta sağlayıcıları ile olan anlaşmaları sayesinde, uluslararası hastalarımız aşağıdaki ayrıcalıklardan faydalanabilirler:"
+              "text": "Bupa Global وCigna Healthcare مؤسستان راسختان تقدمان حلول تأمين صحي شاملة لملايين الأشخاص حول العالم. وبفضل اتفاقيات Dr Otgen Clinic مع هذين المزودين المرموقين، يمكن للمرضى الدوليين الاستفادة من المزايا التالية:"
             },
             {
               "type": "list",
               "items": [
-                "Geniş Medikal Ağ: Her iki sigorta şirketinin de dünya çapındaki geniş anlaşmalı kurum ağları sayesinde, tedavi süreçlerinizde global erişim ve esneklik sağlanır.",
-                "Kapsamlı Teminatlar: Bupa Global ve Cigna Healthcare sigortalarınız, Dr Otgen Clinic'te alacağınız birçok tedavi ve hizmeti kapsayarak finansal güvence sunar. Bu sayede, sağlığınıza odaklanırken maliyet endişesi taşımazsınız.",
-                "Uluslararası Geçerlilik: Sigortalarınızın uluslararası geçerliliği sayesinde, Türkiye'deki Dr Otgen Clinic'te alacağınız tedavilerde de güvence altında olursunuz."
+                "شبكة طبية واسعة: تضمن شبكات المؤسسات المتعاقدة الواسعة لدى شركتي التأمين وصولاً عالمياً ومرونة طوال رحلة العلاج.",
+                "تغطيات شاملة: قد تغطي وثائق Bupa Global وCigna Healthcare العديد من العلاجات والخدمات في Dr Otgen Clinic، مما يمنحكم راحة مالية.",
+                "صلاحية دولية: بفضل الصلاحية الدولية لوثيقتكم، تظلون مغطين بالعلاجات التي تتلقونها في Dr Otgen Clinic في تركيا."
               ]
             }
           ]
         },
         {
-          "title": "Dr Otgen Clinic'in Uluslararası Hastalara Sunduğu Destek",
+          "title": "دعم Dr Otgen Clinic للمرضى الدوليين",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Dr Otgen Clinic olarak, uluslararası hastalarımızın tedavi süreçlerini en konforlu ve sorunsuz şekilde geçirmeleri için özel hizmetler sunuyoruz:"
+              "text": "في Dr Otgen Clinic، نقدم خدمات مخصصة لمساعدة المرضى الدوليين على تجربة رحلة العلاج بأقصى درجات الراحة والسلاسة:"
             },
             {
               "type": "list",
               "items": [
-                "Hasta Koordinasyonu: Tedavi planlamanızdan seyahat düzenlemelerinize kadar tüm süreçlerde size özel bir hasta koordinatörü eşlik eder.",
-                "Çok Dilli Destek: Farklı dillerde iletişim kurabilen ekibimiz sayesinde, tedavi süreciniz boyunca herhangi bir dil bariyeri yaşamazsınız.",
-                "Modern Tedavi Yaklaşımları: Alanında uzman hekimlerimiz ve güncel teknolojiye sahip kliniğimizle, kişiye özel ve en etkili tedavi yöntemlerini sunuyoruz."
+                "تنسيق المرضى: يرافقكم منسق مخصص في جميع المراحل من تخطيط العلاج إلى ترتيبات السفر.",
+                "دعم متعدد اللغات: يتواصل فريقنا بعدة لغات حتى لا تواجهوا أي حواجز لغوية أثناء العلاج.",
+                "مناهج علاج حديثة: مع أطباء متخصصين وتقنيات متقدمة، نقدم أساليب علاج شخصية وفعالة."
               ]
             }
           ]
         },
         {
-          "title": "Bupa Global veya Cigna Healthcare Sigortanızla Hizmetlerimizden Yararlanın",
+          "title": "استفيدوا من خدماتنا عبر تأمين Bupa Global أو Cigna Healthcare",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Eğer Bupa Global veya Cigna Healthcare sigortasına sahipseniz, Dr Otgen Clinic'in sunduğu premium estetik ve sağlık hizmetlerinden kolayca faydalanabilirsiniz. Tedavi planlaması ve sigorta kapsamınız hakkında detaylı bilgi almak için bizimle iletişime geçmeniz yeterlidir."
+              "text": "إذا كنتم تحملون تأمين Bupa Global أو Cigna Healthcare، يمكنكم بسهولة الاستفادة من خدمات التجميل والصحة المتميزة في Dr Otgen Clinic. تواصلوا معنا للحصول على معلومات مفصلة حول تخطيط العلاج ونطاق التغطية."
             },
             {
               "type": "paragraph",
-              "text": "Sağlığınız ve güzelliğiniz için Dr Otgen Clinic, Bupa Global ve Cigna Healthcare güvencesiyle yanınızdayız."
+              "text": "من أجل صحتكم وجمالكم، Dr Otgen Clinic بجانبكم بضمان Bupa Global وCigna Healthcare."
             }
           ]
         }
       ],
       "highlights": [
-        "Bupa Global ve Cigna Healthcare anlaşmaları",
-        "Uluslararası geçerli sigorta teminatları",
-        "Çok dilli hasta koordinasyonu",
-        "Premium estetik ve sağlık hizmetleri"
+        "اتفاقيات مع Bupa Global وCigna Healthcare",
+        "تغطيات تأمينية سارية دولياً",
+        "تنسيق متعدد اللغات للمرضى",
+        "خدمات تجميل وصحة متميزة"
       ],
       "suitableIntro": "",
       "suitableFor": [
-        "Bupa Global sigortasına sahip uluslararası hastalar",
-        "Cigna Healthcare sigortasına sahip uluslararası hastalar",
-        "Tedavi planlamasında sigorta kapsamı hakkında bilgi almak isteyenler",
-        "Türkiye'de güvenilir klinik arayan uluslararası hastalar"
+        "المرضى الدوليون الحاملون لتأمين Bupa Global",
+        "المرضى الدوليون الحاملون لتأمين Cigna Healthcare",
+        "من يريدون معلومات عن التغطية التأمينية أثناء تخطيط العلاج",
+        "المرضى الدوليون الباحثون عن عيادة موثوقة في تركيا"
       ],
       "quickFacts": [
         {
-          "label": "Anlaşmalı Sigorta",
-          "value": "Bupa Global ve Cigna Healthcare"
+          "label": "شركات التأمين الشريكة",
+          "value": "Bupa Global وCigna Healthcare"
         },
         {
           "label": "الدعم",
-          "value": "التنسيق الدولي للمرضى"
+          "value": "تنسيق المرضى الدوليين"
         },
         {
-          "label": "الاتصال",
-          "value": "Çok dilli ekip desteği"
+          "label": "التواصل",
+          "value": "فريق متعدد اللغات"
         },
         {
           "label": "النطاق",
-          "value": "Estetik, saç, diş, medikal estetik ve longevity"
+          "value": "تجميل، شعر، أسنان، تجميل طبي وlongevity"
         }
       ],
       "process": [
         {
-          "title": "Sigorta ve Tedavi Değerlendirmesi",
-          "description": "Sigorta kapsamınız ve tedavi ihtiyaçlarınız birlikte değerlendirilir; uygun hizmet planı oluşturulur."
+          "title": "تقييم التأمين والعلاج",
+          "description": "يتم تقييم التغطية التأمينية واحتياجات العلاج معاً لإعداد خطة مناسبة."
         },
         {
           "title": "التخطيط والتنسيق",
-          "description": "Tedavi takvimi, iletişim süreci ve operasyonel detaylar hasta koordinatörünüz tarafından organize edilir."
+          "description": "ينظم منسق المريض جدول العلاج وعملية التواصل والتفاصيل التشغيلية."
         },
         {
-          "title": "Tedavi ve Takip",
-          "description": "Tedavi süreciniz boyunca çok dilli destek ve yapılandırılmış takip hizmeti sunulur."
+          "title": "العلاج والمتابعة",
+          "description": "يُقدَّم دعم متعدد اللغات ومتابعة منظمة طوال رحلة العلاج."
         }
       ],
       "faqs": [
         {
-          "question": "Bupa Global veya Cigna Healthcare sigortam Dr Otgen Clinic'te geçerli mi?",
-          "answer": "Dr Otgen Clinic, Bupa Global ve Cigna Healthcare ile anlaşmalı olarak hizmet vermektedir. Sigorta kapsamınızın geçerliliği poliçenize göre değerlendirilir; detaylı bilgi için bizimle iletişime geçebilirsiniz."
+          "question": "هل تأمين Bupa Global أو Cigna Healthcare ساري في Dr Otgen Clinic؟",
+          "answer": "تقدم Dr Otgen Clinic خدماتها بموجب اتفاقيات مع Bupa Global وCigna Healthcare. تُقيَّم صلاحية التغطية وفق وثيقتكم؛ تواصلوا معنا للتفاصيل."
         },
         {
-          "question": "Hangi hizmetler sigorta kapsamında değerlendirilebilir?",
-          "answer": "Estetik, saç sağlığı, diş estetiği, medikal estetik ve longevity hizmetlerimizin birçoğu sigorta kapsamında değerlendirilebilir. Kesin kapsam, poliçeniz ve tedavi planınıza göre belirlenir."
+          "question": "ما الخدمات التي قد تغطيها وثيقة التأمين؟",
+          "answer": "قد تكون كثير من خدمات التجميل وصحة الشعر وتجميل الأسنان والتجميل الطبي وlongevity مؤهلة للتغطية. يعتمد النطاق النهائي على الوثيقة وخطة العلاج."
         },
         {
-          "question": "Uluslararası hasta desteği nasıl sağlanır?",
-          "answer": "Size özel bir hasta koordinatörü eşlik eder; tedavi planlaması, seyahat düzenlemeleri ve çok dilli iletişim süreçlerinde destek sunulur."
+          "question": "كيف يُقدَّم الدعم للمرضى الدوليين؟",
+          "answer": "يرافقكم منسق مخصص ويدعم تخطيط العلاج وترتيبات السفر والتواصل متعدد اللغات."
         }
       ]
     },
