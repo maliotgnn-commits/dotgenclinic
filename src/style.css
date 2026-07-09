@@ -1454,15 +1454,19 @@ to {
 .partners-marquee-wrap {
   width: max-content;
   animation: 42s linear infinite partnersMarquee;
-  display: flex
+  display: flex;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden
 }
 
 .partners-marquee-track {
   white-space: nowrap;
   align-items: center;
   gap: 84px;
-  padding: 18px 0;
-  display: flex
+  padding: 18px 84px 18px 0;
+  display: flex;
+  flex-shrink: 0
 }
 
 .partners-marquee-track span {
@@ -1521,11 +1525,11 @@ to {
 
 @keyframes partnersMarquee {
   0% {
-    transform: translate(0)
+    transform: translate3d(0, 0, 0)
   }
 
 to {
-    transform: translate(-50%)
+    transform: translate3d(-50%, 0, 0)
   }
 
 }
@@ -2584,7 +2588,7 @@ html[dir=rtl] .form-group select {
 
 .partners-marquee-track {
     gap: 54px;
-    padding: 14px 0
+    padding: 14px 54px 14px 0
   }
 
 .partners-marquee-track span {
