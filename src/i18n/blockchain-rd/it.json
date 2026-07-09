@@ -1,7 +1,7 @@
 {
   "page": {
     "title": "R&S Blockchain | Dr Otgen Clinic",
-    "description": "Informazioni sulla R&S blockchain di Dr Otgen Clinic; visione MediBloc, soluzioni di dati sanitari basate su blockchain, integrazione dell'IA e infrastruttura sicura dei dati sanitari.",
+    "description": "Informazioni sulla R&S blockchain di Dr Otgen Clinic; visione MediBloc, progetto token digitale, soluzioni di dati sanitari basate su blockchain, IA e infrastruttura sicura dei dati sanitari.",
     "hero": {
       "tag": "TECNOLOGIE SANITARIE",
       "title": "R&S Blockchain",
@@ -13,27 +13,29 @@
       "title": "Team Fondatore di MediBloc e Visione delle Tecnologie Sanitarie di Dr. Otgen Clinic",
       "paragraphs": [
         "Il team dietro MediBloc mirava a sviluppare soluzioni di dati sanitari basate su blockchain riunendo diverse competenze nei settori della salute e della tecnologia.",
-        "Il Dr. Allen Wookyun Kho, uno dei cofondatori di MediBloc, ha una carriera che unisce tecnologia e salute. Dopo aver lavorato come ingegnere del software presso Samsung Electronics all'inizio della sua carriera, Kho ha seguito una formazione in odontoiatria e si è orientato verso il settore sanitario. Combinando la sua esperienza in software, blockchain e medicina, ha svolto un ruolo chiave nella creazione del concetto MediBloc.",
-        "L'altra cofondatrice, la Dott.ssa Eunsol Lee, ha contribuito al progetto con la sua esperienza in radiologia e informatica biomedica. Specializzata in dati di imaging medico, sistemi informativi sanitari e tecnologie di salute digitale, Lee si concentra sullo sviluppo di soluzioni per la gestione sicura ed efficace dei dati sanitari.",
-        "In linea con questa visione, Dr. Otgen Clinic conduce ricerche sul futuro dell'ecosistema sanitario attraverso lavori in salute estetica, tecnologie di salute digitale e approcci terapeutici innovativi. Dr Otgen Clinic, in partnership con MediBloc, è tra le aree tecnologiche chiave che valutano l'integrazione della blockchain nei servizi sanitari, l'intelligenza artificiale e le infrastrutture sicure dei dati sanitari.",
-        "Nel sistema sanitario del futuro, la convergenza di tecnologia, sicurezza dei dati e servizi sanitari personalizzati contribuirà allo sviluppo di soluzioni più trasparenti, accessibili e incentrate sul paziente."
+        "Il Dr. Allen Wookyun Kho, uno dei cofondatori di MediBloc, ha una solida carriera che unisce tecnologia e salute. Dopo aver lavorato come ingegnere del software presso Samsung Electronics all'inizio della sua carriera, Kho ha seguito una formazione in odontoiatria e si è orientato verso il settore sanitario. Combinando la sua esperienza in software, blockchain e medicina, ha svolto un ruolo chiave nella creazione del concetto MediBloc.",
+        "L'altra cofondatrice, la Dott.ssa Eunsol Lee, ha contribuito al progetto con la sua esperienza in radiologia e informatica biomedica. Specializzata in dati di imaging medico, sistemi informativi sanitari e tecnologie di salute digitale, Lee si concentra sullo sviluppo di soluzioni per la gestione sicura, trasparente ed efficace dei dati sanitari.",
+        "In linea con questa visione, Dr. Otgen Clinic conduce ricerche sul futuro dell'ecosistema sanitario attraverso lavori in salute estetica, tecnologie di salute digitale, soluzioni sanitarie assistite dall'IA e approcci terapeutici innovativi.",
+        "Dr. Otgen Clinic, insieme alla Dott.ssa Eunsol Lee e al Dr. Allen Wookyun Kho, sta lavorando su un nuovo progetto di token digitale volto a rafforzare l'uso della tecnologia blockchain nei servizi sanitari. Questo nuovo progetto di token è previsto per essere progettato al fine di gestire in modo sicuro i dati sanitari, offrire servizi sanitari digitali centrati sul paziente, sviluppare infrastrutture mediche assistite dall'IA e creare soluzioni sanitarie basate su blockchain.",
+        "La struttura del token sviluppato è destinata a essere valutata per la compatibilità con l'ecosistema crypto globale e a disporre dell'infrastruttura tecnica adatta alla negoziazione su borse internazionali di asset digitali come Binance.",
+        "Nel sistema sanitario del futuro, la convergenza di tecnologia, sicurezza dei dati, intelligenza artificiale e servizi sanitari personalizzati contribuirà allo sviluppo di soluzioni più trasparenti, accessibili e incentrate sul paziente. Dr. Otgen Clinic mira a svolgere un ruolo attivo in questa trasformazione attraverso soluzioni sanitarie basate su blockchain e progetti di asset digitali di nuova generazione."
       ]
     },
     "focusAreas": {
       "title": "Aree Blockchain e Tecnologie Sanitarie",
       "items": [
         "Gestione dei dati sanitari basata su blockchain",
-        "Partnership MediBloc e sviluppo tecnologico",
-        "Infrastruttura sicura dei dati sanitari",
-        "Soluzioni sanitarie assistite dall'IA",
+        "Progetto token digitale e integrazione dell'ecosistema crypto",
+        "Infrastruttura medica assistita dall'IA",
+        "Infrastruttura sicura e trasparente dei dati sanitari",
+        "Servizi sanitari digitali centrati sul paziente",
         "Imaging medico e informatica biomedica",
-        "Tecnologie di salute digitale",
-        "Servizi sanitari personalizzati",
-        "Salute estetica e approcci terapeutici innovativi"
+        "Compatibilità con le borse globali di asset digitali",
+        "Tecnologie di salute digitale di nuova generazione"
       ]
     },
     "closing": {
-      "quote": "La convergenza di tecnologia, sicurezza dei dati e servizi sanitari personalizzati contribuirà allo sviluppo di soluzioni più trasparenti, accessibili e incentrate sul paziente.",
+      "quote": "La convergenza di tecnologia, sicurezza dei dati, intelligenza artificiale e servizi sanitari personalizzati contribuirà allo sviluppo di soluzioni più trasparenti, accessibili e incentrate sul paziente.",
       "cta": "Richiedi Appuntamento"
     },
     "breadcrumbHome": "Home",
