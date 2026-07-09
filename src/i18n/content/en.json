@@ -46,7 +46,7 @@
       "duration": "30-90 minutes",
       "sessionModel": "Program based periodic sessions",
       "recovery": "same day",
-      "method": "Personalized longevity, preventive health and wellness protocols"
+      "method": "Kişiye özel longevity, koruyucu sağlık ve wellness protokolleri"
     }
   },
   "categoryOrder": [
@@ -691,117 +691,117 @@
     {
       "category": "corporate",
       "slug": "production",
-      "navLabel": "Production",
+      "navLabel": "Prodüksiyon",
       "navAppendOnly": true,
-      "title": "Dr Otgen Clinic Production",
+      "title": "Dr Otgen Clinic Prodüksiyon",
       "categoryLabel": "Corporate",
       "heroTag": "Corporate Information",
-      "heroSubtitle": "Health and science stories told through the language of cinema",
-      "summary": "Dr Otgen Clinic also communicates its work in health and science through creative production projects; our short films bring human stories together with a powerful cinematic language.",
+      "heroSubtitle": "Sinema diliyle anlatılan sağlık ve bilim hikâyeleri",
+      "summary": "Dr Otgen Clinic, sağlık ve bilim alanındaki çalışmalarını yaratıcı prodüksiyon projeleriyle de anlatıyor; kısa metraj filmlerimizle insan hikâyelerini güçlü bir sinema diliyle buluşturuyoruz.",
       "images": {
         "hero": "/images/production/production-hero.png",
         "content": "/images/production/mert-can-director.png"
       },
       "overview": [
-        "Dr Otgen Clinic also tells its work in health and science through creative production projects. Our short film projects, directed by Mert Can, bring together human stories, awareness themes, and social messages through a strong cinematic language.",
-        "The short films we produce are submitted to prestigious international short film festivals and competitions; the awards we have received in this field carry our creative vision to international platforms.",
-        "In every project, we aim not only to produce a film, but to tell stories that leave a mark on the audience, make them think, and inspire them."
+        "Dr Otgen Clinic, sağlık ve bilim alanındaki çalışmalarını yaratıcı prodüksiyon projeleriyle de anlatıyor. Yönetmenliğini Mert Can'ın üstlendiği kısa metrajlı film projelerimiz; insan hikâyelerini, farkındalık temalarını ve toplumsal mesajları güçlü bir sinema diliyle buluşturuyor.",
+        "Ürettiğimiz kısa filmler, yurt dışındaki seçkin kısa film festivalleri ve yarışmalarına gönderilmekte; bu alanda elde ettiğimiz ödüllerle yaratıcı vizyonumuzu uluslararası platformlara taşıyoruz.",
+        "Her projede yalnızca bir film üretmeyi değil, izleyicide iz bırakan, düşündüren ve ilham veren hikâyeler anlatmayı hedefliyoruz."
       ],
       "sections": [
         {
-          "title": "Creative Storytelling and Direction",
+          "title": "Yaratıcı Anlatım ve Yönetmenlik",
           "blocks": [
             {
               "type": "subheading",
-              "text": "Director: Mert Can"
+              "text": "Yönetmen: Mert Can"
             },
             {
               "type": "paragraph",
-              "text": "Mert Can, who directs our short film projects, adopts a cinematic approach that combines human-centered storytelling, a strong visual language, and themes of social awareness. In every shot, he aims to bring emotional depth and clarity of message together in the same frame."
+              "text": "Kısa metraj projelerimizin yönetmenliğini üstlenen Mert Can; insan odaklı anlatım, güçlü görsel dil ve toplumsal farkındalık temalarını bir araya getiren bir sinema yaklaşımı benimsiyor. Her çekimde duygusal derinlik ile mesajın netliğini aynı kadrajda buluşturmayı hedefliyor."
             },
             {
               "type": "paragraph",
-              "text": "Our production process is built on disciplined planning, professional team coordination, and high production standards from script development to post-production."
+              "text": "Prodüksiyon sürecimiz; senaryo geliştirmeden post-prodüksiyona kadar disiplinli bir planlama, profesyonel ekip koordinasyonu ve yüksek prodüksiyon standartları üzerine kuruludur."
             }
           ]
         },
         {
-          "title": "Festivals and International Recognition",
+          "title": "Festivaller ve Uluslararası Tanınırlık",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Our short films reach a wide audience through international festival programs and competitions. These platforms support our goal of creating social awareness beyond the scientific and health work we carry out as a clinic."
+              "text": "Kısa metraj filmlerimiz, uluslararası festival programları ve yarışmalar aracılığıyla geniş bir izleyici kitlesine ulaşır. Bu platformlar, klinik olarak yürüttüğümüz bilim ve sağlık çalışmalarının ötesinde toplumsal farkındalık yaratma hedefimizi destekler."
             },
             {
               "type": "list",
               "items": [
-                "Submissions and screenings at prestigious international short film festivals",
-                "International visibility through awards and official selections",
-                "A distinctive cinematic language on themes of health, science, and human stories",
-                "A production approach that integrates brand value with art and social impact"
+                "Seçkin uluslararası kısa film festivallerine başvuru ve gösterim",
+                "Ödül ve seçilme süreçleriyle uluslararası görünürlük",
+                "Sağlık, bilim ve insan hikâyesi temalarında özgün sinema dili",
+                "Marka değerini sanat ve toplumsal etki ile bütünleştiren prodüksiyon yaklaşımı"
               ]
             }
           ]
         }
       ],
       "highlights": [
-        "Short film cinema projects",
-        "International festival participation and awards",
-        "Storytelling focused on awareness and social messages",
-        "Professional production team and direction"
+        "Kısa metraj sinema projeleri",
+        "Uluslararası festival katılımları ve ödüller",
+        "Farkındalık ve toplumsal mesaj odaklı anlatım",
+        "Profesyonel prodüksiyon ekibi ve yönetmenlik"
       ],
-      "suitableIntro": "Our production projects are creative content initiatives independent of our clinical services.",
+      "suitableIntro": "Prodüksiyon projelerimiz, klinik hizmetlerimizden bağımsız yaratıcı içerik çalışmalarıdır.",
       "suitableFor": [
-        "Institutions seeking projects for cinema and short film festivals",
-        "Stakeholders running health- and science-themed awareness campaigns",
-        "Media and brand teams seeking creative production partnerships",
-        "Audiences interested in original storytelling with a social message"
+        "Sinema ve kısa film festivalleri için proje arayan kurumlar",
+        "Sağlık ve bilim temalı farkındalık kampanyaları yürüten paydaşlar",
+        "Yaratıcı prodüksiyon iş birlikleri arayan medya ve marka ekipleri",
+        "Toplumsal mesaj taşıyan özgün hikâye anlatımına ilgi duyan izleyiciler"
       ],
       "quickFacts": [
         {
           "label": "Format",
-          "value": "Short film cinema"
+          "value": "Kısa metraj sinema"
         },
         {
-          "label": "Director",
+          "label": "Yönetmen",
           "value": "Mert Can"
         },
         {
           "label": "Focus",
-          "value": "Health, science, and human stories"
+          "value": "Sağlık, bilim ve insan hikâyeleri"
         },
         {
           "label": "Access",
-          "value": "International festival and competition platforms"
+          "value": "Uluslararası festival ve yarışma platformları"
         }
       ],
-      "processTitle": "Production Process",
+      "processTitle": "Prodüksiyon Süreci",
       "process": [
         {
-          "title": "Concept and Script",
-          "description": "The story idea, message, and target audience are clarified; the script and production plan are created."
+          "title": "Konsept ve Senaryo",
+          "description": "Hikâye fikri, mesaj ve hedef kitle netleştirilir; senaryo ve prodüksiyon planı oluşturulur."
         },
         {
-          "title": "Filming and Production",
-          "description": "Filming is completed with a professional crew and equipment; direction and art direction processes are coordinated."
+          "title": "Çekim ve Prodüksiyon",
+          "description": "Profesyonel ekip ve ekipmanlarla çekimler tamamlanır; yönetmenlik ve sanat yönetimi süreçleri koordine edilir."
         },
         {
-          "title": "Post-Production and Festival Process",
-          "description": "Editing, sound, and color work are completed; films are submitted to international festivals and competitions."
+          "title": "Post-Prodüksiyon ve Festival Süreci",
+          "description": "Kurgu, ses ve renk işlemleri tamamlanır; filmler uluslararası festival ve yarışma başvurularına yönlendirilir."
         }
       ],
       "faqs": [
         {
-          "question": "Are production projects related to clinical services?",
-          "answer": "Our production work consists of creative projects independent of our clinical services; it aims to tell health and science themes through the language of cinema."
+          "question": "Prodüksiyon projeleri klinik hizmetlerle ilişkili midir?",
+          "answer": "Prodüksiyon çalışmalarımız, klinik hizmetlerimizden bağımsız yaratıcı projelerdir; sağlık ve bilim temalarını sinema diliyle anlatmayı amaçlar."
         },
         {
-          "question": "On which platforms are the films shown?",
-          "answer": "Our short films reach audiences through international festival programs, competitions, and select screening platforms."
+          "question": "Filmler hangi platformlarda gösteriliyor?",
+          "answer": "Kısa metraj filmlerimiz uluslararası festival programları, yarışmalar ve seçkin gösterim platformları aracılığıyla izleyiciyle buluşur."
         },
         {
-          "question": "How can collaboration or production requests be submitted?",
-          "answer": "You can submit your request through our clinic communication channels for creative production collaborations; suitable projects are evaluated."
+          "question": "İş birliği veya prodüksiyon talebi nasıl iletilir?",
+          "answer": "Yaratıcı prodüksiyon iş birlikleri için klinik iletişim kanallarımız üzerinden talebinizi iletebilirsiniz; uygun projeler değerlendirilir."
         }
       ]
     },
@@ -2907,8 +2907,8 @@
     {
       "category": "dental",
       "slug": "orthodontics",
-      "navLabel": "Orthodontics",
-      "title": "Orthodontics",
+      "navLabel": "orthodontics",
+      "title": "orthodontics",
       "categoryLabel": "Dental Aesthetics",
       "heroTag": "Smile Design",
       "heroSubtitle": "",
@@ -3725,8 +3725,8 @@
     {
       "category": "plastic",
       "slug": "rhinoplasty",
-      "navLabel": "Rhinoplasty",
-      "title": "Rhinoplasty",
+      "navLabel": "rhinoplasty",
+      "title": "rhinoplasty",
       "categoryLabel": "Plastic Surgery",
       "heroTag": "Surgical Aesthetics",
       "heroSubtitle": "Rhinoplasty (Nose Aesthetics)",
@@ -4016,8 +4016,8 @@
     {
       "category": "plastic",
       "slug": "blepharoplasty",
-      "navLabel": "Blepharoplasty",
-      "title": "Blepharoplasty",
+      "navLabel": "blepharoplasty",
+      "title": "blepharoplasty",
       "categoryLabel": "Plastic Surgery",
       "heroTag": "Surgical Aesthetics",
       "heroSubtitle": "",
@@ -4265,8 +4265,8 @@
     {
       "category": "plastic",
       "slug": "liposuction",
-      "navLabel": "Liposuction",
-      "title": "Liposuction",
+      "navLabel": "liposuction",
+      "title": "liposuction",
       "categoryLabel": "Plastic Surgery",
       "heroTag": "Surgical Aesthetics",
       "heroSubtitle": "",
@@ -4655,8 +4655,8 @@
     {
       "category": "medical",
       "slug": "botox",
-      "navLabel": "Botox",
-      "title": "Botox",
+      "navLabel": "botox",
+      "title": "botox",
       "categoryLabel": "Medical Aesthetics",
       "heroTag": "Minimally Invasive Treatments",
       "heroSubtitle": "",
@@ -6276,12 +6276,12 @@
     {
       "category": "longevity",
       "slug": "maxx-royal-wellness-bodrum",
-      "navLabel": "Personalized Wellness Experience in Bodrum",
-      "title": "Personalized Wellness Experience in Bodrum",
+      "navLabel": "Bodrum'da Kişiselleştirilmiş Wellness Deneyimi",
+      "title": "Bodrum'da Kişiselleştirilmiş Wellness Deneyimi",
       "categoryLabel": "Longevity",
       "heroTag": "Dr. Otgen Clinic at Maxx Royal Bodrum",
-      "heroSubtitle": "Longevity, Redefined.",
-      "summary": "The future of your health starts today. We combine modern medicine, personalized preventive health and the world-renowned Maxx Royal experience.",
+      "heroSubtitle": "Longevity, Yeniden Tanımlandı.",
+      "summary": "Sağlığınızın geleceği, bugün başlar. Modern tıbbı, kişiselleştirilmiş koruyucu sağlık yaklaşımını ve dünyaca ünlü Maxx Royal deneyimini bir araya getiriyoruz.",
       "images": {
         "hero": "/images/site/pages/maxx-royal-wellness-hero.webp",
         "content": "/images/site/pages/maxx-royal-wellness-1.webp",
@@ -6300,193 +6300,411 @@
           "/images/site/pages/maxx-royal-wellness-12.webp"
         ]
       },
-      "galleryTitle": "Moments from Maxx Royal Bodrum",
+      "galleryTitle": "Maxx Royal Bodrum'dan Kareler",
       "overview": [
-        "Dr. Otgen Clinic at Maxx Royal Bodrum brings together modern medicine, a personalized preventive health approach and the world-renowned Maxx Royal experience.",
-        "Here, the goal is not simply to feel good. The goal is to understand your body, detect risks early and build a health plan tailored to you for a longer, stronger, more balanced and higher-quality life.",
-        "For every guest, lifestyle, family history, metabolic health, cardiovascular risks, sleep quality, stress levels, physical performance and personal goals are evaluated holistically. Because true luxury is not leaving your health to chance."
+        "Dr. Otgen Clinic at Maxx Royal Bodrum; modern tıbbı, kişiselleştirilmiş koruyucu sağlık yaklaşımını ve dünyaca ünlü Maxx Royal deneyimini bir araya getirir.",
+        "Burada amaç yalnızca iyi hissetmek değildir. Amaç; daha uzun, daha güçlü, daha dengeli ve daha kaliteli bir yaşam için vücudunuzu anlamak, riskleri erken fark etmek ve size özel bir sağlık planı oluşturmaktır.",
+        "Her misafirimiz için yaşam tarzı, aile öyküsü, metabolik sağlık, kardiyovasküler riskler, uyku kalitesi, stres düzeyi, fiziksel performans ve kişisel hedefler bütüncül olarak değerlendirilir. Çünkü gerçek lüks, sağlığınızı şansa bırakmamaktır."
       ],
       "sections": [
         {
-          "title": "Your Personal Health Roadmap",
+          "title": "Kişisel Sağlık Yol Haritanız",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "At Dr. Otgen Clinic, every program begins with an expert physician evaluation."
+              "text": "Dr. Otgen Clinic'te her program, uzman hekim değerlendirmesiyle başlar."
             },
             {
               "type": "paragraph",
-              "text": "Comprehensive health analyses, advanced laboratory assessments, body composition measurements, metabolic risk analysis, cardiovascular evaluation, and sleep and stress screenings form the foundation of a personal health roadmap planned around your needs."
+              "text": "Kapsamlı sağlık analizleri, ileri düzey laboratuvar değerlendirmeleri, vücut kompozisyonu ölçümleri, metabolik risk analizi, kardiyovasküler değerlendirme, uyku ve stres taramaları; ihtiyaçlarınıza göre planlanan kişisel sağlık yol haritasının temelini oluşturur."
             },
             {
               "type": "paragraph",
-              "text": "Your results are not merely reported. They are interpreted by our physicians, your priorities are defined and an actionable plan is prepared for your life. All the important data about your health is handled in a single center within a system dedicated to you."
+              "text": "Sonuçlarınız yalnızca raporlanmaz. Hekimlerimiz tarafından yorumlanır, öncelikleriniz belirlenir ve yaşamınıza uygulanabilir bir plan hazırlanır. Sağlığınızla ilgili tüm önemli veriler, tek bir merkezde ve size özel bir sistem içinde ele alınır."
             }
           ]
         },
         {
-          "title": "Long and Healthy Life Programs",
+          "title": "Uzun ve Sağlıklı Yaşam Programları",
           "blocks": [
             {
               "type": "subheading",
-              "text": "Executive Health Assessment"
+              "text": "Yönetici Sağlık Değerlendirmesi"
             },
             {
               "type": "paragraph",
-              "text": "A comprehensive health assessment program designed for those whose time is precious. In a short time, your general health status, metabolic balance, cardiovascular risks, body composition, sleep quality and lifestyle factors are evaluated by an expert team. At the end of the program you receive a personalized health report and an actionable life plan for the next 12 months."
+              "text": "Zamanı değerli olanlar için tasarlanan kapsamlı sağlık değerlendirme programı. Kısa süre içinde genel sağlık durumunuz, metabolik dengeniz, kalp-damar riskleriniz, vücut kompozisyonunuz, uyku kaliteniz ve yaşam tarzı faktörleriniz uzman ekip tarafından değerlendirilir. Program sonunda size özel bir sağlık raporu ve önümüzdeki 12 aya yönelik uygulanabilir bir yaşam planı sunulur."
             },
             {
               "type": "subheading",
-              "text": "Metabolic Balance and Weight Management"
+              "text": "Metabolik Denge ve Kilo Yönetimi"
             },
             {
               "type": "paragraph",
-              "text": "Not just about losing weight, but about establishing a healthy metabolic balance. Weight management is evaluated together with blood sugar balance, insulin resistance, muscle mass, body fat ratio, nutritional habits, sleep and stress. A team of physicians, dietitians and performance specialists creates a sustainable, personalized program aligned with your goals."
+              "text": "Sadece kilo vermek değil, sağlıklı bir metabolik denge kurmak için. Kilo yönetimi; kan şekeri dengesi, insülin direnci, kas kütlesi, yağ oranı, beslenme alışkanlıkları, uyku ve stres ile birlikte değerlendirilir. Hekim, diyetisyen ve performans uzmanlarından oluşan ekip; hedeflerinize uygun, sürdürülebilir ve kişiselleştirilmiş bir program oluşturur."
             },
             {
               "type": "subheading",
-              "text": "Cardiovascular Performance"
+              "text": "Kardiyovasküler Performans"
             },
             {
               "type": "paragraph",
-              "text": "A stronger future for your heart. Cardiovascular health is at the center of a long and active life. With assessments planned according to your personal risk factors, your heart health, blood pressure balance, cholesterol profile, exercise capacity and lifestyle habits are addressed."
+              "text": "Kalbiniz için daha güçlü bir gelecek. Kardiyovasküler sağlık, uzun ve aktif bir yaşamın merkezindedir. Kişisel risk faktörlerinize göre planlanan değerlendirmelerle; kalp-damar sağlığınız, tansiyon dengeniz, kolesterol profiliniz, egzersiz kapasiteniz ve yaşam tarzı alışkanlıklarınız ele alınır."
             },
             {
               "type": "subheading",
-              "text": "Sleep, Stress and Recovery"
+              "text": "Uyku, Stres ve Yenilenme"
             },
             {
               "type": "paragraph",
-              "text": "Better sleep, a clearer mind and higher quality of life. Sleep quality, stress load, burnout risk and daily energy levels are addressed through expert evaluation. Applicable recovery and regeneration strategies are developed to fit your personal life rhythm."
+              "text": "Daha iyi uyku, daha net bir zihin ve daha yüksek yaşam kalitesi. Uyku kalitesi, stres yükü, tükenmişlik riski ve günlük enerji düzeyi; uzman değerlendirmesiyle ele alınır. Kişisel yaşam ritminize uygun, uygulanabilir iyileşme ve yenilenme stratejileri geliştirilir."
             },
             {
               "type": "subheading",
-              "text": "Strength, Mobility and Active Aging"
+              "text": "Güç, Hareket Kabiliyeti ve Aktif Yaş Alma"
             },
             {
               "type": "paragraph",
-              "text": "Not just getting older, but staying strong. Muscle mass, balance, mobility, joint health and physical endurance are among the most important determinants of quality of life. With personalized movement, strength, mobility and rehabilitation programs, the goal is to help you feel more energetic, stronger and freer in daily life."
+              "text": "Yaş almak değil, güçlü kalmak. Kas kütlesi, denge, hareket kabiliyeti, eklem sağlığı ve fiziksel dayanıklılık; yaşam kalitesinin en önemli belirleyicilerindendir. Kişiye özel hareket, kuvvet, mobilite ve rehabilitasyon programlarıyla; günlük yaşamda daha enerjik, daha güçlü ve daha özgür hissetmeniz hedeflenir."
             },
             {
               "type": "subheading",
-              "text": "Women's Health and Menopause"
+              "text": "Kadın Sağlığı ve Menopoz"
             },
             {
               "type": "paragraph",
-              "text": "Holistic women's health at every stage of life. Hormonal changes, sleep, energy levels, bone health, metabolism, muscle mass and mood are interconnected parts of women's health. At Dr. Otgen Clinic, women's needs are addressed with expert physician evaluation, personalized follow-up and a lifestyle approach."
+              "text": "Hayatın her döneminde bütüncül kadın sağlığı. Hormonal değişimler, uyku, enerji seviyesi, kemik sağlığı, metabolizma, kas kütlesi ve ruh hali; kadın sağlığının birbirine bağlı parçalarıdır. Dr. Otgen Clinic'te kadınların ihtiyaçları; uzman hekim değerlendirmesi, kişiselleştirilmiş takip ve yaşam tarzı yaklaşımıyla ele alınır."
             },
             {
               "type": "subheading",
-              "text": "Men's Health and Performance"
+              "text": "Erkek Sağlığı ve Performansı"
             },
             {
               "type": "paragraph",
-              "text": "For performance, balance and long-term health. Men's health involves many factors such as energy levels, metabolic balance, sleep, stress, muscle health, cardiovascular risks and hormonal evaluation. With programs planned according to your personal goals and medical needs, a stronger, more balanced and more sustainable life performance is supported."
+              "text": "Performans, denge ve uzun vadeli sağlık için. Erkek sağlığı; enerji seviyeleri, metabolik denge, uyku, stres, kas sağlığı, kardiyovasküler riskler ve hormonal değerlendirme gibi birçok faktörü içerir. Kişisel hedeflerinize ve tıbbi ihtiyaçlarınıza göre planlanan programlarla; daha güçlü, daha dengeli ve daha sürdürülebilir bir yaşam performansı desteklenir."
             }
           ]
         },
         {
-          "title": "Personal Health Consultancy",
+          "title": "Kişisel Sağlık Danışmanlığı",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "A dedicated team is by your side at every stage of your health journey. The Personal Health Consultancy service simplifies the entire process for you, from appointment planning to results follow-up, and from expert consultations to personal program coordination."
+              "text": "Sağlık yolculuğunuzun her aşamasında size özel bir ekip yanınızda. Kişisel Sağlık Danışmanlığı hizmeti; randevu planlamasından sonuç takibine, uzman görüşmelerinden kişisel program koordinasyonuna kadar tüm süreci sizin için kolaylaştırır."
             },
             {
               "type": "paragraph",
-              "text": "Privacy, comfort and time management are at the heart of our service philosophy. Because healthcare deserves not only the right medical approach but also a flawless experience."
+              "text": "Gizlilik, konfor ve zaman yönetimi; hizmet anlayışımızın merkezindedir. Çünkü sağlık hizmeti yalnızca doğru tıbbi yaklaşımı değil, kusursuz bir deneyimi de hak eder."
             }
           ]
         },
         {
-          "title": "Health and Renewal at Maxx Royal Bodrum",
+          "title": "Maxx Royal Bodrum'da Sağlık ve Yenilenme",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "The serenity of the Aegean, the privileged atmosphere of Maxx Royal Bodrum and the medical approach of Dr. Otgen Clinic are designed to help you reconnect with your body and mind."
+              "text": "Ege'nin dinginliği, Maxx Royal Bodrum'un ayrıcalıklı atmosferi ve Dr. Otgen Clinic'in tıbbi yaklaşımı; bedeninizle ve zihninizle yeniden bağ kurmanız için tasarlandı."
             },
             {
               "type": "paragraph",
-              "text": "Here, health is not a task that stays outside of daily life. Health is the foundation of feeling better, performing higher, aging with greater quality and living every moment of life more strongly."
+              "text": "Burada sağlık, günlük hayatın dışında kalan bir görev değildir. Sağlık; daha iyi hissetmenin, daha yüksek performansın, daha kaliteli yaş almanın ve hayatın her anını daha güçlü yaşamanın temelidir."
             }
           ]
         },
         {
-          "title": "Your Most Valuable Future Investment: You.",
+          "title": "Gelecekteki En Değerli Yatırımınız: Siz.",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "At Dr. Otgen Clinic at Maxx Royal Bodrum, your health is not limited to a single check-up. With personalized health data, expert physician evaluations, lifestyle recommendations and regular follow-up, it turns into a long-term journey of well-being and longevity."
+              "text": "Dr. Otgen Clinic at Maxx Royal Bodrum'da sağlığınız, tek bir check-up ile sınırlı kalmaz. Size özel sağlık verileri, uzman hekim değerlendirmeleri, yaşam tarzı önerileri ve düzenli takip ile uzun vadeli bir iyi yaşam ve uzun ömür yolculuğuna dönüşür."
             },
             {
               "type": "subheading",
-              "text": "Not to live longer. To live better."
+              "text": "Daha uzun yaşamak için değil. Daha iyi yaşamak için."
             },
             {
               "type": "paragraph",
-              "text": "Get in touch with us to discover your personal long and healthy life program."
+              "text": "Kişisel uzun ve sağlıklı yaşam programınızı keşfetmek için bizimle iletişime geçin."
             }
           ]
         }
       ],
       "highlights": [
-        "Premium wellness experience at Maxx Royal Bodrum",
-        "Personalized preventive health and longevity programs",
-        "A holistic health roadmap with expert physician evaluation",
-        "Privacy, comfort and personal health consultancy"
+        "Maxx Royal Bodrum'da premium wellness deneyimi",
+        "Kişiselleştirilmiş koruyucu sağlık ve longevity programları",
+        "Uzman hekim değerlendirmesiyle bütüncül sağlık yol haritası",
+        "Gizlilik, konfor ve kişisel sağlık danışmanlığı"
       ],
       "suitableIntro": "",
       "suitableFor": [
-        "Those who prioritize long-term health and quality of life",
-        "Guests seeking preventive medicine and a personalized wellness experience",
-        "Individuals aiming for metabolic balance, performance and renewal",
-        "Those planning premium healthcare at Maxx Royal Bodrum"
+        "Uzun vadeli sağlık ve yaşam kalitesini önceliklendiren kişiler",
+        "Koruyucu tıp ve kişiselleştirilmiş wellness deneyimi arayan misafirler",
+        "Metabolik denge, performans ve yenilenme hedefleyen bireyler",
+        "Maxx Royal Bodrum'da premium sağlık hizmeti planlayanlar"
       ],
       "quickFacts": [
         {
-          "label": "Location",
+          "label": "Lokasyon",
           "value": "Maxx Royal Bodrum"
         },
         {
-          "label": "Approach",
-          "value": "Personalized preventive health"
+          "label": "Yaklaşım",
+          "value": "Kişiselleştirilmiş koruyucu sağlık"
         },
         {
           "label": "Program",
-          "value": "Longevity and wellness"
+          "value": "Longevity ve wellness"
         },
         {
-          "label": "Experience",
-          "value": "Premium medical care and consultancy"
+          "label": "Deneyim",
+          "value": "Premium tıbbi bakım ve danışmanlık"
         }
       ],
-      "processTitle": "Your Health Journey",
+      "processTitle": "Sağlık Yolculuğunuz",
       "process": [
         {
-          "title": "Comprehensive Assessment",
-          "description": "Your lifestyle, family history, metabolic health, cardiovascular risks, sleep, stress and performance goals are analyzed with an expert physician evaluation."
+          "title": "Kapsamlı Değerlendirme",
+          "description": "Yaşam tarzı, aile öyküsü, metabolik sağlık, kardiyovasküler riskler, uyku, stres ve performans hedefleriniz uzman hekim değerlendirmesiyle analiz edilir."
         },
         {
-          "title": "Personal Health Roadmap",
-          "description": "Following laboratory, body composition and risk analyses, a personalized, actionable health plan is created for you."
+          "title": "Kişisel Sağlık Yol Haritası",
+          "description": "Laboratuvar, vücut kompozisyonu ve risk analizleri sonucunda size özel, uygulanabilir bir sağlık planı oluşturulur."
         },
         {
-          "title": "Program and Follow-up",
-          "description": "The selected longevity program is delivered at Maxx Royal Bodrum and coordinated throughout the process with personal health consultancy."
+          "title": "Program ve Takip",
+          "description": "Seçilen longevity programı Maxx Royal Bodrum'da uygulanır; kişisel sağlık danışmanlığı ile süreç boyunca koordine edilir."
         }
       ],
       "faqs": [
         {
-          "question": "Who is the program at Maxx Royal Bodrum suitable for?",
-          "answer": "It is planned for guests seeking preventive health, longevity and a personalized wellness experience who are found suitable after clinical evaluation."
+          "question": "Maxx Royal Bodrum'daki program kimler için uygundur?",
+          "answer": "Koruyucu sağlık, longevity ve kişiselleştirilmiş wellness deneyimi arayan; klinik değerlendirme sonrası uygun bulunan misafirler için planlanır."
         },
         {
-          "question": "How long does the program take?",
-          "answer": "The duration varies according to the scope of the selected assessment and wellness program. A personalized time plan is presented at the first consultation."
+          "question": "Program ne kadar sürer?",
+          "answer": "Süre, seçilen değerlendirme ve wellness programının kapsamına göre değişir. İlk konsültasyonda size özel bir zaman planı sunulur."
         },
         {
-          "question": "What does Personal Health Consultancy include?",
-          "answer": "It is a holistic support service covering appointment planning, results follow-up, expert consultations and program coordination."
+          "question": "Kişisel Sağlık Danışmanlığı neleri kapsar?",
+          "answer": "Randevu planlaması, sonuç takibi, uzman görüşmeleri ve program koordinasyonunu kapsayan bütüncül bir destek hizmetidir."
+        }
+      ]
+    },
+    {
+      "category": "longevity",
+      "slug": "museum-hotel-wellness-kapadokya",
+      "navLabel": "Kapadokya'da Kişiselleştirilmiş Wellness Deneyimi",
+      "title": "Kapadokya'da Kişiselleştirilmiş Wellness Deneyimi",
+      "categoryLabel": "Longevity",
+      "heroTag": "Dr. Otgen Clinic x Museum Hotel Kapadokya",
+      "heroSubtitle": "Longevity, Yeniden Tanımlandı.",
+      "summary": "Sağlığınızın geleceği, bugün başlar. Dr. Otgen Clinic ve Museum Hotel Kapadokya iş birliğiyle; modern tıbbı, kişiselleştirilmiş koruyucu sağlık yaklaşımını ve Kapadokya'nın eşsiz doğal atmosferinde sunulan ayrıcalıklı konaklama deneyimini bir araya getiriyoruz.",
+      "images": {
+        "hero": "/images/site/pages/museum-hotel-wellness-hero.webp",
+        "content": "/images/site/pages/museum-hotel-wellness-1.webp",
+        "gallery": [
+          "/images/site/pages/museum-hotel-wellness-1.webp",
+          "/images/site/pages/museum-hotel-wellness-2.webp",
+          "/images/site/pages/museum-hotel-wellness-3.webp",
+          "/images/site/pages/museum-hotel-wellness-4.webp",
+          "/images/site/pages/museum-hotel-wellness-5.webp",
+          "/images/site/pages/museum-hotel-wellness-6.webp",
+          "/images/site/pages/museum-hotel-wellness-7.webp",
+          "/images/site/pages/museum-hotel-wellness-8.webp",
+          "/images/site/pages/museum-hotel-wellness-9.webp",
+          "/images/site/pages/museum-hotel-wellness-10.webp",
+          "/images/site/pages/museum-hotel-wellness-11.webp",
+          "/images/site/pages/museum-hotel-wellness-12.webp"
+        ]
+      },
+      "galleryTitle": "Museum Hotel Kapadokya'dan Kareler",
+      "overview": [
+        "Dr. Otgen Clinic x Museum Hotel Kapadokya; bilimsel sağlık yaklaşımını, kişiselleştirilmiş longevity programlarını ve Kapadokya'nın zamansız atmosferini bir araya getiren özel bir wellness deneyimi sunar.",
+        "Burada amaç yalnızca iyi hissetmek değildir. Amaç; yaşam kalitenizi artırmak, sağlığınızı korumak, gelecekteki sağlık risklerinizi öngörmek ve size özel sürdürülebilir bir yaşam planı oluşturmaktır.",
+        "Her misafirimiz için yaşam tarzı, aile öyküsü, metabolik sağlık, kardiyovasküler riskler, uyku kalitesi, stres düzeyi, fiziksel performans ve kişisel hedefler bütüncül olarak değerlendirilir. Çünkü gerçek lüks; zamanınızı, bedeninizi ve sağlığınızı en doğru şekilde yönetebilmektir."
+      ],
+      "sections": [
+        {
+          "title": "Kişisel Sağlık Yol Haritanız",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Dr. Otgen Clinic x Museum Hotel Kapadokya deneyimi, uzman hekim değerlendirmesiyle başlar."
+            },
+            {
+              "type": "paragraph",
+              "text": "Kapsamlı sağlık analizleri, ileri laboratuvar değerlendirmeleri, vücut kompozisyonu ölçümleri, metabolik risk analizleri, kardiyovasküler değerlendirmeler, uyku ve stres analizleri; kişisel sağlık yol haritanızın temelini oluşturur."
+            },
+            {
+              "type": "paragraph",
+              "text": "Elde edilen veriler yalnızca raporlanmaz. Uzman hekimlerimiz tarafından değerlendirilir, sağlık öncelikleriniz belirlenir ve günlük yaşamınıza uygulanabilir kişisel bir plan hazırlanır. Sağlığınızla ilgili tüm önemli veriler, size özel bir sistem içerisinde ele alınır."
+            }
+          ]
+        },
+        {
+          "title": "Uzun ve Sağlıklı Yaşam Programları",
+          "blocks": [
+            {
+              "type": "subheading",
+              "text": "Yönetici Sağlık Değerlendirmesi"
+            },
+            {
+              "type": "paragraph",
+              "text": "Yoğun yaşam temposuna sahip kişiler için tasarlanan kapsamlı sağlık değerlendirme programıdır. Kısa süre içerisinde genel sağlık durumunuz, metabolik dengeniz, kardiyovasküler riskleriniz, vücut kompozisyonunuz, uyku kaliteniz ve yaşam tarzı faktörleriniz uzman ekip tarafından değerlendirilir. Program sonunda size özel sağlık raporu ve önümüzdeki dönem için uygulanabilir yaşam planı hazırlanır."
+            },
+            {
+              "type": "subheading",
+              "text": "Metabolik Denge ve Kilo Yönetimi"
+            },
+            {
+              "type": "paragraph",
+              "text": "Sağlıklı kilo yönetimi yalnızca kilo kaybı değildir. Metabolizma, kan şekeri dengesi, insülin hassasiyeti, kas kütlesi, yağ oranı, beslenme alışkanlıkları, uyku ve stres faktörleri birlikte değerlendirilir. Uzman hekim, diyetisyen ve performans ekibi tarafından kişisel hedeflerinize uygun sürdürülebilir bir plan oluşturulur."
+            },
+            {
+              "type": "subheading",
+              "text": "Kardiyovasküler Performans"
+            },
+            {
+              "type": "paragraph",
+              "text": "Kalbiniz için daha güçlü bir gelecek. Uzun ve aktif yaşamın temel taşlarından biri olan kardiyovasküler sağlık; kişisel risk faktörleri doğrultusunda değerlendirilir. Kalp-damar sağlığı, tansiyon dengesi, kolesterol profili, egzersiz kapasitesi ve yaşam alışkanlıkları detaylı olarak analiz edilir."
+            },
+            {
+              "type": "subheading",
+              "text": "Uyku, Stres ve Yenilenme"
+            },
+            {
+              "type": "paragraph",
+              "text": "Daha kaliteli uyku, daha yüksek enerji ve daha dengeli bir yaşam. Uyku kalitesi, stres yükü, zihinsel yorgunluk ve günlük enerji seviyeleri uzman değerlendirmesiyle ele alınır. Kapadokya'nın sakinliği, doğal çevresi ve Museum Hotel'in benzersiz atmosferi; zihinsel yenilenme ve yaşam ritminizi yeniden düzenleme sürecini destekler."
+            },
+            {
+              "type": "subheading",
+              "text": "Güç, Hareket Kabiliyeti ve Aktif Yaş Alma"
+            },
+            {
+              "type": "paragraph",
+              "text": "Güçlü kalmak, kaliteli yaş almanın temelidir. Kas kütlesi, denge, hareket kabiliyeti, eklem sağlığı ve fiziksel dayanıklılık değerlendirilerek kişiye özel hareket ve performans programları oluşturulur. Hedef; daha enerjik, daha güçlü ve daha bağımsız bir yaşam sürdürmektir."
+            },
+            {
+              "type": "subheading",
+              "text": "Kadın Sağlığı ve Menopoz"
+            },
+            {
+              "type": "paragraph",
+              "text": "Kadın sağlığına bütüncül yaklaşım. Hormonal değişimler, uyku, enerji seviyesi, kemik sağlığı, metabolizma, kas kütlesi ve yaşam kalitesi bir bütün olarak değerlendirilir. Kişiselleştirilmiş takip ve yaşam tarzı yaklaşımıyla kadınların her dönemindeki sağlık ihtiyaçları desteklenir."
+            },
+            {
+              "type": "subheading",
+              "text": "Erkek Sağlığı ve Performansı"
+            },
+            {
+              "type": "paragraph",
+              "text": "Daha güçlü, dengeli ve sürdürülebilir yaşam performansı. Enerji seviyeleri, metabolik sağlık, uyku, stres, kas sağlığı, kardiyovasküler riskler ve hormonal denge kişisel hedefler doğrultusunda değerlendirilir."
+            }
+          ]
+        },
+        {
+          "title": "Kişisel Sağlık Danışmanlığı",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Sağlık yolculuğunuz boyunca size özel bir ekip yanınızda. Randevu planlaması, sağlık değerlendirmeleri, uzman görüşmeleri, sonuç takibi ve kişisel program koordinasyonu profesyonel sağlık danışmanlığı ile yönetilir."
+            },
+            {
+              "type": "paragraph",
+              "text": "Museum Hotel Kapadokya'nın konforu ve Dr. Otgen Clinic'in tıbbi yaklaşımı ile kusursuz bir wellness deneyimi oluşturulur."
+            }
+          ]
+        },
+        {
+          "title": "Museum Hotel Kapadokya'da Sağlık ve Yenilenme",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Kapadokya'nın büyüleyici manzaraları, tarihi dokusu ve Museum Hotel'in benzersiz konaklama deneyimi; Dr. Otgen Clinic'in bilimsel sağlık yaklaşımıyla birleşerek yeni nesil bir wellness deneyimi sunar."
+            },
+            {
+              "type": "paragraph",
+              "text": "Burada sağlık yalnızca bir kontrol süreci değildir. Sağlık; daha iyi hissetmek, daha yüksek performans göstermek, yaşam enerjinizi artırmak ve geleceğe daha güçlü hazırlanmak için yapılan kişisel bir yatırımdır."
+            }
+          ]
+        },
+        {
+          "title": "Gelecekteki En Değerli Yatırımınız: Siz.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Dr. Otgen Clinic x Museum Hotel Kapadokya deneyiminde sağlık, tek bir check-up ile sınırlı değildir. Kişisel sağlık verileriniz, uzman değerlendirmeleri, yaşam tarzı önerileri ve takip planları ile uzun vadeli bir iyi yaşam yolculuğuna dönüşür."
+            },
+            {
+              "type": "subheading",
+              "text": "Daha uzun yaşamak için değil. Daha iyi yaşamak için."
+            },
+            {
+              "type": "paragraph",
+              "text": "Kişisel longevity programınızı keşfetmek için bizimle iletişime geçin."
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Museum Hotel Kapadokya'da premium wellness deneyimi",
+        "Dr. Otgen Clinic uzman hekim yaklaşımıyla kişiselleştirilmiş sağlık programları",
+        "Kapadokya'nın doğal atmosferinde yenilenme ve dönüşüm deneyimi",
+        "Gizlilik, konfor ve kişisel sağlık danışmanlığı"
+      ],
+      "suitableIntro": "",
+      "suitableFor": [
+        "Uzun vadeli sağlık ve yaşam kalitesini önceliklendiren kişiler",
+        "Koruyucu tıp ve kişiselleştirilmiş wellness deneyimi arayan misafirler",
+        "Metabolik denge, performans ve yenilenme hedefleyen bireyler",
+        "Kapadokya'da premium sağlık ve konaklama deneyimi yaşamak isteyenler",
+        "Yoğun yaşam temposundan uzaklaşıp beden ve zihin dengesini yeniden kurmak isteyenler"
+      ],
+      "quickFacts": [
+        {
+          "label": "Lokasyon",
+          "value": "Museum Hotel Kapadokya"
+        },
+        {
+          "label": "Yaklaşım",
+          "value": "Kişiselleştirilmiş koruyucu sağlık"
+        },
+        {
+          "label": "Program",
+          "value": "Longevity ve wellness"
+        },
+        {
+          "label": "Deneyim",
+          "value": "Premium konaklama + uzman sağlık danışmanlığı"
+        }
+      ],
+      "processTitle": "Sağlık Yolculuğunuz",
+      "process": [
+        {
+          "title": "Kapsamlı Değerlendirme",
+          "description": "Yaşam tarzı, aile öyküsü, metabolik sağlık, kardiyovasküler riskler, uyku, stres ve performans hedefleri uzman hekim değerlendirmesiyle analiz edilir."
+        },
+        {
+          "title": "Kişisel Sağlık Yol Haritası",
+          "description": "Laboratuvar sonuçları, vücut kompozisyonu ve risk analizleri doğrultusunda kişisel sağlık planınız hazırlanır."
+        },
+        {
+          "title": "Program ve Takip",
+          "description": "Belirlenen longevity programı Museum Hotel Kapadokya'nın konforunda uygulanır ve kişisel sağlık danışmanlığı ile süreç boyunca takip edilir."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "Dr. Otgen Clinic x Museum Hotel Kapadokya programı kimler için uygundur?",
+          "answer": "Uzun vadeli sağlığını önemseyen, kişiselleştirilmiş sağlık değerlendirmesi ve premium wellness deneyimi arayan kişiler için uygundur."
+        },
+        {
+          "question": "Program ne kadar sürer?",
+          "answer": "Program süresi kişinin sağlık hedefleri ve ihtiyaçlarına göre belirlenir. İlk değerlendirme sonrasında kişiye özel plan oluşturulur."
+        },
+        {
+          "question": "Program kapsamında neler bulunur?",
+          "answer": "Sağlık değerlendirmeleri, uzman hekim görüşmeleri, kişisel sağlık planlaması, wellness deneyimleri ve takip süreçleri program kapsamına göre düzenlenir."
         }
       ]
     }
