@@ -6,6 +6,10 @@ import { injectEyeHealthNavForLocale } from '../src/tr-eye-health-nav.js';
 import { injectFinanceNavForLocale, stripFinanceNavLink } from '../src/tr-finance-nav.js';
 import { injectLegalNavForLocale, stripLegalNavLink } from '../src/tr-legal-nav.js';
 import { injectProductionNavForLocale, stripProductionNavLink } from '../src/tr-production-nav.js';
+import {
+  injectInternationalHealthInsuranceNavForLocale,
+  stripInternationalHealthInsuranceNavLink,
+} from '../src/tr-international-health-insurance-nav.js';
 import { injectArgeNavForLocale } from '../src/tr-arge-nav.js';
 import { applyRuCompactHeaderNavHtml } from '../src/i18n.js';
 import { getEyeHealthContentSync } from './eye-health-content-node.mjs';
@@ -158,11 +162,13 @@ export function localizeHomeBodyHtml(html, locale) {
     result = stripFinanceNavLink(result);
     result = stripLegalNavLink(result);
     result = stripProductionNavLink(result);
+    result = stripInternationalHealthInsuranceNavLink(result);
     result = applyStaticTranslationsToHtml(result, dictionary);
     result = injectEyeHealthNavForLocale(result, locale, getEyeHealthContentSync(locale));
     result = injectFinanceNavForLocale(result, locale);
     result = injectLegalNavForLocale(result, locale);
     result = injectProductionNavForLocale(result, locale);
+    result = injectInternationalHealthInsuranceNavForLocale(result, locale);
     result = injectArgeNavForLocale(result, locale);
     if (locale === 'ru') {
       result = applyRuCompactHeaderNavHtml(result, dictionary);

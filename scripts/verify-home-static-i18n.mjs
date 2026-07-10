@@ -79,6 +79,10 @@ function checkTrLeakage(locale, html, dictionary) {
       failures.push(`[${locale}] Turkish privacy marker leaked in body: "${marker}"`);
     }
   }
+
+  if (html.includes('Uluslararası Sağlık Sigortası')) {
+    failures.push(`[${locale}] Turkish international health insurance nav label leaked on home page`);
+  }
 }
 
 for (const locale of LOCALES) {

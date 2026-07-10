@@ -24,3 +24,14 @@ export function renderInternationalHealthInsuranceCorporateNavLink(locale = 'tr'
 export function stripInternationalHealthInsuranceNavLink(html) {
   return html.replace(/<a\b[^>]*\bdata-international-health-insurance-nav\b[^>]*>[\s\S]*?<\/a>\s*/gi, '');
 }
+
+export function injectInternationalHealthInsuranceNavForLocale(html, locale) {
+  const link = renderInternationalHealthInsuranceCorporateNavLink(locale);
+  return html.replace(
+    /(<div class="mega-dropdown" id="nav-panel-corporate">[\s\S]*?<div class="mega-col">[\s\S]*?)(<\/div>\s*<\/div>)/i,
+    `$1\n              ${link}$2`,
+  ).replace(
+    /(<li class="has-dropdown" data-desktop-menu-id="corporate">[\s\S]*?<div class="mega-dropdown">[\s\S]*?<div class="mega-col">[\s\S]*?)(<\/div>\s*<\/div>\s*<\/li>)/i,
+    `$1\n              ${link}$2`,
+  );
+}
