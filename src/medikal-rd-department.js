@@ -24,6 +24,7 @@ import {
   initLanguageSwitchers,
   renderLanguageSwitcher,
 } from './language-switcher.js';
+import { initAnalyticsTracking } from './analytics.js';
 
 const app = document.getElementById('medikal-rd-app');
 const pathLocale = detectMedikalRdLocale();
@@ -235,6 +236,7 @@ function bootstrapMedikalRdPage() {
   initCustomCursor();
   initSiteHeader(document, { trackScroll: true });
   initLanguageSwitchers();
+  initAnalyticsTracking(() => locale);
 }
 
 bootstrapMedikalRdPage();

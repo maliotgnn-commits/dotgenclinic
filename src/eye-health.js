@@ -25,6 +25,7 @@ import {
   initLanguageSwitchers,
   renderLanguageSwitcher,
 } from './language-switcher.js';
+import { initAnalyticsTracking } from './analytics.js';
 
 const app = document.getElementById('eye-health-app');
 const pathLocale = detectEyeHealthLocale();
@@ -340,6 +341,7 @@ function initSkipLink() {
 function bootstrapEyeHealthPage() {
   normalizeEyeHealthLandingHash();
   renderPage();
+  initAnalyticsTracking(() => locale);
   initSkipLink();
   initCustomCursor();
   initSiteHeader(document, { trackScroll: true });

@@ -5,6 +5,7 @@ import {
   storeLocale,
   translate,
 } from './i18n.js';
+import { pushEvent } from './analytics.js';
 
 function chevronIcon() {
   return `
@@ -92,7 +93,17 @@ export function initLanguageSwitchers(root = document) {
     });
 
     switcher.querySelectorAll('.language-option').forEach((option) => {
-      option.addEventListener('click', () => storeLocale(option.dataset.locale));
+      option.addEventListener('click', () => {
+        const fromLocale = switcher.querySelector('.language-option.active')?.dataset.locale;
+        const toLocale = option.dataset.locale;
+        if (fromLocale && toLocale && fromLocale !== toLocale) {
+          pushEvent('language_switch', {
+            from_locale: fromLocale,
+            to_locale: toLocale,
+          });
+        }
+        storeLocale(toLocale);
+      });
     });
   });
 

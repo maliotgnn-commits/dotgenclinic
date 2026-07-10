@@ -20,6 +20,7 @@ import {
   initLanguageSwitchers,
   renderLanguageSwitcher,
 } from './language-switcher.js';
+import { initAnalyticsTracking } from './analytics.js';
 
 const locale = getCurrentLocale('privacy');
 const [catalog, uiDictionary, eyeContent] = await Promise.all([
@@ -111,6 +112,7 @@ function bootstrapPrivacyPage() {
     container.insertAdjacentHTML('beforebegin', renderHeader());
   }
   applySeoLinks(locale, 'privacy');
+  initAnalyticsTracking(() => locale);
   initSiteHeader(document, { trackScroll: true });
   initCustomCursor();
   initLanguageSwitchers();

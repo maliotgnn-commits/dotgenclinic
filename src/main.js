@@ -22,6 +22,7 @@ import { loadEyeHealthContent } from './eye-health-content.js';
 import { upgradeLocalizedEyeHealthNav } from './tr-eye-health-nav.js';
 import { upgradeLocalizedArgeNav } from './tr-arge-nav.js';
 import { initPartnersMarquee } from './partners-marquee.js';
+import { initAnalyticsTracking, pushEvent } from './analytics.js';
 
 const locale = getCurrentLocale('home');
 const uiDictionary = await loadUiDictionary(locale);
@@ -62,6 +63,7 @@ mountLanguageSwitcher(
   uiDictionary,
 );
 initCustomCursor();
+initAnalyticsTracking(() => locale);
 
 function createParticles() {
   if (prefersReducedMotion) return;
@@ -519,6 +521,11 @@ function initAppointmentForm() {
       return response.json();
     })
     .then(() => {
+      pushEvent('form_submit', {
+        page_locale: locale,
+        service_category: service || 'unspecified',
+        status: 'success',
+      });
       setButtonVisual(translate(uiDictionary, 'Gönderildi'), 'is-success');
       setFormStatus(translate(uiDictionary, 'Gönderildi'));
       submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
@@ -530,6 +537,11 @@ function initAppointmentForm() {
     })
     .catch((error) => {
       console.error(error);
+      pushEvent('form_submit', {
+        page_locale: locale,
+        service_category: service || 'unspecified',
+        status: 'error',
+      });
       setButtonVisual(translate(uiDictionary, 'Hata Oluştu'), 'is-error');
       setFormStatus(translate(uiDictionary, 'Hata Oluştu'));
       submitBtn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';

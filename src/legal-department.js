@@ -23,6 +23,7 @@ import {
   initLanguageSwitchers,
   renderLanguageSwitcher,
 } from './language-switcher.js';
+import { initAnalyticsTracking } from './analytics.js';
 
 const app = document.getElementById('legal-app');
 const pathLocale = detectLegalLocale();
@@ -354,6 +355,7 @@ function bootstrapLegalPage() {
   initCustomCursor();
   initSiteHeader(document, { trackScroll: true });
   initLanguageSwitchers();
+  initAnalyticsTracking(() => locale);
   initSmoothScroll();
   initPreviewForm();
 }

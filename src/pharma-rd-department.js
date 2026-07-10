@@ -24,6 +24,7 @@ import {
   initLanguageSwitchers,
   renderLanguageSwitcher,
 } from './language-switcher.js';
+import { initAnalyticsTracking } from './analytics.js';
 
 const app = document.getElementById('pharma-rd-app');
 const pathLocale = detectPharmaRdLocale();
@@ -275,6 +276,7 @@ function bootstrapPharmaRdPage() {
   initCustomCursor();
   initSiteHeader(document, { trackScroll: true });
   initLanguageSwitchers();
+  initAnalyticsTracking(() => locale);
 }
 
 bootstrapPharmaRdPage();

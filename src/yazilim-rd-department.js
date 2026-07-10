@@ -24,6 +24,7 @@ import {
   initLanguageSwitchers,
   renderLanguageSwitcher,
 } from './language-switcher.js';
+import { initAnalyticsTracking } from './analytics.js';
 
 const app = document.getElementById('yazilim-rd-app');
 const pathLocale = detectYazilimRdLocale();
@@ -235,6 +236,7 @@ function bootstrapYazilimRdPage() {
   initCustomCursor();
   initSiteHeader(document, { trackScroll: true });
   initLanguageSwitchers();
+  initAnalyticsTracking(() => locale);
 }
 
 bootstrapYazilimRdPage();

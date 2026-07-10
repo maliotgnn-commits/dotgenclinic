@@ -22,6 +22,7 @@ import {
   initLanguageSwitchers,
   renderLanguageSwitcher,
 } from './language-switcher.js';
+import { initAnalyticsTracking, trackServicePageView } from './analytics.js';
 
 const app = document.getElementById('service-app');
 const params = new URLSearchParams(window.location.search);
@@ -455,6 +456,13 @@ function bootstrapServicePage() {
   }
 
   renderPage(currentPage, defaultRelatedPages(catalog, currentPage));
+  initAnalyticsTracking(() => locale);
+  trackServicePageView({
+    locale,
+    slug: currentPage.slug,
+    category: currentPage.category,
+    title: currentPage.title,
+  });
   initSkipLink();
   initCustomCursor();
   initSiteHeader(document, { trackScroll: true });
