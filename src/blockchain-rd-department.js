@@ -24,6 +24,7 @@ import {
   initLanguageSwitchers,
   renderLanguageSwitcher,
 } from './language-switcher.js';
+import { initAnalyticsTracking } from './analytics.js';
 
 const app = document.getElementById('blockchain-rd-app');
 const pathLocale = detectBlockchainRdLocale();
@@ -235,6 +236,7 @@ function bootstrapBlockchainRdPage() {
   initCustomCursor();
   initSiteHeader(document, { trackScroll: true });
   initLanguageSwitchers();
+  initAnalyticsTracking(() => locale);
 }
 
 bootstrapBlockchainRdPage();

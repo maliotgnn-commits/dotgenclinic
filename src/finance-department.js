@@ -23,6 +23,7 @@ import {
   initLanguageSwitchers,
   renderLanguageSwitcher,
 } from './language-switcher.js';
+import { initAnalyticsTracking } from './analytics.js';
 
 const app = document.getElementById('finance-app');
 const pathLocale = detectFinanceLocale();
@@ -374,6 +375,7 @@ function bootstrapFinancePage() {
   initCustomCursor();
   initSiteHeader(document, { trackScroll: true });
   initLanguageSwitchers();
+  initAnalyticsTracking(() => locale);
   initSmoothScroll();
   initPreviewForm();
 }
