@@ -12,6 +12,7 @@ import { buildPharmaRdPreviewPage } from './build-pharma-rd-preview-page.mjs';
 import { buildMedikalRdPreviewPage } from './build-medikal-rd-preview-page.mjs';
 import { buildYazilimRdPreviewPage } from './build-yazilim-rd-preview-page.mjs';
 import { buildBlockchainRdPreviewPage } from './build-blockchain-rd-preview-page.mjs';
+import { buildEcommerceRdPreviewPage } from './build-ecommerce-rd-preview-page.mjs';
 
 const steps = [
   ['node', ['scripts/verify-favicon-assets.mjs']],
@@ -40,6 +41,8 @@ const steps = [
   ['node', ['scripts/verify-multilingual-yazilim-rd-page.mjs']],
   ['node', ['scripts/verify-tr-blockchain-rd-page.mjs']],
   ['node', ['scripts/verify-multilingual-blockchain-rd-page.mjs']],
+  ['node', ['scripts/verify-tr-ecommerce-rd-page.mjs']],
+  ['node', ['scripts/verify-multilingual-ecommerce-rd-page.mjs']],
   ['node', ['scripts/verify-multilingual-legal-page.mjs']],
   ['node', ['scripts/verify-multilingual-finance-page.mjs']],
   ['node', ['scripts/verify-header-controls.mjs']],
@@ -57,6 +60,7 @@ export function runBuildValidations() {
   buildMedikalRdPreviewPage();
   buildYazilimRdPreviewPage();
   buildBlockchainRdPreviewPage();
+  buildEcommerceRdPreviewPage();
 
   for (const [command, args] of steps) {
     const result = spawnSync(command, args, { cwd: ROOT, stdio: 'inherit', shell: process.platform === 'win32' });

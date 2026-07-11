@@ -1,0 +1,57 @@
+{
+  "page": {
+    "title": "I+D Comercio Electrónico | Dr Otgen Clinic",
+    "description": "Información sobre I+D de comercio electrónico de Dr Otgen Clinic; plataforma de comercio e-salud para estética médica y consumibles médicos, alianzas globales e infraestructura tecnológica avanzada.",
+    "hero": {
+      "tag": "COMERCIO E-SALUD",
+      "title": "I+D Comercio Electrónico",
+      "subtitle": "Estética Médica y Consumibles Médicos",
+      "lead": "Plataforma innovadora y visión de transformación digital para el comercio e-salud",
+      "image": "/images/ecommerce_rd/ecommerce_rd_hero.webp"
+    },
+    "showcase": {
+      "image": "/images/ecommerce_rd/ecommerce_rd_showcase.webp",
+      "alt": "Visión de la plataforma digital de I+D de comercio electrónico de Dr Otgen Clinic"
+    },
+    "intro": {
+      "title": "Enfoque Innovador del Comercio E-Salud",
+      "paragraphs": [
+        "Dr Otgen Clinic asume un papel pionero en el sector de la estética médica y los consumibles médicos, continuando los preparativos para una plataforma integral orientada al comercio e-salud. Esta iniciativa innovadora se lleva a cabo con rigor para satisfacer las necesidades del sector y establecer una presencia sólida en el mercado global."
+      ]
+    },
+    "sections": [
+      {
+        "title": "Alianzas Globales y Asociaciones Estratégicas",
+        "paragraphs": [
+          "Para aumentar el alcance global y la efectividad de su plataforma de comercio e-salud, Dr Otgen Clinic mantiene conversaciones estratégicas con líderes mundiales del comercio electrónico. Las negociaciones con plataformas globales como eBay reflejan la visión de Dr Otgen Clinic de fortalecer su competitividad internacional y llegar a una amplia base de clientes. Estas alianzas apoyarán la misión de ser una fuente fiable y accesible en el suministro de estética médica y consumibles médicos."
+        ]
+      },
+      {
+        "title": "Trabajos de Infraestructura Tecnológica Avanzada",
+        "paragraphs": [
+          "Los trabajos de infraestructura necesarios para el lanzamiento exitoso de la plataforma de comercio e-salud avanzan a gran velocidad. Dr Otgen Clinic integra las últimas tecnologías en áreas críticas como interfaces fáciles de usar, sistemas de pago seguros, soluciones logísticas eficaces y gestión integral de productos. Estas inversiones en infraestructura tienen como objetivo ofrecer una experiencia comercial fluida y eficiente tanto para proveedores como para profesionales sanitarios. Los sistemas desarrollados son capaces de gestionar transacciones de alto volumen y cumplen los más altos estándares de seguridad y privacidad de datos."
+        ]
+      }
+    ],
+    "focusAreas": {
+      "title": "Áreas de Enfoque de la Plataforma de Comercio E-Salud",
+      "items": [
+        "Suministro de productos y dispositivos de estética médica",
+        "Infraestructura de comercio electrónico de consumibles médicos",
+        "Integraciones con plataformas globales de comercio electrónico",
+        "Sistemas seguros de pago y transacciones financieras",
+        "Gestión logística y de la cadena de suministro",
+        "Gestión integral de catálogo de productos y existencias",
+        "Estándares de seguridad y privacidad de datos",
+        "Experiencia de comercio digital para profesionales sanitarios"
+      ]
+    },
+    "closing": {
+      "quote": "A través de esta plataforma de comercio e-salud, Dr Otgen Clinic aspira a liderar la transformación digital en el sector de la estética médica y los consumibles médicos, crear nuevas oportunidades en el mercado global y mejorar la calidad de los servicios sanitarios.",
+      "cta": "Solicitar Cita"
+    },
+    "breadcrumbHome": "Inicio",
+    "sectionName": "I+D",
+    "pageShortName": "I+D Comercio Electrónico"
+  }
+}

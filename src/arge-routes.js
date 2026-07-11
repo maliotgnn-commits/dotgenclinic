@@ -20,6 +20,13 @@ import {
   isBlockchainRdPath,
 } from './blockchain-rd-routes.js';
 import {
+  ecommerceRdFileForLocale,
+  ecommerceRdPageNavLabelForLocale,
+  ecommerceRdPathForLocale,
+  detectEcommerceRdLocale,
+  isEcommerceRdPath,
+} from './ecommerce-rd-routes.js';
+import {
   PHARMA_RD_ROUTES,
   argeMenuLabelForLocale,
   detectPharmaRdLocale,
@@ -61,6 +68,12 @@ export function argePagesForLocale(locale = 'tr') {
       path: blockchainRdPathForLocale(locale),
       file: blockchainRdFileForLocale(locale),
     },
+    {
+      id: 'e-ticaret-ar-ge',
+      navLabel: ecommerceRdPageNavLabelForLocale(locale),
+      path: ecommerceRdPathForLocale(locale),
+      file: ecommerceRdFileForLocale(locale),
+    },
   ];
 }
 
@@ -77,6 +90,10 @@ export function argePagePathForId(id, locale = 'tr') {
 }
 
 export function detectArgePage(pathname = window.location.pathname) {
+  const ecommerceLocale = detectEcommerceRdLocale(pathname);
+  if (ecommerceLocale) {
+    return argePagesForLocale(ecommerceLocale).find((page) => page.id === 'e-ticaret-ar-ge') || null;
+  }
   const blockchainLocale = detectBlockchainRdLocale(pathname);
   if (blockchainLocale) {
     return argePagesForLocale(blockchainLocale).find((page) => page.id === 'blockchain-ar-ge') || null;
@@ -95,7 +112,7 @@ export function detectArgePage(pathname = window.location.pathname) {
 }
 
 export function isArgePagePath(pathname = window.location.pathname) {
-  return isPharmaRdPath(pathname) || isMedikalRdPath(pathname) || isYazilimRdPath(pathname) || isBlockchainRdPath(pathname);
+  return isPharmaRdPath(pathname) || isMedikalRdPath(pathname) || isYazilimRdPath(pathname) || isBlockchainRdPath(pathname) || isEcommerceRdPath(pathname);
 }
 
 export { argeMenuLabelForLocale, detectPharmaRdLocale, pharmaRdPathForLocale };
