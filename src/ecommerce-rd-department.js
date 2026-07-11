@@ -173,9 +173,6 @@ function renderIntroSection() {
   return `
     <section class="mr-section" aria-labelledby="mr-intro-title">
       <div class="container mr-split">
-        <div class="mr-split-text mr-prose">
-          ${proseContent}
-        </div>
         <div class="mr-split-media">
           <img
             src="${showcase.image}"
@@ -183,6 +180,9 @@ function renderIntroSection() {
             loading="lazy"
             decoding="async"
           />
+        </div>
+        <div class="mr-split-text mr-prose">
+          ${proseContent}
         </div>
       </div>
     </section>
