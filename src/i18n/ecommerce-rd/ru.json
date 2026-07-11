@@ -9,6 +9,10 @@
       "lead": "Инновационная платформа и видение цифровой трансформации e-health торговли",
       "image": "/images/ecommerce_rd/ecommerce_rd_hero.webp"
     },
+    "showcase": {
+      "image": "/images/ecommerce_rd/ecommerce_rd_showcase.webp",
+      "alt": "Цифровое видение платформы разработок электронной торговли Dr Otgen Clinic"
+    },
     "intro": {
       "title": "Инновационный подход к e-health торговле",
       "paragraphs": [

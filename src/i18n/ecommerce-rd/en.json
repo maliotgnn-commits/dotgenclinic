@@ -9,6 +9,10 @@
       "lead": "Innovative platform and digital transformation vision for e-health commerce",
       "image": "/images/ecommerce_rd/ecommerce_rd_hero.webp"
     },
+    "showcase": {
+      "image": "/images/ecommerce_rd/ecommerce_rd_showcase.webp",
+      "alt": "Dr Otgen Clinic E-Commerce R&D digital platform vision"
+    },
     "intro": {
       "title": "Innovative Approach to E-Health Commerce",
       "paragraphs": [

@@ -9,6 +9,10 @@
       "lead": "منصة مبتكرة ورؤية للتحول الرقمي في تجارة الصحة الإلكترونية",
       "image": "/images/ecommerce_rd/ecommerce_rd_hero.webp"
     },
+    "showcase": {
+      "image": "/images/ecommerce_rd/ecommerce_rd_showcase.webp",
+      "alt": "رؤية منصة البحث والتطوير في التجارة الإلكترونية الرقمية لـ Dr Otgen Clinic"
+    },
     "intro": {
       "title": "نهج مبتكر لتجارة الصحة الإلكترونية",
       "paragraphs": [

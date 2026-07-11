@@ -150,14 +150,39 @@ function renderBreadcrumb() {
 }
 
 function renderIntroSection() {
-  return `
-    <section class="mr-section" aria-labelledby="mr-intro-title">
-      <div class="container mr-prose">
+  const showcase = page.showcase;
+  const proseContent = `
         <div class="mr-section-head">
           <h2 id="mr-intro-title">${escapeHtml(page.intro.title)}</h2>
           ${page.intro.paragraphs
             .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
             .join('')}
+        </div>
+  `;
+
+  if (!showcase?.image) {
+    return `
+    <section class="mr-section" aria-labelledby="mr-intro-title">
+      <div class="container mr-prose">
+        ${proseContent}
+      </div>
+    </section>
+  `;
+  }
+
+  return `
+    <section class="mr-section" aria-labelledby="mr-intro-title">
+      <div class="container mr-split">
+        <div class="mr-split-text mr-prose">
+          ${proseContent}
+        </div>
+        <div class="mr-split-media">
+          <img
+            src="${showcase.image}"
+            alt="${escapeHtml(showcase.alt || page.hero.title)}"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
     </section>

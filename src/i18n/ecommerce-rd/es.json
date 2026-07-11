@@ -9,6 +9,10 @@
       "lead": "Plataforma innovadora y visión de transformación digital para el comercio e-salud",
       "image": "/images/ecommerce_rd/ecommerce_rd_hero.webp"
     },
+    "showcase": {
+      "image": "/images/ecommerce_rd/ecommerce_rd_showcase.webp",
+      "alt": "Visión de la plataforma digital de I+D de comercio electrónico de Dr Otgen Clinic"
+    },
     "intro": {
       "title": "Enfoque Innovador del Comercio E-Salud",
       "paragraphs": [

@@ -52,7 +52,9 @@ for (const section of requiredSections) {
 }
 
 assert(ecommerceData.includes('/images/ecommerce_rd/ecommerce_rd_hero.webp'), 'Missing e-commerce R&D hero background image reference');
+assert(ecommerceData.includes('/images/ecommerce_rd/ecommerce_rd_showcase.webp'), 'Missing e-commerce R&D showcase image reference');
 assert(existsSync(resolve(DIST, 'images/ecommerce_rd/ecommerce_rd_hero.webp')), 'Missing built e-commerce R&D hero image asset');
+assert(existsSync(resolve(DIST, 'images/ecommerce_rd/ecommerce_rd_showcase.webp')), 'Missing built e-commerce R&D showcase image asset');
 assert(ecommerceJs.includes("getCurrentLocale('ecommerce-rd')"), 'ecommerce-rd-department.js must use ecommerce-rd page type');
 assert(ecommerceJs.includes('loadEcommerceRdContent'), 'ecommerce-rd-department.js must load locale content');
 assert(ecommerceJs.includes('detectEcommerceRdLocale'), 'ecommerce-rd-department.js must detect e-commerce R&D locale from path');

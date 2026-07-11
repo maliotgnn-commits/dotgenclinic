@@ -9,6 +9,10 @@ export const ECOMMERCE_RD_PAGE = {
     lead: 'E-sağlık ticaretine yönelik yenilikçi platform ve dijital dönüşüm vizyonu',
     image: '/images/ecommerce_rd/ecommerce_rd_hero.webp',
   },
+  showcase: {
+    image: '/images/ecommerce_rd/ecommerce_rd_showcase.webp',
+    alt: 'Dr Otgen Clinic E-Ticaret Ar-Ge dijital platform vizyonu',
+  },
   intro: {
     title: 'E-Sağlık Ticaretine Yenilikçi Yaklaşım',
     paragraphs: [
