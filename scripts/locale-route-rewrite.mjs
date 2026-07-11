@@ -6,6 +6,7 @@ export const PHARMA_RD_PREVIEW_FILE = 'ilac-ar-ge.html';
 export const MEDIKAL_RD_PREVIEW_FILE = 'medikal-ar-ge.html';
 export const YAZILIM_RD_PREVIEW_FILE = 'yazilim-ar-ge.html';
 export const BLOCKCHAIN_RD_PREVIEW_FILE = 'blockchain-ar-ge.html';
+export const ECOMMERCE_RD_PREVIEW_FILE = 'e-ticaret-ar-ge.html';
 
 export const PHARMA_RD_FILES = new Set([
   'ilac-ar-ge.html',
@@ -49,6 +50,17 @@ export const BLOCKCHAIN_RD_FILES = new Set([
   'r-s-blockchain.html',
   'блокчейн-разработки.html',
   'blockchain-forschung.html',
+]);
+
+export const ECOMMERCE_RD_FILES = new Set([
+  'e-ticaret-ar-ge.html',
+  'e-commerce-r-d.html',
+  'البحث-والتطوير-التجارة-الإلكترونية.html',
+  'i-d-comercio-electronico.html',
+  'r-d-e-commerce.html',
+  'r-s-e-commerce.html',
+  'электронная-торговля-разработки.html',
+  'e-commerce-forschung.html',
 ]);
 
 export const LEGAL_FILES = new Set([
@@ -161,6 +173,14 @@ export function resolveLocaleRewrite(pathname, search = '') {
 
   if (BLOCKCHAIN_RD_FILES.has(routeFile) || BLOCKCHAIN_RD_FILES.has(routeFileRaw)) {
     return `/blockchain-ar-ge.html${search}`;
+  }
+
+  if (routeFile === ECOMMERCE_RD_PREVIEW_FILE || routeFileRaw === ECOMMERCE_RD_PREVIEW_FILE) {
+    return `/e-ticaret-ar-ge.html${search}`;
+  }
+
+  if (ECOMMERCE_RD_FILES.has(routeFile) || ECOMMERCE_RD_FILES.has(routeFileRaw)) {
+    return `/e-ticaret-ar-ge.html${search}`;
   }
 
   return `/index.html${search}`;

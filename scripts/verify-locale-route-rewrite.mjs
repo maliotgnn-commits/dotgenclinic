@@ -1,4 +1,4 @@
-import { resolveLocaleRewrite, rewriteLocaleRequestUrl, FINANCE_PREVIEW_FILE, FINANCE_FILES, LEGAL_PREVIEW_FILE, LEGAL_FILES, PHARMA_RD_PREVIEW_FILE, PHARMA_RD_FILES, MEDIKAL_RD_PREVIEW_FILE, MEDIKAL_RD_FILES, YAZILIM_RD_PREVIEW_FILE, YAZILIM_RD_FILES, BLOCKCHAIN_RD_PREVIEW_FILE, BLOCKCHAIN_RD_FILES } from './locale-route-rewrite.mjs';
+import { resolveLocaleRewrite, rewriteLocaleRequestUrl, FINANCE_PREVIEW_FILE, FINANCE_FILES, LEGAL_PREVIEW_FILE, LEGAL_FILES, PHARMA_RD_PREVIEW_FILE, PHARMA_RD_FILES, MEDIKAL_RD_PREVIEW_FILE, MEDIKAL_RD_FILES, YAZILIM_RD_PREVIEW_FILE, YAZILIM_RD_FILES, BLOCKCHAIN_RD_PREVIEW_FILE, BLOCKCHAIN_RD_FILES, ECOMMERCE_RD_PREVIEW_FILE, ECOMMERCE_RD_FILES } from './locale-route-rewrite.mjs';
 
 const failures = [];
 
@@ -24,6 +24,7 @@ expect('/tr/ilac-ar-ge.html', '', '/ilac-ar-ge.html');
 expect('/tr/medikal-ar-ge.html', '', '/medikal-ar-ge.html');
 expect('/tr/yazilim-ar-ge.html', '', '/yazilim-ar-ge.html');
 expect('/tr/blockchain-ar-ge.html', '', '/blockchain-ar-ge.html');
+expect('/tr/e-ticaret-ar-ge.html', '', '/e-ticaret-ar-ge.html');
 expect('/en/legal-department.html', '', '/hukuk-departmani.html');
 expect('/de/rechtsabteilung.html', '', '/hukuk-departmani.html');
 expect('/en/finance-department.html', '', '/finans-departmani.html');
@@ -146,6 +147,20 @@ expect('/de/blockchain-forschung.html', '', '/blockchain-ar-ge.html');
 assert(
   rewriteLocaleRequestUrl('/en/blockchain-r-d.html') === '/blockchain-ar-ge.html',
   'rewriteLocaleRequestUrl must map localized blockchain R&D routes',
+);
+assert(
+  ECOMMERCE_RD_PREVIEW_FILE === 'e-ticaret-ar-ge.html',
+  'E-commerce R&D preview route file constant mismatch',
+);
+assert(
+  ECOMMERCE_RD_FILES.size === 8,
+  'E-commerce R&D locale route file set must include 8 locale filenames',
+);
+expect('/en/e-commerce-r-d.html', '', '/e-ticaret-ar-ge.html');
+expect('/de/e-commerce-forschung.html', '', '/e-ticaret-ar-ge.html');
+assert(
+  rewriteLocaleRequestUrl('/en/e-commerce-r-d.html') === '/e-ticaret-ar-ge.html',
+  'rewriteLocaleRequestUrl must map localized e-commerce R&D routes',
 );
 
 if (failures.length) {
