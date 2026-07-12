@@ -221,13 +221,35 @@ function setupHeroVideoLoop() {
 
 const HERO_FALLBACK_POSTER = '/images/hero-beauty.png';
 
+function getHeroFallbackPosterUrl(video, slide) {
+  if (slide?.dataset.heroFallbackPoster) return slide.dataset.heroFallbackPoster;
+  return video.getAttribute('poster') || HERO_FALLBACK_POSTER;
+}
+
+function extractHeroFallbackPoster(video) {
+  const slide = video?.closest('.hero-slide-video');
+  if (!slide || slide.dataset.heroFallbackPoster) return;
+  if (video.readyState < 2 || !video.videoWidth) return;
+
+  try {
+    const canvas = document.createElement('canvas');
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    canvas.getContext('2d').drawImage(video, 0, 0);
+    slide.dataset.heroFallbackPoster = canvas.toDataURL('image/jpeg', 0.82);
+  } catch (error) {
+    // Frame capture can fail on cross-origin or unsupported sources.
+  }
+}
+
 function applyHeroVideoFallback(video) {
   const slide = video?.closest('.hero-slide-video');
   if (!slide) return;
-  const poster = video.getAttribute('poster') || HERO_FALLBACK_POSTER;
+  const poster = getHeroFallbackPosterUrl(video, slide);
   slide.classList.add('video-fallback-active');
   slide.style.backgroundImage = `url('${poster}')`;
   video.pause();
+  syncHeroPlayButton();
 }
 
 function clearHeroVideoFallback(video) {
@@ -235,6 +257,53 @@ function clearHeroVideoFallback(video) {
   if (!slide) return;
   slide.classList.remove('video-fallback-active');
   slide.style.backgroundImage = '';
+  syncHeroPlayButton();
+}
+
+function getHeroPlayButton() {
+  return document.querySelector('.hero-slide-video .hero-video-play');
+}
+
+function syncHeroPlayButton() {
+  const video = document.querySelector('.hero-bg-video');
+  const playButton = getHeroPlayButton();
+  const slide = video?.closest('.hero-slide');
+  if (!video || !playButton || !slide) return;
+
+  const shouldShow = slide.classList.contains('active')
+    && !isVideoActivelyPlaying(video)
+    && (prefersReducedMotion || slide.classList.contains('video-fallback-active') || video.paused);
+
+  playButton.hidden = !shouldShow;
+}
+
+function playHeroVideoFromGesture() {
+  const video = document.querySelector('.hero-bg-video');
+  if (!video) return;
+
+  clearHeroVideoFallback(video);
+  video.muted = true;
+  video.play().then(() => {
+    syncHeroPlayButton();
+  }).catch(() => {
+    applyHeroVideoFallback(video);
+  });
+}
+
+function initHeroPlayButton() {
+  const playButton = getHeroPlayButton();
+  const video = document.querySelector('.hero-bg-video');
+  if (!playButton || !video) return;
+
+  playButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    playHeroVideoFromGesture();
+  });
+
+  ['play', 'pause', 'ended'].forEach((eventName) => {
+    video.addEventListener(eventName, syncHeroPlayButton);
+  });
 }
 
 function applyFooterVideoFallback(video) {
@@ -268,7 +337,10 @@ function safePlayVideo(video) {
   if (!playPromise || typeof playPromise.then !== 'function') return;
 
   playPromise.then(() => {
-    if (video.classList.contains('hero-bg-video')) clearHeroVideoFallback(video);
+    if (video.classList.contains('hero-bg-video')) {
+      clearHeroVideoFallback(video);
+      syncHeroPlayButton();
+    }
   }).catch(() => {
     const retryPlay = () => {
       if (prefersReducedMotion || document.hidden) {
@@ -278,10 +350,15 @@ function safePlayVideo(video) {
       }
       video.muted = true;
       video.play().then(() => {
-        if (video.classList.contains('hero-bg-video')) clearHeroVideoFallback(video);
+        if (video.classList.contains('hero-bg-video')) {
+          clearHeroVideoFallback(video);
+          syncHeroPlayButton();
+        }
       }).catch(() => {
-        if (video.classList.contains('hero-bg-video')) applyHeroVideoFallback(video);
-        else if (video.classList.contains('footer-brand-video')) applyFooterVideoFallback(video);
+        if (video.classList.contains('hero-bg-video')) {
+          applyHeroVideoFallback(video);
+          syncHeroPlayButton();
+        } else if (video.classList.contains('footer-brand-video')) applyFooterVideoFallback(video);
       });
     };
     video.addEventListener('canplay', retryPlay, { once: true });
@@ -306,6 +383,7 @@ function syncHeroVideoPlayback() {
       video.pause();
     }
   });
+  syncHeroPlayButton();
 }
 
 function initFooterVideoLazyLoad() {
@@ -475,6 +553,17 @@ function initHero() {
     heroVideo.load();
   }
 
+  if (heroVideo) {
+    const onHeroMediaReady = () => {
+      extractHeroFallbackPoster(heroVideo);
+      if (prefersReducedMotion) applyHeroVideoFallback(heroVideo);
+      syncHeroPlayButton();
+    };
+    heroVideo.addEventListener('loadeddata', onHeroMediaReady, { once: true });
+    if (heroVideo.readyState >= 2) onHeroMediaReady();
+  }
+
+  initHeroPlayButton();
   syncHeroVideoPlayback();
   syncHeroHeadingAccessibility();
 }
