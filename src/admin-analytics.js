@@ -270,7 +270,8 @@ function renderDashboardShell(data) {
 
   mountCharts(data);
   renderServiceTable(data.servicePerformance || []);
-  setStatus('Dashboard hazır.', false);
+  const source = data.meta?.serviceDataSource || 'unknown';
+  setStatus(`Dashboard hazır. Hizmet verisi kaynağı: ${source}.`, false);
 }
 
 function setStatus(message, isError = false) {
