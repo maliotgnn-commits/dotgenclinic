@@ -14,5 +14,8 @@
   "devDependencies": {
     "playwright": "^1.61.1",
     "vite": "^8.0.1"
+  },
+  "dependencies": {
+    "@google-analytics/data": "^6.1.0"
   }
 }
