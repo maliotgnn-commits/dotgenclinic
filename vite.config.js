@@ -50,8 +50,30 @@ function buildSeoPipeline() {
   };
 }
 
+function adminRoutes() {
+  return {
+    name: 'admin-routes',
+    configureServer(server) {
+      server.middlewares.use((request, _response, next) => {
+        if (request.url === '/admin/analytics' || request.url === '/admin/analytics/') {
+          request.url = '/admin/analytics.html';
+        }
+        next();
+      });
+    },
+    configurePreviewServer(server) {
+      server.middlewares.use((request, _response, next) => {
+        if (request.url === '/admin/analytics' || request.url === '/admin/analytics/') {
+          request.url = '/admin/analytics.html';
+        }
+        next();
+      });
+    },
+  };
+}
+
 export default defineConfig({
-  plugins: [localeRoutes(), buildSeoPipeline()],
+  plugins: [localeRoutes(), adminRoutes(), buildSeoPipeline()],
   build: {
     rollupOptions: {
       input: {
@@ -59,6 +81,7 @@ export default defineConfig({
         service: resolve(import.meta.dirname, 'service.html'),
         privacy: resolve(import.meta.dirname, 'privacy.html'),
         eyeHealth: resolve(import.meta.dirname, 'goz-hastaliklari.html'),
+        adminAnalytics: resolve(import.meta.dirname, 'admin/analytics.html'),
       },
     },
   },
