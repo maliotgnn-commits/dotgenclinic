@@ -817,7 +817,7 @@ const DATA = {
       "summary": "Dr Otgen Clinic, Bupa Global ve Cigna Healthcare anlaşmalarıyla uluslararası hastalara estetik, saç sağlığı, diş estetiği, medikal estetik ve longevity hizmetlerinde güvenli ve kapsamlı sağlık desteği sunar.",
       "images": {
         "hero": "/images/site/pages/international-health-insurance-hero.webp",
-        "content": "/images/site/pages/international-health-insurance-hero.webp"
+        "content": "/images/site/pages/international-health-insurance-content.webp"
       },
       "overview": [
         "Dr Otgen Clinic olarak, global standartlarda sunduğumuz estetik, saç sağlığı, diş estetiği, medikal estetik ve longevity hizmetlerimizi uluslararası hastalarımızın erişimine sunmaktan gurur duyuyoruz.",
