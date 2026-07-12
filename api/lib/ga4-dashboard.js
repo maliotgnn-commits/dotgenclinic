@@ -11,12 +11,6 @@ const CONVERSION_EVENTS = Object.freeze([
   'form_submit',
 ]);
 
-const SERVICE_EVENT_PARAMS = Object.freeze([
-  { key: 'service_title', dimension: 'customEvent:service_title', labelKey: 'title' },
-  { key: 'service_slug', dimension: 'customEvent:service_slug', labelKey: 'slug' },
-  { key: 'service_category', dimension: 'customEvent:service_category', labelKey: 'category' },
-]);
-
 const SERVICE_PAGE_PATH_FILTER = {
   filter: {
     fieldName: 'pagePath',
@@ -30,30 +24,6 @@ const SERVICE_PAGE_VIEW_FILTER = {
     stringFilter: { matchType: 'EXACT', value: 'service_page_view' },
   },
 };
-
-const DEBUG_ENDPOINT = 'http://127.0.0.1:7351/ingest/978326e2-ed1a-492b-ba34-cad4578e33a0';
-const DEBUG_SESSION = 'cc8c65';
-
-function debugLog(location, message, data, hypothesisId) {
-  // #region agent log
-  fetch(DEBUG_ENDPOINT, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'X-Debug-Session-Id': DEBUG_SESSION,
-    },
-    body: JSON.stringify({
-      sessionId: DEBUG_SESSION,
-      runId: 'service-fix',
-      hypothesisId,
-      location,
-      message,
-      data,
-      timestamp: Date.now(),
-    }),
-  }).catch(() => {});
-  // #endregion
-}
 
 function capRate(value, base) {
   if (!base || base <= 0) return 0;
@@ -267,69 +237,6 @@ async function runReportSafe(request) {
   }
 }
 
-async function probeServiceEventDimensions(startDate, endDate) {
-  const property = getGa4PropertyResourceName();
-  const probes = [];
-
-  for (const param of SERVICE_EVENT_PARAMS) {
-    const response = await runReportSafe({
-      property,
-      dateRanges: [{ startDate, endDate }],
-      dimensions: [{ name: param.dimension }],
-      metrics: [{ name: 'eventCount' }],
-      dimensionFilter: SERVICE_PAGE_VIEW_FILTER,
-      orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }],
-      limit: 5,
-    });
-
-    const rows = response?.rows || [];
-    probes.push({
-      param: param.key,
-      dimension: param.dimension,
-      rowCount: rows.length,
-      error: response?.error || null,
-      sample: rows.slice(0, 3).map((row) => ({
-        value: row.dimensionValues?.[0]?.value || '',
-        count: parseMetricValue(row.metricValues?.[0]?.value),
-      })),
-    });
-  }
-
-  for (const fallback of [
-    { key: 'pageTitle', dimension: 'pageTitle' },
-    { key: 'pageLocation', dimension: 'pageLocation' },
-  ]) {
-    const response = await runReportSafe({
-      property,
-      dateRanges: [{ startDate, endDate }],
-      dimensions: [{ name: fallback.dimension }],
-      metrics: [{ name: 'eventCount' }],
-      dimensionFilter: {
-        andGroup: {
-          expressions: [SERVICE_PAGE_VIEW_FILTER, SERVICE_PAGE_PATH_FILTER],
-        },
-      },
-      orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }],
-      limit: 5,
-    });
-
-    const rows = response?.rows || [];
-    probes.push({
-      param: fallback.key,
-      dimension: fallback.dimension,
-      rowCount: rows.length,
-      error: response?.error || null,
-      sample: rows.slice(0, 3).map((row) => ({
-        value: row.dimensionValues?.[0]?.value || '',
-        count: parseMetricValue(row.metricValues?.[0]?.value),
-      })),
-    });
-  }
-
-  debugLog('ga4-dashboard.js:probeServiceEventDimensions', 'service_page_view parameter probe', { probes }, 'H1');
-  return probes;
-}
-
 function rowsToServiceMap(rows, labelResolver) {
   const map = new Map();
 
@@ -390,25 +297,12 @@ async function fetchServiceViewsByEvent(startDate, endDate) {
     const rows = response?.rows || [];
     const map = rowsToServiceMap(rows, strategy.labelResolver);
 
-    debugLog(
-      'ga4-dashboard.js:fetchServiceViewsByEvent',
-      'service views strategy result',
-      {
-        source: strategy.source,
-        rowCount: rows.length,
-        serviceCount: map.size,
-        error: response?.error || null,
-        sample: rows.slice(0, 3).map((row) => row.dimensionValues?.[0]?.value || ''),
-      },
-      'H2',
-    );
-
     if (map.size > 0) {
-      return { map, source: strategy.source };
+      return map;
     }
   }
 
-  return { map: new Map(), source: 'none' };
+  return new Map();
 }
 
 async function fetchServiceEngagementByPageTitle(startDate, endDate) {
@@ -479,33 +373,16 @@ function mergeServicePerformanceMaps(...maps) {
 }
 
 async function fetchServicePerformance(startDate, endDate) {
-  const [viewsResult, engagementMap] = await Promise.all([
+  const [viewsMap, engagementMap] = await Promise.all([
     fetchServiceViewsByEvent(startDate, endDate),
     fetchServiceEngagementByPageTitle(startDate, endDate),
   ]);
 
-  const rows = mergeServicePerformanceMaps(viewsResult.map, engagementMap);
-
-  debugLog(
-    'ga4-dashboard.js:fetchServicePerformance',
-    'merged service performance',
-    {
-      source: viewsResult.source,
-      rowCount: rows.length,
-      sample: rows.slice(0, 5),
-    },
-    'H3',
-  );
-
-  if (rows.length > 0) {
-    return { rows, source: viewsResult.source };
-  }
-
-  return { rows: [], source: viewsResult.source };
+  return mergeServicePerformanceMaps(viewsMap, engagementMap);
 }
 
 async function fetchTopServices(startDate, endDate) {
-  const { map, source } = await fetchServiceViewsByEvent(startDate, endDate);
+  const map = await fetchServiceViewsByEvent(startDate, endDate);
 
   const rows = [...map.entries()]
     .map(([label, entry]) => ({ label, value: entry.views }))
@@ -513,7 +390,7 @@ async function fetchTopServices(startDate, endDate) {
     .slice(0, 10);
 
   if (rows.length > 0) {
-    return { rows, source };
+    return rows;
   }
 
   const fallback = await fetchDimensionReport({
@@ -524,10 +401,7 @@ async function fetchTopServices(startDate, endDate) {
     limit: 10,
   });
 
-  return {
-    rows: fallback || [],
-    source: fallback?.length ? 'customEvent:service_title-fallback' : 'none',
-  };
+  return fallback || [];
 }
 
 function detectLocaleFromPath(pagePath) {
@@ -699,13 +573,6 @@ function buildConversionFunnel(visitorTotals, uniqueEventUsers) {
     },
   ];
 
-  debugLog(
-    'ga4-dashboard.js:buildConversionFunnel',
-    'funnel unique user rates',
-    { visitors, serviceViewUsers, whatsappUsers, appointmentUsers, steps },
-    'H6',
-  );
-
   return { steps };
 }
 
@@ -745,18 +612,16 @@ export async function fetchDashboardData() {
     last30Days,
     eventCounts,
     funnelUniqueUsers,
-    serviceProbe,
-    topServicesResult,
+    topServices,
     countries,
     languages,
-    servicePerformanceResult,
+    servicePerformance,
   ] = await Promise.all([
     fetchVisitorBundle('today', 'today'),
     fetchVisitorBundle('7daysAgo', 'today'),
     fetchVisitorBundle('30daysAgo', 'today'),
     fetchEventCounts('30daysAgo', 'today', CONVERSION_EVENTS),
     fetchEventUniqueUsers('30daysAgo', 'today', funnelEvents),
-    probeServiceEventDimensions('30daysAgo', 'today'),
     fetchTopServices('30daysAgo', 'today'),
     fetchCountryBreakdown('30daysAgo', 'today'),
     fetchLanguageBreakdown('30daysAgo', 'today'),
@@ -766,11 +631,6 @@ export async function fetchDashboardData() {
   return {
     property,
     generatedAt: new Date().toISOString(),
-    meta: {
-      serviceProbe,
-      serviceDataSource: servicePerformanceResult.source,
-      topServicesSource: topServicesResult.source,
-    },
     summary: {
       today: today.totals,
       last7Days: last7Days.totals,
@@ -785,11 +645,11 @@ export async function fetchDashboardData() {
       newUsers: last30Days.totals.newUsers,
     },
     dailyVisitors: last30Days.daily,
-    topServices: topServicesResult.rows || [],
+    topServices: topServices || [],
     conversions: buildConversionRates(eventCounts, last30Days.totals.sessions),
     conversionFunnel: buildConversionFunnel(last30Days.totals, funnelUniqueUsers),
     languages: languages || [],
     countries: countries || [],
-    servicePerformance: servicePerformanceResult.rows || [],
+    servicePerformance: servicePerformance || [],
   };
 }
