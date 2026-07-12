@@ -4282,6 +4282,10 @@
     {
       "source": "/:locale(tr|en|ar|es|fr|it|ru|de)",
       "destination": "/:locale/index.html"
+    },
+    {
+      "source": "/admin/analytics",
+      "destination": "/admin/analytics.html"
     }
   ]
 }

@@ -16,6 +16,7 @@
     "vite": "^8.0.1"
   },
   "dependencies": {
-    "@google-analytics/data": "^6.1.0"
+    "@google-analytics/data": "^6.1.0",
+    "chart.js": "^4.5.1"
   }
 }
