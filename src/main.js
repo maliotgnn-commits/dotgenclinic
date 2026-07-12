@@ -262,28 +262,40 @@ function syncHeroPlayButton() {
   const slide = video?.closest('.hero-slide');
   if (!video || !playButton || !slide) return;
 
+  const activelyPlaying = isVideoActivelyPlaying(video);
+  const fallbackActive = slide.classList.contains('video-fallback-active');
   const shouldShow = slide.classList.contains('active')
-    && !isVideoActivelyPlaying(video)
-    && (prefersReducedMotion || slide.classList.contains('video-fallback-active') || video.paused);
-
-  if (shouldShow && !slide.classList.contains('video-fallback-active')) {
-    applyHeroVideoFallback(video);
-  }
+    && !activelyPlaying
+    && (prefersReducedMotion || fallbackActive || video.paused || video.ended || Boolean(video.error));
 
   playButton.hidden = !shouldShow;
 }
 
-function playHeroVideoFromGesture() {
+let heroPlayGesturePending = false;
+let lastHeroPlayGestureAt = 0;
+
+async function playHeroVideoFromGesture() {
   const video = document.querySelector('.hero-bg-video');
   if (!video) return;
 
-  clearHeroVideoFallback(video);
+  const now = Date.now();
+  if (heroPlayGesturePending || now - lastHeroPlayGestureAt < 400) return;
+  lastHeroPlayGestureAt = now;
+  heroPlayGesturePending = true;
+
   video.muted = true;
-  video.play().then(() => {
-    syncHeroPlayButton();
-  }).catch(() => {
+
+  try {
+    await video.play();
+    if (!isVideoActivelyPlaying(video)) {
+      syncHeroPlayButton();
+    }
+  } catch {
     applyHeroVideoFallback(video);
-  });
+    syncHeroPlayButton();
+  } finally {
+    heroPlayGesturePending = false;
+  }
 }
 
 function initHeroPlayButton() {
@@ -291,14 +303,56 @@ function initHeroPlayButton() {
   const video = document.querySelector('.hero-bg-video');
   if (!playButton || !video) return;
 
-  playButton.addEventListener('click', (event) => {
+  let touchPlayHandled = false;
+
+  const onPlayGesture = (event) => {
     event.preventDefault();
     event.stopPropagation();
     playHeroVideoFromGesture();
+  };
+
+  playButton.addEventListener('touchend', (event) => {
+    touchPlayHandled = true;
+    onPlayGesture(event);
+  }, { passive: false });
+
+  playButton.addEventListener('pointerup', (event) => {
+    if (event.pointerType === 'touch') return;
+    onPlayGesture(event);
   });
 
-  ['play', 'pause', 'ended'].forEach((eventName) => {
+  playButton.addEventListener('click', (event) => {
+    if (touchPlayHandled) {
+      touchPlayHandled = false;
+      return;
+    }
+    onPlayGesture(event);
+  });
+
+  playButton.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    onPlayGesture(event);
+  });
+
+  video.addEventListener('playing', () => {
+    clearHeroVideoFallback(video);
+    syncHeroPlayButton();
+  });
+
+  ['pause', 'ended', 'waiting'].forEach((eventName) => {
     video.addEventListener(eventName, syncHeroPlayButton);
+  });
+
+  video.addEventListener('stalled', () => {
+    if (!isVideoActivelyPlaying(video)) {
+      applyHeroVideoFallback(video);
+      syncHeroPlayButton();
+    }
+  });
+
+  video.addEventListener('error', () => {
+    applyHeroVideoFallback(video);
+    syncHeroPlayButton();
   });
 }
 
@@ -334,7 +388,9 @@ function safePlayVideo(video) {
 
   playPromise.then(() => {
     if (video.classList.contains('hero-bg-video')) {
-      clearHeroVideoFallback(video);
+      if (!isVideoActivelyPlaying(video)) {
+        applyHeroVideoFallback(video);
+      }
       syncHeroPlayButton();
     }
   }).catch(() => {
@@ -347,7 +403,9 @@ function safePlayVideo(video) {
       video.muted = true;
       video.play().then(() => {
         if (video.classList.contains('hero-bg-video')) {
-          clearHeroVideoFallback(video);
+          if (!isVideoActivelyPlaying(video)) {
+            applyHeroVideoFallback(video);
+          }
           syncHeroPlayButton();
         }
       }).catch(() => {
