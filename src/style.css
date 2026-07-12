@@ -1267,6 +1267,54 @@ to {
   pointer-events: none
 }
 
+.hero-slide-video .hero-content {
+  pointer-events: none
+}
+
+.hero-slide-video .hero-content .hero-badge,
+.hero-slide-video .hero-content h1,
+.hero-slide-video .hero-content p,
+.hero-slide-video .hero-content .hero-buttons,
+.hero-slide-video .hero-content .hero-buttons a {
+  pointer-events: auto
+}
+
+.hero-video-play {
+  z-index: 4;
+  cursor: pointer;
+  pointer-events: auto;
+  color: #fff;
+  background: #060d188c;
+  border: 2px solid #ffffffd9;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  height: 64px;
+  transition: var(--transition);
+  display: flex;
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.hero-video-play:hover {
+  background: #060d18bf;
+  border-color: var(--gold)
+}
+
+.hero-video-play[hidden] {
+  display: none !important
+}
+
+.hero-video-play svg {
+  fill: currentColor;
+  width: 28px;
+  height: 28px;
+  margin-left: 3px
+}
+
 .hero-bg-video {
   object-fit: cover;
   object-position: center;
@@ -2610,6 +2658,12 @@ html[dir=rtl] .form-group select {
 
 .hero-buttons {
     flex-direction: column
+  }
+
+.hero-video-play {
+    top: 34%;
+    width: 56px;
+    height: 56px
   }
 
 .partners-marquee-wrap {
