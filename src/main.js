@@ -1,5 +1,6 @@
 import './style.css';
 import footerVideoUrl from '../kj.mp4';
+import heroVideoUrl from '../video.mp4';
 import { applySubcategoryLinks } from './subpages-data.js';
 import { initCustomCursor } from './cursor.js';
 import {
@@ -136,6 +137,7 @@ function completeIntro() {
     header.classList.add('visible');
   }
 
+  syncHeroVideoPlayback();
   startSlider();
 }
 
@@ -218,7 +220,18 @@ function setupHeroVideoLoop() {
 }
 
 function safePlayVideo(video) {
-  video.play().catch(() => {});
+  video.muted = true;
+  const playPromise = video.play();
+  if (!playPromise || typeof playPromise.then !== 'function') return;
+
+  playPromise.catch(() => {
+    const retryPlay = () => {
+      if (prefersReducedMotion || document.hidden) return;
+      video.muted = true;
+      video.play().catch(() => {});
+    };
+    video.addEventListener('canplay', retryPlay, { once: true });
+  });
 }
 
 function isVideoActivelyPlaying(video) {
@@ -390,6 +403,16 @@ function initHero() {
     heroIndicatorsWrap.setAttribute('aria-hidden', 'true');
   }
   setupHeroVideoLoop();
+
+  const heroVideo = document.querySelector('.hero-bg-video');
+  if (heroVideo && !heroVideo.querySelector('source')) {
+    const source = document.createElement('source');
+    source.src = heroVideoUrl;
+    source.type = 'video/mp4';
+    heroVideo.appendChild(source);
+    heroVideo.load();
+  }
+
   syncHeroVideoPlayback();
   syncHeroHeadingAccessibility();
 }
