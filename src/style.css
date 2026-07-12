@@ -1326,6 +1326,7 @@ to {
 
 .hero-overlay {
   background: linear-gradient(135deg, #060d18d9 0%, #0a1628b3 50%, #060d18cc 100%);
+  pointer-events: none;
   position: absolute;
   inset: 0
 }
