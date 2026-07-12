@@ -221,12 +221,6 @@ function setupHeroVideoLoop() {
 
 const HERO_FALLBACK_POSTER = '/images/hero-beauty.png';
 
-function logVideoDebug(hypothesisId, location, message, data = {}) {
-  // #region agent log
-  fetch('http://127.0.0.1:7351/ingest/978326e2-ed1a-492b-ba34-cad4578e33a0',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'f280df'},body:JSON.stringify({sessionId:'f280df',runId:'pre-fix',hypothesisId,location,message,data:{prefersReducedMotion,...data},timestamp:Date.now()})}).catch(()=>{});
-  // #endregion
-}
-
 function getHeroFallbackPosterUrl(video, slide) {
   if (slide?.dataset.heroFallbackPoster) return slide.dataset.heroFallbackPoster;
   return video.getAttribute('poster') || HERO_FALLBACK_POSTER;
@@ -243,13 +237,8 @@ function extractHeroFallbackPoster(video) {
     canvas.height = video.videoHeight;
     canvas.getContext('2d').drawImage(video, 0, 0);
     slide.dataset.heroFallbackPoster = canvas.toDataURL('image/jpeg', 0.82);
-    // #region agent log
-    logVideoDebug('A', 'main.js:extractHeroFallbackPoster', 'captured video frame for fallback', { videoWidth: video.videoWidth, videoHeight: video.videoHeight, hasDataUrl: Boolean(slide.dataset.heroFallbackPoster) });
-    // #endregion
   } catch (error) {
-    // #region agent log
-    logVideoDebug('A', 'main.js:extractHeroFallbackPoster', 'frame capture failed', { errName: error?.name });
-    // #endregion
+    // Frame capture can fail on cross-origin or unsupported sources.
   }
 }
 
@@ -260,9 +249,6 @@ function applyHeroVideoFallback(video) {
   slide.classList.add('video-fallback-active');
   slide.style.backgroundImage = `url('${poster}')`;
   video.pause();
-  // #region agent log
-  logVideoDebug('A', 'main.js:applyHeroVideoFallback', 'hero fallback applied', { posterSource: slide.dataset.heroFallbackPoster ? 'video-frame' : 'poster-attr', posterPreview: String(poster).slice(0, 40) });
-  // #endregion
   syncHeroPlayButton();
 }
 
@@ -289,31 +275,18 @@ function syncHeroPlayButton() {
     && (prefersReducedMotion || slide.classList.contains('video-fallback-active') || video.paused);
 
   playButton.hidden = !shouldShow;
-  // #region agent log
-  logVideoDebug('B', 'main.js:syncHeroPlayButton', 'play button visibility synced', { shouldShow, playHidden: playButton.hidden, videoPaused: video.paused, fallbackActive: slide.classList.contains('video-fallback-active'), playZ: playButton ? getComputedStyle(playButton).zIndex : null, contentZ: document.querySelector('.hero-slide-video .hero-content') ? getComputedStyle(document.querySelector('.hero-slide-video .hero-content')).zIndex : null });
-  // #endregion
 }
 
 function playHeroVideoFromGesture() {
   const video = document.querySelector('.hero-bg-video');
   if (!video) return;
 
-  // #region agent log
-  logVideoDebug('C', 'main.js:playHeroVideoFromGesture', 'play button clicked', { readyState: video.readyState, paused: video.paused });
-  // #endregion
-
   clearHeroVideoFallback(video);
   video.muted = true;
   video.play().then(() => {
-    // #region agent log
-    logVideoDebug('C', 'main.js:playHeroVideoFromGesture', 'user-gesture play resolved', { paused: video.paused, readyState: video.readyState });
-    // #endregion
     syncHeroPlayButton();
-  }).catch((error) => {
+  }).catch(() => {
     applyHeroVideoFallback(video);
-    // #region agent log
-    logVideoDebug('C', 'main.js:playHeroVideoFromGesture', 'user-gesture play rejected', { errName: error?.name, errMessage: error?.message });
-    // #endregion
   });
 }
 
