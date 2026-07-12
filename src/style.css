@@ -1257,6 +1257,16 @@ to {
   background: #061225
 }
 
+.hero-slide-video.video-fallback-active {
+  background-size: cover;
+  background-position: center
+}
+
+.hero-slide-video.video-fallback-active .hero-bg-video {
+  visibility: hidden;
+  pointer-events: none
+}
+
 .hero-bg-video {
   object-fit: cover;
   object-position: center;
@@ -2197,6 +2207,11 @@ html[dir=rtl] .form-group select {
   height: auto;
   margin-bottom: 16px;
   display: block
+}
+
+.footer-brand.video-fallback-active .footer-brand-video,
+.footer-brand-video.video-fallback-hidden {
+  display: none
 }
 
 .footer-brand p {
