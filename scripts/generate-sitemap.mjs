@@ -1,32 +1,10 @@
 import { writeFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SUBPAGES } from '../src/subpages-data.js';
-import { LOCALES, SITE_ORIGIN } from './seo-shared.mjs';
+import { getAllSitemapUrls } from './sitemap-urls.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const eyeHealthPaths = [
-  'tr/goz-hastaliklari.html',
-  'en/eye-health.html',
-  'ar/صحة-العين.html',
-  'es/salud-ocular.html',
-  'fr/sante-oculaire.html',
-  'it/salute-oculare.html',
-  'ru/здоровье-глаз.html',
-  'de/augengesundheit.html',
-];
-
-const urls = [
-  ...LOCALES.map((locale) => `${SITE_ORIGIN}/${locale}/`),
-  ...LOCALES.map((locale) => `${SITE_ORIGIN}/${locale}/privacy.html`),
-  ...eyeHealthPaths.map((path) => `${SITE_ORIGIN}/${path}`),
-];
-
-for (const locale of LOCALES) {
-  for (const page of SUBPAGES) {
-    urls.push(`${SITE_ORIGIN}/${locale}/service.html?slug=${page.slug}`);
-  }
-}
+const urls = getAllSitemapUrls();
 
 const xml = [
   '<?xml version="1.0" encoding="UTF-8"?>',

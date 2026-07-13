@@ -148,7 +148,7 @@ for (const relativePath of forbiddenDiffPaths) {
 const sitemapPath = resolve(DIST, 'sitemap.xml');
 if (existsSync(sitemapPath)) {
   const sitemap = readFileSync(sitemapPath, 'utf8');
-  assert(!sitemap.includes('hukuk-departmani'), 'Legal preview page must not be added to sitemap');
+  assert(sitemap.includes('hukuk-departmani'), 'Legal department page must be included in sitemap');
 }
 
 if (failures.length) {
