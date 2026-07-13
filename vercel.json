@@ -4284,6 +4284,10 @@
       "destination": "/:locale/index.html"
     },
     {
+      "source": "/api/admin/health",
+      "destination": "/api/admin/session?healthCheck=1"
+    },
+    {
       "source": "/admin/analytics",
       "destination": "/admin/analytics.html"
     }

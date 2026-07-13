@@ -97,4 +97,4 @@ console.log('  1. Vercel → Project → Settings → Environment Variables');
 console.log('  2. Add ADMIN_PASSWORD, ADMIN_SESSION_SECRET, GA4_PROPERTY_ID for Production + Preview');
 console.log('  3. Add GOOGLE_SERVICE_ACCOUNT_JSON using the one-line file above (paste entire line as value)');
 console.log('  4. Redeploy, then open /api/admin/health and /admin/analytics');
-console.log('  5. Local check: node scripts/debug-admin-analytics-config.mjs --vercel');
+console.log('  5. Local check: node scripts/verify-admin-analytics-config.mjs --vercel');

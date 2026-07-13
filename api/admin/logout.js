@@ -1,5 +1,5 @@
-import { clearSessionCookie } from '../lib/admin-auth.js';
-import { sendJson, rejectMethodNotAllowed } from '../lib/api-auth.js';
+import { clearSessionCookie } from '../../server/analytics/admin-auth.js';
+import { sendJson, rejectMethodNotAllowed } from '../../server/analytics/api-auth.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {

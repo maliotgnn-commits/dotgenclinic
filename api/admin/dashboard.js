@@ -1,6 +1,6 @@
-import { authorizeAdminRequest } from '../lib/admin-auth.js';
-import { handleEndpointError, rejectMethodNotAllowed, sendJson } from '../lib/api-auth.js';
-import { fetchDashboardData } from '../lib/ga4-dashboard.js';
+import { authorizeAdminRequest } from '../../server/analytics/admin-auth.js';
+import { handleEndpointError, rejectMethodNotAllowed, sendJson } from '../../server/analytics/api-auth.js';
+import { fetchDashboardData } from '../../server/analytics/ga4-dashboard.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {
