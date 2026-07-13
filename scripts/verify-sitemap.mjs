@@ -1,7 +1,15 @@
 import { readFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SUBPAGES } from '../src/subpages-data.js';
+import {
+  DEPARTMENT_ROUTE_GROUPS,
+  getAllSitemapUrls,
+  getDepartmentUrls,
+  getEyeHealthUrls,
+  getHomeUrls,
+  getPrivacyUrls,
+  getServiceUrls,
+} from './sitemap-urls.mjs';
 import { LOCALES, SITE_ORIGIN } from './seo-shared.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -23,29 +31,17 @@ const uniqueLocs = new Set(locs);
 
 assert(locs.length === uniqueLocs.size, `Duplicate sitemap URLs found (${locs.length} total, ${uniqueLocs.size} unique)`);
 
-const homeUrls = LOCALES.map((locale) => `${SITE_ORIGIN}/${locale}/`);
-const privacyUrls = LOCALES.map((locale) => `${SITE_ORIGIN}/${locale}/privacy.html`);
-const serviceUrls = [];
-for (const locale of LOCALES) {
-  for (const page of SUBPAGES) {
-    serviceUrls.push(`${SITE_ORIGIN}/${locale}/service.html?slug=${page.slug}`);
-  }
-}
-
-const eyeHealthUrls = [
-  `${SITE_ORIGIN}/tr/goz-hastaliklari.html`,
-  `${SITE_ORIGIN}/en/eye-health.html`,
-  `${SITE_ORIGIN}/ar/صحة-العين.html`,
-  `${SITE_ORIGIN}/es/salud-ocular.html`,
-  `${SITE_ORIGIN}/fr/sante-oculaire.html`,
-  `${SITE_ORIGIN}/it/salute-oculare.html`,
-  `${SITE_ORIGIN}/ru/здоровье-глаз.html`,
-  `${SITE_ORIGIN}/de/augengesundheit.html`,
-];
-const expectedUrls = new Set([...homeUrls, ...privacyUrls, ...eyeHealthUrls, ...serviceUrls]);
+const homeUrls = getHomeUrls();
+const privacyUrls = getPrivacyUrls();
+const eyeHealthUrls = getEyeHealthUrls();
+const departmentUrls = getDepartmentUrls();
+const serviceUrls = getServiceUrls();
+const expectedUrls = new Set(getAllSitemapUrls());
 const actualUrls = new Set(locs);
 const totalExpected = expectedUrls.size;
 const serviceCountExpected = serviceUrls.length;
+const departmentCountExpected = departmentUrls.length;
+const localeCount = LOCALES.length;
 
 assert(locs.length === totalExpected, `Expected ${totalExpected} sitemap URLs, found ${locs.length}`);
 assert(expectedUrls.size === totalExpected, `Expected URL set size is ${totalExpected}, computed ${expectedUrls.size}`);
@@ -62,6 +58,10 @@ for (const url of eyeHealthUrls) {
   assert(actualUrls.has(url), `Missing eye health URL: ${url}`);
 }
 
+for (const url of departmentUrls) {
+  assert(actualUrls.has(url), `Missing department URL: ${url}`);
+}
+
 for (const url of serviceUrls) {
   assert(actualUrls.has(url), `Missing service URL: ${url}`);
 }
@@ -75,15 +75,26 @@ for (const url of locs) {
 const privacyCount = locs.filter((url) => url.endsWith('/privacy.html')).length;
 const serviceCount = locs.filter((url) => url.includes('/service.html?slug=')).length;
 const homeCount = locs.filter((url) => /\/(tr|en|ar|es|fr|it|ru|de)\/$/.test(url)).length;
+const eyeHealthCount = locs.filter((url) => eyeHealthUrls.includes(url)).length;
+const departmentCount = locs.filter((url) => departmentUrls.includes(url)).length;
 
-const eyeHealthCount = locs.filter((url) =>
-  eyeHealthUrls.some((eyeUrl) => url === eyeUrl),
-).length;
-
-assert(homeCount === 8, `Expected 8 home URLs, found ${homeCount}`);
-assert(privacyCount === 8, `Expected 8 privacy URLs, found ${privacyCount}`);
-assert(eyeHealthCount === 8, `Expected 8 eye health URLs, found ${eyeHealthCount}`);
+assert(homeCount === localeCount, `Expected ${localeCount} home URLs, found ${homeCount}`);
+assert(privacyCount === localeCount, `Expected ${localeCount} privacy URLs, found ${privacyCount}`);
+assert(eyeHealthCount === localeCount, `Expected ${localeCount} eye health URLs, found ${eyeHealthCount}`);
+assert(
+  departmentCount === departmentCountExpected,
+  `Expected ${departmentCountExpected} department URLs, found ${departmentCount}`,
+);
 assert(serviceCount === serviceCountExpected, `Expected ${serviceCountExpected} service URLs, found ${serviceCount}`);
+
+for (const { key, routes } of DEPARTMENT_ROUTE_GROUPS) {
+  const groupUrls = Object.values(routes).map((route) => `${SITE_ORIGIN}${route.path}`);
+  const groupCount = locs.filter((url) => groupUrls.includes(url)).length;
+  assert(
+    groupCount === localeCount,
+    `Expected ${localeCount} ${key} URLs, found ${groupCount}`,
+  );
+}
 
 if (failures.length) {
   console.error('[verify-sitemap] Verification failed:');
@@ -91,4 +102,6 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`[verify-sitemap] Verified ${totalExpected} public sitemap URLs (8 home, 8 privacy, 8 eye health, ${serviceCountExpected} service)`);
+console.log(
+  `[verify-sitemap] Verified ${totalExpected} public sitemap URLs (${localeCount} home, ${localeCount} privacy, ${localeCount} eye health, ${departmentCountExpected} department, ${serviceCountExpected} service)`,
+);
