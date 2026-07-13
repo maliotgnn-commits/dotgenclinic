@@ -1,3 +1,4 @@
+import './cookie-consent.js';
 import './style.css';
 import { initCustomCursor } from './cursor.js';
 import { initSiteHeader } from './public-header.js';

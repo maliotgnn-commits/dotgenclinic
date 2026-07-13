@@ -1,3 +1,4 @@
+import './cookie-consent.js';
 import './style.css';
 import './pharma-rd-department.css';
 import { initCustomCursor } from './cursor.js';
