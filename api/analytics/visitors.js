@@ -1,11 +1,11 @@
-import { fetchVisitorMetrics } from '../lib/ga4-data-api.js';
+import { fetchVisitorMetrics } from '../../server/analytics/ga4-data-api.js';
 import {
   authorizeAnalyticsRequest,
   handleEndpointError,
   parseDateRange,
   rejectMethodNotAllowed,
   sendJson,
-} from '../lib/api-auth.js';
+} from '../../server/analytics/api-auth.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {

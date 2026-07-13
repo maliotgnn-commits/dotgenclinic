@@ -1,11 +1,11 @@
-import { fetchEventMetrics, getTrackedEventNames } from '../lib/ga4-data-api.js';
+import { fetchEventMetrics, getTrackedEventNames } from '../../server/analytics/ga4-data-api.js';
 import {
   authorizeAnalyticsRequest,
   handleEndpointError,
   parseDateRange,
   rejectMethodNotAllowed,
   sendJson,
-} from '../lib/api-auth.js';
+} from '../../server/analytics/api-auth.js';
 
 function parseEventNames(query = {}) {
   const raw = query.events;

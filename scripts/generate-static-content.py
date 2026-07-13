@@ -58,12 +58,12 @@ CATEGORY_CONFIG = {
         "method": "Minimal invaziv estetik tedavi protokolleri",
     },
     "longevity": {
-        "label": "Fonksiyonel Sağlık",
-        "heroTag": "Fonksiyonel Sağlık",
+        "label": "Longevity",
+        "heroTag": "Longevity",
         "duration": "30-90 dakika",
         "sessionModel": "Program bazlı periyodik seanslar",
         "recovery": "Aynı gün",
-        "method": "Kişiye özel fonksiyonel sağlık ve destekleyici bakım protokolleri",
+        "method": "Kişiye özel longevity, koruyucu sağlık ve wellness protokolleri",
     },
 }
 
