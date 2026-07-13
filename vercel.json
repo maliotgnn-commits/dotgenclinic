@@ -4272,6 +4272,230 @@
       "destination": "/_seo/de/service/museum-hotel-wellness-kapadokya.html"
     },
     {
+      "source": "/tr/finans-departmani.html",
+      "destination": "/_seo/tr/finans-departmani.html"
+    },
+    {
+      "source": "/en/finance-department.html",
+      "destination": "/_seo/en/finance-department.html"
+    },
+    {
+      "source": "/ar/قسم-المالية.html",
+      "destination": "/_seo/ar/قسم-المالية.html"
+    },
+    {
+      "source": "/es/departamento-financiero.html",
+      "destination": "/_seo/es/departamento-financiero.html"
+    },
+    {
+      "source": "/fr/departement-financier.html",
+      "destination": "/_seo/fr/departement-financier.html"
+    },
+    {
+      "source": "/it/dipartimento-finanziario.html",
+      "destination": "/_seo/it/dipartimento-finanziario.html"
+    },
+    {
+      "source": "/ru/финансовый-отдел.html",
+      "destination": "/_seo/ru/финансовый-отдел.html"
+    },
+    {
+      "source": "/de/finanzabteilung.html",
+      "destination": "/_seo/de/finanzabteilung.html"
+    },
+    {
+      "source": "/tr/hukuk-departmani.html",
+      "destination": "/_seo/tr/hukuk-departmani.html"
+    },
+    {
+      "source": "/en/legal-department.html",
+      "destination": "/_seo/en/legal-department.html"
+    },
+    {
+      "source": "/ar/قسم-الشؤون-القانونية.html",
+      "destination": "/_seo/ar/قسم-الشؤون-القانونية.html"
+    },
+    {
+      "source": "/es/departamento-juridico.html",
+      "destination": "/_seo/es/departamento-juridico.html"
+    },
+    {
+      "source": "/fr/departement-juridique.html",
+      "destination": "/_seo/fr/departement-juridique.html"
+    },
+    {
+      "source": "/it/dipartimento-legale.html",
+      "destination": "/_seo/it/dipartimento-legale.html"
+    },
+    {
+      "source": "/ru/юридический-отдел.html",
+      "destination": "/_seo/ru/юридический-отдел.html"
+    },
+    {
+      "source": "/de/rechtsabteilung.html",
+      "destination": "/_seo/de/rechtsabteilung.html"
+    },
+    {
+      "source": "/tr/ilac-ar-ge.html",
+      "destination": "/_seo/tr/ilac-ar-ge.html"
+    },
+    {
+      "source": "/en/pharmaceutical-r-d.html",
+      "destination": "/_seo/en/pharmaceutical-r-d.html"
+    },
+    {
+      "source": "/ar/البحث-والتطوير-الدوائي.html",
+      "destination": "/_seo/ar/البحث-والتطوير-الدوائي.html"
+    },
+    {
+      "source": "/es/i-d-farmaceutica.html",
+      "destination": "/_seo/es/i-d-farmaceutica.html"
+    },
+    {
+      "source": "/fr/r-d-pharmaceutique.html",
+      "destination": "/_seo/fr/r-d-pharmaceutique.html"
+    },
+    {
+      "source": "/it/r-d-farmaceutica.html",
+      "destination": "/_seo/it/r-d-farmaceutica.html"
+    },
+    {
+      "source": "/ru/фармацевтические-разработки.html",
+      "destination": "/_seo/ru/фармацевтические-разработки.html"
+    },
+    {
+      "source": "/de/pharmazeutische-forschung.html",
+      "destination": "/_seo/de/pharmazeutische-forschung.html"
+    },
+    {
+      "source": "/tr/medikal-ar-ge.html",
+      "destination": "/_seo/tr/medikal-ar-ge.html"
+    },
+    {
+      "source": "/en/medical-r-d.html",
+      "destination": "/_seo/en/medical-r-d.html"
+    },
+    {
+      "source": "/ar/البحث-والتطوير-الطبي.html",
+      "destination": "/_seo/ar/البحث-والتطوير-الطبي.html"
+    },
+    {
+      "source": "/es/i-d-medica.html",
+      "destination": "/_seo/es/i-d-medica.html"
+    },
+    {
+      "source": "/fr/r-d-medical.html",
+      "destination": "/_seo/fr/r-d-medical.html"
+    },
+    {
+      "source": "/it/r-d-medica.html",
+      "destination": "/_seo/it/r-d-medica.html"
+    },
+    {
+      "source": "/ru/медицинские-разработки.html",
+      "destination": "/_seo/ru/медицинские-разработки.html"
+    },
+    {
+      "source": "/de/medizinische-forschung.html",
+      "destination": "/_seo/de/medizinische-forschung.html"
+    },
+    {
+      "source": "/tr/yazilim-ar-ge.html",
+      "destination": "/_seo/tr/yazilim-ar-ge.html"
+    },
+    {
+      "source": "/en/software-r-d.html",
+      "destination": "/_seo/en/software-r-d.html"
+    },
+    {
+      "source": "/ar/البحث-والتطوير-البرمجي.html",
+      "destination": "/_seo/ar/البحث-والتطوير-البرمجي.html"
+    },
+    {
+      "source": "/es/i-d-de-software.html",
+      "destination": "/_seo/es/i-d-de-software.html"
+    },
+    {
+      "source": "/fr/r-d-logiciel.html",
+      "destination": "/_seo/fr/r-d-logiciel.html"
+    },
+    {
+      "source": "/it/r-d-software.html",
+      "destination": "/_seo/it/r-d-software.html"
+    },
+    {
+      "source": "/ru/программные-разработки.html",
+      "destination": "/_seo/ru/программные-разработки.html"
+    },
+    {
+      "source": "/de/software-forschung.html",
+      "destination": "/_seo/de/software-forschung.html"
+    },
+    {
+      "source": "/tr/blockchain-ar-ge.html",
+      "destination": "/_seo/tr/blockchain-ar-ge.html"
+    },
+    {
+      "source": "/en/blockchain-r-d.html",
+      "destination": "/_seo/en/blockchain-r-d.html"
+    },
+    {
+      "source": "/ar/البحث-والتطوير-البلوكشين.html",
+      "destination": "/_seo/ar/البحث-والتطوير-البلوكشين.html"
+    },
+    {
+      "source": "/es/i-d-blockchain.html",
+      "destination": "/_seo/es/i-d-blockchain.html"
+    },
+    {
+      "source": "/fr/r-d-blockchain.html",
+      "destination": "/_seo/fr/r-d-blockchain.html"
+    },
+    {
+      "source": "/it/r-s-blockchain.html",
+      "destination": "/_seo/it/r-s-blockchain.html"
+    },
+    {
+      "source": "/ru/блокчейн-разработки.html",
+      "destination": "/_seo/ru/блокчейн-разработки.html"
+    },
+    {
+      "source": "/de/blockchain-forschung.html",
+      "destination": "/_seo/de/blockchain-forschung.html"
+    },
+    {
+      "source": "/tr/e-ticaret-ar-ge.html",
+      "destination": "/_seo/tr/e-ticaret-ar-ge.html"
+    },
+    {
+      "source": "/en/e-commerce-r-d.html",
+      "destination": "/_seo/en/e-commerce-r-d.html"
+    },
+    {
+      "source": "/ar/البحث-والتطوير-التجارة-الإلكترونية.html",
+      "destination": "/_seo/ar/البحث-والتطوير-التجارة-الإلكترونية.html"
+    },
+    {
+      "source": "/es/i-d-comercio-electronico.html",
+      "destination": "/_seo/es/i-d-comercio-electronico.html"
+    },
+    {
+      "source": "/fr/r-d-e-commerce.html",
+      "destination": "/_seo/fr/r-d-e-commerce.html"
+    },
+    {
+      "source": "/it/r-s-e-commerce.html",
+      "destination": "/_seo/it/r-s-e-commerce.html"
+    },
+    {
+      "source": "/ru/электронная-торговля-разработки.html",
+      "destination": "/_seo/ru/электронная-торговля-разработки.html"
+    },
+    {
+      "source": "/de/e-commerce-forschung.html",
+      "destination": "/_seo/de/e-commerce-forschung.html"
+    },
+    {
       "source": "/:locale(tr|en|ar|es|fr|it|ru|de)/service.html",
       "destination": "/service.html"
     },

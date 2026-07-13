@@ -3,6 +3,7 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SUBPAGES } from '../src/subpages-data.js';
 import { LOCALES } from './seo-shared.mjs';
+import { buildDepartmentSeoRewrites } from './department-seo-config.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -13,7 +14,7 @@ function assert(condition, message) {
   if (!condition) failures.push(message);
 }
 
-function buildExpectedRewrites() {
+function buildExpectedServiceRewrites() {
   const rewrites = [];
   for (const locale of LOCALES) {
     for (const page of SUBPAGES) {
@@ -30,24 +31,31 @@ function buildExpectedRewrites() {
 const config = JSON.parse(readFileSync(VERCEL_PATH, 'utf8'));
 const rewrites = config.rewrites || [];
 const seoRewrites = rewrites.filter((rewrite) => rewrite.destination?.startsWith('/_seo/'));
-const expected = buildExpectedRewrites();
+const expectedService = buildExpectedServiceRewrites();
+const expectedDepartment = buildDepartmentSeoRewrites();
+const expected = [...expectedService, ...expectedDepartment];
 
 assert(seoRewrites.length === expected.length, `Expected ${expected.length} SEO rewrites, found ${seoRewrites.length}`);
 
 const sourceKeys = new Set();
 for (const rewrite of seoRewrites) {
   const slug = rewrite.has?.find((entry) => entry.key === 'slug')?.value;
-  const locale = rewrite.source.match(/^\/([^/]+)\/service\.html$/)?.[1];
-  const key = `${locale}:${slug}->${rewrite.destination}`;
+  const locale = rewrite.source.match(/^\/([^/]+)\//)?.[1];
+  const key = slug
+    ? `${locale}:${slug}->${rewrite.destination}`
+    : `${rewrite.source}->${rewrite.destination}`;
   assert(!sourceKeys.has(key), `Duplicate rewrite: ${key}`);
   sourceKeys.add(key);
 }
 
 const expectedKeys = new Set(
   expected.map((rewrite) => {
-    const slug = rewrite.has[0].value;
-    const locale = rewrite.source.split('/')[1];
-    return `${locale}:${slug}->${rewrite.destination}`;
+    const slug = rewrite.has?.[0]?.value;
+    if (slug) {
+      const locale = rewrite.source.split('/')[1];
+      return `${locale}:${slug}->${rewrite.destination}`;
+    }
+    return `${rewrite.source}->${rewrite.destination}`;
   }),
 );
 
@@ -72,4 +80,6 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`[verify-vercel-rewrites] Verified ${seoRewrites.length} service SEO rewrites`);
+console.log(
+  `[verify-vercel-rewrites] Verified ${expectedService.length} service and ${expectedDepartment.length} department SEO rewrites`,
+);
