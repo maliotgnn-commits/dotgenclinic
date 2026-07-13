@@ -1,3 +1,4 @@
+import './cookie-consent.js';
 import './style.css';
 import footerVideoUrl from '../kj.mp4';
 import heroVideoUrl from '../video.mp4';

@@ -52,6 +52,7 @@ const steps = [
   ['node', ['scripts/verify-desktop-nav-exclusive-open.mjs']],
   ['node', ['scripts/verify-nav-category-labels.mjs']],
   ['node', ['scripts/verify-form-privacy.mjs']],
+  ['node', ['scripts/verify-cookie-consent.mjs']],
 ];
 
 export function runBuildValidations() {

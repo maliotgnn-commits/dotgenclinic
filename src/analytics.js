@@ -5,6 +5,7 @@ function ensureDataLayer() {
 }
 
 export function pushEvent(event, params = {}) {
+  if (!window.__dotgenGtmLoaded) return;
   ensureDataLayer();
   window.dataLayer.push({
     event,
