@@ -2,6 +2,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SUBPAGES } from '../src/subpages-data.js';
+import { buildDepartmentSeoRewrites } from './department-seo-config.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -34,15 +35,16 @@ function buildServiceSeoRewrites() {
 function updateVercelConfig() {
   const config = JSON.parse(readFileSync(VERCEL_PATH, 'utf8'));
   const serviceSeoRewrites = buildServiceSeoRewrites();
+  const departmentSeoRewrites = buildDepartmentSeoRewrites();
   const trailingRewrites = (config.rewrites || []).filter(
     (rewrite) => !rewrite.destination?.startsWith('/_seo/'),
   );
 
-  config.rewrites = [...serviceSeoRewrites, ...trailingRewrites];
+  config.rewrites = [...serviceSeoRewrites, ...departmentSeoRewrites, ...trailingRewrites];
   writeFileSync(VERCEL_PATH, `${JSON.stringify(config, null, 2)}\n`, 'utf8');
 
   console.log(
-    `[generate-vercel-service-rewrites] Wrote ${serviceSeoRewrites.length} service SEO rewrites to vercel.json`,
+    `[generate-vercel-service-rewrites] Wrote ${serviceSeoRewrites.length} service and ${departmentSeoRewrites.length} department SEO rewrites to vercel.json`,
   );
 }
 

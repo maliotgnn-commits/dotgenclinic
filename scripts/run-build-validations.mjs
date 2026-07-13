@@ -13,10 +13,12 @@ import { buildMedikalRdPreviewPage } from './build-medikal-rd-preview-page.mjs';
 import { buildYazilimRdPreviewPage } from './build-yazilim-rd-preview-page.mjs';
 import { buildBlockchainRdPreviewPage } from './build-blockchain-rd-preview-page.mjs';
 import { buildEcommerceRdPreviewPage } from './build-ecommerce-rd-preview-page.mjs';
+import { prerenderDepartmentSeo } from './prerender-department-seo.mjs';
 
 const steps = [
   ['node', ['scripts/verify-favicon-assets.mjs']],
   ['node', ['scripts/verify-service-static-seo.mjs']],
+  ['node', ['scripts/verify-department-static-seo.mjs']],
   ['node', ['scripts/verify-privacy-content.mjs']],
   ['node', ['scripts/verify-privacy-static-seo.mjs']],
   ['node', ['scripts/verify-schema.mjs']],
@@ -61,6 +63,7 @@ export function runBuildValidations() {
   buildYazilimRdPreviewPage();
   buildBlockchainRdPreviewPage();
   buildEcommerceRdPreviewPage();
+  prerenderDepartmentSeo(resolve(ROOT, 'dist'));
 
   for (const [command, args] of steps) {
     const result = spawnSync(command, args, { cwd: ROOT, stdio: 'inherit', shell: process.platform === 'win32' });
