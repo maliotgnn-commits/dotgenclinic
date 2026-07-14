@@ -24,6 +24,7 @@ import {
   renderLanguageSwitcher,
 } from './language-switcher.js';
 import { initAnalyticsTracking, trackServicePageView } from './analytics.js';
+import { renderWhatsAppFloat, buildWhatsAppUrl } from './whatsapp-links.js';
 
 const app = document.getElementById('service-app');
 const params = new URLSearchParams(window.location.search);
@@ -294,6 +295,7 @@ function renderPage(currentPage, relatedPages) {
             <h1>${escapeHtml(currentPage.title)}</h1>
             ${currentPage.heroSubtitle ? `<strong class="sv-hero-subtitle">${escapeHtml(currentPage.heroSubtitle)}</strong>` : ''}
             <p>${escapeHtml(currentPage.summary)}</p>
+            <a href="${buildWhatsAppUrl({ locale, category: currentPage.category, pageTitle: currentPage.title })}" class="btn-gold sv-hero-whatsapp" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp ile Bilgi Al'))}</a>
           </article>
         </div>
       </section>
@@ -364,6 +366,7 @@ function renderPage(currentPage, relatedPages) {
         </div>
       </section>
     </div>
+    ${renderWhatsAppFloat({ locale, category: currentPage.category, pageTitle: currentPage.title, ariaLabel: escapeHtml(t('WhatsApp')) })}
   `;
 }
 

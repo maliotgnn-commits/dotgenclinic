@@ -24,6 +24,8 @@ import { loadEyeHealthContent } from './eye-health-content.js';
 import { upgradeLocalizedEyeHealthNav } from './tr-eye-health-nav.js';
 import { initPartnersMarquee } from './partners-marquee.js';
 import { initAnalyticsTracking, pushEvent } from './analytics.js';
+import { buildWhatsAppUrl } from './whatsapp-links.js';
+import { heroPosterSources } from './responsive-image.js';
 
 const locale = getCurrentLocale('home');
 const uiDictionary = await loadUiDictionary(locale);
@@ -289,8 +291,8 @@ function setupHeroVideoLoop() {
   });
 }
 
-const HERO_FALLBACK_POSTER_DESKTOP = '/images/hero-world-map.webp';
-const HERO_FALLBACK_POSTER_MOBILE = '/images/mobil.webp';
+const HERO_FALLBACK_POSTER_DESKTOP = heroPosterSources(false).webp;
+const HERO_FALLBACK_POSTER_MOBILE = heroPosterSources(true).webp;
 const heroMobileQuery = window.matchMedia('(max-width: 768px)');
 const introMobileQuery = window.matchMedia('(max-width: 768px)');
 let heroVideoSourceAttached = false;
@@ -951,6 +953,12 @@ function initVisibilityPause() {
   });
 }
 
+function initWhatsAppLinks() {
+  document.querySelectorAll('a[href*="wa.me"]').forEach((link) => {
+    link.href = buildWhatsAppUrl({ locale, category: 'default' });
+  });
+}
+
 initIntro();
 initHeader();
 initHero();
@@ -963,4 +971,5 @@ initVisibilityPause();
 initReducedMotionWatch();
 initFooterVideoLazyLoad();
 initPartnersMarquee();
+initWhatsAppLinks();
 window.addEventListener('scroll', handleWindowScroll, { passive: true });

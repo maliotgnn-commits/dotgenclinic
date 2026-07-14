@@ -167,6 +167,15 @@ verifyFile(`_seo/tr/service/${sampleService.slug}.html`, ({ blocks, html }) => {
   const graph = flattenGraph(blocks);
   const service = graph.find((node) => node['@type'] === 'Service');
   assert(service?.description === sampleService.summary, '[service/tr/botox-or-first] service description mismatch');
+  assert(Array.isArray(service?.areaServed) && service.areaServed.length >= 1, '[service sample] areaServed missing');
+  if (Array.isArray(sampleService.faqs) && sampleService.faqs.length) {
+    const faqPage = graph.find((node) => node['@type'] === 'FAQPage');
+    assert(faqPage, '[service sample] FAQPage missing for page with faqs');
+    assert(
+      faqPage.mainEntity?.length === sampleService.faqs.length,
+      '[service sample] FAQPage question count mismatch',
+    );
+  }
   graph.forEach((node) => walk(node, (current) => {
     if (current['@type'] && FORBIDDEN_TYPES.includes(current['@type'])) {
       failures.push(`[service sample] forbidden type ${current['@type']}`);

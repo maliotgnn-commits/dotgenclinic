@@ -166,7 +166,7 @@ export function buildHomeSchema(locale, title) {
 export function buildServiceSchema(page, locale, slug) {
   const pageUrl = `${SITE_ORIGIN}/${locale}/service.html?slug=${encodeURIComponent(slug)}`;
   const homeUrl = `${SITE_ORIGIN}/${locale}/`;
-  return buildJsonLdScript([
+  const graph = [
     {
       '@type': 'Organization',
       '@id': organizationId(),
@@ -181,6 +181,10 @@ export function buildServiceSchema(page, locale, slug) {
       description: page.summary,
       url: pageUrl,
       provider: { '@id': organizationId() },
+      areaServed: [
+        { '@type': 'Country', name: 'Turkey' },
+        { '@type': 'AdministrativeArea', name: 'Europe' },
+      ],
     },
     {
       '@type': 'WebPage',
@@ -209,7 +213,24 @@ export function buildServiceSchema(page, locale, slug) {
         },
       ],
     },
-  ]);
+  ];
+
+  if (Array.isArray(page.faqs) && page.faqs.length) {
+    graph.push({
+      '@type': 'FAQPage',
+      '@id': `${pageUrl}#faq`,
+      mainEntity: page.faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    });
+  }
+
+  return buildJsonLdScript(graph);
 }
 
 export function buildPrivacySchema(locale, title, description) {
