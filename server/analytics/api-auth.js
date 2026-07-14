@@ -98,6 +98,24 @@ export function rejectMethodNotAllowed(req, res, allowedMethods = ['GET']) {
   });
 }
 
+const DEFAULT_MAX_BODY_BYTES = 4096;
+
+export function rejectOversizedBody(req, res, maxBytes = DEFAULT_MAX_BODY_BYTES) {
+  const contentLength = Number(req.headers?.['content-length'] || 0);
+  if (Number.isFinite(contentLength) && contentLength > maxBytes) {
+    sendJson(res, 413, {
+      ok: false,
+      error: {
+        code: 'PAYLOAD_TOO_LARGE',
+        message: 'Request body is too large.',
+      },
+    });
+    return true;
+  }
+
+  return false;
+}
+
 export function parseDateRange(query = {}) {
   const startDate = typeof query.startDate === 'string' ? query.startDate.trim() : '30daysAgo';
   const endDate = typeof query.endDate === 'string' ? query.endDate.trim() : 'today';

@@ -95,6 +95,12 @@
   cursor: pointer;
 }
 
+.cookie-consent__btn:focus-visible,
+.cookie-consent__link:focus-visible {
+  outline: 2px solid var(--gold-light, #dfc06e);
+  outline-offset: 2px;
+}
+
 .cookie-consent__btn--accept {
   color: #111;
   background: var(--gold-gradient, linear-gradient(135deg, #c9a84c, #dfc06e, #c9a84c));

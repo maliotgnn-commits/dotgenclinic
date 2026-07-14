@@ -169,15 +169,30 @@ function hideWidget() {
 }
 
 function dismissWidgetAfterTimeout() {
-  writeCookieConsent(true);
-  updateAnalyticsConsent(true);
-  hideWidget();
+  const root = document.getElementById('cookie-consent');
+  if (!root) return;
+  // KVKK: analytics consent requires an explicit accept action.
+  setPanelOpen(root, false);
+  autoDismissTimer = null;
 }
 
 function setPanelOpen(root, open) {
   root.classList.toggle('is-open', open);
   const trigger = root.querySelector('.cookie-consent__trigger');
+  const panel = root.querySelector('.cookie-consent__panel');
   trigger?.setAttribute('aria-expanded', open ? 'true' : 'false');
+  panel?.setAttribute('aria-modal', open ? 'true' : 'false');
+  if (open) {
+    panel?.querySelector('[data-cookie-consent="accept"]')?.focus();
+  }
+}
+
+function bindConsentKeyboard(root) {
+  root.addEventListener('keydown', (event) => {
+    if (event.key !== 'Escape' || !root.classList.contains('is-open')) return;
+    setPanelOpen(root, false);
+    root.querySelector('.cookie-consent__trigger')?.focus();
+  });
 }
 
 function handleOutsideClick(event) {
@@ -200,8 +215,8 @@ function mountConsentWidget(locale) {
     <button type="button" class="cookie-consent__trigger" aria-expanded="false" aria-controls="cookie-consent-panel" aria-label="${copy.triggerLabel}" title="${copy.triggerLabel}">
       ${COOKIE_ICON}
     </button>
-    <div id="cookie-consent-panel" class="cookie-consent__panel" role="dialog" aria-label="${copy.title}">
-      <h2 class="cookie-consent__title">${copy.title}</h2>
+    <div id="cookie-consent-panel" class="cookie-consent__panel" role="dialog" aria-labelledby="cookie-consent-title" aria-modal="false">
+      <h2 id="cookie-consent-title" class="cookie-consent__title">${copy.title}</h2>
       <p class="cookie-consent__message">${copy.message}</p>
       <div class="cookie-consent__actions">
         <button type="button" class="cookie-consent__btn cookie-consent__btn--accept" data-cookie-consent="accept">${copy.accept}</button>
@@ -233,6 +248,7 @@ function mountConsentWidget(locale) {
 
   document.body.appendChild(root);
   document.addEventListener('click', handleOutsideClick);
+  bindConsentKeyboard(root);
   autoDismissTimer = setTimeout(dismissWidgetAfterTimeout, AUTO_DISMISS_MS);
 }
 

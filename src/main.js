@@ -65,8 +65,30 @@ mountLanguageSwitcher(
   'home',
   uiDictionary,
 );
-initCustomCursor();
 initAnalyticsTracking(() => locale);
+
+function deferNonCriticalHomeInit(callback) {
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(callback, { timeout: 2500 });
+    return;
+  }
+  window.setTimeout(callback, 1);
+}
+
+let introAnimationElements = null;
+
+function getIntroAnimationElements() {
+  if (!introOverlay) return null;
+  if (!introAnimationElements) {
+    introAnimationElements = {
+      logoWrapper: introOverlay.querySelector('.intro-logo-wrapper'),
+      logo: introOverlay.querySelector('.intro-logo'),
+      scrollIndicator: introOverlay.querySelector('.intro-scroll-indicator'),
+      tagline: introOverlay.querySelector('.intro-tagline'),
+    };
+  }
+  return introAnimationElements;
+}
 
 function createParticles() {
   if (prefersReducedMotion) return;
@@ -74,7 +96,8 @@ function createParticles() {
   const container = document.getElementById('intro-particles');
   if (!container) return;
 
-  const particleCount = introMobileQuery.matches ? 10 : 24;
+  const particleCount = introMobileQuery.matches ? 4 : 14;
+  if (particleCount === 0) return;
 
   for (let i = 0; i < particleCount; i += 1) {
     const particle = document.createElement('div');
@@ -95,18 +118,24 @@ function updateIntroAnimation(progress) {
 
   if (progressBar) progressBar.style.width = `${progress * 100}%`;
 
-  const logoWrapper = introOverlay.querySelector('.intro-logo-wrapper');
+  const progressEl = introOverlay.querySelector('.intro-progress[role="progressbar"]');
+  if (progressEl) {
+    progressEl.setAttribute('aria-valuenow', String(Math.round(progress * 100)));
+  }
+
+  const elements = getIntroAnimationElements();
+  if (!elements) return;
+
+  const { logoWrapper, logo, scrollIndicator, tagline } = elements;
   if (logoWrapper) {
     const scale = 1 + progress * 0.3;
     const glow = 20 + progress * 60;
     logoWrapper.style.transform = `scale(${scale})`;
-    logoWrapper.querySelector('.intro-logo').style.filter = `drop-shadow(0 0 ${glow}px rgba(201, 168, 76, ${0.3 + progress * 0.5}))`;
+    if (logo) logo.style.filter = `drop-shadow(0 0 ${glow}px rgba(201, 168, 76, ${0.3 + progress * 0.5}))`;
   }
 
-  const scrollIndicator = introOverlay.querySelector('.intro-scroll-indicator');
   if (scrollIndicator) scrollIndicator.style.opacity = Math.max(0, 1 - progress * 3);
 
-  const tagline = introOverlay.querySelector('.intro-tagline');
   if (tagline) tagline.style.opacity = Math.max(0, 0.8 - progress * 2);
 
   if (progress > 0.4) {
@@ -150,7 +179,7 @@ function handleVirtualScroll(event) {
   if (introComplete) return;
   event.preventDefault();
 
-  introProgress += event.deltaY / 1000;
+  introProgress += event.deltaY / 800;
   introProgress = Math.max(0, Math.min(1, introProgress));
   updateIntroAnimation(introProgress);
 
@@ -188,7 +217,7 @@ function initIntro() {
     const touchY = event.touches[0].clientY;
     const delta = touchStartY - touchY;
     touchStartY = touchY;
-    introProgress = Math.max(0, Math.min(1, introProgress + delta / (introMobileQuery.matches ? 320 : 500)));
+    introProgress = Math.max(0, Math.min(1, introProgress + delta / (introMobileQuery.matches ? 260 : 400)));
     updateIntroAnimation(introProgress);
     if (introProgress >= 1) completeIntro();
   }, { passive: false });
@@ -607,8 +636,12 @@ function initHeroPosterWatch() {
     }
   };
 
+  let resizeTimer = null;
   heroMobileQuery.addEventListener('change', refreshHeroPoster);
-  window.addEventListener('resize', refreshHeroPoster);
+  window.addEventListener('resize', () => {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(refreshHeroPoster, 150);
+  }, { passive: true });
 }
 
 function initReducedMotionWatch() {
@@ -695,9 +728,9 @@ function initHero() {
     heroVideo.setAttribute('playsinline', '');
     heroVideo.setAttribute('webkit-playsinline', '');
 
-    if (!heroVideoSourceAttached) {
+    if (!heroVideoSourceAttached && introComplete) {
       scheduleHeroVideoSourceLoad();
-    } else if (!heroVideo.querySelector('source')) {
+    } else if (introComplete && !heroVideo.querySelector('source')) {
       attachHeroVideoSource(heroVideo);
     }
 
@@ -713,12 +746,10 @@ function initHero() {
 
   initHeroPosterWatch();
   initHeroPlayButton();
-  syncHeroVideoPlayback();
-  syncHeroHeadingAccessibility();
-
   if (introComplete) {
-    scheduleHeroVideoSourceLoad();
+    syncHeroVideoPlayback();
   }
+  syncHeroHeadingAccessibility();
 }
 
 function initScrollAnimations() {
@@ -787,10 +818,22 @@ function initAppointmentForm() {
   const form = document.getElementById('appointment-form');
   if (!form) return;
 
+  const FORM_RATE_LIMIT_KEY = 'dotgen_form_last_submit';
+  const FORM_RATE_LIMIT_MS = 60_000;
+  const SERVICE_LABELS = {
+    hair: 'Saç Ekimi',
+    dental: 'Diş Estetiği',
+    plastic: 'Estetik Cerrahi',
+    medical: 'Medikal Estetik',
+    longevity: 'Longevity',
+  };
+
   const submitBtn = form.querySelector('button[type="submit"]');
   const btnLabel = submitBtn?.querySelector('.btn-label');
   const statusEl = document.getElementById('form-status');
   const originalLabel = btnLabel?.textContent?.trim() || submitBtn?.getAttribute('aria-label') || '';
+
+  const sanitizeField = (value, maxLength) => String(value ?? '').trim().slice(0, maxLength);
 
   const setFormStatus = (message) => {
     if (statusEl) statusEl.textContent = message;
@@ -810,6 +853,16 @@ function initAppointmentForm() {
     submitBtn.style.background = '';
   };
 
+  const showTransientSuccess = () => {
+    setButtonVisual(translate(uiDictionary, 'Gönderildi'), 'is-success');
+    setFormStatus(translate(uiDictionary, 'Gönderildi'));
+    submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+    window.setTimeout(() => {
+      resetFormFeedback();
+      form.reset();
+    }, 3000);
+  };
+
   form.addEventListener('submit', (event) => {
     event.preventDefault();
 
@@ -818,16 +871,37 @@ function initAppointmentForm() {
       return;
     }
 
+    const honeypot = sanitizeField(document.getElementById('form-website')?.value, 200);
+    if (honeypot) {
+      showTransientSuccess();
+      return;
+    }
+
+    const lastSubmit = Number(localStorage.getItem(FORM_RATE_LIMIT_KEY) || 0);
+    if (Date.now() - lastSubmit < FORM_RATE_LIMIT_MS) {
+      setFormStatus(translate(uiDictionary, 'Hata Oluştu'));
+      setButtonVisual(translate(uiDictionary, 'Hata Oluştu'), 'is-error');
+      window.setTimeout(resetFormFeedback, 3000);
+      return;
+    }
+
     submitBtn.disabled = true;
     submitBtn.style.opacity = '0.7';
     setButtonVisual(translate(uiDictionary, 'Gönderiliyor...'), 'is-loading');
     setFormStatus(translate(uiDictionary, 'Gönderiliyor...'));
 
-    const name = document.getElementById('form-name')?.value || '';
-    const phone = document.getElementById('form-phone')?.value || '';
-    const email = document.getElementById('form-email')?.value || '';
-    const service = document.getElementById('form-service')?.value || '';
-    const message = document.getElementById('form-message')?.value || '';
+    const name = sanitizeField(document.getElementById('form-name')?.value, 120);
+    const phone = sanitizeField(document.getElementById('form-phone')?.value, 32);
+    const email = sanitizeField(document.getElementById('form-email')?.value, 254);
+    const serviceCode = sanitizeField(document.getElementById('form-service')?.value, 32);
+    const message = sanitizeField(document.getElementById('form-message')?.value, 2000);
+    const serviceLabel = SERVICE_LABELS[serviceCode] || '';
+
+    if (!name || !phone) {
+      form.reportValidity();
+      resetFormFeedback();
+      return;
+    }
 
     fetch('https://formsubmit.co/ajax/drotgenclinic@gmail.com', {
       method: 'POST',
@@ -839,7 +913,7 @@ function initAppointmentForm() {
         'Ad Soyad': name,
         'Telefon': phone,
         'E-posta': email,
-        'Hizmet': service,
+        'Hizmet': serviceLabel,
         'Mesaj': message
       })
     })
@@ -848,25 +922,25 @@ function initAppointmentForm() {
       return response.json();
     })
     .then(() => {
+      try {
+        localStorage.setItem(FORM_RATE_LIMIT_KEY, String(Date.now()));
+      } catch {
+        // Storage can be unavailable in privacy modes.
+      }
       pushEvent('form_submit', {
         page_locale: locale,
-        service_category: service || 'unspecified',
+        form_id: 'appointment-form',
+        service_category: serviceCode || 'not_applicable',
         status: 'success',
       });
-      setButtonVisual(translate(uiDictionary, 'Gönderildi'), 'is-success');
-      setFormStatus(translate(uiDictionary, 'Gönderildi'));
-      submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
-
-      window.setTimeout(() => {
-        resetFormFeedback();
-        form.reset();
-      }, 3000);
+      showTransientSuccess();
     })
     .catch((error) => {
       console.error(error);
       pushEvent('form_submit', {
         page_locale: locale,
-        service_category: service || 'unspecified',
+        form_id: 'appointment-form',
+        service_category: serviceCode || 'not_applicable',
         status: 'error',
       });
       setButtonVisual(translate(uiDictionary, 'Hata Oluştu'), 'is-error');
@@ -917,22 +991,30 @@ function handleWindowScroll() {
     return;
   }
 
-  if (header) {
-    header.classList.toggle('scrolled', window.scrollY > 100);
-  }
+  if (handleWindowScroll.rafPending) return;
+  handleWindowScroll.rafPending = true;
 
-  if (prefersReducedMotion) return;
+  requestAnimationFrame(() => {
+    handleWindowScroll.rafPending = false;
 
-  const heroSection = document.getElementById('hero');
-  const scrollY = window.scrollY;
-  if (!heroSection || scrollY >= window.innerHeight) return;
+    if (header) {
+      header.classList.toggle('scrolled', window.scrollY > 100);
+    }
 
-  const activeSlide = heroSection.querySelector('.hero-slide.active');
-  if (activeSlide) activeSlide.style.transform = `scale(${1 + scrollY * 0.0003})`;
+    if (prefersReducedMotion) return;
 
-  const scrollHint = heroSection.querySelector('.hero-scroll-hint');
-  if (scrollHint) scrollHint.style.opacity = Math.max(0, 0.6 - scrollY * 0.003);
+    const heroSection = document.getElementById('hero');
+    const scrollY = window.scrollY;
+    if (!heroSection || scrollY >= window.innerHeight) return;
+
+    const activeSlide = heroSection.querySelector('.hero-slide.active');
+    if (activeSlide) activeSlide.style.transform = `scale(${1 + scrollY * 0.0003})`;
+
+    const scrollHint = heroSection.querySelector('.hero-scroll-hint');
+    if (scrollHint) scrollHint.style.opacity = Math.max(0, 0.6 - scrollY * 0.003);
+  });
 }
+handleWindowScroll.rafPending = false;
 
 function initVisibilityPause() {
   document.addEventListener('visibilitychange', () => {
@@ -970,6 +1052,9 @@ initSmoothScroll();
 initVisibilityPause();
 initReducedMotionWatch();
 initFooterVideoLazyLoad();
-initPartnersMarquee();
 initWhatsAppLinks();
+deferNonCriticalHomeInit(() => {
+  initCustomCursor();
+  initPartnersMarquee();
+});
 window.addEventListener('scroll', handleWindowScroll, { passive: true });

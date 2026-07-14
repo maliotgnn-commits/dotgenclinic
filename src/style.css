@@ -66,9 +66,25 @@ body {
   transition: transform .2s ease
 }
 
-.skip-link:focus {
+.skip-link:focus,
+.skip-link:focus-visible {
   transform: translateY(0);
   outline: 2px solid var(--text-primary);
+  outline-offset: 2px
+}
+
+.nav-cta:focus-visible,
+.btn:focus-visible,
+.hamburger:focus-visible,
+.nav-logo:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px
+}
+
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible {
+  outline: 2px solid var(--gold);
   outline-offset: 2px
 }
 
@@ -259,6 +275,13 @@ to {
   width: 450px;
   height: 450px;
   animation-delay: 1.6s
+}
+
+@media (max-width: 768px) {
+  .intro-glow,
+  .intro-ring {
+    display: none;
+  }
 }
 
 @keyframes ringExpand {
@@ -2155,6 +2178,16 @@ to {
 
 .contact-item a:hover {
   color: var(--gold)
+}
+
+.form-honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none
 }
 
 .appointment-form {

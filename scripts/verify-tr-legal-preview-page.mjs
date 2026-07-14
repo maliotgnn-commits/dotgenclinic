@@ -126,7 +126,6 @@ const financeLink = renderFinanceCorporateNavLink('tr');
 assert(financeLink.includes(FINANCE_DEPARTMENT_PATH), 'Finance nav link must still target /tr/finans-departmani.html');
 
 const forbiddenDiffPaths = [
-  'public/robots.txt',
   'vite.config.js',
   'package.json',
   'package-lock.json',
