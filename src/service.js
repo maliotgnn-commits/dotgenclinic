@@ -295,7 +295,10 @@ function renderPage(currentPage, relatedPages) {
             <h1>${escapeHtml(currentPage.title)}</h1>
             ${currentPage.heroSubtitle ? `<strong class="sv-hero-subtitle">${escapeHtml(currentPage.heroSubtitle)}</strong>` : ''}
             <p>${escapeHtml(currentPage.summary)}</p>
-            <a href="${buildWhatsAppUrl({ locale, category: currentPage.category, pageTitle: currentPage.title })}" class="btn-gold sv-hero-whatsapp" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp ile Bilgi Al'))}</a>
+            <div class="sv-hero-actions">
+              <a href="${buildWhatsAppUrl({ locale, category: currentPage.category, pageTitle: currentPage.title })}" class="btn-gold sv-hero-whatsapp" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp ile Bilgi Al'))}</a>
+              <a href="${homeUrlFor(locale, '#randevu')}" class="btn-outline sv-hero-appointment">${escapeHtml(t('Randevu Al'))}</a>
+            </div>
           </article>
         </div>
       </section>

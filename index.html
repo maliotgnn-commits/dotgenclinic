@@ -12,11 +12,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="/images/logo-transparent-350.avif" type="image/avif" fetchpriority="high">
-    <link rel="preload" as="image" href="/images/logo-transparent-350.webp" type="image/webp" fetchpriority="high">
     <link rel="preload" as="image" href="/images/hero-world-map.avif" type="image/avif" media="(min-width: 769px)">
-    <link rel="preload" as="image" href="/images/hero-world-map.webp" type="image/webp" media="(min-width: 769px)">
     <link rel="preload" as="image" href="/images/mobil.avif" type="image/avif" media="(max-width: 768px)">
-    <link rel="preload" as="image" href="/images/mobil.webp" type="image/webp" media="(max-width: 768px)">
     <style>
       :root{--bg-primary:#060d18;--gold:#c9a84c;--gold-light:#dfc06e;--text-primary:#fff;--text-muted:#ffffff73;--font-body:"Inter",-apple-system,sans-serif;--font-heading:"Playfair Display",Georgia,serif}
       html{scroll-behavior:smooth;overflow-x:hidden}
@@ -49,24 +46,24 @@
     <div id="intro-section">
       <div class="intro-spacer"></div>
       <div id="intro-overlay">
-        <div class="intro-particles" id="intro-particles"></div>
+        <div class="intro-particles" id="intro-particles" aria-hidden="true"></div>
         <div class="intro-logo-wrapper">
           <picture>
             <source srcset="/images/logo-transparent-350.avif 350w, /images/logo-transparent-700.avif 700w" sizes="(max-width: 768px) 200px, 340px" type="image/avif" />
             <source srcset="/images/logo-transparent-350.webp 350w, /images/logo-transparent-700.webp 700w" sizes="(max-width: 768px) 200px, 340px" type="image/webp" />
-            <img src="/images/logo-transparent-350.webp" width="350" height="204" fetchpriority="high" decoding="async" alt="Dr Otgen Clinic Aesthetic" class="intro-logo" />
+            <img src="/images/logo-transparent-350.webp" width="350" height="204" fetchpriority="high" decoding="sync" alt="Dr Otgen Clinic Aesthetic" class="intro-logo" />
           </picture>
-          <div class="intro-glow"></div>
-          <div class="intro-ring ring-1"></div>
-          <div class="intro-ring ring-2"></div>
-          <div class="intro-ring ring-3"></div>
+          <div class="intro-glow" aria-hidden="true"></div>
+          <div class="intro-ring ring-1" aria-hidden="true"></div>
+          <div class="intro-ring ring-2" aria-hidden="true"></div>
+          <div class="intro-ring ring-3" aria-hidden="true"></div>
         </div>
         <div class="intro-tagline">Küresel sağlık yolculuğunun geleceğini inşa ediyoruz</div>
-        <div class="intro-scroll-indicator">
+        <div class="intro-scroll-indicator" aria-hidden="true">
           <div class="scroll-line"></div>
           <span>Keşfetmek için kaydırın</span>
         </div>
-        <div class="intro-progress">
+        <div class="intro-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Sayfa açılış ilerlemesi">
           <div class="intro-progress-bar" id="intro-progress-bar"></div>
         </div>
       </div>
@@ -75,7 +72,7 @@
     <header id="main-header">
       <nav class="main-nav" aria-label="Menü">
         <div class="container nav-container">
-          <a href="/index.html" class="nav-logo">
+          <a href="/index.html" class="nav-logo" aria-label="Dr Otgen Clinic ana sayfa">
             <picture>
               <source srcset="/images/logo-transparent-180.avif 180w, /images/logo-transparent-360.avif 360w" sizes="(max-width: 768px) 106px, 127px" type="image/avif" />
               <source srcset="/images/logo-transparent-180.webp 180w, /images/logo-transparent-360.webp 360w" sizes="(max-width: 768px) 106px, 127px" type="image/webp" />
@@ -454,37 +451,37 @@
         </div>
         <div class="services-grid">
           <div class="service-card animate-on-scroll" data-delay="0">
-            <div class="service-icon"><picture><source srcset="/images/services/sac-ekimi-240.avif 240w, /images/services/sac-ekimi-480.avif 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/avif" /><source srcset="/images/services/sac-ekimi-240.webp 240w, /images/services/sac-ekimi-480.webp 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/webp" /><img src="/images/services/sac-ekimi-240.webp" alt="" width="240" height="240" loading="lazy" decoding="async" /></picture></div>
+            <div class="service-icon"><picture><source srcset="/images/services/sac-ekimi-240.avif 240w, /images/services/sac-ekimi-480.avif 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/avif" /><source srcset="/images/services/sac-ekimi-240.webp 240w, /images/services/sac-ekimi-480.webp 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/webp" /><img src="/images/services/sac-ekimi-240.webp" alt="" width="240" height="240" loading="lazy" decoding="async" aria-hidden="true" /></picture></div>
             <h3>Saç Ekimi ve Tedavileri</h3>
             <p>Saç ekimi, saç tedavileri ve kaş-sakal uygulamalarında doğal görünüm ve sağlıklı yoğunluk hedeflenir.</p>
             <a href="#" class="service-link" data-service-slug="sapphire-fue-hair-transplant" aria-label="Saç Ekimi ve Tedavileri – Detaylar">Detaylar <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></a>
           </div>
           <div class="service-card animate-on-scroll" data-delay="100">
-            <div class="service-icon"><picture><source srcset="/images/services/dis-estetigi-240.avif 240w, /images/services/dis-estetigi-480.avif 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/avif" /><source srcset="/images/services/dis-estetigi-240.webp 240w, /images/services/dis-estetigi-480.webp 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/webp" /><img src="/images/services/dis-estetigi-240.webp" alt="" width="240" height="240" loading="lazy" decoding="async" /></picture></div>
+            <div class="service-icon"><picture><source srcset="/images/services/dis-estetigi-240.avif 240w, /images/services/dis-estetigi-480.avif 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/avif" /><source srcset="/images/services/dis-estetigi-240.webp 240w, /images/services/dis-estetigi-480.webp 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/webp" /><img src="/images/services/dis-estetigi-240.webp" alt="" width="240" height="240" loading="lazy" decoding="async" aria-hidden="true" /></picture></div>
             <h3>Diş Estetiği</h3>
             <p>İmplant, diş beyazlatma, gülüş tasarımı, ortodonti, pembe estetik ve zirkonyum uygulamaları kişiye özel planlanır.</p>
             <a href="#" class="service-link" data-service-slug="dental-implant" aria-label="Diş Estetiği – Detaylar">Detaylar <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></a>
           </div>
           <div class="service-card animate-on-scroll" data-delay="200">
-            <div class="service-icon"><picture><source srcset="/images/services/estetik-cerrahi-240.avif 240w, /images/services/estetik-cerrahi-480.avif 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/avif" /><source srcset="/images/services/estetik-cerrahi-240.webp 240w, /images/services/estetik-cerrahi-480.webp 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/webp" /><img src="/images/services/estetik-cerrahi-240.webp" alt="" width="240" height="240" loading="lazy" decoding="async" /></picture></div>
+            <div class="service-icon"><picture><source srcset="/images/services/estetik-cerrahi-240.avif 240w, /images/services/estetik-cerrahi-480.avif 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/avif" /><source srcset="/images/services/estetik-cerrahi-240.webp 240w, /images/services/estetik-cerrahi-480.webp 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/webp" /><img src="/images/services/estetik-cerrahi-240.webp" alt="" width="240" height="240" loading="lazy" decoding="async" aria-hidden="true" /></picture></div>
             <h3>Estetik Cerrahi</h3>
             <p>Yüz, meme ve vücut estetiğinde fonksiyon, estetik denge ve hasta güvenliği birlikte değerlendirilir.</p>
             <a href="#" class="service-link" data-service-slug="rhinoplasty" aria-label="Estetik Cerrahi – Detaylar">Detaylar <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></a>
           </div>
           <div class="service-card animate-on-scroll" data-delay="300">
-            <div class="service-icon"><picture><source srcset="/images/services/medikal-estetik-240.avif 240w, /images/services/medikal-estetik-480.avif 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/avif" /><source srcset="/images/services/medikal-estetik-240.webp 240w, /images/services/medikal-estetik-480.webp 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/webp" /><img src="/images/services/medikal-estetik-240.webp" alt="" width="240" height="240" loading="lazy" decoding="async" /></picture></div>
+            <div class="service-icon"><picture><source srcset="/images/services/medikal-estetik-240.avif 240w, /images/services/medikal-estetik-480.avif 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/avif" /><source srcset="/images/services/medikal-estetik-240.webp 240w, /images/services/medikal-estetik-480.webp 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/webp" /><img src="/images/services/medikal-estetik-240.webp" alt="" width="240" height="240" loading="lazy" decoding="async" aria-hidden="true" /></picture></div>
             <h3>Medikal Estetik</h3>
             <p>Dolgu, botoks, cilt yenileme ve lazer uygulamalarında doğal görünümlü sonuçlar hedeflenir.</p>
             <a href="#" class="service-link" data-service-slug="botox" aria-label="Medikal Estetik – Detaylar">Detaylar <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></a>
           </div>
           <div class="service-card animate-on-scroll" data-delay="400">
-            <div class="service-icon"><picture><source srcset="/images/services/longevity-240.avif 240w, /images/services/longevity-480.avif 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/avif" /><source srcset="/images/services/longevity-240.webp 240w, /images/services/longevity-480.webp 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/webp" /><img src="/images/services/longevity-240.webp" alt="" width="240" height="240" loading="lazy" decoding="async" /></picture></div>
+            <div class="service-icon"><picture><source srcset="/images/services/longevity-240.avif 240w, /images/services/longevity-480.avif 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/avif" /><source srcset="/images/services/longevity-240.webp 240w, /images/services/longevity-480.webp 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/webp" /><img src="/images/services/longevity-240.webp" alt="" width="240" height="240" loading="lazy" decoding="async" aria-hidden="true" /></picture></div>
             <h3>Longevity</h3>
             <p>Ozon, IV terapiler, glutatyon, LPG, sağlıklı beslenme ve Maxx Royal Bodrum'da kişiselleştirilmiş wellness programları kişisel ihtiyaçlara göre planlanır.</p>
             <a href="#" class="service-link" data-service-slug="glutathione" aria-label="Longevity – Detaylar">Detaylar <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></a>
           </div>
           <div class="service-card animate-on-scroll" data-delay="500">
-            <div class="service-icon"><picture><source srcset="/images/services/kurumsal-bilgiler-240.avif 240w, /images/services/kurumsal-bilgiler-480.avif 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/avif" /><source srcset="/images/services/kurumsal-bilgiler-240.webp 240w, /images/services/kurumsal-bilgiler-480.webp 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/webp" /><img src="/images/services/kurumsal-bilgiler-240.webp" alt="" width="240" height="240" loading="lazy" decoding="async" /></picture></div>
+            <div class="service-icon"><picture><source srcset="/images/services/kurumsal-bilgiler-240.avif 240w, /images/services/kurumsal-bilgiler-480.avif 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/avif" /><source srcset="/images/services/kurumsal-bilgiler-240.webp 240w, /images/services/kurumsal-bilgiler-480.webp 480w" sizes="(max-width: 768px) 140px, (max-width: 1024px) 50vw, 140px" type="image/webp" /><img src="/images/services/kurumsal-bilgiler-240.webp" alt="" width="240" height="240" loading="lazy" decoding="async" aria-hidden="true" /></picture></div>
             <h3>Kurumsal Bilgiler</h3>
             <p>Kalite politikamız, değerlerimiz, yönetim yaklaşımımız ve sağlık turizmi süreçlerimiz şeffaf biçimde sunulur.</p>
             <a href="#" class="service-link" data-service-slug="health-tourism" aria-label="Kurumsal Bilgiler – Detaylar">Detaylar <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></a>
@@ -523,7 +520,7 @@
             <span class="team-role">Diş Hekimi</span>
           </div>
           <div class="team-card animate-on-scroll" data-delay="300">
-            <div class="team-img"><img src="/images/goz-hastaliklari/uzm-dr-sina-evsen.jpg" alt="Uzm. Dr. Sina Evsen" width="1122" height="1402" loading="lazy" decoding="async" /></div>
+            <div class="team-img"><picture><source srcset="/images/goz-hastaliklari/uzm-dr-sina-evsen.avif" type="image/avif" /><img src="/images/goz-hastaliklari/uzm-dr-sina-evsen.jpg" alt="Uzm. Dr. Sina Evsen" width="1122" height="1402" loading="lazy" decoding="async" /></picture></div>
             <h3>Uzm. Dr. Sina Evsen</h3>
             <span class="team-role">Göz Hastalıkları Uzmanı</span>
           </div>
@@ -564,7 +561,11 @@
             </div>
           </div>
           <div class="why-us-image animate-on-scroll" data-delay="200">
-            <img src="/images/site/home/clinic-interior.webp" alt="Dr Otgen Clinic iç mekânı" width="1086" height="1448" loading="lazy" decoding="async" />
+            <picture>
+              <source srcset="/images/site/home/clinic-interior.avif" type="image/avif" />
+              <source srcset="/images/site/home/clinic-interior.webp" type="image/webp" />
+              <img src="/images/site/home/clinic-interior.webp" alt="Dr Otgen Clinic iç mekânı" width="1086" height="1448" loading="lazy" decoding="async" />
+            </picture>
             <div class="glass-badge"><span class="badge-number">20+</span><span class="badge-text">Yıllık Deneyim</span></div>
           </div>
         </div>
@@ -584,10 +585,14 @@
               <div class="contact-item"><div class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h3>Kliniklerimiz</h3><span dir="ltr" data-i18n-skip style="display:block; margin-bottom:4px;">Wiesdorfer, Leverkusen 51373</span><span dir="ltr" data-i18n-skip style="display:block; margin-bottom:4px;">Anadolu Plaza No:23 Karşıyaka İzmir</span><span dir="ltr" data-i18n-skip style="display:block;">Denizli</span></div></div>
             </div>
           </div>
-          <form class="appointment-form animate-on-scroll" data-delay="200" id="appointment-form" action="https://formsubmit.co/drotgenclinic@gmail.com" method="POST">
-            <div class="form-row"><div class="form-group"><label for="form-name">Ad Soyad</label><input type="text" id="form-name" name="name" placeholder="Ad Soyad" autocomplete="name" required /></div><div class="form-group"><label for="form-phone">Telefon</label><input type="tel" id="form-phone" name="phone" placeholder="+90 5XX XXX XX XX" dir="ltr" autocomplete="tel" required /></div></div>
-            <div class="form-row"><div class="form-group"><label for="form-email">E-posta</label><input type="email" id="form-email" name="email" placeholder="ornek@email.com" dir="ltr" autocomplete="email" /></div><div class="form-group"><label for="form-service">Hizmet Seçin</label><select id="form-service" name="service"><option value="">Lütfen Seçin</option><option>Saç Ekimi</option><option>Diş Estetiği</option><option>Estetik Cerrahi</option><option>Medikal Estetik</option><option>Longevity</option></select></div></div>
-            <div class="form-group"><label for="form-message">Mesajınız</label><textarea id="form-message" name="message" rows="4" placeholder="Mesajınızı yazın..."></textarea></div>
+          <form class="appointment-form animate-on-scroll" data-delay="200" id="appointment-form" action="https://formsubmit.co/drotgenclinic@gmail.com" method="POST" aria-describedby="form-status" novalidate>
+            <div class="form-honeypot" aria-hidden="true">
+              <label for="form-website">Website</label>
+              <input type="text" id="form-website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+            <div class="form-row"><div class="form-group"><label for="form-name">Ad Soyad</label><input type="text" id="form-name" name="name" placeholder="Ad Soyad" autocomplete="name" maxlength="120" required /></div><div class="form-group"><label for="form-phone">Telefon</label><input type="tel" id="form-phone" name="phone" placeholder="+90 5XX XXX XX XX" dir="ltr" autocomplete="tel" maxlength="32" required /></div></div>
+            <div class="form-row"><div class="form-group"><label for="form-email">E-posta</label><input type="email" id="form-email" name="email" placeholder="ornek@email.com" dir="ltr" autocomplete="email" maxlength="254" /></div><div class="form-group"><label for="form-service">Hizmet Seçin</label><select id="form-service" name="service"><option value="">Lütfen Seçin</option><option value="hair">Saç Ekimi</option><option value="dental">Diş Estetiği</option><option value="plastic">Estetik Cerrahi</option><option value="medical">Medikal Estetik</option><option value="longevity">Longevity</option></select></div></div>
+            <div class="form-group"><label for="form-message">Mesajınız</label><textarea id="form-message" name="message" rows="4" placeholder="Mesajınızı yazın..." maxlength="2000"></textarea></div>
             <div class="form-group form-consent">
               <input type="checkbox" id="form-privacy-consent" name="privacy-consent" required aria-required="true" />
               <label for="form-privacy-consent" data-i18n-html>Kişisel Verilerin İşlenmesine İlişkin <a href="/tr/privacy.html" data-privacy-link>Aydınlatma Metni</a>'ni okudum. Randevu talebimin değerlendirilmesi amacıyla kişisel verilerimin işlenmesini kabul ediyorum.</label>

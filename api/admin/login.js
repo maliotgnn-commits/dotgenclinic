@@ -4,7 +4,7 @@ import {
   isAdminAuthConfigured,
   verifyAdminPassword,
 } from '../../server/analytics/admin-auth.js';
-import { sendJson, rejectMethodNotAllowed } from '../../server/analytics/api-auth.js';
+import { sendJson, rejectMethodNotAllowed, rejectOversizedBody } from '../../server/analytics/api-auth.js';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -12,13 +12,15 @@ export default async function handler(req, res) {
     return;
   }
 
+  if (rejectOversizedBody(req, res)) return;
+
   if (!isAdminAuthConfigured() && !process.env.VERCEL) {
     sendJson(res, 200, { ok: true, data: { authenticated: true, devBypass: true } });
     return;
   }
 
   const body = typeof req.body === 'string' ? safeParseJson(req.body) : req.body;
-  const password = typeof body?.password === 'string' ? body.password : '';
+  const password = typeof body?.password === 'string' ? body.password.slice(0, 256) : '';
 
   if (!verifyAdminPassword(password)) {
     sendJson(res, 401, {

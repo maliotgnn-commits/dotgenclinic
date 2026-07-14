@@ -82,8 +82,25 @@ body {
 
 .sv-hero-whatsapp {
   display: inline-flex;
-  margin-top: 18px;
   text-decoration: none;
+}
+
+.sv-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+  align-items: center;
+}
+
+.sv-hero-appointment {
+  display: inline-flex;
+  text-decoration: none;
+}
+
+.sv-hero-appointment:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
 }
 
 .sv-section {
