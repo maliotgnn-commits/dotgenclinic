@@ -11,7 +11,7 @@ import { loadEyeHealthContent } from './eye-health-content.js';
 import {
   applySeoLinks,
   buildCategoryGroups,
-  defaultRelatedPages,
+  doctorUrlForLocale,
   getCurrentLocale,
   homeUrlFor,
   loadContentCatalog,
@@ -25,6 +25,7 @@ import {
 } from './language-switcher.js';
 import { initAnalyticsTracking, trackServicePageView } from './analytics.js';
 import { renderWhatsAppFloat, buildWhatsAppUrl } from './whatsapp-links.js';
+import { enhanceRelatedPages, getDoctorsForServicePage } from './seo-internal-links.js';
 
 const app = document.getElementById('service-app');
 const params = new URLSearchParams(window.location.search);
@@ -159,6 +160,72 @@ function renderDetailSections(sections = []) {
       </div>
     </section>
   `;
+}
+
+function renderDoctorLinks(doctors) {
+  if (!doctors.length) return '';
+  return `
+    <section class="sv-section sv-section-soft">
+      <div class="container">
+        <h3>${escapeHtml(t('İlgili Hekimler'))}</h3>
+        <div class="sv-related-grid">
+          ${doctors
+            .map(
+              (doctor) => `
+            <a class="sv-related-card" href="${doctorUrlForLocale(doctor.slug, locale)}">
+              <strong>${escapeHtml(doctor.name)}</strong>
+              <span>${escapeHtml(doctor.specialty)}</span>
+            </a>
+          `,
+            )
+            .join('')}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderFaqCta(currentPage) {
+  return `
+    <section class="sv-section sv-faq-cta">
+      <div class="container sv-faq-cta-inner">
+        <h3>${escapeHtml(t('Sorularınız mı var?'))}</h3>
+        <p>${escapeHtml(t('Tedavi planınız için uzman ekibimizle iletişime geçebilirsiniz.'))}</p>
+        <div class="sv-faq-cta-actions">
+          <a href="${buildWhatsAppUrl({ locale, category: currentPage.category, pageTitle: currentPage.title })}" class="btn-gold" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp ile Bilgi Al'))}</a>
+          <a href="${homeUrlFor(locale, '#randevu')}" class="btn-outline">${escapeHtml(t('Randevu Al'))}</a>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function renderStickyCta(currentPage) {
+  return `
+    <aside class="sv-sticky-cta" data-sticky-cta hidden>
+      <div class="container sv-sticky-cta-inner">
+        <span>${escapeHtml(currentPage.title)}</span>
+        <div class="sv-sticky-cta-actions">
+          <a href="${buildWhatsAppUrl({ locale, category: currentPage.category, pageTitle: currentPage.title })}" class="btn-gold" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp'))}</a>
+          <a href="${homeUrlFor(locale, '#randevu')}" class="btn-outline">${escapeHtml(t('Randevu Al'))}</a>
+        </div>
+      </div>
+    </aside>
+  `;
+}
+
+function initStickyCta() {
+  const bar = document.querySelector('[data-sticky-cta]');
+  if (!bar) return;
+
+  const show = () => {
+    const visible = window.scrollY > 480;
+    bar.hidden = !visible;
+    bar.classList.toggle('is-visible', visible);
+  };
+
+  show();
+  window.addEventListener('scroll', show, { passive: true });
 }
 
 function renderRelated(relatedPages) {
@@ -358,7 +425,10 @@ function renderPage(currentPage, relatedPages) {
             </div>
           </div>
         </section>
+        ${renderFaqCta(currentPage)}
       ` : ''}
+
+      ${renderDoctorLinks(getDoctorsForServicePage(currentPage))}
 
       <section class="sv-section">
         <div class="container">
@@ -369,6 +439,7 @@ function renderPage(currentPage, relatedPages) {
         </div>
       </section>
     </div>
+    ${renderStickyCta(currentPage)}
     ${renderWhatsAppFloat({ locale, category: currentPage.category, pageTitle: currentPage.title, ariaLabel: escapeHtml(t('WhatsApp')) })}
   `;
 }
@@ -462,7 +533,7 @@ function bootstrapServicePage() {
     return;
   }
 
-  renderPage(currentPage, defaultRelatedPages(catalog, currentPage));
+  renderPage(currentPage, enhanceRelatedPages(catalog, currentPage));
   initAnalyticsTracking(() => locale);
   trackServicePageView({
     locale,
@@ -476,6 +547,7 @@ function bootstrapServicePage() {
   initLanguageSwitchers();
   initRelatedCardNavigation();
   initGalleryCarousel();
+  initStickyCta();
 }
 
 bootstrapServicePage();

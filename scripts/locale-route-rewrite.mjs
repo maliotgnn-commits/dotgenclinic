@@ -123,6 +123,10 @@ export function resolveLocaleRewrite(pathname, search = '') {
     return `/service.html${search}`;
   }
 
+  if (routeFile === 'doctor.html') {
+    return `/doctor.html${search}`;
+  }
+
   if (routeFile === 'privacy.html') {
     return `/privacy.html${search}`;
   }

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, follow" />
+    <meta name="description" content="Dr Otgen Clinic hekim profili." />
+    <title>Dr Otgen Clinic | Hekim Profili</title>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <script>
+      (() => {
+        const locale = location.pathname.match(/^\/(tr|en|ar|es|fr|it|ru|de)(?:\/|$)/)?.[1] || 'tr';
+        document.documentElement.lang = locale;
+        document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="/fonts-loader.js"></script>
+  </head>
+  <body>
+    <main id="doctor-app"></main>
+    <script type="module" src="/src/doctor.js"></script>
+  </body>
+</html>

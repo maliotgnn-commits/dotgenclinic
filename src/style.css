@@ -1789,6 +1789,9 @@ to {
 }
 
 .team-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
   text-align: center;
   transition: var(--transition)
 }
