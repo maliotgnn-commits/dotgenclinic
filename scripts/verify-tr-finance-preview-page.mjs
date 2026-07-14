@@ -113,7 +113,6 @@ assert(financeData.includes('Yeminli Mali Müşavir Ahmet ÖTGEN'), 'Missing Ahm
 assert(financeData.includes('Mali Müşavir Zehra ÖTGEN'), 'Missing Zehra image alt text in source data');
 
 const forbiddenDiffPaths = [
-  'public/robots.txt',
   'vite.config.js',
   'package.json',
   'package-lock.json',

@@ -16,6 +16,8 @@ const TARGETS = [
   join(IMAGES, 'logo-transparent-700.webp'),
   join(IMAGES, 'site/home/doctor-mubin-hosnuter.webp'),
   join(IMAGES, 'site/home/doctor-ayca-koku.webp'),
+  join(IMAGES, 'site/home/clinic-interior.webp'),
+  join(IMAGES, 'goz-hastaliklari/uzm-dr-sina-evsen.jpg'),
   ...['kurumsal-bilgiler', 'sac-ekimi', 'dis-estetigi', 'medikal-estetik', 'longevity', 'estetik-cerrahi'].flatMap(
     (stem) => [240, 480].map((w) => join(IMAGES, 'services', `${stem}-${w}.webp`)),
   ),
@@ -33,7 +35,7 @@ async function convertFile(inputPath) {
     return null;
   }
 
-  const outputPath = inputPath.replace(/\.webp$/i, '.avif');
+  const outputPath = inputPath.replace(/\.(webp|jpe?g)$/i, '.avif');
   const before = statSync(inputPath).size;
 
   await sharp(inputPath)
