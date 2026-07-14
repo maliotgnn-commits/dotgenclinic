@@ -73,6 +73,47 @@ export function updateAnalyticsConsent(granted) {
   gtag('consent', 'update', CONSENT_GRANTED);
 }
 
+let gtmLoadScheduled = false;
+
+function scheduleGoogleTagManagerLoad() {
+  if (gtmLoadScheduled || window.__dotgenGtmLoaded) return;
+  gtmLoadScheduled = true;
+
+  const load = () => {
+    if (window.__dotgenGtmLoaded) return;
+    loadGoogleTagManager();
+  };
+
+  let loaded = false;
+  const runOnce = () => {
+    if (loaded) return;
+    loaded = true;
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(load, { timeout: 2500 });
+    } else {
+      load();
+    }
+  };
+
+  if ('PerformanceObserver' in window) {
+    try {
+      const lcpObserver = new PerformanceObserver((list) => {
+        if (list.getEntries().length > 0) {
+          lcpObserver.disconnect();
+          runOnce();
+        }
+      });
+      lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
+    } catch {
+      // LCP observer unavailable
+    }
+  }
+
+  document.addEventListener('pointerdown', runOnce, { once: true, passive: true });
+  document.addEventListener('keydown', runOnce, { once: true, passive: true });
+  window.addEventListener('load', runOnce, { once: true });
+}
+
 export function loadGoogleTagManager() {
   if (window.__dotgenGtmLoaded) return;
   window.__dotgenGtmLoaded = true;
@@ -176,7 +217,8 @@ function mountConsentWidget(locale) {
 }
 
 export function initCookieConsent(locale = detectLocale()) {
-  loadGoogleTagManager();
+  initializeConsentMode();
+  scheduleGoogleTagManagerLoad();
 
   if (readCookieConsent()) {
     updateAnalyticsConsent(true);

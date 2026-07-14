@@ -22,7 +22,6 @@ import { mountInstagramFloat } from './instagram-float.js';
 import { initSiteHeader } from './public-header.js';
 import { loadEyeHealthContent } from './eye-health-content.js';
 import { upgradeLocalizedEyeHealthNav } from './tr-eye-health-nav.js';
-import { upgradeLocalizedArgeNav } from './tr-arge-nav.js';
 import { initPartnersMarquee } from './partners-marquee.js';
 import { initAnalyticsTracking, pushEvent } from './analytics.js';
 
@@ -73,7 +72,9 @@ function createParticles() {
   const container = document.getElementById('intro-particles');
   if (!container) return;
 
-  for (let i = 0; i < 40; i += 1) {
+  const particleCount = introMobileQuery.matches ? 10 : 24;
+
+  for (let i = 0; i < particleCount; i += 1) {
     const particle = document.createElement('div');
     const size = 1 + Math.random() * 3;
     particle.classList.add('particle');
@@ -140,6 +141,7 @@ function completeIntro() {
 
   syncHeroVideoPlayback();
   startSlider();
+  scheduleHeroVideoSourceLoad();
 }
 
 function handleVirtualScroll(event) {
@@ -184,7 +186,7 @@ function initIntro() {
     const touchY = event.touches[0].clientY;
     const delta = touchStartY - touchY;
     touchStartY = touchY;
-    introProgress = Math.max(0, Math.min(1, introProgress + delta / 500));
+    introProgress = Math.max(0, Math.min(1, introProgress + delta / (introMobileQuery.matches ? 320 : 500)));
     updateIntroAnimation(introProgress);
     if (introProgress >= 1) completeIntro();
   }, { passive: false });
@@ -201,14 +203,46 @@ function finalizeHomeHeader() {
 function initHeader() {
   const navMenu = document.getElementById('nav-menu');
   if (navMenu && locale !== 'tr') {
-    loadEyeHealthContent(locale).then((content) => {
+    loadEyeHealthContent(locale).then(async (content) => {
       upgradeLocalizedEyeHealthNav(navMenu, locale, content);
+      const { upgradeLocalizedArgeNav } = await import('./tr-arge-nav.js');
       upgradeLocalizedArgeNav(navMenu, locale);
       finalizeHomeHeader();
     });
     return;
   }
   finalizeHomeHeader();
+}
+
+function attachHeroVideoSource(video) {
+  if (!video || heroVideoSourceAttached || video.querySelector('source')) return;
+  heroVideoSourceAttached = true;
+
+  const source = document.createElement('source');
+  source.src = heroVideoUrl;
+  source.type = 'video/mp4';
+  video.appendChild(source);
+  video.load();
+
+  const retryHeroAutoplay = () => {
+    if (prefersReducedMotion) return;
+    syncHeroVideoPlayback();
+  };
+  video.addEventListener('canplay', retryHeroAutoplay, { once: true });
+}
+
+function scheduleHeroVideoSourceLoad() {
+  const video = document.querySelector('.hero-bg-video');
+  if (!video || heroVideoSourceAttached || prefersReducedMotion) return;
+
+  const attach = () => attachHeroVideoSource(video);
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(attach, { timeout: 1200 });
+    return;
+  }
+
+  requestAnimationFrame(() => requestAnimationFrame(attach));
 }
 
 function getHeroVideoLoopThreshold(video) {
@@ -258,6 +292,8 @@ function setupHeroVideoLoop() {
 const HERO_FALLBACK_POSTER_DESKTOP = '/images/hero-world-map.webp';
 const HERO_FALLBACK_POSTER_MOBILE = '/images/mobil.webp';
 const heroMobileQuery = window.matchMedia('(max-width: 768px)');
+const introMobileQuery = window.matchMedia('(max-width: 768px)');
+let heroVideoSourceAttached = false;
 
 function getHeroFallbackPosterUrl() {
   return heroMobileQuery.matches
@@ -657,19 +693,11 @@ function initHero() {
     heroVideo.setAttribute('playsinline', '');
     heroVideo.setAttribute('webkit-playsinline', '');
 
-    if (!heroVideo.querySelector('source')) {
-      const source = document.createElement('source');
-      source.src = heroVideoUrl;
-      source.type = 'video/mp4';
-      heroVideo.appendChild(source);
-      heroVideo.load();
+    if (!heroVideoSourceAttached) {
+      scheduleHeroVideoSourceLoad();
+    } else if (!heroVideo.querySelector('source')) {
+      attachHeroVideoSource(heroVideo);
     }
-
-    const retryHeroAutoplay = () => {
-      if (prefersReducedMotion) return;
-      syncHeroVideoPlayback();
-    };
-    heroVideo.addEventListener('canplay', retryHeroAutoplay, { once: true });
 
     syncHeroVideoPoster(heroVideo);
     const onHeroMediaReady = () => {
@@ -685,6 +713,10 @@ function initHero() {
   initHeroPlayButton();
   syncHeroVideoPlayback();
   syncHeroHeadingAccessibility();
+
+  if (introComplete) {
+    scheduleHeroVideoSourceLoad();
+  }
 }
 
 function initScrollAnimations() {
