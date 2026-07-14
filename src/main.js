@@ -2,7 +2,7 @@ import './cookie-consent.js';
 import './style.css';
 import footerVideoUrl from '../kj.mp4';
 import heroVideoUrl from './assets/hero-video-mobile.mp4';
-import { applySubcategoryLinks } from './subpages-data.js';
+import { applySubcategoryLinks } from './subpages-nav-links.js';
 import { initCustomCursor } from './cursor.js';
 import {
   applyPrivacyUi,

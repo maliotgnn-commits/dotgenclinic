@@ -1,3 +1,5 @@
+import { hasAnalyticsConsent } from './cookie-consent.js';
+
 let trackingInitialized = false;
 
 function ensureDataLayer() {
@@ -5,7 +7,7 @@ function ensureDataLayer() {
 }
 
 export function pushEvent(event, params = {}) {
-  if (!window.__dotgenGtmLoaded) return;
+  if (!hasAnalyticsConsent()) return;
   ensureDataLayer();
   window.dataLayer.push({
     event,
