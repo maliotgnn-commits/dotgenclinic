@@ -26,6 +26,10 @@ dist-ssr
 .vercel
 .translation-cache
 
+# Local perf audit artifacts
+.tmp-lh/
+lighthouse-*.json
+
 .claude
 .vite-local
 *.err

@@ -10,7 +10,7 @@
   --gold-gradient: linear-gradient(135deg,  #c9a84c,  #dfc06e,  #c9a84c);
   --text-primary: #fff;
   --text-secondary: #ffffffbf;
-  --text-muted: #ffffff73;
+  --text-muted: #ffffffa8;
   --border-subtle: #ffffff14;
   --border-gold: #c9a84c4d;
   --shadow-lg: 0 20px 60px #00000080;
@@ -679,7 +679,7 @@ to {
     flex-direction: column;
   }
 
-  .has-dropdown[data-eye-health-nav] .eh-desktop-mega .mega-col h4 {
+  .has-dropdown[data-eye-health-nav] .eh-desktop-mega .mega-col-title {
     white-space: normal;
     overflow-wrap: break-word;
     line-height: 1.4;
@@ -1021,7 +1021,7 @@ to {
   }
 }
 
-.mega-col h4 {
+.mega-col-title {
   font-family: var(--font-heading);
   color: var(--gold);
   margin-bottom: 16px;
@@ -1029,12 +1029,12 @@ to {
   font-weight: 600
 }
 
-.mega-col h4 a {
+.mega-col-title a {
   color: inherit;
   text-decoration: none;
 }
 
-.mega-col h4 a:hover {
+.mega-col-title a:hover {
   color: var(--gold-light);
 }
 
@@ -1272,6 +1272,7 @@ to {
 
 .hero-slide-video .hero-content .hero-badge,
 .hero-slide-video .hero-content h1,
+.hero-slide-video .hero-content .hero-headline,
 .hero-slide-video .hero-content p,
 .hero-slide-video .hero-content .hero-buttons,
 .hero-slide-video .hero-content .hero-buttons a {
@@ -1355,15 +1356,17 @@ to {
   display: inline-block
 }
 
-.hero-content h1 {
+.hero-content h1,
+.hero-content .hero-headline {
   font-family: var(--font-heading);
+  color: var(--text-primary);
   margin-bottom: 20px;
   font-size: clamp(36px, 5vw, 64px);
   font-weight: 700;
   line-height: 1.15
 }
 
-.hero-content p {
+.hero-content p:not(.hero-headline) {
   color: var(--text-secondary);
   max-width: 520px;
   margin-bottom: 36px;
@@ -2661,11 +2664,12 @@ html[dir=rtl] .form-group select {
     display: flex
   }
 
-.hero-content h1 {
+.hero-content h1,
+.hero-content .hero-headline {
     font-size: 32px
   }
 
-.hero-content p {
+.hero-content p:not(.hero-headline) {
     font-size: 15px
   }
 
@@ -2798,7 +2802,8 @@ html[dir=rtl] [dir=ltr] {
     padding: 0 16px
   }
 
-.hero-content h1 {
+.hero-content h1,
+.hero-content .hero-headline {
     font-size: 28px
   }
 

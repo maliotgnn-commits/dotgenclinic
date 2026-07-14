@@ -34,7 +34,7 @@ export function renderArgeNavItem(locale = 'tr') {
       <a href="${landingPath}" class="desktop-nav-trigger" aria-label="${menuLabel}">${menuLabel} ${NAV_CHEVRON_SVG}</a>
       <div class="mega-dropdown" id="nav-panel-arge" role="region" aria-label="${submenuAriaLabel}">
         <div class="mega-col">
-          <h4><a href="${landingPath}">${menuLabel}</a></h4>
+          <div class="mega-col-title"><a href="${landingPath}">${menuLabel}</a></div>
           ${pageLinks}
         </div>
       </div>

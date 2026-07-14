@@ -70,7 +70,7 @@ function renderNavGroups() {
           })}
           <div class="mega-dropdown" id="nav-panel-${group.key}">
             <div class="mega-col">
-              <h4>${escapeHtml(group.label)}</h4>
+              <div class="mega-col-title" aria-hidden="true">${escapeHtml(group.label)}</div>
               ${links}
             </div>
           </div>
@@ -97,8 +97,8 @@ function renderHeader() {
     <header id="main-header">
       <nav class="main-nav" aria-label="${escapeHtml(t('Menü'))}">
         <div class="container nav-container">
-          <a href="${homeUrlFor(locale)}" class="nav-logo">
-            <img src="/images/logo-transparent.png" alt="Dr Otgen Clinic" />
+          <a href="${homeUrlFor(locale)}" class="nav-logo" aria-label="${escapeHtml(t('Dr Otgen Clinic ana sayfa'))}">
+            <img src="/images/logo-transparent.png" alt="" />
           </a>
           <div class="nav-primary">
             <ul class="nav-menu" id="nav-menu">

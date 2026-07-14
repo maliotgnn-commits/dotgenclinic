@@ -66,8 +66,10 @@ function translateAttributesInTag(tag, dictionary) {
 
 function processDataI18nHtml(html, dictionary) {
   return html.replace(
-    /<(h[1-6])([^>]*\bdata-i18n-html\b[^>]*)>([\s\S]*?)<\/\1>/gi,
+    /<(h[1-6]|p)([^>]*\bdata-i18n-html\b[^>]*)>([\s\S]*?)<\/\1>/gi,
     (match, tag, attrs, inner) => {
+      if (tag.toLowerCase() === 'p' && !/\bhero-headline\b/.test(attrs)) return match;
+
       const trimmed = inner.trim();
       const translated = translateHtml(dictionary, trimmed);
       if (translated === trimmed) return match;

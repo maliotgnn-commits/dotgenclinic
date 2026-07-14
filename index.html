@@ -15,7 +15,7 @@
     <link rel="preload" as="image" href="/images/hero-world-map.webp" type="image/webp" media="(min-width: 769px)">
     <link rel="preload" as="image" href="/images/mobil.webp" type="image/webp" media="(max-width: 768px)">
     <style>
-      :root{--bg-primary:#060d18;--gold:#c9a84c;--gold-light:#dfc06e;--text-primary:#fff;--text-muted:#ffffff73;--font-body:"Inter",-apple-system,sans-serif;--font-heading:"Playfair Display",Georgia,serif}
+      :root{--bg-primary:#060d18;--gold:#c9a84c;--gold-light:#dfc06e;--text-primary:#fff;--text-muted:#ffffffa8;--font-body:"Inter",-apple-system,sans-serif;--font-heading:"Playfair Display",Georgia,serif}
       html{scroll-behavior:smooth;overflow-x:hidden}
       body{margin:0;font-family:var(--font-body);background:var(--bg-primary);color:var(--text-primary);line-height:1.7;overflow-x:hidden}
       img{max-width:100%;height:auto;display:block}
@@ -78,8 +78,8 @@
     <header id="main-header">
       <nav class="main-nav" aria-label="Menü">
         <div class="container nav-container">
-          <a href="/index.html" class="nav-logo">
-            <img src="/images/logo-transparent-180.webp" srcset="/images/logo-transparent-180.webp 180w, /images/logo-transparent-360.webp 360w" sizes="(max-width: 768px) 106px, 127px" width="180" height="105" alt="Dr Otgen Clinic" decoding="async" />
+          <a href="/index.html" class="nav-logo" aria-label="Dr Otgen Clinic ana sayfa">
+            <img src="/images/logo-transparent-180.webp" srcset="/images/logo-transparent-180.webp 180w, /images/logo-transparent-360.webp 360w" sizes="(max-width: 768px) 106px, 127px" width="180" height="105" alt="" decoding="async" />
           </a>
           <div class="nav-primary">
           <ul class="nav-menu" id="nav-menu">
@@ -88,7 +88,7 @@
               <a href="#">Kurumsal <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
               <div class="mega-dropdown">
                 <div class="mega-col">
-                  <h4>Kurumsal</h4>
+                  <div class="mega-col-title" aria-hidden="true">Kurumsal</div>
                   <a href="#">Vizyon ve Misyon</a>
                   <a href="#">Değerlerimiz</a>
                   <a href="#">Kalite Politikası</a>
@@ -108,14 +108,14 @@
               <a href="#">Medikal Estetik <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
               <div class="mega-dropdown">
                 <div class="mega-col">
-                  <h4>Dolgu ve Botoks</h4>
+                  <div class="mega-col-title" aria-hidden="true">Dolgu ve Botoks</div>
                   <a href="#">Dudak Dolgusu</a>
                   <a href="#">Botoks</a>
                   <a href="#">Çene Hattı Dolgusu</a>
                   <a href="#">Göz Altı Işık Dolgusu</a>
                 </div>
                 <div class="mega-col">
-                  <h4>Cilt Uygulamaları</h4>
+                  <div class="mega-col-title" aria-hidden="true">Cilt Uygulamaları</div>
                   <a href="#">Lazer Epilasyon</a>
                   <a href="#">PRP Cilt Tedavisi</a>
                   <a href="#">Tıbbi Cilt Bakımı</a>
@@ -128,7 +128,7 @@
               <a href="#">Estetik Cerrahi <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
               <div class="mega-dropdown">
                 <div class="mega-col">
-                  <h4>Yüz ve Meme Estetiği</h4>
+                  <div class="mega-col-title" aria-hidden="true">Yüz ve Meme Estetiği</div>
                   <a href="#">Meme Büyütme</a>
                   <a href="#">Meme Küçültme</a>
                   <a href="#">Rinoplasti</a>
@@ -136,7 +136,7 @@
                   <a href="#">Blefaroplasti</a>
                 </div>
                 <div class="mega-col">
-                  <h4>Vücut Estetiği</h4>
+                  <div class="mega-col-title" aria-hidden="true">Vücut Estetiği</div>
                   <a href="#">Jinekomasti Ameliyatı</a>
                   <a href="#">Karın Germe</a>
                   <a href="#">Liposuction</a>
@@ -149,7 +149,7 @@
               <a href="#">Saç Ekimi <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
               <div class="mega-dropdown">
                 <div class="mega-col">
-                  <h4>Saç Ekimi</h4>
+                  <div class="mega-col-title" aria-hidden="true">Saç Ekimi</div>
                   <a href="#">Safir FUE Saç Ekimi</a>
                   <a href="#">DHI Saç Ekimi</a>
                   <a href="#">Kök Hücre Destekli Saç Ekimi</a>
@@ -158,7 +158,7 @@
                   <a href="#">Sakal ve Bıyık Ekimi</a>
                 </div>
                 <div class="mega-col">
-                  <h4>Saç Tedavileri</h4>
+                  <div class="mega-col-title" aria-hidden="true">Saç Tedavileri</div>
                   <a href="#">ACell PRP Saç Tedavisi</a>
                   <a href="#">Lazer Saç Tedavisi</a>
                   <a href="#">Eksozom Saç Terapisi</a>
@@ -170,7 +170,7 @@
               <a href="#">Diş Estetiği <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
               <div class="mega-dropdown">
                 <div class="mega-col">
-                  <h4>Diş Estetiği</h4>
+                  <div class="mega-col-title" aria-hidden="true">Diş Estetiği</div>
                   <a href="#">Diş İmplantı</a>
                   <a href="#">Diş Beyazlatma</a>
                   <a href="#">Hollywood Gülüşü</a>
@@ -196,40 +196,40 @@
       <div class="mega-dropdown eh-mega-dropdown" id="eye-health-mega-menu" role="region" aria-label="Göz Hastalıkları menüsü">
         <div class="eh-desktop-mega">
     <div class="mega-col">
-      <h4><a href="/tr/goz-hastaliklari.html">Göz Muayenesi ve Genel Göz Sağlığı</a></h4>
+      <div class="mega-col-title"><a href="/tr/goz-hastaliklari.html">Göz Muayenesi ve Genel Göz Sağlığı</a></div>
       <a href="/tr/goz-hastaliklari.html">Göz Muayenesi</a>
       <a href="/tr/goz-hastaliklari.html">Konjonktivit</a>
       <a href="/tr/goz-hastaliklari.html">Arpacık</a>
       <a href="/tr/goz-hastaliklari.html">Şalazyon</a>
     </div>
     <div class="mega-col">
-      <h4><a href="/tr/goz-hastaliklari.html">Göz Kusurları ve Lazer Uygulamaları</a></h4>
+      <div class="mega-col-title"><a href="/tr/goz-hastaliklari.html">Göz Kusurları ve Lazer Uygulamaları</a></div>
       <a href="/tr/goz-hastaliklari.html">Göz Çizdirme</a>
       <a href="/tr/goz-hastaliklari.html">Miyop</a>
       <a href="/tr/goz-hastaliklari.html">Astigmat</a>
       <a href="/tr/goz-hastaliklari.html">Hipermetrop</a>
     </div>
     <div class="mega-col">
-      <h4><a href="/tr/goz-hastaliklari.html">Katarakt ve Göz İçi Mercekler</a></h4>
+      <div class="mega-col-title"><a href="/tr/goz-hastaliklari.html">Katarakt ve Göz İçi Mercekler</a></div>
       <a href="/tr/goz-hastaliklari.html">Katarakt Nedir?</a>
       <a href="/tr/goz-hastaliklari.html">Katarakt Ameliyatı</a>
       <a href="/tr/goz-hastaliklari.html">Göz İçi Mercek</a>
       <a href="/tr/goz-hastaliklari.html">Trifokal Mercek</a>
     </div>
     <div class="mega-col">
-      <h4><a href="/tr/goz-hastaliklari.html">Retina ve Göz İçi Hastalıklar</a></h4>
+      <div class="mega-col-title"><a href="/tr/goz-hastaliklari.html">Retina ve Göz İçi Hastalıklar</a></div>
       <a href="/tr/goz-hastaliklari.html">Sarı Nokta Hastalığı</a>
       <a href="/tr/goz-hastaliklari.html">Retina</a>
       <a href="/tr/goz-hastaliklari.html">Üveit</a>
     </div>
     <div class="mega-col">
-      <h4><a href="/tr/goz-hastaliklari.html">Göz Kapağı ve Orbita</a></h4>
+      <div class="mega-col-title"><a href="/tr/goz-hastaliklari.html">Göz Kapağı ve Orbita</a></div>
       <a href="/tr/goz-hastaliklari.html">Göz Kapağı Düşüklüğü</a>
       <a href="/tr/goz-hastaliklari.html">Göz Kapağı Estetiği</a>
       <a href="/tr/goz-hastaliklari.html">Orbita Cerrahisi</a>
     </div>
     <div class="mega-col">
-      <h4><a href="/tr/goz-hastaliklari.html">Diğer Göz Tedavileri</a></h4>
+      <div class="mega-col-title"><a href="/tr/goz-hastaliklari.html">Diğer Göz Tedavileri</a></div>
       <a href="/tr/goz-hastaliklari.html">Göz Ameliyatı</a>
       <a href="/tr/goz-hastaliklari.html">Göz Kayması</a>
     </div>
@@ -315,7 +315,7 @@
               <a href="#">Longevity <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
               <div class="mega-dropdown">
                 <div class="mega-col">
-                  <h4>Longevity</h4>
+                  <div class="mega-col-title" aria-hidden="true">Longevity</div>
                   <a href="#">Sağlıklı Beslenme</a>
                   <a href="#">LPG İşlemi</a>
                   <a href="#">Ozon Terapisi</a>
@@ -338,7 +338,7 @@
               <a href="/tr/ilac-ar-ge.html" class="desktop-nav-trigger" aria-label="Ar-Ge">Ar-Ge <svg width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" fill="none" stroke-width="1.5"/></svg></a>
               <div class="mega-dropdown" id="nav-panel-arge" role="region" aria-label="Ar-Ge menüsü">
                 <div class="mega-col">
-                  <h4><a href="/tr/ilac-ar-ge.html">Ar-Ge</a></h4>
+                  <div class="mega-col-title"><a href="/tr/ilac-ar-ge.html">Ar-Ge</a></div>
                   <a href="/tr/ilac-ar-ge.html" data-arge-page-link="ilac-ar-ge">İlaç Ar-Ge</a>
                   <a href="/tr/medikal-ar-ge.html" data-arge-page-link="medikal-ar-ge">Medikal Ar-Ge</a>
                   <a href="/tr/yazilim-ar-ge.html" data-arge-page-link="yazilim-ar-ge">Yazılım Ar-Ge</a>
@@ -383,7 +383,7 @@
           <div class="hero-overlay"></div>
           <div class="container hero-content">
             <span class="hero-badge">Medikal Estetik</span>
-            <h1 data-i18n-html>Doğal <span class="gold-text">Güzelliğinizi</span> Keşfedin</h1>
+            <p class="hero-headline" data-i18n-html>Doğal <span class="gold-text">Güzelliğinizi</span> Keşfedin</p>
             <p>Dolgu, botoks, cilt bakımı ve yenileyici uygulamalarla doğal görünümlü sonuçlara odaklanıyoruz.</p>
             <div class="hero-buttons">
               <a href="#randevu" class="btn btn-gold">Randevu Al</a>
@@ -395,7 +395,7 @@
           <div class="hero-overlay"></div>
           <div class="container hero-content">
             <span class="hero-badge">Sağlık Turizmi</span>
-            <h1 data-i18n-html>Planlı ve Güvenli <span class="gold-text">Tedavi Süreci</span></h1>
+            <p class="hero-headline" data-i18n-html>Planlı ve Güvenli <span class="gold-text">Tedavi Süreci</span></p>
             <p>Uluslararası hasta koordinasyonu, takip ve iletişim adımlarını şeffaf bir süreçle yönetiyoruz.</p>
             <div class="hero-buttons">
               <a href="#randevu" class="btn btn-gold">Başlayın</a>

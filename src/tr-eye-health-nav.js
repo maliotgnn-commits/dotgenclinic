@@ -19,7 +19,7 @@ function eyeHealthMegaColumns(categories, landingPath) {
     .map(
       (category) => `
     <div class="mega-col">
-      <h4><a href="${url}">${category.title}</a></h4>
+      <div class="mega-col-title"><a href="${url}">${category.title}</a></div>
       ${category.topics.map((topic) => `<a href="${url}">${topic.title}</a>`).join('')}
     </div>
   `,
