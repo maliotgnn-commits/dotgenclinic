@@ -4,6 +4,17 @@ import { COOKIE_CONSENT_COPY } from './cookie-consent-i18n.js';
 const GTM_ID = 'GTM-T89LPZWD';
 const CONSENT_STORAGE_KEY = 'dotgen_cookie_consent_v1';
 
+const CONSENT_DENIED = {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  functionality_storage: 'granted',
+  personalization_storage: 'denied',
+  security_storage: 'granted',
+  wait_for_update: 500,
+};
+
 const CONSENT_GRANTED = {
   ad_storage: 'granted',
   ad_user_data: 'granted',
@@ -39,7 +50,7 @@ export function readCookieConsent() {
 }
 
 export function hasAnalyticsConsent() {
-  return readCookieConsent()?.analytics !== false;
+  return readCookieConsent()?.analytics === true;
 }
 
 function writeCookieConsent(analytics) {
@@ -65,18 +76,27 @@ export function initializeConsentMode() {
   if (consentModeInitialized) return;
   consentModeInitialized = true;
   ensureDataLayer();
-  gtag('consent', 'default', CONSENT_GRANTED);
-  gtag('consent', 'update', CONSENT_GRANTED);
+  gtag('consent', 'default', CONSENT_DENIED);
+
+  const stored = readCookieConsent();
+  if (stored?.analytics === true) {
+    gtag('consent', 'update', CONSENT_GRANTED);
+  } else if (stored?.analytics === false) {
+    gtag('consent', 'update', CONSENT_DENIED);
+  }
 }
 
 export function updateAnalyticsConsent(granted) {
-  gtag('consent', 'update', CONSENT_GRANTED);
+  gtag('consent', 'update', granted ? CONSENT_GRANTED : CONSENT_DENIED);
+  if (granted) {
+    scheduleGoogleTagManagerLoad();
+  }
 }
 
 let gtmLoadScheduled = false;
 
 function scheduleGoogleTagManagerLoad() {
-  if (gtmLoadScheduled || window.__dotgenGtmLoaded) return;
+  if (gtmLoadScheduled || window.__dotgenGtmLoaded || !hasAnalyticsConsent()) return;
   gtmLoadScheduled = true;
 
   const load = () => {
@@ -115,7 +135,7 @@ function scheduleGoogleTagManagerLoad() {
 }
 
 export function loadGoogleTagManager() {
-  if (window.__dotgenGtmLoaded) return;
+  if (window.__dotgenGtmLoaded || !hasAnalyticsConsent()) return;
   window.__dotgenGtmLoaded = true;
   initializeConsentMode();
   ensureDataLayer();
@@ -218,10 +238,10 @@ function mountConsentWidget(locale) {
 
 export function initCookieConsent(locale = detectLocale()) {
   initializeConsentMode();
-  scheduleGoogleTagManagerLoad();
 
-  if (readCookieConsent()) {
-    updateAnalyticsConsent(true);
+  const stored = readCookieConsent();
+  if (stored) {
+    updateAnalyticsConsent(stored.analytics);
     return;
   }
 

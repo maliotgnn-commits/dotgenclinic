@@ -50,13 +50,15 @@ for (const relativePath of PUBLIC_ENTRY_FILES) {
 }
 
 const analyticsSource = readFileSync(resolve(ROOT, 'src/analytics.js'), 'utf8');
-assert(analyticsSource.includes('__dotgenGtmLoaded'), 'analytics.js must push events only after GTM bootstrap');
+assert(analyticsSource.includes('hasAnalyticsConsent'), 'analytics.js must respect stored analytics consent before pushing events');
 
 const cookieConsentSource = readFileSync(resolve(ROOT, 'src/cookie-consent.js'), 'utf8');
 assert(cookieConsentSource.includes('cookie-consent__trigger'), 'cookie-consent.js must render top-right consent trigger');
 assert(cookieConsentSource.includes('AUTO_DISMISS_MS'), 'cookie-consent.js must auto-dismiss consent widget');
 assert(cookieConsentSource.includes('initializeConsentMode'), 'cookie-consent.js must initialize Google Consent Mode defaults');
-assert(cookieConsentSource.includes('loadGoogleTagManager'), 'cookie-consent.js must load GTM for all visitors');
+assert(cookieConsentSource.includes('loadGoogleTagManager'), 'cookie-consent.js must load GTM after analytics consent');
+assert(cookieConsentSource.includes('hasAnalyticsConsent'), 'cookie-consent.js must gate GTM loading on analytics consent');
+assert(cookieConsentSource.includes('CONSENT_DENIED'), 'cookie-consent.js must default consent mode to denied');
 assert(cookieConsentSource.includes('dotgen_cookie_consent_v1'), 'cookie-consent.js must persist consent choice');
 
 const cookieConsentCss = readFileSync(resolve(ROOT, 'src/cookie-consent.css'), 'utf8');
