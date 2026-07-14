@@ -46,6 +46,12 @@ const localeCount = LOCALES.length;
 assert(locs.length === totalExpected, `Expected ${totalExpected} sitemap URLs, found ${locs.length}`);
 assert(expectedUrls.size === totalExpected, `Expected URL set size is ${totalExpected}, computed ${expectedUrls.size}`);
 
+const lastmods = [...xml.matchAll(/<lastmod>([^<]+)<\/lastmod>/g)].map((match) => match[1]);
+assert(lastmods.length === locs.length, `Expected ${locs.length} lastmod entries, found ${lastmods.length}`);
+lastmods.forEach((value) => {
+  assert(/^\d{4}-\d{2}-\d{2}$/.test(value), `Invalid lastmod format: ${value}`);
+});
+
 for (const url of homeUrls) {
   assert(actualUrls.has(url), `Missing home URL: ${url}`);
 }

@@ -79,6 +79,7 @@ export default defineConfig({
       input: {
         main: resolve(import.meta.dirname, 'index.html'),
         service: resolve(import.meta.dirname, 'service.html'),
+        doctor: resolve(import.meta.dirname, 'doctor.html'),
         privacy: resolve(import.meta.dirname, 'privacy.html'),
         eyeHealth: resolve(import.meta.dirname, 'goz-hastaliklari.html'),
         adminAnalytics: resolve(import.meta.dirname, 'admin/analytics.html'),

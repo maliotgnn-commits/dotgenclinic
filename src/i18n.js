@@ -7,6 +7,7 @@ import { yazilimRdPathForLocale } from './yazilim-rd-routes.js';
 import { blockchainRdPathForLocale } from './blockchain-rd-routes.js';
 import { ecommerceRdPathForLocale } from './ecommerce-rd-routes.js';
 import { pharmaRdPathForLocale } from './pharma-rd-routes.js';
+import { doctorUrlForLocale } from './doctor-routes.js';
 
 export const DEFAULT_LOCALE = 'tr';
 export const LOCALE_STORAGE_KEY = 'dr-otgen-locale';
@@ -75,7 +76,7 @@ export function getCurrentLocale(pageType = 'home') {
   const pathLocale = getPathLocale();
   const locale = pathLocale || getStoredLocale() || DEFAULT_LOCALE;
 
-  if ((pageType === 'eye-health' || pageType === 'finance' || pageType === 'legal' || pageType === 'pharma-rd' || pageType === 'medikal-rd' || pageType === 'yazilim-rd' || pageType === 'blockchain-rd' || pageType === 'ecommerce-rd') && pathLocale) {
+  if ((pageType === 'service' || pageType === 'doctor' || pageType === 'eye-health' || pageType === 'finance' || pageType === 'legal' || pageType === 'pharma-rd' || pageType === 'medikal-rd' || pageType === 'yazilim-rd' || pageType === 'blockchain-rd' || pageType === 'ecommerce-rd') && pathLocale) {
     storeLocale(pathLocale);
     applyDocumentDirection(pathLocale);
     return pathLocale;
@@ -84,7 +85,9 @@ export function getCurrentLocale(pageType = 'home') {
   if (!pathLocale) {
     const target = pageType === 'service'
       ? serviceUrlForLocale(new URLSearchParams(window.location.search).get('slug'), locale)
-      : pageType === 'eye-health'
+      : pageType === 'doctor'
+        ? doctorUrlForLocale(new URLSearchParams(window.location.search).get('slug'), locale)
+        : pageType === 'eye-health'
         ? eyeHealthPathForLocale(locale)
         : pageType === 'finance'
           ? financePathForLocale(locale)
@@ -140,9 +143,19 @@ export function serviceUrlForLocale(slug, locale, hash = '') {
   return `/${safeLocale}/service.html${query ? `?${query}` : ''}${hash || ''}`;
 }
 
+export { doctorUrlForLocale };
+
 export function currentPageUrlForLocale(locale, pageType = 'home') {
   if (pageType === 'service') {
     return serviceUrlForLocale(
+      new URLSearchParams(window.location.search).get('slug'),
+      locale,
+      window.location.hash,
+    );
+  }
+
+  if (pageType === 'doctor') {
+    return doctorUrlForLocale(
       new URLSearchParams(window.location.search).get('slug'),
       locale,
       window.location.hash,
@@ -341,25 +354,31 @@ export function applySeoLinks(locale, pageType = 'home', slug = null) {
 
   const canonical = pageType === 'service'
     ? serviceUrlForLocale(slug, locale)
-    : pageType === 'privacy'
-      ? `/${locale}/privacy.html`
-      : homeUrlFor(locale);
+    : pageType === 'doctor'
+      ? doctorUrlForLocale(slug, locale)
+      : pageType === 'privacy'
+        ? `/${locale}/privacy.html`
+        : homeUrlFor(locale);
   upsertSeoLink('canonical', null, canonical);
 
   LOCALES.forEach(({ code }) => {
     const href = pageType === 'service'
       ? serviceUrlForLocale(slug, code)
-      : pageType === 'privacy'
-        ? `/${code}/privacy.html`
-        : homeUrlFor(code);
+      : pageType === 'doctor'
+        ? doctorUrlForLocale(slug, code)
+        : pageType === 'privacy'
+          ? `/${code}/privacy.html`
+          : homeUrlFor(code);
     upsertSeoLink('alternate', code, href);
   });
 
   const defaultHref = pageType === 'service'
     ? serviceUrlForLocale(slug, DEFAULT_LOCALE)
-    : pageType === 'privacy'
-      ? `/${DEFAULT_LOCALE}/privacy.html`
-      : homeUrlFor(DEFAULT_LOCALE);
+    : pageType === 'doctor'
+      ? doctorUrlForLocale(slug, DEFAULT_LOCALE)
+      : pageType === 'privacy'
+        ? `/${DEFAULT_LOCALE}/privacy.html`
+        : homeUrlFor(DEFAULT_LOCALE);
   upsertSeoLink('alternate', 'x-default', defaultHref);
 }
 
@@ -547,6 +566,10 @@ export function localizeInternalLinks(locale, root = document) {
     anchor.href = serviceUrlForLocale(anchor.dataset.serviceSlug, locale);
   });
 
+  root.querySelectorAll('a[data-doctor-slug]').forEach((anchor) => {
+    anchor.href = doctorUrlForLocale(anchor.dataset.doctorSlug, locale);
+  });
+
   root.querySelectorAll('a[href]').forEach((anchor) => {
     const rawHref = anchor.getAttribute('href');
     if (!rawHref || rawHref.startsWith('#') || /^(?:https?:|tel:|mailto:|javascript:)/i.test(rawHref)) {
@@ -557,6 +580,11 @@ export function localizeInternalLinks(locale, root = document) {
     const slug = parsed.searchParams.get('slug');
     if (parsed.pathname === '/service.html' && slug) {
       anchor.href = serviceUrlForLocale(slug, locale, parsed.hash);
+      return;
+    }
+
+    if (parsed.pathname === '/doctor.html' && slug) {
+      anchor.href = doctorUrlForLocale(slug, locale, parsed.hash);
       return;
     }
 
