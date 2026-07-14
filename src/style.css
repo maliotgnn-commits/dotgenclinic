@@ -239,7 +239,8 @@ to {
   border: 1px solid #c9a84c26;
   border-radius: 50%;
   animation: 4s ease-in-out infinite ringExpand;
-  position: absolute
+  position: absolute;
+  will-change: transform, opacity
 }
 
 .ring-1 {
@@ -263,19 +264,16 @@ to {
 @keyframes ringExpand {
   0% {
     opacity: .6;
-    border-color: #c9a84c40;
     transform: scale(.8)
   }
 
 50% {
     opacity: .15;
-    border-color: #c9a84c14;
     transform: scale(1.1)
   }
 
 to {
     opacity: .6;
-    border-color: #c9a84c40;
     transform: scale(.8)
   }
 
@@ -317,7 +315,6 @@ to {
   background: linear-gradient(to bottom,  transparent,  var(--gold));
   width: 1px;
   height: 60px;
-  animation: 2s ease-in-out infinite scrollLineAnim;
   position: relative;
   overflow: hidden
 }
@@ -329,17 +326,19 @@ to {
   height: 100%;
   animation: 2s ease-in-out infinite scrollLineDrop;
   position: absolute;
-  top: -100%;
-  left: 0
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  will-change: transform
 }
 
 @keyframes scrollLineDrop {
   0% {
-    top: -100%
+    transform: translateY(-100%)
   }
 
 to {
-    top: 100%
+    transform: translateY(100%)
   }
 
 }
@@ -1833,7 +1832,7 @@ to {
   color: var(--bg-primary)
 }
 
-.team-card h4 {
+.team-card h3 {
   font-family: var(--font-heading);
   margin-bottom: 4px;
   font-size: 20px;
@@ -1941,7 +1940,7 @@ to {
   font-size: 18px
 }
 
-.why-item h4 {
+.why-item h3 {
   margin-bottom: 4px;
   font-size: 17px;
   font-weight: 600
@@ -2143,7 +2142,7 @@ to {
   display: flex
 }
 
-.contact-item h4 {
+.contact-item h3 {
   margin-bottom: 2px;
   font-size: 14px;
   font-weight: 600
@@ -2294,7 +2293,7 @@ html[dir=rtl] .form-group select {
   background: #c9a84c1a
 }
 
-.footer-links h4 {
+.footer-links h3 {
   font-family: var(--font-heading);
   color: var(--text-primary);
   margin-bottom: 20px;
@@ -2371,12 +2370,21 @@ html[dir=rtl] .form-group select {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  animation: 2s ease-in-out infinite whatsappPulse;
   display: flex;
   position: fixed;
   bottom: 30px;
   right: 30px;
   box-shadow: 0 4px 20px #25d36666
+}
+
+.whatsapp-float:before {
+  content: "";
+  pointer-events: none;
+  border-radius: 50%;
+  animation: 2s ease-in-out infinite whatsappPulse;
+  position: absolute;
+  inset: 0;
+  will-change: transform, opacity
 }
 
 .whatsapp-float:hover {
@@ -2386,11 +2394,15 @@ html[dir=rtl] .form-group select {
 
 @keyframes whatsappPulse {
   0%, to {
-    box-shadow: 0 4px 20px #25d36666
+    opacity: 0;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 #25d36600
   }
 
 50% {
-    box-shadow: 0 4px 30px #25d36699, 0 0 0 10px #25d3661a
+    opacity: 1;
+    transform: scale(1.35);
+    box-shadow: 0 0 0 10px #25d3661a
   }
 
 }
@@ -2895,7 +2907,8 @@ body.custom-cursor-enabled, body.custom-cursor-enabled a, body.custom-cursor-ena
   .intro-tagline,
   .partners-marquee-wrap,
   .hero-scroll-hint .wheel,
-  .whatsapp-float {
+  .whatsapp-float,
+  .whatsapp-float:before {
     animation: none !important
   }
 
