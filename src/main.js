@@ -211,11 +211,46 @@ function initHeader() {
   finalizeHomeHeader();
 }
 
+function getHeroVideoLoopThreshold(video) {
+  const duration = video.duration;
+  if (!Number.isFinite(duration) || duration <= 0) return null;
+  return Math.max(0.05, duration - 0.05);
+}
+
+function restartHeroVideoLoop(video) {
+  if (!video || prefersReducedMotion) return;
+  const slide = video.closest('.hero-slide');
+  if (!slide?.classList.contains('active')) {
+    video.pause();
+    return;
+  }
+  try {
+    video.currentTime = 0;
+  } catch {
+    /* seek may fail while metadata is loading */
+  }
+  safePlayVideo(video);
+}
+
 function setupHeroVideoLoop() {
   document.querySelectorAll('.hero-bg-video').forEach((video) => {
-    const loopEnd = Math.max(1, Number(video.dataset.loopEnd) || 30);
+    if (video.dataset.heroLoopBound === 'true') return;
+    video.dataset.heroLoopBound = 'true';
+
     video.addEventListener('timeupdate', () => {
-      if (video.currentTime >= loopEnd) video.currentTime = 0;
+      const threshold = getHeroVideoLoopThreshold(video);
+      if (threshold === null) return;
+      if (video.currentTime >= threshold) {
+        try {
+          video.currentTime = 0;
+        } catch {
+          /* ignore seek errors during loop wrap */
+        }
+      }
+    });
+
+    video.addEventListener('ended', () => {
+      restartHeroVideoLoop(video);
     });
   });
 }
@@ -615,15 +650,27 @@ function initHero() {
   setupHeroVideoLoop();
 
   const heroVideo = document.querySelector('.hero-bg-video');
-  if (heroVideo && !heroVideo.querySelector('source')) {
-    const source = document.createElement('source');
-    source.src = heroVideoUrl;
-    source.type = 'video/mp4';
-    heroVideo.appendChild(source);
-    heroVideo.load();
-  }
-
   if (heroVideo) {
+    heroVideo.muted = true;
+    heroVideo.setAttribute('muted', '');
+    heroVideo.playsInline = true;
+    heroVideo.setAttribute('playsinline', '');
+    heroVideo.setAttribute('webkit-playsinline', '');
+
+    if (!heroVideo.querySelector('source')) {
+      const source = document.createElement('source');
+      source.src = heroVideoUrl;
+      source.type = 'video/mp4';
+      heroVideo.appendChild(source);
+      heroVideo.load();
+    }
+
+    const retryHeroAutoplay = () => {
+      if (prefersReducedMotion) return;
+      syncHeroVideoPlayback();
+    };
+    heroVideo.addEventListener('canplay', retryHeroAutoplay, { once: true });
+
     syncHeroVideoPoster(heroVideo);
     const onHeroMediaReady = () => {
       syncHeroVideoPoster(heroVideo);
