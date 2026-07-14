@@ -362,7 +362,15 @@
     <section id="hero">
       <div class="hero-slider">
         <div class="hero-slide hero-slide-video active">
-          <video class="hero-bg-video" muted autoplay playsinline webkit-playsinline preload="none" poster="/images/hero-world-map.webp" aria-hidden="true"></video>
+          <video class="hero-bg-video" muted autoplay playsinline webkit-playsinline preload="none" poster="/images/hero-world-map.webp" aria-hidden="true" data-hero-poster-desktop="/images/hero-world-map.webp" data-hero-poster-mobile="/images/mobil.webp"></video>
+          <script>
+            (() => {
+              const video = document.currentScript?.previousElementSibling;
+              if (!video?.classList.contains('hero-bg-video')) return;
+              const mobile = window.matchMedia('(max-width: 768px)').matches;
+              video.setAttribute('poster', mobile ? video.dataset.heroPosterMobile : video.dataset.heroPosterDesktop);
+            })();
+          </script>
           <div class="hero-overlay"></div>
           <button type="button" class="hero-video-play" aria-label="Videoyu oynat" hidden>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
@@ -407,7 +415,7 @@
         <button class="indicator" data-slide="1" aria-label="İkinci slayt"></button>
         <button class="indicator" data-slide="2" aria-label="Üçüncü slayt"></button>
       </div>
-      <div class="hero-scroll-hint">
+      <div class="hero-scroll-hint" aria-hidden="true">
         <div class="mouse"><div class="wheel"></div></div>
         <span>Aşağı Kaydır</span>
       </div>
@@ -428,15 +436,15 @@
             <img class="partner-logo partner-logo--memorial" src="/images/site/partners/memorial.webp" alt="Memorial" width="140" height="48" loading="lazy" decoding="async" />
           </div>
           <div class="partners-marquee-track" aria-hidden="true">
-            <img class="partner-logo" src="/images/site/partners/acibadem-health-point.webp" alt="" width="160" height="48" loading="lazy" decoding="async" />
-            <img class="partner-logo" src="/images/site/partners/whatclinic.webp" alt="" width="140" height="48" loading="lazy" decoding="async" />
-            <img class="partner-logo" src="/images/site/partners/denipol-hastanesi.webp" alt="" width="160" height="48" loading="lazy" decoding="async" />
-            <img class="partner-logo" src="/images/site/partners/medical-departures.webp" alt="" width="160" height="48" loading="lazy" decoding="async" />
-            <img class="partner-logo partner-logo--medicana" src="/images/site/partners/medicana.webp" alt="" width="240" height="56" loading="lazy" decoding="async" />
-            <img class="partner-logo" src="/images/site/partners/medigo.webp" alt="" width="120" height="48" loading="lazy" decoding="async" />
-            <img class="partner-logo" src="/images/site/partners/flymedi.webp" alt="" width="130" height="48" loading="lazy" decoding="async" />
-            <img class="partner-logo" src="/images/site/partners/liv-hospital.webp" alt="" width="120" height="48" loading="lazy" decoding="async" />
-            <img class="partner-logo partner-logo--memorial" src="/images/site/partners/memorial.webp" alt="" width="140" height="48" loading="lazy" decoding="async" />
+            <img class="partner-logo" src="/images/site/partners/acibadem-health-point.webp" alt="" width="160" height="48" loading="lazy" decoding="async" aria-hidden="true" />
+            <img class="partner-logo" src="/images/site/partners/whatclinic.webp" alt="" width="140" height="48" loading="lazy" decoding="async" aria-hidden="true" />
+            <img class="partner-logo" src="/images/site/partners/denipol-hastanesi.webp" alt="" width="160" height="48" loading="lazy" decoding="async" aria-hidden="true" />
+            <img class="partner-logo" src="/images/site/partners/medical-departures.webp" alt="" width="160" height="48" loading="lazy" decoding="async" aria-hidden="true" />
+            <img class="partner-logo partner-logo--medicana" src="/images/site/partners/medicana.webp" alt="" width="240" height="56" loading="lazy" decoding="async" aria-hidden="true" />
+            <img class="partner-logo" src="/images/site/partners/medigo.webp" alt="" width="120" height="48" loading="lazy" decoding="async" aria-hidden="true" />
+            <img class="partner-logo" src="/images/site/partners/flymedi.webp" alt="" width="130" height="48" loading="lazy" decoding="async" aria-hidden="true" />
+            <img class="partner-logo" src="/images/site/partners/liv-hospital.webp" alt="" width="120" height="48" loading="lazy" decoding="async" aria-hidden="true" />
+            <img class="partner-logo partner-logo--memorial" src="/images/site/partners/memorial.webp" alt="" width="140" height="48" loading="lazy" decoding="async" aria-hidden="true" />
           </div>
         </div>
       </div>
