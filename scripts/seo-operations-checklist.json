@@ -1,0 +1,30 @@
+{
+  "weekly": [
+    "Google Search Console index coverage kontrolü",
+    "Sitemap URL sayısı ve duplicate kontrolü (npm run build + verify-sitemap)",
+    "404 ve crawl hata kontrolü (GSC Pages report)",
+    "Form gönderim testi (randevu formu)",
+    "Teknik SEO doğrulama (canonical, hreflang, robots)"
+  ],
+  "monthly": [
+    "GSC query analizi (trafik fırsatları)",
+    "CTR analizi (düşük CTR sayfalar)",
+    "Average position trend analizi",
+    "İçerik güncelleme planı (hizmet FAQ + cluster)",
+    "GA4 conversion analizi (whatsapp_click, appointment_cta, form_submit, service_page_view, language_switch)"
+  ],
+  "quarterly": [
+    "Landing page performans analizi",
+    "Rakip keyword gap analizi",
+    "Conversion test planı",
+    "Core Web Vitals field data review",
+    "E-E-A-T profil verisi güncelleme kontrolü"
+  ],
+  "searchConsoleSetup": [
+    "https://search.google.com/search-console",
+    "Property: https://www.drotgenclinic.com",
+    "Sitemap: https://www.drotgenclinic.com/sitemap.xml",
+    "Verification file: /google56fc3426b6bdbaf7.html (mevcut)",
+    "GA4 property bağlantısı"
+  ]
+}

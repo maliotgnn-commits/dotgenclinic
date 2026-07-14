@@ -14,6 +14,7 @@ function expect(pathname, search, expected) {
 expect('/en/', '', '/index.html');
 expect('/en', '', '/index.html');
 expect('/en/service.html', '?slug=botox', '/service.html?slug=botox');
+expect('/tr/doctor.html', '?slug=mubin-hosnuter', '/doctor.html?slug=mubin-hosnuter');
 expect('/de/privacy.html', '', '/privacy.html');
 expect('/ar/service.html', '?slug=botox', '/service.html?slug=botox');
 expect('/ru/privacy.html', '', '/privacy.html');
