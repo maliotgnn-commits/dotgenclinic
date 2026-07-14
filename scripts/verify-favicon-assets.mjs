@@ -29,7 +29,7 @@ const FORBIDDEN_ICON_PATTERNS = [
   /rel=["']icon["'][^>]*href=["']\/images\/logo-transparent\.png["']/i,
 ];
 
-const LOGO_IMG_PATTERN = /src=["']\/images\/logo-transparent\.png["']/g;
+const LOGO_IMG_PATTERN = /src=["']\/images\/logo-transparent(?:-\d+)?\.webp["']/g;
 const SCHEMA_LOGO_PATTERN = /"logo"\s*:\s*"https:\/\/www\.drotgenclinic\.com\/images\/logo-transparent\.png"/;
 
 function fail(message) {
@@ -136,8 +136,8 @@ function verifyHtmlFile(relativePath) {
 function verifyTemplateLogoAndSchema() {
   const indexHtml = readFileSync(resolve(ROOT, 'index.html'), 'utf8');
   const logoMatches = indexHtml.match(LOGO_IMG_PATTERN) || [];
-  if (logoMatches.length < 1) {
-    fail('index.html logo img references were removed or changed unexpectedly');
+  if (logoMatches.length < 3) {
+    fail(`index.html logo img references were removed or changed unexpectedly (found ${logoMatches.length}, expected at least 3)`);
   }
 
   const distTrIndex = resolve(DIST, 'tr/index.html');
