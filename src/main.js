@@ -868,6 +868,12 @@ function initAppointmentForm() {
 
     if (!form.checkValidity()) {
       form.reportValidity();
+      pushEvent('form_submit', {
+        page_locale: locale,
+        form_id: 'appointment-form',
+        service_category: sanitizeField(document.getElementById('form-service')?.value, 32) || 'not_applicable',
+        status: 'validation_error',
+      });
       return;
     }
 
@@ -879,6 +885,12 @@ function initAppointmentForm() {
 
     const lastSubmit = Number(localStorage.getItem(FORM_RATE_LIMIT_KEY) || 0);
     if (Date.now() - lastSubmit < FORM_RATE_LIMIT_MS) {
+      pushEvent('form_submit', {
+        page_locale: locale,
+        form_id: 'appointment-form',
+        service_category: sanitizeField(document.getElementById('form-service')?.value, 32) || 'not_applicable',
+        status: 'rate_limited',
+      });
       setFormStatus(translate(uiDictionary, 'Hata Oluştu'));
       setButtonVisual(translate(uiDictionary, 'Hata Oluştu'), 'is-error');
       window.setTimeout(resetFormFeedback, 3000);
@@ -899,6 +911,12 @@ function initAppointmentForm() {
 
     if (!name || !phone) {
       form.reportValidity();
+      pushEvent('form_submit', {
+        page_locale: locale,
+        form_id: 'appointment-form',
+        service_category: serviceCode || 'not_applicable',
+        status: 'validation_error',
+      });
       resetFormFeedback();
       return;
     }

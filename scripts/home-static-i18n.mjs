@@ -11,7 +11,9 @@ import {
   stripInternationalHealthInsuranceNavLink,
 } from '../src/tr-international-health-insurance-nav.js';
 import { injectArgeNavForLocale } from '../src/tr-arge-nav.js';
-import { applyRuCompactHeaderNavHtml } from '../src/i18n.js';
+import { applyRuCompactHeaderNavHtml, serviceUrlForLocale } from '../src/i18n.js';
+import { doctorUrlForLocale } from '../src/doctor-routes.js';
+import { NAV_LINK_MAP } from '../src/subpages-nav-links.js';
 import { getEyeHealthContentSync } from './eye-health-content-node.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -153,10 +155,48 @@ function localeIsSourceOnly(dictionary) {
   return !dictionary?.text || Object.keys(dictionary.text).length === 0;
 }
 
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+/** Bake real service/doctor URLs into prerendered home HTML for crawlers (before label translation). */
+export function applyStaticHomeNavLinks(html, locale) {
+  let result = html;
+
+  result = result.replace(
+    /<a\b([^>]*\bdata-service-slug="([^"]+)"[^>]*)>/gi,
+    (match, attrs, slug) => {
+      const cleaned = attrs.replace(/\bhref="[^"]*"/i, '').trim();
+      return `<a ${cleaned} href="${serviceUrlForLocale(slug, locale)}">`;
+    },
+  );
+
+  result = result.replace(
+    /<a\b([^>]*\bdata-doctor-slug="([^"]+)"[^>]*)>/gi,
+    (match, attrs, slug) => {
+      const cleaned = attrs.replace(/\bhref="[^"]*"/i, '').trim();
+      return `<a ${cleaned} href="${doctorUrlForLocale(slug, locale)}">`;
+    },
+  );
+
+  for (const [label, slug] of Object.entries(NAV_LINK_MAP)) {
+    const pattern = new RegExp(
+      `<a\\s+href="#"([^>]*)>\\s*${escapeRegExp(label)}\\s*</a>`,
+      'g',
+    );
+    result = result.replace(
+      pattern,
+      `<a href="${serviceUrlForLocale(slug, locale)}"$1>${label}</a>`,
+    );
+  }
+
+  return result;
+}
+
 export function localizeHomeBodyHtml(html, locale) {
   const dictionary = loadUiDictionary(locale);
   const privacyContent = loadPrivacyContent(locale);
-  let result = html;
+  let result = applyStaticHomeNavLinks(html, locale);
 
   if (locale !== DEFAULT_LOCALE) {
     result = stripFinanceNavLink(result);

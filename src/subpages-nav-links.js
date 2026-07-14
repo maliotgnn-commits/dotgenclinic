@@ -1,5 +1,10 @@
 // Lightweight nav label -> slug map for homepage link wiring.
 // Full service page content lives in subpages-data.js.
+//
+// Placeholder audit (2026-07-14): every entry below maps to a verified page slug in
+// subpages-data.js. Parent menu toggles (Kurumsal, Medikal Estetik, …) stay href="#"
+// as dropdown triggers. Footer/service/popular/team links use data-*-slug attributes
+// and are wired at runtime (main.js) and build time (home-static-i18n.mjs).
 
 export const NAV_LINK_MAP = {
   "Vizyon ve Misyon": "vision-mission",
@@ -53,7 +58,9 @@ export const NAV_LINK_MAP = {
 };
 
 export function applySubcategoryLinks(root = document, urlBuilder = (slug) => `/service.html?slug=${encodeURIComponent(slug)}`) {
-  const links = root.querySelectorAll('.mega-dropdown a, .service-link[data-service-slug], .popular-item[data-service-slug]');
+  const links = root.querySelectorAll(
+    '.mega-dropdown a, .service-link[data-service-slug], .popular-item[data-service-slug], .footer-links a[data-service-slug]',
+  );
 
   links.forEach((link) => {
     const explicitSlug = link.getAttribute('data-service-slug');
