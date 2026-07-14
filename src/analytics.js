@@ -46,9 +46,11 @@ export function initAnalyticsTracking(getLocale) {
     (event) => {
       const whatsappLink = event.target.closest('a[href*="wa.me"]');
       if (whatsappLink) {
+        const params = new URL(window.location.href).searchParams;
         pushEvent('whatsapp_click', {
           page_locale: getLocale(),
           link_location: resolveWhatsAppLocation(whatsappLink),
+          service_slug: params.get('slug') || undefined,
         });
         return;
       }

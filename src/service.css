@@ -80,6 +80,12 @@ body {
   line-height: 1.7;
 }
 
+.sv-hero-whatsapp {
+  display: inline-flex;
+  margin-top: 18px;
+  text-decoration: none;
+}
+
 .sv-section {
   padding: 46px 0;
 }
