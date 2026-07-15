@@ -2456,6 +2456,32 @@ html[dir=rtl] .form-group select {
   color: var(--gold)
 }
 
+.floating-social-stack {
+  --floating-social-bottom-offset: 30px;
+  --floating-social-inline-end: 30px;
+  --floating-social-gap: 16px;
+  z-index: 999;
+  pointer-events: none;
+  flex-direction: column;
+  gap: var(--floating-social-gap);
+  display: flex;
+  position: fixed;
+  bottom: calc(var(--floating-social-bottom-offset) + env(safe-area-inset-bottom, 0px));
+  inset-inline-end: var(--floating-social-inline-end);
+  right: var(--floating-social-inline-end);
+  left: auto;
+}
+
+.floating-social-stack > .instagram-float,
+.floating-social-stack > .whatsapp-float {
+  pointer-events: auto;
+  position: relative;
+  bottom: auto;
+  right: auto;
+  left: auto;
+  inset-inline-end: auto;
+}
+
 .instagram-float {
   z-index: 999;
   width: 60px;
@@ -2466,10 +2492,6 @@ html[dir=rtl] .form-group select {
   justify-content: center;
   align-items: center;
   display: flex;
-  position: fixed;
-  bottom: 106px;
-  right: 30px;
-  left: auto;
   box-shadow: 0 4px 20px #dc274366
 }
 
@@ -2488,9 +2510,6 @@ html[dir=rtl] .form-group select {
   justify-content: center;
   align-items: center;
   display: flex;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
   box-shadow: 0 4px 20px #25d36666
 }
 
@@ -2876,19 +2895,21 @@ html[dir=rtl] .form-group select {
     font-size: 11px
   }
 
-.instagram-float {
-    bottom: 88px;
-    width: 52px;
-    height: 52px;
-    right: 20px;
-    left: auto
+  .floating-social-stack {
+    --floating-social-bottom-offset: 20px;
+    --floating-social-inline-end: 20px;
   }
 
-.whatsapp-float {
-    bottom: 20px;
+  .floating-social-stack > .instagram-float,
+  .floating-social-stack > .whatsapp-float {
     width: 52px;
     height: 52px;
-    inset-inline-end: 20px
+  }
+
+  .floating-social-stack > .instagram-float svg,
+  .floating-social-stack > .whatsapp-float svg {
+    width: 24px;
+    height: 24px;
   }
 
 }
