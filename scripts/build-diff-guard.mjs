@@ -1,6 +1,6 @@
 import { spawnSync } from 'node:child_process';
 
-const ALWAYS_FORBIDDEN = ['package.json', 'package-lock.json'];
+const ALWAYS_FORBIDDEN = ['package-lock.json'];
 
 const ADMIN_VITE_PATTERNS = [
   /admin\/seo/,
@@ -67,6 +67,36 @@ export function isAdminOnlyViteConfigDiff(diffText) {
   return meaningfulLines.every((line) => ADMIN_VITE_PATTERNS.some((pattern) => pattern.test(line)));
 }
 
+const PACKAGE_JSON_ALLOWED_PATTERNS = [
+  /check:i18n/,
+  /verify:i18n:all/,
+];
+
+export function isAllowedPackageJsonDiff(diffText) {
+  if (!diffText.trim()) {
+    return true;
+  }
+
+  const changedLines = diffText
+    .split(/\r?\n/)
+    .filter((line) => (line.startsWith('+') || line.startsWith('-')) && !line.startsWith('+++') && !line.startsWith('---'));
+
+  if (changedLines.length === 0) {
+    return true;
+  }
+
+  const meaningfulLines = changedLines.filter((line) => !isInsignificantDiffLine(line));
+
+  if (meaningfulLines.length === 0) {
+    return true;
+  }
+
+  const scriptsOnly = meaningfulLines.every((line) => /"scripts"/.test(line) || PACKAGE_JSON_ALLOWED_PATTERNS.some((pattern) => pattern.test(line)));
+  const noDependencyChanges = meaningfulLines.every((line) => !/"devDependencies"|"dependencies"|"peerDependencies"/.test(line));
+
+  return scriptsOnly && noDependencyChanges && meaningfulLines.some((line) => PACKAGE_JSON_ALLOWED_PATTERNS.some((pattern) => pattern.test(line)));
+}
+
 /**
  * Finance/legal preview guards: block risky build file changes on feature branches.
  * Admin dashboard routes in vite.config.js are allowed (admin-only diff).
@@ -77,6 +107,13 @@ export function assertBuildFileDiffGuard(failures, root) {
   for (const relativePath of ALWAYS_FORBIDDEN) {
     if (changedFiles.includes(relativePath)) {
       failures.push(`Forbidden file changed from origin/main: ${relativePath}`);
+    }
+  }
+
+  if (changedFiles.includes('package.json')) {
+    const packageDiff = getFileDiffFromMain(root, 'package.json');
+    if (!isAllowedPackageJsonDiff(packageDiff)) {
+      failures.push('Forbidden file changed from origin/main: package.json');
     }
   }
 
