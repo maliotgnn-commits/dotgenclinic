@@ -180,7 +180,7 @@ export function applyStaticHomeNavLinks(html, locale) {
     /<a\b([^>]*\bdata-doctor-slug="([^"]+)"[^>]*)>/gi,
     (match, attrs, slug) => {
       const cleaned = attrs.replace(/\bhref="[^"]*"/i, '').trim();
-      return `<a ${cleaned} href="${doctorUrlForLocale(slug, locale)}">`;
+      return `<a ${cleaned} href="#">`;
     },
   );
 
