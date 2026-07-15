@@ -1095,6 +1095,88 @@ to {
   transform: translateY(-2px)
 }
 
+.premium-gold-cta,
+.sv-hero-actions .btn-gold,
+.sv-hero-actions .btn-outline,
+.sv-faq-cta-actions .btn-gold,
+.sv-faq-cta-actions .btn-outline,
+.sv-sticky-cta .btn-gold,
+.sv-sticky-cta .btn-outline,
+.dr-hero-actions .btn-gold,
+.dr-hero-actions .btn-outline,
+.hero-buttons .btn-gold,
+.appointment-section .btn.btn-gold,
+.eh-hero-panel .btn.btn-gold,
+.eh-closing .btn.btn-gold,
+a.btn.btn-gold[href*="#randevu"] {
+  background: var(--gold-gradient);
+  border: none;
+  border-radius: var(--radius-sm);
+  letter-spacing: .5px;
+  transition: var(--transition);
+  color: var(--bg-primary);
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: clamp(8px, 0.55vw + 4px, 10px) clamp(12px, 1vw + 6px, 22px);
+  font-size: clamp(12px, 0.3vw + 0.55rem, 14px);
+  line-height: 1.2;
+  white-space: normal;
+  text-align: center;
+}
+
+.premium-gold-cta:hover,
+.sv-hero-actions .btn-gold:hover,
+.sv-hero-actions .btn-outline:hover,
+.sv-faq-cta-actions .btn-gold:hover,
+.sv-faq-cta-actions .btn-outline:hover,
+.sv-sticky-cta .btn-gold:hover,
+.sv-sticky-cta .btn-outline:hover,
+.dr-hero-actions .btn-gold:hover,
+.dr-hero-actions .btn-outline:hover,
+.hero-buttons .btn-gold:hover,
+.appointment-section .btn.btn-gold:hover,
+.eh-hero-panel .btn.btn-gold:hover,
+.eh-closing .btn.btn-gold:hover,
+a.btn.btn-gold[href*="#randevu"]:hover {
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-1px);
+  color: var(--bg-primary);
+  background: var(--gold-gradient);
+  border: none;
+}
+
+.premium-gold-cta:focus-visible,
+.sv-hero-actions .btn-gold:focus-visible,
+.sv-hero-actions .btn-outline:focus-visible,
+.sv-faq-cta-actions .btn-gold:focus-visible,
+.sv-faq-cta-actions .btn-outline:focus-visible,
+.sv-sticky-cta .btn-gold:focus-visible,
+.sv-sticky-cta .btn-outline:focus-visible,
+.dr-hero-actions .btn-gold:focus-visible,
+.dr-hero-actions .btn-outline:focus-visible,
+.hero-buttons .btn-gold:focus-visible,
+.appointment-section .btn.btn-gold:focus-visible,
+.eh-hero-panel .btn.btn-gold:focus-visible,
+.eh-closing .btn.btn-gold:focus-visible,
+a.btn.btn-gold[href*="#randevu"]:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .premium-gold-cta,
+  .premium-gold-cta:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
 .nav-actions {
   flex-shrink: 0;
   align-items: center;

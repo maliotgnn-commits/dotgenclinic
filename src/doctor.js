@@ -163,8 +163,8 @@ function renderDoctorPage(doctor) {
             <p class="dr-role">${escapeHtml(doctor.specialty)}</p>
             <p>${escapeHtml(t('Profil bilgileri klinik tarafından doğrulandıkça güncellenir.'))}</p>
             <div class="dr-hero-actions">
-              <a href="${buildWhatsAppUrl({ locale, pageTitle: doctor.name })}" class="btn-gold" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp ile Bilgi Al'))}</a>
-              <a href="${homeUrlFor(locale, '#randevu')}" class="btn-outline">${escapeHtml(t('Randevu Al'))}</a>
+              <a href="${buildWhatsAppUrl({ locale, pageTitle: doctor.name })}" class="btn-gold premium-gold-cta" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp ile Bilgi Al'))}</a>
+              <a href="${homeUrlFor(locale, '#randevu')}" class="btn-outline premium-gold-cta">${escapeHtml(t('Randevu Al'))}</a>
             </div>
             ${complete ? '' : `<div class="dr-notice">${escapeHtml(MISSING_DATA)} — ${escapeHtml(t('Profil tamamlanmadan indexlenmez.'))}</div>`}
           </div>

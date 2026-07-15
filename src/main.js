@@ -18,7 +18,6 @@ import {
   translate,
 } from './i18n.js';
 import { mountLanguageSwitcher } from './language-switcher.js';
-import { mountInstagramFloat } from './instagram-float.js';
 import { initSiteHeader } from './public-header.js';
 import { loadEyeHealthContent } from './eye-health-content.js';
 import { upgradeLocalizedEyeHealthNav } from './tr-eye-health-nav.js';
@@ -63,7 +62,6 @@ const pausedByVisibility = new Set();
 applySubcategoryLinks(document, (slug) => serviceUrlForLocale(slug, locale));
 localizeInternalLinks(locale);
 applyStaticTranslations(uiDictionary);
-mountInstagramFloat(uiDictionary);
 applyPrivacyUi(locale, privacyContent);
 applySeoLinks(locale);
 mountLanguageSwitcher(

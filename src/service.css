@@ -563,7 +563,7 @@ html[dir='rtl'] .sv-gallery-next svg {
   right: 0;
   bottom: 0;
   z-index: 120;
-  background: rgba(5, 15, 31, 0.96);
+  background: rgba(5, 15, 31, 0.30);
   border-top: 1px solid rgba(164, 198, 235, 0.25);
   padding: 10px 0 calc(10px + env(safe-area-inset-bottom));
   transform: translateY(110%);
