@@ -16,6 +16,7 @@ import { buildEcommerceRdPreviewPage } from './build-ecommerce-rd-preview-page.m
 import { prerenderDepartmentSeo } from './prerender-department-seo.mjs';
 
 const steps = [
+  ['node', ['scripts/verify-env-security.mjs']],
   ['node', ['scripts/verify-duplicate-faqs.mjs']],
   ['node', ['scripts/verify-favicon-assets.mjs']],
   ['node', ['scripts/verify-service-static-seo.mjs']],
