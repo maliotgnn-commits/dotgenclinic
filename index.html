@@ -362,7 +362,7 @@
     <section id="hero">
       <div class="hero-slider">
         <div class="hero-slide hero-slide-video active">
-          <video class="hero-bg-video" muted autoplay playsinline webkit-playsinline preload="none" poster="/images/hero-world-map.webp" aria-hidden="true" data-hero-poster-desktop="/images/hero-world-map.webp" data-hero-poster-mobile="/images/mobil.webp"></video>
+          <video class="hero-bg-video" muted autoplay playsinline webkit-playsinline preload="auto" poster="/images/hero-world-map.webp" aria-hidden="true" data-hero-poster-desktop="/images/hero-world-map.webp" data-hero-poster-mobile="/images/mobil.webp"></video>
           <script>
             (() => {
               const video = document.currentScript?.previousElementSibling;
@@ -425,15 +425,15 @@
       <div class="partners-marquee-inner">
         <div class="partners-marquee-wrap">
           <div class="partners-marquee-track">
-            <img class="partner-logo" src="/images/site/partners/acibadem-health-point.webp" alt="Acıbadem Health Point" width="160" height="48" loading="lazy" decoding="async" />
-            <img class="partner-logo" src="/images/site/partners/whatclinic.webp" alt="WhatClinic" width="140" height="48" loading="lazy" decoding="async" />
-            <img class="partner-logo" src="/images/site/partners/denipol-hastanesi.webp" alt="Denipol Hastanesi" width="160" height="48" loading="lazy" decoding="async" />
-            <img class="partner-logo" src="/images/site/partners/medical-departures.webp" alt="Medical Departures" width="160" height="48" loading="lazy" decoding="async" />
-            <img class="partner-logo partner-logo--medicana" src="/images/site/partners/medicana.webp" alt="Medicana Health Group" width="240" height="56" loading="lazy" decoding="async" />
-            <img class="partner-logo" src="/images/site/partners/medigo.webp" alt="Medigo" width="120" height="48" loading="lazy" decoding="async" />
-            <img class="partner-logo" src="/images/site/partners/flymedi.webp" alt="Flymedi" width="130" height="48" loading="lazy" decoding="async" />
-            <img class="partner-logo" src="/images/site/partners/liv-hospital.webp" alt="Liv Hospital" width="120" height="48" loading="lazy" decoding="async" />
-            <img class="partner-logo partner-logo--memorial" src="/images/site/partners/memorial.webp" alt="Memorial" width="140" height="48" loading="lazy" decoding="async" />
+            <img class="partner-logo" src="/images/site/partners/acibadem-health-point.webp" alt="Acıbadem Health Point" width="160" height="48" loading="eager" decoding="async" fetchpriority="low" />
+            <img class="partner-logo" src="/images/site/partners/whatclinic.webp" alt="WhatClinic" width="140" height="48" loading="eager" decoding="async" fetchpriority="low" />
+            <img class="partner-logo" src="/images/site/partners/denipol-hastanesi.webp" alt="Denipol Hastanesi" width="160" height="48" loading="eager" decoding="async" fetchpriority="low" />
+            <img class="partner-logo" src="/images/site/partners/medical-departures.webp" alt="Medical Departures" width="160" height="48" loading="eager" decoding="async" fetchpriority="low" />
+            <img class="partner-logo partner-logo--medicana" src="/images/site/partners/medicana.webp" alt="Medicana Health Group" width="240" height="56" loading="eager" decoding="async" fetchpriority="low" />
+            <img class="partner-logo" src="/images/site/partners/medigo.webp" alt="Medigo" width="120" height="48" loading="eager" decoding="async" fetchpriority="low" />
+            <img class="partner-logo" src="/images/site/partners/flymedi.webp" alt="Flymedi" width="130" height="48" loading="eager" decoding="async" fetchpriority="low" />
+            <img class="partner-logo" src="/images/site/partners/liv-hospital.webp" alt="Liv Hospital" width="120" height="48" loading="eager" decoding="async" fetchpriority="low" />
+            <img class="partner-logo partner-logo--memorial" src="/images/site/partners/memorial.webp" alt="Memorial" width="140" height="48" loading="eager" decoding="async" fetchpriority="low" />
           </div>
           <div class="partners-marquee-track" aria-hidden="true">
             <img class="partner-logo" src="/images/site/partners/acibadem-health-point.webp" alt="" width="160" height="48" loading="lazy" decoding="async" aria-hidden="true" />

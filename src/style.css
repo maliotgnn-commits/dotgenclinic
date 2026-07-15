@@ -1629,8 +1629,7 @@ to {
 }
 
 .partners-marquee-section .partners-marquee-inner {
-  opacity: 0;
-  transition: opacity .25s ease
+  opacity: 1
 }
 
 .partners-marquee-section.is-ready .partners-marquee-inner {

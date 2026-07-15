@@ -32,10 +32,76 @@ import {
 import { heroPosterSources } from './responsive-image.js';
 
 const locale = getCurrentLocale('home');
-const uiDictionary = await loadUiDictionary(locale);
-const privacyContent = await loadPrivacyContent(locale);
 const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 let prefersReducedMotion = prefersReducedMotionQuery.matches;
+let heroVideoSourceAttached = false;
+
+function attachHeroVideoSource(video) {
+  if (!video || heroVideoSourceAttached || video.querySelector('source')) return;
+  heroVideoSourceAttached = true;
+
+  const source = document.createElement('source');
+  source.src = heroVideoUrl;
+  source.type = 'video/mp4';
+  video.appendChild(source);
+  video.setAttribute('preload', 'auto');
+  video.load();
+
+  const retryHeroAutoplay = () => {
+    if (prefersReducedMotion || !introComplete) return;
+    syncHeroVideoPlayback();
+  };
+  video.addEventListener('canplay', retryHeroAutoplay, { once: true });
+}
+
+function setupHeroVideoPlaybackHandlers(video) {
+  if (!video || video.dataset.heroPlaybackBound === 'true') return;
+  video.dataset.heroPlaybackBound = 'true';
+
+  video.addEventListener('playing', () => {
+    if (video.currentTime > 0 || video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+      clearHeroVideoFallback(video);
+    }
+    syncHeroPlayButton();
+  });
+
+  ['pause', 'ended', 'waiting'].forEach((eventName) => {
+    video.addEventListener(eventName, syncHeroPlayButton);
+  });
+
+  video.addEventListener('stalled', () => {
+    if (!isVideoActivelyPlaying(video)) {
+      applyHeroVideoFallback(video);
+      syncHeroPlayButton();
+    }
+  });
+
+  video.addEventListener('error', () => {
+    applyHeroVideoFallback(video);
+    syncHeroPlayButton();
+  });
+}
+
+function bootstrapHeroVideoEarly() {
+  if (prefersReducedMotion) return;
+  const video = document.querySelector('.hero-bg-video');
+  if (!video) return;
+
+  video.muted = true;
+  video.defaultMuted = true;
+  video.playsInline = true;
+  video.setAttribute('muted', '');
+  video.setAttribute('playsinline', '');
+  video.setAttribute('webkit-playsinline', '');
+
+  setupHeroVideoPlaybackHandlers(video);
+  attachHeroVideoSource(video);
+}
+
+bootstrapHeroVideoEarly();
+
+const uiDictionary = await loadUiDictionary(locale);
+const privacyContent = await loadPrivacyContent(locale);
 
 const introOverlay = document.getElementById('intro-overlay');
 const introSection = document.getElementById('intro-section');
@@ -265,51 +331,10 @@ function initHeader() {
   finalizeHomeHeader();
 }
 
-function attachHeroVideoSource(video) {
-  if (!video || heroVideoSourceAttached || video.querySelector('source')) return;
-  heroVideoSourceAttached = true;
-
-  const source = document.createElement('source');
-  source.src = heroVideoUrl;
-  source.type = 'video/mp4';
-  video.appendChild(source);
-  video.load();
-
-  const retryHeroAutoplay = () => {
-    if (prefersReducedMotion) return;
-    syncHeroVideoPlayback();
-  };
-  video.addEventListener('canplay', retryHeroAutoplay, { once: true });
-}
-
 function scheduleHeroVideoSourceLoad() {
   const video = document.querySelector('.hero-bg-video');
   if (!video || heroVideoSourceAttached || prefersReducedMotion) return;
-
-  const slide = video.closest('.hero-slide-video') || video.closest('.hero-slide');
-  const attach = () => attachHeroVideoSource(video);
-
-  if (!slide || !('IntersectionObserver' in window)) {
-    if ('requestIdleCallback' in window) {
-      requestIdleCallback(attach, { timeout: 1200 });
-    } else {
-      requestAnimationFrame(() => requestAnimationFrame(attach));
-    }
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        attach();
-        observer.disconnect();
-      });
-    },
-    { root: null, threshold: 0.15, rootMargin: '80px 0px' },
-  );
-
-  observer.observe(slide);
+  attachHeroVideoSource(video);
 }
 
 function getHeroVideoLoopThreshold(video) {
@@ -360,7 +385,6 @@ const HERO_FALLBACK_POSTER_DESKTOP = heroPosterSources(false).webp;
 const HERO_FALLBACK_POSTER_MOBILE = heroPosterSources(true).webp;
 const heroMobileQuery = window.matchMedia('(max-width: 768px)');
 const introMobileQuery = window.matchMedia('(max-width: 768px)');
-let heroVideoSourceAttached = false;
 
 function getHeroFallbackPosterUrl() {
   return heroMobileQuery.matches
@@ -473,26 +497,7 @@ function initHeroPlayButton() {
     onPlayGesture(event);
   });
 
-  video.addEventListener('playing', () => {
-    clearHeroVideoFallback(video);
-    syncHeroPlayButton();
-  });
-
-  ['pause', 'ended', 'waiting'].forEach((eventName) => {
-    video.addEventListener(eventName, syncHeroPlayButton);
-  });
-
-  video.addEventListener('stalled', () => {
-    if (!isVideoActivelyPlaying(video)) {
-      applyHeroVideoFallback(video);
-      syncHeroPlayButton();
-    }
-  });
-
-  video.addEventListener('error', () => {
-    applyHeroVideoFallback(video);
-    syncHeroPlayButton();
-  });
+  setupHeroVideoPlaybackHandlers(video);
 }
 
 function applyFooterVideoFallback(video) {
@@ -559,7 +564,7 @@ function safePlayVideo(video) {
 }
 
 function isVideoActivelyPlaying(video) {
-  return !video.paused && !video.ended && video.readyState > 2;
+  return !video.paused && !video.ended && !video.error && video.readyState > 2;
 }
 
 function syncHeroVideoPlayback() {
@@ -569,7 +574,6 @@ function syncHeroVideoPlayback() {
       applyHeroVideoFallback(video);
       return;
     }
-    clearHeroVideoFallback(video);
     if (slide?.classList.contains('active')) {
       safePlayVideo(video);
     } else {
@@ -764,10 +768,8 @@ function initHero() {
     heroVideo.setAttribute('playsinline', '');
     heroVideo.setAttribute('webkit-playsinline', '');
 
-    if (!heroVideoSourceAttached && introComplete) {
+    if (!heroVideoSourceAttached) {
       scheduleHeroVideoSourceLoad();
-    } else if (introComplete && !heroVideo.querySelector('source')) {
-      attachHeroVideoSource(heroVideo);
     }
 
     syncHeroVideoPoster(heroVideo);
@@ -1130,8 +1132,8 @@ initVisibilityPause();
 initReducedMotionWatch();
 initFooterVideoLazyLoad();
 initWhatsAppLinks();
+initPartnersMarquee();
 deferNonCriticalHomeInit(() => {
   initCustomCursor();
-  initPartnersMarquee();
 });
 window.addEventListener('scroll', handleWindowScroll, { passive: true });

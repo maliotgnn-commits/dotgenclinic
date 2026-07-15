@@ -1,5 +1,5 @@
 function whenImageReady(image) {
-  if (image.complete) return Promise.resolve();
+  if (image.complete && image.naturalWidth > 0) return Promise.resolve();
   return new Promise((resolve) => {
     image.addEventListener('load', resolve, { once: true });
     image.addEventListener('error', resolve, { once: true });
@@ -12,7 +12,8 @@ export function initPartnersMarquee() {
   if (!section || !wrap) return;
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const logos = [...document.querySelectorAll('.partners-marquee-track .partner-logo')];
+  const firstTrack = wrap.querySelector('.partners-marquee-track');
+  const primaryLogos = firstTrack ? [...firstTrack.querySelectorAll('.partner-logo')] : [];
 
   const activateMarquee = () => {
     if (wrap.classList.contains('is-ready')) return;
@@ -25,5 +26,10 @@ export function initPartnersMarquee() {
     return;
   }
 
-  Promise.all(logos.map(whenImageReady)).then(activateMarquee);
+  if (!primaryLogos.length) {
+    activateMarquee();
+    return;
+  }
+
+  Promise.all(primaryLogos.map(whenImageReady)).then(activateMarquee);
 }
