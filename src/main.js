@@ -894,7 +894,10 @@ function initAppointmentForm() {
     if (stateClass) submitBtn.classList.add(stateClass);
   };
 
+  let isSubmitting = false;
+
   const resetFormFeedback = () => {
+    isSubmitting = false;
     setFormStatus('');
     setButtonVisual(originalLabel, null);
     submitBtn.disabled = false;
@@ -914,6 +917,8 @@ function initAppointmentForm() {
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
+
+    if (isSubmitting) return;
 
     if (!form.checkValidity()) {
       form.reportValidity();
@@ -948,6 +953,7 @@ function initAppointmentForm() {
       return;
     }
 
+    isSubmitting = true;
     submitBtn.disabled = true;
     submitBtn.style.opacity = '0.7';
     setButtonVisual(translate(uiDictionary, 'Gönderiliyor...'), 'is-loading');

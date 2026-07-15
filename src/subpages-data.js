@@ -3619,8 +3619,8 @@ const DATA = {
           "answer": "Uygunluk; uzman değerlendirmesi, tıbbi geçmiş analizi ve klinik inceleme sonrası belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Süre, yapılan işlemin kapsamına bağlıdır. Doktorunuz size özel iyileşme planını paylaşır."
+          "question": "Meme büyütme sonrası iyileşme süreci nasıl ilerler?",
+          "answer": "İlk haftalarda hafif ağrı ve ödem görülebilir. Çoğu hasta 7–14 gün içinde günlük rutinine döner; doktorunuz size özel bakım planını paylaşır."
         },
         {
           "question": "Nihai tedavi planı ne zaman onaylanır?",
@@ -4430,8 +4430,8 @@ const DATA = {
           "answer": "Uygunluk; uzman değerlendirmesi, tıbbi geçmiş analizi ve klinik inceleme sonrası belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Süre, yapılan işlemin kapsamına bağlıdır. Doktorunuz size özel iyileşme planını paylaşır."
+          "question": "Karın germe ameliyatı sonrası iyileşme aşamaları nelerdir?",
+          "answer": "İlk günlerde dinlenme ve destekli korse kullanımı önerilir. Çoğu hasta 2–3 hafta içinde hafif aktivitelere döner; doktorunuz aşamalı iyileşme planını paylaşır."
         },
         {
           "question": "Nihai tedavi planı ne zaman onaylanır?",
@@ -4568,8 +4568,8 @@ const DATA = {
           "answer": "Uygunluk; uzman değerlendirmesi, tıbbi geçmiş analizi ve klinik inceleme sonrası belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Süre, yapılan işlemin kapsamına bağlıdır. Doktorunuz size özel iyileşme planını paylaşır."
+          "question": "Liposuction sonrası iyileşme süreci nasıl ilerler?",
+          "answer": "Hafif morluk ve şişlik ilk günlerde görülebilir. Çoğu hasta birkaç gün içinde günlük hayatına döner; doktorunuz korse kullanımı ve takip planını paylaşır."
         },
         {
           "question": "Nihai tedavi planı ne zaman onaylanır?",

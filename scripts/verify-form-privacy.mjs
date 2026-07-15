@@ -22,6 +22,11 @@ assert(sourceHtml.includes('type="checkbox"'), 'Checkbox input missing');
 assert(sourceHtml.includes('required'), 'Checkbox required attribute missing');
 assert(sourceHtml.includes('data-privacy-link'), 'Privacy link in checkbox missing');
 assert(sourceHtml.includes('data-privacy-footer-link'), 'Footer privacy link missing');
+assert(sourceHtml.includes('id="form-phone"'), 'Missing phone input');
+assert(/id="form-phone"[^>]*inputmode="tel"/.test(sourceHtml), 'Phone input must use inputmode="tel"');
+
+const mainJs = readFileSync(resolve(ROOT, 'src/main.js'), 'utf8');
+assert(mainJs.includes('let isSubmitting = false'), 'Appointment form must guard against duplicate submissions');
 
 LOCALES.forEach((locale) => {
   const privacy = JSON.parse(readFileSync(resolve(ROOT, `src/i18n/privacy/${locale}.json`), 'utf8'));
