@@ -128,8 +128,8 @@ const DATA = {
           "answer": "Dr. Otgen Clinic’in vizyon ve misyonu; güvenli ve kaliteli hizmet bekleyen hastalara, bu standartları uygulayan profesyonel ekibe ve etik sağlık yaklaşımını önemseyen paydaşlara hitap eder. Aynı zamanda sağlık alanında farkındalık ve gelişimi desteklemeyi amaçlar."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Süre, seçilen tedavinin kapsamına göre değişir. Doktorunuz görüşme sırasında size net bir zaman planı ve bakım süreci sunar."
+          "question": "Vizyon ve misyon yaklaşımınız tedavi sürecine nasıl yansır?",
+          "answer": "Planlama, kalite ve hasta güvenliği önceliklerimiz tüm süreçlerde şeffaf biçimde uygulanır. Konsültasyon sonrası size özel bir yol haritası paylaşılır."
         },
         {
           "question": "Tedavi planı nasıl kesinleşir?",
@@ -226,8 +226,8 @@ const DATA = {
           "answer": "Uygunluk; uzman konsültasyonu, tıbbi geçmiş incelemesi ve objektif tedavi değerlendirmesinin ardından onaylanır."
         },
         {
-          "question": "İyileşme süreci genellikle ne kadar sürer?",
-          "answer": "İyileşme süreci, seçilen tedavinin kapsamına bağlıdır. Doktorunuz, konsültasyon sırasında size gerçekçi bir zaman çizelgesi ve bakım planı sunacaktır."
+          "question": "Değerleriniz hasta deneyiminde nasıl uygulanır?",
+          "answer": "Etik, şeffaflık ve hasta odaklılık ilkeleri planlama, uygulama ve takip aşamalarında standart olarak korunur."
         },
         {
           "question": "Nihai tedavi planı ne zaman kesinleşir?",
@@ -338,8 +338,8 @@ const DATA = {
           "answer": "Uygunluk durumu; uzman konsültasyonu, tıbbi geçmiş incelemesi ve objektif tedavi değerlendirmesi sonucunda netleşir."
         },
         {
-          "question": "İyileşme süreci genellikle ne kadar sürer?",
-          "answer": "İyileşme süreci, seçilen tedavinin kapsamına bağlıdır. Doktorunuz, konsültasyon sırasında size özel gerçekçi bir zaman çizelgesi ve bakım planı paylaşacaktır."
+          "question": "Kalite politikası süreçlerde nasıl uygulanır?",
+          "answer": "Kalite kontrol adımları tedavi öncesi, sırası ve sonrasında dokümantasyon ve takip protokolleriyle yürütülür."
         },
         {
           "question": "Nihai tedavi planı ne zaman kesinleşir?",
@@ -523,8 +523,8 @@ const DATA = {
           "answer": "Uygunluk durumu; uzman konsültasyonu, tıbbi geçmiş incelemesi ve objektif tedavi değerlendirmesinin ardından onaylanır."
         },
         {
-          "question": "İyileşme süreci genellikle ne kadar sürer?",
-          "answer": "İyileşme süreci, seçilen tedavinin kapsamına bağlıdır. Hekiminiz, konsültasyon sırasında size özel gerçekçi bir zaman çizelgesi ve bakım planını paylaşacaktır."
+          "question": "Doktor değerlendirme ve yönlendirme süreci nasıl işler?",
+          "answer": "Branş ve tedavi ihtiyacına göre uygun hekim eşleştirmesi yapılır; konsültasyon sonrası plan netleştirilir."
         },
         {
           "question": "Nihai tedavi planı ne zaman kesinleşir?",
@@ -627,8 +627,8 @@ const DATA = {
           "answer": "Uygunluk; uzman değerlendirmesi, tıbbi geçmiş ve tedavi analizine göre belirlenir."
         },
         {
-          "question": "İyileşme süresi ne kadar sürer?",
-          "answer": "Seçilen tedaviye göre değişir. Doktor, görüşme sırasında net bir zaman planı verir."
+          "question": "Sağlık turizmi sürecinde iyileşme planı nasıl oluşturulur?",
+          "answer": "Seçilen tedaviye göre değişir. Koordinasyon ekibi ve hekiminiz görüşme sırasında net bir zaman planı paylaşır."
         },
         {
           "question": "Nihai tedavi planı ne zaman kesinleşir?",
@@ -1592,8 +1592,8 @@ const DATA = {
           "answer": "Hayır. Bu uygulama saç ekiminin alternatifi değil, uygun görülen durumlarda saç ekimi sürecini desteklemek amacıyla kullanılan yardımcı bir yaklaşımdır."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "İlk iyileşme süreci genellikle 7 ila 14 gün arasında gerçekleşir. Nihai sonuçlar ise saç büyüme döngüsüne bağlı olarak zaman içerisinde değerlendirilir."
+          "question": "Kök hücre destekli saç ekimi sonrası iyileşme süreci nasıl ilerler?",
+          "answer": "İlk iyileşme genellikle 7–14 gün sürer. Nihai sonuçlar saç büyüme döngüsüne bağlı olarak aylar içinde değerlendirilir."
         },
         {
           "question": "Sonuçlar ne zaman görülmeye başlanır?",
@@ -1739,8 +1739,8 @@ const DATA = {
           "answer": "Uygunluk, uzman konsültasyonu, tıbbi geçmiş incelemesi ve objektif tedavi değerlendirmesi sonrasında belirlenir."
         },
         {
-          "question": "İyileşme süreci genellikle ne kadar sürer?",
-          "answer": "İyileşme süresi, seçilen tedavinin kapsamına bağlıdır. Doktorunuz, konsültasyon sırasında size gerçekçi bir zaman çizelgesi ve tedavi sonrası bakım planı sunar."
+          "question": "Tıraşsız saç ekimi sonrası iyileşme dönemi nasıl geçer?",
+          "answer": "İlk iyileşme dönemi genellikle 7–14 gün sürer. Doktorunuz bakım ve yıkama talimatlarını paylaşır."
         },
         {
           "question": "Nihai tedavi planı ne zaman kesinleşir?",
@@ -1972,8 +1972,8 @@ const DATA = {
           "answer": "Doğru planlama ve uygun açılandırma ile yerleştirilen greftler sayesinde doğal görünümlü sonuçlar elde edilmesi hedeflenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "İlk iyileşme genellikle 7 ila 14 gün içerisinde gerçekleşir. Nihai sonuçların değerlendirilmesi için birkaç aylık süreç gerekebilir."
+          "question": "Kaş ekimi sonrası iyileşme süreci nasıl ilerler?",
+          "answer": "İlk iyileşme genellikle 7–14 gün içinde gerçekleşir. Nihai sonuçların değerlendirilmesi için büyüme döngüsü beklenir."
         },
         {
           "question": "Ekilen kaşlar kalıcı mıdır?",
@@ -2296,8 +2296,8 @@ const DATA = {
           "answer": "Uygunluk, uzman hekim tarafından gerçekleştirilen konsültasyon, saç analizi ve tıbbi değerlendirme sonrasında belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Çoğu hasta günlük yaşamına kısa sürede dönebilir. Tedavi sonrası süreç kişisel faktörlere bağlı olarak değişiklik gösterebilir."
+          "question": "ACell PRP saç tedavisi sonrası ne kadar sürede normal rutine dönülür?",
+          "answer": "Çoğu hasta 1–3 gün içinde günlük yaşamına dönebilir. Hafif hassasiyet birkaç gün sürebilir."
         },
         {
           "question": "Sonuçlar ne zaman görülmeye başlanır?",
@@ -2934,8 +2934,8 @@ const DATA = {
           "answer": "Uygunluk; uzman değerlendirmesi, tıbbi geçmiş analizi ve tedavi planlaması sonrası belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Süre, uygulanan yönteme bağlıdır. Doktorunuz görüşme sırasında net bir plan sunar."
+          "question": "Diş beyazlatma sonrası hassasiyet ve bakım süreci nasıldır?",
+          "answer": "Hafif hassasiyet birkaç gün sürebilir. Doktorunuz görüşme sırasında bakım önerilerini paylaşır."
         },
         {
           "question": "Nihai tedavi planı ne zaman kesinleşir?",
@@ -3072,8 +3072,8 @@ const DATA = {
           "answer": "Uygunluk; uzman değerlendirmesi, tıbbi geçmiş analizi ve tedavi planlaması sonrası belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Süre, uygulanan tedaviye bağlıdır. Doktorunuz görüşme sırasında net bir plan sunar."
+          "question": "Hollywood gülüşü tedavisinde iyileşme aşamaları nelerdir?",
+          "answer": "Uygulanan protokole göre değişir. Çoğu hasta birkaç gün içinde günlük rutinine döner."
         },
         {
           "question": "Nihai tedavi planı ne zaman kesinleşir?",
@@ -3211,8 +3211,8 @@ const DATA = {
           "answer": "Uygunluk; uzman değerlendirmesi, tıbbi geçmiş analizi ve tedavi planlaması sonrası belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Süre, uygulanan tedaviye bağlıdır. Doktorunuz görüşme sırasında net bir zaman planı sunar."
+          "question": "Ortodonti tedavisinde takip ve uyum süreci nasıl ilerler?",
+          "answer": "Tedavi süresi kişisel plana bağlıdır. Düzenli kontrollerle ilerleme takip edilir."
         },
         {
           "question": "Nihai tedavi planı ne zaman kesinleşir?",
@@ -3337,8 +3337,8 @@ const DATA = {
           "answer": "Uygunluk; uzman değerlendirmesi, tıbbi geçmiş analizi ve tedavi planlaması sonrası belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Süre, uygulanan işleme göre değişir. Doktorunuz görüşme sırasında net bir plan sunar."
+          "question": "Pembe estetik uygulaması sonrası iyileşme nasıl yönetilir?",
+          "answer": "Hafif hassasiyet birkaç gün sürebilir. Doktorunuz ağız bakımı ve kontrol planını paylaşır."
         },
         {
           "question": "Nihai tedavi planı ne zaman kesinleşir?",
@@ -3463,8 +3463,8 @@ const DATA = {
           "answer": "Uygunluk; uzman değerlendirmesi, tıbbi geçmiş analizi ve klinik inceleme sonrası netleşir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Tedavi kapsamına bağlıdır. Doktorunuz görüşme sırasında size özel iyileşme sürecini ve bakım planını paylaşır."
+          "question": "Zirkonyum kaplama sonrası uyum süreci ne kadar sürer?",
+          "answer": "Tedavi kapsamına göre değişir. Geçici ve kalıcı aşamalar için ayrı bakım talimatları verilir."
         },
         {
           "question": "Nihai tedavi planı ne zaman kesinleşir?",
@@ -3772,8 +3772,8 @@ const DATA = {
           "answer": "Uygunluk; uzman değerlendirmesi, tıbbi geçmiş analizi ve klinik inceleme sonrası belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Süre, yapılan işlemin kapsamına bağlıdır. Doktorunuz size özel iyileşme planını paylaşır."
+          "question": "Meme küçültme sonrası iyileşme süreci nasıl ilerler?",
+          "answer": "İlk haftalarda dinlenme ve destekli süreç önerilir. Çoğu hasta 7–21 gün içinde hafif aktivitelere döner."
         },
         {
           "question": "Nihai tedavi planı ne zaman onaylanır?",
@@ -3890,8 +3890,8 @@ const DATA = {
           "answer": "Uygunluk; uzman değerlendirmesi, tıbbi geçmiş analizi ve klinik inceleme sonrası belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Süre, yapılan işlemin kapsamına bağlıdır. Doktorunuz size özel iyileşme planını paylaşır."
+          "question": "Jinekomasti ameliyatı sonrası iyileşme aşamaları nelerdir?",
+          "answer": "Hafif ödem ve hassasiyet ilk günlerde görülebilir. Doktorunuz korse kullanımı ve takip planını paylaşır."
         },
         {
           "question": "Nihai tedavi planı ne zaman onaylanır?",
@@ -4181,8 +4181,8 @@ const DATA = {
           "answer": "Uygunluk; uzman değerlendirmesi, tıbbi geçmiş ve klinik analiz sonrası belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Süre, yapılan işlemin kapsamına göre değişir. Doktorunuz size özel planı paylaşır."
+          "question": "Yüz germe ameliyatı sonrası iyileşme süreci nasıl ilerler?",
+          "answer": "İlk haftalarda ödem görülebilir. Çoğu hasta 7–21 gün içinde günlük rutinine kademeli döner."
         },
         {
           "question": "Nihai sonuç ne zaman oturur?",
@@ -4304,8 +4304,8 @@ const DATA = {
           "answer": "Uygunluk; uzman konsültasyonu, tıbbi geçmiş incelemesi ve objektif değerlendirme sonrasında belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Süre, yapılan işlemin kapsamına bağlıdır. Doktorunuz görüşme sırasında size özel iyileşme planını paylaşır."
+          "question": "Blefaroplasti sonrası iyileşme dönemi nasıl geçer?",
+          "answer": "Göz çevresinde hafif şişlik ve morluk birkaç gün sürebilir. Doktorunuz bakım talimatlarını paylaşır."
         },
         {
           "question": "Nihai tedavi planı ne zaman onaylanır?",
@@ -4687,8 +4687,8 @@ const DATA = {
           "answer": "Uygunluk; uzman değerlendirmesi, tıbbi geçmiş analizi ve klinik inceleme sonrası belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Süre, yapılan işlemin kapsamına bağlıdır. Doktorunuz size özel iyileşme planını paylaşır."
+          "question": "Kalça kaldırma sonrası iyileşme süreci nasıl ilerler?",
+          "answer": "İlk günlerde oturma pozisyonu kısıtlamaları olabilir. Doktorunuz aşamalı iyileşme planını paylaşır."
         },
         {
           "question": "Nihai tedavi planı ne zaman onaylanır?",
@@ -5085,8 +5085,8 @@ const DATA = {
           "answer": "Çene hattı dolgusu için uygunluk; uzman değerlendirmesi, tıbbi öykü incelemesi ve yüz yapısının detaylı analizi sonrasında belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "İşlem sonrasında çoğu kişi aynı gün günlük yaşamına dönebilir. Hafif ödem, hassasiyet veya morluk gibi etkiler kişiden kişiye değişmekle birlikte genellikle kısa sürede azalır."
+          "question": "Çene hattı dolgusu sonrası ne kadar sürede normal görünüme dönülür?",
+          "answer": "Çoğu hasta aynı gün günlük yaşamına dönebilir. Hafif ödem birkaç gün sürebilir."
         },
         {
           "question": "Sonuçlar ne zaman görülür?",
@@ -5242,8 +5242,8 @@ const DATA = {
           "answer": "Uzman değerlendirmesi ve tıbbi inceleme sonrası belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Kişiye göre değişir, hekim süreç hakkında bilgi verir."
+          "question": "Göz altı ışık dolgusu sonrası iyileşme nasıl ilerler?",
+          "answer": "Hafif şişlik ve morluk birkaç gün sürebilir. Doktorunuz bakım önerilerini paylaşır."
         },
         {
           "question": "Nihai plan ne zaman belirlenir?",
@@ -5502,8 +5502,8 @@ const DATA = {
           "answer": "Uygunluk; uzman konsültasyonu, tıbbi geçmiş değerlendirmesi, cilt analizi ve tedavi hedeflerinin belirlenmesi sonrasında netleştirilir."
         },
         {
-          "question": "İyileşme süreci genellikle ne kadar sürer?",
-          "answer": "PRP cilt tedavisi sonrasında çoğu kişi günlük yaşamına aynı gün dönebilir. Ciltte kısa süreli hafif kızarıklık veya hassasiyet görülebilir."
+          "question": "PRP cilt tedavisi sonrası ciltte iyileşme nasıl ilerler?",
+          "answer": "Çoğu hasta aynı gün günlük yaşamına dönebilir. Hafif kızarıklık birkaç gün sürebilir."
         },
         {
           "question": "Kaç seans gerekir?",
@@ -5655,8 +5655,8 @@ const DATA = {
           "answer": "Uygunluk; uzman konsültasyonu, cilt analizi, tıbbi öykü değerlendirmesi ve tedavi hedeflerinin belirlenmesi sonrasında netleştirilir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "İyileşme süresi, uygulanan bakım protokolünün kapsamına ve cilt yapısına göre değişebilir. Uzmanınız, görüşme sırasında size süreçle ilgili gerçekçi bir zaman planı ve bakım önerileri sunacaktır."
+          "question": "Tıbbi cilt bakımı sonrası ciltte ne beklenir?",
+          "answer": "Uygulanan protokole göre hafif kızarıklık görülebilir. Çoğu hasta aynı gün rutinine döner."
         },
         {
           "question": "Nihai tedavi planı ne zaman belirlenir?",
@@ -5804,8 +5804,8 @@ const DATA = {
           "answer": "Uygunluk; uzman hekim konsültasyonu, tıbbi öykü değerlendirmesi ve cilt ihtiyaçlarının objektif analizi sonrasında belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "İyileşme süreci, uygulama alanına, cilt yapısına ve planlanan tedavi kapsamına göre değişiklik gösterebilir. Konsültasyon sırasında size ortalama iyileşme süreci ve işlem sonrası bakım planı ayrıntılı olarak aktarılır."
+          "question": "Somon DNA tedavisi sonrası iyileşme süreci nasıldır?",
+          "answer": "Hafif kızarıklık birkaç gün sürebilir. Doktorunuz bakım ve takip planını paylaşır."
         },
         {
           "question": "Nihai tedavi planı ne zaman netleşir?",
@@ -6315,8 +6315,8 @@ const DATA = {
           "answer": "Uygunluk, uzman değerlendirmesi ve tıbbi geçmiş incelemesi sonrası belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Genellikle aynı gün içinde günlük yaşama dönüş mümkündür."
+          "question": "IV tedavi sonrası günlük hayata dönüş ne kadar sürer?",
+          "answer": "Genellikle aynı gün içinde günlük yaşama dönüş mümkündür. Hafif yorgunluk görülebilir."
         },
         {
           "question": "Tedavi planı ne zaman netleşir?",
