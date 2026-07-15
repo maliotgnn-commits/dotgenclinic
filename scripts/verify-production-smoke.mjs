@@ -8,10 +8,6 @@ const BASE = (process.env.VERIFY_SMOKE_BASE_URL || 'https://www.drotgenclinic.co
 const LOCAL_DIST = resolve(ROOT, 'dist/tr/index.html');
 const USE_LOCAL = process.env.VERIFY_SMOKE_LOCAL === '1' && existsSync(LOCAL_DIST);
 
-const DEBUG_ENDPOINT = 'http://127.0.0.1:7351/ingest/978326e2-ed1a-492b-ba34-cad4578e33a0';
-const DEBUG_SESSION = '0a33d4';
-const DEBUG_ENABLED = process.env.VERIFY_SMOKE_DEBUG === '1';
-
 const PAGES = [
   { path: '/tr/', label: 'TR home', checks: ['home-form'] },
   { path: '/en/', label: 'EN home', checks: ['no-inline-gtm'] },
@@ -25,23 +21,6 @@ function fail(message) {
   failures.push(message);
 }
 
-function debugLog(hypothesisId, message, data = {}) {
-  if (!DEBUG_ENABLED) return;
-  fetch(DEBUG_ENDPOINT, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'X-Debug-Session-Id': DEBUG_SESSION },
-    body: JSON.stringify({
-      sessionId: DEBUG_SESSION,
-      runId: process.env.VERIFY_SMOKE_RUN_ID || 'smoke',
-      hypothesisId,
-      location: 'verify-production-smoke.mjs',
-      message,
-      data,
-      timestamp: Date.now(),
-    }),
-  }).catch(() => {});
-}
-
 async function loadHtml(path) {
   if (USE_LOCAL && (path === '/tr/' || path === '/tr')) {
     return readFileSync(LOCAL_DIST, 'utf8');
@@ -52,8 +31,6 @@ async function loadHtml(path) {
     headers: { 'User-Agent': 'dotgen-smoke/1.0' },
     redirect: 'follow',
   });
-
-  debugLog('H1', 'page fetch', { path, status: response.status, ok: response.ok });
 
   if (!response.ok) {
     fail(`${path} returned HTTP ${response.status}`);
@@ -96,7 +73,6 @@ function assertServiceFaq(html, label) {
 async function verifyRobotsAndSitemap() {
   for (const path of ['/robots.txt', '/sitemap.xml']) {
     const response = await fetch(`${BASE}${path}`, { redirect: 'follow' });
-    debugLog('H2', 'asset fetch', { path, status: response.status });
     if (!response.ok) {
       fail(`${path} returned HTTP ${response.status}`);
       continue;
@@ -131,7 +107,6 @@ async function verifyMainBundleGuard() {
     js.includes('dotgen_form_last_submit')
     && js.includes('is-loading')
     && js.includes('form_submit');
-  debugLog('H3', 'main bundle form hardening', { hasFormHardening, script: scriptMatch[0] });
   if (!hasFormHardening) {
     fail('main bundle must include appointment form hardening markers');
   }
