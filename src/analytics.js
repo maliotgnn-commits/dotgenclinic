@@ -11,6 +11,7 @@ export function pushEvent(event, params = {}) {
   ensureDataLayer();
   window.dataLayer.push({
     event,
+    page_path: `${window.location.pathname}${window.location.search}`,
     ...params,
   });
 }
