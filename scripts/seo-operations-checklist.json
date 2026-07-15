@@ -13,6 +13,13 @@
     "İçerik güncelleme planı (hizmet FAQ + cluster)",
     "GA4 conversion analizi (whatsapp_click, appointment_cta, form_submit, service_page_view, language_switch)"
   ],
+  "gtmEventParams": {
+    "whatsapp_click": ["page_locale", "link_location", "service_slug", "page_path"],
+    "appointment_cta": ["page_locale", "cta_location", "service_slug", "page_path"],
+    "form_submit": ["page_locale", "form_id", "service_category", "status", "referral_service_slug", "referral_service_category", "referral_source", "page_path"],
+    "service_page_view": ["page_locale", "service_slug", "service_category", "service_title", "page_path"],
+    "language_switch": ["from_locale", "to_locale", "page_path"]
+  },
   "quarterly": [
     "Landing page performans analizi",
     "Rakip keyword gap analizi",

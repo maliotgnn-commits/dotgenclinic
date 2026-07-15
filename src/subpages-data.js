@@ -1193,7 +1193,7 @@ const DATA = {
           "answer": "İşlem lokal anestezi altında gerçekleştirildiği için operasyon sırasında ağrı hissi minimum düzeyde tutulmaya çalışılır."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
+          "question": "Safir FUE sonrası iyileşme süreci nasıl ilerler?",
           "answer": "İlk iyileşme süreci genellikle 7 ila 14 gün arasında gerçekleşir. Nihai sonuçların değerlendirilmesi için saç büyüme döngüsünün tamamlanması beklenir."
         },
         {
@@ -1380,7 +1380,7 @@ const DATA = {
           "answer": "Uygunluk, uzman hekim tarafından gerçekleştirilen konsültasyon, saç analizi ve tıbbi değerlendirme sonrasında belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
+          "question": "DHI saç ekimi sonrası iyileşme süreci nasıl ilerler?",
           "answer": "İlk iyileşme süreci genellikle 7 ila 14 gün arasında tamamlanır. Nihai sonuçların değerlendirilmesi için ise yaklaşık 12 aylık süreç gereklidir."
         },
         {
@@ -2792,8 +2792,8 @@ const DATA = {
           "answer": "Uygunluk; uzman değerlendirmesi, tıbbi geçmiş analizi ve tedavi planlaması sonrası belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Süre, tedavi kapsamına göre değişir. Doktorunuz görüşme sırasında net bir iyileşme planı sunar."
+          "question": "Diş implantı tedavisinde iyileşme aşamaları nelerdir?",
+          "answer": "İmplant yerleştirme sonrası kemik kaynaşması birkaç ay sürebilir. Doktorunuz görüşme sırasında aşamalı iyileşme ve protez planını paylaşır."
         },
         {
           "question": "Nihai tedavi planı ne zaman kesinleşir?",
@@ -4032,8 +4032,8 @@ const DATA = {
           "answer": "Uygunluk; uzman değerlendirmesi, tıbbi geçmiş ve klinik inceleme sonrası belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Süre, yapılan işlemin kapsamına göre değişir. Doktorunuz size özel planı paylaşır."
+          "question": "Rinoplasti sonrası iyileşme süreci nasıl ilerler?",
+          "answer": "İlk haftalarda ödem ve hafif morluk görülebilir. Çoğu hasta 7–14 gün içinde günlük rutinine döner; nihai form birkaç ay içinde netleşir."
         },
         {
           "question": "Nihai plan ne zaman kesinleşir?",
@@ -4820,8 +4820,8 @@ const DATA = {
           "answer": "Uygunluk, uzman değerlendirmesi ve tıbbi geçmiş analizi sonrası belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Tedavi kapsamına göre değişir. Doktorunuz süreç hakkında net bir plan paylaşır."
+          "question": "Dudak dolgusu sonrası ne kadar sürede normal görünüme dönülür?",
+          "answer": "Hafif şişlik ilk günlerde görülebilir; çoğu hasta birkaç gün içinde günlük hayatına döner. Doktorunuz bakım önerilerini paylaşır."
         },
         {
           "question": "Nihai plan ne zaman onaylanır?",
@@ -4958,8 +4958,8 @@ const DATA = {
           "answer": "Uygunluk, uzman değerlendirmesi ve tıbbi geçmiş incelemesi sonrası belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Seçilen uygulama alanına göre değişir. Doktorunuz detaylı zaman çizelgesi paylaşır."
+          "question": "Botoks sonrası günlük hayata ne zaman dönülebilir?",
+          "answer": "İşlem sonrası çoğu hasta aynı gün normal aktivitelerine devam edebilir. Etki genellikle birkaç gün içinde belirginleşir."
         },
         {
           "question": "Nihai plan ne zaman netleşir?",
@@ -5386,7 +5386,7 @@ const DATA = {
           "answer": "Uygunluk; uzman konsültasyonu, cilt ve kıl yapısının değerlendirilmesi, tıbbi geçmişin gözden geçirilmesi ve tedavi hedeflerinin belirlenmesi sonrasında netleştirilir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
+          "question": "Lazer epilasyon sonrası ciltte ne gibi reaksiyonlar görülebilir?",
           "answer": "Lazer epilasyon sonrasında çoğu kişi günlük yaşamına aynı gün dönebilir. Uygulama bölgesine göre kısa süreli kızarıklık veya hassasiyet görülebilir."
         },
         {
@@ -6441,8 +6441,8 @@ const DATA = {
           "answer": "Uygunluk; uzman değerlendirmesi ve tıbbi geçmiş analizi sonrası belirlenir."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Genellikle aynı gün normal yaşama dönüş mümkündür."
+          "question": "Glutatyon tedavisi sonrası günlük rutine ne zaman dönülebilir?",
+          "answer": "Genellikle aynı gün normal yaşama dönüş mümkündür. Uzmanınız seans sonrası kişisel bakım önerilerini paylaşır."
         },
         {
           "question": "Tedavi planı ne zaman kesinleşir?",
