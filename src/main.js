@@ -29,6 +29,7 @@ import {
   clearAppointmentReferrer,
   readAppointmentReferrer,
 } from './appointment-attribution.js';
+import { initDoctorClickHandling } from './doctor-click.js';
 import { heroPosterSources } from './responsive-image.js';
 
 const locale = getCurrentLocale('home');
@@ -137,6 +138,7 @@ mountLanguageSwitcher(
   uiDictionary,
 );
 initAnalyticsTracking(() => locale);
+initDoctorClickHandling({ pageType: 'home', locale });
 
 function deferNonCriticalHomeInit(callback) {
   if ('requestIdleCallback' in window) {

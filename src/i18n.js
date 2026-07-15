@@ -8,6 +8,7 @@ import { blockchainRdPathForLocale } from './blockchain-rd-routes.js';
 import { ecommerceRdPathForLocale } from './ecommerce-rd-routes.js';
 import { pharmaRdPathForLocale } from './pharma-rd-routes.js';
 import { doctorUrlForLocale } from './doctor-routes.js';
+import { isHomePage } from './page-type.js';
 
 export const DEFAULT_LOCALE = 'tr';
 export const LOCALE_STORAGE_KEY = 'dr-otgen-locale';
@@ -567,6 +568,10 @@ export function localizeInternalLinks(locale, root = document) {
   });
 
   root.querySelectorAll('a[data-doctor-slug]').forEach((anchor) => {
+    if (isHomePage()) {
+      anchor.href = '#';
+      return;
+    }
     anchor.href = doctorUrlForLocale(anchor.dataset.doctorSlug, locale);
   });
 

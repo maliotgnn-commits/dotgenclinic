@@ -11,7 +11,6 @@ import { loadEyeHealthContent } from './eye-health-content.js';
 import {
   applySeoLinks,
   buildCategoryGroups,
-  doctorUrlForLocale,
   getCurrentLocale,
   homeUrlFor,
   loadContentCatalog,
@@ -27,6 +26,7 @@ import { initAnalyticsTracking, trackServicePageView } from './analytics.js';
 import { renderWhatsAppFloat, buildWhatsAppUrl } from './whatsapp-links.js';
 import { enhanceRelatedPages, getClusterNavLinks, getDoctorsForServicePage } from './seo-internal-links.js';
 import { storeAppointmentReferrer } from './appointment-attribution.js';
+import { buildDoctorAriaLabel, initDoctorClickHandling } from './doctor-click.js';
 
 const app = document.getElementById('service-app');
 const params = new URLSearchParams(window.location.search);
@@ -192,7 +192,12 @@ function renderDoctorLinks(doctors) {
           ${doctors
             .map(
               (doctor) => `
-            <a class="sv-related-card" href="${doctorUrlForLocale(doctor.slug, locale)}">
+            <a
+              class="sv-related-card"
+              href="#"
+              data-doctor-slug="${escapeHtml(doctor.slug)}"
+              aria-label="${escapeHtml(buildDoctorAriaLabel(locale, doctor.name))}"
+            >
               <strong>${escapeHtml(doctor.name)}</strong>
               <span>${escapeHtml(doctor.specialty)}</span>
             </a>
@@ -513,7 +518,9 @@ function initSkipLink() {
 }
 
 function initRelatedCardNavigation() {
-  document.querySelectorAll('.sv-related-card').forEach((card) => {
+  document.querySelectorAll('.sv-related-card:not([data-doctor-slug])').forEach((card) => {
+    const href = card.getAttribute('href') || '';
+    if (/\/doctor\.html(?:\?|$)/i.test(href)) return;
     card.addEventListener('click', (event) => {
       const href = card.getAttribute('href');
       if (!href) return;
@@ -601,6 +608,7 @@ function bootstrapServicePage() {
   initCustomCursor();
   initSiteHeader(document, { trackScroll: true });
   initLanguageSwitchers();
+  initDoctorClickHandling({ pageType: 'service', locale, currentPage });
   initRelatedCardNavigation();
   initGalleryCarousel();
   initStickyCta();
