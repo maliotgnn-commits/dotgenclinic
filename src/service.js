@@ -23,7 +23,7 @@ import {
   renderLanguageSwitcher,
 } from './language-switcher.js';
 import { initAnalyticsTracking, trackServicePageView } from './analytics.js';
-import { renderWhatsAppFloat, buildWhatsAppUrl } from './whatsapp-links.js';
+import { buildWhatsAppUrl } from './whatsapp-links.js';
 import { enhanceRelatedPages, getClusterNavLinks, getDoctorsForServicePage } from './seo-internal-links.js';
 import { storeAppointmentReferrer } from './appointment-attribution.js';
 import { buildDoctorAriaLabel, initDoctorClickHandling } from './doctor-click.js';
@@ -501,7 +501,6 @@ function renderPage(currentPage, relatedPages) {
       </section>
     </div>
     ${renderStickyCta(currentPage)}
-    ${renderWhatsAppFloat({ locale, category: currentPage.category, pageTitle: currentPage.title, ariaLabel: escapeHtml(t('WhatsApp')) })}
   `;
 }
 
@@ -606,7 +605,10 @@ function bootstrapServicePage() {
   });
   initSkipLink();
   initCustomCursor();
-  initSiteHeader(document, { trackScroll: true });
+  initSiteHeader(document, {
+    trackScroll: true,
+    whatsapp: { locale, category: currentPage.category, pageTitle: currentPage.title },
+  });
   initLanguageSwitchers();
   initDoctorClickHandling({ pageType: 'service', locale, currentPage });
   initRelatedCardNavigation();

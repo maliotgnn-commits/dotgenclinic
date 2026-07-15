@@ -1,6 +1,6 @@
 import { initDesktopNav } from './desktop-nav.js';
 import { initMegaMenuA11y } from './mega-menu-a11y.js';
-import { ensureInstagramFloatMounted } from './instagram-float.js';
+import { ensureFloatingSocialStackMounted } from './floating-social-stack.js';
 import { initEyeHealthNavBehavior } from './tr-eye-health-nav.js';
 import {
   isMobileNavViewport,
@@ -170,8 +170,8 @@ function bindMobileAccordions(navMenu) {
   });
 }
 
-export function initSiteHeader(root = document, { trackScroll = false } = {}) {
-  void ensureInstagramFloatMounted();
+export function initSiteHeader(root = document, { trackScroll = false, whatsapp } = {}) {
+  void ensureFloatingSocialStackMounted({ whatsapp });
 
   const header = root.getElementById('main-header');
   const hamburger = root.getElementById('hamburger');

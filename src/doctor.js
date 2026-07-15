@@ -14,7 +14,7 @@ import {
 } from './i18n.js';
 import { initLanguageSwitchers, renderLanguageSwitcher } from './language-switcher.js';
 import { initAnalyticsTracking } from './analytics.js';
-import { renderWhatsAppFloat, buildWhatsAppUrl } from './whatsapp-links.js';
+import { buildWhatsAppUrl } from './whatsapp-links.js';
 import { eyeHealthPathForLocale } from './eye-health-routes.js';
 import {
   getDoctorBySlug,
@@ -188,7 +188,6 @@ function renderDoctorPage(doctor) {
 
       ${renderRelatedServices(doctor)}
     </div>
-    ${renderWhatsAppFloat({ locale, pageTitle: doctor.name, ariaLabel: escapeHtml(t('WhatsApp')) })}
   `;
 }
 
@@ -204,7 +203,10 @@ function bootstrapDoctorPage() {
   renderDoctorPage(doctor);
   initAnalyticsTracking(() => locale);
   initCustomCursor();
-  initSiteHeader(document, { trackScroll: true });
+  initSiteHeader(document, {
+    trackScroll: true,
+    whatsapp: { locale, pageTitle: doctor.name },
+  });
   initLanguageSwitchers();
 }
 
