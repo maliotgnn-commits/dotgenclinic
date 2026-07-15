@@ -1,5 +1,5 @@
 import { INSTAGRAM_URL } from './social-links.js';
-import { translate } from './i18n.js';
+import { getCurrentLocale, loadUiDictionary, translate } from './i18n.js';
 
 const INSTAGRAM_ARIA_LABEL = 'Instagram hesabımızı ziyaret edin';
 
@@ -21,4 +21,28 @@ export function mountInstagramFloat(dictionary) {
   link.innerHTML = INSTAGRAM_ICON;
 
   document.body.appendChild(link);
+}
+
+let mountPromise = null;
+
+export function ensureInstagramFloatMounted(dictionary) {
+  if (document.querySelector('.instagram-float')) {
+    return Promise.resolve();
+  }
+
+  if (dictionary) {
+    mountInstagramFloat(dictionary);
+    return Promise.resolve();
+  }
+
+  if (!mountPromise) {
+    mountPromise = (async () => {
+      if (document.querySelector('.instagram-float')) return;
+      const locale = getCurrentLocale();
+      const dict = await loadUiDictionary(locale);
+      mountInstagramFloat(dict);
+    })();
+  }
+
+  return mountPromise;
 }

@@ -1,5 +1,6 @@
 import { initDesktopNav } from './desktop-nav.js';
 import { initMegaMenuA11y } from './mega-menu-a11y.js';
+import { ensureInstagramFloatMounted } from './instagram-float.js';
 import { initEyeHealthNavBehavior } from './tr-eye-health-nav.js';
 import {
   isMobileNavViewport,
@@ -170,6 +171,8 @@ function bindMobileAccordions(navMenu) {
 }
 
 export function initSiteHeader(root = document, { trackScroll = false } = {}) {
+  void ensureInstagramFloatMounted();
+
   const header = root.getElementById('main-header');
   const hamburger = root.getElementById('hamburger');
   const navMenu = root.getElementById('nav-menu');

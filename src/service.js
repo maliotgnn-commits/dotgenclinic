@@ -212,8 +212,8 @@ function renderFaqCta(currentPage) {
         <h3>${escapeHtml(t('Sorularınız mı var?'))}</h3>
         <p>${escapeHtml(t('Tedavi planınız için uzman ekibimizle iletişime geçebilirsiniz.'))}</p>
         <div class="sv-faq-cta-actions">
-          <a href="${buildWhatsAppUrl({ locale, category: currentPage.category, pageTitle: currentPage.title })}" class="btn-gold" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp ile Bilgi Al'))}</a>
-          <a href="${appointmentUrl(currentPage, 'faq')}" class="btn-outline" data-appointment-from="faq">${escapeHtml(t('Randevu Al'))}</a>
+          <a href="${buildWhatsAppUrl({ locale, category: currentPage.category, pageTitle: currentPage.title })}" class="btn-gold premium-gold-cta" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp ile Bilgi Al'))}</a>
+          <a href="${appointmentUrl(currentPage, 'faq')}" class="btn-outline premium-gold-cta" data-appointment-from="faq">${escapeHtml(t('Randevu Al'))}</a>
         </div>
       </div>
     </section>
@@ -226,8 +226,8 @@ function renderStickyCta(currentPage) {
       <div class="container sv-sticky-cta-inner">
         <span>${escapeHtml(currentPage.title)}</span>
         <div class="sv-sticky-cta-actions">
-          <a href="${buildWhatsAppUrl({ locale, category: currentPage.category, pageTitle: currentPage.title })}" class="btn-gold" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp'))}</a>
-          <a href="${appointmentUrl(currentPage, 'sticky')}" class="btn-outline" data-appointment-from="sticky">${escapeHtml(t('Randevu Al'))}</a>
+          <a href="${buildWhatsAppUrl({ locale, category: currentPage.category, pageTitle: currentPage.title })}" class="btn-gold premium-gold-cta" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp'))}</a>
+          <a href="${appointmentUrl(currentPage, 'sticky')}" class="btn-outline premium-gold-cta" data-appointment-from="sticky">${escapeHtml(t('Randevu Al'))}</a>
         </div>
       </div>
     </aside>
@@ -417,8 +417,8 @@ function renderPage(currentPage, relatedPages) {
             ${currentPage.heroSubtitle ? `<strong class="sv-hero-subtitle">${escapeHtml(currentPage.heroSubtitle)}</strong>` : ''}
             <p>${escapeHtml(currentPage.summary)}</p>
             <div class="sv-hero-actions">
-              <a href="${buildWhatsAppUrl({ locale, category: currentPage.category, pageTitle: currentPage.title })}" class="btn-gold sv-hero-whatsapp" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp ile Bilgi Al'))}</a>
-              <a href="${appointmentUrl(currentPage, 'hero')}" class="btn-outline sv-hero-appointment" data-appointment-from="hero">${escapeHtml(t('Randevu Al'))}</a>
+              <a href="${buildWhatsAppUrl({ locale, category: currentPage.category, pageTitle: currentPage.title })}" class="btn-gold premium-gold-cta sv-hero-whatsapp" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp ile Bilgi Al'))}</a>
+              <a href="${appointmentUrl(currentPage, 'hero')}" class="btn-outline premium-gold-cta sv-hero-appointment" data-appointment-from="hero">${escapeHtml(t('Randevu Al'))}</a>
             </div>
           </article>
         </div>
