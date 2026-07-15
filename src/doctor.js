@@ -71,7 +71,7 @@ function renderProfileField(label, value) {
   return `
     <article class="dr-info-card${pending ? ' is-pending' : ''}">
       <h3>${escapeHtml(label)}</h3>
-      <p>${escapeHtml(pending ? MISSING_DATA : value)}</p>
+      <p>${escapeHtml(pending ? t(MISSING_DATA) : value)}</p>
     </article>
   `;
 }
@@ -166,7 +166,7 @@ function renderDoctorPage(doctor) {
               <a href="${buildWhatsAppUrl({ locale, pageTitle: doctor.name })}" class="btn-gold premium-gold-cta" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp ile Bilgi Al'))}</a>
               <a href="${homeUrlFor(locale, '#randevu')}" class="btn-outline premium-gold-cta">${escapeHtml(t('Randevu Al'))}</a>
             </div>
-            ${complete ? '' : `<div class="dr-notice">${escapeHtml(MISSING_DATA)} — ${escapeHtml(t('Profil tamamlanmadan indexlenmez.'))}</div>`}
+            ${complete ? '' : `<div class="dr-notice">${escapeHtml(t(MISSING_DATA))} — ${escapeHtml(t('Profil tamamlanmadan indexlenmez.'))}</div>`}
           </div>
         </div>
       </section>

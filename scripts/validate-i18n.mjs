@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import {
   CATEGORY_CONFIG,
@@ -22,6 +23,25 @@ const REQUIRED_UI = [
   'Kısa Bilgiler',
   'Sık Sorulan Sorular',
   'İlgili Sayfalar',
+  'Sorularınız mı var?',
+  'Tedavi planınız için uzman ekibimizle iletişime geçebilirsiniz.',
+  'WhatsApp ile Bilgi Al',
+  'Gezinti yolu',
+  'İlgili Tedaviler',
+  'İlgili Hizmetler',
+  'Profil Bilgileri',
+  'Profil bilgileri klinik tarafından doğrulandıkça güncellenir.',
+  'Profil tamamlanmadan indexlenmez.',
+  'GERÇEK VERİ GEREKİYOR',
+  'Eğitim',
+  'Deneyim',
+  'İlgi Alanları',
+  'Yayınlar',
+  'Kongreler',
+  'Mesleki Üyelikler',
+  'Klinik Yaklaşım',
+  'Göz Sağlığı',
+  'Hata Oluştu',
 ];
 
 function assert(condition, message) {
@@ -107,3 +127,12 @@ for (const locale of LOCALES) {
 }
 
 console.log('All locale catalogs are structurally complete.');
+
+const check = spawnSync('node', ['scripts/check-i18n.mjs'], {
+  cwd: path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..'),
+  stdio: 'inherit',
+  shell: process.platform === 'win32',
+});
+if (check.status !== 0) {
+  process.exit(check.status || 1);
+}

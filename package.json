@@ -7,7 +7,9 @@
     "dev": "vite",
     "translate": "node scripts/generate-translations.mjs",
     "validate:i18n": "node scripts/validate-i18n.mjs",
+    "check:i18n": "node scripts/check-i18n.mjs",
     "verify:i18n": "node scripts/verify-i18n.mjs",
+    "verify:i18n:all": "node scripts/verify-i18n-all.mjs",
     "build": "npm run validate:i18n && vite build",
     "preview": "vite preview"
   },
