@@ -593,7 +593,11 @@ export function localizeInternalLinks(locale, root = document) {
       return;
     }
 
-    if (parsed.pathname === '/index.html' || parsed.pathname === '/') {
+    if (
+      parsed.pathname === '/index.html'
+      || parsed.pathname === '/'
+      || /^\/(tr|en|ar|es|fr|it|ru|de)\/$/.test(parsed.pathname)
+    ) {
       anchor.href = homeUrlFor(locale, parsed.hash);
     }
   });

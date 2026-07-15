@@ -1,5 +1,4 @@
 import { readFileSync, existsSync } from 'node:fs';
-import { spawnSync } from 'node:child_process';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
@@ -112,24 +111,9 @@ assert(financeJs.includes('fd-profile-grid'), 'Profile cards layout marker missi
 assert(financeData.includes('Yeminli Mali Müşavir Ahmet ÖTGEN'), 'Missing Ahmet image alt text in source data');
 assert(financeData.includes('Mali Müşavir Zehra ÖTGEN'), 'Missing Zehra image alt text in source data');
 
-const forbiddenDiffPaths = [
-  'vite.config.js',
-  'package.json',
-  'package-lock.json',
-];
+import { assertBuildFileDiffGuard } from './build-diff-guard.mjs';
 
-const diffNames = spawnSync('git', ['diff', '--name-only', 'origin/main'], {
-  cwd: ROOT,
-  encoding: 'utf8',
-  shell: process.platform === 'win32',
-});
-const changedFiles = diffNames.status === 0 ? diffNames.stdout.split(/\r?\n/).filter(Boolean) : [];
-
-for (const relativePath of forbiddenDiffPaths) {
-  if (changedFiles.includes(relativePath.replace(/\\/g, '/'))) {
-    failures.push(`Forbidden file changed from origin/main: ${relativePath}`);
-  }
-}
+assertBuildFileDiffGuard(failures, ROOT);
 
 if (failures.length) {
   console.error('[verify-tr-finance-preview-page] Verification failed:');

@@ -25,14 +25,18 @@ export function trackServicePageView({ locale, slug, category, title }) {
 }
 
 function resolveWhatsAppLocation(link) {
-  if (link.classList.contains('whatsapp-float')) return 'float';
-  if (link.closest('.appointment-contact')) return 'contact';
+  if (link.closest('.sv-sticky-cta')) return 'sticky';
   if (link.closest('footer')) return 'footer';
+  if (link.closest('.appointment-contact')) return 'contact';
+  if (link.closest('.sv-page')) return 'service';
+  if (link.classList.contains('whatsapp-float')) return 'float';
   return 'other';
 }
 
 function resolveAppointmentCtaLocation(cta) {
+  if (cta.closest('.sv-sticky-cta')) return 'sticky';
   if (cta.classList.contains('nav-cta')) return 'nav';
+  if (cta.dataset.appointmentFrom) return cta.dataset.appointmentFrom;
   if (cta.classList.contains('btn-gold')) return 'closing';
   return 'section';
 }
@@ -56,11 +60,15 @@ export function initAnalyticsTracking(getLocale) {
       }
 
       const appointmentCta =
-        event.target.closest('.nav-cta') || event.target.closest('a[href*="#randevu"]');
+        event.target.closest('.nav-cta')
+        || event.target.closest('[data-appointment-from]')
+        || event.target.closest('a[href*="#randevu"]');
       if (appointmentCta) {
+        const params = new URL(window.location.href).searchParams;
         pushEvent('appointment_cta', {
           page_locale: getLocale(),
           cta_location: resolveAppointmentCtaLocation(appointmentCta),
+          service_slug: params.get('slug') || undefined,
         });
       }
     },

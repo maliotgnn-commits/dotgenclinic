@@ -9,6 +9,7 @@ const TRACKED_EVENTS = Object.freeze([
   'whatsapp_click',
   'appointment_cta',
   'form_submit',
+  'language_switch',
 ]);
 
 let cachedClient = null;

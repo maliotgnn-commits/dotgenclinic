@@ -164,6 +164,11 @@ export function applyStaticHomeNavLinks(html, locale) {
   let result = html;
 
   result = result.replace(
+    /<a href="\/tr\/" class="nav-logo" data-home-logo-link/g,
+    `<a href="/${locale}/" class="nav-logo" data-home-logo-link`,
+  );
+
+  result = result.replace(
     /<a\b([^>]*\bdata-service-slug="([^"]+)"[^>]*)>/gi,
     (match, attrs, slug) => {
       const cleaned = attrs.replace(/\bhref="[^"]*"/i, '').trim();

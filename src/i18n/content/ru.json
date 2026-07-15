@@ -365,7 +365,34 @@
         "Все этапы четко представлены, чтобы наши пациенты могли уточнить свои ожидания до начала процесса планирования лечения.",
         "Наша цель; Поддерживать коммуникацию, качество и непрерывность на одном и том же высоком уровне на протяжении всего пути пациента."
       ],
-      "sections": [],
+      "sections": [
+        {
+          "title": "Yönetim Yaklaşımı",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Yönetim ekibimiz; hasta güvenliği, operasyonel süreklilik ve kalite standartlarını merkeze alan yapılandırılmış bir koordinasyon modeli ile çalışır."
+            },
+            {
+              "type": "paragraph",
+              "text": "Departmanlar arası planlama, uluslararası hasta yolculuğu ve süreç takibi tek bir yönetim çerçevesinde yürütülür."
+            }
+          ]
+        },
+        {
+          "title": "Operasyonel Koordinasyon",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "Konsültasyon ve randevu koordinasyonu",
+                "Tedavi planı öncesi bilgilendirme ve onay süreçleri",
+                "Uluslararası hasta iletişim ve takip hattı"
+              ]
+            }
+          ]
+        }
+      ],
       "highlights": [
         "Прозрачные и измеримые стандарты процессов",
         "Четкое и открытое общение на каждом этапе",
@@ -413,16 +440,16 @@
       ],
       "faqs": [
         {
-          "question": "Кому подходят наши процессы управления?",
-          "answer": "Право на участие; Его определяют после экспертной оценки, анализа анамнеза и оценки целесообразности лечения."
+          "question": "Yönetim ekibi hangi süreçlerden sorumludur?",
+          "answer": "Konsültasyon koordinasyonu, hasta yolculuğu planlaması, departmanlar arası iletişim ve kalite takibi yönetim ekibinin temel sorumluluk alanlarıdır."
         },
         {
-          "question": "Сколько времени занимает процесс восстановления?",
-          "answer": "Продолжительность зависит от выбранного лечения. Во время консультации ваш врач предоставит вам реалистичный график восстановления и план ухода."
+          "question": "Uluslararası hastalar yönetim ekibiyle nasıl iletişim kurar?",
+          "answer": "Uluslararası hastalarımız; randevu, planlama ve süreç takibi için yapılandırılmış iletişim kanalları üzerinden yönetim koordinasyon ekibine yönlendirilir."
         },
         {
-          "question": "Когда будет утвержден окончательный план лечения?",
-          "answer": "Окончательный план создается после завершения клинической оценки и уточнения метода и объема лечения."
+          "question": "Kalite ve süreç takibi nasıl yapılır?",
+          "answer": "Süreçler; tanımlı kalite standartları, düzenli iç değerlendirme ve hasta geri bildirimleri ile izlenir; iyileştirme adımları planlı şekilde uygulanır."
         }
       ]
     },
@@ -627,7 +654,30 @@
         "Прежде чем начнется процесс планирования лечения, все этапы четко описаны, чтобы обеспечить четкое понимание ожиданий.",
         "Наша цель; Поддерживать коммуникацию, качество и непрерывность на одном и том же высоком уровне на протяжении всего пути пациента."
       ],
-      "sections": [],
+      "sections": [
+        {
+          "title": "Temsilci Ağı ve Koordinasyon",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Temsilci ağımız; uluslararası hastaların ilk temas noktasından tedavi sonrası takibe kadar süreç boyunca koordinasyon sağlar."
+            }
+          ]
+        },
+        {
+          "title": "Hasta Yolculuğu Desteği",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "İlk bilgilendirme ve yönlendirme",
+                "Randevu ve seyahat planı koordinasyonu",
+                "Tedavi süreci boyunca iletişim desteği"
+              ]
+            }
+          ]
+        }
+      ],
       "highlights": [
         "Прозрачные и измеримые стандарты процессов",
         "Четкое и открытое общение на каждом этапе",
@@ -675,16 +725,16 @@
       ],
       "faqs": [
         {
-          "question": "Каков подходящий профиль кандидата на представительскую должность?",
-          "answer": "Право на участие; Его определяют в результате экспертной оценки, анализа анамнеза и оценки целесообразности лечения."
+          "question": "Temsilciler hangi aşamalarda destek sağlar?",
+          "answer": "Temsilciler; ilk bilgilendirme, randevu planlama, seyahat koordinasyonu ve tedavi süreci boyunca iletişim desteği sağlar."
         },
         {
-          "question": "Сколько времени обычно занимает процесс восстановления?",
-          "answer": "Оно варьируется в зависимости от объема лечения. Во время консультации врач предоставляет реалистичный план восстановления и курс лечения."
+          "question": "Uluslararası hastalar temsilci ağına nasıl ulaşır?",
+          "answer": "Uluslararası hastalar; web sitesi, WhatsApp ve yapılandırılmış iletişim kanalları üzerinden temsilci koordinasyon ekibine yönlendirilir."
         },
         {
-          "question": "Когда будет утвержден окончательный план лечения?",
-          "answer": "Оно становится окончательным после завершения клинической оценки и уточнения применяемого метода."
+          "question": "Temsilci desteği hangi dillerde sunulur?",
+          "answer": "Destek dilleri temsilci ağına göre değişir; iletişim planı hasta yolculuğu başlangıcında netleştirilir."
         }
       ]
     },
@@ -808,127 +858,127 @@
     {
       "category": "corporate",
       "slug": "international-health-insurance",
-      "navLabel": "Международное медицинское страхование",
+      "navLabel": "Uluslararası Sağlık Sigortası",
       "navAppendOnly": true,
-      "title": "Международное медицинское страхование",
+      "title": "Uluslararası Sağlık Sigortası",
       "categoryLabel": "Корпоративный",
       "heroTag": "Корпоративная информация",
-      "heroSubtitle": "Международные страховые соглашения: защита с Bupa Global и Cigna Healthcare",
-      "summary": "Благодаря соглашениям с Bupa Global и Cigna Healthcare клиника Dr Otgen Clinic обеспечивает международным пациентам безопасную и комплексную медицинскую поддержку в области эстетики, здоровья волос, стоматологической эстетики, медицинской эстетики и longevity.",
+      "heroSubtitle": "Uluslararası Sigorta Anlaşmaları: Bupa Global ve Cigna Healthcare ile Güvendesiniz",
+      "summary": "Dr Otgen Clinic, Bupa Global ve Cigna Healthcare anlaşmalarıyla uluslararası hastalara estetik, saç sağlığı, diş estetiği, medikal estetik ve longevity hizmetlerinde güvenli ve kapsamlı sağlık desteği sunar.",
       "images": {
         "hero": "/images/site/pages/international-health-insurance-hero.webp",
         "content": "/images/site/pages/international-health-insurance-content.webp"
       },
       "overview": [
-        "Клиника Dr Otgen Clinic с гордостью предоставляет международным пациентам доступ к эстетическим, трихологическим, стоматологическим, медико-эстетическим и longevity-услугам мирового уровня.",
-        "Чтобы полностью поддержать вас на пути к здоровью, мы работаем по соглашениям с Bupa Global и Cigna Healthcare — ведущими международными страховщиками."
+        "Dr Otgen Clinic olarak, global standartlarda sunduğumuz estetik, saç sağlığı, diş estetiği, medikal estetik ve longevity hizmetlerimizi uluslararası hastalarımızın erişimine sunmaktan gurur duyuyoruz.",
+        "Sağlık yolculuğunuzda size tam destek olmak amacıyla, dünyanın önde gelen sağlık sigortası sağlayıcıları Bupa Global ve Cigna Healthcare ile anlaşmalı olarak hizmet vermekteyiz."
       ],
       "sections": [
         {
-          "title": "Премиальные медицинские услуги с Bupa Global и Cigna Healthcare",
+          "title": "Bupa Global ve Cigna Healthcare ile Ayrıcalıklı Sağlık Hizmetleri",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Bupa Global и Cigna Healthcare — это устоявшиеся организации, предоставляющие комплексные решения медицинского страхования миллионам людей по всему миру. Благодаря соглашениям Dr Otgen Clinic с этими престижными страховщиками наши международные пациенты могут воспользоваться следующими преимуществами:"
+              "text": "Bupa Global ve Cigna Healthcare, dünya genelinde milyonlarca kişiye kapsamlı sağlık sigortası çözümleri sunan köklü kuruluşlardır. Dr Otgen Clinic'in bu prestijli sigorta sağlayıcıları ile olan anlaşmaları sayesinde, uluslararası hastalarımız aşağıdaki ayrıcalıklardan faydalanabilirler:"
             },
             {
               "type": "list",
               "items": [
-                "Широкая медицинская сеть: обширные сети партнёрских учреждений обеих страховых компаний обеспечивают глобальный доступ и гибкость на протяжении лечения.",
-                "Комплексное покрытие: полисы Bupa Global и Cigna Healthcare могут покрывать многие процедуры и услуги в Dr Otgen Clinic, обеспечивая финансовую уверенность.",
-                "Международная действительность: благодаря международной действительности страховки вы остаётесь защищёнными при лечении в Dr Otgen Clinic в Турции."
+                "Geniş Medikal Ağ: Her iki sigorta şirketinin de dünya çapındaki geniş anlaşmalı kurum ağları sayesinde, tedavi süreçlerinizde global erişim ve esneklik sağlanır.",
+                "Kapsamlı Teminatlar: Bupa Global ve Cigna Healthcare sigortalarınız, Dr Otgen Clinic'te alacağınız birçok tedavi ve hizmeti kapsayarak finansal güvence sunar. Bu sayede, sağlığınıza odaklanırken maliyet endişesi taşımazsınız.",
+                "Uluslararası Geçerlilik: Sigortalarınızın uluslararası geçerliliği sayesinde, Türkiye'deki Dr Otgen Clinic'te alacağınız tedavilerde de güvence altında olursunuz."
               ]
             }
           ]
         },
         {
-          "title": "Поддержка международных пациентов в Dr Otgen Clinic",
+          "title": "Dr Otgen Clinic'in Uluslararası Hastalara Sunduğu Destek",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "В Dr Otgen Clinic мы предлагаем специальные услуги, чтобы международные пациенты проходили лечение максимально комфортно и без осложнений:"
+              "text": "Dr Otgen Clinic olarak, uluslararası hastalarımızın tedavi süreçlerini en konforlu ve sorunsuz şekilde geçirmeleri için özel hizmetler sunuyoruz:"
             },
             {
               "type": "list",
               "items": [
-                "Координация пациента: персональный координатор сопровождает вас на всех этапах — от планирования лечения до организации поездки.",
-                "Многоязычная поддержка: наша команда общается на разных языках, поэтому языковых барьеров не возникает.",
-                "Современные подходы к лечению: с опытными врачами и передовыми технологиями мы предлагаем персонализированные и эффективные методы."
+                "Hasta Koordinasyonu: Tedavi planlamanızdan seyahat düzenlemelerinize kadar tüm süreçlerde size özel bir hasta koordinatörü eşlik eder.",
+                "Çok Dilli Destek: Farklı dillerde iletişim kurabilen ekibimiz sayesinde, tedavi süreciniz boyunca herhangi bir dil bariyeri yaşamazsınız.",
+                "Modern Tedavi Yaklaşımları: Alanında uzman hekimlerimiz ve güncel teknolojiye sahip kliniğimizle, kişiye özel ve en etkili tedavi yöntemlerini sunuyoruz."
               ]
             }
           ]
         },
         {
-          "title": "Получите наши услуги по страховке Bupa Global или Cigna Healthcare",
+          "title": "Bupa Global veya Cigna Healthcare Sigortanızla Hizmetlerimizden Yararlanın",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Если у вас есть страховка Bupa Global или Cigna Healthcare, вы можете легко воспользоваться премиальными эстетическими и медицинскими услугами Dr Otgen Clinic. Свяжитесь с нами для подробной информации о планировании лечения и страховом покрытии."
+              "text": "Eğer Bupa Global veya Cigna Healthcare sigortasına sahipseniz, Dr Otgen Clinic'in sunduğu premium estetik ve sağlık hizmetlerinden kolayca faydalanabilirsiniz. Tedavi planlaması ve sigorta kapsamınız hakkında detaylı bilgi almak için bizimle iletişime geçmeniz yeterlidir."
             },
             {
               "type": "paragraph",
-              "text": "Ради вашего здоровья и красоты Dr Otgen Clinic рядом с вами под защитой Bupa Global и Cigna Healthcare."
+              "text": "Sağlığınız ve güzelliğiniz için Dr Otgen Clinic, Bupa Global ve Cigna Healthcare güvencesiyle yanınızdayız."
             }
           ]
         }
       ],
       "highlights": [
-        "Соглашения с Bupa Global и Cigna Healthcare",
-        "Международно действующие страховые покрытия",
-        "Многоязычная координация пациентов",
-        "Премиальные эстетические и медицинские услуги"
+        "Bupa Global ve Cigna Healthcare anlaşmaları",
+        "Uluslararası geçerli sigorta teminatları",
+        "Çok dilli hasta koordinasyonu",
+        "Premium estetik ve sağlık hizmetleri"
       ],
       "suitableIntro": "",
       "suitableFor": [
-        "Международные пациенты со страховкой Bupa Global",
-        "Международные пациенты со страховкой Cigna Healthcare",
-        "Те, кто ищет информацию о страховом покрытии при планировании лечения",
-        "Международные пациенты, ищущие надёжную клинику в Турции"
+        "Bupa Global sigortasına sahip uluslararası hastalar",
+        "Cigna Healthcare sigortasına sahip uluslararası hastalar",
+        "Tedavi planlamasında sigorta kapsamı hakkında bilgi almak isteyenler",
+        "Türkiye'de güvenilir klinik arayan uluslararası hastalar"
       ],
       "quickFacts": [
         {
-          "label": "Партнёрские страховщики",
-          "value": "Bupa Global и Cigna Healthcare"
+          "label": "Anlaşmalı Sigorta",
+          "value": "Bupa Global ve Cigna Healthcare"
         },
         {
           "label": "Поддержка",
-          "value": "Координация международных пациентов"
+          "value": "Международная координация пациентов"
         },
         {
-          "label": "Коммуникация",
-          "value": "Многоязычная команда"
+          "label": "Контакт",
+          "value": "Çok dilli ekip desteği"
         },
         {
-          "label": "Охват",
-          "value": "Эстетика, волосы, стоматология, мед. эстетика и longevity"
+          "label": "Область применения",
+          "value": "Estetik, saç, diş, medikal estetik ve longevity"
         }
       ],
       "process": [
         {
-          "title": "Оценка страховки и лечения",
-          "description": "Страховое покрытие и потребности в лечении оцениваются совместно для составления подходящего плана."
+          "title": "Sigorta ve Tedavi Değerlendirmesi",
+          "description": "Sigorta kapsamınız ve tedavi ihtiyaçlarınız birlikte değerlendirilir; uygun hizmet planı oluşturulur."
         },
         {
           "title": "Планирование и координация",
-          "description": "Координатор организует график лечения, коммуникацию и операционные детали."
+          "description": "Tedavi takvimi, iletişim süreci ve operasyonel detaylar hasta koordinatörünüz tarafından organize edilir."
         },
         {
-          "title": "Лечение и сопровождение",
-          "description": "На протяжении всего процесса предоставляется многоязычная поддержка и структурированное сопровождение."
+          "title": "Tedavi ve Takip",
+          "description": "Tedavi süreciniz boyunca çok dilli destek ve yapılandırılmış takip hizmeti sunulur."
         }
       ],
       "faqs": [
         {
-          "question": "Действует ли моя страховка Bupa Global или Cigna Healthcare в Dr Otgen Clinic?",
-          "answer": "Dr Otgen Clinic работает по соглашениям с Bupa Global и Cigna Healthcare. Действительность покрытия оценивается по вашему полису; свяжитесь с нами для подробностей."
+          "question": "Bupa Global veya Cigna Healthcare sigortam Dr Otgen Clinic'te geçerli mi?",
+          "answer": "Dr Otgen Clinic, Bupa Global ve Cigna Healthcare ile anlaşmalı olarak hizmet vermektedir. Sigorta kapsamınızın geçerliliği poliçenize göre değerlendirilir; detaylı bilgi için bizimle iletişime geçebilirsiniz."
         },
         {
-          "question": "Какие услуги могут быть покрыты страховкой?",
-          "answer": "Многие наши услуги в области эстетики, здоровья волос, стоматологической эстетики, медицинской эстетики и longevity могут быть включены в покрытие. Окончательный объём зависит от полиса и плана лечения."
+          "question": "Hangi hizmetler sigorta kapsamında değerlendirilebilir?",
+          "answer": "Estetik, saç sağlığı, diş estetiği, medikal estetik ve longevity hizmetlerimizin birçoğu sigorta kapsamında değerlendirilebilir. Kesin kapsam, poliçeniz ve tedavi planınıza göre belirlenir."
         },
         {
-          "question": "Как организована поддержка международных пациентов?",
-          "answer": "Персональный координатор сопровождает вас и помогает с планированием лечения, организацией поездки и многоязычной коммуникацией."
+          "question": "Uluslararası hasta desteği nasıl sağlanır?",
+          "answer": "Size özel bir hasta koordinatörü eşlik eder; tedavi planlaması, seyahat düzenlemeleri ve çok dilli iletişim süreçlerinde destek sunulur."
         }
       ]
     },

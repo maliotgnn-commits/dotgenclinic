@@ -1,5 +1,5 @@
 import { authorizeAdminRequest } from '../../server/analytics/admin-auth.js';
-import { getAnalyticsConfigStatus } from '../../server/analytics/analytics-config.js';
+import { getAnalyticsPublicHealthSummary } from '../../server/analytics/analytics-config.js';
 import { sendJson, rejectMethodNotAllowed } from '../../server/analytics/api-auth.js';
 
 function isHealthCheck(req) {
@@ -13,9 +13,9 @@ export default async function handler(req, res) {
   }
 
   if (isHealthCheck(req)) {
-    const status = getAnalyticsConfigStatus();
-    sendJson(res, status.ready.adminDashboard ? 200 : 503, {
-      ok: status.ready.adminDashboard,
+    const status = getAnalyticsPublicHealthSummary();
+    sendJson(res, status.ready ? 200 : 503, {
+      ok: status.ready,
       data: status,
     });
     return;

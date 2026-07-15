@@ -28,7 +28,7 @@ const failures = [];
 if (health.status !== 200 || !health.json?.ok) {
   failures.push('Health endpoint must return 200 with ok:true');
 }
-if (!health.json?.data?.ready?.adminDashboard) {
+if (!health.json?.data?.ready) {
   failures.push('adminDashboard readiness flag must be true');
 }
 if (session.status !== 401) {

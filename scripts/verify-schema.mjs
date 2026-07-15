@@ -6,7 +6,9 @@ import {
   CLINIC,
   LOCALES,
   SITE_ORIGIN,
+  buildBranchMedicalClinicEntity,
   buildIzmirMedicalClinicEntity,
+  buildOrganizationEntity,
   locationId,
   organizationId,
 } from './seo-shared.mjs';
@@ -96,20 +98,7 @@ function verifyIzmirMedicalClinic(entity, label) {
 }
 
 function buildBaselineBranchEntity(location, pageUrl) {
-  return {
-    '@type': 'MedicalClinic',
-    '@id': locationId(location.id),
-    name: `${CLINIC.publicName} – ${location.name}`,
-    parentOrganization: { '@id': organizationId() },
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: location.address,
-      addressCountry: location.id === 'leverkusen' ? 'DE' : 'TR',
-    },
-    telephone: CLINIC.phone,
-    email: CLINIC.email,
-    url: pageUrl,
-  };
+  return buildBranchMedicalClinicEntity(location, pageUrl);
 }
 
 for (const locale of LOCALES) {
@@ -120,6 +109,10 @@ for (const locale of LOCALES) {
     assert(types.includes('Organization'), `[${label}] Organization missing`);
     assert(types.includes('WebSite'), `[${label}] WebSite missing`);
     assert(types.includes('WebPage'), `[${label}] WebPage missing`);
+    const org = graph.find((node) => node['@type'] === 'Organization');
+    assert(org?.department?.length >= 1, `[${label}] Organization department missing`);
+    assert(org?.medicalSpecialty?.length >= 1, `[${label}] Organization medicalSpecialty missing`);
+    assert(Array.isArray(org?.sameAs) && org.sameAs.includes(CLINIC.instagram), `[${label}] Organization sameAs missing`);
     const clinics = graph.filter((node) => node['@type'] === 'MedicalClinic');
     assert(clinics.length === 1, `[${label}] expected exactly 1 MedicalClinic, found ${clinics.length}`);
     verifyIzmirMedicalClinic(clinics[0], label);
@@ -138,7 +131,12 @@ for (const locale of LOCALES) {
     const org = graph.find((node) => node['@type'] === 'Organization');
     assert(org?.legalName === CLINIC.legalName, `[${label}] legalName mismatch`);
     assert(org?.name === CLINIC.publicName, `[${label}] public name mismatch`);
-    const clinics = graph.filter((node) => node['@type'] === 'MedicalClinic');
+    assert(org?.department?.length >= 1, `[${label}] Organization department missing`);
+    assert(org?.medicalSpecialty?.length >= 1, `[${label}] Organization medicalSpecialty missing`);
+    const clinics = graph.filter((node) => {
+      const type = node['@type'];
+      return type === 'MedicalClinic' || (Array.isArray(type) && type.includes('MedicalClinic'));
+    });
     assert(clinics.length === 3, `[${label}] expected 3 clinic locations`);
     const ids = clinics.map((node) => node['@id']).sort();
     assert(
@@ -176,6 +174,12 @@ verifyFile(`_seo/tr/service/${sampleService.slug}.html`, ({ blocks, html }) => {
       '[service sample] FAQPage question count mismatch',
     );
   }
+  const breadcrumb = graph.find((node) => node['@type'] === 'BreadcrumbList');
+  assert(breadcrumb?.itemListElement?.length === 3, '[service sample] expected 3-level breadcrumb');
+  assert(
+    breadcrumb.itemListElement[1]?.name === sampleService.categoryLabel,
+    '[service sample] breadcrumb category mismatch',
+  );
   graph.forEach((node) => walk(node, (current) => {
     if (current['@type'] && FORBIDDEN_TYPES.includes(current['@type'])) {
       failures.push(`[service sample] forbidden type ${current['@type']}`);

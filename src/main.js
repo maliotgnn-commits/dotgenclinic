@@ -25,6 +25,11 @@ import { upgradeLocalizedEyeHealthNav } from './tr-eye-health-nav.js';
 import { initPartnersMarquee } from './partners-marquee.js';
 import { initAnalyticsTracking, pushEvent } from './analytics.js';
 import { buildWhatsAppUrl } from './whatsapp-links.js';
+import {
+  applyAppointmentReferrerToForm,
+  clearAppointmentReferrer,
+  readAppointmentReferrer,
+} from './appointment-attribution.js';
 import { heroPosterSources } from './responsive-image.js';
 
 const locale = getCurrentLocale('home');
@@ -44,6 +49,8 @@ const percentFormatter = new Intl.NumberFormat(getIntlLocale(locale), {
   style: 'percent',
   maximumFractionDigits: 0,
 });
+
+const INTRO_SEEN_KEY = 'dotgen_intro_seen_v1';
 
 let introComplete = false;
 let introProgress = 0;
@@ -157,6 +164,12 @@ function completeIntro() {
   if (introComplete) return;
   introComplete = true;
 
+  try {
+    sessionStorage.setItem(INTRO_SEEN_KEY, '1');
+  } catch {
+    // sessionStorage may be unavailable
+  }
+
   introOverlay?.classList.add('completed');
   document.body.style.overflow = '';
   if (introSection) introSection.style.display = 'none';
@@ -192,6 +205,15 @@ function initIntro() {
   if (prefersReducedMotion) {
     completeIntro();
     return;
+  }
+
+  try {
+    if (sessionStorage.getItem(INTRO_SEEN_KEY) === '1') {
+      completeIntro();
+      return;
+    }
+  } catch {
+    // continue with intro animation
   }
 
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
@@ -266,14 +288,30 @@ function scheduleHeroVideoSourceLoad() {
   const video = document.querySelector('.hero-bg-video');
   if (!video || heroVideoSourceAttached || prefersReducedMotion) return;
 
+  const slide = video.closest('.hero-slide-video') || video.closest('.hero-slide');
   const attach = () => attachHeroVideoSource(video);
 
-  if ('requestIdleCallback' in window) {
-    requestIdleCallback(attach, { timeout: 1200 });
+  if (!slide || !('IntersectionObserver' in window)) {
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(attach, { timeout: 1200 });
+    } else {
+      requestAnimationFrame(() => requestAnimationFrame(attach));
+    }
     return;
   }
 
-  requestAnimationFrame(() => requestAnimationFrame(attach));
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        attach();
+        observer.disconnect();
+      });
+    },
+    { root: null, threshold: 0.15, rootMargin: '80px 0px' },
+  );
+
+  observer.observe(slide);
 }
 
 function getHeroVideoLoopThreshold(video) {
@@ -818,6 +856,17 @@ function initAppointmentForm() {
   const form = document.getElementById('appointment-form');
   if (!form) return;
 
+  applyAppointmentReferrerToForm(form);
+
+  const getReferralContext = () => {
+    const referrer = readAppointmentReferrer();
+    return {
+      referral_service_slug: referrer?.slug || undefined,
+      referral_service_category: referrer?.category || undefined,
+      referral_source: referrer?.source || undefined,
+    };
+  };
+
   const FORM_RATE_LIMIT_KEY = 'dotgen_form_last_submit';
   const FORM_RATE_LIMIT_MS = 60_000;
   const SERVICE_LABELS = {
@@ -873,6 +922,7 @@ function initAppointmentForm() {
         form_id: 'appointment-form',
         service_category: sanitizeField(document.getElementById('form-service')?.value, 32) || 'not_applicable',
         status: 'validation_error',
+        ...getReferralContext(),
       });
       return;
     }
@@ -890,6 +940,7 @@ function initAppointmentForm() {
         form_id: 'appointment-form',
         service_category: sanitizeField(document.getElementById('form-service')?.value, 32) || 'not_applicable',
         status: 'rate_limited',
+        ...getReferralContext(),
       });
       setFormStatus(translate(uiDictionary, 'Hata Oluştu'));
       setButtonVisual(translate(uiDictionary, 'Hata Oluştu'), 'is-error');
@@ -916,6 +967,7 @@ function initAppointmentForm() {
         form_id: 'appointment-form',
         service_category: serviceCode || 'not_applicable',
         status: 'validation_error',
+        ...getReferralContext(),
       });
       resetFormFeedback();
       return;
@@ -950,7 +1002,9 @@ function initAppointmentForm() {
         form_id: 'appointment-form',
         service_category: serviceCode || 'not_applicable',
         status: 'success',
+        ...getReferralContext(),
       });
+      clearAppointmentReferrer();
       showTransientSuccess();
     })
     .catch((error) => {
@@ -960,6 +1014,7 @@ function initAppointmentForm() {
         form_id: 'appointment-form',
         service_category: serviceCode || 'not_applicable',
         status: 'error',
+        ...getReferralContext(),
       });
       setButtonVisual(translate(uiDictionary, 'Hata Oluştu'), 'is-error');
       setFormStatus(translate(uiDictionary, 'Hata Oluştu'));

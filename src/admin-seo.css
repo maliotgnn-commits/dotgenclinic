@@ -1,0 +1,114 @@
+.admin-seo__cards {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.admin-seo__tables {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.admin-seo__panel {
+  margin-bottom: 1.5rem;
+}
+
+.admin-seo__index-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.admin-seo__index-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1rem;
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-sm);
+  background: #0f1f3a55;
+}
+
+.admin-seo__index-stat span {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.admin-seo__index-stat strong {
+  font-size: 1.4rem;
+  color: var(--gold);
+}
+
+.admin-seo__note {
+  margin: 1rem 0 0;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.admin-seo__cell-truncate {
+  max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-seo__nav-link,
+.admin-seo__login-link a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.admin-seo__nav-link:hover,
+.admin-seo__login-link a:hover {
+  text-decoration: underline;
+}
+
+.admin-seo__login-link {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.admin-seo__category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.admin-seo__category-card {
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  background: #0f1f3a55;
+}
+
+.admin-seo__category-card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  color: var(--gold);
+}
+
+.admin-seo__category-metrics {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.admin-seo__tables--stack {
+  grid-template-columns: 1fr;
+  margin-bottom: 1.5rem;
+}
+
+.admin-seo__index-grid--4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1024px) {
+  .admin-seo__cards,
+  .admin-seo__index-grid,
+  .admin-seo__index-grid--4,
+  .admin-seo__tables,
+  .admin-seo__category-grid {
+    grid-template-columns: 1fr;
+  }
+}

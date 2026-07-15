@@ -365,7 +365,34 @@ const DATA = {
         "Hastalarımızın tedavi planlama süreci başlamadan önce beklentilerini netleştirebilmeleri için tüm adımlar açık şekilde sunulur.",
         "Amacımız; hasta yolculuğu boyunca iletişim, kalite ve sürekliliği aynı yüksek standartta sürdürmektir."
       ],
-      "sections": [],
+      "sections": [
+        {
+          "title": "Yönetim Yaklaşımı",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Yönetim ekibimiz; hasta güvenliği, operasyonel süreklilik ve kalite standartlarını merkeze alan yapılandırılmış bir koordinasyon modeli ile çalışır."
+            },
+            {
+              "type": "paragraph",
+              "text": "Departmanlar arası planlama, uluslararası hasta yolculuğu ve süreç takibi tek bir yönetim çerçevesinde yürütülür."
+            }
+          ]
+        },
+        {
+          "title": "Operasyonel Koordinasyon",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "Konsültasyon ve randevu koordinasyonu",
+                "Tedavi planı öncesi bilgilendirme ve onay süreçleri",
+                "Uluslararası hasta iletişim ve takip hattı"
+              ]
+            }
+          ]
+        }
+      ],
       "highlights": [
         "Şeffaf ve ölçülebilir süreç standartları",
         "Her aşamada net ve açık iletişim",
@@ -413,16 +440,16 @@ const DATA = {
       ],
       "faqs": [
         {
-          "question": "Yönetim süreçlerimiz kimler için uygundur?",
-          "answer": "Uygunluk; uzman değerlendirmesi, tıbbi geçmiş analizi ve tedaviye uygunluk incelemesi sonrasında belirlenir."
+          "question": "Yönetim ekibi hangi süreçlerden sorumludur?",
+          "answer": "Konsültasyon koordinasyonu, hasta yolculuğu planlaması, departmanlar arası iletişim ve kalite takibi yönetim ekibinin temel sorumluluk alanlarıdır."
         },
         {
-          "question": "İyileşme süreci ne kadar sürer?",
-          "answer": "Süre, seçilen tedaviye bağlıdır. Doktorunuz görüşme sırasında size gerçekçi bir iyileşme takvimi ve bakım planı sunar."
+          "question": "Uluslararası hastalar yönetim ekibiyle nasıl iletişim kurar?",
+          "answer": "Uluslararası hastalarımız; randevu, planlama ve süreç takibi için yapılandırılmış iletişim kanalları üzerinden yönetim koordinasyon ekibine yönlendirilir."
         },
         {
-          "question": "Nihai tedavi planı ne zaman kesinleşir?",
-          "answer": "Nihai plan, klinik değerlendirme tamamlandıktan ve yöntem ile tedavi kapsamı netleştirildikten sonra oluşturulur."
+          "question": "Kalite ve süreç takibi nasıl yapılır?",
+          "answer": "Süreçler; tanımlı kalite standartları, düzenli iç değerlendirme ve hasta geri bildirimleri ile izlenir; iyileştirme adımları planlı şekilde uygulanır."
         }
       ]
     },
@@ -627,7 +654,30 @@ const DATA = {
         "Tedavi planlama süreci başlamadan önce, beklentilerin net olarak anlaşılması için tüm aşamalar açık şekilde paylaşılır.",
         "Amacımız; tüm hasta yolculuğu boyunca iletişim, kalite ve sürekliliği aynı yüksek standartta sürdürmektir."
       ],
-      "sections": [],
+      "sections": [
+        {
+          "title": "Temsilci Ağı ve Koordinasyon",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Temsilci ağımız; uluslararası hastaların ilk temas noktasından tedavi sonrası takibe kadar süreç boyunca koordinasyon sağlar."
+            }
+          ]
+        },
+        {
+          "title": "Hasta Yolculuğu Desteği",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "İlk bilgilendirme ve yönlendirme",
+                "Randevu ve seyahat planı koordinasyonu",
+                "Tedavi süreci boyunca iletişim desteği"
+              ]
+            }
+          ]
+        }
+      ],
       "highlights": [
         "Şeffaf ve ölçülebilir süreç standartları",
         "Her aşamada net ve açık iletişim",
@@ -675,16 +725,16 @@ const DATA = {
       ],
       "faqs": [
         {
-          "question": "Temsilci pozisyonu için uygun aday profili nedir?",
-          "answer": "Uygunluk; uzman değerlendirmesi, tıbbi geçmiş analizi ve tedaviye uygunluk incelemesi sonucunda belirlenir."
+          "question": "Temsilciler hangi aşamalarda destek sağlar?",
+          "answer": "Temsilciler; ilk bilgilendirme, randevu planlama, seyahat koordinasyonu ve tedavi süreci boyunca iletişim desteği sağlar."
         },
         {
-          "question": "İyileşme süreci genelde ne kadar sürer?",
-          "answer": "Tedavinin kapsamına göre değişir. Doktor, görüşme sırasında gerçekçi bir iyileşme planı ve bakım süreci sunar."
+          "question": "Uluslararası hastalar temsilci ağına nasıl ulaşır?",
+          "answer": "Uluslararası hastalar; web sitesi, WhatsApp ve yapılandırılmış iletişim kanalları üzerinden temsilci koordinasyon ekibine yönlendirilir."
         },
         {
-          "question": "Nihai tedavi planı ne zaman kesinleşir?",
-          "answer": "Klinik değerlendirme tamamlandıktan ve uygulanacak yöntem netleştirildikten sonra kesinleşir."
+          "question": "Temsilci desteği hangi dillerde sunulur?",
+          "answer": "Destek dilleri temsilci ağına göre değişir; iletişim planı hasta yolculuğu başlangıcında netleştirilir."
         }
       ]
     },

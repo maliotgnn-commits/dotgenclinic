@@ -1,34 +1,61 @@
 import { getDoctorsForCategory } from './doctors-data.js';
-import { ORPHAN_SERVICE_SLUGS, getClusterLinksForServiceSlug } from './seo-content-clusters.js';
+import {
+  ORPHAN_INBOUND_LINKS,
+  ORPHAN_SERVICE_SLUGS,
+  getClusterLinksForServiceSlug,
+  getClusterServiceLinkOrder,
+} from './seo-content-clusters.js';
+
+function pagesBySlugMap(catalog) {
+  return Object.fromEntries(catalog.pages.map((entry) => [entry.slug, entry]));
+}
+
+function addSlug(slug, pagesBySlug, chosen, seen) {
+  if (!slug || seen.has(slug) || !pagesBySlug[slug]) return;
+  seen.add(slug);
+  chosen.push(pagesBySlug[slug]);
+}
 
 /**
- * Prefer same-category pages, then cluster-linked services, then fill remaining slots.
+ * Prefer cluster link order, orphan backlink targets, same-category, then fill.
  */
-export function enhanceRelatedPages(catalog, page, limit = 4) {
+export function enhanceRelatedPages(catalog, page, limit = 6) {
   if (!page) return [];
 
-  const pagesBySlug = Object.fromEntries(catalog.pages.map((entry) => [entry.slug, entry]));
+  const pagesBySlug = pagesBySlugMap(catalog);
   const chosen = [];
   const seen = new Set([page.slug]);
 
-  const addSlug = (slug) => {
-    if (!slug || seen.has(slug) || !pagesBySlug[slug]) return;
-    seen.add(slug);
-    chosen.push(pagesBySlug[slug]);
-  };
+  getClusterServiceLinkOrder(page.category).forEach((slug) => addSlug(slug, pagesBySlug, chosen, seen));
+
+  Object.entries(ORPHAN_INBOUND_LINKS).forEach(([orphanSlug, sources]) => {
+    if (sources.includes(page.slug)) addSlug(orphanSlug, pagesBySlug, chosen, seen);
+  });
 
   const clusterInfo = getClusterLinksForServiceSlug(page.slug);
-  clusterInfo?.pillar?.targetServiceSlugs?.forEach(addSlug);
-  clusterInfo?.clusters?.forEach((cluster) => cluster.targetServiceSlugs.forEach(addSlug));
-
-  const sameCategory = catalog.pages.filter(
-    (candidate) => candidate.category === page.category && candidate.slug !== page.slug,
+  clusterInfo?.pillar?.targetServiceSlugs?.forEach((slug) => addSlug(slug, pagesBySlug, chosen, seen));
+  clusterInfo?.clusters?.forEach((cluster) =>
+    cluster.targetServiceSlugs.forEach((slug) => addSlug(slug, pagesBySlug, chosen, seen)),
   );
-  sameCategory.forEach((candidate) => addSlug(candidate.slug));
 
-  catalog.pages.forEach((candidate) => addSlug(candidate.slug));
+  catalog.pages
+    .filter((candidate) => candidate.category === page.category && candidate.slug !== page.slug)
+    .forEach((candidate) => addSlug(candidate.slug, pagesBySlug, chosen, seen));
+
+  catalog.pages.forEach((candidate) => addSlug(candidate.slug, pagesBySlug, chosen, seen));
 
   return chosen.slice(0, limit);
+}
+
+export function getClusterNavLinks(catalog, page, limit = 6) {
+  if (!page) return [];
+  const pagesBySlug = pagesBySlugMap(catalog);
+  const order = getClusterServiceLinkOrder(page.category);
+  return order
+    .filter((slug) => slug !== page.slug)
+    .map((slug) => pagesBySlug[slug])
+    .filter(Boolean)
+    .slice(0, limit);
 }
 
 export function getDoctorsForServicePage(page) {

@@ -87,3 +87,16 @@ export function getAnalyticsConfigStatus() {
     },
   };
 }
+
+/** Public health payload — no property IDs, credential paths, or error details. */
+export function getAnalyticsPublicHealthSummary() {
+  const status = getAnalyticsConfigStatus();
+
+  return {
+    ready: status.ready.adminDashboard,
+    adminAuthConfigured: status.adminAuth.configured,
+    ga4Configured: status.ga4.propertyConfigured,
+    credentialsConfigured: status.ga4.credentialsValid,
+    analyticsApiConfigured: status.analyticsApi.configured,
+  };
+}

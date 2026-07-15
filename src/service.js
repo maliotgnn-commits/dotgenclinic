@@ -25,7 +25,8 @@ import {
 } from './language-switcher.js';
 import { initAnalyticsTracking, trackServicePageView } from './analytics.js';
 import { renderWhatsAppFloat, buildWhatsAppUrl } from './whatsapp-links.js';
-import { enhanceRelatedPages, getDoctorsForServicePage } from './seo-internal-links.js';
+import { enhanceRelatedPages, getClusterNavLinks, getDoctorsForServicePage } from './seo-internal-links.js';
+import { storeAppointmentReferrer } from './appointment-attribution.js';
 
 const app = document.getElementById('service-app');
 const params = new URLSearchParams(window.location.search);
@@ -96,14 +97,33 @@ function renderSkipLink() {
   return `<a href="#main-content" class="skip-link">${escapeHtml(t('Ana içeriğe atla'))}</a>`;
 }
 
+function renderNavLogo() {
+  return `
+    <picture>
+      <source srcset="/images/logo-transparent-180.avif 180w, /images/logo-transparent-360.avif 360w" sizes="127px" type="image/avif" />
+      <source srcset="/images/logo-transparent-180.webp 180w, /images/logo-transparent-360.webp 360w" sizes="127px" type="image/webp" />
+      <img src="/images/logo-transparent-180.webp" width="180" height="105" alt="Dr Otgen Clinic" decoding="async" />
+    </picture>
+  `;
+}
+
+function appointmentUrl(currentPage, location = 'section') {
+  storeAppointmentReferrer({
+    locale,
+    slug: currentPage.slug,
+    category: currentPage.category,
+    title: currentPage.title,
+    source: location,
+  });
+  return homeUrlFor(locale, '#randevu');
+}
+
 function renderHeader() {
   return `
     <header id="main-header">
       <nav class="main-nav" aria-label="${escapeHtml(t('Menü'))}">
         <div class="container nav-container">
-          <a href="${homeUrlFor(locale)}" class="nav-logo">
-            <img src="/images/logo-transparent.png" alt="Dr Otgen Clinic" />
-          </a>
+          <a href="${homeUrlFor(locale)}" class="nav-logo">${renderNavLogo()}</a>
           <div class="nav-primary">
             <ul class="nav-menu" id="nav-menu">
               ${renderNavGroups()}
@@ -113,7 +133,7 @@ function renderHeader() {
             <div class="nav-language-slot">
               ${renderLanguageSwitcher(locale, 'service', uiDictionary)}
             </div>
-            <a href="${homeUrlFor(locale, '#randevu')}" class="nav-cta">${escapeHtml(t('Randevu Al'))}</a>
+            <a href="${homeUrlFor(locale, '#randevu')}" class="nav-cta" data-appointment-from="nav">${escapeHtml(t('Randevu Al'))}</a>
             <button class="hamburger" id="hamburger" aria-label="${escapeHtml(t('Menü'))}" aria-expanded="false">
               <span></span><span></span><span></span>
             </button>
@@ -193,7 +213,7 @@ function renderFaqCta(currentPage) {
         <p>${escapeHtml(t('Tedavi planınız için uzman ekibimizle iletişime geçebilirsiniz.'))}</p>
         <div class="sv-faq-cta-actions">
           <a href="${buildWhatsAppUrl({ locale, category: currentPage.category, pageTitle: currentPage.title })}" class="btn-gold" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp ile Bilgi Al'))}</a>
-          <a href="${homeUrlFor(locale, '#randevu')}" class="btn-outline">${escapeHtml(t('Randevu Al'))}</a>
+          <a href="${appointmentUrl(currentPage, 'faq')}" class="btn-outline" data-appointment-from="faq">${escapeHtml(t('Randevu Al'))}</a>
         </div>
       </div>
     </section>
@@ -207,7 +227,7 @@ function renderStickyCta(currentPage) {
         <span>${escapeHtml(currentPage.title)}</span>
         <div class="sv-sticky-cta-actions">
           <a href="${buildWhatsAppUrl({ locale, category: currentPage.category, pageTitle: currentPage.title })}" class="btn-gold" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp'))}</a>
-          <a href="${homeUrlFor(locale, '#randevu')}" class="btn-outline">${escapeHtml(t('Randevu Al'))}</a>
+          <a href="${appointmentUrl(currentPage, 'sticky')}" class="btn-outline" data-appointment-from="sticky">${escapeHtml(t('Randevu Al'))}</a>
         </div>
       </div>
     </aside>
@@ -226,6 +246,29 @@ function initStickyCta() {
 
   show();
   window.addEventListener('scroll', show, { passive: true });
+}
+
+function renderClusterLinks(clusterPages, currentPage) {
+  if (!clusterPages.length) return '';
+  return `
+    <section class="sv-section sv-section-soft">
+      <div class="container">
+        <h3>${escapeHtml(t('İlgili Tedaviler'))}</h3>
+        <div class="sv-related-grid">
+          ${clusterPages
+            .map(
+              (item) => `
+            <a class="sv-related-card" href="${serviceUrlForLocale(item.slug, locale)}">
+              <h4>${escapeHtml(item.title)}</h4>
+              <p>${escapeHtml(item.summary)}</p>
+            </a>
+          `,
+            )
+            .join('')}
+        </div>
+      </div>
+    </section>
+  `;
 }
 
 function renderRelated(relatedPages) {
@@ -328,7 +371,18 @@ function renderGalleryCarousel(page) {
   `;
 }
 
+function setServiceRobotsMeta(indexable) {
+  let robotsMeta = document.querySelector('meta[name="robots"]');
+  if (!robotsMeta) {
+    robotsMeta = document.createElement('meta');
+    robotsMeta.setAttribute('name', 'robots');
+    document.head.appendChild(robotsMeta);
+  }
+  robotsMeta.setAttribute('content', indexable ? 'index, follow' : 'noindex, follow');
+}
+
 function renderPage(currentPage, relatedPages) {
+  setServiceRobotsMeta(true);
   document.title = `${currentPage.title} | Dr Otgen Clinic`;
 
   const metaDescription = document.querySelector('meta[name="description"]');
@@ -364,7 +418,7 @@ function renderPage(currentPage, relatedPages) {
             <p>${escapeHtml(currentPage.summary)}</p>
             <div class="sv-hero-actions">
               <a href="${buildWhatsAppUrl({ locale, category: currentPage.category, pageTitle: currentPage.title })}" class="btn-gold sv-hero-whatsapp" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp ile Bilgi Al'))}</a>
-              <a href="${homeUrlFor(locale, '#randevu')}" class="btn-outline sv-hero-appointment">${escapeHtml(t('Randevu Al'))}</a>
+              <a href="${appointmentUrl(currentPage, 'hero')}" class="btn-outline sv-hero-appointment" data-appointment-from="hero">${escapeHtml(t('Randevu Al'))}</a>
             </div>
           </article>
         </div>
@@ -427,6 +481,8 @@ function renderPage(currentPage, relatedPages) {
         </section>
         ${renderFaqCta(currentPage)}
       ` : ''}
+
+      ${renderClusterLinks(getClusterNavLinks(catalog, currentPage), currentPage)}
 
       ${renderDoctorLinks(getDoctorsForServicePage(currentPage))}
 

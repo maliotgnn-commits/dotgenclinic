@@ -16,6 +16,7 @@ import { buildEcommerceRdPreviewPage } from './build-ecommerce-rd-preview-page.m
 import { prerenderDepartmentSeo } from './prerender-department-seo.mjs';
 
 const steps = [
+  ['node', ['scripts/verify-duplicate-faqs.mjs']],
   ['node', ['scripts/verify-favicon-assets.mjs']],
   ['node', ['scripts/verify-service-static-seo.mjs']],
   ['node', ['scripts/verify-department-static-seo.mjs']],
@@ -67,7 +68,29 @@ export function runBuildValidations() {
   buildEcommerceRdPreviewPage();
   prerenderDepartmentSeo(resolve(ROOT, 'dist'));
 
+  const sitemapGen = spawnSync('node', ['scripts/generate-sitemap.mjs'], {
+    cwd: ROOT,
+    stdio: 'inherit',
+    shell: process.platform === 'win32',
+  });
+  if (sitemapGen.status !== 0) {
+    process.exit(sitemapGen.status || 1);
+  }
+
   for (const [command, args] of steps) {
+    const result = spawnSync(command, args, { cwd: ROOT, stdio: 'inherit', shell: process.platform === 'win32' });
+    if (result.status !== 0) {
+      process.exit(result.status || 1);
+    }
+  }
+
+  const reportSteps = [
+    ['node', ['scripts/seo-content-gap-report.mjs']],
+    ['node', ['scripts/generate-seo-weekly-report.mjs']],
+    ['node', ['scripts/generate-final-seo-status.mjs']],
+  ];
+
+  for (const [command, args] of reportSteps) {
     const result = spawnSync(command, args, { cwd: ROOT, stdio: 'inherit', shell: process.platform === 'win32' });
     if (result.status !== 0) {
       process.exit(result.status || 1);
