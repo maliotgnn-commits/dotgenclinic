@@ -314,6 +314,11 @@ async function waitForServer(baseOrigin, attempts = 60) {
 }
 
 async function main() {
+  if (process.env.VERCEL === '1') {
+    console.log('[verify-floating-social-stack] Skipped on Vercel (Playwright UI tests run in GitHub CI)');
+    return;
+  }
+
   if (!SKIP_BUILD) {
     const build = spawnSync('npm', ['run', 'build'], {
       cwd: ROOT,
