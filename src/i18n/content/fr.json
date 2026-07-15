@@ -365,7 +365,34 @@
         "Toutes les étapes sont clairement présentées afin que nos patients puissent clarifier leurs attentes avant le début du processus de planification du traitement.",
         "Notre objectif ; Maintenir la communication, la qualité et la continuité au même niveau élevé tout au long du parcours du patient."
       ],
-      "sections": [],
+      "sections": [
+        {
+          "title": "Yönetim Yaklaşımı",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Yönetim ekibimiz; hasta güvenliği, operasyonel süreklilik ve kalite standartlarını merkeze alan yapılandırılmış bir koordinasyon modeli ile çalışır."
+            },
+            {
+              "type": "paragraph",
+              "text": "Departmanlar arası planlama, uluslararası hasta yolculuğu ve süreç takibi tek bir yönetim çerçevesinde yürütülür."
+            }
+          ]
+        },
+        {
+          "title": "Operasyonel Koordinasyon",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "Konsültasyon ve randevu koordinasyonu",
+                "Tedavi planı öncesi bilgilendirme ve onay süreçleri",
+                "Uluslararası hasta iletişim ve takip hattı"
+              ]
+            }
+          ]
+        }
+      ],
       "highlights": [
         "Normes de processus transparentes et mesurables",
         "Une communication claire et ouverte à chaque étape",
@@ -413,16 +440,16 @@
       ],
       "faqs": [
         {
-          "question": "À qui s’adressent nos processus de gestion ?",
-          "answer": "Admissibilité ; Elle est déterminée après expertise, analyse des antécédents médicaux et examen de l’adéquation du traitement."
+          "question": "Yönetim ekibi hangi süreçlerden sorumludur?",
+          "answer": "Konsültasyon koordinasyonu, hasta yolculuğu planlaması, departmanlar arası iletişim ve kalite takibi yönetim ekibinin temel sorumluluk alanlarıdır."
         },
         {
-          "question": "Combien de temps dure le processus de récupération ?",
-          "answer": "La durée dépend du traitement choisi. Votre médecin vous fournira un calendrier de récupération réaliste et un plan de soins lors de la consultation."
+          "question": "Uluslararası hastalar yönetim ekibiyle nasıl iletişim kurar?",
+          "answer": "Uluslararası hastalarımız; randevu, planlama ve süreç takibi için yapılandırılmış iletişim kanalları üzerinden yönetim koordinasyon ekibine yönlendirilir."
         },
         {
-          "question": "Quand le plan de traitement final sera-t-il finalisé ?",
-          "answer": "Le plan final est créé une fois l’évaluation clinique terminée et la méthode et la portée du traitement clarifiées."
+          "question": "Kalite ve süreç takibi nasıl yapılır?",
+          "answer": "Süreçler; tanımlı kalite standartları, düzenli iç değerlendirme ve hasta geri bildirimleri ile izlenir; iyileştirme adımları planlı şekilde uygulanır."
         }
       ]
     },
@@ -627,7 +654,30 @@
         "Avant le début du processus de planification du traitement, toutes les étapes sont clairement partagées pour garantir une compréhension claire des attentes.",
         "Notre objectif ; Maintenir la communication, la qualité et la continuité au même niveau élevé tout au long du parcours du patient."
       ],
-      "sections": [],
+      "sections": [
+        {
+          "title": "Temsilci Ağı ve Koordinasyon",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Temsilci ağımız; uluslararası hastaların ilk temas noktasından tedavi sonrası takibe kadar süreç boyunca koordinasyon sağlar."
+            }
+          ]
+        },
+        {
+          "title": "Hasta Yolculuğu Desteği",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "İlk bilgilendirme ve yönlendirme",
+                "Randevu ve seyahat planı koordinasyonu",
+                "Tedavi süreci boyunca iletişim desteği"
+              ]
+            }
+          ]
+        }
+      ],
       "highlights": [
         "Normes de processus transparentes et mesurables",
         "Une communication claire et ouverte à chaque étape",
@@ -675,16 +725,16 @@
       ],
       "faqs": [
         {
-          "question": "Quel est le profil de candidat approprié pour le poste de représentant ?",
-          "answer": "Admissibilité ; Il est déterminé à la suite d’une évaluation par des experts, de l’analyse des antécédents médicaux et de l’évaluation de l’adéquation du traitement."
+          "question": "Temsilciler hangi aşamalarda destek sağlar?",
+          "answer": "Temsilciler; ilk bilgilendirme, randevu planlama, seyahat koordinasyonu ve tedavi süreci boyunca iletişim desteği sağlar."
         },
         {
-          "question": "Combien de temps dure habituellement le processus de récupération ?",
-          "answer": "Cela varie en fonction de l’étendue du traitement. Le médecin propose un plan de rétablissement réaliste et un déroulement des soins lors de la consultation."
+          "question": "Uluslararası hastalar temsilci ağına nasıl ulaşır?",
+          "answer": "Uluslararası hastalar; web sitesi, WhatsApp ve yapılandırılmış iletişim kanalları üzerinden temsilci koordinasyon ekibine yönlendirilir."
         },
         {
-          "question": "Quand le plan de traitement final sera-t-il finalisé ?",
-          "answer": "Elle devient définitive une fois l’évaluation clinique terminée et la méthode à appliquer clarifiée."
+          "question": "Temsilci desteği hangi dillerde sunulur?",
+          "answer": "Destek dilleri temsilci ağına göre değişir; iletişim planı hasta yolculuğu başlangıcında netleştirilir."
         }
       ]
     },
@@ -808,127 +858,127 @@
     {
       "category": "corporate",
       "slug": "international-health-insurance",
-      "navLabel": "Assurance Santé Internationale",
+      "navLabel": "Uluslararası Sağlık Sigortası",
       "navAppendOnly": true,
-      "title": "Assurance Santé Internationale",
+      "title": "Uluslararası Sağlık Sigortası",
       "categoryLabel": "Entreprise",
       "heroTag": "Informations sur l'entreprise",
-      "heroSubtitle": "Accords d'assurance internationale : protégé avec Bupa Global et Cigna Healthcare",
-      "summary": "Grâce à des accords avec Bupa Global et Cigna Healthcare, Dr Otgen Clinic offre aux patients internationaux un soutien médical sûr et complet en esthétique, santé capillaire, esthétique dentaire, esthétique médicale et longevity.",
+      "heroSubtitle": "Uluslararası Sigorta Anlaşmaları: Bupa Global ve Cigna Healthcare ile Güvendesiniz",
+      "summary": "Dr Otgen Clinic, Bupa Global ve Cigna Healthcare anlaşmalarıyla uluslararası hastalara estetik, saç sağlığı, diş estetiği, medikal estetik ve longevity hizmetlerinde güvenli ve kapsamlı sağlık desteği sunar.",
       "images": {
         "hero": "/images/site/pages/international-health-insurance-hero.webp",
         "content": "/images/site/pages/international-health-insurance-content.webp"
       },
       "overview": [
-        "Chez Dr Otgen Clinic, nous sommes fiers d'offrir à nos patients internationaux un accès à des services d'esthétique, de santé capillaire, d'esthétique dentaire, d'esthétique médicale et de longevity conformes aux standards mondiaux.",
-        "Pour vous accompagner pleinement tout au long de votre parcours de santé, nous travaillons avec Bupa Global et Cigna Healthcare, deux des principaux assureurs internationaux."
+        "Dr Otgen Clinic olarak, global standartlarda sunduğumuz estetik, saç sağlığı, diş estetiği, medikal estetik ve longevity hizmetlerimizi uluslararası hastalarımızın erişimine sunmaktan gurur duyuyoruz.",
+        "Sağlık yolculuğunuzda size tam destek olmak amacıyla, dünyanın önde gelen sağlık sigortası sağlayıcıları Bupa Global ve Cigna Healthcare ile anlaşmalı olarak hizmet vermekteyiz."
       ],
       "sections": [
         {
-          "title": "Services de santé premium avec Bupa Global et Cigna Healthcare",
+          "title": "Bupa Global ve Cigna Healthcare ile Ayrıcalıklı Sağlık Hizmetleri",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Bupa Global et Cigna Healthcare sont des institutions reconnues qui proposent des solutions d'assurance santé complètes à des millions de personnes dans le monde. Grâce aux accords de Dr Otgen Clinic avec ces assureurs prestigieux, nos patients internationaux peuvent bénéficier des avantages suivants :"
+              "text": "Bupa Global ve Cigna Healthcare, dünya genelinde milyonlarca kişiye kapsamlı sağlık sigortası çözümleri sunan köklü kuruluşlardır. Dr Otgen Clinic'in bu prestijli sigorta sağlayıcıları ile olan anlaşmaları sayesinde, uluslararası hastalarımız aşağıdaki ayrıcalıklardan faydalanabilirler:"
             },
             {
               "type": "list",
               "items": [
-                "Réseau médical étendu : Les vastes réseaux de partenaires contractuels des deux assureurs garantissent un accès global et une flexibilité tout au long de votre traitement.",
-                "Couvertures complètes : Vos polices Bupa Global et Cigna Healthcare peuvent couvrir de nombreux traitements et services à Dr Otgen Clinic, offrant une sécurité financière.",
-                "Validité internationale : Grâce à la validité internationale de votre assurance, vous restez couvert pour les traitements reçus à Dr Otgen Clinic en Turquie."
+                "Geniş Medikal Ağ: Her iki sigorta şirketinin de dünya çapındaki geniş anlaşmalı kurum ağları sayesinde, tedavi süreçlerinizde global erişim ve esneklik sağlanır.",
+                "Kapsamlı Teminatlar: Bupa Global ve Cigna Healthcare sigortalarınız, Dr Otgen Clinic'te alacağınız birçok tedavi ve hizmeti kapsayarak finansal güvence sunar. Bu sayede, sağlığınıza odaklanırken maliyet endişesi taşımazsınız.",
+                "Uluslararası Geçerlilik: Sigortalarınızın uluslararası geçerliliği sayesinde, Türkiye'deki Dr Otgen Clinic'te alacağınız tedavilerde de güvence altında olursunuz."
               ]
             }
           ]
         },
         {
-          "title": "Soutien de Dr Otgen Clinic aux patients internationaux",
+          "title": "Dr Otgen Clinic'in Uluslararası Hastalara Sunduğu Destek",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Chez Dr Otgen Clinic, nous proposons des services dédiés pour que les patients internationaux vivent leur parcours de traitement de la manière la plus confortable et fluide possible :"
+              "text": "Dr Otgen Clinic olarak, uluslararası hastalarımızın tedavi süreçlerini en konforlu ve sorunsuz şekilde geçirmeleri için özel hizmetler sunuyoruz:"
             },
             {
               "type": "list",
               "items": [
-                "Coordination patient : Un coordinateur dédié vous accompagne à chaque étape, de la planification du traitement aux arrangements de voyage.",
-                "Support multilingue : Notre équipe communique en plusieurs langues afin d'éviter toute barrière linguistique.",
-                "Approches de traitement modernes : Avec des médecins spécialistes et une technologie avancée, nous proposons des méthodes personnalisées et efficaces."
+                "Hasta Koordinasyonu: Tedavi planlamanızdan seyahat düzenlemelerinize kadar tüm süreçlerde size özel bir hasta koordinatörü eşlik eder.",
+                "Çok Dilli Destek: Farklı dillerde iletişim kurabilen ekibimiz sayesinde, tedavi süreciniz boyunca herhangi bir dil bariyeri yaşamazsınız.",
+                "Modern Tedavi Yaklaşımları: Alanında uzman hekimlerimiz ve güncel teknolojiye sahip kliniğimizle, kişiye özel ve en etkili tedavi yöntemlerini sunuyoruz."
               ]
             }
           ]
         },
         {
-          "title": "Accédez à nos services avec votre assurance Bupa Global ou Cigna Healthcare",
+          "title": "Bupa Global veya Cigna Healthcare Sigortanızla Hizmetlerimizden Yararlanın",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Si vous disposez d'une assurance Bupa Global ou Cigna Healthcare, vous pouvez facilement bénéficier des services premium d'esthétique et de santé de Dr Otgen Clinic. Contactez-nous pour des informations détaillées sur la planification du traitement et votre couverture."
+              "text": "Eğer Bupa Global veya Cigna Healthcare sigortasına sahipseniz, Dr Otgen Clinic'in sunduğu premium estetik ve sağlık hizmetlerinden kolayca faydalanabilirsiniz. Tedavi planlaması ve sigorta kapsamınız hakkında detaylı bilgi almak için bizimle iletişime geçmeniz yeterlidir."
             },
             {
               "type": "paragraph",
-              "text": "Pour votre santé et votre beauté, Dr Otgen Clinic est à vos côtés avec l'assurance de Bupa Global et Cigna Healthcare."
+              "text": "Sağlığınız ve güzelliğiniz için Dr Otgen Clinic, Bupa Global ve Cigna Healthcare güvencesiyle yanınızdayız."
             }
           ]
         }
       ],
       "highlights": [
-        "Accords avec Bupa Global et Cigna Healthcare",
-        "Couvertures d'assurance valables internationalement",
-        "Coordination multilingue des patients",
-        "Services premium d'esthétique et de santé"
+        "Bupa Global ve Cigna Healthcare anlaşmaları",
+        "Uluslararası geçerli sigorta teminatları",
+        "Çok dilli hasta koordinasyonu",
+        "Premium estetik ve sağlık hizmetleri"
       ],
       "suitableIntro": "",
       "suitableFor": [
-        "Patients internationaux assurés Bupa Global",
-        "Patients internationaux assurés Cigna Healthcare",
-        "Personnes souhaitant des informations sur la couverture lors de la planification du traitement",
-        "Patients internationaux recherchant une clinique fiable en Turquie"
+        "Bupa Global sigortasına sahip uluslararası hastalar",
+        "Cigna Healthcare sigortasına sahip uluslararası hastalar",
+        "Tedavi planlamasında sigorta kapsamı hakkında bilgi almak isteyenler",
+        "Türkiye'de güvenilir klinik arayan uluslararası hastalar"
       ],
       "quickFacts": [
         {
-          "label": "Assureurs partenaires",
-          "value": "Bupa Global et Cigna Healthcare"
+          "label": "Anlaşmalı Sigorta",
+          "value": "Bupa Global ve Cigna Healthcare"
         },
         {
-          "label": "Soutien",
-          "value": "Coordination des patients internationaux"
+          "label": "Assistance",
+          "value": "Coordination internationale des patients"
         },
         {
-          "label": "Communication",
-          "value": "Équipe multilingue"
+          "label": "Contacter",
+          "value": "Çok dilli ekip desteği"
         },
         {
           "label": "Portée",
-          "value": "Esthétique, cheveux, dentaire, esthétique médicale et longevity"
+          "value": "Estetik, saç, diş, medikal estetik ve longevity"
         }
       ],
       "process": [
         {
-          "title": "Évaluation assurance et traitement",
-          "description": "Votre couverture et vos besoins de traitement sont évalués ensemble pour établir un plan adapté."
+          "title": "Sigorta ve Tedavi Değerlendirmesi",
+          "description": "Sigorta kapsamınız ve tedavi ihtiyaçlarınız birlikte değerlendirilir; uygun hizmet planı oluşturulur."
         },
         {
           "title": "Planification et coordination",
-          "description": "Votre coordinateur organise le calendrier de traitement, la communication et les détails opérationnels."
+          "description": "Tedavi takvimi, iletişim süreci ve operasyonel detaylar hasta koordinatörünüz tarafından organize edilir."
         },
         {
-          "title": "Traitement et suivi",
-          "description": "Un soutien multilingue et un suivi structuré sont assurés tout au long du parcours."
+          "title": "Tedavi ve Takip",
+          "description": "Tedavi süreciniz boyunca çok dilli destek ve yapılandırılmış takip hizmeti sunulur."
         }
       ],
       "faqs": [
         {
-          "question": "Mon assurance Bupa Global ou Cigna Healthcare est-elle valable à Dr Otgen Clinic ?",
-          "answer": "Dr Otgen Clinic travaille avec Bupa Global et Cigna Healthcare. La validité de la couverture est évaluée selon votre police ; contactez-nous pour plus de détails."
+          "question": "Bupa Global veya Cigna Healthcare sigortam Dr Otgen Clinic'te geçerli mi?",
+          "answer": "Dr Otgen Clinic, Bupa Global ve Cigna Healthcare ile anlaşmalı olarak hizmet vermektedir. Sigorta kapsamınızın geçerliliği poliçenize göre değerlendirilir; detaylı bilgi için bizimle iletişime geçebilirsiniz."
         },
         {
-          "question": "Quels services peuvent être couverts par l'assurance ?",
-          "answer": "De nombreux services d'esthétique, de santé capillaire, d'esthétique dentaire, d'esthétique médicale et de longevity peuvent être éligibles. La couverture finale dépend de votre police et de votre plan de traitement."
+          "question": "Hangi hizmetler sigorta kapsamında değerlendirilebilir?",
+          "answer": "Estetik, saç sağlığı, diş estetiği, medikal estetik ve longevity hizmetlerimizin birçoğu sigorta kapsamında değerlendirilebilir. Kesin kapsam, poliçeniz ve tedavi planınıza göre belirlenir."
         },
         {
-          "question": "Comment le soutien aux patients internationaux est-il assuré ?",
-          "answer": "Un coordinateur dédié vous accompagne et soutient la planification du traitement, les arrangements de voyage et la communication multilingue."
+          "question": "Uluslararası hasta desteği nasıl sağlanır?",
+          "answer": "Size özel bir hasta koordinatörü eşlik eder; tedavi planlaması, seyahat düzenlemeleri ve çok dilli iletişim süreçlerinde destek sunulur."
         }
       ]
     },

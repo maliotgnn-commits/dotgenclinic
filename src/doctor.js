@@ -21,6 +21,7 @@ import {
   isDoctorProfileComplete,
   MISSING_DATA,
 } from './doctors-data.js';
+import { applyDoctorSchema } from './doctor-schema.js';
 
 const app = document.getElementById('doctor-app');
 const params = new URLSearchParams(window.location.search);
@@ -134,6 +135,7 @@ function renderDoctorPage(doctor) {
     );
   }
   applySeoLinks(locale, 'doctor', doctor.slug);
+  applyDoctorSchema(doctor, locale);
 
   const imageMarkup = doctor.imageAvif
     ? `<picture><source srcset="${doctor.imageAvif}" type="image/avif" /><img src="${doctor.image}" alt="${escapeHtml(doctor.imageAlt)}" width="560" height="700" loading="eager" decoding="async" /></picture>`

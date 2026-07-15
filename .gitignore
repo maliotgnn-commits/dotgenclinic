@@ -34,4 +34,10 @@ vite.local.config
 
 # Google API secrets
 secrets/
-.env*
+secrets/**
+*.pem
+*.p12
+*-service-account.json
+.env
+.env.*
+!.env.example

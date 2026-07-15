@@ -79,6 +79,10 @@ function injectSeo(html, page, locale, slug) {
   const jsonLd = buildServiceSchema(page, locale, slug);
 
   let result = html.replace(/<html lang="[^"]*">/, `<html lang="${locale}" dir="${dir}">`);
+  result = result.replace(
+    /<meta name="robots" content="noindex, follow" \/>/,
+    '<meta name="robots" content="index, follow" />',
+  );
   result = injectSeoBundle(result, { title, description, seoBlock, ogTwitter, jsonLd });
   result = result.replace(
     /<main id="service-app"><\/main>/,

@@ -1,10 +1,21 @@
 /** Verified on-site fields only. Placeholder fields require clinic-provided data before publish/index. */
 export const MISSING_DATA = 'GERÇEK VERİ GEREKİYOR';
 
+const PROFILE_FIELDS = [
+  'education',
+  'experience',
+  'interests',
+  'publications',
+  'conferences',
+  'memberships',
+  'approach',
+  'certifications',
+];
+
 /**
  * Doctor profile scaffold.
  * indexed: false → pages render with noindex until verified fields are supplied.
- * Schema (Person/Physician) must NOT be added until data is verified.
+ * Schema (Person/Physician) is emitted via doctor-schema.js only when profileCompleted and indexed.
  */
 export const DOCTORS = [
   {
@@ -12,6 +23,7 @@ export const DOCTORS = [
     name: 'Prof. Dr. Mübin Hoşnuter',
     title: 'Prof. Dr.',
     specialty: 'Plastik Rekonstrüktif Ve Estetik Cerrahi',
+    photo: '/images/site/home/doctor-mubin-hosnuter.webp',
     image: '/images/site/home/doctor-mubin-hosnuter.webp',
     imageAvif: '/images/site/home/doctor-mubin-hosnuter.avif',
     imageAlt: 'Prof. Dr. Mübin Hoşnuter',
@@ -22,7 +34,9 @@ export const DOCTORS = [
     interests: MISSING_DATA,
     publications: MISSING_DATA,
     conferences: MISSING_DATA,
+    congresses: MISSING_DATA,
     memberships: MISSING_DATA,
+    certifications: MISSING_DATA,
     approach: MISSING_DATA,
     indexed: false,
   },
@@ -31,6 +45,7 @@ export const DOCTORS = [
     name: 'Dt. Ayça Koku',
     title: 'Dt.',
     specialty: 'Diş Hekimi',
+    photo: '/images/site/home/doctor-ayca-koku.webp',
     image: '/images/site/home/doctor-ayca-koku.webp',
     imageAvif: '/images/site/home/doctor-ayca-koku.avif',
     imageAlt: 'Dt. Ayça Koku',
@@ -41,7 +56,9 @@ export const DOCTORS = [
     interests: MISSING_DATA,
     publications: MISSING_DATA,
     conferences: MISSING_DATA,
+    congresses: MISSING_DATA,
     memberships: MISSING_DATA,
+    certifications: MISSING_DATA,
     approach: MISSING_DATA,
     indexed: false,
   },
@@ -50,6 +67,7 @@ export const DOCTORS = [
     name: 'Uzm. Dr. Sina Evsen',
     title: 'Uzm. Dr.',
     specialty: 'Göz Hastalıkları Uzmanı',
+    photo: '/images/goz-hastaliklari/uzm-dr-sina-evsen.jpg',
     image: '/images/goz-hastaliklari/uzm-dr-sina-evsen.jpg',
     imageAvif: '/images/goz-hastaliklari/uzm-dr-sina-evsen.avif',
     imageAlt: 'Uzm. Dr. Sina Evsen',
@@ -60,7 +78,9 @@ export const DOCTORS = [
     interests: MISSING_DATA,
     publications: MISSING_DATA,
     conferences: MISSING_DATA,
+    congresses: MISSING_DATA,
     memberships: MISSING_DATA,
+    certifications: MISSING_DATA,
     approach: MISSING_DATA,
     indexed: false,
   },
@@ -78,14 +98,18 @@ export function getDoctorsForCategory(category) {
 
 export function isDoctorProfileComplete(doctor) {
   if (!doctor) return false;
-  const fields = [
-    'education',
-    'experience',
-    'interests',
-    'publications',
-    'conferences',
-    'memberships',
-    'approach',
-  ];
-  return fields.every((field) => doctor[field] && doctor[field] !== MISSING_DATA);
+  return PROFILE_FIELDS.every((field) => doctor[field] && doctor[field] !== MISSING_DATA);
 }
+
+export function getDoctorProfileCompleted(doctor) {
+  return Boolean(doctor?.indexed && isDoctorProfileComplete(doctor));
+}
+
+DOCTORS.forEach((doctor) => {
+  Object.defineProperty(doctor, 'profileCompleted', {
+    get() {
+      return getDoctorProfileCompleted(this);
+    },
+    enumerable: true,
+  });
+});

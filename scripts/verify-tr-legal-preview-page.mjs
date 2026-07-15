@@ -125,24 +125,9 @@ assert(financePageHtml.includes(FINANCE_NAV_LABEL) || readDistHtml('tr/index.htm
 const financeLink = renderFinanceCorporateNavLink('tr');
 assert(financeLink.includes(FINANCE_DEPARTMENT_PATH), 'Finance nav link must still target /tr/finans-departmani.html');
 
-const forbiddenDiffPaths = [
-  'vite.config.js',
-  'package.json',
-  'package-lock.json',
-];
+import { assertBuildFileDiffGuard } from './build-diff-guard.mjs';
 
-const diffNames = spawnSync('git', ['diff', '--name-only', 'origin/main'], {
-  cwd: ROOT,
-  encoding: 'utf8',
-  shell: process.platform === 'win32',
-});
-const changedFiles = diffNames.status === 0 ? diffNames.stdout.split(/\r?\n/).filter(Boolean) : [];
-
-for (const relativePath of forbiddenDiffPaths) {
-  if (changedFiles.includes(relativePath.replace(/\\/g, '/'))) {
-    failures.push(`Forbidden file changed from origin/main: ${relativePath}`);
-  }
-}
+assertBuildFileDiffGuard(failures, ROOT);
 
 const sitemapPath = resolve(DIST, 'sitemap.xml');
 if (existsSync(sitemapPath)) {

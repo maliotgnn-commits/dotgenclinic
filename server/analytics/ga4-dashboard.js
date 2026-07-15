@@ -9,6 +9,7 @@ const CONVERSION_EVENTS = Object.freeze([
   'whatsapp_click',
   'appointment_cta',
   'form_submit',
+  'language_switch',
 ]);
 
 const SERVICE_PAGE_PATH_FILTER = {

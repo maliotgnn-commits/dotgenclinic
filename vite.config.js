@@ -58,6 +58,9 @@ function adminRoutes() {
         if (request.url === '/admin/analytics' || request.url === '/admin/analytics/') {
           request.url = '/admin/analytics.html';
         }
+        if (request.url === '/admin/seo' || request.url === '/admin/seo/') {
+          request.url = '/admin/seo.html';
+        }
         next();
       });
     },
@@ -65,6 +68,9 @@ function adminRoutes() {
       server.middlewares.use((request, _response, next) => {
         if (request.url === '/admin/analytics' || request.url === '/admin/analytics/') {
           request.url = '/admin/analytics.html';
+        }
+        if (request.url === '/admin/seo' || request.url === '/admin/seo/') {
+          request.url = '/admin/seo.html';
         }
         next();
       });
@@ -83,6 +89,7 @@ export default defineConfig({
         privacy: resolve(import.meta.dirname, 'privacy.html'),
         eyeHealth: resolve(import.meta.dirname, 'goz-hastaliklari.html'),
         adminAnalytics: resolve(import.meta.dirname, 'admin/analytics.html'),
+        adminSeo: resolve(import.meta.dirname, 'admin/seo.html'),
       },
     },
   },

@@ -4526,6 +4526,14 @@
     {
       "source": "/admin/analytics",
       "destination": "/admin/analytics.html"
+    },
+    {
+      "source": "/admin/seo",
+      "destination": "/admin/seo.html"
+    },
+    {
+      "source": "/api/admin/seo-health",
+      "destination": "/api/admin/seo?healthCheck=1"
     }
   ]
 }

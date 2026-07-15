@@ -13,6 +13,33 @@ export const CLINIC = {
   kvkkEmail: 'kvkk@drotgenclinic.com',
   kvkkAddress: 'Anadolu Plaza No:23, Karşıyaka, İzmir, 35560, Türkiye',
   instagram: 'https://www.instagram.com/drotgenclinic/',
+  /** Verified external profiles only — null when URL is not confirmed. */
+  socialProfiles: {
+    googleBusiness: null,
+    linkedIn: null,
+    instagram: 'https://www.instagram.com/drotgenclinic/',
+    youtube: null,
+  },
+  /** Legacy alias used by schema builders. */
+  sameAsProfiles: ['https://www.instagram.com/drotgenclinic/'],
+  /** Clinic departments for Organization schema (display names). */
+  departments: [
+    'Estetik Cerrahi',
+    'Saç Ekimi ve Saç Tedavileri',
+    'Diş Estetiği',
+    'Medikal Estetik',
+    'Longevity',
+    'Göz Sağlığı',
+  ],
+  /** High-level specialties mapped to department structure. */
+  medicalSpecialties: [
+    'Plastic Surgery',
+    'Hair Transplantation',
+    'Dentistry',
+    'Medical Aesthetics',
+    'Wellness',
+    'Ophthalmology',
+  ],
   logoUrl: `${SITE_ORIGIN}${LOGO_PATH}`,
   ogImageUrl: `${SITE_ORIGIN}${OG_IMAGE_PATH}`,
   locations: [
@@ -20,16 +47,46 @@ export const CLINIC = {
       id: 'izmir',
       name: 'İzmir',
       address: 'Anadolu Plaza No:23, Karşıyaka, İzmir, 35560, Türkiye',
+      phone: '+905411595636',
+      url: `${SITE_ORIGIN}/`,
+      geo: null,
+      hours: 'Mon-Sat 08:00-17:00',
+      sameAs: {
+        googleBusiness: null,
+        linkedIn: null,
+        instagram: 'https://www.instagram.com/drotgenclinic/',
+        youtube: null,
+      },
     },
     {
       id: 'denizli',
       name: 'Denizli',
       address: 'Sırakapılar Mah. 495. Sok. No:22, Merkezefendi, Denizli, 20010, Türkiye',
+      phone: '+905411595636',
+      url: null,
+      geo: null,
+      hours: null,
+      sameAs: {
+        googleBusiness: null,
+        linkedIn: null,
+        instagram: null,
+        youtube: null,
+      },
     },
     {
       id: 'leverkusen',
       name: 'Leverkusen',
       address: 'Wiesdorfer Str. 3, Wiesdorf, Leverkusen, 51373, Almanya',
+      phone: '+905411595636',
+      url: null,
+      geo: null,
+      hours: null,
+      sameAs: {
+        googleBusiness: null,
+        linkedIn: null,
+        instagram: null,
+        youtube: null,
+      },
     },
   ],
 };
@@ -52,6 +109,83 @@ export function websiteId() {
 
 export function locationId(locationKey) {
   return `${SITE_ORIGIN}/#clinic-${locationKey}`;
+}
+
+export function buildVerifiedSameAsList(profiles = CLINIC.socialProfiles) {
+  return Object.values(profiles).filter(Boolean);
+}
+
+export function buildOrganizationEntity(extra = {}) {
+  return {
+    '@type': 'Organization',
+    '@id': organizationId(),
+    name: CLINIC.publicName,
+    legalName: CLINIC.legalName,
+    url: `${SITE_ORIGIN}/`,
+    logo: CLINIC.logoUrl,
+    email: CLINIC.email,
+    telephone: CLINIC.phone,
+    sameAs: buildVerifiedSameAsList(),
+    department: [...CLINIC.departments],
+    medicalSpecialty: [...CLINIC.medicalSpecialties],
+    ...extra,
+  };
+}
+
+export function buildBranchMedicalClinicEntity(location, pageUrl = `${SITE_ORIGIN}/`) {
+  if (location.id === 'izmir') {
+    return buildIzmirMedicalClinicEntity();
+  }
+
+  return {
+    '@type': ['MedicalClinic', 'LocalBusiness'],
+    '@id': locationId(location.id),
+    name: `${CLINIC.publicName} – ${location.name}`,
+    parentOrganization: { '@id': organizationId() },
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: location.address,
+      addressCountry: location.id === 'leverkusen' ? 'DE' : 'TR',
+    },
+    telephone: location.phone || CLINIC.phone,
+    email: CLINIC.email,
+    url: location.url || pageUrl,
+  };
+}
+
+export function buildLocalBusinessLocations(pageUrl = `${SITE_ORIGIN}/`) {
+  return CLINIC.locations.map((location) => buildBranchMedicalClinicEntity(location, pageUrl));
+}
+
+export function buildServiceBreadcrumbList(page, locale, slug) {
+  const pageUrl = `${SITE_ORIGIN}/${locale}/service.html?slug=${encodeURIComponent(slug)}`;
+  const homeUrl = `${SITE_ORIGIN}/${locale}/`;
+  const categoryName = page.categoryLabel || page.category || CLINIC.publicName;
+
+  return {
+    '@type': 'BreadcrumbList',
+    '@id': `${pageUrl}#breadcrumb`,
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: CLINIC.publicName,
+        item: homeUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: categoryName,
+        item: `${homeUrl}#hizmetler`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: page.title,
+        item: pageUrl,
+      },
+    ],
+  };
 }
 
 export function buildHreflangBlock(urlForLocale) {
@@ -133,11 +267,7 @@ export function buildHomeSchema(locale, title) {
   const pageUrl = `${SITE_ORIGIN}/${locale}/`;
   return buildJsonLdScript([
     {
-      '@type': 'Organization',
-      '@id': organizationId(),
-      name: CLINIC.publicName,
-      url: `${SITE_ORIGIN}/`,
-      logo: CLINIC.logoUrl,
+      ...buildOrganizationEntity(),
       contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'customer service',
@@ -165,15 +295,8 @@ export function buildHomeSchema(locale, title) {
 
 export function buildServiceSchema(page, locale, slug) {
   const pageUrl = `${SITE_ORIGIN}/${locale}/service.html?slug=${encodeURIComponent(slug)}`;
-  const homeUrl = `${SITE_ORIGIN}/${locale}/`;
   const graph = [
-    {
-      '@type': 'Organization',
-      '@id': organizationId(),
-      name: CLINIC.publicName,
-      url: `${SITE_ORIGIN}/`,
-      logo: CLINIC.logoUrl,
-    },
+    buildOrganizationEntity(),
     {
       '@type': 'Service',
       '@id': `${pageUrl}#service`,
@@ -195,24 +318,7 @@ export function buildServiceSchema(page, locale, slug) {
       isPartOf: { '@id': websiteId() },
       about: { '@id': `${pageUrl}#service` },
     },
-    {
-      '@type': 'BreadcrumbList',
-      '@id': `${pageUrl}#breadcrumb`,
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: CLINIC.publicName,
-          item: homeUrl,
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: page.title,
-          item: pageUrl,
-        },
-      ],
-    },
+    buildServiceBreadcrumbList(page, locale, slug),
   ];
 
   if (Array.isArray(page.faqs) && page.faqs.length) {
@@ -235,38 +341,12 @@ export function buildServiceSchema(page, locale, slug) {
 
 export function buildPrivacySchema(locale, title, description) {
   const pageUrl = `${SITE_ORIGIN}/${locale}/privacy.html`;
-  const locationEntities = CLINIC.locations.map((location) => {
-    if (location.id === 'izmir') {
-      return buildIzmirMedicalClinicEntity();
-    }
-    return {
-      '@type': 'MedicalClinic',
-      '@id': locationId(location.id),
-      name: `${CLINIC.publicName} – ${location.name}`,
-      parentOrganization: { '@id': organizationId() },
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: location.address,
-        addressCountry: location.id === 'leverkusen' ? 'DE' : 'TR',
-      },
-      telephone: CLINIC.phone,
-      email: CLINIC.email,
-      url: pageUrl,
-    };
-  });
+  const locationEntities = CLINIC.locations.map((location) =>
+    buildBranchMedicalClinicEntity(location, pageUrl),
+  );
 
   return buildJsonLdScript([
-    {
-      '@type': 'Organization',
-      '@id': organizationId(),
-      name: CLINIC.publicName,
-      legalName: CLINIC.legalName,
-      url: `${SITE_ORIGIN}/`,
-      logo: CLINIC.logoUrl,
-      email: CLINIC.email,
-      telephone: CLINIC.phone,
-      sameAs: [CLINIC.instagram],
-    },
+    buildOrganizationEntity(),
     ...locationEntities,
     {
       '@type': 'WebPage',

@@ -6,6 +6,17 @@ export const SEO_CLUSTERS = {
   hair: {
     id: 'hair',
     label: 'Saç Ekimi',
+    serviceLinkOrder: [
+      'dhi-hair-transplant',
+      'sapphire-fue-hair-transplant',
+      'stem-cell-hair-transplant',
+      'unshaven-hair-transplant',
+      'eyebrow-transplant',
+      'beard-mustache-transplant',
+      'acell-prp',
+      'exosome-hair-treatment',
+      'hair-laser',
+    ],
     pillar: {
       slug: 'hair-transplant-guide',
       title: 'Saç Ekimi Rehberi',
@@ -29,6 +40,17 @@ export const SEO_CLUSTERS = {
   plastic: {
     id: 'plastic',
     label: 'Estetik Cerrahi',
+    serviceLinkOrder: [
+      'rhinoplasty',
+      'face-lift',
+      'blepharoplasty',
+      'breast-augmentation',
+      'breast-reduction',
+      'gynecomastia',
+      'liposuction',
+      'tummy-tuck',
+      'buttock-lift',
+    ],
     pillar: {
       slug: 'aesthetic-surgery-guide',
       title: 'Estetik Cerrahi Rehberi',
@@ -45,6 +67,14 @@ export const SEO_CLUSTERS = {
   dental: {
     id: 'dental',
     label: 'Diş Estetiği',
+    serviceLinkOrder: [
+      'hollywood-smile',
+      'zirconium-crown',
+      'dental-implant',
+      'teeth-whitening',
+      'orthodontics',
+      'gingival-aesthetics',
+    ],
     pillar: {
       slug: 'dental-aesthetics-guide',
       title: 'Diş Estetiği Rehberi',
@@ -60,6 +90,16 @@ export const SEO_CLUSTERS = {
   medical: {
     id: 'medical',
     label: 'Medikal Estetik',
+    serviceLinkOrder: [
+      'botox',
+      'lip-filler',
+      'jawline-filler',
+      'under-eye-light-filler',
+      'laser-hair-removal',
+      'prp-skin-treatment',
+      'medical-skin-care',
+      'salmon-dna',
+    ],
     pillar: {
       slug: 'medical-aesthetics-guide',
       title: 'Medikal Estetik Rehberi',
@@ -75,6 +115,15 @@ export const SEO_CLUSTERS = {
   longevity: {
     id: 'longevity',
     label: 'Longevity',
+    serviceLinkOrder: [
+      'maxx-royal-wellness-bodrum',
+      'museum-hotel-wellness-kapadokya',
+      'iv-therapies',
+      'glutathione',
+      'ozone-therapy',
+      'healthy-nutrition',
+      'lpg-treatment',
+    ],
     pillar: {
       slug: 'longevity-guide',
       title: 'Longevity Rehberi',
@@ -90,6 +139,7 @@ export const SEO_CLUSTERS = {
   'eye-health': {
     id: 'eye-health',
     label: 'Göz Sağlığı',
+    serviceLinkOrder: [],
     pillar: {
       slug: 'eye-health-guide',
       title: 'Göz Sağlığı Rehberi',
@@ -104,6 +154,15 @@ export const SEO_CLUSTERS = {
   },
 };
 
+/** Pages that should receive inbound links from related corporate/service pages. */
+export const ORPHAN_INBOUND_LINKS = {
+  management: ['vision-mission', 'our-values', 'quality-policy'],
+  representatives: ['health-tourism', 'international-health-insurance', 'our-doctors'],
+  production: ['our-values', 'health-tourism', 'vision-mission'],
+  'maxx-royal-wellness-bodrum': ['iv-therapies', 'glutathione', 'healthy-nutrition'],
+  'museum-hotel-wellness-kapadokya': ['lpg-treatment', 'ozone-therapy', 'healthy-nutrition'],
+};
+
 /** Service slugs with weak inbound internal links (footer/mega-menu only). */
 export const ORPHAN_SERVICE_SLUGS = [
   'representatives',
@@ -115,6 +174,11 @@ export const ORPHAN_SERVICE_SLUGS = [
 
 export function getClusterForCategory(category) {
   return SEO_CLUSTERS[category] || null;
+}
+
+export function getClusterServiceLinkOrder(category) {
+  const cluster = getClusterForCategory(category);
+  return cluster?.serviceLinkOrder || [];
 }
 
 export function getClusterLinksForServiceSlug(serviceSlug) {
