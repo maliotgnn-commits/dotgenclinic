@@ -25,6 +25,9 @@ dist-ssr
 
 .vercel
 .translation-cache
+.codex-localhost.png
+.verify-*.png
+.playwright-browsers
 
 .claude
 .vite-local
