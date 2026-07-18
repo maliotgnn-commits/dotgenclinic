@@ -72,9 +72,9 @@ assert(financeData.includes('/images/finance_department/ahmet_otgen_finance.jpg'
 assert(financeData.includes('/images/finance_department/zehra_otgen_finance.jpg'), 'Missing Zehra profile image reference');
 assert(existsSync(resolve(DIST, 'images/finance_department/ahmet_otgen_finance.jpg')), 'Missing built Ahmet image asset');
 assert(existsSync(resolve(DIST, 'images/finance_department/zehra_otgen_finance.jpg')), 'Missing built Zehra image asset');
-assert(existsSync(resolve(DIST, 'images/finance_department/finance_hero_zehra.png')), 'Missing built finance hero image asset');
+assert(existsSync(resolve(DIST, 'images/finance_department/finance_hero_zehra.webp')), 'Missing built finance hero image asset');
 const financeCss = readFileSync(resolve(ROOT, 'src/finance-department.css'), 'utf8');
-assert(financeCss.includes('/images/finance_department/finance_hero_zehra.png'), 'Missing finance hero background image reference');
+assert(financeCss.includes('/images/finance_department/finance_hero_zehra.webp'), 'Missing finance hero background image reference');
 assert(financeCss.includes('background-position: center right'), 'Missing desktop finance hero background positioning');
 assert(financeJs.includes('aria-describedby="finance-form-status"'), 'Finance form must describe submit status region');
 assert(financeJs.includes('id="finance-contact-form"'), 'Finance form must use active contact form id');
