@@ -69,7 +69,12 @@ const financeJs = readFileSync(resolve(ROOT, 'src/finance-department.js'), 'utf8
 assert(financeJs.includes('loadFinanceContent'), 'finance-department.js must load locale content');
 assert(financeJs.includes("getCurrentLocale('finance')"), 'finance-department.js must use finance page type');
 assert(financeJs.includes("renderLanguageSwitcher(locale, 'finance'"), 'finance page must use finance language switcher page type');
-assert(!/fetch\s*\(|XMLHttpRequest|mailto:|formspree|web3forms/i.test(financeJs), 'Finance page must not include outbound form submission hooks');
+assert(financeJs.includes('id="finance-contact-form"'), 'Finance page must render the active contact form');
+assert(financeJs.includes('action="${FORM_ENDPOINT}"'), 'Finance page form must expose the real submit endpoint');
+assert(financeJs.includes("const FORM_ENDPOINT = 'https://formsubmit.co/ajax/drotgenclinic@gmail.com'"), 'Finance page must target FormSubmit ajax endpoint');
+assert(financeJs.includes('await fetch(FORM_ENDPOINT'), 'Finance page must include active FormSubmit submission hook');
+assert(financeJs.includes("form_id: 'finance-contact-form'"), 'Finance analytics must identify the active contact form');
+assert(!financeJs.includes('page.contact.previewMessage'), 'Finance page must not use preview-disabled message binding');
 
 const forbiddenPhrases = [
   'İade alınır',

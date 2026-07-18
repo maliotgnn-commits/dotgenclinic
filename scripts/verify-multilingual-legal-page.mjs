@@ -90,7 +90,12 @@ const publicHeaderJs = readFileSync(resolve(ROOT, 'src/public-header.js'), 'utf8
 assert(legalJs.includes('loadLegalContent'), 'legal-department.js must load locale content');
 assert(legalJs.includes("getCurrentLocale('legal')"), 'legal-department.js must use legal page type');
 assert(legalJs.includes("renderLanguageSwitcher(locale, 'legal'"), 'legal page must use legal language switcher page type');
-assert(!/fetch\s*\(|XMLHttpRequest|mailto:|formspree|web3forms/i.test(legalJs), 'Legal page must not include outbound form submission hooks');
+assert(legalJs.includes('id="legal-contact-form"'), 'Legal page must render the active contact form');
+assert(legalJs.includes('action="${FORM_ENDPOINT}"'), 'Legal page form must expose the real submit endpoint');
+assert(legalJs.includes("const FORM_ENDPOINT = 'https://formsubmit.co/ajax/drotgenclinic@gmail.com'"), 'Legal page must target FormSubmit ajax endpoint');
+assert(legalJs.includes('await fetch(FORM_ENDPOINT'), 'Legal page must include active FormSubmit submission hook');
+assert(legalJs.includes("form_id: 'legal-contact-form'"), 'Legal analytics must identify the active contact form');
+assert(!legalJs.includes('page.contact.previewMessage'), 'Legal page must not use preview-disabled message binding');
 assert(
   publicHeaderJs.includes("navMenu.querySelectorAll('.mega-dropdown a, .eh-mobile-topics a')"),
   'Mobile drawer must close on mega-dropdown link navigation',

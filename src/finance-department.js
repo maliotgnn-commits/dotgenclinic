@@ -24,7 +24,7 @@ import {
   initLanguageSwitchers,
   renderLanguageSwitcher,
 } from './language-switcher.js';
-import { initAnalyticsTracking } from './analytics.js';
+import { initAnalyticsTracking, pushEvent } from './analytics.js';
 
 const app = document.getElementById('finance-app');
 const pathLocale = detectFinanceLocale();
@@ -39,6 +39,7 @@ const [catalog, uiDictionary, eyeContent, financeContent] = await Promise.all([
 const { page } = financeContent;
 const categoryGroups = buildCategoryGroups(catalog, uiDictionary, locale);
 const t = (source) => translate(uiDictionary, source);
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/drotgenclinic@gmail.com';
 const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 function escapeHtml(value) {
@@ -257,7 +258,7 @@ function renderContactForm() {
           <p>${escapeHtml(page.contact.description)}</p>
         </div>
         <div class="fd-form-wrap">
-          <form id="finance-preview-form" class="fd-form-grid" novalidate>
+          <form id="finance-contact-form" class="fd-form-grid" action="${FORM_ENDPOINT}" method="POST" aria-describedby="finance-form-status" novalidate>
             <div class="fd-form-row">
               <label for="finance-name">${escapeHtml(fields.name)}</label>
               <input id="finance-name" name="name" type="text" autocomplete="name" required />
@@ -359,14 +360,79 @@ function initSmoothScroll() {
   });
 }
 
-function initPreviewForm() {
-  const form = document.getElementById('finance-preview-form');
+function initContactForm() {
+  const form = document.getElementById('finance-contact-form');
   const status = document.getElementById('finance-form-status');
   if (!form || !status) return;
 
-  form.addEventListener('submit', (event) => {
+  const submitButton = form.querySelector('button[type="submit"]');
+  const originalButtonText = submitButton?.textContent?.trim() || '';
+  const sanitizeField = (value, maxLength) => String(value ?? '').trim().slice(0, maxLength);
+
+  const setFeedback = (message, isSubmitting = false) => {
+    status.textContent = message;
+    if (!submitButton) return;
+    submitButton.disabled = isSubmitting;
+    submitButton.textContent = isSubmitting ? t('Gönderiliyor...') : originalButtonText;
+  };
+
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    status.textContent = page.contact.previewMessage;
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      pushEvent('form_submit', {
+        page_locale: locale,
+        form_id: 'finance-contact-form',
+        department: 'finance',
+        status: 'validation_error',
+      });
+      return;
+    }
+
+    setFeedback(t('Gönderiliyor...'), true);
+
+    const payload = {
+      _subject: 'Dr Otgen Clinic Finans Departmanı Başvuru Formu',
+      Department: 'Finance Department',
+      Locale: financeLocale,
+      Name: sanitizeField(form.elements.name?.value, 120),
+      Phone: sanitizeField(form.elements.phone?.value, 32),
+      Email: sanitizeField(form.elements.email?.value, 254),
+      Topic: sanitizeField(form.elements.topic?.value, 160),
+      Message: sanitizeField(form.elements.message?.value, 2000),
+    };
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) throw new Error('Submission failed');
+
+      pushEvent('form_submit', {
+        page_locale: locale,
+        form_id: 'finance-contact-form',
+        department: 'finance',
+        status: 'success',
+      });
+      form.reset();
+      setFeedback(t('Gönderildi'));
+    } catch (error) {
+      console.error(error);
+      pushEvent('form_submit', {
+        page_locale: locale,
+        form_id: 'finance-contact-form',
+        department: 'finance',
+        status: 'error',
+      });
+      setFeedback(t('Hata Oluştu'));
+    }
   });
 }
 
@@ -378,7 +444,7 @@ function bootstrapFinancePage() {
   initLanguageSwitchers();
   initAnalyticsTracking(() => locale);
   initSmoothScroll();
-  initPreviewForm();
+  initContactForm();
 }
 
 bootstrapFinancePage();
