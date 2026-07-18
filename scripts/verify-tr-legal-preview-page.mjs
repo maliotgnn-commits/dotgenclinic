@@ -82,10 +82,14 @@ const legalCss = readFileSync(resolve(ROOT, 'src/legal-department.css'), 'utf8')
 assert(legalCss.includes('/images/legal_department/legal_hero.png'), 'Missing legal hero background image reference');
 assert(legalCss.includes('background-position: center right'), 'Missing desktop legal hero background positioning');
 assert(existsSync(resolve(DIST, 'images/legal_department/legal_hero.png')), 'Missing built legal hero image asset');
-assert(legalJs.includes('aria-live="polite"'), 'Missing aria-live preview status region');
-assert(legalJs.includes('page.contact.previewMessage'), 'Missing preview form message binding');
-assert(legalData.includes('Preview testi kapsamında form gönderimi aktif değildir.'), 'Missing preview form message text');
-assert(!/fetch\s*\(|XMLHttpRequest|mailto:|formspree|web3forms/i.test(legalJs), 'Legal page must not include outbound form submission hooks');
+assert(legalJs.includes('aria-describedby="legal-form-status"'), 'Legal form must describe submit status region');
+assert(legalJs.includes('id="legal-contact-form"'), 'Legal form must use active contact form id');
+assert(legalJs.includes('action="${FORM_ENDPOINT}"'), 'Legal form must expose the real submit endpoint as action');
+assert(legalJs.includes('method="POST"'), 'Legal form must submit with POST');
+assert(legalJs.includes("const FORM_ENDPOINT = 'https://formsubmit.co/ajax/drotgenclinic@gmail.com'"), 'Legal form endpoint must target FormSubmit ajax endpoint');
+assert(legalJs.includes('await fetch(FORM_ENDPOINT'), 'Legal form must actively submit to FormSubmit');
+assert(legalJs.includes("form_id: 'legal-contact-form'"), 'Legal submit analytics must identify the active legal form');
+assert(!legalJs.includes('page.contact.previewMessage'), 'Legal form must not use preview-disabled message binding');
 
 const legalLink = renderLegalCorporateNavLink('tr');
 assert(legalLink.includes(LEGAL_DEPARTMENT_PATH), 'Legal nav link must target /tr/hukuk-departmani.html');

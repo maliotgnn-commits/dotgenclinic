@@ -76,9 +76,14 @@ assert(existsSync(resolve(DIST, 'images/finance_department/finance_hero_zehra.pn
 const financeCss = readFileSync(resolve(ROOT, 'src/finance-department.css'), 'utf8');
 assert(financeCss.includes('/images/finance_department/finance_hero_zehra.png'), 'Missing finance hero background image reference');
 assert(financeCss.includes('background-position: center right'), 'Missing desktop finance hero background positioning');
-assert(financeJs.includes('aria-live="polite"'), 'Missing aria-live preview status region');
-assert(financeJs.includes('page.contact.previewMessage'), 'Missing preview form message binding');
-assert(!/fetch\s*\(|XMLHttpRequest|mailto:|formspree|web3forms/i.test(financeJs), 'Finance page must not include outbound form submission hooks');
+assert(financeJs.includes('aria-describedby="finance-form-status"'), 'Finance form must describe submit status region');
+assert(financeJs.includes('id="finance-contact-form"'), 'Finance form must use active contact form id');
+assert(financeJs.includes('action="${FORM_ENDPOINT}"'), 'Finance form must expose the real submit endpoint as action');
+assert(financeJs.includes('method="POST"'), 'Finance form must submit with POST');
+assert(financeJs.includes("const FORM_ENDPOINT = 'https://formsubmit.co/ajax/drotgenclinic@gmail.com'"), 'Finance form endpoint must target FormSubmit ajax endpoint');
+assert(financeJs.includes('await fetch(FORM_ENDPOINT'), 'Finance form must actively submit to FormSubmit');
+assert(financeJs.includes("form_id: 'finance-contact-form'"), 'Finance submit analytics must identify the active finance form');
+assert(!financeJs.includes('page.contact.previewMessage'), 'Finance form must not use preview-disabled message binding');
 
 const financeLink = renderFinanceCorporateNavLink('tr');
 assert(financeLink.includes(FINANCE_DEPARTMENT_PATH), 'Finance nav link must target /tr/finans-departmani.html');

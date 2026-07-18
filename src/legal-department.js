@@ -24,7 +24,7 @@ import {
   initLanguageSwitchers,
   renderLanguageSwitcher,
 } from './language-switcher.js';
-import { initAnalyticsTracking } from './analytics.js';
+import { initAnalyticsTracking, pushEvent } from './analytics.js';
 
 const app = document.getElementById('legal-app');
 const pathLocale = detectLegalLocale();
@@ -39,6 +39,7 @@ const [catalog, uiDictionary, eyeContent, legalContent] = await Promise.all([
 const { page } = legalContent;
 const categoryGroups = buildCategoryGroups(catalog, uiDictionary, locale);
 const t = (source) => translate(uiDictionary, source);
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/drotgenclinic@gmail.com';
 const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 function escapeHtml(value) {
@@ -238,7 +239,7 @@ function renderContactForm() {
           <p>${escapeHtml(page.contact.description)}</p>
         </div>
         <div class="ld-form-wrap">
-          <form id="legal-preview-form" class="ld-form-grid" novalidate>
+          <form id="legal-contact-form" class="ld-form-grid" action="${FORM_ENDPOINT}" method="POST" aria-describedby="legal-form-status" novalidate>
             <div class="ld-form-row">
               <label for="legal-name">${escapeHtml(fields.name)}</label>
               <input id="legal-name" name="name" type="text" autocomplete="name" required />
@@ -339,14 +340,79 @@ function initSmoothScroll() {
   });
 }
 
-function initPreviewForm() {
-  const form = document.getElementById('legal-preview-form');
+function initContactForm() {
+  const form = document.getElementById('legal-contact-form');
   const status = document.getElementById('legal-form-status');
   if (!form || !status) return;
 
-  form.addEventListener('submit', (event) => {
+  const submitButton = form.querySelector('button[type="submit"]');
+  const originalButtonText = submitButton?.textContent?.trim() || '';
+  const sanitizeField = (value, maxLength) => String(value ?? '').trim().slice(0, maxLength);
+
+  const setFeedback = (message, isSubmitting = false) => {
+    status.textContent = message;
+    if (!submitButton) return;
+    submitButton.disabled = isSubmitting;
+    submitButton.textContent = isSubmitting ? t('Gönderiliyor...') : originalButtonText;
+  };
+
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    status.textContent = page.contact.previewMessage;
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      pushEvent('form_submit', {
+        page_locale: locale,
+        form_id: 'legal-contact-form',
+        department: 'legal',
+        status: 'validation_error',
+      });
+      return;
+    }
+
+    setFeedback(t('Gönderiliyor...'), true);
+
+    const payload = {
+      _subject: 'Dr Otgen Clinic Hukuk Departmanı Başvuru Formu',
+      Department: 'Legal Department',
+      Locale: legalLocale,
+      Name: sanitizeField(form.elements.name?.value, 120),
+      Phone: sanitizeField(form.elements.phone?.value, 32),
+      Email: sanitizeField(form.elements.email?.value, 254),
+      Topic: sanitizeField(form.elements.topic?.value, 160),
+      Message: sanitizeField(form.elements.message?.value, 2000),
+    };
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) throw new Error('Submission failed');
+
+      pushEvent('form_submit', {
+        page_locale: locale,
+        form_id: 'legal-contact-form',
+        department: 'legal',
+        status: 'success',
+      });
+      form.reset();
+      setFeedback(t('Gönderildi'));
+    } catch (error) {
+      console.error(error);
+      pushEvent('form_submit', {
+        page_locale: locale,
+        form_id: 'legal-contact-form',
+        department: 'legal',
+        status: 'error',
+      });
+      setFeedback(t('Hata Oluştu'));
+    }
   });
 }
 
@@ -358,7 +424,7 @@ function bootstrapLegalPage() {
   initLanguageSwitchers();
   initAnalyticsTracking(() => locale);
   initSmoothScroll();
-  initPreviewForm();
+  initContactForm();
 }
 
 bootstrapLegalPage();
