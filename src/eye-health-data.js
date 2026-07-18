@@ -9,7 +9,7 @@ export const EYE_HEALTH_PAGE = {
     description:
       'Göz sağlığına ilişkin değerlendirmeler, muayene bulguları ve kişisel ihtiyaçlar doğrultusunda planlanır.',
     cta: 'Randevu Talep Et',
-    image: '/images/goz-hastaliklari/hero-goz-muayenesi-ai.png',
+    image: '/images/goz-hastaliklari/hero-goz-muayenesi-ai.webp',
     imageAlt: 'Temsili göz muayenesi sahnesi',
   },
   process: [
