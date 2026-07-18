@@ -1377,6 +1377,7 @@ a.btn.btn-gold[href*="#randevu"]:focus-visible {
 
 .hero-slide-video .hero-content .hero-badge,
 .hero-slide-video .hero-content h1,
+.hero-slide-video .hero-content h2,
 .hero-slide-video .hero-content p,
 .hero-slide-video .hero-content .hero-buttons,
 .hero-slide-video .hero-content .hero-buttons a {
@@ -1460,7 +1461,8 @@ a.btn.btn-gold[href*="#randevu"]:focus-visible {
   display: inline-block
 }
 
-.hero-content h1 {
+.hero-content h1,
+.hero-content h2 {
   font-family: var(--font-heading);
   margin-bottom: 20px;
   font-size: clamp(36px, 5vw, 64px);
@@ -2797,7 +2799,8 @@ html[dir=rtl] .form-group select {
     display: flex
   }
 
-.hero-content h1 {
+.hero-content h1,
+.hero-content h2 {
     font-size: 32px
   }
 
@@ -2936,7 +2939,8 @@ html[dir=rtl] [dir=ltr] {
     padding: 0 16px
   }
 
-.hero-content h1 {
+.hero-content h1,
+.hero-content h2 {
     font-size: 28px
   }
 
