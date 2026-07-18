@@ -80,7 +80,6 @@
     "Instagram hesabımızı ziyaret edin": "Visitez notre compte Instagram",
     "Hizmetlerimiz": "Nos prestations",
     "Dolgu, botoks, cilt bakımı ve yenileyici uygulamalarla doğal görünümlü sonuçlara odaklanıyoruz.": "Nous nous concentrons sur des résultats d’apparence naturelle avec des produits de comblement, du botox, des soins de la peau et des applications régénératrices.",
-    "Detaylar": "Détails",
     "Uluslararası hasta koordinasyonu, takip ve iletişim adımlarını şeffaf bir süreçle yönetiyoruz.": "Nous gérons les étapes internationales de coordination, de suivi et de communication des patients avec un processus transparent.",
     "Başlayın": "commencer",
     "Tedaviler": "traitements",
@@ -186,7 +185,16 @@
     "Hata Oluştu": "Une erreur s'est produite",
     "Görsel": "Image",
     "Önceki": "Précédent",
-    "Sonraki": "Suivant"
+    "Sonraki": "Suivant",
+    "Dr Otgen Clinic ana sayfa": "Page d'accueil de Dr Otgen Clinic",
+    "Videoyu oynat": "Lire la vidéo",
+    "Sayfa açılış ilerlemesi": "Progression du chargement de la page",
+    "Saç Ekimi ve Tedavileri – Detaylar": "Greffe de cheveux et traitements – Détails",
+    "Diş Estetiği – Detaylar": "Esthétique dentaire – Détails",
+    "Estetik Cerrahi – Detaylar": "Chirurgie plastique – Détails",
+    "Medikal Estetik – Detaylar": "Esthétique médicale – Détails",
+    "Longevity – Detaylar": "Longevity – Détails",
+    "Kurumsal Bilgiler – Detaylar": "Informations sur l'entreprise – Détails"
   },
   "html": {
     "Güzelliğinize <span class=\"gold-text\">Değer</span> Katıyoruz": "Nous ajoutons de la <span class=\"gold-text\">valeur</span> à votre beauté",

@@ -20,6 +20,17 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const DIST = resolve(ROOT, 'dist');
 const failures = [];
+const TURKISH_ARIA_LABEL_MARKERS = [
+  'Sayfa açılış ilerlemesi',
+  'Dr Otgen Clinic ana sayfa',
+  'Videoyu oynat',
+  'Saç Ekimi ve Tedavileri – Detaylar',
+  'Diş Estetiği – Detaylar',
+  'Estetik Cerrahi – Detaylar',
+  'Medikal Estetik – Detaylar',
+  'Longevity – Detaylar',
+  'Kurumsal Bilgiler – Detaylar',
+];
 
 function assert(condition, message) {
   if (!condition) failures.push(message);
@@ -131,6 +142,9 @@ for (const locale of LOCALES) {
     const formNameLabel = translate(loadUiDictionary(locale), 'Ad Soyad');
     assert(body.includes(formNameLabel), `[${locale}] localized form name label missing`);
     assert(body.includes(privacyContent.consentLabelHtml), `[${locale}] localized privacy consent missing`);
+    TURKISH_ARIA_LABEL_MARKERS.forEach((marker) => {
+      assert(!body.includes(`aria-label="${marker}"`), `[${locale}] Turkish aria-label leaked: "${marker}"`);
+    });
   } else {
     assert(body.includes('Ad Soyad'), `[tr] Turkish form name label missing`);
   }
@@ -140,7 +154,7 @@ for (const locale of LOCALES) {
 
   const visibleH1Count = countVisibleH1(html);
   assert(visibleH1Count >= 1, `[${locale}] no H1 elements in body`);
-  assert(visibleH1Count <= 3, `[${locale}] unexpected duplicate H1 count (${visibleH1Count})`);
+  assert(visibleH1Count === 1, `[${locale}] expected exactly one H1, found ${visibleH1Count}`);
 
   assert(!body.includes('data-i18n-html></'), `[${locale}] empty data-i18n-html shell detected`);
   assert(title !== SOURCE_TITLE || locale === DEFAULT_LOCALE, `[${locale}] generic TR title leaked`);

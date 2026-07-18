@@ -709,7 +709,7 @@ function initReducedMotionWatch() {
 function syncHeroHeadingAccessibility() {
   document.querySelectorAll('.hero-slide').forEach((slide) => {
     const isActive = slide.classList.contains('active');
-    slide.querySelectorAll('h1').forEach((heading) => {
+    slide.querySelectorAll('h1, h2').forEach((heading) => {
       heading.setAttribute('aria-hidden', isActive ? 'false' : 'true');
     });
   });
