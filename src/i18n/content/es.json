@@ -3084,7 +3084,7 @@
     {
       "category": "dental",
       "slug": "orthodontics",
-      "navLabel": "ortodoncia",
+      "navLabel": "Ortodoncia",
       "title": "ortodoncia",
       "categoryLabel": "Estética Dental",
       "heroTag": "Diseño de sonrisa",
@@ -3902,7 +3902,7 @@
     {
       "category": "plastic",
       "slug": "rhinoplasty",
-      "navLabel": "rinoplastia",
+      "navLabel": "Rinoplastia",
       "title": "rinoplastia",
       "categoryLabel": "Cirugía Plástica",
       "heroTag": "Estética Quirúrgica",
@@ -4193,7 +4193,7 @@
     {
       "category": "plastic",
       "slug": "blepharoplasty",
-      "navLabel": "blefaroplastia",
+      "navLabel": "Blefaroplastia",
       "title": "blefaroplastia",
       "categoryLabel": "Cirugía Plástica",
       "heroTag": "Estética Quirúrgica",
@@ -4442,7 +4442,7 @@
     {
       "category": "plastic",
       "slug": "liposuction",
-      "navLabel": "liposucción",
+      "navLabel": "Liposucción",
       "title": "liposucción",
       "categoryLabel": "Cirugía Plástica",
       "heroTag": "Estética Quirúrgica",
@@ -4699,7 +4699,7 @@
     {
       "category": "medical",
       "slug": "lip-filler",
-      "navLabel": "relleno de labios",
+      "navLabel": "Relleno de labios",
       "title": "relleno de labios",
       "categoryLabel": "Estética Médica",
       "heroTag": "Tratamientos mínimamente invasivos",
@@ -4832,7 +4832,7 @@
     {
       "category": "medical",
       "slug": "botox",
-      "navLabel": "bótox",
+      "navLabel": "Bótox",
       "title": "bótox",
       "categoryLabel": "Estética Médica",
       "heroTag": "Tratamientos mínimamente invasivos",
