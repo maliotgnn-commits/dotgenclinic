@@ -1218,7 +1218,8 @@ a.btn.btn-gold[href*="#randevu"]:focus-visible {
   color: var(--gold-light);
   border-color: var(--border-gold);
   background: #c9a84c17;
-  outline: none
+  outline: 2px solid var(--gold);
+  outline-offset: 3px
 }
 
 .language-trigger>svg:last-child {
@@ -1283,7 +1284,8 @@ a.btn.btn-gold[href*="#randevu"]:focus-visible {
 .language-option:hover, .language-option:focus-visible, .language-option.active {
   color: var(--gold-light);
   background: #c9a84c1a;
-  outline: none
+  outline: 2px solid var(--gold);
+  outline-offset: 2px
 }
 
 .hamburger {
@@ -2329,7 +2331,7 @@ to {
 .form-group select {
   cursor: pointer;
   appearance: none;
-  background-image: url("data: image/svg+xml, %3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http: //www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23c9a84c' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23c9a84c' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
   background-position: right 16px center;
   background-repeat: no-repeat
 }
