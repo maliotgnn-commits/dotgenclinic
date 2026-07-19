@@ -299,6 +299,24 @@ function upsertSeoLink(rel, hreflang, href) {
 }
 
 export function applySeoLinks(locale, pageType = 'home', slug = null) {
+  if (pageType === 'finance') {
+    upsertSeoLink('canonical', null, financePathForLocale(locale));
+    LOCALES.forEach(({ code }) => {
+      upsertSeoLink('alternate', code, financePathForLocale(code));
+    });
+    upsertSeoLink('alternate', 'x-default', financePathForLocale('en'));
+    return;
+  }
+
+  if (pageType === 'legal') {
+    upsertSeoLink('canonical', null, legalPathForLocale(locale));
+    LOCALES.forEach(({ code }) => {
+      upsertSeoLink('alternate', code, legalPathForLocale(code));
+    });
+    upsertSeoLink('alternate', 'x-default', legalPathForLocale('en'));
+    return;
+  }
+
   if (pageType === 'eye-health') {
     upsertSeoLink('canonical', null, eyeHealthPathForLocale(locale));
     LOCALES.forEach(({ code }) => {
