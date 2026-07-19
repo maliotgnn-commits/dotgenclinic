@@ -15,6 +15,7 @@ import {
   homeUrlFor,
   loadContentCatalog,
   loadUiDictionary,
+  doctorUrlForLocale,
   serviceUrlForLocale,
   translate,
 } from './i18n.js';
@@ -194,7 +195,7 @@ function renderDoctorLinks(doctors) {
               (doctor) => `
             <a
               class="sv-related-card"
-              href="#"
+              href="${doctorUrlForLocale(doctor.slug, locale)}"
               data-doctor-slug="${escapeHtml(doctor.slug)}"
               aria-label="${escapeHtml(buildDoctorAriaLabel(locale, doctor.name))}"
             >
