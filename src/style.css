@@ -2375,7 +2375,10 @@ html[dir=rtl] .form-group select {
   width: min(100%, 220px);
   height: 151.6px;
   margin-bottom: 16px;
+  background: transparent;
+  mix-blend-mode: screen;
   object-fit: cover;
+  pointer-events: none;
   display: block
 }
 
