@@ -1,5 +1,6 @@
 /** Verified on-site fields only. Placeholder fields require clinic-provided data before publish/index. */
 export const MISSING_DATA = 'GERÇEK VERİ GEREKİYOR';
+const DEFAULT_LOCALE = 'tr';
 
 const PROFILE_FIELDS = [
   'education',
@@ -23,6 +24,16 @@ export const DOCTORS = [
     name: 'Prof. Dr. Mübin Hoşnuter',
     title: 'Prof. Dr.',
     specialty: 'Plastik Rekonstrüktif Ve Estetik Cerrahi',
+    specialtyByLocale: {
+      tr: 'Plastik Rekonstrüktif ve Estetik Cerrahi',
+      en: 'Plastic, Reconstructive and Aesthetic Surgery',
+      ar: 'جراحة التجميل والترميم',
+      es: 'Cirugía plástica, reconstructiva y estética',
+      fr: 'Chirurgie plastique, reconstructrice et esthétique',
+      it: 'Chirurgia plastica, ricostruttiva ed estetica',
+      ru: 'Пластическая, реконструктивная и эстетическая хирургия',
+      de: 'Plastische, rekonstruktive und ästhetische Chirurgie',
+    },
     photo: '/images/site/home/doctor-mubin-hosnuter.webp',
     image: '/images/site/home/doctor-mubin-hosnuter.webp',
     imageAvif: '/images/site/home/doctor-mubin-hosnuter.avif',
@@ -45,6 +56,16 @@ export const DOCTORS = [
     name: 'Dt. Ayça Koku',
     title: 'Dt.',
     specialty: 'Diş Hekimi',
+    specialtyByLocale: {
+      tr: 'Diş Hekimi',
+      en: 'Dentist',
+      ar: 'طبيبة أسنان',
+      es: 'Odontóloga',
+      fr: 'Chirurgienne-dentiste',
+      it: 'Odontoiatra',
+      ru: 'Стоматолог',
+      de: 'Zahnärztin',
+    },
     photo: '/images/site/home/doctor-ayca-koku.webp',
     image: '/images/site/home/doctor-ayca-koku.webp',
     imageAvif: '/images/site/home/doctor-ayca-koku.avif',
@@ -67,6 +88,16 @@ export const DOCTORS = [
     name: 'Uzm. Dr. Sina Evsen',
     title: 'Uzm. Dr.',
     specialty: 'Göz Hastalıkları Uzmanı',
+    specialtyByLocale: {
+      tr: 'Göz Hastalıkları Uzmanı',
+      en: 'Ophthalmology Specialist',
+      ar: 'أخصائي أمراض العيون',
+      es: 'Especialista en oftalmología',
+      fr: 'Spécialiste en ophtalmologie',
+      it: 'Specialista in oftalmologia',
+      ru: 'Врач-офтальмолог',
+      de: 'Facharzt für Augenheilkunde',
+    },
     photo: '/images/goz-hastaliklari/uzm-dr-sina-evsen.jpg',
     image: '/images/goz-hastaliklari/uzm-dr-sina-evsen.jpg',
     imageAvif: '/images/goz-hastaliklari/uzm-dr-sina-evsen.avif',
@@ -94,6 +125,10 @@ export function getDoctorBySlug(slug) {
 
 export function getDoctorsForCategory(category) {
   return DOCTORS.filter((doctor) => doctor.serviceCategories.includes(category));
+}
+
+export function getDoctorSpecialty(doctor, locale = DEFAULT_LOCALE) {
+  return doctor?.specialtyByLocale?.[locale] || doctor?.specialtyByLocale?.[DEFAULT_LOCALE] || doctor?.specialty || '';
 }
 
 export function isDoctorProfileComplete(doctor) {

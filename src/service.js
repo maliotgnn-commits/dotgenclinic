@@ -28,6 +28,7 @@ import { buildWhatsAppUrl } from './whatsapp-links.js';
 import { enhanceRelatedPages, getClusterNavLinks, getDoctorsForServicePage } from './seo-internal-links.js';
 import { storeAppointmentReferrer } from './appointment-attribution.js';
 import { buildDoctorAriaLabel, initDoctorClickHandling } from './doctor-click.js';
+import { getDoctorSpecialty } from './doctors-data.js';
 
 const app = document.getElementById('service-app');
 const params = new URLSearchParams(window.location.search);
@@ -200,7 +201,7 @@ function renderDoctorLinks(doctors) {
               aria-label="${escapeHtml(buildDoctorAriaLabel(locale, doctor.name))}"
             >
               <strong>${escapeHtml(doctor.name)}</strong>
-              <span>${escapeHtml(doctor.specialty)}</span>
+              <span>${escapeHtml(getDoctorSpecialty(doctor, locale))}</span>
             </a>
           `,
             )
