@@ -1,6 +1,5 @@
 import './cookie-consent.js';
 import './style.css';
-import footerVideoUrl from '../kj.mp4';
 import heroVideoUrl from './assets/hero-video-mobile.mp4';
 import { applySubcategoryLinks } from './subpages-nav-links.js';
 import { initCustomCursor } from './cursor.js';
@@ -36,6 +35,7 @@ const locale = getCurrentLocale('home');
 const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 let prefersReducedMotion = prefersReducedMotionQuery.matches;
 let heroVideoSourceAttached = false;
+const footerVideoUrl = '/videos/world-animation.mp4';
 
 function attachHeroVideoSource(video) {
   if (!video || heroVideoSourceAttached || video.querySelector('source')) return;
@@ -600,10 +600,7 @@ function initFooterVideoLazyLoad() {
     footerObserver?.disconnect();
     footerObserver = null;
 
-    const source = document.createElement('source');
-    source.src = footerVideoUrl;
-    source.type = 'video/mp4';
-    video.appendChild(source);
+    video.src = video.dataset.src || footerVideoUrl;
     video.load();
 
     const tryPlay = () => {
@@ -629,7 +626,7 @@ function initFooterVideoLazyLoad() {
     if (entries.some((entry) => entry.isIntersecting)) {
       loadFooterVideo();
     }
-  }, { root: null, rootMargin: '400px 0px', threshold: 0 });
+  }, { root: null, rootMargin: '0px', threshold: 0 });
 
   footerObserver.observe(video);
 }

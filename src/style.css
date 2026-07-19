@@ -2373,8 +2373,9 @@ html[dir=rtl] .form-group select {
   border-radius: var(--radius-md);
   border: 1px solid var(--border-subtle);
   width: min(100%, 220px);
-  height: auto;
+  height: 151.6px;
   margin-bottom: 16px;
+  object-fit: cover;
   display: block
 }
 
