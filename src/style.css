@@ -2396,8 +2396,24 @@ html[dir=rtl] .form-group select {
   display: block
 }
 
+.footer-kj-video {
+  border: 0;
+  border-radius: 0;
+  width: min(100%, 180px);
+  aspect-ratio: 840 / 124;
+  height: auto;
+  margin-bottom: 16px;
+  background: transparent;
+  mix-blend-mode: screen;
+  object-fit: contain;
+  pointer-events: none;
+  display: block
+}
+
 .footer-brand.video-fallback-active .footer-brand-video,
-.footer-brand-video.video-fallback-hidden {
+.footer-brand.video-fallback-active .footer-kj-video,
+.footer-brand-video.video-fallback-hidden,
+.footer-kj-video.video-fallback-hidden {
   display: none
 }
 
