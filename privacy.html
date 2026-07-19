@@ -9,13 +9,7 @@
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <script>
-      (() => {
-        const locale = location.pathname.match(/^\/(tr|en|ar|es|fr|it|ru|de)(?:\/|$)/)?.[1] || 'tr';
-        document.documentElement.lang = locale;
-        document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
-      })();
-    </script>
+    <script src="/locale-bootstrap.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script src="/fonts-loader.js"></script>

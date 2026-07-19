@@ -49,8 +49,8 @@ for (const section of requiredSections) {
   assert(yazilimData.includes(section), `Missing required section/content in software R&D source data: ${section}`);
 }
 
-assert(yazilimData.includes('/images/yazilim_rd/yazilim_rd_hero.png'), 'Missing software R&D hero background image reference');
-assert(existsSync(resolve(DIST, 'images/yazilim_rd/yazilim_rd_hero.png')), 'Missing built software R&D hero image asset');
+assert(yazilimData.includes('/images/yazilim_rd/yazilim_rd_hero.webp'), 'Missing software R&D hero background image reference');
+assert(existsSync(resolve(DIST, 'images/yazilim_rd/yazilim_rd_hero.webp')), 'Missing built software R&D hero image asset');
 assert(yazilimJs.includes("getCurrentLocale('yazilim-rd')"), 'yazilim-rd-department.js must use yazilim-rd page type');
 assert(yazilimJs.includes('loadYazilimRdContent'), 'yazilim-rd-department.js must load locale content');
 assert(yazilimJs.includes('detectYazilimRdLocale'), 'yazilim-rd-department.js must detect software R&D locale from path');

@@ -32,11 +32,8 @@ for (const locale of PHARMA_RD_LOCALES) {
   const { page } = content;
 
   assert(html.includes(`lang="${locale}"`), `[${locale}] lang attribute missing`);
-  if (locale === 'ar') {
-    assert(html.includes("dir = 'rtl'"), '[ar] dir=rtl bootstrap missing');
-  } else {
-    assert(html.includes("dir = 'ltr'"), `[${locale}] dir=ltr bootstrap missing`);
-  }
+  const expectedBootstrap = locale === 'tr' ? 'src="/tr-locale-bootstrap.js"' : 'src="/locale-bootstrap.js"';
+  assert(html.includes(expectedBootstrap), `[${locale}] locale bootstrap missing`);
 
   assert(
     html.includes(`<title>${page.title.replace(/&/g, '&amp;')}</title>`) || html.includes(`<title>${page.title}</title>`),

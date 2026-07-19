@@ -121,7 +121,7 @@ function renderHeader() {
 }
 
 function renderHero() {
-  const heroImage = page.hero.image || '/images/yazilim_rd/yazilim_rd_hero.png';
+  const heroImage = page.hero.image || '/images/yazilim_rd/yazilim_rd_hero.webp';
   return `
     <section class="mr-hero" style="--mr-hero-image: url('${heroImage}')" aria-labelledby="mr-hero-title">
       <div class="mr-hero-panel-wrap">

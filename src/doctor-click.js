@@ -1,6 +1,7 @@
 import { pushEvent } from './analytics.js';
 import { storeAppointmentReferrer } from './appointment-attribution.js';
 import { getDoctorBySlug } from './doctors-data.js';
+import { doctorUrlForLocale } from './doctor-routes.js';
 
 const APPOINTMENT_SECTION_ID = 'randevu';
 const HEADER_SELECTOR = '#main-header';
@@ -157,12 +158,12 @@ function trackHomeDoctorClick(locale, doctorData) {
   });
 }
 
-export function prepareDoctorCards(root = document, locale) {
+export function prepareDoctorCards(root = document, locale, pageType = 'home') {
   root.querySelectorAll('a[data-doctor-slug], a.sv-related-card[href*="doctor.html"]').forEach((card) => {
     const doctorData = extractDoctorData(card);
     if (doctorData.slug) {
       card.dataset.doctorSlug = doctorData.slug;
-      card.href = '#';
+      card.href = pageType === 'service' ? doctorUrlForLocale(doctorData.slug, locale) : '#';
     }
     if (doctorData.name) {
       card.setAttribute('aria-label', buildDoctorAriaLabel(locale, doctorData.name));
@@ -173,7 +174,7 @@ export function prepareDoctorCards(root = document, locale) {
 export function initDoctorClickHandling({ pageType, locale, currentPage = null } = {}) {
   if (pageType !== 'home' && pageType !== 'service') return;
 
-  prepareDoctorCards(document, locale);
+  prepareDoctorCards(document, locale, pageType);
 
   document.addEventListener(
     'click',

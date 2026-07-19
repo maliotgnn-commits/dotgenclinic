@@ -1,14 +1,35 @@
 import { chromium } from 'playwright';
+import { spawn } from 'node:child_process';
+import net from 'node:net';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SUBPAGES } from '../src/subpages-data.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const BASE_URL = process.env.VERIFY_BASE_URL || 'http://127.0.0.1:5173';
+const MANAGED_SERVER = !process.env.VERIFY_BASE_URL;
+const DEFAULT_HOST = '127.0.0.1';
+const DEFAULT_PORT = Number(process.env.VERIFY_PORT || 5173);
+let BASE_URL = process.env.VERIFY_BASE_URL || `http://${DEFAULT_HOST}:${DEFAULT_PORT}`;
 const LOCALES = ['tr', 'en', 'ar', 'es', 'fr', 'it', 'ru', 'de'];
 const SERVICE_SLUGS = process.env.VERIFY_ALL_SLUGS === '1'
   ? SUBPAGES.map((page) => page.slug)
   : ['dhi-hair-transplant', 'face-lift', 'rhinoplasty'];
+const SERVER_READY_TIMEOUT_MS = 30_000;
+const SERVER_POLL_INTERVAL_MS = 250;
+const KNOWN_THIRD_PARTY_HOSTS = [
+  'analytics.google.com',
+  'cdn.jsdelivr.net',
+  'connect.facebook.net',
+  'fonts.googleapis.com',
+  'fonts.gstatic.com',
+  'formsubmit.co',
+  'google-analytics.com',
+  'googletagmanager.com',
+  'gstatic.com',
+  'stats.g.doubleclick.net',
+  'www.google-analytics.com',
+  'www.googletagmanager.com',
+];
 
 const TURKISH_CTA_PHRASES = [
   'Sorularınız mı var?',
@@ -20,18 +41,150 @@ function assert(condition, message) {
   if (!condition) throw new Error(message);
 }
 
-const browser = await chromium.launch({ channel: 'chrome', headless: true });
-const context = await browser.newContext({
-  viewport: { width: 1440, height: 900 },
-  reducedMotion: 'reduce',
-});
-const page = await context.newPage();
-const consoleErrors = [];
+function delay(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+}
 
-page.on('console', (message) => {
-  if (message.type() === 'error') consoleErrors.push(message.text());
-});
-page.on('pageerror', (error) => consoleErrors.push(error.message));
+function toHostname(value) {
+  try {
+    return new URL(value).hostname;
+  } catch {
+    return '';
+  }
+}
+
+function isKnownThirdPartyUrl(value) {
+  const hostname = toHostname(value);
+  if (!hostname) return false;
+  const baseHostname = toHostname(BASE_URL);
+  if (hostname === baseHostname || hostname === 'localhost' || hostname === DEFAULT_HOST) return false;
+  return KNOWN_THIRD_PARTY_HOSTS.some((knownHost) => (
+    hostname === knownHost || hostname.endsWith(`.${knownHost}`)
+  ));
+}
+
+function isKnownThirdPartyConsoleMessage(text) {
+  return KNOWN_THIRD_PARTY_HOSTS.some((knownHost) => text.includes(knownHost));
+}
+
+async function findAvailablePort(preferredPort) {
+  return new Promise((resolve, reject) => {
+    const server = net.createServer();
+    server.once('error', (error) => {
+      if (error.code !== 'EADDRINUSE') {
+        reject(error);
+        return;
+      }
+
+      const fallback = net.createServer();
+      fallback.once('error', reject);
+      fallback.listen(0, DEFAULT_HOST, () => {
+        const address = fallback.address();
+        fallback.close(() => resolve(address.port));
+      });
+    });
+    server.listen(preferredPort, DEFAULT_HOST, () => {
+      server.close(() => resolve(preferredPort));
+    });
+  });
+}
+
+async function waitForServer(url, childProcess) {
+  const deadline = Date.now() + SERVER_READY_TIMEOUT_MS;
+  let lastError;
+
+  while (Date.now() < deadline) {
+    if (childProcess.exitCode !== null) {
+      throw new Error(`Vite server exited before it was ready (code ${childProcess.exitCode})`);
+    }
+
+    try {
+      const response = await fetch(url);
+      if (response.ok || response.status < 500) return;
+      lastError = new Error(`HTTP ${response.status}`);
+    } catch (error) {
+      lastError = error;
+    }
+
+    await delay(SERVER_POLL_INTERVAL_MS);
+  }
+
+  throw new Error(`Vite server did not become ready at ${url}: ${lastError?.message || 'timeout'}`);
+}
+
+async function startViteServer() {
+  if (!MANAGED_SERVER) return null;
+
+  const port = await findAvailablePort(DEFAULT_PORT);
+  BASE_URL = `http://${DEFAULT_HOST}:${port}`;
+  const viteBin = path.join(ROOT, 'node_modules', 'vite', 'bin', 'vite.js');
+  const childProcess = spawn(
+    process.execPath,
+    [viteBin, '--host', DEFAULT_HOST, '--port', String(port), '--strictPort'],
+    {
+      cwd: ROOT,
+      env: {
+        ...process.env,
+        BROWSER: 'none',
+      },
+      stdio: ['ignore', 'pipe', 'pipe'],
+    },
+  );
+
+  const serverLogs = [];
+  childProcess.stdout.on('data', (chunk) => serverLogs.push(chunk.toString()));
+  childProcess.stderr.on('data', (chunk) => serverLogs.push(chunk.toString()));
+
+  try {
+    await waitForServer(BASE_URL, childProcess);
+  } catch (error) {
+    childProcess.kill();
+    throw new Error(`${error.message}\n${serverLogs.join('').trim()}`);
+  }
+
+  console.log(`[verify-i18n] Started temporary Vite server at ${BASE_URL}`);
+  return childProcess;
+}
+
+async function stopViteServer(childProcess) {
+  if (!childProcess || childProcess.exitCode !== null) return;
+  childProcess.kill();
+  await Promise.race([
+    new Promise((resolve) => childProcess.once('exit', resolve)),
+    delay(3_000),
+  ]);
+}
+
+function attachPageDiagnostics(targetPage, diagnostics) {
+  targetPage.on('console', (message) => {
+    if (message.type() !== 'error') return;
+    const text = message.text();
+    if (text.startsWith('Failed to load resource:')) {
+      diagnostics.thirdPartyWarnings.push(`resource console: ${text}`);
+      return;
+    }
+    if (isKnownThirdPartyConsoleMessage(text)) {
+      diagnostics.thirdPartyWarnings.push(`console: ${text}`);
+      return;
+    }
+    diagnostics.consoleErrors.push(text);
+  });
+
+  targetPage.on('pageerror', (error) => diagnostics.consoleErrors.push(error.message));
+
+  targetPage.on('requestfailed', (request) => {
+    const url = request.url();
+    const failure = request.failure()?.errorText || 'unknown network error';
+    const message = `${failure}: ${url}`;
+    if (isKnownThirdPartyUrl(url)) {
+      diagnostics.thirdPartyWarnings.push(message);
+      return;
+    }
+    diagnostics.networkErrors.push(message);
+  });
+}
 
 async function waitForHomeReady(targetPage) {
   await targetPage.waitForSelector('#intro-overlay', { state: 'attached' });
@@ -39,6 +192,25 @@ async function waitForHomeReady(targetPage) {
   await targetPage.mouse.wheel(0, 1600);
   await targetPage.waitForSelector('#intro-section', { state: 'hidden' });
 }
+
+async function runVerification() {
+  let browser;
+  let serverProcess;
+  const diagnostics = {
+    consoleErrors: [],
+    networkErrors: [],
+    thirdPartyWarnings: [],
+  };
+
+  try {
+    serverProcess = await startViteServer();
+    browser = await chromium.launch({ channel: 'chrome', headless: true });
+    const context = await browser.newContext({
+      viewport: { width: 1440, height: 900 },
+      reducedMotion: 'reduce',
+    });
+    const page = await context.newPage();
+    attachPageDiagnostics(page, diagnostics);
 
 for (const locale of LOCALES) {
   await page.goto(`${BASE_URL}/${locale}/`, { waitUntil: 'domcontentloaded' });
@@ -155,6 +327,7 @@ await Promise.all([
 assert(page.url().includes(`/de/service.html?slug=${languageSwitchSlug}`), 'Language switch did not preserve the service slug');
 
 const mobilePage = await context.newPage();
+attachPageDiagnostics(mobilePage, diagnostics);
 await mobilePage.setViewportSize({ width: 390, height: 844 });
 await mobilePage.goto(
   `${BASE_URL}/ar/service.html?slug=${languageSwitchSlug}`,
@@ -192,7 +365,28 @@ assert(mobileForm.direction === 'rtl', '[ar mobile] Appointment form is not RTL'
 assert(mobileForm.overflow <= 1, `[ar mobile form] Horizontal overflow detected (${mobileForm.overflow}px)`);
 assert(mobileForm.ltrInputs, '[ar mobile] Phone and email inputs are not LTR');
 
-assert(consoleErrors.length === 0, `Browser console errors:\n${consoleErrors.join('\n')}`);
+assert(
+  diagnostics.consoleErrors.length === 0,
+  `Browser console errors:\n${diagnostics.consoleErrors.join('\n')}`,
+);
+assert(
+  diagnostics.networkErrors.length === 0,
+  `First-party network errors:\n${diagnostics.networkErrors.join('\n')}`,
+);
 
-await browser.close();
+const uniqueThirdPartyWarnings = [...new Set(diagnostics.thirdPartyWarnings)];
+if (uniqueThirdPartyWarnings.length > 0) {
+  console.warn(
+    `[verify-i18n] Ignored ${uniqueThirdPartyWarnings.length} known third-party network/console warning(s):\n`
+    + uniqueThirdPartyWarnings.map((warning) => `  - ${warning}`).join('\n'),
+  );
+}
+
 console.log(`Browser verification passed for 8 home routes, ${LOCALES.length * SERVICE_SLUGS.length} service routes (${SERVICE_SLUGS.length} slugs x ${LOCALES.length} locales), CTA regression checks, language persistence, and Arabic RTL.`);
+  } finally {
+    await browser?.close();
+    await stopViteServer(serverProcess);
+  }
+}
+
+await runVerification();

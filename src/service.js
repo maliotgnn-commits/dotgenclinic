@@ -15,6 +15,7 @@ import {
   homeUrlFor,
   loadContentCatalog,
   loadUiDictionary,
+  doctorUrlForLocale,
   serviceUrlForLocale,
   translate,
 } from './i18n.js';
@@ -27,6 +28,7 @@ import { buildWhatsAppUrl } from './whatsapp-links.js';
 import { enhanceRelatedPages, getClusterNavLinks, getDoctorsForServicePage } from './seo-internal-links.js';
 import { storeAppointmentReferrer } from './appointment-attribution.js';
 import { buildDoctorAriaLabel, initDoctorClickHandling } from './doctor-click.js';
+import { getDoctorSpecialty } from './doctors-data.js';
 
 const app = document.getElementById('service-app');
 const params = new URLSearchParams(window.location.search);
@@ -194,12 +196,12 @@ function renderDoctorLinks(doctors) {
               (doctor) => `
             <a
               class="sv-related-card"
-              href="#"
+              href="${doctorUrlForLocale(doctor.slug, locale)}"
               data-doctor-slug="${escapeHtml(doctor.slug)}"
               aria-label="${escapeHtml(buildDoctorAriaLabel(locale, doctor.name))}"
             >
               <strong>${escapeHtml(doctor.name)}</strong>
-              <span>${escapeHtml(doctor.specialty)}</span>
+              <span>${escapeHtml(getDoctorSpecialty(doctor, locale))}</span>
             </a>
           `,
             )

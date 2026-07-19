@@ -12,18 +12,10 @@ const ROOT_BUILD = resolve(ROOT, 'dist/hukuk-departmani.html');
 
 function localizeLegalShell(html, locale) {
   const content = getLegalContentSync(locale);
-  const dir = locale === 'ar' ? 'rtl' : 'ltr';
   let result = html;
 
   result = result.replace(/<html lang="[^"]*">/, `<html lang="${locale}">`);
-  result = result.replace(
-    /document\.documentElement\.lang = '[^']*';/,
-    `document.documentElement.lang = '${locale}';`,
-  );
-  result = result.replace(
-    /document\.documentElement\.dir = '[^']*';/,
-    `document.documentElement.dir = '${dir}';`,
-  );
+  result = result.replace('src="/tr-locale-bootstrap.js"', 'src="/locale-bootstrap.js"');
   result = result.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(content.page.title)}</title>`);
   result = result.replace(
     /<meta name="description" content="[^"]*" \/>/,
