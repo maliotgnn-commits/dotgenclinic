@@ -421,6 +421,11 @@
   .eh-section {
     padding: 56px 0;
   }
+
+  .eh-topic-toggle {
+    min-height: 44px;
+    padding: 9px 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
