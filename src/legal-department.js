@@ -290,7 +290,7 @@ function renderPage() {
   document.title = page.title;
   const descriptionMeta = document.querySelector('meta[name="description"]');
   if (descriptionMeta) descriptionMeta.setAttribute('content', page.description);
-  applySeoLinks(locale, 'home');
+  applySeoLinks(locale, 'legal');
 
   app.innerHTML = `
     ${renderSkipLink()}
