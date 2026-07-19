@@ -2363,57 +2363,23 @@ html[dir=rtl] .form-group select {
   display: grid
 }
 
-.footer-brand-media {
-  align-items: center;
-  gap: 24px;
-  margin-bottom: 16px;
-  display: flex
-}
-
-.footer-brand-media picture {
-  flex: 0 0 auto;
-  display: block
-}
-
 .footer-logo {
   width: auto;
   height: 60px;
-  margin-bottom: 0;
-  display: block
+  margin-bottom: 16px
 }
 
 .footer-brand-video {
-  border: 0;
-  border-radius: 0;
-  flex: 0 0 auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
   width: min(100%, 220px);
-  height: 151.6px;
-  margin-bottom: 0;
-  background: transparent;
-  mix-blend-mode: screen;
-  object-fit: cover;
-  pointer-events: none;
-  display: block
-}
-
-.footer-kj-video {
-  border: 0;
-  border-radius: 0;
-  width: min(100%, 180px);
-  aspect-ratio: 840 / 124;
   height: auto;
   margin-bottom: 16px;
-  background: transparent;
-  mix-blend-mode: screen;
-  object-fit: contain;
-  pointer-events: none;
   display: block
 }
 
 .footer-brand.video-fallback-active .footer-brand-video,
-.footer-brand.video-fallback-active .footer-kj-video,
-.footer-brand-video.video-fallback-hidden,
-.footer-kj-video.video-fallback-hidden {
+.footer-brand-video.video-fallback-hidden {
   display: none
 }
 
@@ -2915,18 +2881,12 @@ html[dir=rtl] .form-group select {
     grid-template-columns: 1fr
   }
 
-  .footer-grid {
+.footer-grid {
     grid-template-columns: 1fr;
     gap: 30px
   }
 
-  .footer-brand-media {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 16px
-  }
-
-  .footer-bottom {
+.footer-bottom {
     text-align: center;
     flex-direction: column;
     gap: 12px
