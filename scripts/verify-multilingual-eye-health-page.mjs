@@ -15,12 +15,12 @@ const ROOT = resolve(__dirname, '..');
 const DIST = resolve(ROOT, 'dist');
 
 const CATEGORY_EYE_PATHS = [
-  '/images/goz-hastaliklari/category-eyes/category-eye-general-health.png',
-  '/images/goz-hastaliklari/category-eyes/category-eye-laser.png',
-  '/images/goz-hastaliklari/category-eyes/category-eye-cataract.png',
-  '/images/goz-hastaliklari/category-eyes/category-eye-retina.png',
-  '/images/goz-hastaliklari/category-eyes/category-eye-eyelid-orbita.png',
-  '/images/goz-hastaliklari/category-eyes/category-eye-other-treatments.png',
+  '/images/goz-hastaliklari/category-eyes/category-eye-general-health.webp',
+  '/images/goz-hastaliklari/category-eyes/category-eye-laser.webp',
+  '/images/goz-hastaliklari/category-eyes/category-eye-cataract.webp',
+  '/images/goz-hastaliklari/category-eyes/category-eye-retina.webp',
+  '/images/goz-hastaliklari/category-eyes/category-eye-eyelid-orbita.webp',
+  '/images/goz-hastaliklari/category-eyes/category-eye-other-treatments.webp',
 ];
 
 const failures = [];

@@ -56,12 +56,12 @@ function renderChevron() {
 }
 
 const CATEGORY_EYE_IMAGES = {
-  exam: '/images/goz-hastaliklari/category-eyes/category-eye-general-health.png',
-  laser: '/images/goz-hastaliklari/category-eyes/category-eye-laser.png',
-  lens: '/images/goz-hastaliklari/category-eyes/category-eye-cataract.png',
-  retina: '/images/goz-hastaliklari/category-eyes/category-eye-retina.png',
-  eyelid: '/images/goz-hastaliklari/category-eyes/category-eye-eyelid-orbita.png',
-  care: '/images/goz-hastaliklari/category-eyes/category-eye-other-treatments.png',
+  exam: '/images/goz-hastaliklari/category-eyes/category-eye-general-health.webp',
+  laser: '/images/goz-hastaliklari/category-eyes/category-eye-laser.webp',
+  lens: '/images/goz-hastaliklari/category-eyes/category-eye-cataract.webp',
+  retina: '/images/goz-hastaliklari/category-eyes/category-eye-retina.webp',
+  eyelid: '/images/goz-hastaliklari/category-eyes/category-eye-eyelid-orbita.webp',
+  care: '/images/goz-hastaliklari/category-eyes/category-eye-other-treatments.webp',
 };
 
 function renderCategoryEyeImage(iconKey) {

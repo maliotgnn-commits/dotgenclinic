@@ -7,7 +7,7 @@ export const YAZILIM_RD_PAGE = {
     title: 'Yazılım Ar-Ge',
     subtitle: 'Hastane Yazılım Çözümleri',
     lead: 'Sağlık kurumlarının dijital dönüşümüne yönelik kapsamlı yazılım çözümleri',
-    image: '/images/yazilim_rd/yazilim_rd_hero.png',
+    image: '/images/yazilim_rd/yazilim_rd_hero.webp',
   },
   intro: {
     title: 'Hastane Yazılım Çözümleri',
