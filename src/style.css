@@ -2568,6 +2568,8 @@ html[dir=rtl] .form-group select {
 .whatsapp-float:before {
   content: "";
   pointer-events: none;
+  opacity: 0;
+  background: #25d36624;
   border-radius: 50%;
   animation: 2s ease-in-out infinite whatsappPulse;
   position: absolute;
@@ -2583,14 +2585,12 @@ html[dir=rtl] .form-group select {
 @keyframes whatsappPulse {
   0%, to {
     opacity: 0;
-    transform: scale(1);
-    box-shadow: 0 0 0 0 #25d36600
+    transform: scale(1)
   }
 
 50% {
     opacity: 1;
-    transform: scale(1.35);
-    box-shadow: 0 0 0 10px #25d3661a
+    transform: scale(1.35)
   }
 
 }
