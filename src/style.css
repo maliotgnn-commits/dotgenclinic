@@ -19,8 +19,8 @@
   --radius-md: 12px;
   --radius-lg: 20px;
   --radius-xl: 28px;
-  --font-heading: "Playfair Display",  Georgia,  serif;
-  --font-body: "Inter",  -apple-system,  sans-serif;
+  --font-heading: "Playfair Display",  "Playfair Display Fallback",  Georgia,  serif;
+  --font-body: "Inter",  "Inter Fallback",  -apple-system,  sans-serif;
   --transition: .3s cubic-bezier(.4,  0,  .2,  1);
   --transition-slow: .6s cubic-bezier(.4,  0,  .2,  1)
 }
@@ -28,6 +28,24 @@
 html[dir=rtl] {
   --font-heading: "Noto Naskh Arabic",  Georgia,  serif;
   --font-body: "Noto Sans Arabic",  Arial,  sans-serif
+}
+
+@font-face {
+  font-family: "Inter Fallback";
+  src: local("Arial");
+  size-adjust: 106%;
+  ascent-override: 90%;
+  descent-override: 22%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Playfair Display Fallback";
+  src: local("Georgia");
+  size-adjust: 104%;
+  ascent-override: 92%;
+  descent-override: 24%;
+  line-gap-override: 0%;
 }
 
 *,:before,:after {
@@ -129,7 +147,8 @@ img {
   background: var(--gold-gradient);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-  background-clip: text
+  background-clip: text;
+  font-synthesis: none
 }
 
 #intro-section {
@@ -210,6 +229,7 @@ to {
 .intro-logo {
   z-index: 2;
   filter: drop-shadow(0 0 20px #c9a84c4d);
+  aspect-ratio: 350 / 204;
   width: 100%;
   height: auto;
   animation: 4s ease-in-out infinite logoFloat;
@@ -465,7 +485,13 @@ to {
   align-self: center
 }
 
+.nav-logo picture {
+  display: block;
+  line-height: 0
+}
+
 .nav-logo img {
+  aspect-ratio: 180 / 105;
   width: auto;
   height: clamp(48px, 4.2vw, 55px)
 }
@@ -1184,12 +1210,18 @@ a.btn.btn-gold[href*="#randevu"]:focus-visible {
   grid-column: 3;
   grid-row: 1;
   align-self: center;
+  min-height: 44px;
   white-space: nowrap;
   display: flex
 }
 
 .nav-language-slot {
-  flex-shrink: 0
+  flex-shrink: 0;
+  width: 76px;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
 
 .language-switcher {
@@ -2364,6 +2396,7 @@ html[dir=rtl] .form-group select {
 }
 
 .footer-logo {
+  aspect-ratio: 180 / 105;
   width: auto;
   height: 60px;
   margin-bottom: 16px
@@ -2535,6 +2568,8 @@ html[dir=rtl] .form-group select {
 .whatsapp-float:before {
   content: "";
   pointer-events: none;
+  opacity: 0;
+  background: #25d36624;
   border-radius: 50%;
   animation: 2s ease-in-out infinite whatsappPulse;
   position: absolute;
@@ -2550,14 +2585,12 @@ html[dir=rtl] .form-group select {
 @keyframes whatsappPulse {
   0%, to {
     opacity: 0;
-    transform: scale(1);
-    box-shadow: 0 0 0 0 #25d36600
+    transform: scale(1)
   }
 
 50% {
     opacity: 1;
-    transform: scale(1.35);
-    box-shadow: 0 0 0 10px #25d3661a
+    transform: scale(1.35)
   }
 
 }
@@ -2740,6 +2773,11 @@ html[dir=rtl] .form-group select {
     min-height: 44px;
     height: 44px;
     padding: 0 8px
+  }
+
+  .nav-language-slot {
+    width: 64px;
+    min-height: 44px
   }
 
 }
