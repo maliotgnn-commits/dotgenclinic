@@ -102,8 +102,8 @@ function renderSkipLink() {
 function renderNavLogo() {
   return `
     <picture>
-      <source srcset="/images/logo-transparent-180.avif 180w, /images/logo-transparent-360.avif 360w" sizes="127px" type="image/avif" />
-      <source srcset="/images/logo-transparent-180.webp 180w, /images/logo-transparent-360.webp 360w" sizes="127px" type="image/webp" />
+      <source srcset="/images/logo-transparent-180.avif 180w, /images/logo-transparent-254.avif 254w, /images/logo-transparent-360.avif 360w" sizes="127px" type="image/avif" />
+      <source srcset="/images/logo-transparent-180.webp 180w, /images/logo-transparent-254.webp 254w, /images/logo-transparent-360.webp 360w" sizes="127px" type="image/webp" />
       <img src="/images/logo-transparent-180.webp" width="180" height="105" alt="Dr Otgen Clinic" decoding="async" />
     </picture>
   `;
