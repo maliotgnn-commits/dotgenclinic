@@ -2637,6 +2637,9 @@ html[dir=rtl] .form-group select {
     align-items: center;
     gap: clamp(6px, 2vw, 10px);
     flex-shrink: 0;
+    inline-size: 118px;
+    min-width: 118px;
+    justify-content: flex-end;
   }
 
   .nav-actions > .nav-cta {
