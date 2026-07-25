@@ -6,7 +6,7 @@
     <meta name="robots" content="noindex, nofollow" />
     <meta
       name="description"
-      content="DrOtgenMedical profesyonel doğrulama ve sipariş talep formu ön izlemesi."
+      content="DrOtgenMedical profesyonel doğrulama ve sipariş talep formu."
     />
     <title>Profesyonel Doğrulama | DrOtgenMedical</title>
     <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -35,7 +35,7 @@
             target="_blank"
             rel="noopener noreferrer"
           >
-            Dr. Ötgen Clinic
+            Dr. Otgen Clinic
           </a>
         </nav>
         <a class="header-cta" href="./professional-verification.html">
@@ -61,8 +61,8 @@
           <div class="privacy-assurance">
             <span aria-hidden="true">✓</span>
             <p>
-              Bu ön izlemede form verileri ve seçtiğiniz belgeler hiçbir yere
-              gönderilmez veya kaydedilmez.
+              Başvurunuz ve mesleki belgeniz yalnızca profesyonel doğrulama ve
+              sipariş değerlendirmesi amacıyla ilgili ekibe iletilir.
             </p>
           </div>
         </div>
@@ -70,7 +70,16 @@
 
       <section class="form-section">
         <div class="container form-layout">
-          <form class="verification-form" id="verification-form">
+          <form
+            class="verification-form"
+            id="verification-form"
+            action="https://formsubmit.co/ajax/drotgenclinic@gmail.com"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <input type="hidden" name="_subject" value="DrOtgenMedical sipariş talebi" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" />
             <fieldset>
               <legend><span>01</span>Kişisel ve mesleki bilgiler</legend>
               <div class="field-grid">
@@ -91,8 +100,8 @@
                 <label>Uzmanlık alanı *<input name="speciality" required /></label>
                 <label>Kurum veya klinik *<input name="organization" required /></label>
                 <label class="full-field">
-                  Vergi numarası veya T.C. kimlik numarası *
-                  <input name="identityNumber" inputmode="numeric" maxlength="11" required />
+                  Vergi numarası veya meslek sicil numarası *
+                  <input name="professionalNumber" maxlength="20" autocomplete="off" required />
                 </label>
               </div>
             </fieldset>
@@ -126,7 +135,7 @@
               <label class="file-drop">
                 <input
                   id="document"
-                  name="document"
+                  name="attachment"
                   type="file"
                   accept=".pdf,.jpg,.jpeg,.png"
                   required
@@ -141,28 +150,29 @@
             <fieldset class="consent-fieldset">
               <legend><span>05</span>Onaylar</legend>
               <label class="check-row">
-                <input type="checkbox" required />
+                <input type="checkbox" name="kvkkConsent" value="Kabul edildi" required />
                 <span>
                   <a href="/tr/privacy.html">KVKK aydınlatma metnini</a> okudum ve
                   kişisel verilerimin başvuru amacıyla işlenmesini kabul ediyorum. *
                 </span>
               </label>
               <label class="check-row">
-                <input type="checkbox" required />
+                <input type="checkbox" name="salesConsent" value="Kabul edildi" required />
                 <span><a href="./#legal">Satış ve kullanım koşullarını</a> kabul ediyorum. *</span>
               </label>
               <label class="check-row">
-                <input type="checkbox" required />
+                <input type="checkbox" name="accuracyConsent" value="Beyan edildi" required />
                 <span>Paylaştığım bilgilerin doğru olduğunu beyan ederim. *</span>
               </label>
             </fieldset>
 
             <button class="button button-primary submit-button" type="submit">
-              Sipariş talebini ön izle
+              Sipariş talebini gönder
             </button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
             <p class="submit-disclaimer">
-              Bu işlem bir ödeme oluşturmaz. Gerçek sürümde ödeme yalnızca
-              profesyonel doğrulama sonrasında alınacaktır.
+              Bu işlem bir ödeme oluşturmaz. Ödeme yalnızca profesyonel
+              doğrulama ve teklif onayından sonra alınır.
             </p>
           </form>
 
@@ -172,15 +182,14 @@
             <div class="mini-product"><span>ITALY</span><strong>DIAMOND</strong></div>
             <dl>
               <div><dt>Adet</dt><dd id="summary-quantity">1</dd></div>
-              <div><dt>Birim fiyat</dt><dd>₺4.850</dd></div>
-              <div><dt>Ara toplam</dt><dd id="summary-total">₺4.850</dd></div>
-              <div><dt>KDV</dt><dd>Hariç</dd></div>
+              <div><dt>Fiyatlandırma</dt><dd>Teklif ile</dd></div>
+              <div><dt>Toplam</dt><dd id="summary-total">Doğrulama sonrası</dd></div>
+              <div><dt>Ödeme</dt><dd>Onay sonrası</dd></div>
             </dl>
             <div class="summary-notice">
               <strong>Henüz ödeme yapılmaz</strong>
               <p>Talebiniz onaylandıktan sonra güvenli ödeme bağlantısı ayrıca iletilir.</p>
             </div>
-            <small class="summary-demo">Fiyat ve ürün bilgileri ön izleme amaçlıdır.</small>
           </aside>
         </div>
       </section>
@@ -189,11 +198,11 @@
         <div class="container">
           <div class="success-card">
             <span class="success-icon" aria-hidden="true">✓</span>
-            <p class="eyebrow">ÖN İZLEME TAMAMLANDI</p>
-            <h2>Talep akışı başarıyla denendi.</h2>
+            <p class="eyebrow">TALEBİNİZ ALINDI</p>
+            <h2>Sipariş talebiniz başarıyla iletildi.</h2>
             <p>
-              Gerçek sürümde başvurunuz güvenli inceleme kuyruğuna alınacak.
-              Bu ön izlemede hiçbir bilgi kaydedilmedi.
+              Başvurunuz ve mesleki belgeniz incelemeye alındı. Yetkili ekibimiz
+              doğrulama sonucuyla birlikte sizinle iletişime geçecektir.
             </p>
             <button class="button button-primary" id="return-to-form" type="button">
               Forma geri dön
@@ -206,7 +215,7 @@
     <footer class="site-footer">
       <div class="container footer-bottom footer-bottom-simple">
         <span>© 2026 DrOtgenMedical</span>
-        <span>Bu bölüm bir tasarım ön izlemesidir.</span>
+        <span>Profesyonel medikal ürün tedarik platformu</span>
       </div>
     </footer>
 

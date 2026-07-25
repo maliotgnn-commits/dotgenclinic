@@ -505,7 +505,7 @@ textarea {
   background: var(--ivory);
 }
 
-.demo-badge {
+.product-badge {
   display: inline-block;
   padding: 6px 10px;
   border: 1px solid rgba(183, 146, 82, 0.35);
@@ -954,6 +954,23 @@ textarea {
   text-align: center;
 }
 
+.form-honeypot {
+  position: absolute !important;
+  left: -9999px !important;
+  width: 1px !important;
+  height: 1px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+.form-status {
+  min-height: 1.5em;
+  margin: 14px 0 0;
+  color: var(--danger);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
 .order-summary {
   position: sticky;
   top: 110px;
@@ -1031,8 +1048,7 @@ textarea {
   font-size: 0.78rem;
 }
 
-.summary-notice p,
-.summary-demo {
+.summary-notice p {
   color: rgba(255, 255, 255, 0.62);
   font-size: 0.7rem;
 }

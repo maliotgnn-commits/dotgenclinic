@@ -8,8 +8,9 @@ const documentInput = document.getElementById('document');
 const fileLabel = document.getElementById('file-label');
 const fileError = document.getElementById('file-error');
 const returnButton = document.getElementById('return-to-form');
+const submitButton = form.querySelector('button[type="submit"]');
+const formStatus = document.getElementById('form-status');
 
-const EXAMPLE_UNIT_PRICE = 4850;
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 const ACCEPTED_TYPES = new Set(['application/pdf', 'image/jpeg', 'image/png']);
 
@@ -22,7 +23,7 @@ function updateSummary() {
   const quantity = normalizedQuantity();
   quantityInput.value = String(quantity);
   summaryQuantity.textContent = String(quantity);
-  summaryTotal.textContent = `₺${(quantity * EXAMPLE_UNIT_PRICE).toLocaleString('tr-TR')}`;
+  summaryTotal.textContent = 'Doğrulama sonrası';
 }
 
 function validateSelectedFile() {
@@ -54,18 +55,43 @@ function validateSelectedFile() {
 quantityInput.addEventListener('input', updateSummary);
 documentInput.addEventListener('change', validateSelectedFile);
 
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit', async (event) => {
   event.preventDefault();
   if (!validateSelectedFile()) return;
 
-  formSection.hidden = true;
-  successSection.hidden = false;
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  submitButton.disabled = true;
+  submitButton.textContent = 'Talebiniz gönderiliyor…';
+  formStatus.textContent = '';
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' },
+    });
+    const result = await response.json();
+
+    if (!response.ok || result.success !== 'true') {
+      throw new Error('Submission failed');
+    }
+
+    formSection.hidden = true;
+    successSection.hidden = false;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } catch {
+    formStatus.textContent =
+      'Talebiniz şu anda iletilemedi. Lütfen bağlantınızı kontrol edip yeniden deneyin.';
+  } finally {
+    submitButton.disabled = false;
+    submitButton.textContent = 'Sipariş talebini gönder';
+  }
 });
 
 returnButton.addEventListener('click', () => {
   successSection.hidden = true;
   formSection.hidden = false;
+  form.reset();
+  updateSummary();
   form.querySelector('input')?.focus();
 });
 

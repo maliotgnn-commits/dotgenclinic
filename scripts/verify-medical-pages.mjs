@@ -33,7 +33,7 @@ expect(landing, /DIAMOND Crosslinked HA 20/, 'Ana sayfada DIAMOND ürünü bulun
 expect(
   landing,
   /meta name="robots" content="noindex, nofollow"/,
-  'Ana sayfanın ön izleme noindex etiketi eksik.',
+  'Ana sayfanın geçici noindex etiketi eksik.',
 );
 expect(
   landing,
@@ -54,13 +54,25 @@ expect(
 expect(
   verification,
   /meta name="robots" content="noindex, nofollow"/,
-  'Doğrulama sayfasının ön izleme noindex etiketi eksik.',
+  'Doğrulama sayfasının geçici noindex etiketi eksik.',
+);
+expect(
+  verification,
+  /action="https:\/\/formsubmit\.co\/ajax\/drotgenclinic@gmail\.com"/,
+  'Sipariş talebi gönderim adresi bulunamadı.',
+);
+expect(
+  verification,
+  /enctype="multipart\/form-data"/,
+  'Mesleki belge yüklemesi için form kodlaması eksik.',
 );
 expect(script, /10 \* 1024 \* 1024/, '10 MB dosya sınırı bulunamadı.');
-expect(script, /event\.preventDefault\(\)/, 'Ön izleme form gönderimi durdurulmuyor.');
+expect(script, /event\.preventDefault\(\)/, 'Form gönderim denetimi bulunamadı.');
+expect(script, /await fetch\(form\.action/, 'Sipariş talebi gönderimi bulunamadı.');
 
-if (/\bfetch\s*\(|XMLHttpRequest|formsubmit/i.test(script)) {
-  failures.push('Ön izleme formunda beklenmeyen bir veri gönderimi bulundu.');
+const placeholderTerms = /konsept|örnek|ön izleme|demo/i;
+if (placeholderTerms.test(`${landing}\n${verification}`)) {
+  failures.push('Yayın metninde konsept veya ön izleme ifadesi bulundu.');
 }
 
 await Promise.all([
@@ -72,5 +84,5 @@ if (failures.length) {
   console.error(failures.map((failure) => `- ${failure}`).join('\n'));
   process.exitCode = 1;
 } else {
-  console.log('DrOtgenMedical sayfaları ve güvenli ön izleme akışı doğrulandı.');
+  console.log('DrOtgenMedical sayfaları ve sipariş talebi akışı doğrulandı.');
 }
