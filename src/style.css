@@ -557,6 +557,15 @@ to {
   color: var(--gold)
 }
 
+.nav-menu>li>a.medical-store-nav-link {
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+.nav-menu>li>a.medical-store-nav-link:hover {
+  color: var(--gold);
+}
+
 .nav-menu>li:hover>a:after {
   transform: scaleX(1)
 }
@@ -884,6 +893,20 @@ to {
   .nav-menu > li {
     width: 100%;
     flex: 0 0 auto;
+  }
+
+  .nav-menu > li > a.medical-store-nav-link {
+    width: 100%;
+    min-height: 56px;
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 16px 0;
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: normal;
+  }
+
+  .nav-menu > li > a.medical-store-nav-link:after {
+    display: none;
   }
 
   .mobile-nav-trigger,

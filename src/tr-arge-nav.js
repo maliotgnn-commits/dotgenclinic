@@ -8,6 +8,7 @@ import { NAV_CHEVRON_SVG } from './nav-shared.js';
 
 export const ARGE_LANDING_PATH = argeLandingPath('tr');
 export const ARGE_NAV_LABEL = argeMenuLabelForLocale('tr');
+export const MEDICAL_STORE_PATH = '/medical/';
 
 export function renderArgeNavItem(locale = 'tr') {
   const menuLabel = argeMenuLabelForLocale(locale);
@@ -42,8 +43,16 @@ export function renderArgeNavItem(locale = 'tr') {
   `;
 }
 
+export function renderMedicalStoreNavItem() {
+  return `
+    <li data-desktop-menu-id="medical-store" data-medical-store-nav>
+      <a href="${MEDICAL_STORE_PATH}" class="medical-store-nav-link" data-i18n-skip>DrOtgenMedical</a>
+    </li>
+  `;
+}
+
 export function appendArgeNavItem(navHtml, locale) {
-  return `${navHtml}${renderArgeNavItem(locale)}`;
+  return `${navHtml}${renderArgeNavItem(locale)}${renderMedicalStoreNavItem()}`;
 }
 
 export function stripArgeNavItem(html) {
