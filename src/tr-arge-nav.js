@@ -8,7 +8,7 @@ import { NAV_CHEVRON_SVG } from './nav-shared.js';
 
 export const ARGE_LANDING_PATH = argeLandingPath('tr');
 export const ARGE_NAV_LABEL = argeMenuLabelForLocale('tr');
-export const MEDICAL_STORE_PATH = '/medical/';
+export const MEDICAL_STORE_PATH = 'https://medical.drotgenclinic.com/';
 
 export function renderArgeNavItem(locale = 'tr') {
   const menuLabel = argeMenuLabelForLocale(locale);

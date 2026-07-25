@@ -9,9 +9,9 @@ const homeHtml = await readFile(new URL('../index.html', import.meta.url), 'utf8
 const styleCss = await readFile(new URL('../src/style.css', import.meta.url), 'utf8');
 const navItem = renderMedicalStoreNavItem();
 
-assert.equal(MEDICAL_STORE_PATH, '/medical/');
+assert.equal(MEDICAL_STORE_PATH, 'https://medical.drotgenclinic.com/');
 assert.match(navItem, /data-medical-store-nav/);
-assert.match(navItem, /href="\/medical\/"/);
+assert.match(navItem, /href="https:\/\/medical\.drotgenclinic\.com\/"/);
 assert.match(navItem, />E-Medical<\/a>/);
 assert.match(navItem, /aria-label="DrOtgenMedical E-Medical"/);
 
@@ -22,7 +22,7 @@ assert.match(
 );
 assert.match(
   homeHtml,
-  /class="footer-links"[\s\S]*href="\/medical\/"[\s\S]*DrOtgenMedical/,
+  /class="footer-links"[\s\S]*href="https:\/\/medical\.drotgenclinic\.com\/"[\s\S]*DrOtgenMedical/,
   'DrOtgenMedical must be linked from the homepage footer.',
 );
 assert.match(
