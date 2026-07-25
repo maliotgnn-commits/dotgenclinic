@@ -46,7 +46,12 @@ export function renderArgeNavItem(locale = 'tr') {
 export function renderMedicalStoreNavItem() {
   return `
     <li data-desktop-menu-id="medical-store" data-medical-store-nav>
-      <a href="${MEDICAL_STORE_PATH}" class="medical-store-nav-link" data-i18n-skip>DrOtgenMedical</a>
+      <a
+        href="${MEDICAL_STORE_PATH}"
+        class="medical-store-nav-link"
+        aria-label="DrOtgenMedical E-Medical"
+        data-i18n-skip
+      >E-Medical</a>
     </li>
   `;
 }

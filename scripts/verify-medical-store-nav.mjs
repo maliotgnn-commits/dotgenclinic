@@ -12,7 +12,8 @@ const navItem = renderMedicalStoreNavItem();
 assert.equal(MEDICAL_STORE_PATH, '/medical/');
 assert.match(navItem, /data-medical-store-nav/);
 assert.match(navItem, /href="\/medical\/"/);
-assert.match(navItem, />DrOtgenMedical<\/a>/);
+assert.match(navItem, />E-Medical<\/a>/);
+assert.match(navItem, /aria-label="DrOtgenMedical E-Medical"/);
 
 assert.match(
   homeHtml,
