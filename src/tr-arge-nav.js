@@ -68,6 +68,12 @@ export function injectArgeNavForLocale(html, locale) {
   if (locale === 'tr') return html;
   const stripped = stripArgeNavItem(html);
   const navBlock = renderArgeNavItem(locale);
+  if (/<li\b[^>]*\bdata-medical-store-nav\b/i.test(stripped)) {
+    return stripped.replace(
+      /(\s*<li\b[^>]*\bdata-medical-store-nav\b)/i,
+      `\n            ${navBlock}$1`,
+    );
+  }
   return stripped.replace(
     /(<ul class="nav-menu" id="nav-menu">[\s\S]*?)(\s*<\/ul>)/,
     `$1\n            ${navBlock}$2`,

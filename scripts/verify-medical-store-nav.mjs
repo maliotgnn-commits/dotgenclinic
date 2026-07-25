@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import {
+  injectArgeNavForLocale,
   MEDICAL_STORE_PATH,
   renderMedicalStoreNavItem,
 } from '../src/tr-arge-nav.js';
@@ -14,6 +15,13 @@ assert.match(navItem, /data-medical-store-nav/);
 assert.match(navItem, /href="https:\/\/medical\.drotgenclinic\.com\/"/);
 assert.match(navItem, />E-Medical<\/a>/);
 assert.match(navItem, /aria-label="DrOtgenMedical E-Medical"/);
+
+const localizedNav = injectArgeNavForLocale(homeHtml, 'en');
+assert.match(
+  localizedNav,
+  /data-arge-nav[\s\S]*data-medical-store-nav/,
+  'Localized navigation must keep E-Medical after Ar-Ge.',
+);
 
 assert.match(
   homeHtml,

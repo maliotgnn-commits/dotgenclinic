@@ -16,6 +16,7 @@ const EXPECTED_MENU_IDS = [
   'eye-health',
   'functional-health',
   'arge',
+  'medical-store',
 ];
 
 const TR_MENU_IDS = EXPECTED_MENU_IDS;
@@ -46,6 +47,10 @@ assert(eyeHealthNavJs.includes('data-desktop-menu-id="eye-health"'), 'eye health
 
 const argeNavJs = readFileSync(resolve(ROOT, 'src/tr-arge-nav.js'), 'utf8');
 assert(argeNavJs.includes('data-desktop-menu-id="arge"'), 'Ar-Ge nav must expose stable arge menu id');
+assert(
+  argeNavJs.includes('data-desktop-menu-id="medical-store"'),
+  'E-Medical nav must expose stable medical-store menu id',
+);
 
 const indexIds = collectMenuIds(indexHtml);
 assert(indexIds.length === TR_MENU_IDS.length, `index.html must define ${TR_MENU_IDS.length} desktop menu ids (found ${indexIds.length})`);
