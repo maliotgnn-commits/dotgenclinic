@@ -90,6 +90,11 @@ export default defineConfig({
         eyeHealth: resolve(import.meta.dirname, 'goz-hastaliklari.html'),
         adminAnalytics: resolve(import.meta.dirname, 'admin/analytics.html'),
         adminSeo: resolve(import.meta.dirname, 'admin/seo.html'),
+        medical: resolve(import.meta.dirname, 'medical/index.html'),
+        medicalVerification: resolve(
+          import.meta.dirname,
+          'medical/professional-verification.html',
+        ),
       },
     },
   },
