@@ -8,6 +8,7 @@ import { NAV_CHEVRON_SVG } from './nav-shared.js';
 
 export const ARGE_LANDING_PATH = argeLandingPath('tr');
 export const ARGE_NAV_LABEL = argeMenuLabelForLocale('tr');
+export const MEDICAL_STORE_PATH = 'https://medical.drotgenclinic.com/';
 
 export function renderArgeNavItem(locale = 'tr') {
   const menuLabel = argeMenuLabelForLocale(locale);
@@ -42,8 +43,21 @@ export function renderArgeNavItem(locale = 'tr') {
   `;
 }
 
+export function renderMedicalStoreNavItem() {
+  return `
+    <li data-desktop-menu-id="medical-store" data-medical-store-nav>
+      <a
+        href="${MEDICAL_STORE_PATH}"
+        class="medical-store-nav-link"
+        aria-label="DrOtgenMedical E-Medical"
+        data-i18n-skip
+      >E-Medical</a>
+    </li>
+  `;
+}
+
 export function appendArgeNavItem(navHtml, locale) {
-  return `${navHtml}${renderArgeNavItem(locale)}`;
+  return `${navHtml}${renderArgeNavItem(locale)}${renderMedicalStoreNavItem()}`;
 }
 
 export function stripArgeNavItem(html) {
@@ -54,6 +68,12 @@ export function injectArgeNavForLocale(html, locale) {
   if (locale === 'tr') return html;
   const stripped = stripArgeNavItem(html);
   const navBlock = renderArgeNavItem(locale);
+  if (/<li\b[^>]*\bdata-medical-store-nav\b/i.test(stripped)) {
+    return stripped.replace(
+      /(\s*<li\b[^>]*\bdata-medical-store-nav\b)/i,
+      `\n            ${navBlock}$1`,
+    );
+  }
   return stripped.replace(
     /(<ul class="nav-menu" id="nav-menu">[\s\S]*?)(\s*<\/ul>)/,
     `$1\n            ${navBlock}$2`,

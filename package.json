@@ -11,6 +11,9 @@
     "verify:i18n": "node scripts/verify-i18n.mjs",
     "verify:i18n:all": "node scripts/verify-i18n-all.mjs",
     "build": "npm run validate:i18n && vite build",
+    "build:medical": "vite build --config scripts/medical-vite.config.mjs",
+    "verify:medical": "node scripts/verify-medical-pages.mjs",
+    "verify:medical-nav": "node scripts/verify-medical-store-nav.mjs",
     "preview": "vite preview"
   },
   "devDependencies": {

@@ -2,11 +2,13 @@ import { readFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { EYE_HEALTH_ROUTES, EYE_HEALTH_LOCALES } from '../src/eye-health-routes.js';
+import { CATEGORY_ORDER } from '../src/subpages-data.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const DIST = resolve(ROOT, 'dist');
 const failures = [];
+const EXPECTED_DROPDOWN_CATEGORIES = CATEGORY_ORDER.length + 2;
 
 function fail(message) {
   failures.push(message);
@@ -85,8 +87,10 @@ for (const locale of EYE_HEALTH_LOCALES) {
   const items = extractTopLevelNavItems(html);
   const labels = items.map(topLevelLabel).filter(Boolean);
 
-  if (items.length !== 7) {
-    fail(`${label}: expected 7 top-level nav categories, found ${items.length}`);
+  if (items.length !== EXPECTED_DROPDOWN_CATEGORIES) {
+    fail(
+      `${label}: expected ${EXPECTED_DROPDOWN_CATEGORIES} top-level nav categories, found ${items.length}`,
+    );
   }
 
   const duplicateLabels = labels.filter((value, index) => labels.indexOf(value) !== index);

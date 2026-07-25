@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="DrOtgenMedical profesyonel doğrulama ve sipariş talep formu."
+    />
+    <title>Profesyonel Doğrulama | DrOtgenMedical</title>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#verification-main">Ana içeriğe geç</a>
+
+    <div class="professional-strip">
+      <div class="container">
+        <span class="status-dot" aria-hidden="true"></span>
+        Yalnızca yetkili sağlık profesyonellerine satış
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="wordmark" href="./" aria-label="DrOtgenMedical ana sayfa">
+          <span>DrOtgen</span>Medical
+        </a>
+        <nav aria-label="Ana menü">
+          <a href="./#product">Ürünler</a>
+          <a href="./#process">Nasıl çalışır?</a>
+          <a
+            href="https://www.drotgenclinic.com/tr/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Dr. Otgen Clinic
+          </a>
+        </nav>
+        <a class="header-cta" href="./professional-verification.html">
+          Sipariş talebi
+        </a>
+      </div>
+    </header>
+
+    <main id="verification-main" class="verification-page">
+      <section class="verification-intro">
+        <div class="container">
+          <a class="back-link" href="./">← Ürüne dön</a>
+          <div class="verification-heading">
+            <div>
+              <p class="eyebrow">PROFESYONEL DOĞRULAMA</p>
+              <h1>Sipariş talebinizi oluşturun</h1>
+            </div>
+            <p>
+              Bilgileriniz yalnızca mesleki yetkinlik ve sipariş talebinizin
+              değerlendirilmesi amacıyla incelenir.
+            </p>
+          </div>
+          <div class="privacy-assurance">
+            <span aria-hidden="true">✓</span>
+            <p>
+              Başvurunuz ve mesleki belgeniz yalnızca profesyonel doğrulama ve
+              sipariş değerlendirmesi amacıyla ilgili ekibe iletilir.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-section">
+        <div class="container form-layout">
+          <form
+            class="verification-form"
+            id="verification-form"
+            action="https://formsubmit.co/ajax/drotgenclinic@gmail.com"
+            method="POST"
+            enctype="multipart/form-data"
+          >
+            <input type="hidden" name="_subject" value="DrOtgenMedical sipariş talebi" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" />
+            <fieldset>
+              <legend><span>01</span>Kişisel ve mesleki bilgiler</legend>
+              <div class="field-grid">
+                <label>Ad ve soyad *<input name="fullName" autocomplete="name" required /></label>
+                <label>Telefon numarası *<input name="phone" type="tel" autocomplete="tel" required /></label>
+                <label>E-posta adresi *<input name="email" type="email" autocomplete="email" required /></label>
+                <label>
+                  Meslek *
+                  <select name="profession" required>
+                    <option value="">Seçiniz</option>
+                    <option>Doktor</option>
+                    <option>Diş hekimi</option>
+                    <option>Eczacı</option>
+                    <option>Hemşire</option>
+                    <option>Diğer sağlık profesyoneli</option>
+                  </select>
+                </label>
+                <label>Uzmanlık alanı *<input name="speciality" required /></label>
+                <label>Kurum veya klinik *<input name="organization" required /></label>
+                <label class="full-field">
+                  Vergi numarası veya meslek sicil numarası *
+                  <input name="professionalNumber" maxlength="20" autocomplete="off" required />
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend><span>02</span>Adres bilgileri</legend>
+              <div class="field-grid">
+                <label>Fatura adresi *<textarea name="billingAddress" rows="4" required></textarea></label>
+                <label>Teslimat adresi *<textarea name="deliveryAddress" rows="4" required></textarea></label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend><span>03</span>Ürün ve adet</legend>
+              <div class="field-grid">
+                <label>
+                  Ürün *
+                  <select name="product">
+                    <option value="diamond-ha-20">DIAMOND Crosslinked HA 20</option>
+                  </select>
+                </label>
+                <label>
+                  Adet *
+                  <input id="quantity" name="quantity" type="number" min="1" max="20" value="1" required />
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend><span>04</span>Mesleki belge</legend>
+              <label class="file-drop">
+                <input
+                  id="document"
+                  name="attachment"
+                  type="file"
+                  accept=".pdf,.jpg,.jpeg,.png"
+                  required
+                />
+                <span class="file-icon" aria-hidden="true">↑</span>
+                <strong id="file-label">Diploma veya mesleki belgenizi seçin</strong>
+                <small>PDF, JPG, JPEG veya PNG · En fazla 10 MB</small>
+              </label>
+              <p class="field-error" id="file-error" role="alert"></p>
+            </fieldset>
+
+            <fieldset class="consent-fieldset">
+              <legend><span>05</span>Onaylar</legend>
+              <label class="check-row">
+                <input type="checkbox" name="kvkkConsent" value="Kabul edildi" required />
+                <span>
+                  <a href="/tr/privacy.html">KVKK aydınlatma metnini</a> okudum ve
+                  kişisel verilerimin başvuru amacıyla işlenmesini kabul ediyorum. *
+                </span>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" name="salesConsent" value="Kabul edildi" required />
+                <span><a href="./#legal">Satış ve kullanım koşullarını</a> kabul ediyorum. *</span>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" name="accuracyConsent" value="Beyan edildi" required />
+                <span>Paylaştığım bilgilerin doğru olduğunu beyan ederim. *</span>
+              </label>
+            </fieldset>
+
+            <button class="button button-primary submit-button" type="submit">
+              Sipariş talebini gönder
+            </button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            <p class="submit-disclaimer">
+              Bu işlem bir ödeme oluşturmaz. Ödeme yalnızca profesyonel
+              doğrulama ve teklif onayından sonra alınır.
+            </p>
+          </form>
+
+          <aside class="order-summary" aria-label="Sipariş özeti">
+            <p class="eyebrow">TALEP ÖZETİ</p>
+            <h2>DIAMOND Crosslinked HA 20</h2>
+            <div class="mini-product"><span>ITALY</span><strong>DIAMOND</strong></div>
+            <dl>
+              <div><dt>Adet</dt><dd id="summary-quantity">1</dd></div>
+              <div><dt>Fiyatlandırma</dt><dd>Teklif ile</dd></div>
+              <div><dt>Toplam</dt><dd id="summary-total">Doğrulama sonrası</dd></div>
+              <div><dt>Ödeme</dt><dd>Onay sonrası</dd></div>
+            </dl>
+            <div class="summary-notice">
+              <strong>Henüz ödeme yapılmaz</strong>
+              <p>Talebiniz onaylandıktan sonra güvenli ödeme bağlantısı ayrıca iletilir.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="success-section" id="success-section" hidden aria-live="polite">
+        <div class="container">
+          <div class="success-card">
+            <span class="success-icon" aria-hidden="true">✓</span>
+            <p class="eyebrow">TALEBİNİZ ALINDI</p>
+            <h2>Sipariş talebiniz başarıyla iletildi.</h2>
+            <p>
+              Başvurunuz ve mesleki belgeniz incelemeye alındı. Yetkili ekibimiz
+              doğrulama sonucuyla birlikte sizinle iletişime geçecektir.
+            </p>
+            <button class="button button-primary" id="return-to-form" type="button">
+              Forma geri dön
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-bottom footer-bottom-simple">
+        <span>© 2026 DrOtgenMedical</span>
+        <span>Profesyonel medikal ürün tedarik platformu</span>
+      </div>
+    </footer>
+
+    <script type="module" src="./verification.js"></script>
+  </body>
+</html>
