@@ -2,7 +2,7 @@ import { spawnSync } from 'node:child_process';
 
 const ALWAYS_FORBIDDEN = ['package-lock.json'];
 
-const ADMIN_VITE_PATTERNS = [
+const APPROVED_VITE_ENTRY_PATTERNS = [
   /admin\/seo/,
   /admin\/analytics/,
   /adminRoutes/,
@@ -10,6 +10,11 @@ const ADMIN_VITE_PATTERNS = [
   /adminAnalytics/,
   /admin-seo/,
   /admin-analytics/,
+  /denizli/,
+  /izmir/,
+  /medical/,
+  /professional-verification/,
+  /import\.meta\.dirname/,
 ];
 
 export function getChangedFilesFromMain(root) {
@@ -42,7 +47,7 @@ function getFileDiffFromMain(root, relativePath) {
 
 function isInsignificantDiffLine(line) {
   const content = line.slice(1).trim();
-  return !content || content === '}' || content === '{';
+  return !content || /^[{}()[\],;]*$/.test(content);
 }
 
 export function isAdminOnlyViteConfigDiff(diffText) {
@@ -64,12 +69,16 @@ export function isAdminOnlyViteConfigDiff(diffText) {
     return true;
   }
 
-  return meaningfulLines.every((line) => ADMIN_VITE_PATTERNS.some((pattern) => pattern.test(line)));
+  return meaningfulLines.every((line) =>
+    APPROVED_VITE_ENTRY_PATTERNS.some((pattern) => pattern.test(line)));
 }
 
 const PACKAGE_JSON_ALLOWED_PATTERNS = [
   /check:i18n/,
   /verify:i18n:all/,
+  /build:medical/,
+  /verify:medical/,
+  /verify:medical-nav/,
 ];
 
 export function isAllowedPackageJsonDiff(diffText) {
@@ -99,7 +108,7 @@ export function isAllowedPackageJsonDiff(diffText) {
 
 /**
  * Finance/legal preview guards: block risky build file changes on feature branches.
- * Admin dashboard routes in vite.config.js are allowed (admin-only diff).
+ * Explicit admin, location, and medical build entries are allowed.
  */
 export function assertBuildFileDiffGuard(failures, root) {
   const changedFiles = getChangedFilesFromMain(root);

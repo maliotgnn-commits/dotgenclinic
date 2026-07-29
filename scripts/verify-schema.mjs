@@ -24,7 +24,6 @@ const MEDICAL_CLINIC_FORBIDDEN_PROPS = [
   'review',
   'priceRange',
   'hasMap',
-  'geo',
   'contactPoint',
   'availableService',
   'medicalSpecialty',
@@ -74,7 +73,9 @@ function verifyFile(relativePath, checks) {
 }
 
 function verifyIzmirMedicalClinic(entity, label) {
-  assert(entity?.['@type'] === 'MedicalClinic', `[${label}] MedicalClinic type missing`);
+  const types = Array.isArray(entity?.['@type']) ? entity['@type'] : [entity?.['@type']];
+  assert(types.includes('MedicalClinic'), `[${label}] MedicalClinic type missing`);
+  assert(types.includes('LocalBusiness'), `[${label}] LocalBusiness type missing`);
   assert(entity?.['@id'] === MEDICAL_CLINIC_ID, `[${label}] @id mismatch`);
   assert(JSON.stringify(entity) === JSON.stringify(EXPECTED_IZMIR), `[${label}] canonical Izmir entity mismatch`);
   assert(!JSON.stringify(entity).includes('#medicalclinic'), `[${label}] forbidden #medicalclinic id`);
@@ -90,7 +91,7 @@ function verifyIzmirMedicalClinic(entity, label) {
     }
   });
   const hours = entity.openingHoursSpecification;
-  assert(hours?.opens === '08:00' && hours?.closes === '17:00', `[${label}] opening hours mismatch`);
+  assert(hours?.opens === '09:00' && hours?.closes === '18:00', `[${label}] opening hours mismatch`);
   assert(Array.isArray(hours?.dayOfWeek) && hours.dayOfWeek.length === 6, `[${label}] expected Mon-Sat only`);
   assert(!hours?.dayOfWeek?.includes('https://schema.org/Sunday'), `[${label}] Sunday must not appear in openingHoursSpecification`);
   assert(Array.isArray(entity.sameAs) && entity.sameAs.length === 1 && entity.sameAs[0] === CLINIC.instagram, `[${label}] sameAs must be Instagram only`);
@@ -113,11 +114,20 @@ for (const locale of LOCALES) {
     assert(org?.department?.length >= 1, `[${label}] Organization department missing`);
     assert(org?.medicalSpecialty?.length >= 1, `[${label}] Organization medicalSpecialty missing`);
     assert(Array.isArray(org?.sameAs) && org.sameAs.includes(CLINIC.instagram), `[${label}] Organization sameAs missing`);
-    const clinics = graph.filter((node) => node['@type'] === 'MedicalClinic');
-    assert(clinics.length === 1, `[${label}] expected exactly 1 MedicalClinic, found ${clinics.length}`);
-    verifyIzmirMedicalClinic(clinics[0], label);
+    const clinics = graph.filter((node) => {
+      const type = node['@type'];
+      return type === 'MedicalClinic' || (Array.isArray(type) && type.includes('MedicalClinic'));
+    });
+    assert(clinics.length === 2, `[${label}] expected exactly 2 MedicalClinic locations, found ${clinics.length}`);
+    const izmir = clinics.find((node) => node['@id'] === MEDICAL_CLINIC_ID);
+    verifyIzmirMedicalClinic(izmir, label);
+    const denizli = clinics.find((node) => node['@id'] === locationId('denizli'));
+    assert(denizli, `[${label}] Denizli MedicalClinic missing`);
+    assert(denizli?.geo?.latitude === 37.77796, `[${label}] Denizli latitude mismatch`);
+    assert(denizli?.geo?.longitude === 29.05676, `[${label}] Denizli longitude mismatch`);
+    assert(denizli?.openingHours === 'Mon-Sat 09:00-18:00', `[${label}] Denizli opening hours mismatch`);
     const serialized = JSON.stringify(graph);
-    assert(!serialized.includes(CLINIC.locations[1].address), `[${label}] hidden branch address in homepage schema`);
+    assert(serialized.includes(CLINIC.locations[1].address), `[${label}] Denizli branch address missing`);
     assert(!serialized.includes(CLINIC.locations[2].address), `[${label}] hidden branch address in homepage schema`);
     if (locale === 'ar') {
       assert(html.includes('lang="ar"'), `[${label}] lang=ar missing`);

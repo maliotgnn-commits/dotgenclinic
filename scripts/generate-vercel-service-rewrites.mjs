@@ -8,6 +8,13 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
 const LOCALES = ['tr', 'en', 'ar', 'es', 'fr', 'it', 'ru', 'de'];
 const VERCEL_PATH = resolve(ROOT, 'vercel.json');
+const LOCATION_REWRITES = [
+  { source: '/tr/denizli.html', destination: '/denizli.html' },
+  { source: '/tr/izmir.html', destination: '/izmir.html' },
+  { source: '/denizli', destination: '/denizli.html' },
+  { source: '/izmir', destination: '/izmir.html' },
+];
+const LOCATION_SOURCES = new Set(LOCATION_REWRITES.map((rewrite) => rewrite.source));
 
 function buildServiceSeoRewrites() {
   const slugs = SUBPAGES.map((page) => page.slug);
@@ -37,10 +44,17 @@ function updateVercelConfig() {
   const serviceSeoRewrites = buildServiceSeoRewrites();
   const departmentSeoRewrites = buildDepartmentSeoRewrites();
   const trailingRewrites = (config.rewrites || []).filter(
-    (rewrite) => !rewrite.destination?.startsWith('/_seo/'),
+    (rewrite) =>
+      !rewrite.destination?.startsWith('/_seo/')
+      && !LOCATION_SOURCES.has(rewrite.source),
   );
 
-  config.rewrites = [...serviceSeoRewrites, ...departmentSeoRewrites, ...trailingRewrites];
+  config.rewrites = [
+    ...LOCATION_REWRITES,
+    ...serviceSeoRewrites,
+    ...departmentSeoRewrites,
+    ...trailingRewrites,
+  ];
   writeFileSync(VERCEL_PATH, `${JSON.stringify(config, null, 2)}\n`, 'utf8');
 
   console.log(

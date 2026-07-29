@@ -7,6 +7,8 @@ export const MEDIKAL_RD_PREVIEW_FILE = 'medikal-ar-ge.html';
 export const YAZILIM_RD_PREVIEW_FILE = 'yazilim-ar-ge.html';
 export const BLOCKCHAIN_RD_PREVIEW_FILE = 'blockchain-ar-ge.html';
 export const ECOMMERCE_RD_PREVIEW_FILE = 'e-ticaret-ar-ge.html';
+export const DENIZLI_LOCATION_FILE = 'denizli.html';
+export const IZMIR_LOCATION_FILE = 'izmir.html';
 
 export const PHARMA_RD_FILES = new Set([
   'ilac-ar-ge.html',
@@ -129,6 +131,14 @@ export function resolveLocaleRewrite(pathname, search = '') {
 
   if (routeFile === 'privacy.html') {
     return `/privacy.html${search}`;
+  }
+
+  if (routeFile === DENIZLI_LOCATION_FILE) {
+    return `/${DENIZLI_LOCATION_FILE}${search}`;
+  }
+
+  if (routeFile === IZMIR_LOCATION_FILE) {
+    return `/${IZMIR_LOCATION_FILE}${search}`;
   }
 
   if (EYE_HEALTH_FILES.has(routeFile) || EYE_HEALTH_FILES.has(routeFileRaw)) {

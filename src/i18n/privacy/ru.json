@@ -120,7 +120,7 @@
     "title": "Адреса клиник",
     "branches": [
       { "name": "Измир", "address": "Anadolu Plaza No:23, Karşıyaka, İzmir, 35560, Türkiye" },
-      { "name": "Денизли", "address": "Sırakapılar Mah. 495. Sok. No:22, Merkezefendi, Denizli, 20010, Türkiye" },
+      { "name": "Денизли", "address": "Merkez Efendi, 29 Ekim Blv. No:102, 20010 Denizli Merkezefendi/Denizli" },
       { "name": "Леверкузен", "address": "Wiesdorfer Str. 3, Wiesdorf, Leverkusen, 51373, Германия" }
     ],
     "sharedPhoneLabel": "Общий телефон",

@@ -64,6 +64,22 @@
   ],
   "rewrites": [
     {
+      "source": "/tr/denizli.html",
+      "destination": "/denizli.html"
+    },
+    {
+      "source": "/tr/izmir.html",
+      "destination": "/izmir.html"
+    },
+    {
+      "source": "/denizli",
+      "destination": "/denizli.html"
+    },
+    {
+      "source": "/izmir",
+      "destination": "/izmir.html"
+    },
+    {
       "source": "/tr/service.html",
       "has": [
         {

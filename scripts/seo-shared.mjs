@@ -48,29 +48,25 @@ export const CLINIC = {
       name: 'İzmir',
       address: 'Anadolu Plaza No:23, Karşıyaka, İzmir, 35560, Türkiye',
       phone: '+905411595636',
-      url: `${SITE_ORIGIN}/`,
-      geo: null,
-      hours: 'Mon-Sat 08:00-17:00',
+      url: `${SITE_ORIGIN}/tr/izmir.html`,
+      geo: { latitude: 38.4576, longitude: 27.1089 },
+      hours: 'Mon-Sat 09:00-18:00',
       sameAs: {
         googleBusiness: null,
-        linkedIn: null,
         instagram: 'https://www.instagram.com/drotgenclinic/',
-        youtube: null,
       },
     },
     {
       id: 'denizli',
       name: 'Denizli',
-      address: 'Sırakapılar Mah. 495. Sok. No:22, Merkezefendi, Denizli, 20010, Türkiye',
+      address: 'Merkez Efendi, 29 Ekim Blv. No:102, 20010 Denizli Merkezefendi/Denizli',
       phone: '+905411595636',
-      url: null,
-      geo: null,
-      hours: null,
+      url: `${SITE_ORIGIN}/tr/denizli.html`,
+      geo: { latitude: 37.77796, longitude: 29.05676 },
+      hours: 'Mon-Sat 09:00-18:00',
       sameAs: {
         googleBusiness: null,
-        linkedIn: null,
-        instagram: null,
-        youtube: null,
+        instagram: 'https://www.instagram.com/drotgenclinic/',
       },
     },
     {
@@ -132,6 +128,20 @@ export function buildOrganizationEntity(extra = {}) {
   };
 }
 
+function buildAreaServed(locationId) {
+  if (locationId === 'denizli') {
+    return ['Denizli', 'Pamukkale', 'Uşak', 'Burdur', 'Muğla', 'Aydın', 'Afyonkarahisar']
+      .map((name) => ({ '@type': 'City', name }));
+  }
+
+  if (locationId === 'izmir') {
+    return ['İzmir', 'Karşıyaka', 'Bornova', 'Çiğli', 'Konak', 'Manisa', 'Torbalı']
+      .map((name) => ({ '@type': 'City', name }));
+  }
+
+  return [{ '@type': 'Country', name: locationId === 'leverkusen' ? 'Germany' : 'Turkey' }];
+}
+
 export function buildBranchMedicalClinicEntity(location, pageUrl = `${SITE_ORIGIN}/`) {
   if (location.id === 'izmir') {
     return buildIzmirMedicalClinicEntity();
@@ -150,6 +160,18 @@ export function buildBranchMedicalClinicEntity(location, pageUrl = `${SITE_ORIGI
     telephone: location.phone || CLINIC.phone,
     email: CLINIC.email,
     url: location.url || pageUrl,
+    ...(location.geo && {
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: location.geo.latitude,
+        longitude: location.geo.longitude,
+      },
+    }),
+    ...(location.hours && { openingHours: location.hours }),
+    ...(location.sameAs && {
+      sameAs: Object.values(location.sameAs).filter(Boolean),
+    }),
+    areaServed: buildAreaServed(location.id),
   };
 }
 
@@ -228,11 +250,11 @@ export function buildJsonLdScript(graph) {
 export function buildIzmirMedicalClinicEntity() {
   const izmir = CLINIC.locations.find((location) => location.id === 'izmir');
   return {
-    '@type': 'MedicalClinic',
+    '@type': ['MedicalClinic', 'LocalBusiness'],
     '@id': locationId('izmir'),
     name: `${CLINIC.publicName} – ${izmir.name}`,
     legalName: CLINIC.legalName,
-    url: `${SITE_ORIGIN}/`,
+    url: izmir.url,
     parentOrganization: { '@id': organizationId() },
     logo: CLINIC.logoUrl,
     image: CLINIC.ogImageUrl,
@@ -246,7 +268,14 @@ export function buildIzmirMedicalClinicEntity() {
       postalCode: '35560',
       addressCountry: 'TR',
     },
-    sameAs: [CLINIC.instagram],
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: izmir.geo.latitude,
+      longitude: izmir.geo.longitude,
+    },
+    openingHours: izmir.hours,
+    sameAs: Object.values(izmir.sameAs).filter(Boolean),
+    areaServed: buildAreaServed(izmir.id),
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: [
@@ -257,8 +286,8 @@ export function buildIzmirMedicalClinicEntity() {
         'https://schema.org/Friday',
         'https://schema.org/Saturday',
       ],
-      opens: '08:00',
-      closes: '17:00',
+      opens: '09:00',
+      closes: '18:00',
     },
   };
 }
@@ -289,7 +318,9 @@ export function buildHomeSchema(locale, title) {
       isPartOf: { '@id': websiteId() },
       about: { '@id': organizationId() },
     },
-    buildIzmirMedicalClinicEntity(),
+    ...CLINIC.locations
+      .filter((location) => location.id === 'denizli' || location.id === 'izmir')
+      .map((location) => buildBranchMedicalClinicEntity(location, pageUrl)),
   ]);
 }
 
@@ -431,6 +462,10 @@ export function buildDepartmentSchema(locale, page, pageUrl, breadcrumbs) {
 
 export function injectSeoBundle(html, { title, description, seoBlock, ogTwitter, jsonLd }) {
   let result = html;
+  result = result.replace(
+    /\s*<script data-source-seo="true" type="application\/ld\+json">[\s\S]*?<\/script>/,
+    '',
+  );
   result = result.replace(/<title>[^<]*<\/title>/, `<title>${escapeHtml(title)}</title>`);
   result = result.replace(
     /<meta name="description" content="[^"]*" \/>/,
