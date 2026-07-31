@@ -9,6 +9,7 @@ export const BLOCKCHAIN_RD_PREVIEW_FILE = 'blockchain-ar-ge.html';
 export const ECOMMERCE_RD_PREVIEW_FILE = 'e-ticaret-ar-ge.html';
 export const DENIZLI_LOCATION_FILE = 'denizli.html';
 export const IZMIR_LOCATION_FILE = 'izmir.html';
+export const LEVERKUSEN_LOCATION_FILE = 'leverkusen.html';
 
 export const PHARMA_RD_FILES = new Set([
   'ilac-ar-ge.html',
@@ -139,6 +140,10 @@ export function resolveLocaleRewrite(pathname, search = '') {
 
   if (routeFile === IZMIR_LOCATION_FILE) {
     return `/${IZMIR_LOCATION_FILE}${search}`;
+  }
+
+  if (routeFile === LEVERKUSEN_LOCATION_FILE) {
+    return `/${LEVERKUSEN_LOCATION_FILE}${search}`;
   }
 
   if (EYE_HEALTH_FILES.has(routeFile) || EYE_HEALTH_FILES.has(routeFileRaw)) {

@@ -43,6 +43,7 @@ export function getLocationUrls(siteOrigin = SITE_ORIGIN) {
   return [
     `${siteOrigin}/tr/denizli.html`,
     `${siteOrigin}/tr/izmir.html`,
+    `${siteOrigin}/tr/leverkusen.html`,
   ];
 }
 

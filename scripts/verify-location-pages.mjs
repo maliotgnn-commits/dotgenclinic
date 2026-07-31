@@ -25,6 +25,15 @@ const pages = [
     counterpart: '/tr/denizli.html',
     address: 'Anadolu Plaza No:23',
   },
+  {
+    file: 'leverkusen.html',
+    canonical: 'https://www.drotgenclinic.com/tr/leverkusen.html',
+    city: 'Leverkusen',
+    latitude: 51.0345809,
+    longitude: 7.0490208,
+    counterpart: '/tr/izmir.html',
+    address: 'Münsters Gäßchen 14',
+  },
 ];
 
 function assert(condition, message) {
@@ -78,4 +87,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log('[verify-location-pages] Verified Denizli and Izmir location pages');
+console.log('[verify-location-pages] Verified Denizli, Izmir and Leverkusen location pages');

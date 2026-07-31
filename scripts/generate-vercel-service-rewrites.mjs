@@ -11,8 +11,10 @@ const VERCEL_PATH = resolve(ROOT, 'vercel.json');
 const LOCATION_REWRITES = [
   { source: '/tr/denizli.html', destination: '/denizli.html' },
   { source: '/tr/izmir.html', destination: '/izmir.html' },
+  { source: '/tr/leverkusen.html', destination: '/leverkusen.html' },
   { source: '/denizli', destination: '/denizli.html' },
   { source: '/izmir', destination: '/izmir.html' },
+  { source: '/leverkusen', destination: '/leverkusen.html' },
 ];
 const LOCATION_SOURCES = new Set(LOCATION_REWRITES.map((rewrite) => rewrite.source));
 

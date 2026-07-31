@@ -33,8 +33,10 @@ const rewrites = config.rewrites || [];
 const expectedLocationRewrites = [
   { source: '/tr/denizli.html', destination: '/denizli.html' },
   { source: '/tr/izmir.html', destination: '/izmir.html' },
+  { source: '/tr/leverkusen.html', destination: '/leverkusen.html' },
   { source: '/denizli', destination: '/denizli.html' },
   { source: '/izmir', destination: '/izmir.html' },
+  { source: '/leverkusen', destination: '/leverkusen.html' },
 ];
 const seoRewrites = rewrites.filter((rewrite) => rewrite.destination?.startsWith('/_seo/'));
 const expectedService = buildExpectedServiceRewrites();
@@ -45,7 +47,7 @@ assert(seoRewrites.length === expected.length, `Expected ${expected.length} SEO 
 assert(
   JSON.stringify(rewrites.slice(0, expectedLocationRewrites.length))
     === JSON.stringify(expectedLocationRewrites),
-  'Location rewrites must be the first four rewrites',
+  'Location rewrites must be the first six rewrites',
 );
 
 const sourceKeys = new Set();

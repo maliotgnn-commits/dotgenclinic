@@ -90,6 +90,7 @@ export default defineConfig({
         eyeHealth: resolve(import.meta.dirname, 'goz-hastaliklari.html'),
         denizli: resolve(import.meta.dirname, 'denizli.html'),
         izmir: resolve(import.meta.dirname, 'izmir.html'),
+        leverkusen: resolve(import.meta.dirname, 'leverkusen.html'),
         adminAnalytics: resolve(import.meta.dirname, 'admin/analytics.html'),
         adminSeo: resolve(import.meta.dirname, 'admin/seo.html'),
         medical: resolve(import.meta.dirname, 'medical/index.html'),

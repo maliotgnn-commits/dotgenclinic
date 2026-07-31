@@ -72,12 +72,20 @@
       "destination": "/izmir.html"
     },
     {
+      "source": "/tr/leverkusen.html",
+      "destination": "/leverkusen.html"
+    },
+    {
       "source": "/denizli",
       "destination": "/denizli.html"
     },
     {
       "source": "/izmir",
       "destination": "/izmir.html"
+    },
+    {
+      "source": "/leverkusen",
+      "destination": "/leverkusen.html"
     },
     {
       "source": "/tr/service.html",
