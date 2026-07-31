@@ -63,9 +63,10 @@ export async function fetchAccountReviewSummary() {
     };
   }
 
-  const locationsResponse = await googleBusinessRequest(`/accounts/${accountId}/locations`, {
-    method: 'GET',
-  });
+  const locationsResponse = await googleBusinessRequest(
+    `/accounts/${accountId}/locations?readMask=${encodeURIComponent('name,title,storefrontAddress')}`,
+    { method: 'GET' },
+  );
 
   const locations = locationsResponse?.locations || [];
   const summaries = [];

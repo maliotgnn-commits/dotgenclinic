@@ -1,6 +1,6 @@
 # Weekly SEO Report
 
-Generated: 2026-07-31T07:54:45.305Z
+Generated: 2026-07-31T15:27:45.732Z
 
 ## Traffic
 
@@ -29,8 +29,7 @@ Generated: 2026-07-31T07:54:45.305Z
 ## Warnings
 
 - 27 URL bilinçli olarak noindex durumda (admin + doctor scaffold).
-- Sitemap coverage'da 464 URL henüz indexlenmemiş görünüyor.
-- Google Business Profile API yapılandırılmamış — local SEO manuel takip gerektiriyor.
+- Sitemap coverage'da 467 URL henüz indexlenmemiş görünüyor.
 
 ## Recommendations
 
