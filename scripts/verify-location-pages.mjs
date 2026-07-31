@@ -14,7 +14,7 @@ const pages = [
     latitude: 37.77796,
     longitude: 29.05676,
     counterpart: '/tr/izmir.html',
-    address: 'Merkez Efendi, 29 Ekim Blv. No:102',
+    address: 'Merkezefendi mahallesi, 226/21 sokak no:157',
   },
   {
     file: 'izmir.html',

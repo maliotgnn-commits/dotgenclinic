@@ -123,7 +123,7 @@ const EN = {
     title: 'Clinic Locations',
     branches: [
       { name: 'Izmir', address: 'Anadolu Plaza No:23, Karşıyaka, İzmir, 35560, Türkiye' },
-      { name: 'Denizli', address: 'Merkez Efendi, 29 Ekim Blv. No:102, 20010 Denizli Merkezefendi/Denizli' },
+      { name: 'Denizli', address: 'Merkezefendi mahallesi, 226/21 sokak no:157, 20010 Denizli Merkezefendi/Denizli' },
       { name: 'Leverkusen', address: 'Münsters Gäßchen 14, 51375 Leverkusen, Germany' },
     ],
     sharedPhoneLabel: 'Shared phone',
