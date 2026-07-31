@@ -13,7 +13,7 @@ export async function fetchLocalSeoReport() {
       locations: [],
       reviews: [],
       message:
-        'Google Business Profile API is not configured. Manual local SEO management may be required. Set GOOGLE_BUSINESS_ACCOUNT_ID and GOOGLE_BUSINESS_ACCESS_TOKEN when API access is available.',
+        'Google Business Profile API is not configured. Manual local SEO management may be required. Set GOOGLE_BUSINESS_ACCOUNT_ID plus OAuth refresh credentials (CLIENT_ID, CLIENT_SECRET, REFRESH_TOKEN).',
     };
   }
 
