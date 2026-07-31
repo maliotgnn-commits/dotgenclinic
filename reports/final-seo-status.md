@@ -1,10 +1,10 @@
 # Final SEO Status
 
-Generated: 2026-07-15T09:06:51.194Z
+Generated: 2026-07-31T07:54:45.615Z
 
 ## Score overview (0-10)
 
-- **Technical SEO:** 9/10 — Sitemap 464 URL, canonical/hreflang/schema pipeline active.
+- **Technical SEO:** 9/10 — Sitemap 467 URL, canonical/hreflang/schema pipeline active.
 - **Index readiness:** 6/10 — Search Console automation pending credentials/runtime.
 - **Schema readiness:** 8/10 — Organization, Service, MedicalClinic, FAQ validators active.
 - **E-E-A-T readiness:** 3/10 — 0/3 doctor profiles complete.
@@ -14,7 +14,7 @@ Generated: 2026-07-15T09:06:51.194Z
 
 ## Technical SEO
 
-- Sitemap URLs: 464
+- Sitemap URLs: 467
 - Locales: 3 clinic locations in schema data model
 - Admin pages excluded from index checks
 
