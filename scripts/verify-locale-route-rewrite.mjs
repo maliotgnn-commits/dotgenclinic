@@ -1,4 +1,4 @@
-import { resolveLocaleRewrite, rewriteLocaleRequestUrl, FINANCE_PREVIEW_FILE, FINANCE_FILES, LEGAL_PREVIEW_FILE, LEGAL_FILES, PHARMA_RD_PREVIEW_FILE, PHARMA_RD_FILES, MEDIKAL_RD_PREVIEW_FILE, MEDIKAL_RD_FILES, YAZILIM_RD_PREVIEW_FILE, YAZILIM_RD_FILES, BLOCKCHAIN_RD_PREVIEW_FILE, BLOCKCHAIN_RD_FILES, ECOMMERCE_RD_PREVIEW_FILE, ECOMMERCE_RD_FILES } from './locale-route-rewrite.mjs';
+import { resolveLocaleRewrite, rewriteLocaleRequestUrl, FINANCE_PREVIEW_FILE, FINANCE_FILES, LEGAL_PREVIEW_FILE, LEGAL_FILES, PHARMA_RD_PREVIEW_FILE, PHARMA_RD_FILES, MEDIKAL_RD_PREVIEW_FILE, MEDIKAL_RD_FILES, YAZILIM_RD_PREVIEW_FILE, YAZILIM_RD_FILES, BLOCKCHAIN_RD_PREVIEW_FILE, BLOCKCHAIN_RD_FILES, ECOMMERCE_RD_PREVIEW_FILE, ECOMMERCE_RD_FILES, DENIZLI_LOCATION_FILE, IZMIR_LOCATION_FILE, LEVERKUSEN_LOCATION_FILE } from './locale-route-rewrite.mjs';
 
 const failures = [];
 
@@ -26,6 +26,9 @@ expect('/tr/medikal-ar-ge.html', '', '/medikal-ar-ge.html');
 expect('/tr/yazilim-ar-ge.html', '', '/yazilim-ar-ge.html');
 expect('/tr/blockchain-ar-ge.html', '', '/blockchain-ar-ge.html');
 expect('/tr/e-ticaret-ar-ge.html', '', '/e-ticaret-ar-ge.html');
+expect('/tr/denizli.html', '', '/denizli.html');
+expect('/tr/izmir.html', '', '/izmir.html');
+expect('/tr/leverkusen.html', '', '/leverkusen.html');
 expect('/en/legal-department.html', '', '/hukuk-departmani.html');
 expect('/de/rechtsabteilung.html', '', '/hukuk-departmani.html');
 expect('/en/finance-department.html', '', '/finans-departmani.html');
@@ -68,6 +71,21 @@ assert(
 assert(
   rewriteLocaleRequestUrl('/tr/medikal-ar-ge.html') === '/medikal-ar-ge.html',
   'rewriteLocaleRequestUrl must map medical R&D preview route',
+);
+assert(
+  DENIZLI_LOCATION_FILE === 'denizli.html'
+    && rewriteLocaleRequestUrl('/tr/denizli.html') === '/denizli.html',
+  'Denizli location route mapping mismatch',
+);
+assert(
+  IZMIR_LOCATION_FILE === 'izmir.html'
+    && rewriteLocaleRequestUrl('/tr/izmir.html') === '/izmir.html',
+  'Izmir location route mapping mismatch',
+);
+assert(
+  LEVERKUSEN_LOCATION_FILE === 'leverkusen.html'
+    && rewriteLocaleRequestUrl('/tr/leverkusen.html') === '/leverkusen.html',
+  'Leverkusen location route mapping mismatch',
 );
 assert(
   PHARMA_RD_PREVIEW_FILE === 'ilac-ar-ge.html',

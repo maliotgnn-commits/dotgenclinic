@@ -12,10 +12,8 @@ import {
 } from './seo-shared.mjs';
 import {
   localizeHomeBodyHtml,
-  loadUiDictionary,
-  translate,
-  SOURCE_TITLE,
-  SOURCE_DESCRIPTION,
+  expectedTitleForLocale,
+  expectedDescriptionForLocale,
 } from './home-static-i18n.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -26,9 +24,8 @@ function homeUrlFor(locale) {
 }
 
 function buildSeoHead(locale) {
-  const dictionary = loadUiDictionary(locale);
-  const title = translate(dictionary, SOURCE_TITLE);
-  const description = translate(dictionary, SOURCE_DESCRIPTION);
+  const title = expectedTitleForLocale(locale);
+  const description = expectedDescriptionForLocale(locale);
   const canonical = homeUrlFor(locale);
   const seoBlock = buildCanonicalAndHreflang(canonical, homeUrlFor);
   const ogTwitter = buildOgTwitterTags({ title, description, url: canonical });

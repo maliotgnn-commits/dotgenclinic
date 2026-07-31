@@ -2100,6 +2100,15 @@ to {
 }
 
 .why-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  background: #c9a84c15;
+  border: 1px solid #c9a84c4d;
+  border-radius: 10px;
   color: var(--gold);
   flex-shrink: 0;
   margin-top: 2px;

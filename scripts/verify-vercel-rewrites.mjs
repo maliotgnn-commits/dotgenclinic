@@ -30,12 +30,25 @@ function buildExpectedServiceRewrites() {
 
 const config = JSON.parse(readFileSync(VERCEL_PATH, 'utf8'));
 const rewrites = config.rewrites || [];
+const expectedLocationRewrites = [
+  { source: '/tr/denizli.html', destination: '/denizli.html' },
+  { source: '/tr/izmir.html', destination: '/izmir.html' },
+  { source: '/tr/leverkusen.html', destination: '/leverkusen.html' },
+  { source: '/denizli', destination: '/denizli.html' },
+  { source: '/izmir', destination: '/izmir.html' },
+  { source: '/leverkusen', destination: '/leverkusen.html' },
+];
 const seoRewrites = rewrites.filter((rewrite) => rewrite.destination?.startsWith('/_seo/'));
 const expectedService = buildExpectedServiceRewrites();
 const expectedDepartment = buildDepartmentSeoRewrites();
 const expected = [...expectedService, ...expectedDepartment];
 
 assert(seoRewrites.length === expected.length, `Expected ${expected.length} SEO rewrites, found ${seoRewrites.length}`);
+assert(
+  JSON.stringify(rewrites.slice(0, expectedLocationRewrites.length))
+    === JSON.stringify(expectedLocationRewrites),
+  'Location rewrites must be the first six rewrites',
+);
 
 const sourceKeys = new Set();
 for (const rewrite of seoRewrites) {

@@ -123,8 +123,8 @@ const EN = {
     title: 'Clinic Locations',
     branches: [
       { name: 'Izmir', address: 'Anadolu Plaza No:23, Karşıyaka, İzmir, 35560, Türkiye' },
-      { name: 'Denizli', address: 'Sırakapılar Mah. 495. Sok. No:22, Merkezefendi, Denizli, 20010, Türkiye' },
-      { name: 'Leverkusen', address: 'Wiesdorfer Str. 3, Wiesdorf, Leverkusen, 51373, Germany' },
+      { name: 'Denizli', address: 'Merkez Efendi, 29 Ekim Blv. No:102, 20010 Denizli Merkezefendi/Denizli' },
+      { name: 'Leverkusen', address: 'Münsters Gäßchen 14, 51375 Leverkusen, Germany' },
     ],
     sharedPhoneLabel: 'Shared phone',
     sharedPhone: '0541 159 56 36',

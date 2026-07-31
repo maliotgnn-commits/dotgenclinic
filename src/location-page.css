@@ -1,0 +1,969 @@
+:root {
+  --location-bg: #060d18;
+  --location-surface: #0a1628;
+  --location-surface-raised: #0f1f3a;
+  --location-gold: #c9a84c;
+  --location-gold-light: #dfc06e;
+  --location-text: #fff;
+  --location-text-soft: #ffffffbf;
+  --location-text-muted: #ffffff73;
+  --location-border: #ffffff14;
+  --location-gold-border: #c9a84c4d;
+  --location-radius: 18px;
+  --location-shadow: 0 24px 80px #0006;
+  --location-font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --location-font-heading: "Playfair Display", Georgia, serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body.location-page {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--location-bg);
+  color: var(--location-text);
+  font-family: var(--location-font-body);
+  line-height: 1.65;
+}
+
+.location-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.location-page img {
+  display: block;
+  max-width: 100%;
+}
+
+.location-skip-link {
+  position: fixed;
+  z-index: 1000;
+  top: 12px;
+  left: 12px;
+  padding: 10px 14px;
+  transform: translateY(-150%);
+  border-radius: 8px;
+  background: var(--location-gold);
+  color: #07101d;
+  font-weight: 700;
+}
+
+.location-skip-link:focus {
+  transform: translateY(0);
+}
+
+.location-container {
+  width: min(1160px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.location-header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  left: 0;
+  border-bottom: 1px solid var(--location-border);
+  background: #07101de8;
+  backdrop-filter: blur(16px);
+}
+
+.location-nav {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.location-brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.location-brand img {
+  width: 132px;
+  height: auto;
+}
+
+.location-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  color: var(--location-text-soft);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.location-nav-links a:hover,
+.location-nav-links a:focus-visible {
+  color: var(--location-gold-light);
+}
+
+.location-nav-cta,
+.location-button-primary {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--location-gold);
+  border-radius: 10px;
+  background: var(--location-gold);
+  color: #07101d;
+  font-weight: 700;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.location-nav-cta {
+  padding: 9px 18px;
+}
+
+.location-button-primary {
+  padding: 12px 22px;
+}
+
+.location-nav-cta:hover,
+.location-nav-cta:focus-visible,
+.location-button-primary:hover,
+.location-button-primary:focus-visible {
+  transform: translateY(-2px);
+  background: var(--location-gold-light);
+}
+
+.location-hero {
+  position: relative;
+  display: grid;
+  min-height: 760px;
+  align-items: center;
+  padding: 150px 0 90px;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, #060d18 8%, #060d18ed 46%, #060d188f 72%, #060d18 100%),
+    url("/images/site/home/clinic-interior.webp") center 40% / cover no-repeat;
+}
+
+.location-hero::after {
+  position: absolute;
+  right: -180px;
+  bottom: -300px;
+  width: 620px;
+  height: 620px;
+  border: 1px solid var(--location-gold-border);
+  border-radius: 50%;
+  box-shadow: 0 0 120px #c9a84c1f;
+  content: "";
+}
+
+.location-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.location-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 26px;
+  color: var(--location-text-muted);
+  font-size: 13px;
+}
+
+.location-breadcrumb a:hover,
+.location-breadcrumb a:focus-visible {
+  color: var(--location-gold-light);
+}
+
+.location-eyebrow,
+.location-section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--location-gold-light);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.location-eyebrow::before,
+.location-section-kicker::before {
+  width: 26px;
+  height: 1px;
+  background: var(--location-gold);
+  content: "";
+}
+
+.location-hero h1 {
+  max-width: 760px;
+  margin: 18px 0 20px;
+  font-family: var(--location-font-heading);
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1.06;
+  letter-spacing: -.025em;
+}
+
+.location-gold {
+  color: var(--location-gold-light);
+}
+
+.location-hero-lead {
+  max-width: 650px;
+  margin: 0;
+  color: var(--location-text-soft);
+  font-size: clamp(17px, 2vw, 20px);
+}
+
+.location-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.location-button-secondary {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border: 1px solid var(--location-border);
+  border-radius: 10px;
+  background: #ffffff0a;
+  color: var(--location-text);
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+}
+
+.location-button-secondary:hover,
+.location-button-secondary:focus-visible {
+  border-color: var(--location-gold-border);
+  color: var(--location-gold-light);
+}
+
+.location-trust-row {
+  display: grid;
+  max-width: 760px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 46px;
+}
+
+.location-trust-item {
+  padding: 17px;
+  border: 1px solid var(--location-border);
+  border-radius: 12px;
+  background: #07101db8;
+  backdrop-filter: blur(12px);
+}
+
+.location-trust-item strong {
+  display: block;
+  color: var(--location-gold-light);
+  font-family: var(--location-font-heading);
+  font-size: 19px;
+}
+
+.location-trust-item span {
+  color: var(--location-text-muted);
+  font-size: 12px;
+}
+
+.location-section {
+  padding: 96px 0;
+}
+
+.location-section-alt {
+  border-block: 1px solid var(--location-border);
+  background: var(--location-surface);
+}
+
+.location-section-heading {
+  display: grid;
+  max-width: 760px;
+  gap: 12px;
+  margin-bottom: 42px;
+}
+
+.location-section-heading h2 {
+  margin: 0;
+  font-family: var(--location-font-heading);
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.15;
+}
+
+.location-section-heading p {
+  margin: 0;
+  color: var(--location-text-soft);
+  font-size: 16px;
+}
+
+.location-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.location-service-card {
+  position: relative;
+  min-height: 265px;
+  padding: 28px;
+  overflow: hidden;
+  border: 1px solid var(--location-border);
+  border-radius: var(--location-radius);
+  background: linear-gradient(145deg, var(--location-surface-raised), #0b172a);
+  transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.location-service-card:hover,
+.location-service-card:focus-within {
+  transform: translateY(-4px);
+  border-color: var(--location-gold-border);
+}
+
+.location-service-number {
+  display: block;
+  margin-bottom: 42px;
+  color: var(--location-gold);
+  font-family: var(--location-font-heading);
+  font-size: 14px;
+}
+
+.location-service-card h3 {
+  margin: 0 0 10px;
+  font-family: var(--location-font-heading);
+  font-size: 23px;
+}
+
+.location-service-card p {
+  margin: 0 0 20px;
+  color: var(--location-text-muted);
+  font-size: 14px;
+}
+
+.location-service-card a {
+  color: var(--location-gold-light);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.location-service-card a::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+}
+
+.location-detail-grid,
+.location-appointment-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  gap: 50px;
+  align-items: start;
+}
+
+.location-info-panel,
+.location-map-panel,
+.location-form {
+  border: 1px solid var(--location-border);
+  border-radius: var(--location-radius);
+  background: var(--location-surface-raised);
+  box-shadow: var(--location-shadow);
+}
+
+.location-info-panel,
+.location-form {
+  padding: 32px;
+}
+
+.location-info-panel h2,
+.location-form h2 {
+  margin: 0 0 12px;
+  font-family: var(--location-font-heading);
+  font-size: clamp(28px, 3vw, 38px);
+}
+
+.location-info-panel > p,
+.location-form > p {
+  margin: 0 0 28px;
+  color: var(--location-text-soft);
+}
+
+.location-info-list {
+  display: grid;
+  gap: 0;
+  margin: 0;
+}
+
+.location-info-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--location-border);
+}
+
+.location-info-row:last-child {
+  border-bottom: 0;
+}
+
+.location-info-row dt {
+  color: var(--location-text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.location-info-row dd {
+  margin: 0;
+  color: var(--location-text-soft);
+}
+
+.location-info-row a {
+  color: var(--location-gold-light);
+}
+
+.location-map-panel {
+  position: relative;
+  display: grid;
+  min-height: 420px;
+  place-items: center;
+  padding: 36px;
+  overflow: hidden;
+  text-align: center;
+  background:
+    linear-gradient(#0a1628dd, #0a1628f5),
+    url("/images/hero-world-map.avif") center / cover no-repeat;
+}
+
+.location-map-panel::before,
+.location-map-panel::after {
+  position: absolute;
+  border: 1px solid var(--location-gold-border);
+  border-radius: 50%;
+  content: "";
+}
+
+.location-map-panel::before {
+  width: 190px;
+  height: 190px;
+}
+
+.location-map-panel::after {
+  width: 310px;
+  height: 310px;
+  opacity: .5;
+}
+
+.location-map-marker {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 78px;
+  height: 78px;
+  place-items: center;
+  border: 1px solid var(--location-gold-border);
+  border-radius: 50%;
+  background: var(--location-gold);
+  color: #07101d;
+}
+
+.location-map-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.location-map-copy strong {
+  display: block;
+  margin: 18px 0 6px;
+  font-family: var(--location-font-heading);
+  font-size: 23px;
+}
+
+.location-map-copy p {
+  margin: 0 0 18px;
+  color: var(--location-text-soft);
+}
+
+.location-map-copy a {
+  color: var(--location-gold-light);
+  font-weight: 700;
+}
+
+.location-area-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.location-area-list span {
+  padding: 10px 15px;
+  border: 1px solid var(--location-border);
+  border-radius: 999px;
+  background: var(--location-surface-raised);
+  color: var(--location-text-soft);
+  font-size: 13px;
+}
+
+.location-faq-list {
+  display: grid;
+  gap: 12px;
+}
+
+.location-faq {
+  border: 1px solid var(--location-border);
+  border-radius: 14px;
+  background: var(--location-surface-raised);
+}
+
+.location-faq[open] {
+  border-color: var(--location-gold-border);
+}
+
+.location-faq summary {
+  display: flex;
+  min-height: 62px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 20px;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 650;
+}
+
+.location-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.location-faq summary::after {
+  color: var(--location-gold);
+  content: "+";
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.location-faq[open] summary::after {
+  content: "−";
+}
+
+.location-faq p {
+  margin: 0;
+  padding: 0 20px 20px;
+  color: var(--location-text-soft);
+}
+
+.location-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.location-field {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 14px;
+}
+
+.location-field label {
+  color: var(--location-text-soft);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.location-field input,
+.location-field select,
+.location-field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 11px 13px;
+  border: 1px solid var(--location-border);
+  border-radius: 9px;
+  outline: 0;
+  background: var(--location-surface);
+  color: var(--location-text);
+  font: inherit;
+}
+
+.location-field textarea {
+  min-height: 112px;
+  resize: vertical;
+}
+
+.location-field input:focus,
+.location-field select:focus,
+.location-field textarea:focus {
+  border-color: var(--location-gold);
+  box-shadow: 0 0 0 3px #c9a84c20;
+}
+
+.location-form button {
+  width: 100%;
+  cursor: pointer;
+  font: inherit;
+}
+
+.location-form-note {
+  margin: 12px 0 0;
+  color: var(--location-text-muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+.location-disclaimer {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-left: 2px solid var(--location-gold);
+  background: #c9a84c0d;
+  color: var(--location-text-muted);
+  font-size: 12px;
+}
+
+.location-footer {
+  padding: 44px 0;
+  border-top: 1px solid var(--location-border);
+  background: #040a12;
+}
+
+.location-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.location-footer-brand img {
+  width: 120px;
+  margin-bottom: 10px;
+}
+
+.location-footer-brand p {
+  margin: 0;
+  color: var(--location-text-muted);
+  font-size: 12px;
+}
+
+.location-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 16px;
+  color: var(--location-text-soft);
+  font-size: 13px;
+}
+
+.location-footer-links a:hover,
+.location-footer-links a:focus-visible {
+  color: var(--location-gold-light);
+}
+
+@media (max-width: 900px) {
+  .location-nav-links > a:not(.location-nav-cta) {
+    display: none;
+  }
+
+  .location-service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .location-detail-grid,
+  .location-appointment-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .location-container {
+    width: min(100% - 28px, 1160px);
+  }
+
+  .location-nav {
+    min-height: 68px;
+  }
+
+  .location-brand img {
+    width: 106px;
+  }
+
+  .location-nav-cta {
+    min-height: 40px;
+    padding: 8px 13px;
+    font-size: 13px;
+  }
+
+  .location-hero {
+    min-height: 720px;
+    padding: 124px 0 70px;
+  }
+
+  .location-hero h1 {
+    font-size: clamp(38px, 13vw, 58px);
+  }
+
+  .location-trust-row,
+  .location-service-grid,
+  .location-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .location-section {
+    padding: 72px 0;
+  }
+
+  .location-info-panel,
+  .location-form {
+    padding: 24px;
+  }
+
+  .location-info-row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .location-footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .location-footer-links {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .location-page *,
+  .location-page *::before,
+  .location-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* Konum sayfalarını sitenin alt hizmet sayfası kabuğuyla hizalar. */
+.location-service-page {
+  padding-top: 80px;
+}
+
+.location-service-page .sv-breadcrumb-band {
+  border-top: 1px solid #ffffff14;
+  border-bottom: 1px solid #ffffff14;
+  background: #081b31eb;
+}
+
+.location-service-page .sv-breadcrumb-band .container {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  gap: 10px;
+  color: #eef4fcc7;
+  font-size: 13px;
+}
+
+.location-service-page .sv-breadcrumb-band a:hover,
+.location-service-page .sv-breadcrumb-band a:focus-visible,
+.location-service-page .sv-breadcrumb-band strong {
+  color: #fff;
+}
+
+.location-page .location-site-header .nav-logo img {
+  width: auto;
+  height: clamp(48px, 4.2vw, 55px);
+}
+
+.location-page .location-site-header .nav-actions {
+  width: auto;
+  min-width: 0;
+}
+
+.location-page .location-site-header .nav-actions > .nav-cta {
+  display: inline-flex;
+}
+
+.location-main-menu {
+  gap: 4px;
+}
+
+.location-hero {
+  min-height: 500px;
+  padding: 54px 0;
+  border-bottom: 1px solid #ffffff14;
+  background:
+    linear-gradient(90deg, #060d18f5 4%, #060d18d9 48%, #060d187a 78%, #060d18d9 100%),
+    url("/images/site/home/clinic-interior.webp") center 40% / cover no-repeat;
+}
+
+.location-hero::after {
+  display: none;
+}
+
+.location-hero-content {
+  max-width: 720px;
+  padding: 26px;
+  border: 1px solid #a4c6eb4d;
+  border-radius: 12px;
+  background: #08192ebf;
+  box-shadow: 0 18px 60px #0005;
+  backdrop-filter: blur(8px);
+}
+
+.location-hero h1 {
+  margin: 12px 0;
+  font-size: clamp(34px, 4.6vw, 56px);
+}
+
+.location-hero-lead {
+  font-size: 17px;
+}
+
+.location-actions {
+  margin-top: 20px;
+}
+
+.location-trust-row {
+  margin-top: 24px;
+}
+
+.location-trust-item {
+  padding: 13px 15px;
+  border-radius: 10px;
+  background: #091a31bd;
+}
+
+.location-trust-item strong {
+  font-size: 16px;
+}
+
+.location-section {
+  padding: 54px 0;
+}
+
+.location-section-heading {
+  margin-bottom: 28px;
+}
+
+.location-section-heading h2 {
+  font-size: clamp(30px, 3vw, 42px);
+}
+
+.location-service-card,
+.location-info-panel,
+.location-map-panel,
+.location-form,
+.location-faq {
+  border-radius: 10px;
+  background: #091a31b8;
+  box-shadow: none;
+}
+
+.location-service-card {
+  min-height: 240px;
+  padding: 22px;
+}
+
+.location-service-number {
+  margin-bottom: 28px;
+  color: #8bb7e2;
+}
+
+.location-detail-grid,
+.location-appointment-grid {
+  gap: 26px;
+}
+
+.location-map-panel {
+  min-height: 100%;
+}
+
+.location-info-row a,
+.location-faq a {
+  text-decoration: underline;
+  text-decoration-color: #c9a84c66;
+  text-underline-offset: 3px;
+}
+
+.location-site-footer {
+  padding-top: 64px;
+}
+
+.location-site-footer .footer-logo {
+  width: auto;
+  height: 60px;
+  margin-bottom: 16px;
+}
+
+.location-site-footer .footer-brand p,
+.location-site-footer .footer-links a {
+  color: var(--text-secondary);
+}
+
+.location-site-footer .footer-links h3 {
+  color: var(--text-primary);
+}
+
+.location-site-footer .footer-bottom p,
+.location-site-footer .footer-bottom a {
+  color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+  .location-page .location-site-header .nav-primary {
+    display: none;
+  }
+
+  .location-page .location-site-header .nav-container {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .location-page .location-site-header .nav-actions {
+    grid-column: 3;
+  }
+}
+
+@media (max-width: 640px) {
+  .location-service-page {
+    padding-top: 70px;
+  }
+
+  .location-page .location-site-header .nav-logo img {
+    height: 42px;
+  }
+
+  .location-page .location-site-header .nav-cta {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .location-hero {
+    min-height: 0;
+    padding: 34px 0;
+  }
+
+  .location-hero-content {
+    padding: 22px;
+  }
+
+  .location-hero h1 {
+    font-size: clamp(34px, 11vw, 48px);
+  }
+
+  .location-section {
+    padding: 46px 0;
+  }
+
+  .location-site-footer {
+    padding-top: 52px;
+  }
+}

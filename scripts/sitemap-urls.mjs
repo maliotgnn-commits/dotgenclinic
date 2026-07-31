@@ -39,6 +39,14 @@ export function getPrivacyUrls(siteOrigin = SITE_ORIGIN) {
   return LOCALES.map((locale) => `${siteOrigin}/${locale}/privacy.html`);
 }
 
+export function getLocationUrls(siteOrigin = SITE_ORIGIN) {
+  return [
+    `${siteOrigin}/tr/denizli.html`,
+    `${siteOrigin}/tr/izmir.html`,
+    `${siteOrigin}/tr/leverkusen.html`,
+  ];
+}
+
 export function getServiceUrls(siteOrigin = SITE_ORIGIN) {
   const urls = [];
   for (const locale of LOCALES) {
@@ -53,6 +61,7 @@ export function getAllSitemapUrls(siteOrigin = SITE_ORIGIN) {
   return [
     ...getHomeUrls(siteOrigin),
     ...getPrivacyUrls(siteOrigin),
+    ...getLocationUrls(siteOrigin),
     ...getEyeHealthUrls(siteOrigin),
     ...getDepartmentUrls(siteOrigin),
     ...getServiceUrls(siteOrigin),

@@ -32,6 +32,7 @@ const steps = [
   ['node', ['scripts/verify-seo-growth-infra.mjs']],
   ['node', ['scripts/verify-home-static-i18n.mjs']],
   ['node', ['scripts/verify-home-static-seo.mjs']],
+  ['node', ['scripts/verify-location-pages.mjs']],
   ['node', ['scripts/verify-tr-eye-health-page.mjs']],
   ['node', ['scripts/verify-multilingual-eye-health-page.mjs']],
   ['node', ['scripts/verify-locale-route-rewrite.mjs']],

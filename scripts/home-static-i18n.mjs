@@ -224,9 +224,13 @@ export function localizeHomeBodyHtml(html, locale) {
   return result;
 }
 
-export const SOURCE_TITLE = 'Dr Otgen Clinic Aesthetic | Estetik ve Sağlık Merkezi';
+const LEGACY_SOURCE_TITLE = 'Dr Otgen Clinic Aesthetic | Estetik ve Sağlık Merkezi';
+const LEGACY_SOURCE_DESCRIPTION =
+  'Dr Otgen Clinic Aesthetic; estetik cerrahi, saç ekimi, diş estetiği, medikal estetik ve longevity alanlarında kişiye özel tedavi planlaması sunar.';
+
+export const SOURCE_TITLE = 'Denizli ve İzmir Estetik Klinik | Dr Otgen Clinic';
 export const SOURCE_DESCRIPTION =
-  'Dr Otgen Clinic Aesthetic; estetik cerrahi, saç ekimi, diş estetiği, medikal estetik ve fonksiyonel sağlık alanlarında kişiye özel tedavi planlaması sunar.';
+  "Denizli ve İzmir'de botoks, dudak dolgusu, saç ekimi, rinoplasti ve diş estetiği için kişiye özel değerlendirme. Ücretsiz ön görüşme: 0541 159 56 36.";
 
 export const CRITICAL_TR_TEXT_MARKERS = [
   'Ana içeriğe atla',
@@ -263,11 +267,13 @@ export function expectedHeroHtmlForLocale(locale) {
 }
 
 export function expectedTitleForLocale(locale) {
+  if (locale === DEFAULT_LOCALE) return SOURCE_TITLE;
   const dictionary = loadUiDictionary(locale);
-  return translate(dictionary, SOURCE_TITLE);
+  return translate(dictionary, LEGACY_SOURCE_TITLE);
 }
 
 export function expectedDescriptionForLocale(locale) {
+  if (locale === DEFAULT_LOCALE) return SOURCE_DESCRIPTION;
   const dictionary = loadUiDictionary(locale);
-  return translate(dictionary, SOURCE_DESCRIPTION);
+  return translate(dictionary, LEGACY_SOURCE_DESCRIPTION);
 }

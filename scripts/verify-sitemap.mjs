@@ -7,6 +7,7 @@ import {
   getDepartmentUrls,
   getEyeHealthUrls,
   getHomeUrls,
+  getLocationUrls,
   getPrivacyUrls,
   getServiceUrls,
 } from './sitemap-urls.mjs';
@@ -33,6 +34,7 @@ assert(locs.length === uniqueLocs.size, `Duplicate sitemap URLs found (${locs.le
 
 const homeUrls = getHomeUrls();
 const privacyUrls = getPrivacyUrls();
+const locationUrls = getLocationUrls();
 const eyeHealthUrls = getEyeHealthUrls();
 const departmentUrls = getDepartmentUrls();
 const serviceUrls = getServiceUrls();
@@ -60,6 +62,10 @@ for (const url of privacyUrls) {
   assert(actualUrls.has(url), `Missing privacy URL: ${url}`);
 }
 
+for (const url of locationUrls) {
+  assert(actualUrls.has(url), `Missing location URL: ${url}`);
+}
+
 for (const url of eyeHealthUrls) {
   assert(actualUrls.has(url), `Missing eye health URL: ${url}`);
 }
@@ -79,6 +85,7 @@ for (const url of locs) {
 }
 
 const privacyCount = locs.filter((url) => url.endsWith('/privacy.html')).length;
+const locationCount = locs.filter((url) => locationUrls.includes(url)).length;
 const serviceCount = locs.filter((url) => url.includes('/service.html?slug=')).length;
 const homeCount = locs.filter((url) => /\/(tr|en|ar|es|fr|it|ru|de)\/$/.test(url)).length;
 const eyeHealthCount = locs.filter((url) => eyeHealthUrls.includes(url)).length;
@@ -86,6 +93,7 @@ const departmentCount = locs.filter((url) => departmentUrls.includes(url)).lengt
 
 assert(homeCount === localeCount, `Expected ${localeCount} home URLs, found ${homeCount}`);
 assert(privacyCount === localeCount, `Expected ${localeCount} privacy URLs, found ${privacyCount}`);
+assert(locationCount === locationUrls.length, `Expected ${locationUrls.length} location URLs, found ${locationCount}`);
 assert(eyeHealthCount === localeCount, `Expected ${localeCount} eye health URLs, found ${eyeHealthCount}`);
 assert(
   departmentCount === departmentCountExpected,
@@ -109,5 +117,5 @@ if (failures.length) {
 }
 
 console.log(
-  `[verify-sitemap] Verified ${totalExpected} public sitemap URLs (${localeCount} home, ${localeCount} privacy, ${localeCount} eye health, ${departmentCountExpected} department, ${serviceCountExpected} service)`,
+  `[verify-sitemap] Verified ${totalExpected} public sitemap URLs (${localeCount} home, ${localeCount} privacy, ${locationUrls.length} location, ${localeCount} eye health, ${departmentCountExpected} department, ${serviceCountExpected} service)`,
 );
