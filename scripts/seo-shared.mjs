@@ -51,7 +51,10 @@ export const CLINIC = {
       url: `${SITE_ORIGIN}/tr/izmir.html`,
       geo: { latitude: 38.4576, longitude: 27.1089 },
       hours: 'Mon-Sat 09:00-18:00',
+      hasMap:
+        'https://www.google.com/maps/place//data=!4m2!3m1!1s0x14bbd9eabeac5ccf:0xbac45559bd226f35',
       sameAs: {
+        // MedicalClinic schema sameAs stays Instagram-only (verify-schema).
         googleBusiness: null,
         instagram: 'https://www.instagram.com/drotgenclinic/',
       },
@@ -59,12 +62,15 @@ export const CLINIC = {
     {
       id: 'denizli',
       name: 'Denizli',
-      address: 'Merkez Efendi, 29 Ekim Blv. No:102, 20010 Denizli Merkezefendi/Denizli',
+      address: 'Merkezefendi mahallesi, 226/21 sokak no:157, 20010 Denizli Merkezefendi/Denizli',
       phone: '+905411595636',
       url: `${SITE_ORIGIN}/tr/denizli.html`,
       geo: { latitude: 37.77796, longitude: 29.05676 },
       hours: 'Mon-Sat 09:00-18:00',
+      hasMap:
+        'https://www.google.com/maps/place//data=!4m2!3m1!1s0x14c741b9b14fb901:0xee4422c076ddd812',
       sameAs: {
+        // MedicalClinic schema sameAs stays Instagram-only (verify-schema).
         googleBusiness: null,
         instagram: 'https://www.instagram.com/drotgenclinic/',
       },

@@ -10,10 +10,17 @@ export class GoogleBusinessApiError extends Error {
   }
 }
 
+/** Accept `accounts/123` or bare `123`; always return bare numeric/resource id. */
+export function normalizeGoogleBusinessAccountId(accountId) {
+  const raw = String(accountId || '').trim();
+  if (!raw) return '';
+  return raw.replace(/^accounts\//i, '');
+}
+
 export function getGoogleBusinessConfig() {
   return {
-    accountId: process.env.GOOGLE_BUSINESS_ACCOUNT_ID || '',
-    accessToken: process.env.GOOGLE_BUSINESS_ACCESS_TOKEN || '',
+    accountId: normalizeGoogleBusinessAccountId(process.env.GOOGLE_BUSINESS_ACCOUNT_ID || ''),
+    accessToken: (process.env.GOOGLE_BUSINESS_ACCESS_TOKEN || '').trim(),
   };
 }
 
@@ -25,11 +32,12 @@ export function isGoogleBusinessConfigured() {
 function mapGoogleBusinessError(error, status) {
   const message = error?.error?.message || error?.message || 'Unknown Google Business API error';
 
-  if (status === 401 || /UNAUTHENTICATED/i.test(message)) {
+  if (status === 401 || /UNAUTHENTICATED|invalid authentication credentials/i.test(message)) {
     return {
       status: 401,
       code: 'GBP_AUTH_FAILED',
-      message: 'Google Business Profile authentication failed. Check GOOGLE_BUSINESS_ACCESS_TOKEN.',
+      message:
+        'Google Business Profile authentication failed. Access token may be expired — refresh GOOGLE_BUSINESS_ACCESS_TOKEN in .env (OAuth tokens typically last ~1 hour).',
     };
   }
 

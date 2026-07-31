@@ -31,9 +31,20 @@ export async function fetchBusinessLocations() {
   }
 
   const { accountId } = getGoogleBusinessConfig();
-  const response = await googleBusinessRequest(`/accounts/${accountId}/locations`, {
-    method: 'GET',
-  });
+  const readMask = [
+    'name',
+    'title',
+    'storefrontAddress',
+    'phoneNumbers',
+    'websiteUri',
+    'regularHours',
+    'metadata',
+    'categories',
+  ].join(',');
+  const response = await googleBusinessRequest(
+    `/accounts/${accountId}/locations?readMask=${encodeURIComponent(readMask)}`,
+    { method: 'GET' },
+  );
 
   const locations = (response?.locations || []).map(normalizeLocation);
 
