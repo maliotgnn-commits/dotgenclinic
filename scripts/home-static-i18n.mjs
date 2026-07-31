@@ -228,9 +228,9 @@ const LEGACY_SOURCE_TITLE = 'Dr Otgen Clinic Aesthetic | Estetik ve Sağlık Mer
 const LEGACY_SOURCE_DESCRIPTION =
   'Dr Otgen Clinic Aesthetic; estetik cerrahi, saç ekimi, diş estetiği, medikal estetik ve longevity alanlarında kişiye özel tedavi planlaması sunar.';
 
-export const SOURCE_TITLE = 'Denizli ve İzmir Estetik Klinik | Dr Otgen Clinic';
+export const SOURCE_TITLE = 'Denizli ve İzmir Estetik Klinik | Botoks ve Saç Ekimi | Dr Otgen Clinic';
 export const SOURCE_DESCRIPTION =
-  "Denizli ve İzmir'de botoks, dudak dolgusu, saç ekimi, rinoplasti ve diş estetiği için kişiye özel değerlendirme. Ücretsiz ön görüşme: 0541 159 56 36.";
+  'Denizli estetik klinik ve İzmir Karşıyaka estetik klinik: botoks, dudak dolgusu, saç ekimi, rinoplasti ve diş estetiği için kişiye özel değerlendirme. Ücretsiz ön görüşme: 0541 159 56 36.';
 
 export const CRITICAL_TR_TEXT_MARKERS = [
   'Ana içeriğe atla',
