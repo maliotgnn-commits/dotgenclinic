@@ -76,6 +76,7 @@
             action="https://formsubmit.co/ajax/drotgenclinic@gmail.com"
             method="POST"
             enctype="multipart/form-data"
+            aria-describedby="form-status"
           >
             <input type="hidden" name="_subject" value="DrOtgenMedical sipariş talebi" />
             <input type="hidden" name="_template" value="table" />
@@ -84,7 +85,7 @@
               <legend><span>01</span>Kişisel ve mesleki bilgiler</legend>
               <div class="field-grid">
                 <label>Ad ve soyad *<input name="fullName" autocomplete="name" required /></label>
-                <label>Telefon numarası *<input name="phone" type="tel" autocomplete="tel" required /></label>
+                <label>Telefon numarası *<input name="phone" type="tel" inputmode="tel" autocomplete="tel" required /></label>
                 <label>E-posta adresi *<input name="email" type="email" autocomplete="email" required /></label>
                 <label>
                   Meslek *
@@ -101,7 +102,7 @@
                 <label>Kurum veya klinik *<input name="organization" required /></label>
                 <label class="full-field">
                   Vergi numarası veya meslek sicil numarası *
-                  <input name="professionalNumber" maxlength="20" autocomplete="off" required />
+                  <input name="professionalNumber" maxlength="20" autocomplete="off" inputmode="text" required />
                 </label>
               </div>
             </fieldset>
@@ -137,14 +138,15 @@
                   id="document"
                   name="attachment"
                   type="file"
-                  accept=".pdf,.jpg,.jpeg,.png"
+                  accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+                  aria-describedby="file-error"
                   required
                 />
                 <span class="file-icon" aria-hidden="true">↑</span>
                 <strong id="file-label">Diploma veya mesleki belgenizi seçin</strong>
                 <small>PDF, JPG, JPEG veya PNG · En fazla 10 MB</small>
               </label>
-              <p class="field-error" id="file-error" role="alert"></p>
+              <p class="field-error" id="file-error" role="alert" tabindex="-1"></p>
             </fieldset>
 
             <fieldset class="consent-fieldset">
@@ -199,7 +201,7 @@
           <div class="success-card">
             <span class="success-icon" aria-hidden="true">✓</span>
             <p class="eyebrow">TALEBİNİZ ALINDI</p>
-            <h2>Sipariş talebiniz başarıyla iletildi.</h2>
+            <h2 id="success-title" tabindex="-1">Sipariş talebiniz başarıyla iletildi.</h2>
             <p>
               Başvurunuz ve mesleki belgeniz incelemeye alındı. Yetkili ekibimiz
               doğrulama sonucuyla birlikte sizinle iletişime geçecektir.

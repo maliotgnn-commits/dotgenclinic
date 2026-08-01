@@ -13,6 +13,8 @@ const formStatus = document.getElementById('form-status');
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 const ACCEPTED_TYPES = new Set(['application/pdf', 'image/jpeg', 'image/png']);
+const ACCEPTED_EXTENSIONS = new Set(['pdf', 'jpg', 'jpeg', 'png']);
+const successHeading = document.getElementById('success-title');
 
 function normalizedQuantity() {
   const value = Number(quantityInput.value) || 1;
@@ -33,18 +35,22 @@ function validateSelectedFile() {
 
   if (!file) {
     fileError.textContent = 'Devam etmek için bir mesleki belge seçin.';
+    fileError.focus({ preventScroll: true });
     return false;
   }
 
-  if (!ACCEPTED_TYPES.has(file.type)) {
+  const extension = file.name.split('.').pop()?.toLowerCase();
+  if (!ACCEPTED_TYPES.has(file.type) && !ACCEPTED_EXTENSIONS.has(extension)) {
     fileError.textContent = 'Yalnızca PDF, JPG, JPEG veya PNG dosyası seçebilirsiniz.';
     documentInput.value = '';
+    fileError.focus({ preventScroll: true });
     return false;
   }
 
   if (file.size > MAX_FILE_SIZE) {
     fileError.textContent = 'Dosya boyutu 10 MB sınırını aşamaz.';
     documentInput.value = '';
+    fileError.focus({ preventScroll: true });
     return false;
   }
 
@@ -62,6 +68,7 @@ form.addEventListener('submit', async (event) => {
   submitButton.disabled = true;
   submitButton.textContent = 'Talebiniz gönderiliyor…';
   formStatus.textContent = '';
+  form.setAttribute('aria-busy', 'true');
 
   try {
     const response = await fetch(form.action, {
@@ -78,12 +85,14 @@ form.addEventListener('submit', async (event) => {
     formSection.hidden = true;
     successSection.hidden = false;
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    successHeading?.focus({ preventScroll: true });
   } catch {
     formStatus.textContent =
       'Talebiniz şu anda iletilemedi. Lütfen bağlantınızı kontrol edip yeniden deneyin.';
   } finally {
     submitButton.disabled = false;
     submitButton.textContent = 'Sipariş talebini gönder';
+    form.removeAttribute('aria-busy');
   }
 });
 
@@ -92,7 +101,7 @@ returnButton.addEventListener('click', () => {
   formSection.hidden = false;
   form.reset();
   updateSummary();
-  form.querySelector('input')?.focus();
+  form.querySelector('input[name="fullName"]')?.focus();
 });
 
 updateSummary();
