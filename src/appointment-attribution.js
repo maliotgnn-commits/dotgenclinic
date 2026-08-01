@@ -46,12 +46,10 @@ export function clearAppointmentReferrer() {
 
 const SERVICE_CODE_BY_CATEGORY = {
   hair: 'hair',
-  plastic: 'aesthetic',
+  plastic: 'plastic',
   dental: 'dental',
   medical: 'medical',
   longevity: 'longevity',
-  corporate: 'corporate',
-  'eye-health': 'eye-health',
 };
 
 export function resolveFormServiceCode(referrer) {
@@ -79,4 +77,24 @@ export function applyAppointmentReferrerToForm(form) {
   }
 
   return referrer;
+}
+
+export function bindAppointmentReferrerLinks(root, appointmentContext) {
+  if (!root?.querySelectorAll || !appointmentContext?.slug) return 0;
+
+  let boundCount = 0;
+  root.querySelectorAll('[data-appointment-from]').forEach((link) => {
+    if (link.dataset.appointmentReferrerBound === 'true') return;
+    link.dataset.appointmentReferrerBound = 'true';
+    boundCount += 1;
+
+    link.addEventListener('click', () => {
+      storeAppointmentReferrer({
+        ...appointmentContext,
+        source: link.dataset.appointmentFrom || appointmentContext.source || 'service',
+      });
+    });
+  });
+
+  return boundCount;
 }

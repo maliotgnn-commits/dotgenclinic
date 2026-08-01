@@ -98,8 +98,15 @@ async function runPageChecks(page, path, viewport) {
       hasMobileCta: Boolean(document.querySelector('.nav-mobile-cta, .nav-mobile-cta-item')),
       hasCloseHandler: Boolean(closeBtn),
       hasHamburger: Boolean(hamburger),
+      drawerRole: drawer?.getAttribute('role'),
+      drawerAriaModal: drawer?.getAttribute('aria-modal'),
+      drawerLabel: drawer?.getAttribute('aria-label'),
+      closeLabel: closeBtn?.getAttribute('aria-label'),
+      hamburgerLabel: hamburger?.getAttribute('aria-label'),
+      hamburgerControls: hamburger?.getAttribute('aria-controls'),
+      hamburgerHasPopup: hamburger?.getAttribute('aria-haspopup'),
       firstTop: firstRow && drawerTop ? Math.round(firstRow.top - drawerTop.bottom) : null,
-      rowStyles: triggers.slice(0, 7).map((el) => {
+      rowStyles: triggers.slice(0, 8).map((el) => {
         const cs = getComputedStyle(el);
         return {
           fontSize: cs.fontSize,
@@ -119,9 +126,17 @@ async function runPageChecks(page, path, viewport) {
   if (!markupState.hasScroll) fail(`[${tag}] nav-drawer-scroll missing`);
   if (!markupState.hasCloseHandler) fail(`[${tag}] nav-drawer-close missing`);
   if (!markupState.hasHamburger) fail(`[${tag}] hamburger missing`);
+  if (markupState.drawerRole !== 'dialog') fail(`[${tag}] nav-drawer role must be dialog`);
+  if (markupState.drawerAriaModal !== 'true') fail(`[${tag}] nav-drawer aria-modal must be true`);
+  if (!markupState.drawerLabel) fail(`[${tag}] nav-drawer accessible label missing`);
+  if (!markupState.closeLabel || markupState.closeLabel === markupState.hamburgerLabel) {
+    fail(`[${tag}] open and close controls need distinct accessible labels`);
+  }
+  if (markupState.hamburgerControls !== 'nav-drawer') fail(`[${tag}] hamburger aria-controls mismatch`);
+  if (markupState.hamburgerHasPopup !== 'dialog') fail(`[${tag}] hamburger aria-haspopup must be dialog`);
   if (markupState.hasMobileCta) fail(`[${tag}] mobile drawer CTA still present`);
-  if (markupState.triggerCount !== 7) {
-    fail(`[${tag}] expected exactly 7 top-level mobile triggers, found ${markupState.triggerCount}`);
+  if (markupState.triggerCount !== 8) {
+    fail(`[${tag}] expected exactly 8 top-level mobile triggers, found ${markupState.triggerCount}`);
   }
   if (markupState.duplicateLabels.length) {
     fail(`[${tag}] duplicate top-level labels: ${markupState.duplicateLabels.join(', ')}`);
@@ -138,8 +153,8 @@ async function runPageChecks(page, path, viewport) {
   if (markupState.firstTop == null || markupState.firstTop < 8 || markupState.firstTop > 48) {
     fail(`[${tag}] first menu row not aligned under drawer top bar (gap ${markupState.firstTop}px)`);
   }
-  if (markupState.rowStyles.length < 7) {
-    fail(`[${tag}] expected 7 styled mobile rows, found ${markupState.rowStyles.length}`);
+  if (markupState.rowStyles.length < 8) {
+    fail(`[${tag}] expected 8 styled mobile rows, found ${markupState.rowStyles.length}`);
   } else {
     const ref = markupState.rowStyles[0];
     markupState.rowStyles.forEach((row, index) => {
@@ -164,14 +179,28 @@ async function runPageChecks(page, path, viewport) {
 
   await page.click('#hamburger');
   await page.waitForSelector('#nav-drawer.active');
+  await page.waitForFunction(() => document.activeElement?.id === 'nav-drawer-close');
 
   const openState = await page.evaluate(() => ({
     drawerOpen: document.getElementById('nav-drawer')?.classList.contains('active'),
     bodyOverflow: document.body.classList.contains('mobile-nav-open'),
+    activeId: document.activeElement?.id,
+    inertOutsideCount: [...document.querySelectorAll('[inert]')].filter(
+      (element) => !document.getElementById('nav-drawer')?.contains(element),
+    ).length,
   }));
 
   if (!openState.drawerOpen) fail(`[${tag}] drawer did not open`);
   if (!openState.bodyOverflow) fail(`[${tag}] body scroll lock missing`);
+  if (openState.activeId !== 'nav-drawer-close') fail(`[${tag}] focus did not move into drawer`);
+  if (openState.inertOutsideCount < 1) fail(`[${tag}] content outside drawer was not made inert`);
+
+  await page.keyboard.press('Shift+Tab');
+  const focusStayedInside = await page.evaluate(() => {
+    const drawer = document.getElementById('nav-drawer');
+    return Boolean(drawer?.contains(document.activeElement));
+  });
+  if (!focusStayedInside) fail(`[${tag}] Shift+Tab escaped the open drawer`);
 
   const firstTrigger = page.locator('#nav-menu > li:first-child .mobile-nav-trigger, #nav-menu > li:first-child .eh-mobile-nav-trigger').first();
   await firstTrigger.click();
@@ -246,10 +275,14 @@ async function runPageChecks(page, path, viewport) {
     anyOpen: Boolean(document.querySelector('#nav-menu .has-dropdown.open')),
     drawerClosed: !document.getElementById('nav-drawer')?.classList.contains('active'),
     bodyLockCleared: !document.body.classList.contains('mobile-nav-open'),
+    activeId: document.activeElement?.id,
+    inertCount: document.querySelectorAll('[inert]').length,
   }));
   if (resetState.anyOpen) fail(`[${tag}] accordions not reset after drawer close`);
   if (!resetState.drawerClosed) fail(`[${tag}] drawer did not close`);
   if (!resetState.bodyLockCleared) fail(`[${tag}] body scroll lock not cleared after close`);
+  if (resetState.activeId !== 'hamburger') fail(`[${tag}] focus did not return to hamburger`);
+  if (resetState.inertCount !== 0) fail(`[${tag}] inert state was not cleared after close`);
 }
 
 async function main() {

@@ -26,7 +26,7 @@ import {
 import { initAnalyticsTracking, trackServicePageView } from './analytics.js';
 import { buildWhatsAppUrl } from './whatsapp-links.js';
 import { enhanceRelatedPages, getClusterNavLinks, getDoctorsForServicePage } from './seo-internal-links.js';
-import { storeAppointmentReferrer } from './appointment-attribution.js';
+import { bindAppointmentReferrerLinks } from './appointment-attribution.js';
 import { buildDoctorAriaLabel, initDoctorClickHandling } from './doctor-click.js';
 import { getDoctorSpecialty } from './doctors-data.js';
 
@@ -109,14 +109,7 @@ function renderNavLogo() {
   `;
 }
 
-function appointmentUrl(currentPage, location = 'section') {
-  storeAppointmentReferrer({
-    locale,
-    slug: currentPage.slug,
-    category: currentPage.category,
-    title: currentPage.title,
-    source: location,
-  });
+function appointmentUrl() {
   return homeUrlFor(locale, '#randevu');
 }
 
@@ -220,7 +213,7 @@ function renderFaqCta(currentPage) {
         <p>${escapeHtml(t('Tedavi planınız için uzman ekibimizle iletişime geçebilirsiniz.'))}</p>
         <div class="sv-faq-cta-actions">
           <a href="${buildWhatsAppUrl({ locale, category: currentPage.category, pageTitle: currentPage.title })}" class="btn-gold premium-gold-cta" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp ile Bilgi Al'))}</a>
-          <a href="${appointmentUrl(currentPage, 'faq')}" class="btn-outline premium-gold-cta" data-appointment-from="faq">${escapeHtml(t('Randevu Al'))}</a>
+          <a href="${appointmentUrl()}" class="btn-outline premium-gold-cta" data-appointment-from="faq">${escapeHtml(t('Randevu Al'))}</a>
         </div>
       </div>
     </section>
@@ -234,7 +227,7 @@ function renderStickyCta(currentPage) {
         <span>${escapeHtml(currentPage.title)}</span>
         <div class="sv-sticky-cta-actions">
           <a href="${buildWhatsAppUrl({ locale, category: currentPage.category, pageTitle: currentPage.title })}" class="btn-gold premium-gold-cta" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp'))}</a>
-          <a href="${appointmentUrl(currentPage, 'sticky')}" class="btn-outline premium-gold-cta" data-appointment-from="sticky">${escapeHtml(t('Randevu Al'))}</a>
+          <a href="${appointmentUrl()}" class="btn-outline premium-gold-cta" data-appointment-from="sticky">${escapeHtml(t('Randevu Al'))}</a>
         </div>
       </div>
     </aside>
@@ -425,7 +418,7 @@ function renderPage(currentPage, relatedPages) {
             <p>${escapeHtml(currentPage.summary)}</p>
             <div class="sv-hero-actions">
               <a href="${buildWhatsAppUrl({ locale, category: currentPage.category, pageTitle: currentPage.title })}" class="btn-gold premium-gold-cta sv-hero-whatsapp" target="_blank" rel="noopener noreferrer">${escapeHtml(t('WhatsApp ile Bilgi Al'))}</a>
-              <a href="${appointmentUrl(currentPage, 'hero')}" class="btn-outline premium-gold-cta sv-hero-appointment" data-appointment-from="hero">${escapeHtml(t('Randevu Al'))}</a>
+              <a href="${appointmentUrl()}" class="btn-outline premium-gold-cta sv-hero-appointment" data-appointment-from="hero">${escapeHtml(t('Randevu Al'))}</a>
             </div>
           </article>
         </div>
@@ -598,6 +591,12 @@ function bootstrapServicePage() {
   }
 
   renderPage(currentPage, enhanceRelatedPages(catalog, currentPage));
+  bindAppointmentReferrerLinks(document, {
+    locale,
+    slug: currentPage.slug,
+    category: currentPage.category,
+    title: currentPage.title,
+  });
   initAnalyticsTracking(() => locale);
   trackServicePageView({
     locale,
