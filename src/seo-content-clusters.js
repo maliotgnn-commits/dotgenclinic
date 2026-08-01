@@ -7,6 +7,7 @@ export const SEO_CLUSTERS = {
     id: 'hair',
     label: 'Saç Ekimi',
     serviceLinkOrder: [
+      'hair-transplant-guide',
       'dhi-hair-transplant',
       'sapphire-fue-hair-transplant',
       'stem-cell-hair-transplant',
@@ -20,8 +21,9 @@ export const SEO_CLUSTERS = {
     pillar: {
       slug: 'hair-transplant-guide',
       title: 'Saç Ekimi Rehberi',
-      status: 'planned',
+      status: 'published',
       targetServiceSlugs: [
+        'hair-transplant-guide',
         'dhi-hair-transplant',
         'sapphire-fue-hair-transplant',
         'stem-cell-hair-transplant',
@@ -41,6 +43,7 @@ export const SEO_CLUSTERS = {
     id: 'plastic',
     label: 'Estetik Cerrahi',
     serviceLinkOrder: [
+      'aesthetic-surgery-guide',
       'rhinoplasty',
       'face-lift',
       'blepharoplasty',
@@ -54,8 +57,8 @@ export const SEO_CLUSTERS = {
     pillar: {
       slug: 'aesthetic-surgery-guide',
       title: 'Estetik Cerrahi Rehberi',
-      status: 'planned',
-      targetServiceSlugs: ['rhinoplasty', 'breast-augmentation', 'liposuction'],
+      status: 'published',
+      targetServiceSlugs: ['aesthetic-surgery-guide', 'rhinoplasty', 'breast-augmentation', 'liposuction'],
     },
     clusters: [
       { slug: 'rhinoplasty-guide', title: 'Rinoplasti rehberi', priority: 'P1', targetServiceSlugs: ['rhinoplasty'] },
@@ -68,6 +71,7 @@ export const SEO_CLUSTERS = {
     id: 'dental',
     label: 'Diş Estetiği',
     serviceLinkOrder: [
+      'dental-aesthetics-guide',
       'hollywood-smile',
       'zirconium-crown',
       'dental-implant',
@@ -78,8 +82,8 @@ export const SEO_CLUSTERS = {
     pillar: {
       slug: 'dental-aesthetics-guide',
       title: 'Diş Estetiği Rehberi',
-      status: 'planned',
-      targetServiceSlugs: ['dental-implant', 'hollywood-smile', 'zirconium-crown'],
+      status: 'published',
+      targetServiceSlugs: ['dental-aesthetics-guide', 'dental-implant', 'hollywood-smile', 'zirconium-crown'],
     },
     clusters: [
       { slug: 'dental-implant-guide', title: 'İmplant', priority: 'P1', targetServiceSlugs: ['dental-implant'] },
@@ -91,6 +95,7 @@ export const SEO_CLUSTERS = {
     id: 'medical',
     label: 'Medikal Estetik',
     serviceLinkOrder: [
+      'medical-aesthetics-guide',
       'botox',
       'lip-filler',
       'jawline-filler',
@@ -103,8 +108,8 @@ export const SEO_CLUSTERS = {
     pillar: {
       slug: 'medical-aesthetics-guide',
       title: 'Medikal Estetik Rehberi',
-      status: 'planned',
-      targetServiceSlugs: ['botox', 'lip-filler', 'medical-skin-care'],
+      status: 'published',
+      targetServiceSlugs: ['medical-aesthetics-guide', 'botox', 'lip-filler', 'medical-skin-care'],
     },
     clusters: [
       { slug: 'botox-guide', title: 'Botoks', priority: 'P1', targetServiceSlugs: ['botox'] },
@@ -116,6 +121,7 @@ export const SEO_CLUSTERS = {
     id: 'longevity',
     label: 'Longevity',
     serviceLinkOrder: [
+      'longevity-guide',
       'maxx-royal-wellness-bodrum',
       'museum-hotel-wellness-kapadokya',
       'iv-therapies',
@@ -127,8 +133,8 @@ export const SEO_CLUSTERS = {
     pillar: {
       slug: 'longevity-guide',
       title: 'Longevity Rehberi',
-      status: 'planned',
-      targetServiceSlugs: ['iv-therapies', 'glutathione', 'ozone-therapy'],
+      status: 'published',
+      targetServiceSlugs: ['longevity-guide', 'iv-therapies', 'glutathione', 'ozone-therapy'],
     },
     clusters: [
       { slug: 'iv-therapy-guide', title: 'IV terapi', priority: 'P1', targetServiceSlugs: ['iv-therapies'] },
@@ -143,24 +149,24 @@ export const SEO_CLUSTERS = {
     pillar: {
       slug: 'eye-health-guide',
       title: 'Göz Sağlığı Rehberi',
-      status: 'partial',
+      status: 'published',
       targetServiceSlugs: [],
-      note: 'Mevcut /tr/goz-hastaliklari.html pillar olarak genişletilebilir',
+      note: 'Yayınlı pillar: /tr/goz-hastaliklari.html (dedicated eye-health page)',
     },
     clusters: [
       { slug: 'eye-exam-guide', title: 'Göz muayenesi rehberi', priority: 'P2', targetServiceSlugs: [] },
-      { slug: 'cataract-guide', title: 'Katarakt rehberi', priority: 'P2', targetServiceSlugs: [], note: 'GERÇEK VERİ GEREKİYOR' },
+      { slug: 'cataract-guide', title: 'Katarakt rehberi', priority: 'P2', targetServiceSlugs: [], note: 'Covered in eye-health katarakt category topics' },
     ],
   },
 };
 
 /** Pages that should receive inbound links from related corporate/service pages. */
 export const ORPHAN_INBOUND_LINKS = {
-  management: ['vision-mission', 'our-values', 'quality-policy'],
-  representatives: ['health-tourism', 'international-health-insurance', 'our-doctors'],
-  production: ['our-values', 'health-tourism', 'vision-mission'],
-  'maxx-royal-wellness-bodrum': ['iv-therapies', 'glutathione', 'healthy-nutrition'],
-  'museum-hotel-wellness-kapadokya': ['lpg-treatment', 'ozone-therapy', 'healthy-nutrition'],
+  management: ['vision-mission', 'our-values', 'quality-policy', 'our-doctors'],
+  representatives: ['health-tourism', 'international-health-insurance', 'our-doctors', 'vision-mission'],
+  production: ['our-values', 'health-tourism', 'vision-mission', 'quality-policy'],
+  'maxx-royal-wellness-bodrum': ['iv-therapies', 'glutathione', 'healthy-nutrition', 'longevity-guide', 'ozone-therapy'],
+  'museum-hotel-wellness-kapadokya': ['lpg-treatment', 'ozone-therapy', 'healthy-nutrition', 'longevity-guide', 'glutathione'],
 };
 
 /** Service slugs with weak inbound internal links (footer/mega-menu only). */

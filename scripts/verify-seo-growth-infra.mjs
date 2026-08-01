@@ -72,6 +72,26 @@ assert(SEO_PILLAR_PAGES.length >= 5, 'SEO pillar pages registry missing entries'
 SEO_PILLAR_PAGES.forEach((pillar) => {
   assert(pillar.id && pillar.title, 'Pillar page id/title required');
   assert(Array.isArray(pillar.linkedServices) && pillar.linkedServices.length > 0, `Pillar ${pillar.id} linkedServices missing`);
+  if (pillar.status === 'published') {
+    assert(
+      SUBPAGES.some((page) => page.slug === pillar.id),
+      `Published pillar ${pillar.id} must exist in SUBPAGES`,
+    );
+  }
+});
+
+Object.entries(SEO_CLUSTERS).forEach(([key, cluster]) => {
+  if (key === 'eye-health') return;
+  if (cluster.pillar?.status === 'published') {
+    assert(
+      SUBPAGES.some((page) => page.slug === cluster.pillar.slug),
+      `Published cluster pillar ${cluster.pillar.slug} must exist in SUBPAGES`,
+    );
+    assert(
+      (cluster.serviceLinkOrder || []).includes(cluster.pillar.slug),
+      `Cluster ${key} serviceLinkOrder must include published pillar slug`,
+    );
+  }
 });
 
 if (failures.length) {

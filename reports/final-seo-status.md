@@ -1,20 +1,20 @@
 # Final SEO Status
 
-Generated: 2026-07-31T15:27:46.368Z
+Generated: 2026-08-01T06:53:31.450Z
 
 ## Score overview (0-10)
 
-- **Technical SEO:** 9/10 — Sitemap 467 URL, canonical/hreflang/schema pipeline active.
+- **Technical SEO:** 9/10 — Sitemap 507 URL, canonical/hreflang/schema pipeline active.
 - **Index readiness:** 6/10 — Search Console automation pending credentials/runtime.
 - **Schema readiness:** 8/10 — Organization, Service, MedicalClinic, FAQ validators active.
 - **E-E-A-T readiness:** 3/10 — 0/3 doctor profiles complete.
 - **Local SEO readiness:** 4/10 — GBP API scaffold ready; manual/local setup required.
-- **Content readiness:** 4/10 — 0/5 pillar guides published.
+- **Content readiness:** 7/10 — 5/5 pillar guides published.
 - **Authority readiness:** 3/10 — Backlink/PR strategy documented; execution manual.
 
 ## Technical SEO
 
-- Sitemap URLs: 467
+- Sitemap URLs: 507
 - Locales: 3 clinic locations in schema data model
 - Admin pages excluded from index checks
 
@@ -42,7 +42,7 @@ Generated: 2026-07-31T15:27:46.368Z
 ## Content readiness
 
 - Pillar guides planned: 5
-- Published pillar guides: 0
+- Published pillar guides: 5
 
 ## Authority readiness
 

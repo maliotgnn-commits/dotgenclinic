@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { SUBPAGES } from '../src/subpages-data.js';
-import { SEO_CLUSTERS, ORPHAN_SERVICE_SLUGS } from '../src/seo-content-clusters.js';
+import { SEO_CLUSTERS, ORPHAN_INBOUND_LINKS, ORPHAN_SERVICE_SLUGS } from '../src/seo-content-clusters.js';
 import { listPlannedPillarGaps, SEO_PILLAR_PAGES } from '../src/seo-pillar-pages.js';
 import { DOCTORS, isDoctorProfileComplete } from '../src/doctors-data.js';
 
@@ -66,10 +66,12 @@ export function buildContentGapReport() {
   });
 
   ORPHAN_SERVICE_SLUGS.forEach((slug) => {
+    const sources = ORPHAN_INBOUND_LINKS[slug] || [];
+    if (sources.length >= 3) return;
     gaps.push({
       impact: 'medium',
       title: `Orphan service: ${slug}`,
-      detail: 'Requires inbound links from mapped source pages.',
+      detail: `Requires inbound links from mapped source pages (currently ${sources.length}).`,
     });
   });
 

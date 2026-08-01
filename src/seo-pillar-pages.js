@@ -1,15 +1,16 @@
 /**
- * SEO pillar page architecture — planning registry only.
- * Does not create new public URLs; links to existing service pages and planned content slugs.
+ * SEO pillar page architecture — registry synced with published guide pages.
+ * Guide content lives in seo-pillar-content.js and is served via the service page pipeline.
  */
 import { SEO_CLUSTERS } from './seo-content-clusters.js';
+import { PILLAR_GUIDE_SLUGS } from './seo-pillar-content.js';
 
 export const SEO_PILLAR_PAGES = [
   {
     id: 'hair-transplant-guide',
     clusterKey: 'hair',
     title: 'Saç Ekimi Rehberi',
-    status: 'planned',
+    status: 'published',
     linkedServices: ['dhi-hair-transplant', 'sapphire-fue-hair-transplant', 'acell-prp', 'exosome-hair-treatment'],
     topics: ['FUE', 'DHI', 'Sapphire FUE', 'PRP', 'Exosome'],
   },
@@ -17,23 +18,23 @@ export const SEO_PILLAR_PAGES = [
     id: 'aesthetic-surgery-guide',
     clusterKey: 'plastic',
     title: 'Estetik Cerrahi Rehberi',
-    status: 'planned',
+    status: 'published',
     linkedServices: ['rhinoplasty', 'face-lift', 'blepharoplasty', 'breast-augmentation'],
     topics: ['Rhinoplasty', 'Face Lift', 'Blepharoplasty', 'Breast Surgery'],
   },
   {
     id: 'dental-aesthetics-guide',
     clusterKey: 'dental',
-    title: 'Dental Rehberi',
-    status: 'planned',
+    title: 'Diş Estetiği Rehberi',
+    status: 'published',
     linkedServices: ['hollywood-smile', 'zirconium-crown', 'dental-implant'],
     topics: ['Hollywood Smile', 'Veneer', 'Implant', 'Zirconium'],
   },
   {
     id: 'medical-aesthetics-guide',
     clusterKey: 'medical',
-    title: 'Medical Aesthetics Rehberi',
-    status: 'planned',
+    title: 'Medikal Estetik Rehberi',
+    status: 'published',
     linkedServices: ['botox', 'lip-filler', 'laser-hair-removal'],
     topics: ['Botox', 'Fillers', 'Skin treatments'],
   },
@@ -41,7 +42,7 @@ export const SEO_PILLAR_PAGES = [
     id: 'longevity-guide',
     clusterKey: 'longevity',
     title: 'Longevity Rehberi',
-    status: 'planned',
+    status: 'published',
     linkedServices: ['iv-therapies', 'glutathione', 'maxx-royal-wellness-bodrum'],
     topics: ['Wellness', 'Preventive medicine'],
   },
@@ -67,6 +68,7 @@ export function getPillarCoverageSummary() {
       linkedServiceCount: pillar.linkedServices.length,
       clusterTopicCount: cluster?.clusters?.length || 0,
       pillarStatus: cluster?.pillar?.status || pillar.status,
+      hasPublishedPage: PILLAR_GUIDE_SLUGS.includes(pillar.id),
     };
   });
 }
