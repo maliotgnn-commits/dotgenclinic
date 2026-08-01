@@ -1,7 +1,7 @@
 # Dr Otgen Clinic — Proje Hafıza Dokümanı
 
 > **Amaç:** Bu doküman, projeyi yeni bir Cursor hesabına veya başka bir geliştiriciye devretmek için hazırlanmıştır.
-> **Son güncelleme:** 13 Temmuz 2026
+> **Son güncelleme:** 1 Ağustos 2026
 
 ---
 
@@ -126,7 +126,9 @@ Tüm public entry dosyaları `import './cookie-consent.js'` ile GTM ve çerez wi
 | `src/cookie-consent.js` | GTM yükleme, çerez ikonu, consent kaydı |
 | `src/analytics.js` | dataLayer event'leri (WhatsApp, CTA, servis görüntüleme) |
 | `src/i18n.js` | Locale algılama, URL oluşturma, çeviri |
-| `src/subpages-data.js` | 48 hizmet sayfasının TR kaynak verisi |
+| `src/subpages-data.js` | Hizmet/kurumsal sayfalar + pillar rehberlerin TR kaynak verisi |
+| `src/seo-pillar-content.js` | 5 SEO pillar rehber içeriği (service pipeline) |
+| `src/seo-content-clusters.js` | Cluster / orphan inbound / pillar registry |
 | `scripts/sitemap-urls.mjs` | Sitemap URL tek kaynağı |
 | `scripts/department-seo-config.mjs` | Departman SEO prerender + rewrite tanımları |
 | `scripts/seo-shared.mjs` | Schema.org, OG meta, hreflang |
@@ -157,8 +159,7 @@ Tüm public entry dosyaları `import './cookie-consent.js'` ile GTM ve çerez wi
 
 ### Sitemap ve Vercel SEO rewrite
 
-- **Sitemap:** 464 URL (8 home + 8 privacy + 8 eye health + 56 department + 384 service)
-- **vercel.json `_seo` rewrite:** 440 toplam (384 service + 56 department)
+- **Sitemap / rewrite sayıları** build sırasında `SUBPAGES` + departman config’ten üretilir (pillar rehberler service slug olarak dahil).
 - Üretim: `node scripts/generate-sitemap.mjs`, `node scripts/generate-vercel-service-rewrites.mjs`
 
 ---
@@ -166,29 +167,25 @@ Tüm public entry dosyaları `import './cookie-consent.js'` ile GTM ve çerez wi
 ## 5. Tamamlanmış ana özellikler
 
 1. **Çok dilli site (8 dil)** — RTL (Arapça)
-2. **48 hizmet/kurumsal sayfa**
+2. **Hizmet/kurumsal sayfalar + 5 SEO pillar rehber** (service pipeline)
 3. **Departman sayfaları (8 dil × 7 modül)**
-4. **SEO altyapısı:** Hizmet + departman `/_seo/` prerender, schema.org, hreflang, sitemap
-5. **Admin analytics:** GA4 dashboard, session auth, health check
-6. **GTM event tracking:** WhatsApp, randevu CTA, form gönderimi
-7. **Cookie consent widget:** Sağ altta float ikon (WhatsApp/Instagram üstü), 8 dil
-8. **CI/CD:** GitHub Actions — PR/push to `main` için build doğrulama
-9. **Doğrulama altyapısı:** 40+ otomatik verify script (build'e entegre)
+4. **Lokasyon sayfaları:** İzmir, Denizli, Leverkusen + local SEO sinyalleri
+5. **SEO altyapısı:** Hizmet + departman `/_seo/` prerender, schema.org, hreflang, sitemap
+6. **Admin analytics + SEO admin:** GA4 / GSC scaffold, session auth
+7. **GTM event tracking:** WhatsApp, randevu CTA, form gönderimi
+8. **Cookie consent widget:** Sağ altta float ikon (WhatsApp/Instagram üstü), 8 dil
+9. **CI/CD:** GitHub Actions — PR/push to `main` için build doğrulama
+10. **Doğrulama altyapısı:** 40+ otomatik verify script (build'e entegre)
 
-### Merge edilmiş PR'lar (örnek)
-
-| PR | Konu |
-|----|------|
-| #84 | Sitemap departman URL'leri (464 URL) |
-| #85 | GitHub Actions CI |
-
-### Açık PR'lar (merge bekliyor olabilir)
+### Son merge örnekleri
 
 | PR | Konu |
 |----|------|
-| #86 | Cookie consent + deferred GTM |
-| #87 | README.md |
-| #88 | Departman SEO prerender |
+| #123 | Denizli / İzmir local SEO |
+| #124 | GBP Maps sameAs |
+| #125 | GBP OAuth refresh |
+
+Açık PR listesi için: `gh pr list --state open` (bu dokümanda sabitlenmez).
 
 ---
 
@@ -201,6 +198,13 @@ Tüm public entry dosyaları `import './cookie-consent.js'` ile GTM ve çerez wi
 | **Veritabanı yok** | İçerik statik JSON/JS dosyalarında |
 | **Otomatik test suite yok** | `package.json`'da test scripti yok; Playwright opsiyonel |
 | **GA4 custom dimension'lar** | Admin dashboard'da `service_title` / `service_slug` dimension hataları görülebilir |
+
+### İçerik / ops (güncel)
+
+1. **Doktor E-E-A-T:** Kadro değişeceği için bilerek ertelendi; `noindex` + `MISSING_DATA` korunur
+2. **Secret rotation / env teyidi:** Owner checklist → `docs/OPS_ENV_VERIFICATION.md`
+3. **Authority / PR outreach:** Manuel; `reports/authority-plan.md`
+4. **Çeviri kalitesi:** Pillar metinleri Translate pipeline ile çoğaltılır; insan edit önerilir
 
 ### Bilinen tutarsızlıklar / riskler
 
@@ -216,6 +220,7 @@ Tüm public entry dosyaları `import './cookie-consent.js'` ile GTM ve çerez wi
 - Çeviri kalitesi / CMS
 - E2E test suite
 - GA4 custom dimension yapılandırması
+- Doktor kadrosu netleşince E-E-A-T + Physician schema
 
 ---
 

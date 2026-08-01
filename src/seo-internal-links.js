@@ -26,13 +26,16 @@ export function enhanceRelatedPages(catalog, page, limit = 6) {
   const chosen = [];
   const seen = new Set([page.slug]);
 
+  const clusterInfo = getClusterLinksForServiceSlug(page.slug);
+  // Prefer the published pillar guide, then cluster order, then orphan backlinks.
+  if (clusterInfo?.pillar?.slug) addSlug(clusterInfo.pillar.slug, pagesBySlug, chosen, seen);
+
   getClusterServiceLinkOrder(page.category).forEach((slug) => addSlug(slug, pagesBySlug, chosen, seen));
 
   Object.entries(ORPHAN_INBOUND_LINKS).forEach(([orphanSlug, sources]) => {
     if (sources.includes(page.slug)) addSlug(orphanSlug, pagesBySlug, chosen, seen);
   });
 
-  const clusterInfo = getClusterLinksForServiceSlug(page.slug);
   clusterInfo?.pillar?.targetServiceSlugs?.forEach((slug) => addSlug(slug, pagesBySlug, chosen, seen));
   clusterInfo?.clusters?.forEach((cluster) =>
     cluster.targetServiceSlugs.forEach((slug) => addSlug(slug, pagesBySlug, chosen, seen)),

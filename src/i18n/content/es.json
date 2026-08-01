@@ -41,12 +41,12 @@
       "method": "Protocolos de tratamiento estético mínimamente invasivos"
     },
     "longevity": {
-      "label": "Longevity",
-      "heroTag": "Longevity",
+      "label": "longevidad",
+      "heroTag": "longevidad",
       "duration": "30-90 minutos",
       "sessionModel": "Sesiones periódicas basadas en programas.",
       "recovery": "mismo dia",
-      "method": "Protocolos personalizados de longevidad, salud preventiva y bienestar"
+      "method": "Protocolos personalizados de longevidad, salud preventiva y bienestar."
     }
   },
   "categoryOrder": [
@@ -128,8 +128,8 @@
           "answer": "La visión y misión de la Clínica Dr. Otgen; Atrae a los pacientes que esperan un servicio seguro y de calidad, al equipo profesional que implementa estos estándares y a las partes interesadas que se preocupan por el enfoque ético de la salud. También tiene como objetivo apoyar la sensibilización y el desarrollo en el ámbito de la salud."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "La duración varía dependiendo del alcance del tratamiento elegido. Su médico le proporcionará un plan de tiempo y un proceso de atención claros durante la consulta."
+          "question": "¿Cómo se refleja su enfoque de visión y misión en el proceso de tratamiento?",
+          "answer": "Nuestras prioridades de planificación, calidad y seguridad del paciente se implementan de forma transparente en todos los procesos. Después de la consulta, se compartirá con usted una hoja de ruta especial."
         },
         {
           "question": "¿Cómo se finaliza el plan de tratamiento?",
@@ -226,8 +226,8 @@
           "answer": "Elegibilidad; Se aprueba después de una consulta de expertos, una revisión del historial médico y una evaluación objetiva del tratamiento."
         },
         {
-          "question": "¿Cuánto tiempo suele tardar el proceso de recuperación?",
-          "answer": "El proceso de recuperación depende del alcance del tratamiento elegido. Su médico le proporcionará un cronograma realista y un plan de atención durante su consulta."
+          "question": "¿Cómo se aplican sus valores a la experiencia del paciente?",
+          "answer": "Los principios de ética, transparencia y enfoque en el paciente se mantienen como estándar en las etapas de planificación, implementación y seguimiento."
         },
         {
           "question": "¿Cuándo se finalizará el plan de tratamiento final?",
@@ -338,8 +338,8 @@
           "answer": "Disponibilidad; Se vuelve claro como resultado de la consulta de expertos, la revisión del historial médico y la evaluación objetiva del tratamiento."
         },
         {
-          "question": "¿Cuánto tiempo suele tardar el proceso de recuperación?",
-          "answer": "El proceso de recuperación depende del alcance del tratamiento elegido. Su médico compartirá un cronograma realista y un plan de atención específicamente para usted durante su consulta."
+          "question": "¿Cómo se implementa la política de calidad en los procesos?",
+          "answer": "Los pasos de control de calidad se llevan a cabo con documentación y protocolos de seguimiento antes, durante y después del tratamiento."
         },
         {
           "question": "¿Cuándo se finalizará el plan de tratamiento final?",
@@ -371,11 +371,11 @@
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Nuestro equipo de gestión trabaja con un modelo de coordinación estructurado, centrado en la seguridad del paciente, la continuidad operativa y los estándares de calidad."
+              "text": "Nuestro equipo directivo; Trabaja con un modelo de coordinación estructurado centrado en la seguridad del paciente, la continuidad operativa y los estándares de calidad."
             },
             {
               "type": "paragraph",
-              "text": "La planificación entre departamentos, el recorrido del paciente internacional y el seguimiento del proceso se gestionan dentro de un único marco de dirección."
+              "text": "La planificación interdepartamental, el viaje internacional del paciente y el seguimiento de procesos se llevan a cabo dentro de un marco de gestión único."
             }
           ]
         },
@@ -385,9 +385,9 @@
             {
               "type": "list",
               "items": [
-                "Coordinación de consultas y citas",
-                "Procesos de información y consentimiento antes del plan de tratamiento",
-                "Línea de comunicación y seguimiento para pacientes internacionales"
+                "Coordinación de consultas y citas.",
+                "Procesos de información y aprobación antes del plan de tratamiento.",
+                "Línea internacional de comunicación y seguimiento de pacientes."
               ]
             }
           ]
@@ -440,16 +440,16 @@
       ],
       "faqs": [
         {
-          "question": "¿De qué procesos es responsable el equipo de gestión?",
-          "answer": "La coordinación de consultas, la planificación del recorrido del paciente, la comunicación entre departamentos y el seguimiento de la calidad son responsabilidades clave del equipo de gestión."
+          "question": "¿De qué procesos es responsable el equipo directivo?",
+          "answer": "La coordinación de consultas, la planificación del viaje del paciente, la comunicación interdepartamental y el seguimiento de la calidad son las principales áreas de responsabilidad del equipo directivo."
         },
         {
-          "question": "¿Cómo se comunican los pacientes internacionales con el equipo de gestión?",
-          "answer": "Los pacientes internacionales son dirigidos al equipo de coordinación de gestión a través de canales de comunicación estructurados para citas, planificación y seguimiento."
+          "question": "¿Cómo contactan los pacientes internacionales con el equipo directivo?",
+          "answer": "Nuestros pacientes internacionales; Se dirige al equipo de coordinación de gestión a través de canales de comunicación estructurados para la designación, planificación y seguimiento de procesos."
         },
         {
-          "question": "¿Cómo se realiza el seguimiento de la calidad y de los procesos?",
-          "answer": "Los procesos se supervisan mediante estándares de calidad definidos, revisiones internas periódicas y comentarios de los pacientes; las mejoras se planifican de forma estructurada."
+          "question": "¿Cómo monitorear la calidad y el proceso?",
+          "answer": "Procesos; Los estándares de calidad definidos se controlan mediante evaluaciones internas periódicas y comentarios de los pacientes; Los pasos de mejora se implementan de manera planificada."
         }
       ]
     },
@@ -523,8 +523,8 @@
           "answer": "Disponibilidad; Se aprueba después de una consulta de expertos, una revisión del historial médico y una evaluación objetiva del tratamiento."
         },
         {
-          "question": "¿Cuánto tiempo suele tardar el proceso de recuperación?",
-          "answer": "El proceso de recuperación depende del alcance del tratamiento elegido. Su médico compartirá un cronograma realista y un plan de atención específicamente para usted durante su consulta."
+          "question": "¿Cómo funciona el proceso de evaluación y derivación del médico?",
+          "answer": "Se realiza una selección adecuada de médicos según la rama y la necesidad de tratamiento; Después de la consulta, se aclara el plan."
         },
         {
           "question": "¿Cuándo se finalizará el plan de tratamiento final?",
@@ -627,8 +627,8 @@
           "answer": "Elegibilidad; Se determina con base en la evaluación de expertos, el historial médico y el análisis del tratamiento."
         },
         {
-          "question": "¿Cuánto dura el período de recuperación?",
-          "answer": "Varía según el tratamiento elegido. El médico da un plan de tiempo claro durante la consulta."
+          "question": "¿Cómo crear un plan de recuperación durante el proceso de turismo de salud?",
+          "answer": "Varía según el tratamiento elegido. El equipo de coordinación y su médico comparten un plan de tiempo claro durante la reunión."
         },
         {
           "question": "¿Cuándo se finalizará el plan de tratamiento final?",
@@ -656,23 +656,23 @@
       ],
       "sections": [
         {
-          "title": "Red de representantes y coordinación",
+          "title": "Red Representativa y Coordinación",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Nuestra red de representantes ofrece coordinación durante todo el recorrido, desde el primer punto de contacto de los pacientes internacionales hasta el seguimiento posterior al tratamiento."
+              "text": "Nuestra red de representantes; Coordina a los pacientes internacionales durante todo el proceso, desde el primer punto de contacto hasta el seguimiento post-tratamiento."
             }
           ]
         },
         {
-          "title": "Apoyo en el recorrido del paciente",
+          "title": "Apoyo en el viaje del paciente",
           "blocks": [
             {
               "type": "list",
               "items": [
-                "Información inicial y orientación",
-                "Coordinación de citas y planificación del viaje",
-                "Apoyo de comunicación durante todo el proceso de tratamiento"
+                "Información inicial y orientación.",
+                "Coordinación de citas y planes de viaje.",
+                "Apoyo comunicacional durante todo el proceso de tratamiento."
               ]
             }
           ]
@@ -725,41 +725,41 @@
       ],
       "faqs": [
         {
-          "question": "¿En qué etapas ofrecen apoyo los representantes?",
-          "answer": "Los representantes apoyan la información inicial, la planificación de citas, la coordinación del viaje y la comunicación durante todo el proceso de tratamiento."
+          "question": "¿En qué etapas brindan apoyo los representantes?",
+          "answer": "Representantes; Proporciona información inicial, planificación de citas, coordinación de viajes y apoyo de comunicación durante todo el proceso de tratamiento."
         },
         {
-          "question": "¿Cómo pueden los pacientes internacionales acceder a la red de representantes?",
-          "answer": "Los pacientes internacionales son dirigidos al equipo de coordinación de representantes a través del sitio web, WhatsApp y canales de comunicación estructurados."
+          "question": "¿Cómo acceden los pacientes internacionales a la red de representantes?",
+          "answer": "Pacientes internacionales; El representante es dirigido al equipo de coordinación a través del sitio web, WhatsApp y canales de comunicación estructurados."
         },
         {
-          "question": "¿En qué idiomas se ofrece el apoyo de representantes?",
-          "answer": "Los idiomas de apoyo varían según la red de representantes; el plan de comunicación se define al inicio del recorrido del paciente."
+          "question": "¿En qué idiomas está disponible el soporte para agentes?",
+          "answer": "Los idiomas de soporte varían según la red del agente; El plan de comunicación se aclara al comienzo del recorrido del paciente."
         }
       ]
     },
     {
       "category": "corporate",
       "slug": "production",
+      "navLabel": "producción",
       "navAppendOnly": true,
+      "title": "Producción de la Clínica Dr. Otgen",
+      "categoryLabel": "Corporativo",
+      "heroTag": "Información corporativa",
+      "heroSubtitle": "Historias de salud y ciencia contadas en lenguaje cinematográfico",
+      "summary": "La Clínica Dr Otgen también explica su trabajo en el campo de la salud y la ciencia con proyectos de producción creativa; Unimos historias humanas con un fuerte lenguaje cinematográfico en nuestros cortometrajes.",
       "images": {
         "hero": "/images/production/production-hero.png",
         "content": "/images/production/mert-can-director.png"
       },
-      "navLabel": "Producción",
-      "title": "Producción Dr Otgen Clinic",
-      "categoryLabel": "Corporativo",
-      "heroTag": "Información corporativa",
-      "heroSubtitle": "Historias de salud y ciencia contadas con lenguaje cinematográfico",
-      "summary": "Dr Otgen Clinic también comunica su trabajo en salud y ciencia a través de proyectos de producción creativa; nuestros cortometrajes unen historias humanas con un potente lenguaje cinematográfico.",
       "overview": [
-        "Dr Otgen Clinic también narra su trabajo en salud y ciencia mediante proyectos de producción creativa. Nuestros cortometrajes, dirigidos por Mert Can, combinan historias humanas, temas de concienciación y mensajes sociales con un fuerte lenguaje cinematográfico.",
-        "Los cortometrajes que producimos se envían a prestigiosos festivales y concursos internacionales de cortometrajes; los premios obtenidos en este ámbito llevan nuestra visión creativa a plataformas internacionales.",
-        "En cada proyecto, no buscamos solo producir una película, sino contar historias que dejen huella en el espectador, inviten a la reflexión e inspiren."
+        "La Clínica Dr Otgen también explica su trabajo en el campo de la salud y la ciencia con proyectos de producción creativa. Nuestros proyectos de cortometrajes dirigidos por Mert Can; Reúne historias humanas, temas de concientización y mensajes sociales con un fuerte lenguaje cinematográfico.",
+        "Los cortometrajes que producimos son enviados a distinguidos festivales y concursos de cortometrajes en el extranjero; Llevamos nuestra visión creativa a plataformas internacionales con los premios que hemos recibido en este campo.",
+        "En cada proyecto pretendemos no sólo producir una película, sino también contar historias que dejen huella en el público, lo hagan pensar e inspirar."
       ],
       "sections": [
         {
-          "title": "Narrativa creativa y dirección",
+          "title": "Expresión Creativa y Dirección",
           "blocks": [
             {
               "type": "subheading",
@@ -767,28 +767,28 @@
             },
             {
               "type": "paragraph",
-              "text": "Mert Can, director de nuestros cortometrajes, adopta un enfoque cinematográfico que combina narrativa centrada en las personas, un lenguaje visual sólido y temas de concienciación social. En cada toma, busca reunir profundidad emocional y claridad del mensaje en el mismo encuadre."
+              "text": "Mert Can, director de nuestros proyectos cortos; Adopta un enfoque cinematográfico que reúne una narrativa centrada en el ser humano, un fuerte lenguaje visual y temas de conciencia social. Su objetivo es reunir la profundidad emocional y la claridad del mensaje en el mismo cuadro en cada toma."
             },
             {
               "type": "paragraph",
-              "text": "Nuestro proceso de producción se basa en una planificación disciplinada, coordinación profesional del equipo y altos estándares de producción, desde el desarrollo del guion hasta la postproducción."
+              "text": "Nuestro proceso de producción; Se basa en una planificación disciplinada, coordinación de equipos profesionales y altos estándares de producción, desde el desarrollo del guión hasta la postproducción."
             }
           ]
         },
         {
-          "title": "Festivales y reconocimiento internacional",
+          "title": "Festivales y Reconocimiento Internacional",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Nuestros cortometrajes llegan a una amplia audiencia a través de programas y concursos de festivales internacionales. Estas plataformas apoyan nuestro objetivo de generar concienciación social más allá del trabajo científico y sanitario que realizamos como clínica."
+              "text": "Nuestros cortometrajes llegan a una amplia audiencia a través de programas y concursos de festivales internacionales. Estas plataformas respaldan nuestro objetivo de aumentar la conciencia social más allá de los estudios científicos y de salud que realizamos clínicamente."
             },
             {
               "type": "list",
               "items": [
-                "Presentación y proyección en prestigiosos festivales internacionales de cortometrajes",
-                "Visibilidad internacional mediante premios y selecciones oficiales",
-                "Lenguaje cinematográfico distintivo en temas de salud, ciencia e historias humanas",
-                "Enfoque de producción que integra el valor de marca con el arte y el impacto social"
+                "Solicitud y proyección en selectos festivales internacionales de cortometrajes.",
+                "Visibilidad internacional a través de procesos de premiación y selección",
+                "Lenguaje cinematográfico original sobre temas de salud, ciencia e historia humana.",
+                "Enfoque de producción que integra el valor de la marca con el arte y el impacto social."
               ]
             }
           ]
@@ -796,189 +796,189 @@
       ],
       "highlights": [
         "Proyectos de cortometrajes",
-        "Participación en festivales internacionales y premios",
-        "Narrativa centrada en la concienciación y mensajes sociales",
-        "Equipo de producción profesional y dirección"
+        "Participación y premios en festivales internacionales.",
+        "Expresión centrada en la concientización y el mensaje social.",
+        "Equipo de producción profesional y dirección."
       ],
-      "suitableIntro": "Nuestros proyectos de producción son iniciativas creativas independientes de nuestros servicios clínicos.",
+      "suitableIntro": "Nuestros proyectos de producción son esfuerzos de contenido creativo que son independientes de nuestros servicios clínicos.",
       "suitableFor": [
         "Instituciones que buscan proyectos para festivales de cine y cortometrajes",
-        "Interesados en campañas de concienciación sobre salud y ciencia",
-        "Equipos de medios y marcas que buscan colaboraciones de producción creativa",
-        "Espectadores interesados en narrativas originales con mensaje social"
+        "Partes interesadas que llevan a cabo campañas de concientización con temas de salud y ciencia.",
+        "Equipos de medios y marcas que buscan colaboraciones de producción creativa.",
+        "Público interesado en contar historias originales con mensaje social"
       ],
       "quickFacts": [
         {
           "label": "Formato",
-          "value": "Cortometraje"
+          "value": "cortometraje de cine"
         },
         {
-          "label": "Director",
-          "value": "Mert Can"
+          "label": "Directora",
+          "value": "Mert puede"
         },
         {
           "label": "Enfoque",
-          "value": "Salud, ciencia e historias humanas"
+          "value": "Salud, ciencia e historias humanas."
         },
         {
           "label": "Acceso",
-          "value": "Plataformas de festivales y concursos internacionales"
+          "value": "Plataformas internacionales de festivales y competiciones."
         }
       ],
       "processTitle": "Proceso de producción",
       "process": [
         {
-          "title": "Concepto y guion",
-          "description": "Se definen la idea, el mensaje y el público objetivo; se elabora el guion y el plan de producción."
+          "title": "Concepto y escenario",
+          "description": "Se aclara la idea de la historia, el mensaje y el público objetivo; Se crean el escenario y el plan de producción."
         },
         {
           "title": "Rodaje y producción",
-          "description": "Se completan las grabaciones con equipo y material profesional; se coordinan la dirección y la dirección artística."
+          "description": "El rodaje se completa con equipo y equipamiento profesional; Se coordinan los procesos de dirección y gestión artística."
         },
         {
-          "title": "Postproducción y proceso de festivales",
-          "description": "Se completan montaje, sonido y color; las películas se envían a festivales y concursos internacionales."
+          "title": "Proceso de Postproducción y Festival",
+          "description": "Se completan los procesos de edición, sonido y color; Las películas están dirigidas a festivales y competiciones internacionales."
         }
       ],
       "faqs": [
         {
-          "question": "¿Los proyectos de producción están relacionados con los servicios clínicos?",
-          "answer": "Nuestro trabajo de producción son proyectos creativos independientes de nuestros servicios clínicos; busca narrar temas de salud y ciencia con lenguaje cinematográfico."
+          "question": "¿Los proyectos de producción están relacionados con servicios clínicos?",
+          "answer": "Nuestro trabajo de producción son proyectos creativos independientes de nuestros servicios clínicos; Su objetivo es explicar los temas de la salud y la ciencia a través del lenguaje del cine."
         },
         {
-          "question": "¿En qué plataformas se muestran las películas?",
-          "answer": "Nuestros cortometrajes llegan al público a través de programas de festivales internacionales, concursos y plataformas selectas de proyección."
+          "question": "¿En qué plataformas se proyectan las películas?",
+          "answer": "Nuestros cortometrajes llegan al público a través de programas de festivales internacionales, concursos y distinguidas plataformas de proyección."
         },
         {
-          "question": "¿Cómo se puede enviar una solicitud de colaboración o producción?",
-          "answer": "Puede enviar su solicitud a través de nuestros canales de comunicación de la clínica para colaboraciones de producción creativa; se evalúan los proyectos adecuados."
+          "question": "¿Cómo presentar una solicitud de colaboración o producción?",
+          "answer": "Para colaboraciones de producción creativa, puede enviar su solicitud a través de nuestros canales de comunicación clínica; Se evalúan proyectos adecuados."
         }
       ]
     },
     {
       "category": "corporate",
       "slug": "international-health-insurance",
-      "navLabel": "Seguro de Salud Internacional",
+      "navLabel": "Seguro médico internacional",
       "navAppendOnly": true,
-      "title": "Seguro de Salud Internacional",
+      "title": "Seguro médico internacional",
       "categoryLabel": "Corporativo",
       "heroTag": "Información corporativa",
-      "heroSubtitle": "Acuerdos de seguro internacional: protegido con Bupa Global y Cigna Healthcare",
-      "summary": "Gracias a acuerdos con Bupa Global y Cigna Healthcare, Dr Otgen Clinic ofrece a pacientes internacionales apoyo sanitario seguro y completo en estética, salud capilar, estética dental, estética médica y longevity.",
+      "heroSubtitle": "Acuerdos de seguro internacionales: usted está seguro con Bupa Global y Cigna Healthcare",
+      "summary": "Dr. Otgen Clinic ofrece apoyo de salud seguro e integral a pacientes internacionales en servicios de estética, salud del cabello, estética dental, estética médica y longevidad a través de acuerdos con Bupa Global y Cigna Healthcare.",
       "images": {
         "hero": "/images/site/pages/international-health-insurance-hero.webp",
         "content": "/images/site/pages/international-health-insurance-content.webp"
       },
       "overview": [
-        "En Dr Otgen Clinic, nos enorgullece ofrecer a nuestros pacientes internacionales acceso a servicios de estética, salud capilar, estética dental, estética médica y longevity con estándares globales.",
-        "Para brindarle apoyo integral durante su proceso de salud, trabajamos bajo acuerdos con Bupa Global y Cigna Healthcare, dos de los principales proveedores de seguros de salud del mundo."
+        "Como Clínica Dr. Otgen, estamos orgullosos de ofrecer nuestros servicios de estética, salud del cabello, estética dental, estética médica y longevidad, que ofrecemos con estándares globales, a nuestros pacientes internacionales.",
+        "Para apoyarlo completamente en su viaje hacia la salud, brindamos servicios en acuerdo con los principales proveedores de seguros médicos del mundo, Bupa Global y Cigna Healthcare."
       ],
       "sections": [
         {
-          "title": "Servicios de salud premium con Bupa Global y Cigna Healthcare",
+          "title": "Servicios de atención médica privilegiados con Bupa Global y Cigna Healthcare",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Bupa Global y Cigna Healthcare son instituciones consolidadas que ofrecen soluciones integrales de seguro de salud a millones de personas en todo el mundo. Gracias a los acuerdos de Dr Otgen Clinic con estos prestigiosos aseguradores, nuestros pacientes internacionales pueden beneficiarse de las siguientes ventajas:"
+              "text": "Bupa Global y Cigna Healthcare son organizaciones bien establecidas que brindan soluciones integrales de seguro médico a millones de personas en todo el mundo. Gracias a los acuerdos de Clínica Dr Otgen con estos prestigiosos proveedores de seguros, nuestros pacientes internacionales pueden beneficiarse de los siguientes privilegios:"
             },
             {
               "type": "list",
               "items": [
-                "Amplia red médica: Las extensas redes de centros concertados de ambas aseguradoras garantizan acceso global y flexibilidad durante su tratamiento.",
-                "Coberturas integrales: Sus pólizas de Bupa Global y Cigna Healthcare pueden cubrir muchos tratamientos y servicios en Dr Otgen Clinic, ofreciendo tranquilidad financiera.",
-                "Validez internacional: Gracias a la validez internacional de su seguro, también estará cubierto en los tratamientos recibidos en Dr Otgen Clinic en Turquía."
+                "Amplia Red Médica: Gracias a la amplia red mundial de instituciones contratadas de ambas compañías aseguradoras, se brinda acceso global y flexibilidad en sus procesos de tratamiento.",
+                "Coberturas integrales: sus seguros Bupa Global y Cigna Healthcare ofrecen seguridad financiera al cubrir muchos tratamientos y servicios que recibirá en la Clínica Dr. Otgen. De esta forma, no te preocuparás por los costes y te centrarás en tu salud.",
+                "Validez Internacional: Gracias a la validez internacional de tu seguro, tendrás cubiertos los tratamientos que recibirás en la Clínica Dr Otgen en Turquía."
               ]
             }
           ]
         },
         {
-          "title": "Apoyo de Dr Otgen Clinic a pacientes internacionales",
+          "title": "Apoyo brindado por la Clínica Dr. Otgen a pacientes internacionales",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "En Dr Otgen Clinic, ofrecemos servicios especiales para que los pacientes internacionales vivan su proceso de tratamiento de la forma más cómoda y fluida posible:"
+              "text": "Como Clínica Dr Otgen, ofrecemos servicios especiales para garantizar que nuestros pacientes internacionales realicen sus procesos de tratamiento de la forma más cómoda y sin problemas:"
             },
             {
               "type": "list",
               "items": [
-                "Coordinación del paciente: Un coordinador personal le acompaña en todas las etapas, desde la planificación del tratamiento hasta los arreglos de viaje.",
-                "Soporte multilingüe: Nuestro equipo se comunica en varios idiomas para que no haya barreras lingüísticas durante su tratamiento.",
-                "Enfoques de tratamiento modernos: Con médicos especialistas y tecnología avanzada, ofrecemos métodos personalizados y eficaces."
+                "Coordinación de pacientes: Un coordinador especial de pacientes lo acompaña en todos los procesos, desde la planificación de su tratamiento hasta la organización de su viaje.",
+                "Soporte multilingüe: gracias a nuestro equipo que puede comunicarse en diferentes idiomas, no experimentará ninguna barrera lingüística durante el proceso de tratamiento.",
+                "Enfoques de tratamiento modernos: ofrecemos métodos de tratamiento personalizados y más efectivos con nuestros médicos expertos y nuestra clínica con tecnología actualizada."
               ]
             }
           ]
         },
         {
-          "title": "Acceda a nuestros servicios con su seguro Bupa Global o Cigna Healthcare",
+          "title": "Benefíciese de nuestros servicios con su seguro de atención médica Bupa Global o Cigna",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Si dispone de seguro Bupa Global o Cigna Healthcare, puede beneficiarse fácilmente de los servicios premium de estética y salud de Dr Otgen Clinic. Contáctenos para obtener información detallada sobre la planificación del tratamiento y su cobertura."
+              "text": "Si tiene un seguro Bupa Global o Cigna Healthcare, puede beneficiarse fácilmente de los servicios premium de estética y atención médica que ofrece la Clínica Dr Otgen. Simplemente contáctenos para obtener información detallada sobre la planificación del tratamiento y su cobertura de seguro."
             },
             {
               "type": "paragraph",
-              "text": "Para su salud y belleza, Dr Otgen Clinic está a su lado con la garantía de Bupa Global y Cigna Healthcare."
+              "text": "Estamos contigo por tu salud y belleza con la garantía de Clínica Dr Otgen, Bupa Global y Cigna Healthcare."
             }
           ]
         }
       ],
       "highlights": [
-        "Acuerdos con Bupa Global y Cigna Healthcare",
+        "Acuerdos entre Bupa Global y Cigna Healthcare",
         "Coberturas de seguro válidas internacionalmente",
-        "Coordinación multilingüe de pacientes",
-        "Servicios premium de estética y salud"
+        "Coordinación de pacientes multilingüe",
+        "Servicios premium de estética y salud."
       ],
       "suitableIntro": "",
       "suitableFor": [
         "Pacientes internacionales con seguro Bupa Global",
         "Pacientes internacionales con seguro Cigna Healthcare",
-        "Personas que buscan información sobre cobertura durante la planificación del tratamiento",
-        "Pacientes internacionales que buscan una clínica de confianza en Turquía"
+        "Quienes quieran obtener información sobre la cobertura del seguro en la planificación del tratamiento.",
+        "Pacientes internacionales que buscan clínicas confiables en Turquía"
       ],
       "quickFacts": [
         {
-          "label": "Aseguradoras asociadas",
+          "label": "Seguro contratado",
           "value": "Bupa Global y Cigna Healthcare"
         },
         {
-          "label": "Apoyo",
-          "value": "Coordinación de pacientes internacionales"
+          "label": "Soporte",
+          "value": "Coordinación internacional de pacientes"
         },
         {
-          "label": "Comunicación",
-          "value": "Equipo multilingüe"
+          "label": "Contacto",
+          "value": "Soporte de equipo multilingüe"
         },
         {
           "label": "Alcance",
-          "value": "Estética, cabello, dental, estética médica y longevity"
+          "value": "Estética, cabello, dientes, estética médica y longevidad."
         }
       ],
       "process": [
         {
-          "title": "Evaluación de seguro y tratamiento",
-          "description": "Se evalúan juntos su cobertura y necesidades de tratamiento para crear un plan adecuado."
+          "title": "Evaluación de seguros y tratamientos",
+          "description": "Su cobertura de seguro y sus necesidades de tratamiento se evalúan juntas; Se crea un plan de servicio adecuado."
         },
         {
-          "title": "Planificación y coordinación",
-          "description": "Su coordinador organiza el calendario de tratamiento, la comunicación y los detalles operativos."
+          "title": "Planificación y Coordinación",
+          "description": "El programa de tratamiento, el proceso de comunicación y los detalles operativos los organiza su coordinador de pacientes."
         },
         {
           "title": "Tratamiento y seguimiento",
-          "description": "Se ofrece apoyo multilingüe y seguimiento estructurado durante todo el proceso."
+          "description": "Se brinda soporte multilingüe y un servicio de seguimiento estructurado durante todo el proceso de tratamiento."
         }
       ],
       "faqs": [
         {
-          "question": "¿Mi seguro Bupa Global o Cigna Healthcare es válido en Dr Otgen Clinic?",
-          "answer": "Dr Otgen Clinic presta servicios bajo acuerdos con Bupa Global y Cigna Healthcare. La validez de la cobertura se evalúa según su póliza; contáctenos para más información."
+          "question": "¿Mi seguro Bupa Global o Cigna Healthcare es válido en la Clínica Dr Otgen?",
+          "answer": "La Clínica Dr Otgen brinda servicios bajo contrato con Bupa Global y Cigna Healthcare. La validez de su cobertura de seguro se evalúa en función de su póliza; Puede contactarnos para obtener información detallada."
         },
         {
-          "question": "¿Qué servicios pueden estar cubiertos por el seguro?",
-          "answer": "Muchos de nuestros servicios de estética, salud capilar, estética dental, estética médica y longevity pueden ser elegibles. La cobertura final depende de su póliza y plan de tratamiento."
+          "question": "¿Qué servicios puede cubrir el seguro?",
+          "answer": "Muchos de nuestros servicios de estética, salud capilar, estética dental, estética médica y longevidad pueden estar cubiertos por un seguro. La cobertura exacta está determinada por su póliza y plan de tratamiento."
         },
         {
-          "question": "¿Cómo se proporciona el apoyo a pacientes internacionales?",
-          "answer": "Un coordinador personal le acompaña y apoya la planificación del tratamiento, los arreglos de viaje y la comunicación multilingüe."
+          "question": "¿Cómo brindar apoyo a los pacientes internacionales?",
+          "answer": "Estará acompañado por un coordinador de pacientes dedicado; Se brinda apoyo en la planificación del tratamiento, organización de viajes y procesos de comunicación multilingüe."
         }
       ]
     },
@@ -1193,7 +1193,7 @@
           "answer": "Dado que el procedimiento se realiza bajo anestesia local, se intenta mantener la sensación de dolor al mínimo durante la operación."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
+          "question": "¿Cómo procede el proceso de curación después de Sapphire FUE?",
           "answer": "El proceso de curación inicial suele tardar entre 7 y 14 días. Se espera que el ciclo de crecimiento del cabello se complete antes de que se puedan evaluar los resultados finales."
         },
         {
@@ -1380,7 +1380,7 @@
           "answer": "La idoneidad se determina tras consulta, análisis capilar y evaluación médica por parte de un médico especialista."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
+          "question": "¿Cómo se desarrolla el proceso de recuperación después del trasplante de cabello DHI?",
           "answer": "El proceso de curación inicial suele completarse en un plazo de 7 a 14 días. Se requieren aproximadamente 12 meses para evaluar los resultados finales."
         },
         {
@@ -1592,8 +1592,8 @@
           "answer": "No. Esta aplicación no es una alternativa al trasplante de cabello, sino un enfoque auxiliar que se utiliza para apoyar el proceso de trasplante de cabello cuando se considera apropiado."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "El proceso de curación inicial suele tardar entre 7 y 14 días. Los resultados finales se evalúan a lo largo del tiempo dependiendo del ciclo de crecimiento del cabello."
+          "question": "¿Cómo se desarrolla el proceso de curación después del trasplante de cabello asistido con células madre?",
+          "answer": "La recuperación inicial suele tardar entre 7 y 14 días. Los resultados finales se evalúan en unos meses dependiendo del ciclo de crecimiento del cabello."
         },
         {
           "question": "¿Cuándo se empiezan a ver los resultados?",
@@ -1739,8 +1739,8 @@
           "answer": "La elegibilidad se determina después de una consulta de expertos, una revisión del historial médico y una evaluación objetiva del tratamiento."
         },
         {
-          "question": "¿Cuánto tiempo suele tardar el proceso de recuperación?",
-          "answer": "El tiempo de recuperación depende de la extensión del tratamiento elegido. Su médico le proporcionará un cronograma realista y un plan de atención posterior al tratamiento durante su consulta."
+          "question": "¿Cómo es el período de recuperación después del trasplante de cabello sin afeitar?",
+          "answer": "El período de recuperación inicial suele tardar entre 7 y 14 días. Su médico comparte instrucciones de cuidado y lavado."
         },
         {
           "question": "¿Cuándo se finalizará el plan de tratamiento final?",
@@ -1972,8 +1972,8 @@
           "answer": "Su objetivo es obtener resultados de apariencia natural gracias a los injertos colocados con una correcta planificación y angulación adecuada."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "La mejora inicial suele producirse en un plazo de 7 a 14 días. Pueden ser necesarios varios meses para evaluar los resultados finales."
+          "question": "¿Cómo avanza el proceso de curación después del trasplante de cejas?",
+          "answer": "La mejora inicial suele producirse entre 7 y 14 días. Se espera el ciclo de crecimiento para evaluar los resultados finales."
         },
         {
           "question": "¿Las cejas trasplantadas son permanentes?",
@@ -2296,8 +2296,8 @@
           "answer": "La idoneidad se determina tras consulta, análisis capilar y evaluación médica por parte de un médico especialista."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "La mayoría de los pacientes pueden volver a su vida diaria en poco tiempo. El periodo post-tratamiento puede variar dependiendo de factores personales."
+          "question": "¿Cuánto tiempo se tarda en volver a la rutina normal después del tratamiento capilar ACell PRP?",
+          "answer": "La mayoría de los pacientes pueden regresar a su vida diaria en 1 a 3 días. La sensibilidad leve puede durar unos días."
         },
         {
           "question": "¿Cuándo se empiezan a ver los resultados?",
@@ -2792,8 +2792,8 @@
           "answer": "Elegibilidad; Se determina después de una evaluación de expertos, un análisis del historial médico y una planificación del tratamiento."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "La duración varía según el alcance del tratamiento. Su médico le proporciona un plan de recuperación claro durante la consulta."
+          "question": "¿Cuáles son las etapas de recuperación en el tratamiento con implantes dentales?",
+          "answer": "La fusión ósea después de la colocación del implante puede tardar varios meses. Su médico le comparte el plan de recuperación gradual y prótesis durante la consulta."
         },
         {
           "question": "¿Cuándo se finalizará el plan de tratamiento final?",
@@ -2934,8 +2934,8 @@
           "answer": "Elegibilidad; Se determina después de una evaluación de expertos, un análisis del historial médico y una planificación del tratamiento."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "La duración depende del método aplicado. Su médico le proporciona un plan claro durante la consulta."
+          "question": "¿Cómo es el proceso de sensibilidad y cuidado después del blanqueamiento dental?",
+          "answer": "La sensibilidad leve puede durar unos días. Su médico comparte recomendaciones de cuidados durante la consulta."
         },
         {
           "question": "¿Cuándo se finalizará el plan de tratamiento final?",
@@ -3072,8 +3072,8 @@
           "answer": "Elegibilidad; Se determina después de una evaluación de expertos, un análisis del historial médico y una planificación del tratamiento."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "La duración depende del tratamiento administrado. Su médico le proporciona un plan claro durante la consulta."
+          "question": "¿Cuáles son las etapas de recuperación en el tratamiento de la sonrisa de Hollywood?",
+          "answer": "Varía según el protocolo aplicado. La mayoría de los pacientes regresan a su rutina diaria a los pocos días."
         },
         {
           "question": "¿Cuándo se finalizará el plan de tratamiento final?",
@@ -3084,7 +3084,7 @@
     {
       "category": "dental",
       "slug": "orthodontics",
-      "navLabel": "Ortodoncia",
+      "navLabel": "ortodoncia",
       "title": "ortodoncia",
       "categoryLabel": "Estética Dental",
       "heroTag": "Diseño de sonrisa",
@@ -3211,8 +3211,8 @@
           "answer": "Elegibilidad; Se determina después de una evaluación de expertos, un análisis del historial médico y una planificación del tratamiento."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "La duración depende del tratamiento administrado. Su médico proporciona un plan de tiempo claro durante la consulta."
+          "question": "¿Cómo se desarrolla el proceso de seguimiento y adaptación en el tratamiento de ortodoncia?",
+          "answer": "La duración del tratamiento depende del plan individual. El progreso se controla mediante controles periódicos."
         },
         {
           "question": "¿Cuándo se finalizará el plan de tratamiento final?",
@@ -3337,8 +3337,8 @@
           "answer": "Elegibilidad; Se determina después de una evaluación de expertos, un análisis del historial médico y una planificación del tratamiento."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "La duración varía dependiendo del procedimiento aplicado. Su médico le proporciona un plan claro durante la consulta."
+          "question": "¿Cómo gestionar la recuperación tras la aplicación estética rosa?",
+          "answer": "La sensibilidad leve puede durar unos días. Su médico le comparte el plan de control y cuidado bucal."
         },
         {
           "question": "¿Cuándo se finalizará el plan de tratamiento final?",
@@ -3463,8 +3463,8 @@
           "answer": "Elegibilidad; Queda claro después de la evaluación de expertos, el análisis del historial médico y el examen clínico."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "Depende del alcance del tratamiento. Su médico comparte su proceso de recuperación específico y su plan de atención durante la consulta."
+          "question": "¿Cuánto tiempo dura el proceso de adaptación después del recubrimiento de circonio?",
+          "answer": "Varía según el alcance del tratamiento. Se dan instrucciones de cuidado separadas para las fases temporal y permanente."
         },
         {
           "question": "¿Cuándo se finalizará el plan de tratamiento final?",
@@ -3619,8 +3619,8 @@
           "answer": "Elegibilidad; Se determina después de una evaluación de expertos, un análisis de la historia clínica y un examen clínico."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "La duración depende del alcance de la operación realizada. Su médico comparte su plan de recuperación personalizado."
+          "question": "¿Cómo transcurre el proceso de recuperación después del aumento de senos?",
+          "answer": "En las primeras semanas puede producirse dolor leve y edema. La mayoría de los pacientes regresan a su rutina diaria dentro de 7 a 14 días; Su médico comparte su plan de atención personalizado."
         },
         {
           "question": "¿Cuándo se aprueba el plan de tratamiento final?",
@@ -3772,8 +3772,8 @@
           "answer": "Elegibilidad; Se determina después de una evaluación de expertos, un análisis de la historia clínica y un examen clínico."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "La duración depende del alcance de la operación realizada. Su médico comparte su plan de recuperación personalizado."
+          "question": "¿Cómo transcurre el proceso de recuperación después de la reducción mamaria?",
+          "answer": "Se recomienda reposo y tratamiento asistido en las primeras semanas. La mayoría de los pacientes regresan a actividades ligeras dentro de 7 a 21 días."
         },
         {
           "question": "¿Cuándo se aprueba el plan de tratamiento final?",
@@ -3890,8 +3890,8 @@
           "answer": "Elegibilidad; Se determina después de una evaluación de expertos, un análisis de la historia clínica y un examen clínico."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "La duración depende del alcance de la operación realizada. Su médico comparte su plan de recuperación personalizado."
+          "question": "¿Cuáles son las etapas de recuperación después de la cirugía de ginecomastia?",
+          "answer": "En los primeros días se puede observar un ligero edema y sensibilidad. Su médico le comparte el uso del corsé y el plan de seguimiento."
         },
         {
           "question": "¿Cuándo se aprueba el plan de tratamiento final?",
@@ -3902,7 +3902,7 @@
     {
       "category": "plastic",
       "slug": "rhinoplasty",
-      "navLabel": "Rinoplastia",
+      "navLabel": "rinoplastia",
       "title": "rinoplastia",
       "categoryLabel": "Cirugía Plástica",
       "heroTag": "Estética Quirúrgica",
@@ -4032,8 +4032,8 @@
           "answer": "Elegibilidad; Se determina después de la evaluación de expertos, el historial médico y el examen clínico."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "La duración varía según el alcance de la transacción. Su médico comparte su plan personalizado."
+          "question": "¿Cómo transcurre el proceso de recuperación después de la rinoplastia?",
+          "answer": "En las primeras semanas pueden aparecer edemas y ligeros hematomas. La mayoría de los pacientes regresan a su rutina diaria dentro de 7 a 14 días; La forma final queda clara en unos pocos meses."
         },
         {
           "question": "¿Cuándo se finalizará el plan final?",
@@ -4181,8 +4181,8 @@
           "answer": "Elegibilidad; Se determina luego de evaluación pericial, historial médico y análisis clínico."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "La duración varía según el alcance de la transacción. Su médico comparte su plan personalizado."
+          "question": "¿Cómo transcurre el proceso de recuperación después de una cirugía de lifting facial?",
+          "answer": "Se puede observar edema en las primeras semanas. La mayoría de los pacientes regresan gradualmente a su rutina diaria en un plazo de 7 a 21 días."
         },
         {
           "question": "¿Cuándo estará disponible el resultado final?",
@@ -4193,7 +4193,7 @@
     {
       "category": "plastic",
       "slug": "blepharoplasty",
-      "navLabel": "Blefaroplastia",
+      "navLabel": "blefaroplastia",
       "title": "blefaroplastia",
       "categoryLabel": "Cirugía Plástica",
       "heroTag": "Estética Quirúrgica",
@@ -4304,8 +4304,8 @@
           "answer": "Elegibilidad; Se determina después de consulta de expertos, revisión del historial médico y evaluación objetiva."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "La duración depende del alcance de la operación realizada. Su médico comparte su plan de recuperación personalizado durante la consulta."
+          "question": "¿Cómo es el periodo de recuperación tras la blefaroplastia?",
+          "answer": "Una leve hinchazón y hematomas alrededor de los ojos pueden durar unos días. Su médico comparte instrucciones de cuidado."
         },
         {
           "question": "¿Cuándo se aprueba el plan de tratamiento final?",
@@ -4430,8 +4430,8 @@
           "answer": "Elegibilidad; Se determina después de una evaluación de expertos, un análisis de la historia clínica y un examen clínico."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "La duración depende del alcance de la operación realizada. Su médico comparte su plan de recuperación personalizado."
+          "question": "¿Cuáles son las etapas de recuperación después de la cirugía estética de abdomen?",
+          "answer": "En los primeros días se recomienda reposo y el uso de corsé con soporte. La mayoría de los pacientes regresan a actividades ligeras al cabo de 2 a 3 semanas; Su médico comparte un plan de recuperación gradual."
         },
         {
           "question": "¿Cuándo se aprueba el plan de tratamiento final?",
@@ -4442,7 +4442,7 @@
     {
       "category": "plastic",
       "slug": "liposuction",
-      "navLabel": "Liposucción",
+      "navLabel": "liposucción",
       "title": "liposucción",
       "categoryLabel": "Cirugía Plástica",
       "heroTag": "Estética Quirúrgica",
@@ -4568,8 +4568,8 @@
           "answer": "Elegibilidad; Se determina después de una evaluación de expertos, un análisis de la historia clínica y un examen clínico."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "La duración depende del alcance de la operación realizada. Su médico comparte su plan de recuperación personalizado."
+          "question": "¿Cómo transcurre el proceso de recuperación después de la liposucción?",
+          "answer": "En los primeros días se pueden observar ligeros hematomas e hinchazón. La mayoría de los pacientes regresan a su vida diaria a los pocos días; Su médico le comparte el uso del corsé y el plan de seguimiento."
         },
         {
           "question": "¿Cuándo se aprueba el plan de tratamiento final?",
@@ -4687,8 +4687,8 @@
           "answer": "Elegibilidad; Se determina después de una evaluación de expertos, un análisis de la historia clínica y un examen clínico."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "La duración depende del alcance de la operación realizada. Su médico comparte su plan de recuperación personalizado."
+          "question": "¿Cómo avanza el proceso de recuperación después de un levantamiento de cadera?",
+          "answer": "Puede haber restricciones en la posición de los asientos durante los primeros días. Su médico le comparte el plan de recuperación gradual."
         },
         {
           "question": "¿Cuándo se aprueba el plan de tratamiento final?",
@@ -4699,7 +4699,7 @@
     {
       "category": "medical",
       "slug": "lip-filler",
-      "navLabel": "Relleno de labios",
+      "navLabel": "relleno de labios",
       "title": "relleno de labios",
       "categoryLabel": "Estética Médica",
       "heroTag": "Tratamientos mínimamente invasivos",
@@ -4820,8 +4820,8 @@
           "answer": "La elegibilidad se determina después de una evaluación de expertos y un análisis del historial médico."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "Varía según el alcance del tratamiento. Su médico comparte un plan claro sobre el proceso."
+          "question": "¿Cuánto tiempo se tarda en volver a la apariencia normal después del relleno de labios?",
+          "answer": "Puede observarse una ligera hinchazón en los primeros días; La mayoría de los pacientes regresan a su vida diaria a los pocos días. Su médico comparte recomendaciones de atención."
         },
         {
           "question": "¿Cuándo se aprobará el plan final?",
@@ -4832,7 +4832,7 @@
     {
       "category": "medical",
       "slug": "botox",
-      "navLabel": "Bótox",
+      "navLabel": "bótox",
       "title": "bótox",
       "categoryLabel": "Estética Médica",
       "heroTag": "Tratamientos mínimamente invasivos",
@@ -4958,8 +4958,8 @@
           "answer": "La elegibilidad se determina después de una evaluación de expertos y una revisión del historial médico."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "Varía dependiendo del área de aplicación seleccionada. Su médico comparte un cronograma detallado."
+          "question": "¿Cuándo puedo volver a la vida diaria después del Botox?",
+          "answer": "Después del procedimiento, la mayoría de los pacientes pueden continuar con sus actividades normales el mismo día. El efecto suele aparecer a los pocos días."
         },
         {
           "question": "¿Cuándo quedará claro el plan final?",
@@ -5085,8 +5085,8 @@
           "answer": "Idoneidad para el relleno de la línea de la mandíbula; Se determina luego de una evaluación de expertos, revisión del historial médico y análisis detallado de la estructura facial."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "Después del procedimiento, la mayoría de las personas pueden volver a su vida diaria el mismo día. Los efectos como edema leve, sensibilidad o hematomas varían de persona a persona, pero suelen desaparecer en poco tiempo."
+          "question": "¿Cuánto tiempo lleva volver a la apariencia normal después del relleno de la línea del mentón?",
+          "answer": "La mayoría de los pacientes pueden volver a su vida diaria el mismo día. El edema leve puede durar unos días."
         },
         {
           "question": "¿Cuándo se ven los resultados?",
@@ -5242,8 +5242,8 @@
           "answer": "Se determina después de una evaluación pericial y un examen médico."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "Varía de persona a persona, el médico da información sobre el proceso."
+          "question": "¿Cómo progresa la recuperación después del relleno ligero debajo de los ojos?",
+          "answer": "Una leve hinchazón y hematomas pueden durar unos días. Su médico comparte recomendaciones de atención."
         },
         {
           "question": "¿Cuándo se determinará el plan final?",
@@ -5386,7 +5386,7 @@
           "answer": "Elegibilidad; Se aclara después de la consulta de un experto, la evaluación de la estructura de la piel y el cabello, la revisión del historial médico y la determinación de los objetivos del tratamiento."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
+          "question": "¿Qué tipo de reacciones pueden ocurrir en la piel después de la depilación láser?",
           "answer": "Después de la depilación láser, la mayoría de las personas pueden volver a su vida cotidiana el mismo día. Dependiendo del área de aplicación, puede ocurrir enrojecimiento o sensibilidad a corto plazo."
         },
         {
@@ -5502,8 +5502,8 @@
           "answer": "Elegibilidad; Se aclara después de la consulta de expertos, la evaluación del historial médico, el análisis de la piel y la determinación de los objetivos del tratamiento."
         },
         {
-          "question": "¿Cuánto tiempo suele tardar el proceso de recuperación?",
-          "answer": "Después del tratamiento cutáneo con PRP, la mayoría de las personas pueden volver a su vida diaria el mismo día. Puede producirse un ligero enrojecimiento o sensibilidad en la piel a corto plazo."
+          "question": "¿Cómo progresa la curación de la piel después del tratamiento cutáneo con PRP?",
+          "answer": "La mayoría de los pacientes pueden volver a su vida diaria el mismo día. El enrojecimiento leve puede durar unos días."
         },
         {
           "question": "¿Cuántas sesiones se requieren?",
@@ -5655,8 +5655,8 @@
           "answer": "Elegibilidad; Se aclara después de una consulta de expertos, análisis de la piel, evaluación del historial médico y determinación de los objetivos del tratamiento."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "El tiempo de curación puede variar según el alcance del protocolo de atención aplicado y la estructura de la piel. Su especialista le brindará un plan de tiempo realista y recomendaciones de cuidados sobre el proceso durante la consulta."
+          "question": "¿Qué esperar de la piel después del cuidado médico de la piel?",
+          "answer": "Dependiendo del protocolo aplicado puede producirse un ligero enrojecimiento. La mayoría de los pacientes regresan a su rutina el mismo día."
         },
         {
           "question": "¿Cuándo se determina el plan de tratamiento final?",
@@ -5804,8 +5804,8 @@
           "answer": "Elegibilidad; Se determina tras consulta con un médico especialista, evaluación del historial médico y análisis objetivo de las necesidades de la piel."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "El proceso de curación puede variar según el área de aplicación, la estructura de la piel y el alcance del tratamiento planificado. Durante la consulta se le explica detalladamente el proceso de recuperación promedio y el plan de cuidados post-procedimiento."
+          "question": "¿Cómo es el proceso de recuperación después del tratamiento con ADN de salmón?",
+          "answer": "El enrojecimiento leve puede durar unos días. Su médico comparte el plan de atención y seguimiento."
         },
         {
           "question": "¿Cuándo estará claro el plan de tratamiento final?",
@@ -5818,8 +5818,8 @@
       "slug": "healthy-nutrition",
       "navLabel": "Nutrición Saludable",
       "title": "Nutrición Saludable",
-      "categoryLabel": "Longevity",
-      "heroTag": "Longevity",
+      "categoryLabel": "longevidad",
+      "heroTag": "longevidad",
       "heroSubtitle": "",
       "summary": "Con el fin de apoyar una nutrición saludable, el equilibrio metabólico y aumentar la calidad de vida sostenible; Se planifica con un enfoque personalizado basado en resultados predecibles y seguridad del paciente.",
       "images": {
@@ -5933,8 +5933,8 @@
       "slug": "lpg-treatment",
       "navLabel": "Proceso de GLP",
       "title": "Proceso de GLP",
-      "categoryLabel": "Longevity",
-      "heroTag": "Longevity",
+      "categoryLabel": "longevidad",
+      "heroTag": "longevidad",
       "heroSubtitle": "",
       "summary": "El tratamiento con GLP tiene como objetivo apoyar el equilibrio metabólico, mejorar la forma del cuerpo y lograr un bienestar sostenible; Se aplica con una planificación personalizada basada en resultados predecibles y seguridad del paciente.",
       "images": {
@@ -6066,8 +6066,8 @@
       "slug": "ozone-therapy",
       "navLabel": "Ozonoterapia",
       "title": "Ozonoterapia",
-      "categoryLabel": "Longevity",
-      "heroTag": "Longevity",
+      "categoryLabel": "longevidad",
+      "heroTag": "longevidad",
       "heroSubtitle": "",
       "summary": "La ozonoterapia tiene como objetivo apoyar el equilibrio metabólico y optimizar las funciones del sistema inmunológico; Se planifica con un enfoque de tratamiento personalizado que se centra en resultados predecibles y la seguridad del paciente.",
       "images": {
@@ -6204,8 +6204,8 @@
       "slug": "iv-therapies",
       "navLabel": "Tratamientos intravenosos (IV)",
       "title": "Tratamientos intravenosos (IV)",
-      "categoryLabel": "Longevity",
-      "heroTag": "Longevity",
+      "categoryLabel": "longevidad",
+      "heroTag": "longevidad",
       "heroSubtitle": "",
       "summary": "Los tratamientos intravenosos tienen como objetivo apoyar el equilibrio metabólico y lograr un bienestar sostenible; Se planifica con un enfoque personalizado que se centra en resultados predecibles y seguridad del paciente.",
       "images": {
@@ -6315,8 +6315,8 @@
           "answer": "La elegibilidad se determina después de una evaluación de expertos y una revisión del historial médico."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "Generalmente es posible volver a la vida diaria el mismo día."
+          "question": "¿Cuánto tiempo se tarda en volver a la vida diaria después del tratamiento intravenoso?",
+          "answer": "Generalmente es posible volver a la vida diaria el mismo día. Puede producirse una fatiga leve."
         },
         {
           "question": "¿Cuándo quedará claro el plan de tratamiento?",
@@ -6329,8 +6329,8 @@
       "slug": "glutathione",
       "navLabel": "Terapia con glutatión",
       "title": "Terapia con glutatión",
-      "categoryLabel": "Longevity",
-      "heroTag": "Longevity",
+      "categoryLabel": "longevidad",
+      "heroTag": "longevidad",
       "heroSubtitle": "",
       "summary": "Tratamiento con glutatión; Se planifica con una estrategia personalizada que se centra en el equilibrio metabólico y el bienestar sostenible, resultados predecibles y seguridad del paciente.",
       "images": {
@@ -6441,8 +6441,8 @@
           "answer": "Elegibilidad; Se determina después de una evaluación de expertos y un análisis del historial médico."
         },
         {
-          "question": "¿Cuánto tiempo dura el proceso de recuperación?",
-          "answer": "Generalmente es posible volver a la vida normal el mismo día."
+          "question": "¿Cuándo puedo volver a mi rutina diaria después del tratamiento con glutatión?",
+          "answer": "Generalmente es posible volver a la vida normal el mismo día. Su especialista comparte sugerencias de cuidado personal después de la sesión."
         },
         {
           "question": "¿Cuándo se finalizará el plan de tratamiento?",
@@ -6453,12 +6453,12 @@
     {
       "category": "longevity",
       "slug": "maxx-royal-wellness-bodrum",
-      "navLabel": "Experiencia wellness personalizada en Bodrum",
-      "title": "Experiencia wellness personalizada en Bodrum",
-      "categoryLabel": "Longevity",
-      "heroTag": "Dr. Otgen Clinic en Maxx Royal Bodrum",
-      "heroSubtitle": "Longevity, redefined.",
-      "summary": "El futuro de su salud comienza hoy. Integramos medicina moderna, un enfoque preventivo personalizado y la reconocida experiencia Maxx Royal.",
+      "navLabel": "Experiencia de bienestar personalizada en Bodrum",
+      "title": "Experiencia de bienestar personalizada en Bodrum",
+      "categoryLabel": "longevidad",
+      "heroTag": "Clínica Dr. Otgen en Maxx Royal Bodrum",
+      "heroSubtitle": "Longevidad, redefinida.",
+      "summary": "El futuro de tu salud comienza hoy. Reunimos la medicina moderna, un enfoque de salud preventiva personalizado y la mundialmente famosa experiencia Maxx Royal.",
       "images": {
         "hero": "/images/site/pages/maxx-royal-wellness-hero.webp",
         "content": "/images/site/pages/maxx-royal-wellness-1.webp",
@@ -6477,40 +6477,40 @@
           "/images/site/pages/maxx-royal-wellness-12.webp"
         ]
       },
-      "galleryTitle": "Momentos de Maxx Royal Bodrum",
+      "galleryTitle": "Escenas de Maxx Royal Bodrum",
       "overview": [
-        "Dr. Otgen Clinic en Maxx Royal Bodrum combina medicina moderna, salud preventiva personalizada y la reconocida experiencia Maxx Royal.",
-        "El objetivo no es solo sentirse bien. Es comprender su cuerpo, detectar riesgos de forma temprana y crear un plan de salud personalizado para una vida más larga, fuerte, equilibrada y de mayor calidad.",
-        "Cada huésped se evalúa de forma integral, considerando estilo de vida, antecedentes familiares, salud metabólica, riesgos cardiovasculares, calidad del sueño, nivel de estrés, rendimiento físico y objetivos personales. Porque el verdadero lujo es no dejar la salud al azar."
+        "Clínica Dr. Otgen en Maxx Royal Bodrum; Combina la medicina moderna, un enfoque personalizado de salud preventiva y la mundialmente famosa experiencia Maxx Royal.",
+        "El objetivo aquí no es sólo sentirse bien. Apuntar; Entender tu cuerpo, reconocer los riesgos tempranamente y crear un plan de salud especial para ti para una vida más larga, más fuerte, más equilibrada y de mejor calidad.",
+        "El estilo de vida, los antecedentes familiares, la salud metabólica, los riesgos cardiovasculares, la calidad del sueño, el nivel de estrés, el rendimiento físico y las metas personales se evalúan de manera integral para cada uno de nuestros huéspedes. Porque el verdadero lujo es no dejar la salud al azar."
       ],
       "sections": [
         {
-          "title": "Su hoja de ruta personal de salud",
+          "title": "Su hoja de ruta de salud personal",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Cada programa en Dr. Otgen Clinic comienza con una evaluación realizada por un médico especialista."
+              "text": "Dr. En Clínica Otgen, cada programa comienza con una evaluación de un médico especialista."
             },
             {
               "type": "paragraph",
-              "text": "Los análisis integrales de salud, las pruebas avanzadas de laboratorio, las mediciones de composición corporal, el análisis de riesgo metabólico, la evaluación cardiovascular y los cribados de sueño y estrés forman la base de su hoja de ruta personal de salud."
+              "text": "Análisis integrales de salud, evaluaciones avanzadas de laboratorio, mediciones de composición corporal, análisis de riesgo metabólico, evaluación cardiovascular, exámenes de sueño y estrés; Constituye la base de una hoja de ruta de salud personal planificada según sus necesidades."
             },
             {
               "type": "paragraph",
-              "text": "Sus resultados no se entregan solo como un informe. Nuestros médicos los interpretan, se identifican sus prioridades y se prepara un plan aplicable a su vida. Todos los datos clave sobre su salud se gestionan en un único centro y dentro de un sistema diseñado para usted."
+              "text": "Sus resultados no sólo se informan. Es interpretado por nuestros médicos, se determinan sus prioridades y se prepara un plan aplicable a su vida. Todos los datos importantes sobre tu salud se manejan en un único centro y en un sistema específico para ti."
             }
           ]
         },
         {
-          "title": "Programas para una vida larga y saludable",
+          "title": "Programas de Vida Larga y Saludable",
           "blocks": [
             {
               "type": "subheading",
-              "text": "Evaluación ejecutiva de salud"
+              "text": "Evaluación de salud ejecutiva"
             },
             {
               "type": "paragraph",
-              "text": "Un programa integral de evaluación de salud diseñado para personas que valoran su tiempo. En un periodo breve, un equipo especialista evalúa su salud general, equilibrio metabólico, riesgos cardiovasculares, composición corporal, calidad del sueño y factores de estilo de vida. Al final del programa, recibe un informe de salud personalizado y un plan de vida aplicable para la siguiente etapa."
+              "text": "Programa integral de evaluación de la salud diseñado para aquellos cuyo tiempo es valioso. En poco tiempo, el equipo de expertos evalúa su estado de salud general, equilibrio metabólico, riesgos cardiovasculares, composición corporal, calidad del sueño y factores de estilo de vida. Al final del programa, se le proporcionará un informe de salud especial y un plan de vida viable para los próximos 12 meses."
             },
             {
               "type": "subheading",
@@ -6518,7 +6518,7 @@
             },
             {
               "type": "paragraph",
-              "text": "No se trata solo de perder peso, sino de construir un equilibrio metabólico saludable. El control del peso se evalúa junto con la glucemia, la resistencia a la insulina, la masa muscular, el porcentaje de grasa, los hábitos nutricionales, el sueño y el estrés. Un equipo de médicos, dietistas y especialistas en rendimiento diseña un programa sostenible y personalizado alineado con sus objetivos."
+              "text": "No sólo para perder peso, sino para establecer un equilibrio metabólico saludable. Control de peso; Se evalúa junto con el equilibrio de azúcar en sangre, la resistencia a la insulina, la masa muscular, la tasa de grasa, los hábitos alimentarios, el sueño y el estrés. El equipo formado por médicos, dietistas y expertos en rendimiento; Crea un programa sostenible y personalizado que se adapta a tus objetivos."
             },
             {
               "type": "subheading",
@@ -6526,52 +6526,52 @@
             },
             {
               "type": "paragraph",
-              "text": "Un futuro más fuerte para su corazón. La salud cardiovascular es clave para una vida larga y activa. Mediante evaluaciones planificadas según sus factores de riesgo personales, se revisan la salud cardíaca y vascular, el equilibrio de la presión arterial, el perfil de colesterol, la capacidad de ejercicio y los hábitos de vida."
+              "text": "Un futuro más fuerte para tu corazón. La salud cardiovascular es fundamental para una vida larga y activa. Con evaluaciones planificadas de acuerdo a tus factores de riesgo personales; Se analiza su salud cardiovascular, equilibrio de la presión arterial, perfil de colesterol, capacidad de ejercicio y hábitos de estilo de vida."
             },
             {
               "type": "subheading",
-              "text": "Sueño, estrés y renovación"
+              "text": "Sueño, estrés y regeneración"
             },
             {
               "type": "paragraph",
-              "text": "Mejor sueño, una mente más clara y una mayor calidad de vida. Especialistas evalúan la calidad del sueño, la carga de estrés, el riesgo de agotamiento y el nivel diario de energía. Se desarrollan estrategias prácticas de recuperación y renovación según su ritmo de vida."
+              "text": "Mejor sueño, una mente más clara y una mayor calidad de vida. Calidad del sueño, carga de estrés, riesgo de agotamiento y nivel de energía diario; Se maneja con evaluación de expertos. Se desarrollan estrategias de recuperación y renovación aplicables que se adaptan a su ritmo de vida personal."
             },
             {
               "type": "subheading",
-              "text": "Fuerza, movilidad y envejecimiento activo"
+              "text": "Fuerza, Movilidad y Envejecimiento Activo"
             },
             {
               "type": "paragraph",
-              "text": "No se trata solo de envejecer, sino de mantenerse fuerte. La masa muscular, el equilibrio, la movilidad, la salud articular y la resistencia física son determinantes esenciales de la calidad de vida. Los programas personalizados de movimiento, fuerza, movilidad y rehabilitación buscan que se sienta con más energía, fortaleza y libertad en la vida diaria."
+              "text": "No envejecer, sino mantenerse fuerte. Masa muscular, equilibrio, movilidad, salud articular y resistencia física; Es uno de los determinantes más importantes de la calidad de vida. Con programas personalizados de movimiento, fuerza, movilidad y rehabilitación; Su objetivo es hacerte sentir con más energía, más fuerte y más libre en la vida diaria."
             },
             {
               "type": "subheading",
-              "text": "Salud femenina y menopausia"
+              "text": "Salud de la mujer y menopausia"
             },
             {
               "type": "paragraph",
-              "text": "Salud femenina integral en cada etapa de la vida. Los cambios hormonales, el sueño, el nivel de energía, la salud ósea, el metabolismo, la masa muscular y el estado de ánimo son partes interconectadas de la salud de la mujer. En Dr. Otgen Clinic, las necesidades femeninas se abordan mediante evaluación médica especializada, seguimiento personalizado y orientación de estilo de vida."
+              "text": "Salud integral de la mujer en cada etapa de la vida. Cambios hormonales, sueño, nivel de energía, salud ósea, metabolismo, masa muscular y estado de ánimo; Son partes interconectadas de la salud de la mujer. Dr. Las necesidades de la mujer en Clínica Otgen; Se maneja con evaluación de médicos especialistas, seguimiento personalizado y enfoque de estilo de vida."
             },
             {
               "type": "subheading",
-              "text": "Salud masculina y rendimiento"
+              "text": "Salud y rendimiento masculino"
             },
             {
               "type": "paragraph",
-              "text": "Para el rendimiento, el equilibrio y la salud a largo plazo. La salud masculina incluye niveles de energía, equilibrio metabólico, sueño, estrés, salud muscular, riesgos cardiovasculares y evaluación hormonal. Los programas planificados según sus objetivos personales y necesidades médicas apoyan un rendimiento vital más fuerte, equilibrado y sostenible."
+              "text": "Para rendimiento, equilibrio y salud a largo plazo. Salud de los hombres; Incluye muchos factores como los niveles de energía, el equilibrio metabólico, el sueño, el estrés, la salud muscular, los riesgos cardiovasculares y la evaluación hormonal. Con programas planificados de acuerdo a tus objetivos personales y necesidades médicas; Se apoya un desempeño de vida más fuerte, más equilibrado y más sostenible."
             }
           ]
         },
         {
-          "title": "Consultoría personal de salud",
+          "title": "Consultoría de salud personal",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Un equipo dedicado le acompaña en cada etapa de su recorrido de salud. La Consultoría Personal de Salud simplifica todo el proceso, desde la planificación de citas y el seguimiento de resultados hasta las consultas con especialistas y la coordinación del programa personal."
+              "text": "Un equipo dedicado está con usted en cada etapa de su viaje hacia la salud. Servicio de consultoría de salud personal; Le facilita todo el proceso, desde la programación de citas hasta el seguimiento de resultados, desde las reuniones de expertos hasta la coordinación personal del programa."
             },
             {
               "type": "paragraph",
-              "text": "La privacidad, el confort y la gestión del tiempo están en el centro de nuestra filosofía de servicio. Porque la atención sanitaria merece no solo el enfoque médico correcto, sino también una experiencia impecable."
+              "text": "Privacidad, comodidad y gestión del tiempo; está en el centro de nuestro enfoque de servicio. Porque la asistencia sanitaria merece no sólo el enfoque médico adecuado, sino también una experiencia perfecta."
             }
           ]
         },
@@ -6580,48 +6580,48 @@
           "blocks": [
             {
               "type": "paragraph",
-              "text": "La calma del Egeo, la atmósfera exclusiva de Maxx Royal Bodrum y el enfoque médico de Dr. Otgen Clinic están diseñados para ayudarle a reconectar con su cuerpo y su mente."
+              "text": "La serenidad del Egeo, la atmósfera privilegiada del Maxx Royal Bodrum y el enfoque médico de la Clínica Dr. Otgen; Diseñado para ayudarte a reconectarte con tu cuerpo y mente."
             },
             {
               "type": "paragraph",
-              "text": "Aquí, la salud no es una tarea separada de la vida diaria. Es la base para sentirse mejor, alcanzar un mayor rendimiento, envejecer mejor y vivir cada momento con más fortaleza."
+              "text": "Aquí la salud no es una tarea ajena a la vida diaria. Salud; Es la base para sentirnos mejor, tener un mayor rendimiento, tener una mejor calidad de edad y vivir cada momento de la vida con más fuerza."
             }
           ]
         },
         {
-          "title": "Su inversión más valiosa para el futuro: usted.",
+          "title": "Su inversión más valiosa en el futuro: usted.",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "En Dr. Otgen Clinic en Maxx Royal Bodrum, su salud no se limita a un único chequeo. Con datos de salud personalizados, evaluaciones de médicos especialistas, recomendaciones de estilo de vida y seguimiento regular, se convierte en un recorrido a largo plazo hacia una vida mejor y más longeva."
+              "text": "Dr. En la Clínica Otgen en Maxx Royal Bodrum, su salud no se limita a un solo chequeo. Se convierte en un viaje a largo plazo hacia la buena vida y la longevidad con sus datos de salud personales, evaluaciones de médicos expertos, recomendaciones de estilo de vida y seguimiento regular."
             },
             {
               "type": "subheading",
-              "text": "No vivir más, sino vivir mejor."
+              "text": "No para vivir más. Para vivir mejor."
             },
             {
               "type": "paragraph",
-              "text": "Contáctenos para descubrir su programa personal de vida larga y saludable."
+              "text": "Contáctanos para descubrir tu programa personal de vida larga y saludable."
             }
           ]
         }
       ],
       "highlights": [
-        "Experiencia wellness premium en Maxx Royal Bodrum",
-        "Programas personalizados de salud preventiva y longevidad",
-        "Hoja de ruta integral de salud con evaluación médica especializada",
-        "Privacidad, confort y consultoría personal de salud"
+        "Experiencia de bienestar premium en Maxx Royal Bodrum",
+        "Programas personalizados de salud preventiva y longevidad.",
+        "Hoja de ruta de salud integral con evaluación de médicos expertos",
+        "Asesoramiento sobre privacidad, comodidad y salud personal."
       ],
       "suitableIntro": "",
       "suitableFor": [
-        "Personas que priorizan la salud a largo plazo y la calidad de vida",
-        "Huéspedes que buscan medicina preventiva y una experiencia wellness personalizada",
-        "Personas que buscan equilibrio metabólico, rendimiento y renovación",
-        "Huéspedes que planifican servicios sanitarios premium en Maxx Royal Bodrum"
+        "Personas que priorizan la salud y la calidad de vida a largo plazo",
+        "Huéspedes que buscan medicina preventiva y experiencias de bienestar personalizadas.",
+        "Individuos que buscan equilibrio metabólico, rendimiento y renovación.",
+        "Aquellos que planean servicios de atención médica premium en Maxx Royal Bodrum"
       ],
       "quickFacts": [
         {
-          "label": "Ubicación",
+          "label": "ubicación",
           "value": "Maxx Royal Bodrum"
         },
         {
@@ -6629,53 +6629,53 @@
           "value": "Salud preventiva personalizada"
         },
         {
-          "label": "Programa",
-          "value": "Longevidad y wellness"
+          "label": "programa",
+          "value": "Longevidad y bienestar"
         },
         {
           "label": "Experiencia",
-          "value": "Atención médica premium y consultoría"
+          "value": "Atención y asesoramiento médico premium"
         }
       ],
-      "processTitle": "Su recorrido de salud",
+      "processTitle": "Su viaje de salud",
       "process": [
         {
-          "title": "Evaluación integral",
-          "description": "El estilo de vida, los antecedentes familiares, la salud metabólica, los riesgos cardiovasculares, el sueño, el estrés y los objetivos de rendimiento se analizan mediante una evaluación médica especializada."
+          "title": "Evaluación Integral",
+          "description": "Tu estilo de vida, antecedentes familiares, salud metabólica, riesgos cardiovasculares, sueño, estrés y objetivos de rendimiento son analizados por un médico especialista."
         },
         {
-          "title": "Hoja de ruta personal de salud",
-          "description": "A partir de los resultados de laboratorio, la composición corporal y los análisis de riesgo, se crea para usted un plan de salud personalizado y práctico."
+          "title": "Hoja de ruta de salud personal",
+          "description": "Como resultado de análisis de laboratorio, composición corporal y riesgos, se crea para usted un plan de salud personalizado y aplicable."
         },
         {
           "title": "Programa y seguimiento",
-          "description": "El programa de longevidad seleccionado se realiza en Maxx Royal Bodrum y se coordina de principio a fin con consultoría personal de salud."
+          "description": "El programa de longevidad seleccionado se aplica en Maxx Royal Bodrum; Se coordina durante todo el proceso con asesoramiento personal de salud."
         }
       ],
       "faqs": [
         {
-          "question": "¿Para quién es adecuado el programa de Maxx Royal Bodrum?",
-          "answer": "Está planificado para huéspedes que buscan salud preventiva, longevidad y una experiencia wellness personalizada, y que son considerados adecuados tras la evaluación clínica."
+          "question": "¿Para quién es adecuado el programa en Maxx Royal Bodrum?",
+          "answer": "Buscando una experiencia de salud preventiva, longevidad y bienestar personalizada; Está previsto para huéspedes que se consideren aptos tras una evaluación clínica."
         },
         {
           "question": "¿Cuánto dura el programa?",
-          "answer": "La duración varía según la evaluación y el programa wellness seleccionados. Durante la primera consulta se comparte un calendario personalizado."
+          "answer": "La duración varía dependiendo de la evaluación y alcance del programa de bienestar elegido. En la primera consulta, se le presentará un plan de tiempo específico."
         },
         {
-          "question": "¿Qué incluye la Consultoría Personal de Salud?",
-          "answer": "Es un servicio de apoyo integral que cubre la planificación de citas, el seguimiento de resultados, las consultas con especialistas y la coordinación del programa."
+          "question": "¿Qué incluye la Consultoría de Salud Personal?",
+          "answer": "Es un servicio de apoyo holístico que incluye planificación de citas, seguimiento de resultados, entrevistas con expertos y coordinación de programas."
         }
       ]
     },
     {
       "category": "longevity",
       "slug": "museum-hotel-wellness-kapadokya",
-      "navLabel": "Experiencia wellness personalizada en Capadocia",
-      "title": "Experiencia wellness personalizada en Capadocia",
-      "categoryLabel": "Longevity",
-      "heroTag": "Dr. Otgen Clinic x Museum Hotel Kapadokya",
-      "heroSubtitle": "Longevity, redefined.",
-      "summary": "El futuro de su salud comienza hoy. En colaboración con Dr. Otgen Clinic y Museum Hotel Kapadokya, integramos medicina moderna, salud preventiva personalizada y una experiencia de alojamiento exclusiva en la atmósfera natural única de Capadocia.",
+      "navLabel": "Experiencia de bienestar personalizada en Capadocia",
+      "title": "Experiencia de bienestar personalizada en Capadocia",
+      "categoryLabel": "longevidad",
+      "heroTag": "Clínica Dr. Otgen x Museo Hotel Capadocia",
+      "heroSubtitle": "Longevidad, redefinida.",
+      "summary": "El futuro de tu salud comienza hoy. Dr. En cooperación con la Clínica Otgen y el Museo Hotel Capadocia; Reunimos la medicina moderna, un enfoque personalizado de salud preventiva y una experiencia de alojamiento privilegiada ofrecida en la atmósfera natural única de Capadocia.",
       "images": {
         "hero": "/images/site/pages/museum-hotel-wellness-hero.webp",
         "content": "/images/site/pages/museum-hotel-wellness-1.webp",
@@ -6694,40 +6694,40 @@
           "/images/site/pages/museum-hotel-wellness-12.webp"
         ]
       },
-      "galleryTitle": "Momentos de Museum Hotel Kapadokya",
+      "galleryTitle": "Escenas del Museo Hotel Capadocia",
       "overview": [
-        "Dr. Otgen Clinic x Museum Hotel Kapadokya ofrece una experiencia wellness especial que combina un enfoque científico de la salud, programas personalizados de longevidad y la atmósfera atemporal de Capadocia.",
-        "El objetivo no es solo sentirse bien. Es comprender su cuerpo, detectar riesgos de forma temprana y crear un plan de salud personalizado para una vida más larga, fuerte, equilibrada y de mayor calidad.",
-        "Cada huésped se evalúa de forma integral, considerando estilo de vida, antecedentes familiares, salud metabólica, riesgos cardiovasculares, calidad del sueño, nivel de estrés, rendimiento físico y objetivos personales. Porque el verdadero lujo es gestionar su tiempo, su cuerpo y su salud de la forma más significativa."
+        "Clínica Dr. Otgen x Hotel Museo Capadocia; Ofrece una experiencia de bienestar especial que combina un enfoque científico de salud, programas de longevidad personalizados y la atmósfera atemporal de Capadocia.",
+        "El objetivo aquí no es sólo sentirse bien. Apuntar; Para mejorar su calidad de vida, proteger su salud, predecir sus riesgos futuros para la salud y crear un plan de vida sostenible hecho a su medida.",
+        "El estilo de vida, los antecedentes familiares, la salud metabólica, los riesgos cardiovasculares, la calidad del sueño, el nivel de estrés, el rendimiento físico y las metas personales se evalúan de manera integral para cada uno de nuestros huéspedes. Porque el verdadero lujo; es gestionar tu tiempo, cuerpo y salud de la forma más precisa."
       ],
       "sections": [
         {
-          "title": "Su hoja de ruta personal de salud",
+          "title": "Su hoja de ruta de salud personal",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "La experiencia Dr. Otgen Clinic x Museum Hotel Kapadokya comienza con una evaluación de un médico especialista."
+              "text": "La experiencia de la Clínica Dr. Otgen x Museum Hotel Cappadocia comienza con una evaluación de un médico experto."
             },
             {
               "type": "paragraph",
-              "text": "Los análisis integrales de salud, las pruebas avanzadas de laboratorio, las mediciones de composición corporal, el análisis de riesgo metabólico, la evaluación cardiovascular y los cribados de sueño y estrés forman la base de su hoja de ruta personal de salud."
+              "text": "Análisis integrales de salud, evaluaciones avanzadas de laboratorio, mediciones de composición corporal, análisis de riesgo metabólico, evaluaciones cardiovasculares, análisis de sueño y estrés; Constituye la base de su hoja de ruta de salud personal."
             },
             {
               "type": "paragraph",
-              "text": "Sus resultados no se entregan solo como un informe. Nuestros médicos los interpretan, se identifican sus prioridades y se prepara un plan aplicable a su vida. Todos los datos clave sobre su salud se gestionan en un único centro y dentro de un sistema diseñado para usted."
+              "text": "Los datos obtenidos no sólo se reportan. Usted es evaluado por nuestros médicos especialistas, se determinan sus prioridades de salud y se prepara un plan personal que puede aplicarse a su vida diaria. Todos los datos importantes sobre su salud se manejan en un sistema específico para usted."
             }
           ]
         },
         {
-          "title": "Programas para una vida larga y saludable",
+          "title": "Programas de Vida Larga y Saludable",
           "blocks": [
             {
               "type": "subheading",
-              "text": "Evaluación ejecutiva de salud"
+              "text": "Evaluación de salud ejecutiva"
             },
             {
               "type": "paragraph",
-              "text": "Un programa integral de evaluación de salud diseñado para personas que valoran su tiempo. En un periodo breve, un equipo especialista evalúa su salud general, equilibrio metabólico, riesgos cardiovasculares, composición corporal, calidad del sueño y factores de estilo de vida. Al final del programa, recibe un informe de salud personalizado y un plan de vida aplicable para la siguiente etapa."
+              "text": "Es un programa integral de evaluación de la salud diseñado para personas con un estilo de vida ajetreado. En poco tiempo, el equipo de expertos evalúa su estado de salud general, equilibrio metabólico, riesgos cardiovasculares, composición corporal, calidad del sueño y factores de estilo de vida. Al final del programa, se le preparará un informe de salud especial y un plan de vida viable para el próximo período."
             },
             {
               "type": "subheading",
@@ -6735,7 +6735,7 @@
             },
             {
               "type": "paragraph",
-              "text": "No se trata solo de perder peso, sino de construir un equilibrio metabólico saludable. El control del peso se evalúa junto con la glucemia, la resistencia a la insulina, la masa muscular, el porcentaje de grasa, los hábitos nutricionales, el sueño y el estrés. Un equipo de médicos, dietistas y especialistas en rendimiento diseña un programa sostenible y personalizado alineado con sus objetivos."
+              "text": "El control de peso saludable no se trata sólo de perder peso. Se evalúan juntos el metabolismo, el equilibrio del azúcar en sangre, la sensibilidad a la insulina, la masa muscular, la tasa de grasa, los hábitos alimentarios, el sueño y los factores de estrés. El médico especialista, el dietista y el equipo de rendimiento crean un plan sostenible que se adapta a sus objetivos personales."
             },
             {
               "type": "subheading",
@@ -6743,145 +6743,800 @@
             },
             {
               "type": "paragraph",
-              "text": "Un futuro más fuerte para su corazón. La salud cardiovascular es clave para una vida larga y activa. Mediante evaluaciones planificadas según sus factores de riesgo personales, se revisan la salud cardíaca y vascular, el equilibrio de la presión arterial, el perfil de colesterol, la capacidad de ejercicio y los hábitos de vida."
+              "text": "Un futuro más fuerte para tu corazón. La salud cardiovascular, uno de los pilares de una vida larga y activa; Se evalúa según los factores de riesgo personales. Se analiza en detalle la salud cardiovascular, el equilibrio de la presión arterial, el perfil de colesterol, la capacidad de ejercicio y los hábitos de vida."
             },
             {
               "type": "subheading",
-              "text": "Sueño, estrés y renovación"
+              "text": "Sueño, estrés y regeneración"
             },
             {
               "type": "paragraph",
-              "text": "Mejor sueño, una mente más clara y una mayor calidad de vida. Especialistas evalúan la calidad del sueño, la carga de estrés, el riesgo de agotamiento y el nivel diario de energía. Se desarrollan estrategias prácticas de recuperación y renovación según su ritmo de vida."
+              "text": "Sueño de mejor calidad, mayor energía y una vida más equilibrada. La calidad del sueño, la carga de estrés, la fatiga mental y los niveles de energía diarios se abordan con una evaluación de expertos. La tranquilidad de Capadocia, su entorno natural y la atmósfera única del Hotel Museo; Apoya el proceso de renovación mental y reorganización de tu ritmo de vida."
             },
             {
               "type": "subheading",
-              "text": "Fuerza, movilidad y envejecimiento activo"
+              "text": "Fuerza, Movilidad y Envejecimiento Activo"
             },
             {
               "type": "paragraph",
-              "text": "No se trata solo de envejecer, sino de mantenerse fuerte. La masa muscular, el equilibrio, la movilidad, la salud articular y la resistencia física son determinantes esenciales de la calidad de vida. Los programas personalizados de movimiento, fuerza, movilidad y rehabilitación buscan que se sienta con más energía, fortaleza y libertad en la vida diaria."
+              "text": "Mantenerse fuerte es la base de un envejecimiento de calidad. Los programas personalizados de movimiento y rendimiento se crean evaluando la masa muscular, el equilibrio, la movilidad, la salud de las articulaciones y la resistencia física. Apuntar; Vivir una vida más enérgica, más fuerte y más independiente."
             },
             {
               "type": "subheading",
-              "text": "Salud femenina y menopausia"
+              "text": "Salud de la mujer y menopausia"
             },
             {
               "type": "paragraph",
-              "text": "Salud femenina integral en cada etapa de la vida. Los cambios hormonales, el sueño, el nivel de energía, la salud ósea, el metabolismo, la masa muscular y el estado de ánimo son partes interconectadas de la salud de la mujer. En Dr. Otgen Clinic, las necesidades femeninas se abordan mediante evaluación médica especializada, seguimiento personalizado y orientación de estilo de vida."
+              "text": "Enfoque holístico de la salud de la mujer. Se evalúan en su conjunto los cambios hormonales, el sueño, el nivel de energía, la salud ósea, el metabolismo, la masa muscular y la calidad de vida. Con un seguimiento personalizado y un enfoque de estilo de vida, se respaldan las necesidades de salud de las mujeres en cada etapa."
             },
             {
               "type": "subheading",
-              "text": "Salud masculina y rendimiento"
+              "text": "Salud y rendimiento masculino"
             },
             {
               "type": "paragraph",
-              "text": "Para el rendimiento, el equilibrio y la salud a largo plazo. La salud masculina incluye niveles de energía, equilibrio metabólico, sueño, estrés, salud muscular, riesgos cardiovasculares y evaluación hormonal. Los programas planificados según sus objetivos personales y necesidades médicas apoyan un rendimiento vital más fuerte, equilibrado y sostenible."
+              "text": "Desempeño de vida más fuerte, más equilibrado y sostenible. Los niveles de energía, la salud metabólica, el sueño, el estrés, la salud muscular, los riesgos cardiovasculares y el equilibrio hormonal se evalúan según los objetivos personales."
             }
           ]
         },
         {
-          "title": "Consultoría personal de salud",
+          "title": "Consultoría de salud personal",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Un equipo dedicado le acompaña en cada etapa de su recorrido de salud. La Consultoría Personal de Salud simplifica todo el proceso, desde la planificación de citas y el seguimiento de resultados hasta las consultas con especialistas y la coordinación del programa personal."
+              "text": "Un equipo dedicado estará con usted durante todo su viaje hacia la salud. La planificación de citas, las evaluaciones de salud, las entrevistas con expertos, el seguimiento de resultados y la coordinación personal del programa se gestionan con consultoría de salud profesional."
             },
             {
               "type": "paragraph",
-              "text": "La privacidad, el confort y la gestión del tiempo están en el centro de nuestra filosofía de servicio. Porque la atención sanitaria merece no solo el enfoque médico correcto, sino también una experiencia impecable."
+              "text": "La comodidad del Museum Hotel Cappadocia y el Dr. Se crea una experiencia de bienestar perfecta con el enfoque médico de la Clínica Otgen."
             }
           ]
         },
         {
-          "title": "Salud y renovación en Museum Hotel Kapadokya",
+          "title": "Salud y renovación en el Museum Hotel Cappadocia",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "Los paisajes cautivadores de Capadocia, su textura histórica y la experiencia de alojamiento única de Museum Hotel se unen al enfoque científico de salud de Dr. Otgen Clinic para crear una experiencia wellness de nueva generación."
+              "text": "Las fascinantes vistas de Capadocia, su textura histórica y la experiencia de alojamiento única del Museum Hotel; Dr. Combinando el enfoque científico de salud de la Clínica Otgen, ofrece una experiencia de bienestar de nueva generación."
             },
             {
               "type": "paragraph",
-              "text": "Aquí, la salud no es una tarea separada de la vida diaria. Es la base para sentirse mejor, alcanzar un mayor rendimiento, envejecer mejor y vivir cada momento con más fortaleza."
+              "text": "Aquí la salud no es sólo un proceso de control. Salud; Es una inversión personal hecha para sentirse mejor, rendir más, aumentar su energía vital y ser más fuerte para el futuro."
             }
           ]
         },
         {
-          "title": "Su inversión más valiosa para el futuro: usted.",
+          "title": "Su inversión más valiosa en el futuro: usted.",
           "blocks": [
             {
               "type": "paragraph",
-              "text": "En la experiencia Dr. Otgen Clinic x Museum Hotel Kapadokya, la salud no se limita a un único chequeo. Los datos de salud personalizados, las evaluaciones expertas, las recomendaciones de estilo de vida y los planes de seguimiento la convierten en un recorrido a largo plazo hacia una vida mejor."
+              "text": "Dr. En la experiencia Clínica Otgen x Museo Hotel Capadocia la salud no se limita a un solo chequeo. Sus datos de salud personales se convierten en un viaje de bienestar a largo plazo con evaluaciones de expertos, recomendaciones de estilo de vida y planes de seguimiento."
             },
             {
               "type": "subheading",
-              "text": "No vivir más, sino vivir mejor."
+              "text": "No para vivir más. Para vivir mejor."
             },
             {
               "type": "paragraph",
-              "text": "Contáctenos para descubrir su programa personal de vida larga y saludable."
+              "text": "Contáctenos para descubrir su programa de longevidad personal."
             }
           ]
         }
       ],
       "highlights": [
-        "Experiencia wellness premium en Museum Hotel Kapadokya",
-        "Programas de salud personalizados con el enfoque médico especializado de Dr. Otgen Clinic",
-        "Renovación y transformación en la atmósfera natural de Capadocia",
-        "Privacidad, confort y consultoría personal de salud"
+        "Experiencia de bienestar premium en Museum Hotel Cappadocia",
+        "Dr. Programas de salud personalizados con el enfoque de médico experto de Clínica Otgen",
+        "Experiencia de renovación y transformación en la atmósfera natural de Capadocia.",
+        "Asesoramiento sobre privacidad, comodidad y salud personal."
       ],
       "suitableIntro": "",
       "suitableFor": [
-        "Personas que priorizan la salud a largo plazo y la calidad de vida",
-        "Huéspedes que buscan medicina preventiva y una experiencia wellness personalizada",
-        "Personas que buscan equilibrio metabólico, rendimiento y renovación",
-        "Huéspedes que buscan una experiencia premium de salud y alojamiento en Capadocia",
-        "Personas que desean alejarse de un ritmo intenso y recuperar el equilibrio cuerpo-mente"
+        "Personas que priorizan la salud y la calidad de vida a largo plazo",
+        "Huéspedes que buscan medicina preventiva y experiencias de bienestar personalizadas.",
+        "Individuos que buscan equilibrio metabólico, rendimiento y renovación.",
+        "Aquellos que quieran experimentar salud y alojamiento premium en Capadocia.",
+        "Aquellos que quieren alejarse del ritmo de vida ajetreado y restablecer el equilibrio de cuerpo y mente."
       ],
       "quickFacts": [
         {
-          "label": "Ubicación",
-          "value": "Museum Hotel Kapadokya"
+          "label": "ubicación",
+          "value": "Hotel Museo Capadocia"
         },
         {
           "label": "Enfoque",
           "value": "Salud preventiva personalizada"
         },
         {
-          "label": "Programa",
-          "value": "Longevidad y wellness"
+          "label": "programa",
+          "value": "Longevidad y bienestar"
         },
         {
           "label": "Experiencia",
-          "value": "Alojamiento premium + consultoría médica especializada"
+          "value": "Alojamiento premium + asesoramiento de salud de expertos"
         }
       ],
-      "processTitle": "Su recorrido de salud",
+      "processTitle": "Su viaje de salud",
       "process": [
         {
-          "title": "Evaluación integral",
-          "description": "El estilo de vida, los antecedentes familiares, la salud metabólica, los riesgos cardiovasculares, el sueño, el estrés y los objetivos de rendimiento se analizan mediante una evaluación médica especializada."
+          "title": "Evaluación Integral",
+          "description": "El estilo de vida, los antecedentes familiares, la salud metabólica, los riesgos cardiovasculares, el sueño, el estrés y los objetivos de rendimiento son analizados por un médico especialista."
         },
         {
-          "title": "Hoja de ruta personal de salud",
-          "description": "A partir de los resultados de laboratorio, la composición corporal y los análisis de riesgo, se crea para usted un plan de salud personalizado y práctico."
+          "title": "Hoja de ruta de salud personal",
+          "description": "Su plan de salud personal se elabora en función de los resultados de laboratorio, composición corporal y análisis de riesgos."
         },
         {
           "title": "Programa y seguimiento",
-          "description": "El programa de longevidad definido se realiza en el confort de Museum Hotel Kapadokya y se acompaña durante todo el proceso con consultoría personal de salud."
+          "description": "El programa de longevidad determinado se implementa en la comodidad del Museum Hotel Cappadocia y se sigue durante todo el proceso con asesoramiento de salud personal."
         }
       ],
       "faqs": [
         {
-          "question": "¿Para quién es adecuado el programa Dr. Otgen Clinic x Museum Hotel Kapadokya?",
-          "answer": "Es adecuado para personas que priorizan la salud a largo plazo y buscan una evaluación personalizada junto con una experiencia wellness premium."
+          "question": "Dr. ¿Para quién es adecuado el programa Otgen Clinic x Museum Hotel Cappadocia?",
+          "answer": "Es adecuado para personas que se preocupan por su salud a largo plazo y buscan una evaluación de salud personalizada y una experiencia de bienestar premium."
         },
         {
           "question": "¿Cuánto dura el programa?",
-          "answer": "La duración del programa se determina según los objetivos y necesidades personales de salud. Tras la evaluación inicial se crea un plan personalizado."
+          "answer": "La duración del programa se determina en función de los objetivos y necesidades de salud del individuo. Después de la evaluación inicial, se crea un plan personalizado."
         },
         {
-          "question": "¿Qué incluye el programa?",
-          "answer": "Las evaluaciones de salud, las consultas con médicos especialistas, la planificación personal de salud, las experiencias wellness y los procesos de seguimiento se organizan según el alcance del programa."
+          "question": "¿Qué está incluido en el programa?",
+          "answer": "De acuerdo al alcance del programa se organizan evaluaciones de salud, entrevistas con médicos especialistas, planificación personal de salud, experiencias de bienestar y procesos de seguimiento."
+        }
+      ]
+    },
+    {
+      "category": "hair",
+      "slug": "hair-transplant-guide",
+      "navLabel": "Guía de trasplante de cabello",
+      "title": "Guía de trasplante de cabello",
+      "categoryLabel": "Trasplante de cabello y tratamientos capilares",
+      "heroTag": "Salud del cabello",
+      "heroSubtitle": "Compare FUE, DHI, Safir FUE y tratamientos de apoyo en un solo cuadro",
+      "summary": "Guía de trasplante de cabello; Explica los métodos FUE, DHI y Safir FUE, la evaluación de candidatos, el proceso de recuperación y los soportes de PRP/exosomas dentro de un marco de planificación transparente.",
+      "images": {
+        "hero": "/images/site/categories/hair.webp",
+        "content": "/images/site/categories/hair.webp"
+      },
+      "overview": [
+        "La decisión sobre el trasplante de cabello no se trata sólo de una elección técnica. La capacidad del donante, el tipo de pérdida de cabello, el diseño de la línea del cabello, el manejo de las expectativas y el plan de recuperación se evalúan en conjunto.",
+        "Esta guía; Le ayuda a hacer las preguntas correctas comparando DHI, Sapphire FUE, enfoques respaldados por células madre y tratamientos de apoyo como PRP y exosomas.",
+        "Dr. El proceso en Clínica Otgen; Progresa a través de la evaluación clínica, el plan de injerto personalizado, la operación y los pasos de seguimiento estructurados. La idoneidad final siempre se determina tras una consulta presencial o online."
+      ],
+      "sections": [
+        {
+          "title": "¿Cómo comparar los métodos de trasplante de cabello?",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "La principal distinción en el trasplante de cabello moderno está en la forma en que se recolectan y colocan los injertos. En los métodos de la familia FUE, los injertos se toman uno por uno; En DHI, el ranurado y la colocación pueden realizarse en la misma secuencia."
+            },
+            {
+              "type": "subheading",
+              "text": "Zafiro FUE"
+            },
+            {
+              "type": "paragraph",
+              "text": "Los microcanales abiertos con hojas con punta de zafiro pueden ofrecer una oportunidad de planificación más controlada en cuanto a la dirección y densidad del injerto. Es especialmente preferido en trasplantes de áreas grandes y diseños de líneas de cabello naturales."
+            },
+            {
+              "type": "subheading",
+              "text": "DHI"
+            },
+            {
+              "type": "paragraph",
+              "text": "Implantación directa con la pluma implantadora Choi; Destaca en casos de engrosamiento donde es necesario proteger el cabello existente y en zonas donde la sensibilidad ángulo-dirección es alta."
+            },
+            {
+              "type": "subheading",
+              "text": "Tratamientos de apoyo"
+            },
+            {
+              "type": "list",
+              "items": [
+                "ACell PRP: Puede evaluarse para fines de curación y soporte del entorno del injerto.",
+                "Terapias con exosomas: Se pueden planificar en protocolos de soporte y calidad del cuero cabelludo.",
+                "Tratamientos asistidos por láser: Se pueden agregar a programas pre/postoperatorios"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "La elección del método no se basa en el lema \"la técnica más nueva\"; Debe hacerse teniendo en cuenta la calidad del donante, la densidad objetivo, la preferencia de afeitado y la expectativa de recuperación. Puede acceder a páginas detalladas de métodos en la sección de tratamientos correspondientes."
+            }
+          ]
+        },
+        {
+          "title": "Candidatura, preparación y recuperación",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Para determinar una candidatura adecuada, se evalúan conjuntamente el estado de salud general, el uso de medicamentos, la densidad del área donante y las expectativas realistas. Problemas dermatológicos activos o enfermedades sistémicas no controladas pueden retrasar el proceso."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Administración de anticoagulantes y algunos suplementos antes de la cirugía.",
+                "Restricción de fumar/alcohol y preparación del cuero cabelludo.",
+                "Lavado, posición para dormir y evitar traumatismos en los primeros 7 a 14 días",
+                "Saber que el período de liberación del shock es un proceso normal.",
+                "Calendario de maduración del resultado ampliable hasta 12 meses"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "La velocidad de curación varía de persona a persona. El equipo clínico comparte un protocolo de atención escrito con la prioridad de la seguridad del injerto y la apariencia natural."
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Marco comparativo FUE / DHI / Zafiro FUE",
+        "Enfoque centrado en el análisis del donante y la planificación del injerto",
+        "Posicionamiento de PRP y opciones de soporte de exosomas.",
+        "Calendario transparente de recuperación y seguimiento"
+      ],
+      "suitableIntro": "",
+      "suitableFor": [
+        "Candidatos que quieran comparar métodos de trasplante de cabello.",
+        "Pacientes que estén considerando densificación o trasplante de área grande",
+        "Personas que buscan coordinación internacional de pacientes.",
+        "Quienes esperan información clara antes de la operación."
+      ],
+      "quickFacts": [
+        {
+          "label": "Evaluación",
+          "value": "Análisis capilar + consulta médica"
+        },
+        {
+          "label": "tiempo de operación",
+          "value": "Generalmente de 4 a 8 horas"
+        },
+        {
+          "label": "primera recuperación",
+          "value": "7 a 14 días"
+        },
+        {
+          "label": "Maduración del resultado",
+          "value": "Aproximadamente 9 a 12 meses"
+        },
+        {
+          "label": "Métodos",
+          "value": "Zafiro FUE, DHI, tratamientos de apoyo."
+        }
+      ],
+      "process": [
+        {
+          "title": "Consulta y Análisis",
+          "description": "Se crea una recomendación de método evaluando el tipo de derrame, la capacidad de los donantes y las expectativas."
+        },
+        {
+          "title": "Plan personalizado",
+          "description": "La línea del cabello, la distribución del injerto, la preferencia de afeitado y los tratamientos de apoyo se planifican en conjunto."
+        },
+        {
+          "title": "Operación y seguimiento",
+          "description": "Se aplica protocolo de cuidados posprocedimiento; Los resultados se controlan mediante controles planificados."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "¿Cómo elegir entre FUE y DHI?",
+          "answer": "Elección; Se realiza según la capacidad donante, la zona objetivo, la necesidad de proteger el cabello existente y el perfil de densidad deseado. Durante la consulta se explican individualmente los pros y los contras de ambos métodos."
+        },
+        {
+          "question": "¿Cuándo se produce el aspecto natural después del trasplante de cabello?",
+          "answer": "La recuperación inicial suele completarse en 1 a 2 semanas. Después de la caída del shock, el crecimiento progresa gradualmente; El pronóstico final se evalúa entre 9 y 12 meses en la mayoría de los casos."
+        },
+        {
+          "question": "¿Puede el PRP o el exosoma reemplazar el trasplante de cabello?",
+          "answer": "No. Estas aplicaciones se pueden planificar como protocolos de soporte; No sustituye al trasplante de injerto en caso de muda avanzada."
+        },
+        {
+          "question": "¿Cómo funciona el proceso para pacientes internacionales?",
+          "answer": "La preevaluación online, la planificación de viajes, la operación y el seguimiento post-retorno se realizan en un único flujo de coordinación."
+        }
+      ]
+    },
+    {
+      "category": "plastic",
+      "slug": "aesthetic-surgery-guide",
+      "navLabel": "Guía de Cirugía Plástica",
+      "title": "Guía de Cirugía Plástica",
+      "categoryLabel": "Cirugía Plástica",
+      "heroTag": "Estética Quirúrgica",
+      "heroSubtitle": "Marco de decisión informada en rinoplastia, estética facial, mamaria y corporal.",
+      "summary": "Guía de cirugía plástica; Describe las opciones de rinoplastia, estiramiento facial, blefaroplastia, contorno de senos y cuerpo desde una perspectiva de seguridad, planificación y recuperación.",
+      "images": {
+        "hero": "/images/site/categories/plastic.webp",
+        "content": "/images/site/categories/plastic.webp"
+      },
+      "overview": [
+        "Las decisiones de cirugía estética deben tomarse teniendo en cuenta las prioridades de función, proporción, armonía cara/cuerpo y seguridad. La evaluación holística, en lugar de una única “transacción de tendencias”, produce resultados más predecibles.",
+        "Esta guía; Simplifica qué preguntas se deben hacer y cómo avanza el proceso en procedimientos de nariz, rostro, párpados, senos y contorno corporal.",
+        "Dr. Planificación de la Clínica Otgen; respaldado por un examen clínico, la necesidad de imágenes/análisis, la seguridad de la anestesia y un protocolo de seguimiento estructurado."
+      ],
+      "sections": [
+        {
+          "title": "Estética Facial y Nariz",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "La rinoplastia puede afectar tanto la función respiratoria como el equilibrio nariz-facial. La blefaroplastia y el lifting facial abordan los signos del envejecimiento según la anatomía individual."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Rinoplastia: dorso, punta, vía respiratoria y armonía del perfil de la nariz",
+                "Blefaroplastia: exceso del párpado superior/inferior y aspecto cansado",
+                "Estiramiento facial: opciones quirúrgicas para la flacidez de la parte media del rostro y la mandíbula"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "La calidad de la piel, la estructura ósea y el soporte de los tejidos blandos se combinan para lograr un resultado natural en el área facial. Se prefiere una planificación equilibrada a intervenciones demasiado agresivas."
+            }
+          ]
+        },
+        {
+          "title": "Modelado de senos y cuerpo",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Aumento, reducción y ginecomastia de mamas; Se planifica teniendo en cuenta las proporciones corporales, la calidad de los tejidos y el estilo de vida. La liposucción, la abdominoplastia y el lifting de cadera se pueden combinar según los objetivos del contorno."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Determinación realista de tasas y mediciones objetivo.",
+                "Normas de seguridad en quirófano y anestesia.",
+                "Corsé, restricción de movimiento y plan de regreso al trabajo",
+                "Balance riesgo-beneficio en cirugías combinadas"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "La ventana de recuperación para cada procedimiento es diferente. La guía tiene únicamente fines de información general; La indicación final queda clara después del examen."
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Función + planificación estética equilibrada.",
+        "Marco de decisión para procedimientos faciales, mamarios y corporales.",
+        "Gestión de procesos centrada en la seguridad y el seguimiento",
+        "Gestión personalizada de expectativas"
+      ],
+      "suitableIntro": "",
+      "suitableFor": [
+        "Candidatos que investigan opciones de cirugía plástica",
+        "Pacientes que comparan múltiples procedimientos.",
+        "Aquellos que quieran comprender claramente el período de recuperación y los riesgos.",
+        "Personas que planean viajes internacionales de pacientes"
+      ],
+      "quickFacts": [
+        {
+          "label": "Evaluación",
+          "value": "Examen clínico + planificación."
+        },
+        {
+          "label": "Rango de duración",
+          "value": "1 a 4 horas dependiendo del procedimiento."
+        },
+        {
+          "label": "recuperación",
+          "value": "Generalmente entre 7 y 21 días"
+        },
+        {
+          "label": "anestesia",
+          "value": "Local/sedación/general (según procedimiento)"
+        },
+        {
+          "label": "Enfoque",
+          "value": "Seguridad, rapidez y resultado natural."
+        }
+      ],
+      "process": [
+        {
+          "title": "Examen y determinación de objetivos",
+          "description": "Se evalúa anatomía, expectativas e historial médico; se establece el marco procesal adecuado."
+        },
+        {
+          "title": "Plan Quirúrgico",
+          "description": "Se aclara la elección de la técnica, el abordaje anestésico y las posibles combinaciones."
+        },
+        {
+          "title": "Cirugía y Controles",
+          "description": "La recuperación se monitorea con citas de control y cuidados postoperatorios."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "¿Cómo entender el momento adecuado para la cirugía plástica?",
+          "answer": "Se puede planificar si el estado de salud general es adecuado, las expectativas son realistas y se dispone de tiempo suficiente para la recuperación. La decisión final se toma después del examen."
+        },
+        {
+          "question": "¿Se puede realizar más de un trámite en la misma sesión?",
+          "answer": "Algunas combinaciones son posibles; Sin embargo, la seguridad es una decisión prioritaria, teniendo en cuenta el tiempo, la pérdida de sangre, la duración de la anestesia y la carga de recuperación."
+        },
+        {
+          "question": "¿Qué se debe tener en cuenta durante el proceso de recuperación?",
+          "answer": "El descanso, el cuidado de las heridas, las restricciones de actividad y las citas de seguimiento varían según el procedimiento. Se comparte con usted un protocolo escrito especial."
+        },
+        {
+          "question": "¿Cuándo estará disponible el resultado?",
+          "answer": "La hinchazón y los hematomas iniciales desaparecerán en unas semanas; El contorno final y el asentamiento del tejido pueden tardar varios meses, según el procedimiento."
+        }
+      ]
+    },
+    {
+      "category": "dental",
+      "slug": "dental-aesthetics-guide",
+      "navLabel": "Guía de Estética Dental",
+      "title": "Guía de Estética Dental",
+      "categoryLabel": "Estética Dental",
+      "heroTag": "Diseño de sonrisa",
+      "heroSubtitle": "Implante, circonio, Hollywood Smile y hoja de ruta del blanqueamiento",
+      "summary": "Guía de estética dental; Explica opciones de implantes, recubrimiento de circonio, Hollywood Smile, ortodoncia y blanqueamiento con equilibrio funcional y estético.",
+      "images": {
+        "hero": "/images/site/categories/dental.webp",
+        "content": "/images/site/categories/dental.webp"
+      },
+      "overview": [
+        "El diseño de sonrisa no es sólo la corrección de color o forma. La relación de mordida, la salud de las encías, la armonía de la mandíbula y la durabilidad a largo plazo deben planificarse en conjunto.",
+        "Esta guía; Le ayuda a considerar los enfoques de implantes, circonio, laminados/carillas y tratamientos de apoyo en el orden correcto.",
+        "Dr. En la Clínica Otgen, el viaje del paciente es predecible con planificación digital, examen clínico y calendario de tratamiento por fases."
+      ],
+      "sections": [
+        {
+          "title": "Opciones básicas de estética dental",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Hollywood Smile suele rediseñar la línea de la sonrisa con combinaciones de carillas o carillas. Los recubrimientos de circonio suelen preferirse en los casos que buscan durabilidad y equilibrio estético."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Implante dental: solución similar a una raíz para la restauración de dientes perdidos",
+                "Revestimiento de circonio: equilibrio de color, forma y durabilidad",
+                "Hollywood Smile: diseño centrado en la línea de la sonrisa y las proporciones",
+                "Blanqueamiento dental: mejora estética a corto plazo del color del esmalte.",
+                "Ortodoncia/estética rosa: alineación y armonía de las encías"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "En presencia de enfermedad activa de las encías o caries, se debe establecer una base saludable antes de la fase estética. La secuenciación es fundamental para obtener resultados duraderos."
+            }
+          ]
+        },
+        {
+          "title": "Gestión de planificación y expectativas.",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "La predicción de resultados se puede reforzar con el diseño digital de la sonrisa, el análisis fotográfico y, si es necesario, un ensayo temporal. La selección del material se basa en la fuerza de mordida y los hábitos de mantenimiento."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Control de oclusión funcional",
+                "Estabilizar la salud de las encías",
+                "Necesidad de prueba/maqueta estética",
+                "Determinación de intervalos de mantenimiento y control."
+              ]
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Función + planificación estética juntos",
+        "Marco de diseño de implante, circonio y sonrisa.",
+        "Secuencia de tratamiento por fases.",
+        "Enfoque orientado a la atención a largo plazo"
+      ],
+      "suitableIntro": "",
+      "suitableFor": [
+        "Aquellos que investigan opciones de diseño de sonrisa",
+        "Pacientes a los que les faltan dientes o necesitan coronas.",
+        "Quienes buscan una solución estética planificada en poco tiempo.",
+        "Quienes quieran un plan de tratamiento dental internacional."
+      ],
+      "quickFacts": [
+        {
+          "label": "Evaluación",
+          "value": "Examen clínico + planificación digital"
+        },
+        {
+          "label": "modelo de sesión",
+          "value": "1 a 6 sesiones según el procedimiento."
+        },
+        {
+          "label": "Duración",
+          "value": "30-120 minutos/sesión"
+        },
+        {
+          "label": "Enfoque",
+          "value": "Durabilidad, proporción y sonrisa natural."
+        }
+      ],
+      "process": [
+        {
+          "title": "Inspección y Análisis",
+          "description": "Se evalúa la relación entre dientes, encías y mordida; Se enumeran las necesidades prioritarias."
+        },
+        {
+          "title": "Sonrisa / Plan de Restauración",
+          "description": "Se aclara material, color, forma y plano del escenario."
+        },
+        {
+          "title": "Aplicación y controles",
+          "description": "Se aplica tratamiento; Se planifica el cumplimiento, la higiene y el seguimiento a largo plazo."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "¿Hollywood Smile es adecuado para todos?",
+          "answer": "No. Si la salud de las encías, el estado del esmalte/dentina y la relación de mordida no son apropiados, es posible que primero se requieran tratamientos preparatorios. La idoneidad se determina mediante inspección."
+        },
+        {
+          "question": "¿Cuánto tiempo dura el proceso de implantación?",
+          "answer": "Varía según el estado de los huesos y los tejidos blandos. En algunos casos, se requiere una recuperación gradual; El cronograma claro se proporciona después de la evaluación clínica."
+        },
+        {
+          "question": "¿Cuál es la diferencia entre circonio y laminado?",
+          "answer": "Si bien las coronas de circonio generalmente se prefieren para restauraciones más extensas, se pueden utilizar enfoques laminados en el diseño de sonrisas con una preparación del esmalte más conservadora. La elección es caso por caso."
+        },
+        {
+          "question": "¿Cómo deben ser los cuidados post-tratamiento?",
+          "answer": "El cepillado regular, el uso de hilo dental/limpieza de la interfaz y los controles periódicos afectan directamente la vida útil de la restauración. Se comparten recomendaciones de cuidados especiales para usted."
+        }
+      ]
+    },
+    {
+      "category": "medical",
+      "slug": "medical-aesthetics-guide",
+      "navLabel": "Guía de Estética Médica",
+      "title": "Guía de Estética Médica",
+      "categoryLabel": "Estética Médica",
+      "heroTag": "Tratamientos mínimamente invasivos",
+      "heroSubtitle": "Compara conscientemente las opciones de botox, relleno, láser y renovación de la piel",
+      "summary": "Guía de estética médica; Explica los protocolos de botox, relleno de labios y mandíbula, depilación láser y renovación de la piel con un enfoque en la seguridad y los resultados naturales.",
+      "images": {
+        "hero": "/images/site/categories/medical.webp",
+        "content": "/images/site/categories/medical.webp"
+      },
+      "overview": [
+        "El objetivo de la estética médica no es el cambio exagerado; Es una planificación que preserva las proporciones faciales, no distorsiona la naturalidad de las expresiones faciales y apoya la calidad de la piel.",
+        "Esta guía; Resume los objetivos que sirven los protocolos de botox, relleno, láser y cuidado de la piel y cómo se deben considerar los planes combinados.",
+        "Dr. Aplicaciones en la Clínica Otgen; Está diseñado individualmente con evaluación anatómica, selección de producto/protocolo y gestión de intervalos de sesiones."
+      ],
+      "sections": [
+        {
+          "title": "Botox y rellenos",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Botox suaviza las arrugas dinámicas; El relleno se utiliza para pérdida de volumen, ajustes de contorno y proporciones. Los dos enfoques tienen mecanismos diferentes y no son intercambiables."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Botox: líneas de expresión y planificación preventiva",
+                "Relleno de labios: forma, simetría y apariencia hidratante.",
+                "Relleno de la línea de la mandíbula: equilibrio y contorno de la parte inferior del rostro",
+                "Aplicaciones debajo de los ojos: evaluación personalizada de indicaciones"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Para obtener resultados naturales, \"qué no hacer\" es tan importante como la dosis, la selección del producto y el plano de inyección."
+            }
+          ]
+        },
+        {
+          "title": "Calidad de la piel y láser",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "El PRP, el ADN del salmón, el cuidado médico de la piel y los protocolos láser desempeñan un papel complementario en la textura de la piel, las imperfecciones y los objetivos de depilación. El intervalo de la sesión se ajusta según el tipo de piel."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Depilación láser: elegir el protocolo adecuado al tipo de cabello",
+                "Renovación de la piel: calidad de textura y objetivos de luminosidad",
+                "Planes combinados: gestión del timing con botox/relleno"
+              ]
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Enfoque de preservación de proporciones y expresión facial natural.",
+        "Aclarando la distinción entre botox y relleno",
+        "Calidad de la piel y posicionamiento de protocolos láser.",
+        "Intervalo de sesión y disciplina de seguimiento."
+      ],
+      "suitableIntro": "",
+      "suitableFor": [
+        "Quienes buscan opciones estéticas mínimamente invasivas",
+        "Aquellos que quieren retoques finos preservando la proporción facial.",
+        "Aquellos que planean un programa de depilación y calidad de la piel.",
+        "Pacientes que desean una hoja de ruta de tratamiento combinado"
+      ],
+      "quickFacts": [
+        {
+          "label": "Duración",
+          "value": "Generalmente entre 20 y 60 minutos"
+        },
+        {
+          "label": "modelo de sesión",
+          "value": "1 a 6 sesiones (según el procedimiento)"
+        },
+        {
+          "label": "giro social",
+          "value": "El mismo día para la mayoría de las aplicaciones."
+        },
+        {
+          "label": "Enfoque",
+          "value": "Resultados naturales + seguridad"
+        }
+      ],
+      "process": [
+        {
+          "title": "Análisis de rostro/piel",
+          "description": "Se evalúa anatomía, tipo de piel y objetivos; Se determina el protocolo de prioridad."
+        },
+        {
+          "title": "Plan de implementación",
+          "description": "Se aclara el producto, dosis/zona e intervalo de sesión."
+        },
+        {
+          "title": "Control y Mantenimiento",
+          "description": "Se monitorea el resultado; Si es necesario, se crea un plan de mantenimiento."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "¿Se puede hacer Botox y relleno en la misma sesión?",
+          "answer": "En muchos casos se puede planificar en la misma sesión; Sin embargo, el orden y el momento están determinados por decisión clínica, teniendo en cuenta las zonas de aplicación y el riesgo de hinchazón."
+        },
+        {
+          "question": "¿Cuánto duran los resultados médico estéticos?",
+          "answer": "El efecto del Botox generalmente se limita a períodos mensuales; Los protocolos de relleno y piel varían dependiendo del producto/metabolismo individual. El plan de mantenimiento es personalizado."
+        },
+        {
+          "question": "¿Qué se debe tener en cuenta después del procedimiento?",
+          "answer": "Las recomendaciones para evitar ambientes calurosos, ejercicio intenso, maquillaje y presión varían según la aplicación. Se le dará una lista especial de cuidados posteriores."
+        },
+        {
+          "question": "¿Para quién podría no ser adecuado?",
+          "answer": "El embarazo, la lactancia, una infección activa, algunas afecciones autoinmunes o antecedentes de alergias relevantes pueden hacer que el proceso se retrase. El cumplimiento se evalúa mediante inspección."
+        }
+      ]
+    },
+    {
+      "category": "longevity",
+      "slug": "longevity-guide",
+      "navLabel": "Guía de longevidad",
+      "title": "Guía de longevidad",
+      "categoryLabel": "longevidad",
+      "heroTag": "longevidad",
+      "heroSubtitle": "Posicionar correctamente los programas de terapia intravenosa, glutatión, ozono y bienestar.",
+      "summary": "Guía de longevidad; Explica terapias intravenosas, glutatión, ozono, programas de nutrición y bienestar desde una perspectiva de salud preventiva.",
+      "images": {
+        "hero": "/images/site/categories/longevity.webp",
+        "content": "/images/site/categories/longevity.webp"
+      },
+      "overview": [
+        "El enfoque de Longevidad no se trata sólo de un único “suero” o promesa de desintoxicación a corto plazo. El sueño, la nutrición, el movimiento, el manejo del estrés y la evaluación clínica deben considerarse juntos.",
+        "Esta guía; Presenta en un marco simple cuándo la terapia intravenosa, el glutatión, el ozono y los programas de bienestar pueden ser de apoyo y cómo deben planificarse.",
+        "Dr. En Clínica Otgen, los protocolos se diseñan de acuerdo con las necesidades individuales y la idoneidad clínica; No se utiliza lenguaje de garantía exagerado."
+      ],
+      "sections": [
+        {
+          "title": "Protocolos de apoyo clínico",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "Terapias intravenosas y aplicaciones de glutatión; Puede planificarse previa evaluación médica, teniendo en cuenta el laboratorio y la historia clínica. La ozonoterapia requiere igualmente un control de las indicaciones y contraindicaciones."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Terapias intravenosas: protocolos de apoyo personalizados",
+                "Glutatión: evaluación en el marco del apoyo antioxidante",
+                "Ozonoterapia: planificación tras la idoneidad clínica",
+                "GLP y nutrición: componentes de apoyo al estilo de vida"
+              ]
+            },
+            {
+              "type": "paragraph",
+              "text": "Los programas de hotel/destino de bienestar (Bodrum, Capadocia, etc.) pueden posicionarse como complemento a los tratamientos clínicos; No es un sustituto del tratamiento médico."
+            }
+          ]
+        },
+        {
+          "title": "Expectativas realistas y seguridad",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "En los programas de salud preventiva deben definirse objetivos mensurables (energía, recuperación, calidad de vida); Deben evitarse las afirmaciones milagrosas."
+            },
+            {
+              "type": "list",
+              "items": [
+                "Evaluación preliminar y laboratorio si es necesario.",
+                "Ajustar la frecuencia del protocolo según el individuo",
+                "Interacciones medicamentosas y control de contraindicaciones.",
+                "Seguimiento integrador con recomendaciones de estilo de vida."
+              ]
+            }
+          ]
+        }
+      ],
+      "highlights": [
+        "Marco centrado en la salud preventiva",
+        "Posicionamiento de protocolos intravenosos, glutatión y ozono.",
+        "Equilibrio clínico con programas de bienestar",
+        "Expectativas realistas y prioridad de seguridad"
+      ],
+      "suitableIntro": "",
+      "suitableFor": [
+        "Aquellos que investigan programas preventivos de salud y bienestar.",
+        "Aquellos que quieran entender las opciones intravenosas/glutatión.",
+        "Aquellos que quieran combinar el bienestar del destino con el apoyo clínico.",
+        "Quienes buscan un plan sustentable enfocado en la calidad de vida"
+      ],
+      "quickFacts": [
+        {
+          "label": "Duración",
+          "value": "30 a 90 minutos/sesión"
+        },
+        {
+          "label": "modelo",
+          "value": "Plan periódico basado en programas"
+        },
+        {
+          "label": "volver",
+          "value": "El mismo día para la mayoría de los protocolos."
+        },
+        {
+          "label": "Enfoque",
+          "value": "Salud preventiva + calidad de vida"
+        }
+      ],
+      "process": [
+        {
+          "title": "Evaluación preliminar",
+          "description": "El marco inicial se determina comprobando la historia, las necesidades y la idoneidad."
+        },
+        {
+          "title": "Selección de protocolo",
+          "description": "Los componentes intravenosos, glutatión, ozono o bienestar se planifican individualmente."
+        },
+        {
+          "title": "Seguimiento y mantenimiento",
+          "description": "Se monitorea la respuesta; Se actualizan las recomendaciones de frecuencia y estilo de vida."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "¿La terapia intravenosa es aplicable a todos?",
+          "answer": "No. La idoneidad se evalúa en base a la historia clínica, el uso de medicamentos y, en caso de ser necesario, los resultados de laboratorio. En los casos en los que no sea adecuado, se recomienda un plan alternativo."
+        },
+        {
+          "question": "¿El programa Longevity produce resultados en una sola sesión?",
+          "answer": "El beneficio duradero generalmente se asocia con cambios regulares en el estilo de vida y protocolos repetidos según sea necesario. Una sola sesión no promete una \"transformación permanente\"."
+        },
+        {
+          "question": "¿Los programas de hoteles de bienestar son un tratamiento médico?",
+          "answer": "No. Los programas de bienestar de destino son experiencias de apoyo; No sustituye al diagnóstico y tratamiento. Las necesidades clínicas se evalúan por separado."
+        },
+        {
+          "question": "¿Con qué frecuencia se realiza la planificación?",
+          "answer": "Frecuencia; personalizado según el objetivo, la relevancia clínica y la respuesta. No se aplica el enfoque estándar de “un calendario único para todos”."
         }
       ]
     }

@@ -1,3 +1,5 @@
+import { PILLAR_GUIDE_PAGES } from './seo-pillar-content.js';
+
 const DATA = {
   "categoryConfig": {
     "corporate": {
@@ -6892,7 +6894,7 @@ export const CATEGORY_CONFIG = DATA.categoryConfig;
 
 export const CATEGORY_ORDER = DATA.categoryOrder;
 
-export const SUBPAGES = DATA.pages.map((page) => ({ ...page }));
+export const SUBPAGES = [...DATA.pages, ...PILLAR_GUIDE_PAGES].map((page) => ({ ...page }));
 
 export const SUBPAGES_BY_SLUG = Object.fromEntries(SUBPAGES.map((item) => [item.slug, item]));
 

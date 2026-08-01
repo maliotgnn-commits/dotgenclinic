@@ -1,18 +1,18 @@
 # Weekly SEO Report
 
-Generated: 2026-07-31T15:27:45.732Z
+Generated: 2026-08-01T06:53:30.836Z
 
 ## Traffic
 
-- Click değişimi: +285.71% (27 clicks)
-- Impression değişimi: +354.41% (618 impressions)
-- CTR: 4.37%
-- Average position: 30.2
+- Click değişimi: -11.11% (16 clicks)
+- Impression değişimi: +99.21% (502 impressions)
+- CTR: 3.19%
+- Average position: 36.0
 
 ## Winners
 
-1. https://www.drotgenclinic.com/ — 16 clicks, 63 impressions, pos 2.9
-2. https://www.drotgenclinic.com/tr/ — 9 clicks, 295 impressions, pos 5.4
+1. https://www.drotgenclinic.com/tr/ — 9 clicks, 182 impressions, pos 4.7
+2. https://www.drotgenclinic.com/ — 5 clicks, 31 impressions, pos 3.1
 3. https://www.drotgenclinic.com/fr/service.html?slug=maxx-royal-wellness-bodrum — 1 clicks, 3 impressions, pos 12.7
 4. https://www.drotgenclinic.com/tr/blockchain-ar-ge.html — 1 clicks, 7 impressions, pos 13.0
 5. https://www.drotgenclinic.com/ar/ — 0 clicks, 1 impressions, pos 3.0

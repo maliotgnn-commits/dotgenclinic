@@ -113,22 +113,22 @@ export const EYE_HEALTH_CATEGORIES = [
       {
         title: 'Katarakt Nedir?',
         description:
-          'Katarakt, göz içindeki doğal merceğin saydamlığını kaybetmesiyle ilişkilendirilen bir durumdur.',
+          'Katarakt, göz içindeki doğal merceğin saydamlığını kaybetmesiyle ilişkilendirilen bir durumdur. Bulanık görme, ışık hassasiyeti ve gece görüşünde zorlanma gibi şikayetlerle ortaya çıkabilir; kesin değerlendirme kapsamlı göz muayenesiyle yapılır.',
       },
       {
         title: 'Katarakt Ameliyatı',
         description:
-          'Katarakta yönelik cerrahi seçenekler, muayene bulguları ve kişisel ihtiyaçlar doğrultusunda değerlendirilir.',
+          'Katarakta yönelik cerrahi seçenekler, muayene bulguları, mercek opasitesi ve kişisel ihtiyaçlar doğrultusunda değerlendirilir. Süreç; hazırlık, cerrahi planlama ve sonrası kontrol adımlarını kapsar.',
       },
       {
         title: 'Göz İçi Mercek',
         description:
-          'Göz içi mercek seçenekleri, göz yapısı ve görme ihtiyaçları doğrultusunda değerlendirilir.',
+          'Göz içi mercek seçenekleri, göz yapısı, yaşam tarzı ve görme ihtiyaçları doğrultusunda değerlendirilir. Tek odaklı ve çok odaklı seçenekler muayene bulgularına göre konuşulur.',
       },
       {
         title: 'Trifokal Mercek',
         description:
-          'Uzak, orta ve yakın görme ihtiyaçlarına yönelik çok odaklı mercek seçeneklerinin değerlendirilmesini kapsar.',
+          'Uzak, orta ve yakın görme ihtiyaçlarına yönelik çok odaklı mercek seçeneklerinin değerlendirilmesini kapsar. Uygunluk; göz sağlığı, retina durumu ve beklenti yönetimiyle birlikte ele alınır.',
       },
     ],
   },
