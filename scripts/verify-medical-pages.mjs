@@ -40,6 +40,8 @@ expect(
   /\.\/professional-verification\.html/,
   'Ana sayfadan profesyonel doğrulama bağlantısı eksik.',
 );
+expect(landing, /id="faq"/, 'Ana sayfada sipariş öncesi SSS bölümü bulunamadı.');
+expect(landing, /class="mobile-order-bar"/, 'Mobil sabit sipariş çağrısı bulunamadı.');
 
 expect(
   verification,
@@ -48,7 +50,7 @@ expect(
 );
 expect(
   verification,
-  /accept="\.pdf,\.jpg,\.jpeg,\.png"/,
+  /accept="\.pdf,\.jpg,\.jpeg,\.png,application\/pdf,image\/jpeg,image\/png"/,
   'Mesleki belge dosya türü kısıtı eksik.',
 );
 expect(
@@ -66,9 +68,17 @@ expect(
   /enctype="multipart\/form-data"/,
   'Mesleki belge yüklemesi için form kodlaması eksik.',
 );
+expect(
+  verification,
+  /aria-describedby="form-status"/,
+  'Form durum alanı erişilebilir biçimde bağlanmamış.',
+);
+expect(verification, /id="success-title"/, 'Başarı mesajı başlığı bulunamadı.');
 expect(script, /10 \* 1024 \* 1024/, '10 MB dosya sınırı bulunamadı.');
+expect(script, /ACCEPTED_EXTENSIONS/, 'Dosya uzantısı geri dönüş kontrolü bulunamadı.');
 expect(script, /event\.preventDefault\(\)/, 'Form gönderim denetimi bulunamadı.');
 expect(script, /await fetch\(form\.action/, 'Sipariş talebi gönderimi bulunamadı.');
+expect(script, /aria-busy/, 'Form gönderiminde meşgul durumu bulunamadı.');
 
 const placeholderTerms = /konsept|örnek|ön izleme|demo/i;
 if (placeholderTerms.test(`${landing}\n${verification}`)) {
