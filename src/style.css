@@ -121,6 +121,7 @@ html[dir=rtl] .skip-link {
   width: 1px
 }
 
+html.intro-active,
 body.intro-active {
   overflow: hidden
 }
@@ -162,7 +163,7 @@ img {
 
 #intro-overlay {
   z-index: 10000;
-  background: var(--bg-primary);
+  background: radial-gradient(circle at 50% 46%, #0b1524 0%, #050b16 45%, #000 78%);
   will-change: clip-path,  opacity;
   flex-direction: column;
   justify-content: center;
@@ -170,7 +171,9 @@ img {
   transition: none;
   display: flex;
   position: fixed;
-  inset: 0
+  inset: 0;
+  overflow: hidden;
+  isolation: isolate
 }
 
 #intro-overlay.completed {
@@ -178,49 +181,24 @@ img {
   display: none
 }
 
-.intro-particles {
+.intro-dna-canvas {
   pointer-events: none;
   position: absolute;
-  inset: 0;
-  overflow: hidden
+  inset: 0
 }
 
-.particle {
-  background: var(--gold);
-  opacity: 0;
-  border-radius: 50%;
-  width: 2px;
-  height: 2px;
-  animation: 4s ease-in-out infinite particleFloat;
-  position: absolute
-}
-
-@keyframes particleFloat {
-  0% {
-    opacity: 0;
-    transform: translateY(0)scale(0)
-  }
-
-20% {
-    opacity: .6
-  }
-
-80% {
-    opacity: .3
-  }
-
-to {
-    opacity: 0;
-    transform: translateY(-200px)scale(1)
-  }
-
+.intro-dna-canvas {
+  z-index: 0;
+  width: 100%;
+  height: 100%
 }
 
 .intro-logo-wrapper {
   will-change: transform,  filter;
+  z-index: 2;
   justify-content: center;
   align-items: center;
-  width: 340px;
+  width: min(440px, 62vw);
   height: auto;
   display: flex;
   position: relative
@@ -232,24 +210,12 @@ to {
   aspect-ratio: 350 / 204;
   width: 100%;
   height: auto;
-  animation: 4s ease-in-out infinite logoFloat;
   position: relative
-}
-
-@keyframes logoFloat {
-  0%, to {
-    transform: translateY(0)
-  }
-
-50% {
-    transform: translateY(-8px)
-  }
-
 }
 
 .intro-glow {
   z-index: 1;
-  background: radial-gradient(circle, #c9a84c40 0%, #0000 70%);
+  background: radial-gradient(circle, #c8963c38 0%, #0000 70%);
   border-radius: 50%;
   width: 200px;
   height: 200px;
@@ -270,78 +236,17 @@ to {
 
 }
 
-.intro-ring {
-  z-index: 1;
-  border: 1px solid #c9a84c26;
-  border-radius: 50%;
-  animation: 4s ease-in-out infinite ringExpand;
-  position: absolute;
-  will-change: transform, opacity
-}
-
-.ring-1 {
-  width: 250px;
-  height: 250px;
-  animation-delay: 0s
-}
-
-.ring-2 {
-  width: 350px;
-  height: 350px;
-  animation-delay: .8s
-}
-
-.ring-3 {
-  width: 450px;
-  height: 450px;
-  animation-delay: 1.6s
-}
-
-@media (max-width: 768px) {
-  .intro-glow,
-  .intro-ring {
-    display: none;
-  }
-}
-
-@keyframes ringExpand {
-  0% {
-    opacity: .6;
-    transform: scale(.8)
-  }
-
-50% {
-    opacity: .15;
-    transform: scale(1.1)
-  }
-
-to {
-    opacity: .6;
-    transform: scale(.8)
-  }
-
-}
-
 .intro-tagline {
   font-family: var(--font-body);
   letter-spacing: 8px;
   text-transform: uppercase;
   color: var(--gold);
-  opacity: 0;
+  opacity: .85;
   z-index: 2;
   text-align: center;
-  margin-top: 40px;
-  font-size: 13px;
-  animation: 1s .5s forwards introFadeUp;
-  transform: translateY(20px)
-}
-
-@keyframes introFadeUp {
-  to {
-    opacity: .8;
-    transform: translateY(0)
-  }
-
+  margin-top: 30px;
+  padding: 0 20px;
+  font-size: 13px
 }
 
 .intro-scroll-indicator {
@@ -2984,11 +2889,7 @@ html[dir=rtl] .form-group select {
     padding: 60px 0
   }
 
-.intro-logo-wrapper {
-    width: 200px
-  }
-
-.intro-tagline {
+  .intro-tagline {
     letter-spacing: 4px;
     padding: 0 20px;
     font-size: 11px
@@ -3132,15 +3033,13 @@ body.custom-cursor-enabled, body.custom-cursor-enabled a, body.custom-cursor-ena
     scroll-behavior: auto
   }
 
-  .intro-particles,
+  .intro-dna-canvas,
   .intro-glow,
-  .intro-ring,
   .intro-scroll-indicator,
   .hero-scroll-hint {
     display: none
   }
 
-  .particle,
   .intro-logo-wrapper,
   .intro-tagline,
   .partners-marquee-wrap,

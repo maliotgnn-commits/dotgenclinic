@@ -31,6 +31,7 @@ import {
 } from './appointment-attribution.js';
 import { initDoctorClickHandling } from './doctor-click.js';
 import { heroPosterSources } from './responsive-image.js';
+import { createDnaIntro } from './dna-intro.js';
 
 const locale = getCurrentLocale('home');
 const footerLoopVideoUrl = '/videos/world-animation.mp4';
@@ -117,10 +118,12 @@ const percentFormatter = new Intl.NumberFormat(getIntlLocale(locale), {
   maximumFractionDigits: 0,
 });
 
-const INTRO_SEEN_KEY = 'dotgen_intro_seen_v1';
+const INTRO_SEEN_KEY = 'dotgen_intro_seen_v2';
+const forceIntroPreview = new URLSearchParams(window.location.search).get('intro') === 'preview';
 
 let introComplete = false;
 let introProgress = 0;
+let introDna = null;
 let currentSlide = 0;
 let slideInterval;
 let footerVideoInitialized = false;
@@ -166,31 +169,10 @@ function getIntroAnimationElements() {
   return introAnimationElements;
 }
 
-function createParticles() {
-  if (prefersReducedMotion) return;
-
-  const container = document.getElementById('intro-particles');
-  if (!container) return;
-
-  const particleCount = introMobileQuery.matches ? 4 : 14;
-  if (particleCount === 0) return;
-
-  for (let i = 0; i < particleCount; i += 1) {
-    const particle = document.createElement('div');
-    const size = 1 + Math.random() * 3;
-    particle.classList.add('particle');
-    particle.style.left = `${Math.random() * 100}%`;
-    particle.style.top = `${Math.random() * 100}%`;
-    particle.style.animationDelay = `${Math.random() * 4}s`;
-    particle.style.animationDuration = `${3 + Math.random() * 3}s`;
-    particle.style.width = `${size}px`;
-    particle.style.height = `${size}px`;
-    container.appendChild(particle);
-  }
-}
-
 function updateIntroAnimation(progress) {
   if (!introOverlay) return;
+
+  introDna?.setProgress(progress);
 
   if (progressBar) progressBar.style.width = `${progress * 100}%`;
 
@@ -204,18 +186,22 @@ function updateIntroAnimation(progress) {
 
   const { logoWrapper, logo, scrollIndicator, tagline } = elements;
   if (logoWrapper) {
-    const scale = 1 + progress * 0.3;
-    const glow = 20 + progress * 60;
+    const overlayOpacity = Math.max(0, 1 - progress * 1.4);
+    const scale = 1 + progress * 0.06;
+    const glow = 26 + progress * 24;
+    logoWrapper.style.opacity = overlayOpacity;
     logoWrapper.style.transform = `scale(${scale})`;
-    if (logo) logo.style.filter = `drop-shadow(0 0 ${glow}px rgba(201, 168, 76, ${0.3 + progress * 0.5}))`;
+    if (logo) logo.style.filter = `drop-shadow(0 0 ${glow}px rgba(200, 150, 60, ${0.28 + progress * 0.2}))`;
   }
 
-  if (scrollIndicator) scrollIndicator.style.opacity = Math.max(0, 1 - progress * 3);
+  if (scrollIndicator) scrollIndicator.style.opacity = Math.max(0, 1 - progress * 1.8);
 
-  if (tagline) tagline.style.opacity = Math.max(0, 0.8 - progress * 2);
+  if (tagline) {
+    tagline.style.opacity = 0.85 * Math.max(0, 1 - progress * 1.4);
+  }
 
-  if (progress > 0.4) {
-    const revealProgress = (progress - 0.4) / 0.6;
+  if (progress > 0.72) {
+    const revealProgress = (progress - 0.72) / 0.28;
     const maxRadius = Math.sqrt(window.innerWidth ** 2 + window.innerHeight ** 2);
     const radius = revealProgress * maxRadius;
 
@@ -225,6 +211,13 @@ function updateIntroAnimation(progress) {
     if (header && !header.classList.contains('visible')) {
       header.style.opacity = revealProgress;
       header.style.transform = `translateY(${-20 + revealProgress * 20}px)`;
+    }
+  } else {
+    introOverlay.style.clipPath = 'none';
+    introOverlay.style.opacity = '1';
+    if (header && !header.classList.contains('visible')) {
+      header.style.opacity = '0';
+      header.style.transform = 'translateY(-20px)';
     }
   }
 }
@@ -240,6 +233,10 @@ function completeIntro() {
   }
 
   introOverlay?.classList.add('completed');
+  introDna?.destroy();
+  introDna = null;
+  document.documentElement.classList.remove('intro-active');
+  document.body.classList.remove('intro-active');
   document.body.style.overflow = '';
   if (introSection) introSection.style.display = 'none';
 
@@ -261,7 +258,7 @@ function handleVirtualScroll(event) {
   if (introComplete) return;
   event.preventDefault();
 
-  introProgress += event.deltaY / 800;
+  introProgress += event.deltaY / 1000;
   introProgress = Math.max(0, Math.min(1, introProgress));
   updateIntroAnimation(introProgress);
 
@@ -277,7 +274,7 @@ function initIntro() {
   }
 
   try {
-    if (sessionStorage.getItem(INTRO_SEEN_KEY) === '1') {
+    if (!forceIntroPreview && sessionStorage.getItem(INTRO_SEEN_KEY) === '1') {
       completeIntro();
       return;
     }
@@ -287,13 +284,18 @@ function initIntro() {
 
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   window.scrollTo(0, 0);
+  document.documentElement.classList.add('intro-active');
+  document.body.classList.add('intro-active');
   document.body.style.overflow = 'hidden';
 
   header.style.opacity = '0';
   header.style.transform = 'translateY(-20px)';
   header.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
 
-  createParticles();
+  introDna = createDnaIntro(document.getElementById('intro-dna-canvas'), {
+    mobileQuery: introMobileQuery,
+  });
+  updateIntroAnimation(0);
   window.addEventListener('wheel', handleVirtualScroll, { passive: false });
 
   let touchStartY = 0;
@@ -308,7 +310,7 @@ function initIntro() {
     const touchY = event.touches[0].clientY;
     const delta = touchStartY - touchY;
     touchStartY = touchY;
-    introProgress = Math.max(0, Math.min(1, introProgress + delta / (introMobileQuery.matches ? 260 : 400)));
+    introProgress = Math.max(0, Math.min(1, introProgress + delta / (introMobileQuery.matches ? 340 : 480)));
     updateIntroAnimation(introProgress);
     if (introProgress >= 1) completeIntro();
   }, { passive: false });

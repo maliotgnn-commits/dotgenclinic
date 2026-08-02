@@ -20,10 +20,12 @@
       @font-face{font-family:"Playfair Display Fallback";src:local("Georgia");size-adjust:104%;ascent-override:92%;descent-override:24%;line-gap-override:0%}
       html{scroll-behavior:smooth;overflow-x:hidden}
       body{margin:0;font-family:var(--font-body);background:var(--bg-primary);color:var(--text-primary);line-height:1.7;overflow-x:hidden}
+      html.intro-active,body.intro-active{overflow:hidden}
       img{max-width:100%;height:auto;display:block}
       #intro-section{z-index:9999;position:relative}
-      #intro-overlay{z-index:10000;background:var(--bg-primary);display:flex;position:fixed;inset:0;flex-direction:column;justify-content:center;align-items:center}
-      .intro-logo-wrapper{width:340px;display:flex;position:relative;justify-content:center;align-items:center}
+      #intro-overlay{z-index:10000;background:radial-gradient(circle at 50% 46%,#0b1524 0%,#050b16 45%,#000 78%);display:flex;position:fixed;inset:0;flex-direction:column;justify-content:center;align-items:center;overflow:hidden;isolation:isolate}
+      .intro-dna-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+      .intro-logo-wrapper{width:min(440px,62vw);display:flex;position:relative;z-index:2;justify-content:center;align-items:center}
       .intro-logo{width:100%;height:auto;position:relative;z-index:2}
       #main-header{z-index:1000;position:fixed;top:0;left:0;right:0;max-width:100%}
       .main-nav{background:#0a1628d9;border-bottom:1px solid #ffffff14}
@@ -39,7 +41,7 @@
       .hero-slide-video{background:#060d18}
       .hero-bg-video{object-fit:cover;width:100%;height:100%}
       @media (max-width:1279px){.nav-actions{justify-self:end;gap:clamp(6px,2vw,10px);inline-size:118px;min-width:118px;justify-content:flex-end}.nav-actions>.nav-cta{display:none}.hamburger{display:flex}}
-      @media (max-width:768px){.intro-logo-wrapper{width:200px}.nav-logo img{height:42px}.nav-language-slot{width:64px;min-height:44px}}
+      @media (max-width:768px){.nav-logo img{height:42px}.nav-language-slot{width:64px;min-height:44px}}
     </style>
     <script data-source-seo="true" type="application/ld+json">
       {
@@ -113,7 +115,7 @@
     <div id="intro-section">
       <div class="intro-spacer"></div>
       <div id="intro-overlay">
-        <div class="intro-particles" id="intro-particles" aria-hidden="true"></div>
+        <canvas id="intro-dna-canvas" class="intro-dna-canvas" aria-hidden="true"></canvas>
         <div class="intro-logo-wrapper">
           <picture>
             <source srcset="/images/logo-transparent-350.avif 350w, /images/logo-transparent-700.avif 700w" sizes="(max-width: 768px) 200px, 340px" type="image/avif" />
@@ -121,9 +123,6 @@
             <img src="/images/logo-transparent-350.webp" width="350" height="204" fetchpriority="high" decoding="sync" alt="Dr Otgen Clinic Aesthetic" class="intro-logo" />
           </picture>
           <div class="intro-glow" aria-hidden="true"></div>
-          <div class="intro-ring ring-1" aria-hidden="true"></div>
-          <div class="intro-ring ring-2" aria-hidden="true"></div>
-          <div class="intro-ring ring-3" aria-hidden="true"></div>
         </div>
         <div class="intro-tagline">Küresel sağlık yolculuğunun geleceğini inşa ediyoruz</div>
         <div class="intro-scroll-indicator" aria-hidden="true">
