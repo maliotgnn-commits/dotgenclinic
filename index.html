@@ -22,9 +22,10 @@
       body{margin:0;font-family:var(--font-body);background:var(--bg-primary);color:var(--text-primary);line-height:1.7;overflow-x:hidden}
       img{max-width:100%;height:auto;display:block}
       #intro-section{z-index:9999;position:relative}
-      #intro-overlay{z-index:10000;background:var(--bg-primary);display:flex;position:fixed;inset:0;flex-direction:column;justify-content:center;align-items:center}
-      .intro-logo-wrapper{width:340px;display:flex;position:relative;justify-content:center;align-items:center}
-      .intro-logo{width:100%;height:auto;position:relative;z-index:2}
+      #intro-overlay{z-index:10000;background:radial-gradient(circle at 50% 46%,#0c0904 0%,#050301 45%,#000 78%);display:flex;position:fixed;inset:0;flex-direction:column;justify-content:center;align-items:center}
+      #intro-dna-stage{position:absolute;inset:0;z-index:0;pointer-events:none}
+      .intro-logo-wrapper{width:340px;display:flex;position:relative;justify-content:center;align-items:center;z-index:2}
+      .intro-logo{width:100%;height:auto;position:relative;z-index:2;filter:drop-shadow(0 0 26px rgba(200,150,60,.28))}
       #main-header{z-index:1000;position:fixed;top:0;left:0;right:0;max-width:100%}
       .main-nav{background:#0a1628d9;border-bottom:1px solid #ffffff14}
       .nav-container{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;height:80px;max-width:min(1600px,100%);margin:0 auto;padding:0 24px}
@@ -113,6 +114,7 @@
     <div id="intro-section">
       <div class="intro-spacer"></div>
       <div id="intro-overlay">
+        <div id="intro-dna-stage" aria-hidden="true"></div>
         <div class="intro-particles" id="intro-particles" aria-hidden="true"></div>
         <div class="intro-logo-wrapper">
           <picture>
