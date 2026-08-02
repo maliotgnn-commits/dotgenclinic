@@ -35,6 +35,7 @@ import { heroPosterSources } from './responsive-image.js';
 const locale = getCurrentLocale('home');
 const footerLoopVideoUrl = '/videos/world-animation.mp4';
 const prefersReducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+const introMobileQuery = window.matchMedia('(max-width: 768px)');
 let prefersReducedMotion = prefersReducedMotionQuery.matches;
 let heroVideoSourceAttached = false;
 
@@ -117,10 +118,13 @@ const percentFormatter = new Intl.NumberFormat(getIntlLocale(locale), {
   maximumFractionDigits: 0,
 });
 
-const INTRO_SEEN_KEY = 'dotgen_intro_seen_v1';
+const INTRO_SEEN_KEY = 'dotgen_intro_seen_v2';
 
 let introComplete = false;
 let introProgress = 0;
+let dnaIntroReady = false;
+let setDnaIntroProgressFn = null;
+let disposeDnaIntroFn = null;
 let currentSlide = 0;
 let slideInterval;
 let footerVideoInitialized = false;
@@ -167,12 +171,12 @@ function getIntroAnimationElements() {
 }
 
 function createParticles() {
-  if (prefersReducedMotion) return;
+  if (prefersReducedMotion || dnaIntroReady) return;
 
   const container = document.getElementById('intro-particles');
   if (!container) return;
 
-  const particleCount = introMobileQuery.matches ? 4 : 14;
+  const particleCount = introMobileQuery?.matches ? 4 : 14;
   if (particleCount === 0) return;
 
   for (let i = 0; i < particleCount; i += 1) {
@@ -189,6 +193,47 @@ function createParticles() {
   }
 }
 
+async function startDnaIntro() {
+  const stage = document.getElementById('intro-dna-stage');
+  if (!stage || introComplete) return false;
+
+  try {
+    const dnaModule = await import('./dna-intro.js');
+    if (introComplete) return false;
+
+    setDnaIntroProgressFn = dnaModule.setDnaIntroProgress;
+    disposeDnaIntroFn = dnaModule.disposeDnaIntro;
+    dnaIntroReady = dnaModule.initDnaIntro(stage);
+
+    if (introComplete) {
+      stopDnaIntro();
+      return false;
+    }
+
+    if (dnaIntroReady) {
+      setDnaIntroProgressFn(introProgress);
+    }
+    return dnaIntroReady;
+  } catch {
+    dnaIntroReady = false;
+    setDnaIntroProgressFn = null;
+    disposeDnaIntroFn = null;
+    return false;
+  }
+}
+
+function stopDnaIntro() {
+  if (!dnaIntroReady && !disposeDnaIntroFn) return;
+  try {
+    disposeDnaIntroFn?.();
+  } catch {
+    // ignore dispose errors during teardown
+  }
+  dnaIntroReady = false;
+  setDnaIntroProgressFn = null;
+  disposeDnaIntroFn = null;
+}
+
 function updateIntroAnimation(progress) {
   if (!introOverlay) return;
 
@@ -199,20 +244,25 @@ function updateIntroAnimation(progress) {
     progressEl.setAttribute('aria-valuenow', String(Math.round(progress * 100)));
   }
 
+  if (dnaIntroReady && setDnaIntroProgressFn) {
+    setDnaIntroProgressFn(progress);
+  }
+
   const elements = getIntroAnimationElements();
   if (!elements) return;
 
   const { logoWrapper, logo, scrollIndicator, tagline } = elements;
   if (logoWrapper) {
-    const scale = 1 + progress * 0.3;
-    const glow = 20 + progress * 60;
+    const scale = 1 + progress * 0.18;
+    const glow = 26 + progress * 40;
     logoWrapper.style.transform = `scale(${scale})`;
-    if (logo) logo.style.filter = `drop-shadow(0 0 ${glow}px rgba(201, 168, 76, ${0.3 + progress * 0.5}))`;
+    logoWrapper.style.opacity = Math.max(0, 1 - progress * 1.4);
+    if (logo) logo.style.filter = `drop-shadow(0 0 ${glow}px rgba(200, 150, 60, ${0.28 + progress * 0.35}))`;
   }
 
   if (scrollIndicator) scrollIndicator.style.opacity = Math.max(0, 1 - progress * 3);
 
-  if (tagline) tagline.style.opacity = Math.max(0, 0.8 - progress * 2);
+  if (tagline) tagline.style.opacity = Math.max(0, 0.85 - progress * 1.4);
 
   if (progress > 0.4) {
     const revealProgress = (progress - 0.4) / 0.6;
@@ -239,6 +289,7 @@ function completeIntro() {
     // sessionStorage may be unavailable
   }
 
+  stopDnaIntro();
   introOverlay?.classList.add('completed');
   document.body.style.overflow = '';
   if (introSection) introSection.style.display = 'none';
@@ -293,7 +344,9 @@ function initIntro() {
   header.style.transform = 'translateY(-20px)';
   header.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
 
-  createParticles();
+  startDnaIntro().then((started) => {
+    if (!started) createParticles();
+  });
   window.addEventListener('wheel', handleVirtualScroll, { passive: false });
 
   let touchStartY = 0;
@@ -389,7 +442,6 @@ function setupHeroVideoLoop() {
 const HERO_FALLBACK_POSTER_DESKTOP = heroPosterSources(false).webp;
 const HERO_FALLBACK_POSTER_MOBILE = heroPosterSources(true).webp;
 const heroMobileQuery = window.matchMedia('(max-width: 768px)');
-const introMobileQuery = window.matchMedia('(max-width: 768px)');
 
 function getHeroFallbackPosterUrl() {
   return heroMobileQuery.matches

@@ -162,7 +162,7 @@ img {
 
 #intro-overlay {
   z-index: 10000;
-  background: var(--bg-primary);
+  background: radial-gradient(circle at 50% 46%, #0c0904 0%, #050301 45%, #000 78%);
   will-change: clip-path,  opacity;
   flex-direction: column;
   justify-content: center;
@@ -175,6 +175,26 @@ img {
 
 #intro-overlay.completed {
   pointer-events: none;
+  display: none
+}
+
+#intro-dna-stage {
+  pointer-events: none;
+  z-index: 0;
+  position: absolute;
+  inset: 0;
+  overflow: hidden
+}
+
+#intro-dna-stage .intro-dna-canvas {
+  display: block;
+  width: 100%;
+  height: 100%
+}
+
+#intro-overlay.has-dna-intro .intro-particles,
+#intro-overlay.has-dna-intro .intro-glow,
+#intro-overlay.has-dna-intro .intro-ring {
   display: none
 }
 
@@ -222,13 +242,14 @@ to {
   align-items: center;
   width: 340px;
   height: auto;
+  z-index: 2;
   display: flex;
   position: relative
 }
 
 .intro-logo {
   z-index: 2;
-  filter: drop-shadow(0 0 20px #c9a84c4d);
+  filter: drop-shadow(0 0 26px rgba(200, 150, 60, .28));
   aspect-ratio: 350 / 204;
   width: 100%;
   height: auto;
@@ -3135,6 +3156,7 @@ body.custom-cursor-enabled, body.custom-cursor-enabled a, body.custom-cursor-ena
   .intro-particles,
   .intro-glow,
   .intro-ring,
+  #intro-dna-stage,
   .intro-scroll-indicator,
   .hero-scroll-hint {
     display: none
