@@ -1,7 +1,7 @@
 import * as THREE from './vendor/three/three.module.js';
-import { EffectComposer } from './vendor/three/addons/postprocessing/EffectComposer.js';
-import { RenderPass } from './vendor/three/addons/postprocessing/RenderPass.js';
-import { UnrealBloomPass } from './vendor/three/addons/postprocessing/UnrealBloomPass.js';
+
+/* Demo panel: Bloom 0.0 (no post FX), Parlaklık 0.3× */
+const BRIGHTNESS_MULTIPLIER = 0.3;
 
 const DESKTOP_CONFIG = {
   strandCount: 1400,
@@ -170,7 +170,7 @@ export function initDnaIntro(container) {
       uHeight: { value: config.height },
       uOpenTwist: { value: config.openTwist },
       uOpenRadius: { value: config.openRadius },
-      uBright: { value: config.helixBrightness },
+      uBright: { value: config.helixBrightness * BRIGHTNESS_MULTIPLIER },
     },
     vertexShader: /* glsl */ `
       uniform float uTime,uSize,uPixelRatio,uProgress,uTurns,uRadius,uHeight,uOpenTwist,uOpenRadius;
@@ -256,17 +256,6 @@ export function initDnaIntro(container) {
   rings.position.z = -4;
   scene.add(rings);
 
-  const composer = new EffectComposer(renderer);
-  composer.addPass(new RenderPass(scene, camera));
-  const bloomStrength = isMobileViewport() ? 0.75 : 1.0;
-  const bloom = new UnrealBloomPass(
-    new THREE.Vector2(container.clientWidth, container.clientHeight),
-    bloomStrength,
-    0.7,
-    0.0,
-  );
-  composer.addPass(bloom);
-
   const clock = new THREE.Clock();
   const mouse = { x: 0, y: 0 };
   let openP = 0;
@@ -286,7 +275,6 @@ export function initDnaIntro(container) {
     camera.aspect = width / height;
     camera.updateProjectionMatrix();
     renderer.setSize(width, height);
-    composer.setSize(width, height);
     const nextPixelRatio = Math.min(window.devicePixelRatio || 1, 2);
     material.uniforms.uPixelRatio.value = nextPixelRatio;
     dustMat.uniforms.uPixelRatio.value = nextPixelRatio;
@@ -326,7 +314,7 @@ export function initDnaIntro(container) {
     camera.position.z += (camZ - camera.position.z) * 0.05;
     camera.lookAt(0, 0, 0);
 
-    composer.render();
+    renderer.render(scene, camera);
     rafId = requestAnimationFrame(tick);
   };
 
@@ -348,7 +336,6 @@ export function initDnaIntro(container) {
       window.removeEventListener('pointermove', onPointerMove);
       window.removeEventListener('resize', onResize);
 
-      composer.dispose();
       renderer.dispose();
       material.dispose();
       dustMat.dispose();
