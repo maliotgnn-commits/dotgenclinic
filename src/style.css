@@ -1969,7 +1969,9 @@ to {
   filter: blur(38px);
   mix-blend-mode: screen;
   transform: translate3d(0, 0, 0) scale(1);
-  backface-visibility: hidden
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  contain: layout paint style
 }
 
 .stats-section .stats-aurora-blob-one {
