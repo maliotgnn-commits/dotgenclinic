@@ -5,10 +5,12 @@ import { SUBPAGES } from '../src/subpages-data.js';
 import {
   CLINIC,
   LOCALES,
+  DEFAULT_LOCALE,
   SITE_ORIGIN,
   buildBranchMedicalClinicEntity,
   buildIzmirMedicalClinicEntity,
   buildOrganizationEntity,
+  localizedDepartments,
   locationId,
   organizationId,
 } from './seo-shared.mjs';
@@ -102,6 +104,24 @@ function buildBaselineBranchEntity(location, pageUrl) {
   return buildBranchMedicalClinicEntity(location, pageUrl);
 }
 
+function verifyLocalizedDepartments(org, locale, label) {
+  assert(org?.department?.length >= 1, `[${label}] Organization department missing`);
+  assert(org?.medicalSpecialty?.length >= 1, `[${label}] Organization medicalSpecialty missing`);
+  if (locale === DEFAULT_LOCALE) {
+    assert(
+      JSON.stringify(org?.department) === JSON.stringify(CLINIC.departments),
+      `[${label}] Turkish Organization department mismatch`,
+    );
+    return;
+  }
+
+  const expectedDepartments = localizedDepartments(locale);
+  assert(
+    JSON.stringify(org?.department) === JSON.stringify(expectedDepartments),
+    `[${label}] localized Organization department mismatch`,
+  );
+}
+
 for (const locale of LOCALES) {
   verifyFile(`${locale}/index.html`, ({ html, blocks }) => {
     const label = `home/${locale}`;
@@ -111,8 +131,7 @@ for (const locale of LOCALES) {
     assert(types.includes('WebSite'), `[${label}] WebSite missing`);
     assert(types.includes('WebPage'), `[${label}] WebPage missing`);
     const org = graph.find((node) => node['@type'] === 'Organization');
-    assert(org?.department?.length >= 1, `[${label}] Organization department missing`);
-    assert(org?.medicalSpecialty?.length >= 1, `[${label}] Organization medicalSpecialty missing`);
+    verifyLocalizedDepartments(org, locale, label);
     assert(Array.isArray(org?.sameAs) && org.sameAs.includes(CLINIC.instagram), `[${label}] Organization sameAs missing`);
     const clinics = graph.filter((node) => {
       const type = node['@type'];
@@ -141,8 +160,7 @@ for (const locale of LOCALES) {
     const org = graph.find((node) => node['@type'] === 'Organization');
     assert(org?.legalName === CLINIC.legalName, `[${label}] legalName mismatch`);
     assert(org?.name === CLINIC.publicName, `[${label}] public name mismatch`);
-    assert(org?.department?.length >= 1, `[${label}] Organization department missing`);
-    assert(org?.medicalSpecialty?.length >= 1, `[${label}] Organization medicalSpecialty missing`);
+    verifyLocalizedDepartments(org, locale, label);
     const clinics = graph.filter((node) => {
       const type = node['@type'];
       return type === 'MedicalClinic' || (Array.isArray(type) && type.includes('MedicalClinic'));

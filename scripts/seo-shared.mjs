@@ -1,3 +1,10 @@
+import { readFileSync } from 'node:fs';
+import { resolve, dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const ROOT = resolve(__dirname, '..');
+
 export const SITE_ORIGIN = 'https://www.drotgenclinic.com';
 export const LOCALES = ['tr', 'en', 'ar', 'es', 'fr', 'it', 'ru', 'de'];
 export const DEFAULT_LOCALE = 'tr';
@@ -115,7 +122,25 @@ export function buildVerifiedSameAsList(profiles = CLINIC.socialProfiles) {
   return Object.values(profiles).filter(Boolean);
 }
 
-export function buildOrganizationEntity(extra = {}) {
+function loadUiDictionaryForSchema(locale) {
+  if (locale === DEFAULT_LOCALE) return { text: {}, html: {} };
+  try {
+    return JSON.parse(readFileSync(resolve(ROOT, `src/i18n/ui/${locale}.json`), 'utf8'));
+  } catch {
+    return { text: {}, html: {} };
+  }
+}
+
+function translateUiLabel(dictionary, source) {
+  return dictionary?.text?.[source] || source;
+}
+
+export function localizedDepartments(locale = DEFAULT_LOCALE) {
+  const dictionary = loadUiDictionaryForSchema(locale);
+  return CLINIC.departments.map((department) => translateUiLabel(dictionary, department));
+}
+
+export function buildOrganizationEntity(locale = DEFAULT_LOCALE, extra = {}) {
   return {
     '@type': 'Organization',
     '@id': organizationId(),
@@ -126,7 +151,7 @@ export function buildOrganizationEntity(extra = {}) {
     email: CLINIC.email,
     telephone: CLINIC.phone,
     sameAs: buildVerifiedSameAsList(),
-    department: [...CLINIC.departments],
+    department: localizedDepartments(locale),
     medicalSpecialty: [...CLINIC.medicalSpecialties],
     ...extra,
   };
@@ -300,7 +325,7 @@ export function buildHomeSchema(locale, title) {
   const pageUrl = `${SITE_ORIGIN}/${locale}/`;
   return buildJsonLdScript([
     {
-      ...buildOrganizationEntity(),
+      ...buildOrganizationEntity(locale),
       contactPoint: {
         '@type': 'ContactPoint',
         contactType: 'customer service',
@@ -331,7 +356,7 @@ export function buildHomeSchema(locale, title) {
 export function buildServiceSchema(page, locale, slug) {
   const pageUrl = `${SITE_ORIGIN}/${locale}/service.html?slug=${encodeURIComponent(slug)}`;
   const graph = [
-    buildOrganizationEntity(),
+    buildOrganizationEntity(locale),
     {
       '@type': 'Service',
       '@id': `${pageUrl}#service`,
@@ -381,7 +406,7 @@ export function buildPrivacySchema(locale, title, description) {
   );
 
   return buildJsonLdScript([
-    buildOrganizationEntity(),
+    buildOrganizationEntity(locale),
     ...locationEntities,
     {
       '@type': 'WebPage',
