@@ -1911,10 +1911,187 @@ to {
 }
 
 .stats-section {
-  background: linear-gradient(135deg,  var(--bg-tertiary),  var(--bg-secondary));
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(135deg, #030817 0%, #071426 48%, #0b1f3a 100%);
   border-top: 1px solid var(--border-subtle);
   border-bottom: 1px solid var(--border-subtle);
   padding: 80px 0
+}
+
+.stats-section > .container {
+  position: relative;
+  z-index: 1
+}
+
+.stats-section .stats-aurora {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden
+}
+
+.stats-section .stats-aurora-layer {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform, opacity;
+  filter: blur(70px);
+  mix-blend-mode: screen;
+  transform: translate3d(0, 0, 0) scale(1);
+  backface-visibility: hidden
+}
+
+.stats-section .stats-aurora-layer-one {
+  width: 70%;
+  height: 160%;
+  top: -35%;
+  left: -30%;
+  opacity: .55;
+  background:
+    radial-gradient(ellipse 55% 45% at 30% 45%, #00d9ffb3 0%, #00d9ff00 58%),
+    radial-gradient(ellipse 40% 50% at 65% 55%, #38bdf899 0%, #38bdf800 62%);
+  animation: stats-aurora-flow-one 18s ease-in-out infinite
+}
+
+.stats-section .stats-aurora-layer-two {
+  width: 75%;
+  height: 170%;
+  top: -40%;
+  right: -35%;
+  left: auto;
+  opacity: .45;
+  background:
+    radial-gradient(ellipse 50% 40% at 70% 40%, #0099ffb8 0%, #0099ff00 60%),
+    radial-gradient(ellipse 45% 55% at 35% 65%, #2563eb99 0%, #2563eb00 65%);
+  animation: stats-aurora-flow-two 25s ease-in-out infinite
+}
+
+.stats-section .stats-aurora-layer-three {
+  width: 90%;
+  height: 140%;
+  top: -20%;
+  left: 5%;
+  opacity: .35;
+  background:
+    radial-gradient(ellipse 60% 45% at 50% 50%, #06b6d48c 0%, #06b6d400 58%),
+    radial-gradient(ellipse 35% 40% at 25% 35%, #38bdf866 0%, #38bdf800 60%),
+    radial-gradient(ellipse 30% 35% at 75% 60%, #6366f140 0%, #6366f100 55%);
+  animation: stats-aurora-flow-three 35s ease-in-out infinite
+}
+
+@keyframes stats-aurora-flow-one {
+  0%,
+  100% {
+    opacity: .28;
+    transform: translate3d(-12%, 6%, 0) rotate(-8deg) scale(1)
+  }
+
+  30% {
+    opacity: .62;
+    transform: translate3d(26%, -5%, 0) rotate(3deg) scale(1.2)
+  }
+
+  55% {
+    opacity: .5;
+    transform: translate3d(58%, 7%, 0) rotate(9deg) scale(1.08)
+  }
+
+  78% {
+    opacity: .36;
+    transform: translate3d(22%, -2%, 0) rotate(2deg) scale(1.12)
+  }
+}
+
+@keyframes stats-aurora-flow-two {
+  0%,
+  100% {
+    opacity: .22;
+    transform: translate3d(8%, -6%, 0) rotate(6deg) scale(1.05)
+  }
+
+  35% {
+    opacity: .52;
+    transform: translate3d(-24%, 8%, 0) rotate(-5deg) scale(1.22)
+  }
+
+  60% {
+    opacity: .4;
+    transform: translate3d(-52%, -3%, 0) rotate(-11deg) scale(1.1)
+  }
+
+  82% {
+    opacity: .3;
+    transform: translate3d(-18%, 5%, 0) rotate(-2deg) scale(1.14)
+  }
+}
+
+@keyframes stats-aurora-flow-three {
+  0%,
+  100% {
+    opacity: .18;
+    transform: translate3d(-4%, 4%, 0) rotate(0deg) scale(1)
+  }
+
+  25% {
+    opacity: .38;
+    transform: translate3d(8%, -8%, 0) rotate(5deg) scale(1.12)
+  }
+
+  50% {
+    opacity: .32;
+    transform: translate3d(14%, 6%, 0) rotate(-3deg) scale(1.06)
+  }
+
+  75% {
+    opacity: .42;
+    transform: translate3d(-6%, -4%, 0) rotate(4deg) scale(1.16)
+  }
+}
+
+@media (width<=768px) {
+  .stats-section .stats-aurora-layer {
+    filter: blur(42px)
+  }
+
+  .stats-section .stats-aurora-layer-one {
+    opacity: .4
+  }
+
+  .stats-section .stats-aurora-layer-two {
+    opacity: .32
+  }
+
+  .stats-section .stats-aurora-layer-three {
+    animation: none;
+    opacity: .2;
+    transform: translate3d(0, 0, 0) scale(1.05)
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stats-section .stats-aurora-layer {
+    animation: none !important;
+    will-change: auto;
+    filter: blur(48px)
+  }
+
+  .stats-section .stats-aurora-layer-one {
+    opacity: .4;
+    transform: translate3d(12%, 0, 0) scale(1.1)
+  }
+
+  .stats-section .stats-aurora-layer-two {
+    opacity: .3;
+    transform: translate3d(-10%, 4%, 0) scale(1.08)
+  }
+
+  .stats-section .stats-aurora-layer-three {
+    opacity: .22;
+    transform: translate3d(0, 0, 0) scale(1.05)
+  }
 }
 
 .stats-grid {
