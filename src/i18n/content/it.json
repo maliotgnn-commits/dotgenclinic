@@ -741,7 +741,7 @@
     {
       "category": "corporate",
       "slug": "production",
-      "navLabel": "produzione",
+      "navLabel": "Produzione",
       "navAppendOnly": true,
       "title": "Produzione della clinica Dr. Otgen",
       "categoryLabel": "Aziendale",
@@ -3084,7 +3084,7 @@
     {
       "category": "dental",
       "slug": "orthodontics",
-      "navLabel": "ortodonzia",
+      "navLabel": "Ortodonzia",
       "title": "ortodonzia",
       "categoryLabel": "Estetica dentale",
       "heroTag": "Progettazione del sorriso",
@@ -3902,7 +3902,7 @@
     {
       "category": "plastic",
       "slug": "rhinoplasty",
-      "navLabel": "rinoplastica",
+      "navLabel": "Rinoplastica",
       "title": "rinoplastica",
       "categoryLabel": "Chirurgia plastica",
       "heroTag": "Estetica chirurgica",
@@ -4193,7 +4193,7 @@
     {
       "category": "plastic",
       "slug": "blepharoplasty",
-      "navLabel": "blefaroplastica",
+      "navLabel": "Blefaroplastica",
       "title": "blefaroplastica",
       "categoryLabel": "Chirurgia plastica",
       "heroTag": "Estetica chirurgica",
@@ -4442,7 +4442,7 @@
     {
       "category": "plastic",
       "slug": "liposuction",
-      "navLabel": "liposuzione",
+      "navLabel": "Liposuzione",
       "title": "liposuzione",
       "categoryLabel": "Chirurgia plastica",
       "heroTag": "Estetica chirurgica",
@@ -4832,7 +4832,7 @@
     {
       "category": "medical",
       "slug": "botox",
-      "navLabel": "botulino",
+      "navLabel": "Botulino",
       "title": "botulino",
       "categoryLabel": "Estetica medica",
       "heroTag": "Trattamenti mininvasivi",

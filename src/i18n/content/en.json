@@ -140,7 +140,7 @@
     {
       "category": "corporate",
       "slug": "our-values",
-      "navLabel": "Our values",
+      "navLabel": "Our Values",
       "title": "Our values",
       "categoryLabel": "Corporate",
       "heroTag": "Corporate Information",
@@ -456,7 +456,7 @@
     {
       "category": "corporate",
       "slug": "our-doctors",
-      "navLabel": "Our doctors",
+      "navLabel": "Our Doctors",
       "title": "Our doctors",
       "categoryLabel": "Corporate",
       "heroTag": "Corporate Information",
@@ -741,7 +741,7 @@
     {
       "category": "corporate",
       "slug": "production",
-      "navLabel": "production",
+      "navLabel": "Production",
       "navAppendOnly": true,
       "title": "Dr Otgen Clinic Production",
       "categoryLabel": "Corporate",
@@ -3084,7 +3084,7 @@
     {
       "category": "dental",
       "slug": "orthodontics",
-      "navLabel": "orthodontics",
+      "navLabel": "Orthodontics",
       "title": "orthodontics",
       "categoryLabel": "Dental Aesthetics",
       "heroTag": "Smile Design",
@@ -3902,7 +3902,7 @@
     {
       "category": "plastic",
       "slug": "rhinoplasty",
-      "navLabel": "rhinoplasty",
+      "navLabel": "Rhinoplasty",
       "title": "rhinoplasty",
       "categoryLabel": "Plastic Surgery",
       "heroTag": "Surgical Aesthetics",
@@ -4193,7 +4193,7 @@
     {
       "category": "plastic",
       "slug": "blepharoplasty",
-      "navLabel": "blepharoplasty",
+      "navLabel": "Blepharoplasty",
       "title": "blepharoplasty",
       "categoryLabel": "Plastic Surgery",
       "heroTag": "Surgical Aesthetics",
@@ -4442,7 +4442,7 @@
     {
       "category": "plastic",
       "slug": "liposuction",
-      "navLabel": "liposuction",
+      "navLabel": "Liposuction",
       "title": "liposuction",
       "categoryLabel": "Plastic Surgery",
       "heroTag": "Surgical Aesthetics",
@@ -4832,7 +4832,7 @@
     {
       "category": "medical",
       "slug": "botox",
-      "navLabel": "botox",
+      "navLabel": "Botox",
       "title": "botox",
       "categoryLabel": "Medical Aesthetics",
       "heroTag": "Minimally Invasive Treatments",
