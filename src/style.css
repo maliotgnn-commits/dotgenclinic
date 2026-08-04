@@ -2662,21 +2662,26 @@ html[dir=rtl] .form-group select {
 
 @media (width>=1280px) and (width<=1535px) {
   .nav-menu {
-    gap: clamp(0px, 0.15vw, 3px);
+    gap: clamp(0px, 0.1vw, 2px);
   }
 
   .nav-menu>li>a {
-    font-size: clamp(10px, 0.25vw + 0.45rem, 13px);
-    padding-inline: clamp(3px, 0.35vw + 1px, 10px);
+    font-size: clamp(9px, 0.2vw + 0.4rem, 13px);
+    padding-inline: clamp(2px, 0.25vw + 0.5px, 10px);
   }
 
   .has-dropdown[data-eye-health-nav] .eh-nav-item-head {
-    font-size: clamp(10px, 0.25vw + 0.45rem, 13px);
-    padding-inline: clamp(3px, 0.35vw + 1px, 10px);
+    font-size: clamp(9px, 0.2vw + 0.4rem, 13px);
+    padding-inline: clamp(2px, 0.25vw + 0.5px, 10px);
   }
 
   .nav-actions {
-    gap: clamp(5px, 0.45vw, 10px);
+    gap: clamp(4px, 0.35vw, 10px);
+  }
+
+  .nav-cta {
+    font-size: clamp(10px, 0.2vw + 0.45rem, 14px);
+    padding: clamp(6px, 0.4vw + 3px, 10px) clamp(8px, 0.6vw + 4px, 22px);
   }
 }
 
