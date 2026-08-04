@@ -2037,7 +2037,19 @@ to {
 }
 
 .popular-section {
-  background: linear-gradient(180deg,  var(--bg-primary),  var(--bg-secondary))
+  background: linear-gradient(180deg, #eaf4fb, #dcedf9)
+}
+
+.popular-section .section-tag {
+  color: var(--gold-dark)
+}
+
+.popular-section .section-header h2 {
+  color: #0a1628
+}
+
+.popular-section .section-header p {
+  color: #0a1628b3
 }
 
 .popular-grid {
@@ -2047,9 +2059,10 @@ to {
 }
 
 .popular-item {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background: #fff;
+  border: 1px solid #0a16281a;
   border-radius: var(--radius-sm);
+  box-shadow: 0 4px 16px #0a16280d;
   transition: var(--transition);
   justify-content: space-between;
   align-items: center;
@@ -2067,21 +2080,21 @@ to {
 .popular-category {
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--gold);
+  color: var(--gold-dark);
   min-width: 110px;
   margin-inline-end: 16px;
   font-size: 11px
 }
 
 .popular-name {
-  color: var(--text-primary);
+  color: #0a1628;
   flex: 1;
   font-size: 15px;
   font-weight: 500
 }
 
 .popular-arrow {
-  color: var(--text-muted);
+  color: #0a162866;
   transition: var(--transition)
 }
 
