@@ -269,11 +269,11 @@ export function expectedHeroHtmlForLocale(locale) {
 export function expectedTitleForLocale(locale) {
   if (locale === DEFAULT_LOCALE) return SOURCE_TITLE;
   const dictionary = loadUiDictionary(locale);
-  return translate(dictionary, LEGACY_SOURCE_TITLE);
+  return translate(dictionary, SOURCE_TITLE);
 }
 
 export function expectedDescriptionForLocale(locale) {
   if (locale === DEFAULT_LOCALE) return SOURCE_DESCRIPTION;
   const dictionary = loadUiDictionary(locale);
-  return translate(dictionary, LEGACY_SOURCE_DESCRIPTION);
+  return translate(dictionary, SOURCE_DESCRIPTION);
 }
