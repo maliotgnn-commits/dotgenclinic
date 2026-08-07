@@ -118,10 +118,11 @@ const percentFormatter = new Intl.NumberFormat(getIntlLocale(locale), {
   maximumFractionDigits: 0,
 });
 
-const INTRO_SEEN_KEY = 'dotgen_intro_seen_v2';
+const INTRO_SEEN_KEY = 'dotgen_intro_seen_v3';
 
 let introComplete = false;
 let introProgress = 0;
+let pendingIntroHash = '';
 let dnaIntroReady = false;
 let setDnaIntroProgressFn = null;
 let disposeDnaIntroFn = null;
@@ -279,6 +280,28 @@ function updateIntroAnimation(progress) {
   }
 }
 
+function applyPendingIntroHash() {
+  if (!pendingIntroHash) return;
+
+  const hash = pendingIntroHash;
+  pendingIntroHash = '';
+
+  try {
+    history.replaceState(null, '', `${window.location.pathname}${window.location.search}${hash}`);
+  } catch {
+    // history may be unavailable
+  }
+
+  const target = document.querySelector(hash);
+  if (!target) return;
+
+  const headerHeight = header?.offsetHeight || 0;
+  window.scrollTo({
+    top: Math.max(0, target.offsetTop - headerHeight),
+    behavior: prefersReducedMotion ? 'auto' : 'smooth',
+  });
+}
+
 function completeIntro() {
   if (introComplete) return;
   introComplete = true;
@@ -306,6 +329,7 @@ function completeIntro() {
   syncHeroVideoPlayback();
   startSlider();
   scheduleHeroVideoSourceLoad();
+  applyPendingIntroHash();
 }
 
 function handleVirtualScroll(event) {
@@ -334,6 +358,16 @@ function initIntro() {
     }
   } catch {
     // continue with intro animation
+  }
+
+  // Keep deep-link targets for after the intro; hash scroll must not dismiss it.
+  if (window.location.hash && window.location.hash !== '#') {
+    pendingIntroHash = window.location.hash;
+    try {
+      history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+    } catch {
+      // history may be unavailable
+    }
   }
 
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
@@ -1154,7 +1188,8 @@ function initSmoothScroll() {
 
 function handleWindowScroll() {
   if (!introComplete) {
-    if (window.scrollY > 50) completeIntro();
+    // Lock page position while intro is active; never auto-dismiss via hash/restored scroll.
+    if (window.scrollY !== 0) window.scrollTo(0, 0);
     return;
   }
 
