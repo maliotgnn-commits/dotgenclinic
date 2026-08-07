@@ -120,8 +120,23 @@
               <div class="field-grid">
                 <label>
                   Ürün *
-                  <select name="product">
-                    <option value="diamond-ha-20">DIAMOND Crosslinked HA 20</option>
+                  <select name="product" id="product-select">
+                    <optgroup label="Dolgu Ürünleri">
+                      <option value="diamond-ha-20">DIAMOND Crosslinked HA 20</option>
+                    </optgroup>
+                    <optgroup label="Kanüller">
+                      <option value="cannula-microtip-set">Blunt-Tip Mikro Kanül Seti</option>
+                      <option value="cannula-fat-transfer">Yağ Transferi Kanül Seti</option>
+                    </optgroup>
+                    <optgroup label="Anestezik Kremler">
+                      <option value="topical-anesthetic-cream">Topikal Anestezik Krem</option>
+                      <option value="rapid-anesthetic-gel">Hızlı Etkili Anestezik Jel</option>
+                    </optgroup>
+                    <optgroup label="Sarf Malzemeleri">
+                      <option value="sterile-injector-set">Steril Enjektör Seti</option>
+                      <option value="mesotherapy-needles">Mezoterapi İğneleri</option>
+                      <option value="procedure-kit">Prosedür Sarf Kiti</option>
+                    </optgroup>
                   </select>
                 </label>
                 <label>
@@ -180,8 +195,11 @@
 
           <aside class="order-summary" aria-label="Sipariş özeti">
             <p class="eyebrow">TALEP ÖZETİ</p>
-            <h2>DIAMOND Crosslinked HA 20</h2>
-            <div class="mini-product"><span>ITALY</span><strong>DIAMOND</strong></div>
+            <h2 id="summary-product-title">DIAMOND Crosslinked HA 20</h2>
+            <div class="mini-product">
+              <span id="summary-product-label">ITALY</span>
+              <strong id="summary-product-name">DIAMOND</strong>
+            </div>
             <dl>
               <div><dt>Adet</dt><dd id="summary-quantity">1</dd></div>
               <div><dt>Fiyatlandırma</dt><dd>Teklif ile</dd></div>
