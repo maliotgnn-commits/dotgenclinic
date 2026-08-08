@@ -3,12 +3,24 @@
     {
       "source": "/",
       "destination": "/tr/",
-      "permanent": true
+      "permanent": true,
+      "missing": [
+        {
+          "type": "host",
+          "value": "medical.drotgenclinic.com"
+        }
+      ]
     },
     {
       "source": "/index.html",
       "destination": "/tr/",
-      "permanent": true
+      "permanent": true,
+      "missing": [
+        {
+          "type": "host",
+          "value": "medical.drotgenclinic.com"
+        }
+      ]
     },
     {
       "source": "/service.html",
@@ -5002,6 +5014,127 @@
     {
       "source": "/api/admin/seo-health",
       "destination": "/api/admin/seo?healthCheck=1"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "medical.drotgenclinic.com"
+        }
+      ],
+      "destination": "/medical/index.html"
+    },
+    {
+      "source": "/product.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "medical.drotgenclinic.com"
+        }
+      ],
+      "destination": "/medical/product.html"
+    },
+    {
+      "source": "/cart.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "medical.drotgenclinic.com"
+        }
+      ],
+      "destination": "/medical/cart.html"
+    },
+    {
+      "source": "/checkout.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "medical.drotgenclinic.com"
+        }
+      ],
+      "destination": "/medical/checkout.html"
+    },
+    {
+      "source": "/account.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "medical.drotgenclinic.com"
+        }
+      ],
+      "destination": "/medical/account.html"
+    },
+    {
+      "source": "/inventory.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "medical.drotgenclinic.com"
+        }
+      ],
+      "destination": "/medical/inventory.html"
+    },
+    {
+      "source": "/privacy.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "medical.drotgenclinic.com"
+        }
+      ],
+      "destination": "/medical/privacy.html"
+    },
+    {
+      "source": "/professional-verification.html",
+      "has": [
+        {
+          "type": "host",
+          "value": "medical.drotgenclinic.com"
+        }
+      ],
+      "destination": "/medical/professional-verification.html"
+    },
+    {
+      "source": "/store.js",
+      "has": [
+        {
+          "type": "host",
+          "value": "medical.drotgenclinic.com"
+        }
+      ],
+      "destination": "/medical/store.js"
+    },
+    {
+      "source": "/styles.css",
+      "has": [
+        {
+          "type": "host",
+          "value": "medical.drotgenclinic.com"
+        }
+      ],
+      "destination": "/medical/styles.css"
+    },
+    {
+      "source": "/dr-otgen-clinic-logo.png",
+      "has": [
+        {
+          "type": "host",
+          "value": "medical.drotgenclinic.com"
+        }
+      ],
+      "destination": "/medical/dr-otgen-clinic-logo.png"
+    },
+    {
+      "source": "/og.png",
+      "has": [
+        {
+          "type": "host",
+          "value": "medical.drotgenclinic.com"
+        }
+      ],
+      "destination": "/medical/og.png"
     }
-  ]
+  ],
+  "buildCommand": "npm run build && npm run build:medical"
 }
