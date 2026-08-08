@@ -5,8 +5,8 @@ const PRODUCTS = [
     shortName: 'DIAMOND HA 20',
     brand: 'DIAMOND',
     category: 'Dolgu',
-    price: 2450,
-    compareAt: 2790,
+    price: 4450,
+    compareAt: 4790,
     stock: 18,
     badge: 'Çok Satan',
     tone: 'ivory',
@@ -20,7 +20,7 @@ const PRODUCTS = [
     shortName: 'DIAMOND VOLUME',
     brand: 'DIAMOND',
     category: 'Dolgu',
-    price: 3150,
+    price: 5150,
     compareAt: null,
     stock: 12,
     badge: 'Yeni',
@@ -35,8 +35,8 @@ const PRODUCTS = [
     shortName: 'DIAMOND SOFT',
     brand: 'DIAMOND',
     category: 'Dolgu',
-    price: 2650,
-    compareAt: 2890,
+    price: 4650,
+    compareAt: 4890,
     stock: 24,
     badge: null,
     tone: 'pearl',
@@ -50,8 +50,8 @@ const PRODUCTS = [
     shortName: 'MESOFILL SKIN',
     brand: 'MESOFILL',
     category: 'Cilt Bakımı',
-    price: 1890,
-    compareAt: 2190,
+    price: 3890,
+    compareAt: 4190,
     stock: 8,
     badge: 'Sınırlı Stok',
     tone: 'aqua',
@@ -65,7 +65,7 @@ const PRODUCTS = [
     shortName: 'PDRN REPAIR',
     brand: 'REGENLAB',
     category: 'Cilt Bakımı',
-    price: 2250,
+    price: 4250,
     compareAt: null,
     stock: 0,
     badge: 'Yakında',
@@ -80,8 +80,8 @@ const PRODUCTS = [
     shortName: 'REGEN COLLAGEN',
     brand: 'REGENLAB',
     category: 'Bakım',
-    price: 1490,
-    compareAt: 1690,
+    price: 3490,
+    compareAt: 3690,
     stock: 32,
     badge: 'Avantajlı',
     tone: 'sand',
@@ -95,8 +95,8 @@ const PRODUCTS = [
     shortName: 'MİKRO KANÜL SETİ',
     brand: 'MEDISHARP',
     category: 'Kanül',
-    price: 890,
-    compareAt: 990,
+    price: 2890,
+    compareAt: 2990,
     stock: 40,
     badge: 'Çok Satan',
     tone: 'pearl',
@@ -110,7 +110,7 @@ const PRODUCTS = [
     shortName: 'FAT TRANSFER KANÜLÜ',
     brand: 'MEDISHARP',
     category: 'Kanül',
-    price: 950,
+    price: 2950,
     compareAt: null,
     stock: 22,
     badge: null,
@@ -125,8 +125,8 @@ const PRODUCTS = [
     shortName: 'TOPİKAL ANESTEZİK KREM',
     brand: 'DERMANEST',
     category: 'Anestezik Krem',
-    price: 620,
-    compareAt: 690,
+    price: 2620,
+    compareAt: 2690,
     stock: 35,
     badge: 'Çok Satan',
     tone: 'aqua',
@@ -140,7 +140,7 @@ const PRODUCTS = [
     shortName: 'HIZLI ETKİLİ JEL',
     brand: 'DERMANEST',
     category: 'Anestezik Krem',
-    price: 540,
+    price: 2540,
     compareAt: null,
     stock: 5,
     badge: 'Sınırlı Stok',
@@ -155,7 +155,7 @@ const PRODUCTS = [
     shortName: 'STERİL ENJEKTÖR SETİ',
     brand: 'MEDISHARP',
     category: 'Sarf Malzemesi',
-    price: 410,
+    price: 2410,
     compareAt: null,
     stock: 60,
     badge: null,
@@ -170,8 +170,8 @@ const PRODUCTS = [
     shortName: 'MEZOTERAPİ İĞNESİ',
     brand: 'MEDISHARP',
     category: 'Sarf Malzemesi',
-    price: 350,
-    compareAt: 390,
+    price: 2350,
+    compareAt: 2390,
     stock: 45,
     badge: 'Avantajlı',
     tone: 'ivory',
@@ -185,7 +185,7 @@ const PRODUCTS = [
     shortName: 'PROSEDÜR SARF KİTİ',
     brand: 'DOTGEN CARE',
     category: 'Sarf Malzemesi',
-    price: 480,
+    price: 2480,
     compareAt: null,
     stock: 0,
     badge: 'Yakında',
@@ -200,8 +200,8 @@ const PRODUCTS = [
     shortName: 'BOTOX 100Ü',
     brand: 'NEUROTOX',
     category: 'Botoks',
-    price: 3200,
-    compareAt: 3600,
+    price: 5200,
+    compareAt: 5600,
     stock: 15,
     badge: 'Çok Satan',
     tone: 'navy',
@@ -215,7 +215,7 @@ const PRODUCTS = [
     shortName: 'BOTOX 50Ü',
     brand: 'NEUROTOX',
     category: 'Botoks',
-    price: 1850,
+    price: 3850,
     compareAt: null,
     stock: 20,
     badge: null,
@@ -230,8 +230,8 @@ const PRODUCTS = [
     shortName: 'DIAMOND LIP',
     brand: 'DIAMOND',
     category: 'Dolgu',
-    price: 2750,
-    compareAt: 2990,
+    price: 4750,
+    compareAt: 4990,
     stock: 16,
     badge: 'Yeni',
     tone: 'rose',
@@ -245,7 +245,7 @@ const PRODUCTS = [
     shortName: 'PRP KİTİ 10ML',
     brand: 'REGENLAB',
     category: 'PRP',
-    price: 890,
+    price: 2890,
     compareAt: null,
     stock: 28,
     badge: null,
@@ -260,8 +260,8 @@ const PRODUCTS = [
     shortName: 'PRP KİTİ 20ML',
     brand: 'REGENLAB',
     category: 'PRP',
-    price: 990,
-    compareAt: 1090,
+    price: 2990,
+    compareAt: 3090,
     stock: 4,
     badge: 'Sınırlı Stok',
     tone: 'sand',
@@ -275,8 +275,8 @@ const PRODUCTS = [
     shortName: 'MEZO VİTAMİN',
     brand: 'MESOFILL',
     category: 'Cilt Bakımı',
-    price: 720,
-    compareAt: 790,
+    price: 2720,
+    compareAt: 2790,
     stock: 30,
     badge: 'Avantajlı',
     tone: 'ivory',
@@ -290,7 +290,7 @@ const PRODUCTS = [
     shortName: 'MEZO SAÇ SERUMU',
     brand: 'MESOFILL',
     category: 'Cilt Bakımı',
-    price: 850,
+    price: 2850,
     compareAt: null,
     stock: 0,
     badge: 'Yakında',
@@ -347,6 +347,16 @@ function money(value) {
     currency: 'TRY',
     maximumFractionDigits: 0,
   }).format(value);
+}
+
+function productReputation(product) {
+  let hash = 0;
+  for (let i = 0; i < product.id.length; i += 1) {
+    hash = (hash * 31 + product.id.charCodeAt(i)) >>> 0;
+  }
+  const rating = (4.4 + ((hash % 7) / 10)).toFixed(1).replace('.', ',');
+  const reviews = 12 + (((hash >>> 5) % 25) * 6);
+  return { rating, reviews };
 }
 
 function getInventory() {
@@ -552,6 +562,7 @@ function productCard(product) {
   const favorites = readStorage(KEYS.favorites, []);
   const saved = favorites.includes(product.id);
   const discount = product.compareAt ? Math.round((1 - product.price / product.compareAt) * 100) : 0;
+  const reputation = productReputation(product);
   return `
     <article class="product-card" data-product-id="${product.id}">
       <div class="product-card-media">
@@ -565,7 +576,7 @@ function productCard(product) {
       <div class="product-card-body">
         <p>${escapeHtml(product.brand)} · ${escapeHtml(product.category)}</p>
         <h3><a href="./product.html?id=${product.id}">${escapeHtml(product.name)}</a></h3>
-        <div class="rating-row"><span>★★★★★</span><small>4,9 · 28 değerlendirme</small></div>
+        <div class="rating-row"><span>★★★★★</span><small>${reputation.rating} · ${reputation.reviews} değerlendirme</small></div>
         <div class="card-price-row">
           <div><strong>${money(product.price)}</strong>${product.compareAt ? `<del>${money(product.compareAt)}</del>` : ''}</div>
           <span class="stock-text ${product.stock < 1 ? 'out' : product.stock <= 8 ? 'low' : ''}">${product.stock < 1 ? 'Tükendi' : product.stock <= 8 ? `Son ${product.stock} ürün` : 'Stokta'}</span>
@@ -821,6 +832,7 @@ function initProduct() {
   if (!target) return;
   const product = getProduct(new URLSearchParams(location.search).get('id')) || getProduct(PRODUCTS[0].id);
   const related = PRODUCTS.filter((item) => item.category === product.category && item.id !== product.id).slice(0, 3).map(productWithStock);
+  const reputation = productReputation(product);
   document.title = `${product.name} | DrOtgen Medical`;
   target.innerHTML = `
     <nav class="breadcrumbs" aria-label="Sayfa yolu"><a href="./">Ana sayfa</a><span>/</span><a href="./#products">${escapeHtml(product.category)}</a><span>/</span><b>${escapeHtml(product.shortName)}</b></nav>
@@ -832,7 +844,7 @@ function initProduct() {
       <div class="product-info">
         <p class="eyebrow">${escapeHtml(product.brand)} · ${escapeHtml(product.category)}</p>
         <h1>${escapeHtml(product.name)}</h1>
-        <div class="product-rating"><span>★★★★★</span><a href="#details">4,9 · 28 değerlendirme</a><b>SKU: ${escapeHtml(product.sku)}</b></div>
+        <div class="product-rating"><span>★★★★★</span><a href="#details">${reputation.rating} · ${reputation.reviews} değerlendirme</a><b>SKU: ${escapeHtml(product.sku)}</b></div>
         <p class="product-description">${escapeHtml(product.description)}</p>
         <div class="product-price"><strong>${money(product.price)}</strong>${product.compareAt ? `<del>${money(product.compareAt)}</del>` : ''}<small>KDV dahil</small></div>
         <div class="product-stock ${product.stock < 1 ? 'out' : ''}"><i></i>${product.stock < 1 ? 'Stokta yok' : `${product.stock} adet stokta · Bugün kargoda`}</div>
