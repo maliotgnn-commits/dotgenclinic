@@ -7,10 +7,19 @@ const projectRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const sourceRoot = resolve(projectRoot, 'medical');
 const outputRoot = resolve(projectRoot, 'dist', 'medical');
 
+const pageFiles = [
+  'index.html',
+  'product.html',
+  'cart.html',
+  'checkout.html',
+  'account.html',
+  'inventory.html',
+  'privacy.html',
+];
+
 const files = {
-  landing: resolve(sourceRoot, 'index.html'),
-  verification: resolve(sourceRoot, 'professional-verification.html'),
-  script: resolve(sourceRoot, 'verification.js'),
+  ...Object.fromEntries(pageFiles.map((name) => [name, resolve(sourceRoot, name)])),
+  store: resolve(sourceRoot, 'store.js'),
   styles: resolve(sourceRoot, 'styles.css'),
 };
 
@@ -22,77 +31,55 @@ function expect(content, pattern, message) {
 
 await Promise.all(Object.values(files).map((file) => access(file, constants.R_OK)));
 
-const [landing, verification, script] = await Promise.all([
-  readFile(files.landing, 'utf8'),
-  readFile(files.verification, 'utf8'),
-  readFile(files.script, 'utf8'),
-]);
+const contents = Object.fromEntries(
+  await Promise.all(
+    Object.entries(files).map(async ([key, path]) => [key, await readFile(path, 'utf8')]),
+  ),
+);
 
-expect(landing, /DrOtgenMedical/, 'Ana sayfada DrOtgenMedical markası bulunamadı.');
-expect(landing, /DIAMOND Crosslinked HA 20/, 'Ana sayfada DIAMOND ürünü bulunamadı.');
-expect(
-  landing,
-  /meta name="robots" content="noindex, nofollow"/,
-  'Ana sayfanın geçici noindex etiketi eksik.',
-);
-expect(
-  landing,
-  /\.\/professional-verification\.html/,
-  'Ana sayfadan profesyonel doğrulama bağlantısı eksik.',
-);
-expect(landing, /id="faq"/, 'Ana sayfada sipariş öncesi SSS bölümü bulunamadı.');
-expect(landing, /class="mobile-order-bar"/, 'Mobil sabit sipariş çağrısı bulunamadı.');
+for (const name of pageFiles) {
+  expect(contents[name], /DrOtgen ?Medical/, `${name} sayfasında DrOtgen Medical markası bulunamadı.`);
+  expect(
+    contents[name],
+    /<div id="site-header">/,
+    `${name} sayfasında paylaşılan site başlığı (site-header) bulunamadı.`,
+  );
+  expect(
+    contents[name],
+    /<div id="site-footer">/,
+    `${name} sayfasında paylaşılan site alt bilgisi (site-footer) bulunamadı.`,
+  );
+  expect(
+    contents[name],
+    /<script type="module" src="\.\/store\.js">/,
+    `${name} sayfası mağaza betiğini (store.js) yüklemiyor.`,
+  );
+}
 
-expect(
-  verification,
-  /id="verification-form"/,
-  'Profesyonel doğrulama formu bulunamadı.',
-);
-expect(
-  verification,
-  /accept="\.pdf,\.jpg,\.jpeg,\.png,application\/pdf,image\/jpeg,image\/png"/,
-  'Mesleki belge dosya türü kısıtı eksik.',
-);
-expect(
-  verification,
-  /meta name="robots" content="noindex, nofollow"/,
-  'Doğrulama sayfasının geçici noindex etiketi eksik.',
-);
-expect(
-  verification,
-  /action="https:\/\/formsubmit\.co\/ajax\/drotgenclinic@gmail\.com"/,
-  'Sipariş talebi gönderim adresi bulunamadı.',
-);
-expect(
-  verification,
-  /enctype="multipart\/form-data"/,
-  'Mesleki belge yüklemesi için form kodlaması eksik.',
-);
-expect(
-  verification,
-  /aria-describedby="form-status"/,
-  'Form durum alanı erişilebilir biçimde bağlanmamış.',
-);
-expect(verification, /id="success-title"/, 'Başarı mesajı başlığı bulunamadı.');
-expect(script, /10 \* 1024 \* 1024/, '10 MB dosya sınırı bulunamadı.');
-expect(script, /ACCEPTED_EXTENSIONS/, 'Dosya uzantısı geri dönüş kontrolü bulunamadı.');
-expect(script, /event\.preventDefault\(\)/, 'Form gönderim denetimi bulunamadı.');
-expect(script, /await fetch\(form\.action/, 'Sipariş talebi gönderimi bulunamadı.');
-expect(script, /aria-busy/, 'Form gönderiminde meşgul durumu bulunamadı.');
+expect(contents['index.html'], /id="product-grid"/, 'Ana sayfada ürün ızgarası bulunamadı.');
+expect(contents['index.html'], /id="category-tabs"/, 'Ana sayfada kategori sekmeleri bulunamadı.');
 
-const placeholderTerms = /konsept|örnek|ön izleme|demo/i;
-if (placeholderTerms.test(`${landing}\n${verification}`)) {
+expect(contents.store, /const PRODUCTS = \[/, 'store.js içinde ürün kataloğu (PRODUCTS) bulunamadı.');
+expect(contents.store, /DIAMOND Crosslinked HA 20/, 'Ürün kataloğunda DIAMOND ürünü bulunamadı.');
+expect(contents.store, /category:\s*'Kanül'/, 'Ürün kataloğunda Kanül kategorisi bulunamadı.');
+expect(contents.store, /category:\s*'Anestezik Krem'/, 'Ürün kataloğunda Anestezik Krem kategorisi bulunamadı.');
+expect(contents.store, /category:\s*'Sarf Malzemesi'/, 'Ürün kataloğunda Sarf Malzemesi kategorisi bulunamadı.');
+expect(contents.store, /function escapeHtml/, 'store.js içinde HTML kaçış (XSS koruması) fonksiyonu bulunamadı.');
+expect(contents.store, /data-add-cart="\$\{product\.id\}"/, 'Sepete ekleme kontrolü bulunamadı.');
+
+const placeholderTerms = /konsept|örnek ürün|ön izleme|demo ürün/i;
+const combined = pageFiles.map((name) => contents[name]).join('\n');
+if (placeholderTerms.test(combined)) {
   failures.push('Yayın metninde konsept veya ön izleme ifadesi bulundu.');
 }
 
-await Promise.all([
-  access(resolve(outputRoot, 'index.html'), constants.R_OK),
-  access(resolve(outputRoot, 'professional-verification.html'), constants.R_OK),
-]);
+await Promise.all(
+  pageFiles.map((name) => access(resolve(outputRoot, name), constants.R_OK)),
+);
 
 if (failures.length) {
   console.error(failures.map((failure) => `- ${failure}`).join('\n'));
   process.exitCode = 1;
 } else {
-  console.log('DrOtgenMedical sayfaları ve sipariş talebi akışı doğrulandı.');
+  console.log('DrOtgen Medical mağaza sayfaları ve ürün kataloğu doğrulandı.');
 }
