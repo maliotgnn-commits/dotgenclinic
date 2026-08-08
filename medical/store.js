@@ -194,6 +194,111 @@ const PRODUCTS = [
     features: ['Steril eldiven', 'Gazlı bez', 'Antiseptik ped', 'Set başına 1 prosedürlük içerik'],
     sku: 'DOT-PROK-013',
   },
+  {
+    id: 'botox-100u',
+    name: 'Botulinum Toksin A 100 Ünite',
+    shortName: 'BOTOX 100Ü',
+    brand: 'NEUROTOX',
+    category: 'Botoks',
+    price: 3200,
+    compareAt: 3600,
+    stock: 15,
+    badge: 'Çok Satan',
+    tone: 'navy',
+    description: 'Mimik kırışıklıkları için klinik onaylı profesyonel botulinum toksin tip A enjeksiyonu.',
+    features: ['100 Ünite / flakon', 'Liyofilize toz form', 'Soğuk zincir sevkiyat', 'Profesyonel uygulama için'],
+    sku: 'DOT-BTX100-014',
+  },
+  {
+    id: 'botox-50u',
+    name: 'Botulinum Toksin A 50 Ünite',
+    shortName: 'BOTOX 50Ü',
+    brand: 'NEUROTOX',
+    category: 'Botoks',
+    price: 1850,
+    compareAt: null,
+    stock: 20,
+    badge: null,
+    tone: 'pearl',
+    description: 'Küçük alan uygulamaları ve düşük doz protokolleri için 50 ünitelik profesyonel seri.',
+    features: ['50 Ünite / flakon', 'Liyofilize toz form', 'Soğuk zincir sevkiyat', 'Profesyonel uygulama için'],
+    sku: 'DOT-BTX50-015',
+  },
+  {
+    id: 'diamond-lip',
+    name: 'DIAMOND Lip Contour',
+    shortName: 'DIAMOND LIP',
+    brand: 'DIAMOND',
+    category: 'Dolgu',
+    price: 2750,
+    compareAt: 2990,
+    stock: 16,
+    badge: 'Yeni',
+    tone: 'rose',
+    description: 'Dudak konturu ve hacimlendirme uygulamaları için yumuşak dokulu profesyonel DIAMOND serisi.',
+    features: ['Dudak bölgesine özel formül', '1 × 1 ml kullanıma hazır enjektör', '2 adet uygulama ucu', 'İtalya üretimi'],
+    sku: 'DOT-DLIP-016',
+  },
+  {
+    id: 'prp-kit-10ml',
+    name: 'PRP Hazırlık Kiti 10 ml',
+    shortName: 'PRP KİTİ 10ML',
+    brand: 'REGENLAB',
+    category: 'PRP',
+    price: 890,
+    compareAt: null,
+    stock: 28,
+    badge: null,
+    tone: 'aqua',
+    description: 'Trombositten zengin plazma hazırlığı için steril, tek kullanımlık santrifüj tüp seti.',
+    features: ['10 ml separasyon jelli tüp', 'Tek kullanımlık, steril', 'Standart santrifüjlerle uyumlu', 'Kutu başına 10 adet'],
+    sku: 'DOT-PRP10-017',
+  },
+  {
+    id: 'prp-kit-20ml',
+    name: 'PRP Hazırlık Kiti 20 ml',
+    shortName: 'PRP KİTİ 20ML',
+    brand: 'REGENLAB',
+    category: 'PRP',
+    price: 990,
+    compareAt: 1090,
+    stock: 4,
+    badge: 'Sınırlı Stok',
+    tone: 'sand',
+    description: 'Daha yüksek hacimli PRP protokolleri için çift tüplü hazırlık kiti.',
+    features: ['2 × 10 ml separasyon jelli tüp', 'Tek kullanımlık, steril', 'Standart santrifüjlerle uyumlu', 'Kutu başına 10 adet'],
+    sku: 'DOT-PRP20-018',
+  },
+  {
+    id: 'mesotherapy-vitamin-cocktail',
+    name: 'Mezoterapi Vitamin Kokteyli',
+    shortName: 'MEZO VİTAMİN',
+    brand: 'MESOFILL',
+    category: 'Cilt Bakımı',
+    price: 720,
+    compareAt: 790,
+    stock: 30,
+    badge: 'Avantajlı',
+    tone: 'ivory',
+    description: 'Cilt canlandırma protokolleri için çoklu vitamin ve mineral içerikli mezoterapi solüsyonu.',
+    features: ['Multi-vitamin kompleksi', '5 × 5 ml flakon', 'Mezoterapi ve mikroneedling uyumlu', 'Profesyonel seri'],
+    sku: 'DOT-MVIT-019',
+  },
+  {
+    id: 'mesotherapy-hair-serum',
+    name: 'Saç Mezoterapisi Serumu',
+    shortName: 'MEZO SAÇ SERUMU',
+    brand: 'MESOFILL',
+    category: 'Cilt Bakımı',
+    price: 850,
+    compareAt: null,
+    stock: 0,
+    badge: 'Yakında',
+    tone: 'navy',
+    description: 'Saç köklerini destekleyen peptit ve biotin içerikli mezoterapi serumu.',
+    features: ['Biotin ve peptit kompleksi', '5 × 5 ml flakon', 'Saç mezoterapisi protokolleri için', 'Profesyonel seri'],
+    sku: 'DOT-MHAIR-020',
+  },
 ];
 
 const KEYS = {
@@ -579,6 +684,29 @@ function closeStockNotification() {
   }, 180);
 }
 
+function notifyNewOrder(order, delivery) {
+  const itemsSummary = order.items.map((item) => `${item.name} × ${item.quantity}`).join(', ');
+  fetch('https://formsubmit.co/ajax/drotgenclinic@gmail.com', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify({
+      _subject: `DrOtgen Medical yeni sipariş: ${order.number}`,
+      'Sipariş No': order.number,
+      'Ad Soyad': order.customer.fullName,
+      'E-posta': order.customer.email,
+      Telefon: delivery.phone,
+      Adres: delivery.address,
+      İl: delivery.city,
+      'Posta Kodu': delivery.postalCode,
+      'Ödeme Yöntemi': delivery.paymentType,
+      Ürünler: itemsSummary,
+      Toplam: money(order.total),
+    }),
+  }).catch(() => {
+    // The order is already saved locally; a failed notification shouldn't block checkout.
+  });
+}
+
 function saveStockNotification(event) {
   event.preventDefault();
   const data = new FormData(event.currentTarget);
@@ -864,6 +992,13 @@ function initCheckout() {
     items.forEach(({ product, quantity }) => { inventory[product.id] = Math.max(0, product.stock - quantity); });
     writeStorage(KEYS.inventory, inventory);
     saveCart([]);
+    notifyNewOrder(order, {
+      phone: data.get('phone'),
+      address: data.get('address'),
+      city: data.get('city'),
+      postalCode: data.get('postalCode'),
+      paymentType: data.get('paymentType') === 'card' ? 'Kredi/banka kartı' : 'Banka havalesi',
+    });
     target.innerHTML = `
       <div class="order-success">
         <span>✓</span><p class="eyebrow">SİPARİŞİNİZ ALINDI</p><h1>Teşekkürler, ${escapeHtml(String(data.get('fullName')).split(' ')[0])}.</h1>
