@@ -10,11 +10,11 @@ const DESKTOP_CONFIG = {
   height: 26,
   rungs: 80,
   rungParticles: 9,
-  baseSize: 20.0,
+  baseSize: 16.0,
   openTwist: 0.06,
   openRadius: 2.1,
-  dustCount: 240,
-  helixBrightness: 0.9,
+  dustCount: 180,
+  helixBrightness: 0.7,
 };
 
 const MOBILE_CONFIG = {
@@ -24,11 +24,11 @@ const MOBILE_CONFIG = {
   height: 26,
   rungs: 48,
   rungParticles: 6,
-  baseSize: 16.0,
+  baseSize: 13.0,
   openTwist: 0.06,
   openRadius: 2.1,
-  dustCount: 100,
-  helixBrightness: 0.9,
+  dustCount: 80,
+  helixBrightness: 0.7,
 };
 
 let runtime = null;
@@ -146,7 +146,8 @@ export function initDnaIntro(container) {
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 200);
-  camera.position.set(0, 0, 16);
+  /* Farther camera so the helix reads as a background atmosphere behind the logo */
+  camera.position.set(0, 0, 30);
 
   const renderer = new THREE.WebGLRenderer({ antialias: !isMobileViewport(), alpha: true, powerPreference: 'high-performance' });
   renderer.setSize(container.clientWidth, container.clientHeight);
@@ -213,6 +214,9 @@ export function initDnaIntro(container) {
   dna.frustumCulled = false;
   const group = new THREE.Group();
   group.add(dna);
+  /* Push helix deeper in Z so logo/tagline stay in the foreground */
+  group.position.z = -14;
+  group.scale.setScalar(0.7);
   scene.add(group);
 
   const dustMat = new THREE.ShaderMaterial({
@@ -250,10 +254,10 @@ export function initDnaIntro(container) {
   scene.add(dust);
 
   const rings = new THREE.Group();
-  rings.add(createRing(7.5, 0.10));
-  rings.add(createRing(9.2, 0.06));
-  rings.add(createRing(11, 0.035));
-  rings.position.z = -4;
+  rings.add(createRing(7.5, 0.08));
+  rings.add(createRing(9.2, 0.05));
+  rings.add(createRing(11, 0.03));
+  rings.position.z = -12;
   scene.add(rings);
 
   const clock = new THREE.Clock();
@@ -308,9 +312,9 @@ export function initDnaIntro(container) {
     openP += (targetOpen - openP) * 0.05;
     material.uniforms.uProgress.value = openP;
 
-    const camZ = THREE.MathUtils.lerp(16, 23, openP);
-    camera.position.x += (mouse.x * 2.0 - camera.position.x) * 0.05;
-    camera.position.y += (-mouse.y * 1.4 - camera.position.y) * 0.06;
+    const camZ = THREE.MathUtils.lerp(30, 38, openP);
+    camera.position.x += (mouse.x * 1.0 - camera.position.x) * 0.05;
+    camera.position.y += (-mouse.y * 0.8 - camera.position.y) * 0.06;
     camera.position.z += (camZ - camera.position.z) * 0.05;
     camera.lookAt(0, 0, 0);
 
