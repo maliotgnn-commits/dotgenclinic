@@ -19,6 +19,9 @@ export function renderArgeNavItem(locale = 'tr') {
       (page) => `<a href="${page.path}" data-arge-page-link="${page.id}">${page.navLabel}</a>`,
     )
     .join('\n              ');
+  const gendilLink = locale === 'tr'
+    ? '<a href="https://www.denizlidilterapisti.com/" data-arge-page-link="gendil" target="_blank" rel="noopener">Gendil</a>'
+    : '';
 
   return `
     <li class="has-dropdown" data-desktop-menu-id="arge"${locale === 'tr' ? ' data-tr-only-nav' : ''} data-arge-nav>
@@ -37,6 +40,7 @@ export function renderArgeNavItem(locale = 'tr') {
         <div class="mega-col">
           <h4><a href="${landingPath}">${menuLabel}</a></h4>
           ${pageLinks}
+          ${gendilLink}
         </div>
       </div>
     </li>
