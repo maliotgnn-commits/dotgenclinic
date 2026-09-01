@@ -44,3 +44,4 @@ secrets/**
 .env
 .env.*
 !.env.example
+.env*
