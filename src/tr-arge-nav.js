@@ -20,7 +20,7 @@ export function renderArgeNavItem(locale = 'tr') {
     )
     .join('\n              ');
   const gendilLink = locale === 'tr'
-    ? '<a href="https://www.denizlidilterapisti.com/" data-arge-page-link="gendil" target="_blank" rel="noopener">Gendil</a>'
+    ? '<a href="https://www.denizlidilterapisti.com/" data-arge-page-link="gendil" target="_blank" rel="noopener">Gendil Ar-Ge</a>'
     : '';
 
   return `
