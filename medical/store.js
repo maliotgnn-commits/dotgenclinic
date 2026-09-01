@@ -332,6 +332,67 @@ function writeStorage(key, value) {
   }
 }
 
+function injectJsonLd(id, data) {
+  let script = document.getElementById(id);
+  if (!script) {
+    script = document.createElement('script');
+    script.id = id;
+    script.type = 'application/ld+json';
+    document.head.appendChild(script);
+  }
+  script.textContent = JSON.stringify(data);
+}
+
+function productUrl(product) {
+  return `${location.origin}/medical/product.html?id=${product.id}`;
+}
+
+function productOffer(product) {
+  return {
+    '@type': 'Offer',
+    url: productUrl(product),
+    priceCurrency: 'TRY',
+    price: String(product.price),
+    availability: product.stock > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+    itemCondition: 'https://schema.org/NewCondition',
+  };
+}
+
+function buildProductJsonLd(product) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    description: product.description,
+    sku: product.sku,
+    brand: { '@type': 'Brand', name: product.brand },
+    category: product.category,
+    image: BRAND_LOGO_URL,
+    url: productUrl(product),
+    offers: productOffer(product),
+  };
+}
+
+function buildCatalogJsonLd(products) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: products.map((product, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: productUrl(product),
+      item: {
+        '@type': 'Product',
+        name: product.name,
+        sku: product.sku,
+        brand: { '@type': 'Brand', name: product.brand },
+        image: BRAND_LOGO_URL,
+        offers: productOffer(product),
+      },
+    })),
+  };
+}
+
 function escapeHtml(value) {
   return String(value)
     .replaceAll('&', '&amp;')
@@ -825,6 +886,7 @@ function initHome() {
     document.getElementById('newsletter-status').textContent = 'Kaydınız alındı. Teşekkür ederiz.';
   });
   renderProducts();
+  injectJsonLd('catalog-schema', buildCatalogJsonLd(PRODUCTS.map(productWithStock)));
 }
 
 function initProduct() {
@@ -834,6 +896,11 @@ function initProduct() {
   const related = PRODUCTS.filter((item) => item.category === product.category && item.id !== product.id).slice(0, 3).map(productWithStock);
   const reputation = productReputation(product);
   document.title = `${product.name} | DrOtgen Medical`;
+  const metaDescription = `${product.name} — ${product.description}`.slice(0, 160);
+  document.querySelector('meta[name="description"]')?.setAttribute('content', metaDescription);
+  document.querySelector('meta[property="og:title"]')?.setAttribute('content', `${product.name} | DrOtgen Medical`);
+  document.querySelector('meta[property="og:description"]')?.setAttribute('content', metaDescription);
+  injectJsonLd('product-schema', buildProductJsonLd(product));
   target.innerHTML = `
     <nav class="breadcrumbs" aria-label="Sayfa yolu"><a href="./">Ana sayfa</a><span>/</span><a href="./#products">${escapeHtml(product.category)}</a><span>/</span><b>${escapeHtml(product.shortName)}</b></nav>
     <section class="product-detail-grid">
