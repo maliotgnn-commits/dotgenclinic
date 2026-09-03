@@ -33,6 +33,11 @@
       ],
       "destination": "/tr/service.html?slug=:slug",
       "permanent": true
+    },
+    {
+      "source": "/tr/sac-ekimi",
+      "destination": "/tr/service.html?slug=hair-transplant-guide",
+      "permanent": true
     }
   ],
   "headers": [
